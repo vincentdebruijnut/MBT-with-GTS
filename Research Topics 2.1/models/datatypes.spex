@@ -1,0 +1,131 @@
+/*
+    Generic consts
+*/
+
+#define TRUE    1
+#define FALSE   0
+
+
+/*
+    Responses
+    Those commented out aren't used yet.
+*/
+#define C201_RESUMED_OPERATION  201 // answer to RESUME
+#define C210_VAR_RETURN         210 // answer to GET
+#define C211_ART_IDENTIFICATION	211 // answer to ARTID
+#define C212_ART_DESCRIPTION	212 // answer to ARTREG
+#define C213_ART_TEXT       	213 // answer to ARTID
+#define C220_SCRP_READY	        220 // answer to connection with POS
+//#define C221_SCRP_TERMINATING	221 // answer to QUIT
+#define C230_ACCOUNT_CLOSED 	230 // answer to CLOS
+#define C230_ACCOUNT_ENDTOTAL 	230 // answer to ENDTOTAL
+#define C231_ACCOUNT_OPENED     231 // answer to OPEN
+#define C232_ART_REGISTERED 	232 // answer to ARTREG
+#define C233_ACCOUNT_IDLED	233 // answer to IDLE
+#define C240_TRANS_SUCCEEDED    240 // answer to TRANS
+#define C242_TRANS_SUCCEEDED    242 // answer to TRANS
+#define C250_SIGNEDOFF  	250 // answer to SIGNOFF
+#define C251_SIGNEDON	        251 // answer to SIGNON
+#define C260_DATA_PRINTED       260
+#define C261_HTML_TEXT          261
+#define C340_TRANS_IN_PROGRESS  340 // answer to TRANS TM_BANK
+#define C450_SIGNING_REJECTED   450 // answer to SIGNON,SIGNOFF
+#define C500_UNKNOWN_COMMAND    500 // answer to unknown command
+#define C501_SYNTAX_ERROR       501 // answer to malformed command
+#define C502_COMMAND_FAILED     502
+#define C503_ERROR_STATE        503 // answer to RESUME
+#define C510_NO_SUCH_VAR	510 // answer to GET
+#define C511_NO_SUCH_ART	511 // answer to ARTID, ARTREG
+#define C530_NO_SUCH_ACCOUNT    530 // undocumented response to trans tm_bank
+#define C531_INVALID_ACCOUNT_STATE 531 // answer to OPEN,CLOSE,ARTREG,TRANS,IDLE
+#define C540_NO_SUCH_TRANS      540 // answer to TRANS
+#define C541_TRANS_BUSY 	541 // answer to TRANS
+#define C542_TRANS_FAILED	542 // answer to TRANS
+#define C550_NOT_SIGNED_ON      550 // answer to unallowed command in signed
+                                    // off state
+#define C551_AUTH_FAILED       	551 // answer to SIGNON met foutief spu, 
+                                    // wachtwoord combi
+#define C560_CR_PRINTING_INACTIVE   560
+#define C561_SPU_PRINTING_INACTIVE  561
+
+// TODO: Classify the actions
+// Stimuli
+mtype = {
+// CR states
+    SS_HALT,
+    SS_OFF,
+    SS_ON,
+// CR variables
+    SI_MODEL,
+    SI_SOFTW,
+    SI_SCRP,
+    SI_SYSID,
+    LC_CNTRY,
+    LC_CURCY,
+    LC_SEPCH,
+    LC_FRACT,
+    TC_BANK,
+    TC_BANK2,
+    TC_CASH,
+    TC_STORE,
+    TC_FLUSH,
+    PC_CR,
+    PC_SPU,
+    MS_SRBC,
+    MS_BCPFX,
+// Single parameter commands: mtype
+    SIGNON_EXIST,
+    SIGNON_NEXIST, //wrong password
+    SIGNOFF,
+    OPEN,
+    ARTREG,
+    QUIT,
+    CLOSE,
+    IDLE,
+    ENDTOT,
+    RECEIPT,
+    RESUME,
+    OPEN_EXIST,
+    OPEN_NEXIST,
+    ARTREG_EXIST, 
+    ARTREG_NEXIST,
+    ARTREG_REFUND,
+    ARTREG_LOYALTY, 
+    ARTID_EXIST, 
+    ARTID_NEXIST,
+    ARTRET_EXIST,
+    ARTRET_NEXIST,
+    RHCOPY,
+    RHCOPY_EXIST,
+    RHCOPY_NEXIST,
+    PRINT_EXIST,
+    PRINT_NEXIST, 
+// Multiple parameter commands: mtype int
+    STAMPREG,
+// Multiple parameter commands: mtype mtype
+    TRANS, //Trans uses mtypes:
+    TM_BANK,
+    TM_BANK2,
+    TM_CASH,
+    TM_STORE,
+    TM_FLUSH,
+    GET,
+// Multiple parameter commands: mtype int int    
+// Account states
+    AS_IDLE,
+    AS_OPEN,
+    AS_CLOSED,
+    AS_TRANSING,
+    AS_ENDING,
+    CS_ACCNT,  // account state register
+    CS_SIGN,
+    CS_EVENT,
+    AI_STAMP,
+// Events
+    EV_NONE,
+    EV_INFO,
+    EV_WARN,
+    EV_ERROR,
+    DUMMY_MTYPE,
+};
+

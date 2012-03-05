@@ -1,0 +1,227 @@
+proctype POS () {
+    bool    stored_account = FALSE;
+    short   nr_of_stamps = 0;
+
+unconnected:
+// INIT 
+    send_s(C220_SCRP_READY);
+
+// PREAMBLE: guide POS to SS_OFF state
+// For the moment we skip the preamble doing vars:
+//    handle_preamble_cr_vars();
+    handle_preamble_cr_state();
+
+// Signed off POS
+ss_off:
+    if
+    :: receive_m(SIGNON_EXIST); 
+        if
+        :: send_s(C251_SIGNEDON);
+            receive_mm(GET, CS_ACCNT);
+            if
+            :: send_smm(C210_VAR_RETURN, CS_ACCNT, AS_IDLE);
+                goto as_idle;
+            :: send_smm(C210_VAR_RETURN, CS_ACCNT, AS_CLOSED);
+                goto as_closed;
+// TODO find out if this state is ever used and how
+//          :: send_smm(C210_VAR_RETURN, CS_ACCNT, AS_TRANSING); goto as_closed;
+            :: send_smm(C210_VAR_RETURN, CS_ACCNT, AS_ENDING);
+                goto as_ending;
+            :: handle_general_errors();
+            fi;
+        :: send_s(C450_SIGNING_REJECTED);
+        :: send_s(C551_AUTH_FAILED);
+        :: handle_general_errors();
+        fi;
+    :: receive_mm(GET, CS_SIGN);
+        if
+        :: send_smm(C210_VAR_RETURN, CS_SIGN, SS_OFF);
+        :: send_smm(C210_VAR_RETURN, CS_SIGN, SS_HALT);
+        :: handle_general_errors();
+        fi;
+    :: handle_cs_events();
+    :: handle_quit();
+    :: handle_resume();
+    :: handle_illegal_command13_m(C550_NOT_SIGNED_ON, SIGNOFF, OPEN, CLOSE, \
+                                ARTID_EXIST, ARTREG, ARTREG_EXIST, \
+                                ARTREG_NEXIST, ARTRET_EXIST, \
+                                PRINT_NEXIST, IDLE, ENDTOT, \
+                                RHCOPY_NEXIST);
+                            // TODO add RECEIPT
+    :: handle_illegal_command2_mi(C550_NOT_SIGNED_ON, STAMPREG);
+    :: handle_illegal_command2_m(C551_AUTH_FAILED, SIGNON_NEXIST);
+    fi;
+    goto ss_off;
+
+
+// AS_IDLE: signed on, idle state
+as_idle:
+    if
+    :: receive_m(OPEN);
+        if
+        :: send_s(C231_ACCOUNT_OPENED);
+            goto as_open;
+        :: handle_general_errors();
+        fi;
+    :: stored_account -> handle_open_exist();
+    :: receive_m(SIGNOFF);
+        if
+        :: send_s(C250_SIGNEDOFF);
+            goto ss_off;
+        :: handle_general_errors();
+        fi;
+    :: handle_get_cs_sign(SS_ON);
+    :: handle_get_cs_accnt(AS_IDLE);
+    :: handle_artid();
+    :: handle_get_ai_stamp(); 
+    :: handle_cs_events();
+    :: handle_quit();
+    :: handle_resume();
+    :: handle_print_ignore_account(stored_account);
+    :: stored_account -> handle_rhcopy_exist(); 
+    :: handle_rhcopy();
+    :: handle_illegal_command2_m(C450_SIGNING_REJECTED, SIGNON_EXIST); 
+    :: handle_illegal_command7_m(C531_INVALID_ACCOUNT_STATE, ARTREG, \
+                                ARTREG_EXIST, ARTREG_NEXIST, ARTRET_EXIST, \
+                                CLOSE, ENDTOT); 
+// FIXME enable when fixed in pos simulator. POS gives back 500 no such account when
+// stamps are not enabled
+//    :: handle_illegal_command2_mi(C531_INVALID_ACCOUNT_STATE, STAMPREG); 
+    :: handle_illegal_command2_m(C511_NO_SUCH_ART, ARTID_NEXIST);
+    :: handle_illegal_command3_m(C530_NO_SUCH_ACCOUNT, RHCOPY_NEXIST, OPEN_NEXIST);
+    :: handle_illegal_command2_m(C260_DATA_PRINTED, PRINT_NEXIST);
+
+// FIXME add receipt, idle, not in simulator
+    fi;
+    goto as_idle;
+
+// OPEN
+as_open:
+    if
+    :: receive_m(ARTREG_EXIST);
+        if 
+        :: handle_descriptions();
+            send_s(C232_ART_REGISTERED);
+        :: handle_general_errors();
+        fi;
+    :: handle_artreg();
+    :: handle_endtot();
+    :: receive_m(CLOSE);
+        if
+        :: handle_descriptions();
+            send_s(C230_ACCOUNT_CLOSED);
+            goto as_closed;
+        :: handle_general_errors();
+        fi;
+    :: handle_artret_exists();
+    :: handle_get_cs_sign(SS_ON);
+    :: handle_get_cs_accnt(AS_OPEN);
+    :: handle_artid();
+    :: handle_get_ai_stamp(); 
+    :: handle_cs_events(); 
+    :: handle_quit(); 
+// We're in the open state, so there is a known account number for PRINT and RHCOPY
+    :: handle_print(); 
+    :: handle_rhcopy();
+    :: handle_rhcopy_exist(); 
+    :: handle_resume();
+    :: handle_illegal_command2_m(C450_SIGNING_REJECTED, SIGNON_EXIST); 
+    :: handle_illegal_command4_m(C531_INVALID_ACCOUNT_STATE, IDLE, \
+                                 OPEN, OPEN_NEXIST);
+// FIXME Enable STAMPREG. Problem now is that when stamps are not enabled, the POS 
+// simulator gives C500 unknown command
+//    :: handle_illegal_command2_mi(C531_INVALID_ACCOUNT_STATE, STAMPREG);
+    :: handle_illegal_command4_m(C511_NO_SUCH_ART, ARTID_NEXIST, \
+                                    ARTREG_NEXIST, ARTRET_NEXIST);
+    :: handle_illegal_command3_m(C530_NO_SUCH_ACCOUNT, RHCOPY_NEXIST, \
+                                 PRINT_NEXIST);
+// FIXME add receipt, idle when in in simulator
+    fi;
+    goto as_open;
+
+// CLOSED
+as_closed:
+    if
+    :: handle_trans_tm_bank();
+    :: handle_trans_tm_bank2();
+    :: handle_trans_tm_cash(); // TODO possible to add amount
+    :: handle_trans_tm_store();
+    :: handle_trans_tm_flush();
+    :: handle_artreg_loyalty();
+    :: handle_artreg_refund();
+    :: handle_stampreg();
+    :: handle_get_cs_sign(SS_ON);
+    :: handle_get_cs_accnt(AS_CLOSED);
+    :: handle_get_ai_stamp(); 
+    :: handle_artid();
+    :: handle_cs_events(); 
+    :: handle_quit(); 
+    :: handle_print(); 
+    :: handle_rhcopy();
+    :: handle_rhcopy_exist(); 
+    :: handle_resume();
+    :: handle_illegal_command2_m(C450_SIGNING_REJECTED, SIGNON_EXIST); 
+// FIXME POS simulator gives 511 for artreg_nexist should be 531, correct when
+// simulator is fixed.
+    :: handle_illegal_command8_m(C531_INVALID_ACCOUNT_STATE, IDLE, OPEN, \
+                                CLOSE, ARTREG, ARTREG_EXIST, \
+                                ARTRET_EXIST, ENDTOT); 
+    :: handle_illegal_command3_m(C511_NO_SUCH_ART, ARTID_NEXIST, ARTREG_NEXIST);
+    :: handle_illegal_command3_m(C531_INVALID_ACCOUNT_STATE, ARTID_NEXIST, ARTREG_NEXIST);
+    :: handle_illegal_command3_m(C530_NO_SUCH_ACCOUNT, RHCOPY_NEXIST, \
+                                PRINT_NEXIST);
+// FIXME add receipt, idle, not in simulator
+    fi;
+    goto as_closed;
+
+// TRANSING
+as_transing:
+    // FIXME: implementeren? Wordt deze state gebruikt?
+
+// ENDING
+as_ending:
+    if
+    :: receive_m(IDLE);
+        if
+        :: send_s(C233_ACCOUNT_IDLED);
+            goto as_idle;
+        :: handle_general_errors();
+        fi;
+    :: handle_receipt();
+    :: handle_get_cs_sign(SS_ON);
+    :: handle_get_cs_accnt(AS_ENDING);
+    :: handle_get_ai_stamp(); 
+    :: handle_artid();
+    :: handle_cs_events(); 
+    :: handle_quit(); 
+    :: handle_print(); 
+    :: handle_rhcopy();
+    :: handle_rhcopy_exist(); 
+    :: handle_resume();
+    :: handle_illegal_command2_m(C450_SIGNING_REJECTED, SIGNON_EXIST); 
+    :: handle_illegal_command8_m(C531_INVALID_ACCOUNT_STATE, OPEN, CLOSE, \
+                                   ARTREG, ARTREG_EXIST, ARTREG_EXIST, \
+                                    ARTRET_EXIST, ENDTOT);
+// FIXME Enable STAMPREG. Problem now is that when stamps are not enabled, the POS 
+// simulator gives C500 unknown command
+//    :: handle_illegal_command2_mi(C531_INVALID_ACCOUNT_STATE, STAMPREG);
+    :: handle_illegal_command2_m(C511_NO_SUCH_ART, ARTID_NEXIST);
+    :: handle_illegal_command2_m(C530_NO_SUCH_ACCOUNT, RHCOPY_NEXIST);
+    fi;
+    goto as_ending;
+}      
+
+//proctype environment () {
+//  
+//}
+
+
+/* --------------------------------- init --------------------------------- */
+init    {
+    atomic {
+        run POS ();
+//#ifndef TROJKA
+//        ; run environment (pos2env, env2pos)
+//#endif
+        }
+}

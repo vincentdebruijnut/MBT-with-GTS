@@ -1,0 +1,16 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n2)  at (1.995, -1.605) {\ml{\textbf{Location}}};
+\node[node] (n1)  at (0.775, -1.615) {\ml{\textbf{Location}}};
+\node[node] (n0)  at (1.070, -0.680) {\ml{\textbf{Player}\\\textit{turn}\\{\color{\green}throws := throws $-$ 1}\\throws $>$ 0}};
+\path[newedge] (n0)  -- node[newlab]{at} (n2) ;
+\path[deledge](n0.south -| 0.775, -1.615) -- node[dellab]{at} (n1) ;
+\path[edge](n1.east |- 1.995, -1.605) -- node[lab]{next} (n2) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

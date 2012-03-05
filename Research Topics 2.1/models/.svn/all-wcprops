@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/esa/!svn/ver/91/trunk/TorX/models
+END
+pos.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/esa/!svn/ver/49/trunk/TorX/models/pos.cfg
+END
+pos.spex
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/esa/!svn/ver/55/trunk/TorX/models/pos.spex
+END
+Commands
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/esa/!svn/ver/10/trunk/TorX/models/Commands
+END
+rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/esa/!svn/ver/10/trunk/TorX/models/rakefile
+END
+macro_lib.spex
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/esa/!svn/ver/91/trunk/TorX/models/macro_lib.spex
+END
+Commands and Responses
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/esa/!svn/ver/10/trunk/TorX/models/Commands%20and%20Responses
+END
+README.spex
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/esa/!svn/ver/48/trunk/TorX/models/README.spex
+END
+scrp.config.torex
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/esa/!svn/ver/10/trunk/TorX/models/scrp.config.torex
+END
+datatypes.spex
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/esa/!svn/ver/86/trunk/TorX/models/datatypes.spex
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/esa/!svn/ver/10/trunk/TorX/models/README
+END

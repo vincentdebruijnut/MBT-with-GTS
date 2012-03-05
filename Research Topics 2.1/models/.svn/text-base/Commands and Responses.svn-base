@@ -1,0 +1,115 @@
+This file gives a list of commands and responses of the SCRP protocol. First
+come the standard commands and responses from the interface specification,
+then come we additional ones from the addendum.
+
+Format:
+
+S State
+C Command
+R Response
+
+Standard
+--------
+
+S ?
+C -
+R 220 SCRP Service ready
+
+S *
+C QUIT
+R 221 SCRP Service terminating
+
+S ?
+C SIGNON <spu_id>[:<password>]
+R 251 Signed On
+R 450 Signing rejected
+R 551 Authentication failed
+
+S ?
+C SIGNOFF
+R 250 Signed Off
+R 450 Signing rejected
+
+S ?
+C GET <cr_variable>
+R 210 <cr_variable>:<cr_value>
+R 510 No such variable
+
+S ?
+C OPEN
+R 231 <account> Account opened
+R 531 Invalid account state
+
+S ?
+C CLOSE
+R { 212 <description>[:<price>] }
+  230 <endtotal> Account closed
+R 531 Invalid account state
+
+S ?
+C ARTID <barcode>
+R 211 <description>:<price>:[<weight_flag>]:[<age_flag>]:[<block_flag>]:[<cont_barc>]
+R 511 No such article
+
+S ?
+C ARTREG <barcode>
+R { 212 <description>[:<price>] }
+  232 <nr_articles>:<subtotal> Article registered
+R 511 No such article
+R 531 Invalid account state
+
+S ?
+C TRANS <tr_method>
+R 240 Transaction succeeded
+R 531 Invalid account state
+R 540 No such transaction method
+R 541 Busy transacting
+R 542 <failure_ind> Transaction failed
+
+S ?
+C PRINT <account>:<html_text>
+R 260 Data printed
+R 530 No such account
+R 531 Invalid account state
+R 560 CR-printing inactive
+
+S ?
+C RECEIPT
+R { 261 <html_text> }
+R 531 Invalid account state
+R 561 SPU-printing inactive
+
+S ?
+C IDLE
+R 233 Account idled
+R 531 Invalid account state
+
+S ?
+C RESUME
+R 201 Resumed operation
+R 503 Error state
+
+S ?
+
+
+Special cases:
+
+S *
+C (unknown command)
+R 500 Unknown command
+
+S *
+C (Syntax error, arguments missing)
+R 501 Syntax error
+
+S ?
+C ?
+R 502 Command failed
+
+S SS_HALT?
+C ?
+R 503 Error state
+
+S SS_OFF
+C ?
+R 550 Not signed on

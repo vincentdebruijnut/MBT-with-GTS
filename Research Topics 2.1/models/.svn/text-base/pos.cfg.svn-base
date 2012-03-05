@@ -1,0 +1,9 @@
+channel=in
+  iokind=input
+  event=env2pos!*!*!*
+
+channel=out
+  iokind=output
+  event=pos2env!*!*!*!*
+  suspension=Delta
+

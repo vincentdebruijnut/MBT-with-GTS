@@ -1,0 +1,9 @@
+\section{Exploration strategy}
+
+A GROOVE exploration strategy finds all graph states and rule matches.
+
+\subsubsection{Isomorphism}
+Isomorphism prevents correct tracking of location variables. Solve with sets.
+
+\subsubsection{Eraser/creator pairs}
+Location variables should be persistent and declared at the start state. Therefore, every eraser edge to a variable node should be paired with a creator edge. This edge should have the same source node and label.

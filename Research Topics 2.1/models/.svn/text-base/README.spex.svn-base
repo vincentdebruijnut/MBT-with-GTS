@@ -1,0 +1,10 @@
+om pos.spex te verwerken:
+
+mkprimer  --config pos_spex.cfg pos.spex
+
+dit geeft een shell script pos;
+pos kan gebruik worden als TorX Primer.
+
+pos maakt gebruik van executable pos.tx en van 'primer'
+pos.tx is een TorX Explorer, gecompileerd van de spex.pos
+primer is een standaard TorX applicatie.

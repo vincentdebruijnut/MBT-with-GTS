@@ -1,0 +1,27 @@
+private
+  SPEX_FILE = "pos.spex"
+  COMPILE_COMMAND = "mkprimer --config pos_spex.cfg #{SPEX_FILE}"
+
+namespace :tm do
+  desc "Compile all spex models in sub directories"
+  task :compile do
+
+   Dir.foreach(".") do |file|
+     if File.directory?(file) && file != "." && file != ".."
+       if File.exist?(File.join(file, SPEX_FILE))
+         puts "Compiling #{file}"
+         output = `cd #{file} && 2>&1 #{COMPILE_COMMAND}`
+         unless $?.success?
+           raise "Compilation of #{file} failed:\n#{output}"
+         end
+         `rm -f pan.* spextmp*.* spex.o`
+
+       else
+         puts "Skipping #{file}"
+       end
+     end
+   end
+ end
+end
+
+task :default => "tm:compile"

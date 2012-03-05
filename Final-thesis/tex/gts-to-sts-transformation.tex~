@@ -1,0 +1,15 @@
+\section{GTS to STS transformation rules}
+
+\subsection{Graph state to location transformation}
+
+
+\subsection{Rule match to switch relation transformation}
+
+
+\subsubsection{Variables}
+
+
+\subsubsection{Guard}
+
+
+\subsubsection{Update}

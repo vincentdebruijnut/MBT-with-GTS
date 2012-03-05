@@ -1,0 +1,94 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, start] (s0)  at (4.240, -0.155) {\ml{\textit{s0}}};
+\node[node] (s1)  at (0.590, -0.865) {\ml{\textit{s1}}};
+\node[node] (s2)  at (1.870, -0.865) {\ml{\textit{s2}}};
+\node[node] (s3)  at (5.130, -0.865) {\ml{\textit{s3}}};
+\node[node] (s4)  at (6.050, -0.865) {\ml{\textit{s4}}};
+\node[node] (s5)  at (6.970, -0.865) {\ml{\textit{s5}}};
+\node[node] (s6)  at (7.890, -0.865) {\ml{\textit{s6}}};
+\node[node] (s7)  at (0.590, -1.575) {\ml{\textit{s7}}};
+\node[node] (s8)  at (1.870, -1.575) {\ml{\textit{s8}}};
+\node[node] (s9)  at (5.130, -1.575) {\ml{\textit{s9}}};
+\node[node] (s10)  at (6.055, -1.575) {\ml{\textit{s10}}};
+\node[node] (s11)  at (6.975, -1.575) {\ml{\textit{s11}}};
+\node[node] (s12)  at (7.895, -1.575) {\ml{\textit{s12}}};
+\node[node] (s13)  at (0.595, -2.285) {\ml{\textit{s13}}};
+\node[node] (s14)  at (1.875, -2.285) {\ml{\textit{s14}}};
+\node[node] (s15)  at (5.135, -2.285) {\ml{\textit{s15}}};
+\node[node] (s16)  at (6.055, -2.285) {\ml{\textit{s16}}};
+\node[node] (s17)  at (6.975, -2.285) {\ml{\textit{s17}}};
+\node[node] (s18)  at (7.895, -2.285) {\ml{\textit{s18}}};
+\node[node] (s19)  at (0.595, -2.995) {\ml{\textit{s19}}};
+\node[node] (s20)  at (1.875, -2.995) {\ml{\textit{s20}}};
+\node[node] (s21)  at (2.665, -2.995) {\ml{\textit{s21}}};
+\node[node] (s22)  at (3.915, -1.325) {\ml{\textit{s22}}};
+\node[node] (s23)  at (4.625, -3.025) {\ml{\textit{s23}}};
+\node[node] (s24)  at (5.635, -2.995) {\ml{\textit{s24}}};
+\node[node] (s25)  at (6.625, -2.995) {\ml{\textit{s25}}};
+\node[node] (s26)  at (5.145, -3.665) {\ml{\textit{s26}}};
+\node[node] (s27)  at (0.595, -3.705) {\ml{\textit{s27}}};
+\node[node] (s28)  at (1.865, -3.845) {\ml{\textit{s28}}};
+\node[node] (s29)  at (2.855, -3.395) {\ml{\textit{s29}}};
+\node[node] (s30)  at (3.435, -1.295) {\ml{\textit{s30}}};
+\node[node] (s31)  at (0.595, -4.415) {\ml{\textit{s31}}};
+\path[edge] (s0)  -- node[lab]{throws(3)} (s1) ;
+\path[edge] (s0)  -- node[lab]{throws(2)} (s2) ;
+\path[edge] (s0)  -- node[lab]{throws(1)} (s3) ;
+\path[edge] (s0)  -- node[lab]{throws(5)} (s4) ;
+\path[edge] (s0)  -- node[lab]{throws(6)} (s5) ;
+\path[edge] (s0)  -- node[lab]{throws(4)} (s6) ;
+\path[edge](s1.south -| 0.590, -1.575) -- node[lab]{move(1)} (s7) ;
+\path[edge](s2.south -| 1.870, -1.575) -- node[lab]{move(1)} (s8) ;
+\path[edge](s3.south -| 5.130, -1.575) -- node[lab]{move(1)} (s9) ;
+\path[edge](s4.south -| 6.055, -1.575) -- node[lab]{move(1)} (s10) ;
+\path[edge](s5.south -| 6.975, -1.575) -- node[lab]{move(1)} (s11) ;
+\path[edge](s6.south -| 7.895, -1.575) -- node[lab]{move(1)} (s12) ;
+\path[edge](s7.south -| 0.595, -2.285) -- node[lab]{move(1)} (s13) ;
+\path[edge](s8.south -| 1.875, -2.285) -- node[lab]{move(1)} (s14) ;
+\path[edge](s9.south -| 5.135, -2.285) -- node[lab]{nextTurn()} (s15) ;
+\path[edge](s10.south -| 6.055, -2.285) -- node[lab]{move(1)} (s16) ;
+\path[edge](s11.south -| 6.975, -2.285) -- node[lab]{move(1)} (s17) ;
+\path[edge](s12.south -| 7.895, -2.285) -- node[lab]{move(1)} (s18) ;
+\path[edge](s13.south -| 0.595, -2.995) -- node[lab]{move(1)} (s19) ;
+\path[edge](s14.south -| 1.875, -2.995) -- node[lab]{nextTurn()} (s20) ;
+\path[edge] (s15)  -- node[lab]{throws(3)} (s21) ;
+\path[edge] (s15)  -- node[lab]{throws(2)} (s22) ;
+\path[edge] (s15)  -- node[lab]{throws(1)} (s23) ;
+\path[edge] (s15)  -- node[lab]{throws(5)} (s24) ;
+\path[edge] (s15)  -- node[lab]{throws(6)} (s25) ;
+\path[edge](s15.south -| 5.145, -3.665) -- node[lab]{throws(4)} (s26) ;
+\path[edge] (s16)  -- node[lab]{move(1)} (s22) ;
+\path[edge] (s17)  -- node[lab]{move(1)} (s21) ;
+\path[edge] (s18)  -- node[lab]{move(1)} (s23) ;
+\path[edge](s19.south -| 0.595, -3.705) -- node[lab]{nextTurn()} (s27) ;
+\path[edge] (s20)  -- node[lab]{throws(3)} (s16) ;
+\path[edge] (s20)  -- node[lab]{throws(2)} (s18) ;
+\path[edge] (s20)  -- node[lab]{throws(1)} (s13) ;
+\path[edge](s20.south -| 1.865, -3.845) -- node[lab]{throws(5)} (s28) ;
+\path[edge] (s20)  -- node[lab]{throws(6)} (s29) ;
+\path[edge] (s20)  -- node[lab]{throws(4)} (s17) ;
+\path[edge] (s21)  -- node[lab]{move(1)} (s2) ;
+\path[edge] (s22)  -- node[lab]{move(1)} (s3) ;
+\path[edge] (s23)  -- node[lab]{move(1)} (s30) ;
+\path[edge] (s24)  -- node[lab]{move(1)} (s6) ;
+\path[edge] (s25)  -- node[lab]{move(1)} (s4) ;
+\path[edge] (s26)  -- node[lab]{move(1)} (s1) ;
+\path[edge] (s27)  -- node[lab]{throws(3)} (s12) ;
+\path[edge](s27.north -| 0.590, -1.575) -- node[lab]{throws(2)} (s7) ;
+\path[edge] (s27)  -- node[lab]{throws(1)} (s8) ;
+\path[edge] (s27)  -- node[lab]{throws(5)} (s11) ;
+\path[edge](s27.south -| 0.595, -4.415) -- node[lab]{throws(6)} (s31) ;
+\path[edge] (s27)  -- node[lab]{throws(4)} (s10) ;
+\path[edge] (s28)  -- node[lab]{move(1)} (s26) ;
+\path[edge] (s29)  -- node[lab]{move(1)} (s24) ;
+\path[edge] (s30)  -- node[lab]{nextTurn()} (s0) ;
+\path[edge] (s31)  -- node[lab]{move(1)} (s28) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

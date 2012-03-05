@@ -1,0 +1,872 @@
+//some helper functions 
+
+spexchan env2pos =	[0] of { mtype, mtype, int } ;
+spexchan pos2env =	[0] of { short, mtype, mtype, int } ;
+
+// Shortcuts for sending and receiving
+
+#define send_s(short1) \
+    spexio(pos2env, short1, DUMMY_MTYPE, DUMMY_MTYPE, DUMMY_INT)   
+
+#define send_m(mtype1) \
+    spexio(pos2env, DUMMY_SHORT, mtype1, DUMMY_MTYPE, DUMMY_INT)
+
+#define send_sm(short1, mtype1) \
+    spexio(pos2env, short1, mtype1, DUMMY_MTYPE, DUMMY_INT)
+
+#define send_smm(short1, mtype1, mtype2) \
+    spexio(pos2env, short1, mtype1, mtype2, DUMMY_INT)
+
+#define send_si(short1, int1) \
+    spexio(pos2env, short1, DUMMY_MTYPE, DUMMY_MTYPE, int1)
+
+#define send_smi(short1, mtype1, int1) \
+    spexio(pos2env, short1, mtype1, DUMMY_MTYPE, int1)
+
+// Send a timeout, special case for receiving the 261's
+#define send_timeout() \
+    spexio(pos2env, C900_TIMEOUT, DUMMY_MTYPE, DUMMY_MTYPE, DUMMY_INT)
+
+#define receive_m(mtype1) \
+    spexio(env2pos, mtype1, DUMMY_MTYPE, DUMMY_INT)
+
+#define receive_mm(mtype1, mtype2) \
+    spexio(env2pos, mtype1, mtype2, DUMMY_INT)
+
+#define receive_mi(mtype1, int1) \
+    spexio(env2pos, mtype1, DUMMY_MTYPE, int1)
+
+
+// Read 0 or more 212's
+// Note: this works fine since 212's are always followed by a 232
+#define handle_descriptions() \
+    do \
+    :: send_s(C212_ART_DESCRIPTION); \
+    :: break \
+    od
+
+// Read away 1 or more 261's
+#define handle_261_html_texts() \
+    { \
+        send_s(C261_HTML_TEXT); \
+        do \
+        :: send_s(C261_HTML_TEXT); \
+        :: send_timeout(); -> break \
+        od; \
+    }
+
+// read events. they're ignored
+#define handle_cs_events() \
+    receive_mm(GET, CS_EVENT); \
+    if \
+    ::  send_smm(C210_VAR_RETURN, CS_EVENT, EV_NONE); \
+    ::  send_smm(C210_VAR_RETURN, CS_EVENT, EV_INFO) \
+    ::  send_smm(C210_VAR_RETURN, CS_EVENT, EV_WARN); \
+    ::  send_smm(C210_VAR_RETURN, CS_EVENT, EV_ERROR); \
+    fi;
+
+// upon receiving a QUIT, go to unconnected state
+#define handle_quit() \
+    0
+
+//    receive_mm(QUIT, dummy); \
+//    send_sm(SCRPterminate); \ skip this, just like the simulator \
+//    goto unconnected
+
+#define handle_print() \
+    receive_m(PRINT_EXIST); \
+    if \
+    ::  send_s(C260_DATA_PRINTED); \
+    ::  send_s(C560_CR_PRINTING_INACTIVE); \
+    ::  handle_general_errors(); \
+    fi;
+
+#define handle_print_ignore_account(acc_known) \
+    if \
+    :: acc_known -> handle_print(); \
+    :: receive_m(PRINT_NEXIST); \
+        if \
+        ::  send_s(C260_DATA_PRINTED); \
+        ::  send_s(C560_CR_PRINTING_INACTIVE); \
+        ::  handle_general_errors(); \
+        fi; \
+    fi;
+
+// CHM (cash handling machine) specific commands
+#ifdef ADD_CHM_SUPPORT
+#define handle_open_exist() \
+    receive_m(OPEN_EXIST); \
+    if \
+    :: send_s(C231_ACCOUNT_OPENED); \
+        goto as_open; \
+    :: handle_general_errors(); \
+    fi; 
+#else
+#define handle_open_exist() \
+    receive_m(OPEN_EXIST); \
+    if \
+    :: send_s(C231_ACCOUNT_OPENED); \
+        goto as_open; \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors(); \
+    fi;
+#endif
+
+#ifdef ADD_CHM_SUPPORT
+#define handle_artreg() \
+    receive_m(ARTREG); \
+    if  \
+    :: handle_descriptions(); \
+        send_s(C232_ART_REGISTERED); \
+    :: handle_general_errors(); \
+    fi; 
+#else
+#define handle_artreg() \
+    receive_m(ARTREG); \
+    if \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors(); \
+    fi;
+#endif
+
+#ifdef ADD_CHM_SUPPORT
+#define handle_endtot() \
+    receive_m(ENDTOT); \
+    if \
+    :: handle_descriptions(); \
+        send_s(C230_ACCOUNT_ENDTOTAL); \
+    :: handle_general_errors(); \
+    fi;
+#else
+#define handle_endtot() \
+    receive_m(ENDTOT); \
+    if \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors(); \
+    fi;
+#endif
+
+#ifdef ADD_RHCOPY_SUPPORT
+#define handle_rhcopy() \
+    receive_m(RHCOPY); \
+    if \
+    ::  send_s(C260_DATA_PRINTED); \
+    ::  send_s(C560_CR_PRINTING_INACTIVE); \
+    ::  handle_general_errors(); \
+    fi;
+#else
+#define handle_rhcopy() \
+    receive_m(RHCOPY); \
+    if \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors(); \
+    fi; 
+#endif
+
+#ifdef ADD_RHCOPY_SUPPORT
+#define handle_rhcopy_exist() \
+    receive_m(RHCOPY_EXIST); \
+    if \
+    ::  send_s(C260_DATA_PRINTED); \
+    ::  send_s(C560_CR_PRINTING_INACTIVE); \
+    ::  handle_general_errors(); \
+    fi;
+#else
+#define handle_rhcopy_exist() \
+    receive_m(RHCOPY_EXIST); \
+    if \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors(); \
+    fi; 
+#endif
+
+#ifdef CONF_SPU
+#define handle_receipt() \
+    receive_m(RECEIPT); \
+    if \
+    :: handle_261_html_texts(); \
+    :: handle_general_errors(); \
+    fi;
+#else
+#define handle_receipt() \
+    receive_m(RECEIPT); \
+    if \
+    :: send_s(C561_SPU_PRINTING_INACTIVE); \
+        send_s(C900_TIMEOUT); \
+    :: handle_general_errors(); \
+    fi;
+#endif
+
+#define handle_resume() \
+    receive_m(RESUME); \
+    if \
+    ::  send_s(C201_RESUMED_OPERATION); \
+    ::  send_s(C503_ERROR_STATE); \
+    ::  handle_general_errors(); \
+    fi;
+
+// ARTID met bestaande barcode
+#ifdef ADD_EXT_ARTID_RSP
+#define handle_artid() \
+    receive_m(ARTID_EXIST); \
+    if \
+    :: send_s(C213_ART_TEXT); \
+    :: handle_general_errors(); \
+    fi;
+#else
+#define handle_artid() \
+    receive_m(ARTID_EXIST); \
+    if \
+    :: send_s(C211_ART_IDENTIFICATION); \
+    :: handle_general_errors(); \
+    fi;
+#endif
+
+#ifdef ADD_LOYALTY_POINTS
+#define handle_get_ai_stamp() \
+    receive_mm(GET, AI_STAMP); \
+    if \
+    :: send_sm(C210_VAR_RETURN, AI_STAMP); \
+    :: handle_general_errors(); \
+    fi; 
+#else
+#define handle_get_ai_stamp() \
+    receive_mm(GET, AI_STAMP); \
+    if \
+    :: send_s(C510_NO_SUCH_VAR); \
+    :: handle_general_errors(); \
+    fi; 
+#endif
+
+// TODO are descriptions used in stampreg returns?
+#ifdef ADD_LOYALTY_POINTS
+#define handle_stampreg() \
+    receive_mi(STAMPREG, 0); \
+    if \
+    :: handle_descriptions(); \
+        send_s(C232_ART_REGISTERED); \
+    :: send_s(C511_NO_SUCH_ART); \
+    :: handle_general_errors(); \
+    fi;
+#else
+#define handle_stampreg() \
+    receive_mi(STAMPREG, 0); \
+    if \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: handle_general_errors(); \
+    fi; 
+#endif
+
+#ifdef ADD_LOYALTY_POINTS
+#define handle_artreg_loyalty() \
+    receive_m(ARTREG_LOYALTY); \
+    if \
+    :: handle_descriptions(); \
+        send_s(C232_ART_REGISTERED); \
+    :: handle_general_errors(); \
+    fi;
+#else
+    #define handle_artreg_loyalty() \
+    0
+#endif
+
+#ifdef REFUND
+#define handle_artreg_refund() \
+    receive_m(ARTREG_REFUND); \
+    if \
+    :: handle_descriptions(); \
+        send_s(C232_ART_REGISTERED); \
+    :: handle_general_errors(); \
+    fi;
+#else
+#define handle_artreg_refund() \
+    0
+#endif
+
+#ifdef ADD_ARTRET
+#define handle_artret_exists() \
+    receive_m(ARTRET_EXIST); \
+    if \
+    :: handle_descriptions(); \
+        send_s(C232_ART_REGISTERED); \
+    :: send_s(C511_NO_SUCH_ART); \
+    :: handle_general_errors(); \
+    fi; 
+#else 
+#define handle_artret_exists() \
+    receive_m(ARTRET_EXIST); \
+    if \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: handle_general_errors(); \
+    fi; 
+#endif
+ 
+#ifdef CONF_BANK
+#define handle_trans_tm_bank() \
+    receive_mm(TRANS, TM_BANK); \
+    if \
+    :: send_s(C240_TRANS_SUCCEEDED); \
+       stored_account = FALSE; \
+       goto as_ending; \
+    :: send_s(C541_TRANS_BUSY); \
+       send_s(C240_TRANS_SUCCEEDED); \
+       goto as_ending; \
+    :: send_s(C542_TRANS_FAILED); \
+       handle_cs_events(); \
+    :: handle_general_errors(); \
+    fi;
+#else
+#define handle_trans_tm_bank() \
+    receive_mm(TRANS, TM_BANK); \
+    handle_failed_trans();
+#endif
+
+#ifdef ADD_TM_BANK2
+#define handle_trans_tm_bank2() \
+    receive_mm(TRANS, TM_BANK2); \
+    if \
+    :: send_s(C240_TRANS_SUCCEEDED); \
+       stored_account = FALSE; \
+       goto as_ending; \
+    :: send_s(C242_TRANS_SUCCEEDED); \
+       goto as_ending; \
+    :: send_s(C541_TRANS_BUSY); \
+        if \
+        :: send_s(C240_TRANS_SUCCEEDED); \
+           stored_account = FALSE; \
+           goto as_ending; \
+        :: send_s(C242_TRANS_SUCCEEDED); \
+           stored_account = FALSE; \
+           goto as_ending; \
+        fi; \
+    :: send_s(C542_TRANS_FAILED); \
+       handle_cs_events(); \
+    :: handle_general_errors(); \
+    fi;
+#else
+#define handle_trans_tm_bank2() \
+    receive_mm(TRANS, TM_BANK2); \
+    handle_failed_trans();
+#endif
+
+#ifdef CONF_STORE
+#define handle_trans_tm_store() \
+    receive_mm(TRANS, TM_STORE); \
+    if \
+    :: send_s(C240_TRANS_SUCCEEDED); \
+       stored_account=TRUE; \
+       goto as_ending; \
+    :: send_s(C542_TRANS_FAILED); \
+    :: handle_general_errors(); \
+    fi;
+#else
+#define handle_trans_tm_store() \
+    receive_mm(TRANS, TM_STORE); \
+    handle_failed_trans();
+#endif
+
+// TODO possible to extend with amount. Now we implicitly assume that the entire
+// amount is paid
+#ifdef ADD_CHM_SUPPORT
+#define handle_trans_tm_cash() \
+    receive_mm(TRANS, TM_CASH); \
+    if \
+    :: send_s(C240_TRANS_SUCCEEDED); \
+       stored_account = FALSE; \
+       goto as_ending; \
+    :: send_s(C541_TRANS_BUSY); \
+       send_s(C240_TRANS_SUCCEEDED); \
+       stored_account = FALSE; \
+       goto as_ending; \
+    :: send_s(C542_TRANS_FAILED); \
+       handle_cs_events(); \
+    :: handle_general_errors(); \
+    fi;
+#else
+#define handle_trans_tm_cash() \
+    receive_mm(TRANS, TM_CASH); \
+    handle_failed_trans();
+#endif
+
+#ifdef CONF_FLUSH
+#define handle_trans_tm_flush() \
+    receive_mm(TRANS, TM_FLUSH); \
+    if \
+    :: send_s(C240_TRANS_SUCCEEDED); \
+       stored_account = FALSE; \
+       goto as_ending; \
+    :: send_s(C542_TRANS_FAILED); \
+       handle_cs_events(); \
+    :: handle_general_errors(); \
+    fi;
+#else
+#define handle_trans_tm_flush() \
+    receive_mm(TRANS, TM_FLUSH); \
+    handle_failed_trans();
+#endif
+
+#define handle_failed_trans() \
+    if \
+    :: send_s(C540_NO_SUCH_TRANS); \
+       handle_cs_events(); \
+    :: send_s(C542_TRANS_FAILED); \
+       handle_cs_events(); \
+    :: handle_general_errors(); \
+    fi
+
+#define handle_get_cs_accnt(account_state) \
+    receive_mm(GET, CS_ACCNT); \
+    if \
+    :: send_smm(C210_VAR_RETURN, CS_ACCNT, account_state); \
+    :: handle_general_errors(); \
+    fi;
+
+#define handle_get_cs_sign(sign_state) \
+    receive_mm(GET, CS_SIGN); \
+    if \
+    :: send_smm(C210_VAR_RETURN, CS_SIGN, sign_state); \
+    :: handle_general_errors(); \
+    fi;
+
+//Handle general errors that can occur for all commands
+//    :: send_s(C531_INVALID_ACCOUNT_STATE); 
+#define handle_general_errors() \
+    if \
+    :: send_s(C502_COMMAND_FAILED); \
+    :: send_s(C503_ERROR_STATE); \
+        if \
+        :: receive_mm(GET,CS_EVENT); \
+            if \
+            :: send_smm(C210_VAR_RETURN, CS_EVENT, EV_INFO); \
+            :: send_smm(C210_VAR_RETURN, CS_EVENT, EV_NONE); \
+            fi; \            
+        fi; \
+    fi; 
+
+#ifdef RAINY_DAY 
+#define handle_illegal_command2_mi(return_code, command1) \
+    receive_mi(command1, 0); \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi; 
+#else 
+#define handle_illegal_command2_mi(return_code, command1) \
+    0 
+#endif
+
+#ifdef RAINY_DAY 
+#define handle_illegal_command2_m(return_code, command1) \
+    receive_m(command1); \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else 
+#define handle_illegal_command2_m(return_code, command1) \
+    0
+#endif
+
+#ifdef RAINY_DAY 
+#define handle_illegal_command3_m(return_code, command1, command2) \
+    if \
+    :: receive_m(command1); \
+    :: receive_m(command2); \
+    fi; \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else 
+#define handle_illegal_command3_m(return_code, command1, command2) \
+0
+#endif
+
+#ifdef RAINY_DAY 
+#define handle_illegal_command4_m(return_code, command1, command2, command3) \
+    if \
+    :: receive_m(command1); \
+    :: receive_m(command2); \
+    :: receive_m(command3); \
+    fi; \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else 
+#define handle_illegal_command4_m(return_code, command1, command2, command3) \
+0
+#endif
+
+#ifdef RAINY_DAY 
+#define handle_illegal_command5_m(return_code, command1, command2, command3, command4) \
+    if \
+    :: receive_m(command1); \
+    :: receive_m(command2); \
+    :: receive_m(command3); \
+    :: receive_m(command4); \
+    fi; \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else 
+#define handle_illegal_command5_m(return_code, command1, command2, command3, command4) \
+0
+#endif
+
+#ifdef RAINY_DAY 
+#define handle_illegal_command6_m(return_code, command1, command2, command3, \
+                                 command4, command5) \
+    if \
+    :: receive_m(command1); \
+    :: receive_m(command2); \
+    :: receive_m(command3); \
+    :: receive_m(command4); \
+    :: receive_m(command5); \
+    fi; \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else 
+#define handle_illegal_command6_m(return_code, command1, command2, command3, \
+                                    command4, command5) \
+0
+#endif
+
+#ifdef RAINY_DAY 
+#define handle_illegal_command7_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6) \
+    if \
+    :: receive_m(command1); \
+    :: receive_m(command2); \
+    :: receive_m(command3); \
+    :: receive_m(command4); \
+    :: receive_m(command5); \
+    :: receive_m(command6); \
+    fi; \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else 
+#define handle_illegal_command7_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6) \
+0
+#endif
+
+#ifdef RAINY_DAY 
+#define handle_illegal_command8_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6, command7) \
+    if \
+    :: receive_m(command1); \
+    :: receive_m(command2); \
+    :: receive_m(command3); \
+    :: receive_m(command4); \
+    :: receive_m(command5); \
+    :: receive_m(command6); \
+    :: receive_m(command7); \
+    fi; \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else 
+#define handle_illegal_command8_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6, command7) \
+0
+#endif
+
+#ifdef RAINY_DAY 
+#define handle_illegal_command9_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6, command7, \
+                                    command8) \
+    if \
+    :: receive_m(command1); \
+    :: receive_m(command2); \
+    :: receive_m(command3); \
+    :: receive_m(command4); \
+    :: receive_m(command5); \
+    :: receive_m(command6); \
+    :: receive_m(command7); \
+    :: receive_m(command8); \
+    fi; \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else 
+#define handle_illegal_command9_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6, command7, \
+                                    command8) \
+0
+#endif
+
+#ifdef RAINY_DAY
+#define handle_illegal_command12_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6, command7, \
+                                    command8, command9, command10, command11) \
+    if \
+    :: receive_m(command1); \
+    :: receive_m(command2); \
+    :: receive_m(command3); \
+    :: receive_m(command4); \
+    :: receive_m(command5); \
+    :: receive_m(command6); \
+    :: receive_m(command7); \
+    :: receive_m(command8); \
+    :: receive_m(command9); \
+    :: receive_m(command10); \
+    :: receive_m(command11); \
+    fi; \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else
+#define handle_illegal_command12_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6, command7, \
+                                    command8, command9, command10, command11) \
+0
+#endif
+
+#ifdef RAINY_DAY
+#define handle_illegal_command13_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6, command7, \
+                                    command8, command9, command10, command11, \
+                                    command12) \
+    if \
+    :: receive_m(command1); \
+    :: receive_m(command2); \
+    :: receive_m(command3); \
+    :: receive_m(command4); \
+    :: receive_m(command5); \
+    :: receive_m(command6); \
+    :: receive_m(command7); \
+    :: receive_m(command8); \
+    :: receive_m(command9); \
+    :: receive_m(command10); \
+    :: receive_m(command11); \
+    :: receive_m(command12); \
+    fi; \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else
+#define handle_illegal_command13_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6, command7, \
+                                    command8, command9, command10, command11, \
+                                    command12) \
+0
+#endif
+
+#ifdef RAINY_DAY
+#define handle_illegal_command14_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6, command7, \
+                                    command8, command9, command10, command11, \
+                                    command12, command13) \
+    if \
+    :: receive_m(command1); \
+    :: receive_m(command2); \
+    :: receive_m(command3); \
+    :: receive_m(command4); \
+    :: receive_m(command5); \
+    :: receive_m(command6); \
+    :: receive_m(command7); \
+    :: receive_m(command8); \
+    :: receive_m(command9); \
+    :: receive_m(command10); \
+    :: receive_m(command11); \
+    :: receive_m(command12); \
+    :: receive_m(command13); \
+    fi; \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else
+#define handle_illegal_command14_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6, command7, \
+                                    command8, command9, command10, command11, \
+                                    command12, command13) \
+0
+#endif
+
+#ifdef RAINY_DAY
+#define handle_illegal_command15_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6, command7, \
+                                    command8, command9, command10, command11, \
+                                    command12, command13, command14) \
+    if \
+    :: receive_m(command1); \
+    :: receive_m(command2); \
+    :: receive_m(command3); \
+    :: receive_m(command4); \
+    :: receive_m(command5); \
+    :: receive_m(command6); \
+    :: receive_m(command7); \
+    :: receive_m(command8); \
+    :: receive_m(command9); \
+    :: receive_m(command10); \
+    :: receive_m(command11); \
+    :: receive_m(command12); \
+    :: receive_m(command13); \
+    :: receive_m(command14); \
+    fi; \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else
+#define handle_illegal_command15_m(return_code, command1, command2, command3, \
+                                    command4, command5, command6, command7, \
+                                    command8, command9, command10, command11, \
+                                    command12, command13, command14) \
+0
+#endif
+
+#ifdef EXPLICIT_ERROR 
+#define handle_error_command2_m(return_code, command1) \
+    receive_m(command1); \
+    if \
+    :: send_s(return_code); \
+    :: send_s(C500_UNKNOWN_COMMAND); \
+    :: send_s(C501_SYNTAX_ERROR); \
+    :: handle_general_errors() \
+    fi;
+#else 
+#define handle_error_command2_m(return_code, command1) \
+0
+#endif
+
+// Read POS variables
+// TODO These pos variables need to be added to the manual script
+//    receive_mm(GET, SI_SOFTW);\
+//    send_sm(C210_VAR_RETURN, SI_SOFTW); \
+//    receive_mm(GET, SI_SYSID); \
+//    send_sm(C210_VAR_RETURN, SI_SYSID); \
+//    receive_mm(GET, LC_SEPCH); \
+//    send_sm(C210_VAR_RETURN, LC_SEPCH); \
+//    receive_mm(GET, MS_BCPFX); \
+//    send_sm(C210_VAR_RETURN, MS_BCPFX);
+
+#define handle_preamble_cr_vars() \
+    receive_mm(GET, SI_MODEL);\
+    send_sm(C210_VAR_RETURN, SI_MODEL); \
+    receive_mm(GET, SI_SCRP); \
+    send_sm(C210_VAR_RETURN, SI_SCRP); \
+    receive_mm(GET, LC_CNTRY); \
+    send_sm(C210_VAR_RETURN, LC_CNTRY); \
+    receive_mm(GET, LC_CURCY); \
+    send_sm(C210_VAR_RETURN, LC_CURCY); \
+    receive_mm(GET, LC_FRACT); \
+    send_sm(C210_VAR_RETURN, LC_FRACT); \
+    receive_mm(GET, TC_BANK); \
+    send_sm(C210_VAR_RETURN, TC_BANK); \
+    receive_mm(GET, TC_BANK2); \
+    send_sm(C210_VAR_RETURN, TC_BANK2); \
+    receive_mm(GET, TC_CASH); \
+    send_sm(C210_VAR_RETURN, TC_CASH); \
+    receive_mm(GET, TC_STORE); \
+    send_sm(C210_VAR_RETURN, TC_STORE); \
+    receive_mm(GET, TC_FLUSH); \
+    send_sm(C210_VAR_RETURN, TC_FLUSH); \
+    receive_mm(GET, PC_CR); \
+    send_sm(C210_VAR_RETURN, PC_CR); \
+    receive_mm(GET, PC_SPU); \
+    send_sm(C210_VAR_RETURN, PC_SPU); \
+    receive_mm(GET, MS_SRBC); \
+    send_sm(C210_VAR_RETURN, MS_SRBC); 
+
+#ifdef CONF_FLUSH 
+#define trans_reset() \
+    receive_mm(TRANS, TM_FLUSH); \
+    send_s(C240_TRANS_SUCCEEDED); 
+#else
+#define trans_reset() \
+    receive_mm(TRANS, TM_BANK); \
+    send_s(C240_TRANS_SUCCEEDED); 
+#endif
+
+// Guide system to SS_OFF state
+// FIXME this preamble assumes that TM_FLUSH is supported
+
+#define handle_preamble_cr_state() \
+    receive_mm(GET, CS_SIGN); \
+    if \
+    :: send_smm(C210_VAR_RETURN, CS_SIGN, SS_OFF); \
+    :: send_smm(C210_VAR_RETURN, CS_SIGN, SS_HALT); \
+    :: send_smm(C210_VAR_RETURN, CS_SIGN, SS_ON); \
+        receive_mm(GET, CS_ACCNT); \
+        if \
+        :: send_smm(C210_VAR_RETURN, CS_ACCNT, AS_IDLE); \
+            receive_m(SIGNOFF); \
+            send_s(C250_SIGNEDOFF); \
+            goto ss_off; \
+        :: send_smm(C210_VAR_RETURN, CS_ACCNT, AS_OPEN); \
+            receive_m(CLOSE); \
+            handle_descriptions(); \
+            send_s(C230_ACCOUNT_CLOSED); \
+            trans_reset(); \
+            receive_m(IDLE); \
+            send_s(C233_ACCOUNT_IDLED); \
+            receive_m(SIGNOFF); \
+            send_s(C250_SIGNEDOFF); \
+            goto ss_off; \
+        :: send_smm(C210_VAR_RETURN, CS_ACCNT, AS_CLOSED); \
+            trans_reset(); \
+            receive_m(IDLE); \
+            send_s(C233_ACCOUNT_IDLED); \
+            receive_m(SIGNOFF); \
+            send_s(C250_SIGNEDOFF); \
+            goto ss_off; \
+        :: send_smm(C210_VAR_RETURN, CS_ACCNT, AS_TRANSING); \
+            send_s(C240_TRANS_SUCCEEDED); \
+            receive_m(IDLE); \
+            send_s(C233_ACCOUNT_IDLED); \
+            receive_m(SIGNOFF); \
+            send_s(C250_SIGNEDOFF); \
+            goto ss_off; \
+        :: send_smm(C210_VAR_RETURN, CS_ACCNT, AS_ENDING); \
+            receive_m(IDLE); \
+            send_s(C233_ACCOUNT_IDLED); \
+            receive_m(SIGNOFF); \
+            send_s(C250_SIGNEDOFF); \
+            goto ss_off; \
+        :: handle_general_errors(); \
+        fi; \
+    :: handle_general_errors(); \
+    fi;
+

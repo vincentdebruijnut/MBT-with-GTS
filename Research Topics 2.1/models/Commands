@@ -1,0 +1,55 @@
+List of actions which are not in the addendum:
+
+QUIT
+SIGNON_EXIST
+SIGNON_NEXIST
+SIGNOFF
+GET
+OPEN
+OPEN_EXIST
+OPEN_NEXIST
+CLOSE
+ARTID_EXIST 
+ARTID_NEXIST
+ARTREG
+ARTREG_EXIST
+ARTREG_NEXIST
+TRANS
+PRINT_EXIST,
+PRINT_NEXIST
+RECEIPT
+IDLE
+RESUME
+
+Only:
+TRANS TM_BANK,
+      TM_CASH,
+      TM_STORE,
+      TM_FLUSH,
+Take care of GET var
+Check the NEXIST stuff
+Articles
+
+
+
+List of actions which are only in the addendum:
+
+ARTREG_REFUND,
+ARTREG_LOYALTY
+STAMPREG
+ARTRET_EXIST
+ARTRET_NEXIST
+ENDTOT
+RHCOPY
+RHCOPY_EXIST
+RHCOPY_NEXIST
+
+Only here:
+TRANS    TM_BANK2,
+TRANS    TM_FLUSH:<id>
+TRANS    <tr_method>:<amount>
+OPEN [<account>|<barcode>]?
+ARTREG no barcode?
+GET AI_STAMP
+GET TC_BANK2
+GET TC_CASH

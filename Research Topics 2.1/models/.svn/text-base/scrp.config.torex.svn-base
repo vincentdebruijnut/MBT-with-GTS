@@ -1,0 +1,12 @@
+#define CONF_BANK
+#undef ADD_TM_BANK2
+#undef ADD_CHM_SUPPORT
+#undef CONF_STORE
+#define CONF_FLUSH
+#undef CONF_SPU
+#undef ADD_RHCOPY_SUPPORT
+#define ADD_ARTRET
+#undef ADD_LOYALTY_POINTS
+#undef ADD_TM_FLUSH_WITH_ID
+#define ADD_EXT_ARTID_RSP
+#undef REFUND

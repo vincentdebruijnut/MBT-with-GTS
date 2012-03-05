@@ -1,0 +1,9 @@
+This directory contains various different models / model configurations.
+For them to work together with TestManager please stick to these conventions:
+- compilation can be done with "mkprimer --config pos_spex.cfg pos.spex"
+- the torx configuration is in pos.if
+
+The Rake file contains a task that compiles the models in all sub dirs that
+follow these conversions. Execute it by:
+
+  rake tm:compile

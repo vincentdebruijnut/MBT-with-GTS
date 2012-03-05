@@ -1,0 +1,75 @@
+\documentclass[a4paper]{report}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{a4wide}
+\usepackage{wrapfig}
+\usepackage{subfig}
+\usepackage{groove2tikz}
+%\usepackage{pdftex}
+\usepackage{epstopdf}
+\usepackage[all]{xy}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{array}
+
+\graphicspath{{./img/}}
+%\renewcommand*\familydefault{\sfdefault}
+
+\hypersetup{pdfborder = {0 0 0 0}}
+
+\begin{document}
+	\title{\textbf{Model-Based Testing with Graph Transformation Systems}}
+	\author{Vincent de Bruijn}
+	\date{\today}
+	\maketitle
+	
+	\input{./tex/abstract.tex}
+	
+	\newpage
+	\tableofcontents
+  \newpage
+  
+  \newpage
+	\chapter{Introduction}
+	\newpage
+	%\input{./tex/introduction.tex}
+	%\input{./tex/model_based_testing.tex}
+	%\input{./tex/symbolic.tex}
+	%\input{./tex/graph_transform.tex}
+	%\input{./tex/tooling.tex}
+	%\input{./tex/research_methods.tex}
+	
+	\newpage
+	\chapter{Design}
+	\newpage
+	
+	\input{./tex/gts-to-sts-transformation.tex}
+	\input{./tex/exploration-strategy.tex}
+	\input{./tex/partial-matching.tex}
+	\input{./tex/reachability.tex}
+	\input{./tex/pre-testing-vs-on-the-fly-transformation.tex}
+	
+	\newpage
+	\chapter{Validation}
+	\newpage
+	
+	\input{./tex/case-studies.tex}
+	\input{./tex/benchmarks.tex}
+	
+	\newpage
+	\chapter{Conclusion}
+	\newpage
+	
+	\input{./tex/summary.tex}
+	\input{./tex/conclusion.tex}
+	\input{./tex/future-work.tex}
+
+  \newpage
+	\bibliography{bib/bibliography}{}
+	\bibliographystyle{plain}
+	
+	\appendix
+  \newpage
+\end{document}
