@@ -1,0 +1,83 @@
+\section{Graph Transformation Systems}\label{sec:graph}
+A Graph Transformation System is composed of a start graph and a set of transition rules. The start graph describes the system in its initial state. The transition rules apply changes to the graph, creating a new graph which describes the system in its new state. 
+
+\subsection{Graphs \& Morphisms}
+\begin{definition}
+A graph is a tuple $\langle L, N, E\rangle$, where:
+\begin{itemize}
+  \item $L$ is a set of labels
+  \item $N$ is a set of nodes, where each $n \in N$ has a label $l \in L$
+  \item $E$ is a set of edges, where each $e \in E$ has a label $l \in L$ and nodes $source,target \in N$
+\end{itemize}
+\end{definition}
+
+%A graph $H$ is a \textit{subgraph} of graph $G$, denoted $H \subseteq G$, if the node and edge sets of $H$ are subsets of the node and edge sets of $G$, where nodes are considered equal if their labels are equal and edges are considered equal if their labels and their source and target nodes are equal.
+
+A graph $H$ has an \textit{occurrence} in a graph $G$, denoted by $H \rightarrow G$, if there is a mapping $occ$ which maps the nodes and the edges of $H$ to the nodes and the edges of $G$ respectively. Such a mapping is called a \textit{morphism}.
+
+\subsection{Graph transformation rules}
+\begin{definition}
+A transformation rule is a tuple $\langle \mathit{LHS}, \mathit{NAC}, \mathit{RHS}, \mathit{Map}\rangle$, where:
+\begin{itemize}
+  \item $\mathit{LHS}$ is a graph representing the left-hand side of the rule
+  \item $\mathit{NAC}$ is a set of graphs representing the negative application conditions
+  \item $\mathit{RHS}$ is a graph representing the right-hand side of the rule
+  \item $\mathit{M}$ are (partial) morphisms of elements in $\mathit{LHS}$ to elements in $\mathit{RHS}$ and each $n \in \mathit{NAC}$
+\end{itemize}
+\end{definition}
+
+%Nodes and edges in the $\mathit{LHS}$ graph have a mapping $\mathit{Map}$ to nodes and edges in the $\mathit{RHS}$ graph. This mapping is not defined formally, as this is out of the scope of this report.\marginpar{ik kan de mapping ook onderdeel maken van de rule, dan 'bestaat' deze gewoon} One property of the mapping is that if an element in $\mathit{LHS}$ maps to an element in $\mathit{RHS}$, it must hold that their labels are the same.
+
+A rule $R$ is applicable on a graph $G$ if its $\mathit{LHS}$ has an occurrence in $G$ and none of the graphs in its $\mathit{NAC}$ have an occurrence in $G$. After the rule application, all elements in $\mathit{LHS}$ not part of $\mathit{Map}$ are removed from $G$ and all elements in $\mathit{RHS}$ not part of $\mathit{Map}$ are added to $G$. All elements in $\mathit{Map}$ are kept.
+
+%the occurrence of $\mathit{LHS}$ is removed in $G$. This leaves \textit{dangling} edges, which are edges where the one of the source or target nodes is removed from $G$ and one is kept. The label of the removed node is remembered on the dangling edge. The $\mathit{RHS}$ of $R$ is added to $G$, such that each dangling edge is connected to a node in $\mathit{RHS}$ with the same label as its remembered node label. If such a node does not exist, the dangling edge is removed.
+
+\subsection{Graph Grammars}
+Now Graph Grammars can be defined.
+\begin{definition}
+A Graph Grammar is a tuple $\langle G, R\rangle$, where:
+\begin{itemize}
+  \item $G$ is a graph of the start state
+  \item $R$ is a set of transformation rules
+\end{itemize}
+\end{definition}
+
+\subsection{Graph Transition Systems}
+By applying one of the transformation rules on the graph of the start state, a new graph state is explored. These two graph states are connected by a \textit{rule transition}, meaning the application of the rule on the start state yielding the new state. This structure resembles that of an LTS; by repeatedly applying all applicable transformation rules to each graph state until no new graph states can be explored, a transition system of graph states and rule transitions is found. This is called the \textit{Graph Transition System} (GTS) of the Graph Grammar. The rule transitions are labelled with a unique identifier of the rule, such as the name of the rule. This entails that each transition derived from the same rule, has the same label. GTSs resemble LTSs, as can be seen by the following definition.
+
+\begin{definition}
+A graph transition system is a 4-tuple	$\langle S, L, T, q0\rangle$, where:
+\begin{itemize}
+\item $S$ is a finite, non-empty set of graph states
+\item $L$ is a finite set of labels\marginpar{labels can have parameters}
+\item $T \in S \times (L \cup \{\tau\}) \times S$, with $\tau \notin L$, is the rule transition relation
+\item $s0 \in s$ is the initial graph state.
+\end{itemize}
+We write $s \xrightarrow{\mu}s'$ if there is a rule transition labelled $\mu$ from state s to state s', i.e., $(s, \mu, s') \in T$.
+\end{definition}
+
+\subsection{GTS to STS transformation}\marginpar{expand, check}
+This section describes the transformation of a GTS to an STS.
+
+For each graph state $s \in S$ create a location $l \in L$. The start location $l_0 \in L$ is the location created by the state $s0 \in S$. Make $\mathcal{V}$ an empty set and $\imath$ an empty mapping. For each label $l \in L$ create a gate $\lambda \in \Lambda$. Derive the parameters on the label $l$ using the GTS. For each parameter $p \in P$ create an interaction variable $i \in \mathcal{I}$ of the same type as $p$ and add $i$ to $param(\lambda)$. Set $arity(\lambda)$ to the number of parameters on the label. For each transition $t \in T$ create a switch relation $r \in \rightarrow$, where:
+\begin{itemize}
+  \item the source and the target locations of the switch relation are the locations created by the source and target states of the transition.
+  \item the gate of the switch relation is the gate created by the label on the transition.
+  \item for each $p \in P$ and $i \in \mathcal{I}$ created by $p$ create an $i = p$ expression. The guard of the switch relation is those expressions joined by the $\land$ operator.
+  \item create an empty update mapping for the switch relation.
+\end{itemize}
+
+An example of such a transformation is done using the GTS in Figure~\ref{fig:trafo_lts}. The basic STS resulting from the transformation is in Figure~\ref{fig:trafo_basic_sts}.
+
+\begin{figure}[h]
+  \begin{center}
+    \input{./img/trafo_basic_sts.tex}
+  \end{center}
+  \caption{The basic STS resulting from the transformation of the LTS in Figure~\ref{fig:trafo_lts}}
+  \label{fig:trafo_basic_sts}
+\end{figure}
+
+This basic STS maintains the behavior of the system.
+
+\subsection{Example}\label{sec:gts_example}
+\marginpar{put here example in line with the definitions above}

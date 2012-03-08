@@ -1,0 +1,71 @@
+\section{Symbolic Transition Systems}\label{sec:symbolic}
+Symbolic Transition Systems (STSs) are introduced by Frantzen et al.~\cite{Frantzen:Symbolic}.
+
+In this section, STSs are described which combine LTSs with data types. Among other tools, they are used in practice in ATM.
+
+An STS has \textit{locations} and \textit{switch relations}. If the STS represents a model of a software system, a location in the STS represents a state of the system, not including data values. A switch relation defines the transition from one location to another. The \textit{location variables} are a representation of the data values in the system. A switch relation has a \textit{gate}, which is a label representating the execution steps of the system. Gates also have \textit{interaction variables}, which are data values specific to the gate. Switch relations also have \textit{guards} and \textit{update mappings}. A guard is a boolean term, which disallows using the switch relation when the term evaluates to false. An update mapping is a mapping of location variables to an arithmetic term. After the system switches to a new location, the variables in the update mapping will have the value corresponding to the evaluation of the arithmetic term they map to. 
+
+\begin{definition}
+\marginpar{Boolean algebra definieren}
+We define $\mathcal{F}(\mathcal{T})$ to be a collection of boolean functions over a set of terms $\mathcal{T}$. These terms are variables and basic data types, such as integers, strings and arrays. 
+\end{definition}
+
+\begin{definition}
+We define $\mathcal{G}(\mathcal{T})$ to be a collection of arithmetic functions over a set of terms $\mathcal{T}$.
+\end{definition}
+
+\begin{definition}
+The definition of an STS that follows is based on the definition given by Frantzen et al.~\cite{Frantzen:Symbolic}. A Symbolic Transition System is a tuple $\langle L,l_0,\mathcal{V},\imath,\mathcal{I},\Lambda,\rightarrow\rangle$, where:
+\begin{itemize}
+\item $L$ is a finite set of locations and $l_0 \in L$ is the initial location.
+\item $\mathcal{V}$ is a finite set of location variables.
+\item $\imath$ is a mapping $\{v \mapsto c \mid v \in \mathcal{V}, c \in \mathcal{C}\}$, representing the initialisation of the location variables.
+\item $\mathcal{I}$ is a set of interaction variables, disjoint from $\mathcal{V}$.
+\item $\Lambda$ is a finite set of gates. The unobservable gate is denoted $\tau (\tau \notin \Lambda)$; we write $\Lambda_\tau$ for $\Lambda \cup \{\tau\}$. The arity of a gate $\lambda\in\Lambda_\tau$, denoted $arity(\lambda)$, is a natural number. The parameters of a gate $\lambda\in\Lambda_\tau$, denoted $param(\lambda)$, are a tuple of length $arity(\lambda)$ of distinct interaction variables. We fix arity($\tau$) = 0, i.e. the unobservable gate has no interaction variables.
+\item $\rightarrow \subseteq L \times \Lambda_\tau \times \mathcal{F}(\mathcal{V} \cup \mathcal{I} \cup \mathcal{C}) \times \{v \mapsto c \mid v \in \mathcal{V}, c \in \mathcal{G}(\mathcal{V} \cup \mathcal{I} \cup \mathcal{C})\} \times L$, is the switch relation. We write $l\xrightarrow{\lambda,\phi,\rho}l'$ instead of $(l,\lambda,\phi,\rho,l')\in\rightarrow$, where $\phi$ is referred to as the guard and $\rho$ as the update mapping. We require $var(\phi) \cup var(\rho) \subseteq \mathcal{V} \cup param(\lambda)$, where $var$ is the collection of the variables used in the given guard or update mapping.
+\end{itemize}
+\end{definition}
+
+An IOSTS can now easily be defined. The same difference between LTSs and IOTSs applies, namely each gate in an IOSTS has a type, 'input' or 'output'. As with IOTSs, each gate is preceded by a '?' or '!' to indicate whether it is an input or an output respectively.
+
+\subsection{IOSTS example}\label{sec:sts_example}
+In Figure~\ref{fig:example_sts} the IOSTS of a simple board game is shown, where two players consecutively throw a die and move along four squares. The 'init' switch relation is a graphical representation of the variable initialization $\imath$. The defining tuple of the IOSTS is:
+
+$\langle\{throw, move\},throw,\{T, P, D\},\{T \mapsto 0, P \mapsto [0, 2], D \mapsto 0\},\{d, p, l\},\{throw?, move!\},\\
+\{throw\xrightarrow{throw?, 1 <= d <= 6, D \mapsto d}move, move\xrightarrow{move!, T=p \land l=(P[p]+D)\%4, P[p] \mapsto l, T \mapsto p\%2}throw\}\rangle$
+
+The variables $T, P$ and $D$ are the location variables symbolizing the player's turn, the positions of the players and the number of the die thrown respectively. The output gate $move!$ has $param = \langle p, l\rangle$ symbolizing which player moves to which location. The input gate $throw?$ has $param = \langle d\rangle$ symbolizing which number is thrown by the die. The switch relation with gate $throw?$ has the restriction that the number of the die thrown is between one and six and the update sets the location variable $D$ to the value of interaction variable $d$. The switch relations with gate $move!$ have the restriction that it must be the turn of the player moving and that the new location of the player is the number of steps ahead as thrown by the die. The update mapping sets the location of the player to the correct value and passes the turn to the next player. In Figure~\ref{fig:example_sts} the gates, guards and updates are separated by pipe symbols '|' respectively.
+
+\begin{figure}[h]
+  \begin{center}
+    \input{./img/sts_boardgame_1.tex}
+  \end{center}
+  \caption{The STS of a board game example}
+  \label{fig:example_sts}
+\end{figure}
+
+\subsection{STS to LTS transformation}\label{sec:sts_lts_trafo}
+There exists a transformation of an STS to an LTS. This transformation is explained in the next paragraph and then illustrated by an example.
+
+Consider an STS $S$ and its transformation LTS $L$. A mapping between the locations, switch relations and variables of $S$ and the states and transitions of $L$ is given, representing the first step of the transformation. The mapping is found by:
+\begin{itemize}
+  \item The unique combination of a location and a tuple of concrete values for each location variable in $S$ maps to a state in $L$. 
+  \item The unique combination of a switch relation and a tuple of concrete values for each interaction variable in $S$ maps to a transition in $L$.
+\end{itemize}
+Finding the topology of $L$ is the next step of the transformation. For a switch relation $r$ from location $A$ to location $B$, tuples of concrete values for the location variables $v_l$ and interaction variables $v_i$ and a mapping of $A$ + $v_l$ to a state $s$, $s$ is the source state of a transition $t$, if the guard of $r$ evaluates to true for $v_l$ and $v_i$. $v_u$ is the tuple of concrete values of the location variables after the update mapping of $r$ is done. Then, the target state $s'$ of $t$ is the state mapped by $B$ + $v_u$. The label of $t$ is the gate of $r$ + a textual representation of $v_i$. Applying this rule for the topology to all locations, switch relations and concrete values for the variables, results in $L$. The start state $q0$ of $L$ is the state mapped by $l_0$ and $\imath$ of $S$. All states not reachable from $q0$ are removed from $L$. When the range of the variables in an STS is considered to be finite, the transformation is always possible to an LTS with finite number of states.
+
+An example of this transformation is shown in Figure~\ref{fig:example_trafo}. 
+
+\begin{figure}[h]\marginpar{parameters on labels of lts?}
+  \begin{center}
+    \subfloat[The STS]{\label{fig:trafo_sts}\input{./img/trafo_sts.tex}}\hspace{20px}
+    \subfloat[The LTS]{\label{fig:trafo_lts}\input{./img/trafo_lts.tex}}
+  \end{center}
+  \caption{An example of a transformation of an STS to an LTS}
+  \label{fig:example_trafo}
+\end{figure}
+
+\subsection{Coverage}\label{sec:sts_coverage}
+The simplest metric to describe the coverage of an STS is the location and switch-relation coverage, which express the percentage of locations and switch relations tested in the test run. Measuring state and transition coverage of an STS is possible using the LTS resulting from the STS transformation. However, this metric is not always useful, because the number of states and transitions in the LTS depend on the number of unique combinations of concrete values of the variables in the STS. This is potentially very large. For example, when the guards of the switch relations in Figure~\ref{fig:trafo_sts} are removed, the transformation leads to an LTS with a state and transition for each possible value of an integer. It is often unfeasable to test every data value in the STS. The most interesting data values to test are determined by \textit{boundary-value analysis} and \textit{equivalence partitioning}\marginpar{er moet hier nog een verwijzing bij}. The equivalence partitions and boundaries of data values are determined by the guards of the switch relations.
+
+\textit{Data coverage} expresses the percentage of data tested in the test run, considering data to be similar if located in the same partition and a better representative of the partition if located close to the partition boundary. These properties of the tested data affect the data coverage percentage.

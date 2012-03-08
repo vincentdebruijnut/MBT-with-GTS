@@ -1,0 +1,133 @@
+\begin{thebibliography}{10}
+
+\bibitem{Andries1999}
+Marc Andries, Gregor Engels, Annegret Habel, Berthold Hoffmann, Hans-Jörg
+  Kreowski, Sabine Kuske, Detlef Plump, Andy Schürr, and Gabriele Taentzer.
+\newblock Graph transformation for specification and programming.
+\newblock {\em Science of Computer Programming}, 34(1):1 -- 54, 1999.
+
+\bibitem{Belinfante:JTorX}
+Axel Belinfante.
+\newblock Jtorx: A tool for on-line model-driven test derivation and execution.
+\newblock In Javier Esparza and Rupak Majumdar, editors, {\em Tools and
+  Algorithms for the Construction and Analysis of Systems}, volume 6015 of {\em
+  Lecture Notes in Computer Science}, pages 266--270. Springer Berlin /
+  Heidelberg, 2010.
+
+\bibitem{brinksma:testing}
+Ed~Brinksma and Jan Tretmans.
+\newblock Testing transition systems: An annotated bibliography.
+\newblock In Franck Cassez, Claude Jard, Brigitte Rozoy, and Mark Ryan,
+  editors, {\em Modeling and Verification of Parallel Processes}, volume 2067
+  of {\em Lecture Notes in Computer Science}, pages 187--195. Springer Berlin /
+  Heidelberg, 2001.
+\newblock 10.1007/3-540-45510-8\_9.
+
+\bibitem{clarke:STG}
+Duncan Clarke, Thierry J$\acute{e}$ron, Vlad Rusu, and Elena Zinovieva.
+\newblock Stg: A symbolic test generation tool.
+\newblock In Joost-Pieter Katoen and Perdita Stevens, editors, {\em Tools and
+  Algorithms for the Construction and Analysis of Systems}, volume 2280 of {\em
+  Lecture Notes in Computer Science}, pages 151--173. Springer Berlin /
+  Heidelberg, 2002.
+\newblock 10.1007/3-540-46002-0\_34.
+
+\bibitem{Ghamarian:GROOVE}
+A.~H. {Ghamarian}, M.~J. {de Mol}, A.~{Rensink}, E.~{Zambon}, and M.~V.
+  {Zimakova}.
+\newblock Modelling and analysis using groove.
+\newblock {\em International journal on software tools for technology
+  transfer}, online pre-publication, March 2011.
+
+\bibitem{Hasan:testing}
+Hasan and Ural.
+\newblock Formal methods for test sequence generation.
+\newblock {\em Computer Communications}, 15(5):311 -- 325, 1992.
+
+\bibitem{Heckel2006187}
+R.~Heckel.
+\newblock Graph transformation in a nutshell.
+\newblock {\em Electronic Notes in Theoretical Computer Science}, 148(1 SPEC.
+  ISS.):187--198, 2006.
+\newblock cited By (since 1996) 16.
+
+\bibitem{Frantzen:Symbolic}
+Tim A.C.~Willemse Lars~Frantzen, Jan~Tretmans.
+\newblock Test generation based of symbolic specifcations.
+\newblock Technical report, Nijmegen Institute for Computing and Information
+  Sciences (NIII), 2005.
+
+\bibitem{Lee:testing}
+D.~Lee and M.~Yannakakis.
+\newblock Principles and methods of testing finite state machines-a survey.
+\newblock {\em Proceedings of the IEEE}, 84(8):1090 --1123, aug 1996.
+
+\bibitem{Blackburn:testing}
+R.~Busser M.~Blackburn and A.~Nauman.
+\newblock Why model-based test automation is diﬀerent and what you should
+  know to get started.
+\newblock {\em International Conference on Practical Software Quality and
+  Testing}, 2004.
+
+\bibitem{Broy:ModelBasedTesting}
+Joost-Pieter~Katoen Manfred~Broy, Bengt~Jonsson and Alexander Pretschner.
+\newblock {\em Model-Based Testing of Reactive Systems}.
+\newblock Springer-Verlag Berlin Heidelberg, 2005.
+
+\bibitem{McCabe:testing}
+Thomas~J. McCabe.
+\newblock Structured testing: A software testing methodology using the
+  cyclomatic complexity metric, 1982.
+\newblock {\em National Bureau of Standards, Special Publication}, 1982.
+
+\bibitem{McConnell:testing}
+Steve McConnell.
+\newblock Software quality at top speed.
+\newblock {\em Softw. Dev.}, 4:38--42, August 1996.
+
+\bibitem{Nachmanson:testing}
+Lev Nachmanson, Margus Veanes, Wolfram Schulte, Nikolai Tillmann, and Wolfgang
+  Grieskamp.
+\newblock Optimal strategies for testing nondeterministic systems.
+\newblock {\em SIGSOFT Softw. Eng. Notes}, 29:55--64, July 2004.
+
+\bibitem{denicola:testing}
+R.~De Nicola and M.C.B. Hennessy.
+\newblock Testing equivalences for processes.
+\newblock {\em Theoretical Computer Science}, 34(1-2):83 -- 133, 1984.
+
+\bibitem{Pol:testing}
+Martin Pol.
+\newblock {\em Testen volgens Tmap (in dutch, Testing according to Tmap)}.
+\newblock Uitgeverij Tutein Nolthenius, 1995.
+
+\bibitem{rusu:symbolic}
+Vlad Rusu, Lydie du~Bousquet, and Thierry J$\acute{e}$ron.
+\newblock An approach to symbolic test generation.
+\newblock In Wolfgang Grieskamp, Thomas Santen, and Bill Stoddart, editors,
+  {\em Integrated Formal Methods}, volume 1945 of {\em Lecture Notes in
+  Computer Science}, pages 338--357. Springer Berlin / Heidelberg, 2000.
+\newblock 10.1007/3-540-40911-4\_20.
+
+\bibitem{Tretmans:TorX}
+G.~J. {Tretmans} and H.~{Brinksma}.
+\newblock Torx: Automated model-based testing.
+\newblock In A.~{Hartman} and K.~{Dussa-Ziegler}, editors, {\em First European
+  Conference on Model-Driven Software Engineering, Nuremberg, Germany}, pages
+  31--43, December 2003.
+
+\bibitem{Tretmans:conformancetesting}
+Jan Tretmans.
+\newblock {\em A Formal Approach to Conformance Testing}.
+\newblock PhD thesis, University of Twente, Enschede, The Netherlands, 1992.
+
+\bibitem{Tretmans:testgeneration}
+Jan Tretmans.
+\newblock Test generation with inputs, outputs, and quiescence.
+\newblock In Tiziana Margaria and Bernhard Steffen, editors, {\em Tools and
+  Algorithms for the Construction and Analysis of Systems}, volume 1055 of {\em
+  Lecture Notes in Computer Science}, pages 127--146. Springer Berlin /
+  Heidelberg, 1996.
+\newblock 10.1007/3-540-61042-1\_42.
+
+\end{thebibliography}

@@ -1,0 +1,33 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [2][-]{subsection.1.1}{Research setup}{section.1}
+\BOOKMARK [2][-]{subsection.1.2}{Research questions}{section.1}
+\BOOKMARK [2][-]{subsection.1.3}{Structure of the report}{section.1}
+\BOOKMARK [1][-]{section.2}{Model-based Testing}{}
+\BOOKMARK [2][-]{subsection.2.1}{Labelled Transition Systems}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{Input-Output Transition Systems}{section.2}
+\BOOKMARK [2][-]{subsection.2.3}{Coverage}{section.2}
+\BOOKMARK [1][-]{section.3}{Symbolic Transition Systems}{}
+\BOOKMARK [2][-]{subsection.3.1}{STS Definition}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{IOSTS example}{section.3}
+\BOOKMARK [2][-]{subsection.3.3}{STS to LTS transformation}{section.3}
+\BOOKMARK [2][-]{subsection.3.4}{Coverage}{section.3}
+\BOOKMARK [1][-]{section.4}{Graph Transformation Systems}{}
+\BOOKMARK [2][-]{subsection.4.1}{Graphs \046 Morphisms}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{Graph Transformation rules}{section.4}
+\BOOKMARK [2][-]{subsection.4.3}{GTS Definition}{section.4}
+\BOOKMARK [2][-]{subsection.4.4}{Example}{section.4}
+\BOOKMARK [1][-]{section.5}{Tooling}{}
+\BOOKMARK [2][-]{subsection.5.1}{ATM}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{GROOVE}{section.5}
+\BOOKMARK [2][-]{subsection.5.3}{Comparison of the examples}{section.5}
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Comparison of behavior}{subsection.5.3}
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Comparison of Transition Systems}{subsection.5.3}
+\BOOKMARK [1][-]{section.6}{Research methods}{}
+\BOOKMARK [2][-]{subsection.6.1}{GRATiS Design}{section.6}
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Problems}{subsection.6.1}
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Coverage}{subsection.6.1}
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Initial design step: GRATiS-Min}{subsection.6.1}
+\BOOKMARK [2][-]{subsection.6.2}{Validation}{section.6}
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Case studies}{subsection.6.2}
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Objective criteria}{subsection.6.2}
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Subjective criteria}{subsection.6.2}
