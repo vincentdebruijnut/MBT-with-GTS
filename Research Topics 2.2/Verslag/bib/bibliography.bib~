@@ -61,7 +61,8 @@ author = "R. De Nicola and M.C.B. Hennessy"
    author = {Tretmans, Jan},
    institution = {University of Twente, Enschede, The Netherlands},
    title = {A Formal Approach to Conformance Testing},
-   year = {1992}
+   year = {1992},
+   school = {University of Twente, Enschede, The Netherlands}
 }
 
 @ARTICLE{lynch:ioautomata,

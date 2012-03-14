@@ -20,7 +20,7 @@
 \hypersetup{pdfborder = {0 0 0 0}}
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[subsection]
+\newtheorem{definition}{Definition}[section]
 
 \begin{document}
 	\title{\textbf{Model-Based Testing with Graph Grammars}}

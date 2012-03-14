@@ -54,9 +54,9 @@ Consider an STS $S$ and its transformation LTS $L$. A mapping between the locati
 \end{itemize}
 Finding the topology of $L$ is the next step of the transformation. For a switch relation $r$ from location $A$ to location $B$, tuples of concrete values for the location variables $v_l$ and interaction variables $v_i$ and a mapping of $A$ + $v_l$ to a state $s$, $s$ is the source state of a transition $t$, if the guard of $r$ evaluates to true for $v_l$ and $v_i$. $v_u$ is the tuple of concrete values of the location variables after the update mapping of $r$ is done. Then, the target state $s'$ of $t$ is the state mapped by $B$ + $v_u$. The label of $t$ is the gate of $r$ + a textual representation of $v_i$. Applying this rule for the topology to all locations, switch relations and concrete values for the variables, results in $L$. The start state $q0$ of $L$ is the state mapped by $l_0$ and $\imath$ of $S$. All states not reachable from $q0$ are removed from $L$. When the range of the variables in an STS is considered to be finite, the transformation is always possible to an LTS with finite number of states.
 
-An example of this transformation is shown in Figure~\ref{fig:example_trafo}. 
+An example of this transformation is shown in Figure~\ref{fig:example_trafo}. The transformation of a switch relation and concrete values to a transition is also called \textit{instantiating} the switch relation. Another term we will use for a transition is an \textit{instantiated switch relation}.
 
-\begin{figure}[h]
+\begin{figure}[h]\marginpar{parameters on labels of lts?}
   \begin{center}
     \subfloat[The STS]{\label{fig:trafo_sts}\input{./img/trafo_sts.tex}}\hspace{20px}
     \subfloat[The LTS]{\label{fig:trafo_lts}\input{./img/trafo_lts.tex}}
