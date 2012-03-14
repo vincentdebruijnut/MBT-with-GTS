@@ -101,6 +101,14 @@ Martin Pol.
 \newblock {\em Testen volgens Tmap (in dutch, Testing according to Tmap)}.
 \newblock Uitgeverij Tutein Nolthenius, 1995.
 
+\bibitem{Rensink2003a}
+A.~{Rensink}.
+\newblock Towards model checking graph grammars.
+\newblock In S.~{Gruner} and S.~L. {Presti}, editors, {\em Workshop on
+  Automated Verification of Critical Systems (AVoCS), Southampton, UK}, volume
+  DSSE-TR-2003-02 of {\em Technical Report}, pages 150--160, Southampton, 2003.
+  University of Southampton.
+
 \bibitem{rusu:symbolic}
 Vlad Rusu, Lydie du~Bousquet, and Thierry J$\acute{e}$ron.
 \newblock An approach to symbolic test generation.

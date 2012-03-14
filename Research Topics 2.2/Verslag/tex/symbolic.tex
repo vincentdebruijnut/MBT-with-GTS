@@ -56,14 +56,14 @@ Finding the topology of $L$ is the next step of the transformation. For a switch
 
 An example of this transformation is shown in Figure~\ref{fig:example_trafo}. The transformation of a switch relation and concrete values to a transition is also called \textit{instantiating} the switch relation. Another term we will use for a switch relation with a set of concrete data values is an \textit{instantiated switch relation}.
 
-\begin{figure}[h]\marginpar{parameters on labels of lts?}
+\begin{figure}[h]
   \begin{center}
     \subfloat[The STS]{\label{fig:trafo_sts}\input{./img/trafo_sts.tex}}\hspace{20px}
     \subfloat[The LTS]{\label{fig:trafo_lts}\input{./img/trafo_lts.tex}}
   \end{center}
   \caption{An example of a transformation of an STS to an LTS}
   \label{fig:example_trafo}
-\end{figure}
+\end{figure}\marginpar{parameters on labels of lts?}
 
 \subsection{Coverage}\label{sec:sts_coverage}
 The simplest metric to describe the coverage of an STS is the location and switch-relation coverage, which express the percentage of locations and switch relations tested in the test run. Measuring state and transition coverage of an STS is possible using the LTS resulting from the STS transformation. However, this metric is not always useful, because the number of states and transitions in the LTS depend on the number of unique combinations of concrete values of the variables in the STS. This is potentially very large. For example, when the guards of the switch relations in Figure~\ref{fig:trafo_sts} are removed, the transformation leads to an LTS with a state and transition for each possible value of an integer. It is often unfeasable to test every data value in the STS. The most interesting data values to test are determined by \textit{boundary-value analysis} and \textit{equivalence partitioning}\marginpar{er moet hier nog een verwijzing bij}. The equivalence partitions and boundaries of data values are determined by the guards of the switch relations.

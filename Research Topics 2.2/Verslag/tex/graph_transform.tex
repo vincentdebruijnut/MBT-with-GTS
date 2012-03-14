@@ -27,7 +27,7 @@ A transformation rule is a tuple $\langle \mathit{LHS}, \mathit{NAC}, \mathit{RH
 \end{itemize}
 \end{definition}
 
-A rule $R$ is applicable on a graph $G$ if its $\mathit{LHS}$ has an occurrence in $G$ and $\notexists n \in \mathit{NAC}$ such that $n$ has an occurence in $G$ and $\forall e \in \mathit{LHS}$, if $e$ has an image $i$ in $n$ and an image $j$ in $G$, then $j$ should be an image of $j$. After the rule application, all elements in $\mathit{LHS}$ not part of $\mathit{M_RHS}$, i.e. they do not have an image in $\mathit{RHS}$, are removed from $G$ and all elements in $\mathit{RHS}$ not part of $\mathit{M_RHS}$, i.e. they do not have a pre-image in $\mathit{LHS}$, are added to $G$.
+A rule $R$ is applicable on a graph $G$ if its $\mathit{LHS}$ has an occurrence in $G$ and $\not\ exists n \in \mathit{NAC}$ such that $n$ has an occurence in $G$ and $\forall e \in \mathit{LHS}$, if $e$ has an image $i$ in $n$ and an image $j$ in $G$, then $j$ should be an image of $j$. After the rule application, all elements in $\mathit{LHS}$ not part of $\mathit{M_RHS}$, i.e. they do not have an image in $\mathit{RHS}$, are removed from $G$ and all elements in $\mathit{RHS}$ not part of $\mathit{M_RHS}$, i.e. they do not have a pre-image in $\mathit{LHS}$, are added to $G$.
 
 \subsection{Graph Grammars}
 Now Graph Grammars can be defined.
@@ -50,8 +50,8 @@ A graph transition system is an 8-tuple	$\langle S, L, T, G, R, M_G, M_R, s0\ran
 \item $T \in S \times (L \cup \{\tau\}) \times S$, with $\tau \notin L$, is the rule transition relation
 \item $G$ is a set of graphs
 \item $R$ is a set of rules
-\item $M_G$ is a mapping $\forall s \in S . s \mapsto g \in G \land \notexists s' \in S . s \noteq s' \land s' \mapsto g \in M_G$
-\item $M_R$ is a mapping $\forall t \in T . t \mapsto r \in R \land \notexists t' \in T . t \noteq t' \land t' \mapsto r \in M_R$
+\item $M_G$ is a mapping $\forall s \in S . s \mapsto g \in G \land \not\exists s' \in S . s \neq s' \land s' \mapsto g \in M_G$
+\item $M_R$ is a mapping $\forall t \in T . t \mapsto r \in R \land \not\exists t' \in T . t \neq t' \land t' \mapsto r \in M_R$
 \item $s0 \in s$ is the initial graph state
 \end{itemize}
 We write $s \xrightarrow{\mu}s'$ if there is a rule transition labelled $\mu$ from state s to state s', i.e., $(s, \mu, s') \in T$.
