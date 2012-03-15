@@ -26,19 +26,6 @@ author = "R. De Nicola and M.C.B. Hennessy"
   publisher = "Springer-Verlag Berlin Heidelberg",
   year = 2005
 }
-
-@misc{Tretmans:IOCO,
-          volume = {3},
-          number = {TR-CTI},
-          author = {G.J. {Tretmans}},
-         address = {Enschede},
-           title = {Test Generation with Inputs, Outputs and Repetitive Quiescence},
-       publisher = {Centre for Telematics and Information Technology, University of Twente},
-         journal = {Software---Concepts and Tools},
-            year = {1996},
-             url = {http://doc.utwente.nl/65463/},
-        abstract = {This paper studies testing based on labelled transition systems, using the assumption that implementations communicate with their environment via inputs and outputs. Such implementations are formalized by restricting the class of transition systems to those systems that can always accept input actions, as in Input/Output Automata. Implementation relations, formalizing the notion of correctness of these implementations with respect to labelled transition system specifications, are defined analogous to the theories of testing equivalence and preorder, and refusal testing. A test generation algorithm is given which is proved to produce a sound and exhaustive test suite from a specification, i.e., a test suite that fully characterizes the set of correct implementations.}
-}
         
 @incollection {Tretmans:testgeneration,
    author = {Tretmans, Jan},
@@ -187,6 +174,33 @@ url={http://www.scopus.com/inward/record.url?eid=2-s2.0-0020257692&partnerID=40&
 source={Scopus}
 }
 
+@article{Zhu:coverage,
+ author = {Zhu, Hong and Hall, Patrick A. V. and May, John H. R.},
+ title = {Software unit test coverage and adequacy},
+ journal = {ACM Comput. Surv.},
+ issue_date = {Dec. 1997},
+ volume = {29},
+ number = {4},
+ month = dec,
+ year = {1997},
+ issn = {0360-0300},
+ pages = {366--427},
+ numpages = {62},
+ url = {http://doi.acm.org/10.1145/267580.267590},
+ doi = {10.1145/267580.267590},
+ acmid = {267590},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {comparing testing effectiveness, fault detection, software unit test, test adequacy criteria, test coverage, testing methods},
+} 
+
+@book{Huth:logic,
+ author = {M.R.A. Huth and M. Ryan},
+ title = {Logic in computer science: modelling and reasoning about systems},
+ publisher = {Cambridge University Press},
+ year = {2000}
+}
+
 @inproceedings{Tretmans:TorX,
           eprintid = {9475},
              month = {December},
@@ -267,6 +281,36 @@ source={Scopus}
 },
      international = {Yes},
               year = {2011}
+}
+
+@inproceedings{Rensink2003a,
+          eprintid = {6922},
+      official_url = {http://eprints.ecs.soton.ac.uk/7198/},
+            author = {A. {Rensink}},
+         num_pages = {11},
+            series = {Technical Report},
+        pres_types = {Talk},
+       ispublished = {Published},
+            editor = {S. {Gruner} and S. L. {Presti}},
+           address = {Southampton},
+         publisher = {University of Southampton},
+      howpublished = {http://eprints.eemcs.utwente.nl/6922/},
+            volume = {DSSE-TR-2003-02},
+          location = {Southampton, UK},
+        event_type = {Workshop},
+   research_groups = {EWI-SE: Software Engineering},
+         booktitle = {Workshop on Automated Verification of Critical Systems (AVoCS), Southampton, UK},
+          refereed = {Yes},
+  research_programs = {CTIT-ASI: A-services Internet},
+             title = {Towards model checking graph grammars},
+          abstract = {We sketch a setup in which transition systems are generated from graph grammars and
+subsequently checked for properties expressed in a temporal logic on graphs. We envisage this
+as part of an approach where graph grammars are used to express the behavioural semantics of
+object-oriented programs, thus enabling automatic verification of those programs.
+This paper describes work in progress.},
+     international = {Yes},
+              year = {2003},
+             pages = {150--160}
 }
 
 @ARTICLE{Heckel2006187,

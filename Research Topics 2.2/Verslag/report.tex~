@@ -6,7 +6,6 @@
 \usepackage{wrapfig}
 \usepackage{subfig}
 \usepackage{groove2tikz}
-%\usepackage{epstopdf}
 \usepackage[all]{xy}
 \usepackage{mathtools}
 \usepackage{amssymb}

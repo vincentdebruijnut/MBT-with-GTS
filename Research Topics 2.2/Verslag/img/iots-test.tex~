@@ -1,0 +1,3 @@
+$\xymatrix{
+    \bullet \ar[r]^{!50c} & \bullet \ar[r]^{\mathit{?coffee}} \ar[d]_{?tea} & {\mathit{pass}}\\
+    & {\mathit{fail}}}$
