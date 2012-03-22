@@ -14,14 +14,10 @@ Axel Belinfante.
   Lecture Notes in Computer Science}, pages 266--270. Springer Berlin /
   Heidelberg, 2010.
 
-\bibitem{brinksma:testing}
-Ed~Brinksma and Jan Tretmans.
-\newblock Testing transition systems: An annotated bibliography.
-\newblock In Franck Cassez, Claude Jard, Brigitte Rozoy, and Mark Ryan,
-  editors, {\em Modeling and Verification of Parallel Processes}, volume 2067
-  of {\em Lecture Notes in Computer Science}, pages 187--195. Springer Berlin /
-  Heidelberg, 2001.
-\newblock 10.1007/3-540-45510-8\_9.
+\bibitem{brinksma:testgeneration}
+E.~Brinksma.
+\newblock A theory for the derivation of tests.
+\newblock {\em Protocol Specification, Testing, and Verification VIII}, 1988.
 
 \bibitem{clarke:STG}
 Duncan Clarke, Thierry J$\acute{e}$ron, Vlad Rusu, and Elena Zinovieva.
@@ -50,6 +46,12 @@ R.~Heckel.
 \newblock {\em Electronic Notes in Theoretical Computer Science}, 148(1 SPEC.
   ISS.):187--198, 2006.
 \newblock cited By (since 1996) 16.
+
+\bibitem{Huth:logic}
+M.R.A. Huth and M.~Ryan.
+\newblock {\em Logic in computer science: modelling and reasoning about
+  systems}.
+\newblock Cambridge University Press, 2000.
 
 \bibitem{Frantzen:Symbolic}
 Tim A.C.~Willemse Lars~Frantzen, Jan~Tretmans.
@@ -85,6 +87,11 @@ Steve McConnell.
 \newblock Software quality at top speed.
 \newblock {\em Softw. Dev.}, 4:38--42, August 1996.
 
+\bibitem{Myers:2004}
+Glenford~J. Myers and Corey Sandler.
+\newblock {\em The Art of Software Testing}.
+\newblock John Wiley \& Sons, 2004.
+
 \bibitem{Nachmanson:testing}
 Lev Nachmanson, Margus Veanes, Wolfram Schulte, Nikolai Tillmann, and Wolfgang
   Grieskamp.
@@ -100,6 +107,13 @@ R.~De Nicola and M.C.B. Hennessy.
 Martin Pol.
 \newblock {\em Testen volgens Tmap (in dutch, Testing according to Tmap)}.
 \newblock Uitgeverij Tutein Nolthenius, 1995.
+
+\bibitem{Reid:partitioning}
+S.C. Reid.
+\newblock An empirical analysis of equivalence partitioning, boundary value
+  analysis and random testing.
+\newblock In {\em Software Metrics Symposium, 1997. Proceedings., Fourth
+  International}, pages 64 --73, nov 1997.
 
 \bibitem{Rensink2003a}
 A.~{Rensink}.
@@ -137,5 +151,10 @@ Jan Tretmans.
   Lecture Notes in Computer Science}, pages 127--146. Springer Berlin /
   Heidelberg, 1996.
 \newblock 10.1007/3-540-61042-1\_42.
+
+\bibitem{Zhu:coverage}
+Hong Zhu, Patrick A.~V. Hall, and John H.~R. May.
+\newblock Software unit test coverage and adequacy.
+\newblock {\em ACM Comput. Surv.}, 29(4):366--427, December 1997.
 
 \end{thebibliography}

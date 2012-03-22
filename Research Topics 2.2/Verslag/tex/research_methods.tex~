@@ -1,6 +1,6 @@
-\section{Research methods}\label{sec:research_methods}
+\section{Research Method}\label{sec:research_methods}
 
-\subsection{GRATiS Design}
+\subsection{GRATiS design}
 The specific method used to achieve the design goal is to use GROOVE as a replacement of the STS in ATM. Figure~\ref{fig:tooling} shows this graphically. The Rule Applier component now communicates with the Interface, which fulfills the role of STS Engine. The communication runs through interfaces on both tools, such that other tools are also able to communicate with the GROOVE component. The possible rule transitions are translated by the Interfaces to possible transitions for the Test Manager. The chosen transitions are translated back to rule transitions by the Interfaces.
 
 \begin{figure}[h]
@@ -23,34 +23,16 @@ ATM annotates the locations it has seen and the switch relations it has chosen i
 
 Also, as mentioned in section~\ref{sec:sts_coverage}, the calculation of data coverage for a test run will be implemented in GRATiS.
 
-\subsubsection{Initial design step: GRATiS-Min}
+\subsubsection{Initial design step: GRATiS-Min}\label{sec:init_design}
 Before the problems in \ref{sec:problems} are tackled and the design of GRATiS implemented, an initial design that minimally achieves the design goal is implemented. This initial design, named GRATiS-Min performs the following steps:
 \begin{enumerate}
-  \item generate the GTiS based on the GTS using GROOVE
-  \item transform the GTiS to a basic STS
+  \item generate the GTS based on the graph grammar using GROOVE
+  \item transform the GTS to an STS with the method described in section~\ref{sec:gts_sts_trafo}
   \item send the STS to ATM
   \item perform the automatic test generation on the STS
 \end{enumerate}
 
-Step 2 requires a proof: Consider the GTiS as an LTS. For each state $q \in Q$ create a location $l \in L$. The start location $l_0 \in L$ is the location created by the state $q_0 \in Q$. Make $\mathcal{V}$ an empty set and $\imath$ an empty mapping. For each label $l \in L$ create a gate $\lambda \in \Lambda$. Derive the parameters on the label $l$ using the GTiS. For each parameter $p \in P$ create an interaction variable $i \in \mathcal{I}$ of the same type as $p$ and add $i$ to $param(\lambda)$. Set $arity(\lambda)$ to the number of parameters on the label. For each transition $t \in T$ create a switch relation $r \in \rightarrow$, where:
-\begin{itemize}
-  \item the source and the target locations of the switch relation are the locations created by the source and target states of the transition.
-  \item the gate of the switch relation is the gate created by the label on the transition.
-  \item for each $p \in P$ and $i \in \mathcal{I}$ created by $p$ create an $i = p$ expression. The guard of the switch relation is those expressions joined by the $\land$ operator.
-  \item create an empty update mapping for the switch relation.
-\end{itemize}
-
-An example of such a transformation is done using the LTS in Figure~\ref{fig:trafo_lts}. The basic STS resulting from the transformation is in Figure~\ref{fig:trafo_basic_sts}.
-
-\begin{figure}[h]
-  \begin{center}
-    \input{./img/trafo_basic_sts.tex}
-  \end{center}
-  \caption{The basic STS resulting from the transformation of the LTS in Figure~\ref{fig:trafo_lts}}
-  \label{fig:trafo_basic_sts}
-\end{figure}
-
-This basic STS maintains the behavior of the system. There are a number of advantages to GRATiS-Min:
+There are a number of advantages to GRATiS-Min:
 \begin{itemize}
   \item It allows automatic test generation on models which GROOVE is able to fully explore. This has been done on some interesting systems, as described in section~\ref{sec:descriptiongroove}.
   \item It is easy to implement.

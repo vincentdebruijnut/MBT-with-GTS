@@ -53,7 +53,7 @@ The rules can be described as follows:
   \item~\ref{fig:example_groove_next}: 'if a player has finished moving (number thrown is zero), the next player receives the turn.'
 \end{enumerate}
 
-The $turn$ flag on the \textbf{Player} node is a representation of a self-edge with label $turn$. The assignments on the \textbf{Die} node are representations of edges to integer nodes. The throws value assignment (:=) in the move rule is a shorthand for two edges: one edge in the $\mathit{LHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i$ and another edge in the $\mathit{RHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i-1$. In the next turn rule, the $turn$ edge exists in the $\mathit{LHS}$ as a self-edge of the left \textbf{Player} node and in the $\mathit{RHS}$ as a self-edge of the right \textbf{Player} node. In the same rule, the $throws$ edge from the left \textbf{Player} node to an integer node only exists in the $\mathit{LHS}$. The number '0' in the top left of the \textbf{int} node in the throw rule indicates that this integer is the first parameter on the rule transition when this rule is applied. 
+The $turn$ flag on the \textbf{Player} node is a representation of a self-edge with label $turn$. The assignments on the \textbf{Die} node are representations of edges to integer nodes. The throws value assignment (:=) in the move rule is a shorthand for two edges: one edge in the $\mathit{LHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i$ and another edge in the $\mathit{RHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i-1$. In the next turn rule, the $turn$ edge exists in the $\mathit{LHS}$ as a self-edge of the left \textbf{Player} node and in the $\mathit{RHS}$ as a self-edge of the right \textbf{Player} node. In the same rule, the $throws$ edge from the left \textbf{Player} node to an integer node only exists in the $\mathit{LHS}$. The number '0' in the top left of the \textbf{int} node in the throw rule indicates that this integer is the first parameter in $param(l)$, where $l$ is the label on the rule transition created by applying the throws rule.
 
 \begin{figure}[h!]
   \begin{center}
@@ -84,7 +84,6 @@ The graph is transformed after the rule is applied. The resulting graph after th
   \label{fig:target_graph_state}
 \end{figure}
 
-%GROOVE provides parameters for the labels on the transitions in a GTiS by indicating which node(s) in a rule should be the parameter(s). 
 \subsection{Comparison of the examples}\label{sec:comparison}
 The models of the boardgame example in Figures~\ref{fig:example_sts} and \ref{fig:example_groove} are very different. In this section the STS and the graph grammar of the example are compared.
 

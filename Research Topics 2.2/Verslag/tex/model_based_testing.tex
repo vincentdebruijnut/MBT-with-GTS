@@ -1,5 +1,4 @@
 \section{Model-based Testing}\label{sec:model_based_testing}
-Formal testing theory was introduced by De Nicola et al.~\cite{denicola:testing}. The input-output behavior of processes is investigated by series of tests. Two processes are considered equivalent if they pass exactly the same set of tests. This testing theory was first used in algorithms for automatic test generation by Brinksma~\cite{brinksma:testgeneration}. This led to the so-called \textit{canonical tester} theory. Tretmans gives a formal approach to protocol conformance testing (whether a protocol conforms to its specifications) in~\cite{Tretmans:conformancetesting} and an algorithm for deriving a sound and exhaustive test suite from a specification in~\cite{Tretmans:testgeneration}. A good overview of model-based testing theory and past research is given in "Model-Based Testing of Reactive Systems"~\cite{Broy:ModelBasedTesting}. Symbolic test generation is introduced by Rusu et al.~\cite{rusu:symbolic}, using Input-Output Symbolic Transition Systems (IOSTSs). These systems are explained in section~\ref{sec:symbolic}. A tool that generates tests based on symbolic specification is the STG tool, described in Clarke et al.~\cite{clarke:STG}.
 
 Model-based testing is a testing technique where a System Under Test (SUT) is tested for conformance to a model description of the system. The general setup for this process is depicted in Figure~\ref{fig:model_based_testing}. The specification of a system, given as a model, is given to a test derivation component which generates test cases. These test cases are passed to a component that executes the test cases on the SUT. Tests are executed by providing input/stimuli to the SUT and monitoring the output/response. The test execution component evaluates the test cases, the stimuli and the responses. It gives a 'pass' or 'fail' verdict whether the SUT conforms to the specification or not respectively.
 
@@ -21,7 +20,10 @@ This type of model-based testing is called \textit{batch testing} or \textit{off
   \label{fig:model_based_testing_on_the_fly}
 \end{figure}
 
-Variations of state machines and transition systems have been widely used as the underlying model for test generation. Other tools use the structure of data types to generate test data. First, two types of models are introduced. These are basic formalisms useful to understand the models in the rest of the paper. Then, the notion of \textit{coverage} is explained.
+Variations of state machines and transition systems have been widely used as the underlying model for test generation. Other tools use the structure of data types to generate test data. First, previous work on model-based testing is given. Then, two types of models are introduced. These are basic formalisms useful to understand the models in the rest of the paper. Finally, the notion of \textit{coverage} is explained.
+
+\subsection{Previous work}
+Formal testing theory was introduced by De Nicola et al.~\cite{denicola:testing}. The input-output behavior of processes is investigated by series of tests. Two processes are considered equivalent if they pass exactly the same set of tests. This testing theory was first used in algorithms for automatic test generation by Brinksma~\cite{brinksma:testgeneration}. This led to the so-called \textit{canonical tester} theory. Tretmans gives a formal approach to protocol conformance testing (whether a protocol conforms to its specifications) in~\cite{Tretmans:conformancetesting} and an algorithm for deriving a sound and exhaustive test suite from a specification in~\cite{Tretmans:testgeneration}. A good overview of model-based testing theory and past research is given in "Model-Based Testing of Reactive Systems"~\cite{Broy:ModelBasedTesting}.
 
 \subsection{Labelled Transition Systems}
 A labelled transition system is a structure consisting of states with labelled transitions between them.
@@ -37,15 +39,6 @@ A labelled transition system is a 4-tuple	$\langle Q, L, T, q0\rangle$, where:
 We write $q \xrightarrow{\mu}q'$ if there is a transition labelled $\mu$ from state q to state q', i.e., $(q, \mu, q') \in T$. The informal idea of such a transition is that when the system is in state $q$ it may perform action $\mu$, and go to state $q'$. 
 \end{definition}
 
-%Suppose that in state $q'$ the system can perform action $μ'$, i.e., $q'\xrightarrow{$\mu'$}q''$, then these transitions can be composed: q μ −q μ −−→q, which is written as q μ·μ −−−→q. In general, the
-%composition of transitions q1
-%μ1·μ2·...·μn −−−−−−−−→q2 expresses that the system, when in
-%state q1, can perform the sequence of actions μ1·μ2· . . . ·μn, and may end in state
-%q2. The use of may is important here: because of non-determinism, it may be
-%the case that the system can also perform the same sequence of actions, but end
-%in another state: q1
-%μ1·μ2·...·μn −−−−−−−−→q3 with q2 = q3.
-
 \subsection{Input-Output Transition Systems}
 A useful type of transition system for model-based testing is the Input-Output Transition System (IOTS) by Tretmans~\cite{Tretmans:testgeneration}. Assuming that implementations communicate with their environment via inputs and outputs, this formalism is useful for describing system behavior. IOTSs have the same definition as LTSs with one addition: each label $l \in L$ has a type $t \in T$, where $T = \{input, output\}$. Each label can therefore specify whether the action represented by the label is a possible input or an expected output of the system under test.
 
@@ -59,8 +52,6 @@ Test cases should always reach a pass or fail state within finite time. This req
   \end{center}
   \caption{The specification of a coffee machine and a test case as an IOTS}
 \end{figure}
-
-%Unnecessary nondeterminism should be avoided in test cases \cite{Tretmans:ModelBasedTesting}: "In the first place, this implies that the test case itself is deterministic. In the second place, this means that a tester should never offer more than one input action (from the perspective of the implementation) at a time. Since the implementation is able to accept any input action, offering more inputs would always lead to an unnecessarily non-deterministic continuation of the test run. Having a deterministic test case does not imply that a test run has a unique result: due to non-determinism in the implementation under test, and due to non-determinism in the test run itself, the repetition of a test run may lead to a different result".
 
 \subsection{Coverage}\label{sec:coverage}
 The number of tests that can be generated from a model is potentially infinite. Therefore, there must be a test selection strategy to maximize the quality of the tests while minimizing the time spent testing. Coverage statistics help with test selection. Such statistics indicate how much of the SUT is tested. When the SUT is a black-box, typical coverage metrics are state and transition coverage of the model~\cite{Lee:testing, Nachmanson:testing, Hasan:testing}.

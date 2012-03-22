@@ -1,6 +1,6 @@
-\section{Research method}\label{sec:research_methods}
+\section{Research Method}\label{sec:research_methods}
 
-\subsection{GRATiS Design}
+\subsection{GRATiS design}
 The specific method used to achieve the design goal is to use GROOVE as a replacement of the STS in ATM. Figure~\ref{fig:tooling} shows this graphically. The Rule Applier component now communicates with the Interface, which fulfills the role of STS Engine. The communication runs through interfaces on both tools, such that other tools are also able to communicate with the GROOVE component. The possible rule transitions are translated by the Interfaces to possible transitions for the Test Manager. The chosen transitions are translated back to rule transitions by the Interfaces.
 
 \begin{figure}[h]
@@ -23,11 +23,11 @@ ATM annotates the locations it has seen and the switch relations it has chosen i
 
 Also, as mentioned in section~\ref{sec:sts_coverage}, the calculation of data coverage for a test run will be implemented in GRATiS.
 
-\subsubsection{Initial design step: GRATiS-Min}
+\subsubsection{Initial design: GRATiS-Min}\label{sec:init_design}
 Before the problems in \ref{sec:problems} are tackled and the design of GRATiS implemented, an initial design that minimally achieves the design goal is implemented. This initial design, named GRATiS-Min performs the following steps:
 \begin{enumerate}
-  \item generate the GTiS based on the GTS using GROOVE
-  \item transform the GTiS to a basic STS
+  \item generate the GTS based on the graph grammar using GROOVE
+  \item transform the GTS to an STS with the method described in section~\ref{sec:gts_sts_trafo}
   \item send the STS to ATM
   \item perform the automatic test generation on the STS
 \end{enumerate}

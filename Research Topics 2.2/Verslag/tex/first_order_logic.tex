@@ -1,7 +1,7 @@
 \section{First Order Logic}\label{sec:first_order_logic}
 
 Some basic concepts from first order logic are described here, used in the definitions of section~\ref{sec:symbolic}. For a general introduction into logic we refer to~\cite{Huth:logic}.
-
+\\
 \begin{definition}
 A logical signature $\mathcal{S}$ is a tuple $\langle F, P \rangle$, where:
 \begin{itemize}
@@ -12,8 +12,8 @@ A logical signature $\mathcal{S}$ is a tuple $\langle F, P \rangle$, where:
  
 Let $\mathcal{V}$ be a set of \textit{variables}. \textit{Terms} over $V$, denoted $\mathcal{T}(V)$, are built from function symbols $F$ and variables $V \subset \mathcal{V}$. We write $var(t)$ to denote the set of variables appearing in a term $t$. Terms $t\in \mathcal{T}(\emptyset)$ are called ground terms.
 
-A \textit{term-mapping} is a function $\sigma:\mathcal{V} \mapsto \mathcal{T}(\mathcal{V}). For sets $V$, $W$ with $V \cup W \subset \mathcal{V}$, we write $\mathcal{T}(W )X$ for the set of term-mappings that assign to each variable $v∈V$ a term $t\in \mathcal{T}(W)$, and to each variable $v \not\in V$ the term $v$.
+A \textit{term-mapping} is a function $\sigma:\mathcal{V} \mapsto \mathcal{T}(\mathcal{V})$. For sets $V$, $W$ with $V \cup W \subset \mathcal{V}$, we write $\mathcal{T}(W)^X$ for the set of term-mappings that assign to each variable $v\in V$ a term $t\in \mathcal{T}(W)$, and to each variable $v \not\in V$ the term $v$.
 
-A \textit{valuation} $\Sigma$ is a function $\Sigma:\mathcal{V} \mapsto \mathcal{U}$, where $\mathcal{U}$ is a non-empty set called a \textit{universe}. An example of a universe is $\mathcal{N}$, the non-zero integers.
+A \textit{valuation} $\Sigma$ is a function $\Sigma:\mathcal{V} \mapsto \mathcal{U}$, where $\mathcal{U}$ is a non-empty set called a \textit{universe}. An example of a universe is $\mathcal{N}$, the non-zero integers. Additionally, $\Sigma:\mathit{n-tuple:x} \mapsto \mathit{n-tuple:y}$, maps the values of tuple $x$ to the values of tuple $y$.
 
-An \textit{evaluation} of $\mathcal{T}(\mathcal{V})$ is given by $\epsilon:($\mathcal{T}(\mathcal{V})$,\Sigma:\mathcal{V}) \mapsto \mathcal{U}$. An evaluation $\epsilon:\mathcal{T}(\mathcal{V}),\Sigma_before:\mathcal{V}) of the terms in a term-mapping results in a set $X \subset \mathcal{U}$. A new valuation can then be constructed by: $\Sigma_after:\mathcal{V} \mapsto X$.
+An \textit{evaluation} of $\mathcal{T}(\mathcal{V})$ is given by $\epsilon:(\mathcal{T}(\mathcal{V}),\Sigma:\mathcal{V}) \mapsto \mathcal{U}$. An evaluation $\epsilon:\mathcal{T}(\mathcal{V}),\Sigma_\mathit{before}:\mathcal{V})$ of the terms in a term-mapping results in a set $X \subset \mathcal{U}$. A new valuation can then be constructed by: $\Sigma_\mathit{after}:\mathcal{V} \mapsto X$.

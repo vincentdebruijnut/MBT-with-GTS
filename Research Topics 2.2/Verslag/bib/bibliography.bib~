@@ -201,6 +201,28 @@ source={Scopus}
  year = {2000}
 }
 
+@book{Myers:2004,
+ author = {Myers, Glenford J. and Sandler, Corey},
+ title = {The Art of Software Testing},
+ year = {2004},
+ isbn = {0471469122},
+ publisher = {John Wiley \& Sons},
+}
+
+@INPROCEEDINGS{Reid:partitioning, 
+author={Reid, S.C.}, 
+booktitle={Software Metrics Symposium, 1997. Proceedings., Fourth International}, 
+title={An empirical analysis of equivalence partitioning, boundary value analysis and random testing}, 
+year={1997}, 
+month={nov}, 
+volume={}, 
+number={}, 
+pages={64 -73}, 
+keywords={Ada code;BVA;EP;absolute values;arbitrarily chosen values;boundary value analysis;empirical analysis;equivalence partitioning;experimental methodology;input values;operational avionics system;random testing;test cases;test technique;Ada;aircraft computers;military avionics;military computing;program testing;software metrics;}, 
+doi={10.1109/METRIC.1997.637166}, 
+ISSN={}
+}
+
 @inproceedings{Tretmans:TorX,
           eprintid = {9475},
              month = {December},
