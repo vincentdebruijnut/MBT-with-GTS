@@ -5,9 +5,10 @@
 \begin{tikzpicture}[
 % Special color styles
 scale=\tikzscale]
+\node[node] (n9)  at (1.975, -0.725) {\ml{\textbf{Location}\\field = 1\\field = 3\\field = 2\\field = 0}};
 \node[node] (n0)  at (0.825, -0.875) {\ml{\textbf{Die}\\canThrow = 1\\canThrow = 2\\canThrow = 3\\canThrow = 4\\canThrow = 5\\canThrow = 6}};
-\node[node] (n11)  at (1.965, -0.875) {\ml{\textbf{Player}\\\textit{turn}\\at = 0\\number = 1}};
-\node[node] (n12)  at (2.945, -0.875) {\ml{\textbf{Player}\\at = 2\\number = 2}};
+\node[node] (n11)  at (2.965, -0.660) {\ml{\textbf{Player}\\\textit{turn}\\at = 0\\number = 1}};
+\node[node] (n12)  at (3.945, -0.595) {\ml{\textbf{Player}\\at = 2\\number = 2}};
 \userdefinedmacro
 \end{tikzpicture}
 \renewcommand{\userdefinedmacro}{\relax}

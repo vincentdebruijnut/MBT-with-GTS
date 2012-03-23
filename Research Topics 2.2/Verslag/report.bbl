@@ -1,14 +1,15 @@
 \begin{thebibliography}{10}
 
 \bibitem{Andries1999}
-Marc Andries, Gregor Engels, Annegret Habel, Berthold Hoffmann, Hans-Jörg
-  Kreowski, Sabine Kuske, Detlef Plump, Andy Schürr, and Gabriele Taentzer.
+Marc Andries, Gregor Engels, Annegret Habel, Berthold Hoffmann, Hans-J{\"o}rg
+  Kreowski, Sabine Kuske, Detlef Plump, Andy Sch{\"u}rr, and Gabriele Taentzer.
 \newblock Graph transformation for specification and programming.
 \newblock {\em Science of Computer Programming}, 34(1):1 -- 54, 1999.
 
 \bibitem{Belinfante:JTorX}
 Axel Belinfante.
-\newblock Jtorx: A tool for on-line model-driven test derivation and execution.
+\newblock J{T}orx: A tool for on-line model-driven test derivation and
+  execution.
 \newblock In Javier Esparza and Rupak Majumdar, editors, {\em Tools and
   Algorithms for the Construction and Analysis of Systems}, volume 6015 of {\em
   Lecture Notes in Computer Science}, pages 266--270. Springer Berlin /
@@ -21,7 +22,7 @@ E.~Brinksma.
 
 \bibitem{clarke:STG}
 Duncan Clarke, Thierry J$\acute{e}$ron, Vlad Rusu, and Elena Zinovieva.
-\newblock Stg: A symbolic test generation tool.
+\newblock {STG}: A symbolic test generation tool.
 \newblock In Joost-Pieter Katoen and Perdita Stevens, editors, {\em Tools and
   Algorithms for the Construction and Analysis of Systems}, volume 2280 of {\em
   Lecture Notes in Computer Science}, pages 151--173. Springer Berlin /
@@ -31,9 +32,9 @@ Duncan Clarke, Thierry J$\acute{e}$ron, Vlad Rusu, and Elena Zinovieva.
 \bibitem{Ghamarian:GROOVE}
 A.~H. {Ghamarian}, M.~J. {de Mol}, A.~{Rensink}, E.~{Zambon}, and M.~V.
   {Zimakova}.
-\newblock Modelling and analysis using groove.
+\newblock Modelling and analysis using {GROOVE}.
 \newblock {\em International journal on software tools for technology
-  transfer}, online pre-publication, March 2011.
+  transfer}, 14(1):15--40, February 2012.
 
 \bibitem{Hasan:testing}
 Hasan and Ural.
@@ -45,7 +46,6 @@ R.~Heckel.
 \newblock Graph transformation in a nutshell.
 \newblock {\em Electronic Notes in Theoretical Computer Science}, 148(1 SPEC.
   ISS.):187--198, 2006.
-\newblock cited By (since 1996) 16.
 
 \bibitem{Huth:logic}
 M.R.A. Huth and M.~Ryan.
@@ -66,8 +66,8 @@ D.~Lee and M.~Yannakakis.
 
 \bibitem{Blackburn:testing}
 R.~Busser M.~Blackburn and A.~Nauman.
-\newblock Why model-based test automation is diﬀerent and what you should
-  know to get started.
+\newblock Why model-based test automation is different and what you should know
+  to get started.
 \newblock {\em International Conference on Practical Software Quality and
   Testing}, 2004.
 
@@ -79,7 +79,7 @@ Joost-Pieter~Katoen Manfred~Broy, Bengt~Jonsson and Alexander Pretschner.
 \bibitem{McCabe:testing}
 Thomas~J. McCabe.
 \newblock Structured testing: A software testing methodology using the
-  cyclomatic complexity metric, 1982.
+  cyclomatic complexity metric.
 \newblock {\em National Bureau of Standards, Special Publication}, 1982.
 
 \bibitem{McConnell:testing}
@@ -115,13 +115,21 @@ S.C. Reid.
 \newblock In {\em Software Metrics Symposium, 1997. Proceedings., Fourth
   International}, pages 64 --73, nov 1997.
 
-\bibitem{Rensink2003a}
+\bibitem{Rensink:graph_grammars}
 A.~{Rensink}.
 \newblock Towards model checking graph grammars.
 \newblock In S.~{Gruner} and S.~L. {Presti}, editors, {\em Workshop on
   Automated Verification of Critical Systems (AVoCS), Southampton, UK}, volume
   DSSE-TR-2003-02 of {\em Technical Report}, pages 150--160, Southampton, 2003.
   University of Southampton.
+
+\bibitem{Rensink:GROOVE}
+A.~{Rensink}.
+\newblock The {GROOVE} simulator: A tool for state space generation.
+\newblock In J.~L. {Pfaltz}, M.~{Nagl}, and B.~{B{\"o}hlen}, editors, {\em
+  Applications of Graph Transformations with Industrial Relevance (AGTIVE)},
+  volume 3062 of {\em Lecture Notes in Computer Science}, pages 479--485,
+  Berlin, 2004. Springer Verlag.
 
 \bibitem{rusu:symbolic}
 Vlad Rusu, Lydie du~Bousquet, and Thierry J$\acute{e}$ron.

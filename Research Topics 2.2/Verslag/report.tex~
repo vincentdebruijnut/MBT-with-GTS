@@ -9,12 +9,11 @@
 \usepackage[all]{xy}
 \usepackage{mathtools}
 \usepackage{amssymb}
-%\usepackage{multirow}
+\usepackage{multirow}
 \usepackage{array}
 \usepackage{amsthm}
 
 \graphicspath{{./img/}}
-%\renewcommand*\familydefault{\sfdefault}
 
 \hypersetup{pdfborder = {0 0 0 0}}
 
@@ -32,18 +31,19 @@
 	\newpage
 	\tableofcontents
   \newpage
+  
 	\input{./tex/introduction.tex}
 	\input{./tex/model_based_testing.tex}
+	\input{./tex/first_order_logic.tex}
 	\input{./tex/symbolic.tex}
 	\input{./tex/graph_transform.tex}
 	\input{./tex/tooling.tex}
-	\input{./tex/research_methods.tex}
-	%\input{./tex/summary.tex}
+	\input{./tex/research_method.tex}
 
 	\bibliography{bib/bibliography}{}
 	\bibliographystyle{plain}
 	
 	\appendix
   \newpage
-	%\input{./tex/appendix.tex}
+	\input{./tex/appendix.tex}
 \end{document}

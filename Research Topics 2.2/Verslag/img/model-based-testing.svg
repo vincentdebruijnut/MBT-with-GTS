@@ -38,12 +38,12 @@
    id="namedview3565"
    showgrid="false"
    inkscape:zoom="1.9070707"
-   inkscape:cx="258.24556"
+   inkscape:cx="259.29429"
    inkscape:cy="16.720545"
    inkscape:window-x="0"
    inkscape:window-y="0"
    inkscape:window-maximized="1"
-   inkscape:current-layer="shape13-60"
+   inkscape:current-layer="shape4-18"
    fit-margin-top="0"
    fit-margin-left="0"
    fit-margin-right="0"
@@ -341,6 +341,7 @@
 
 
 
+
 <text
    x="1.8189824"
    y="778.59406"
@@ -351,6 +352,7 @@
 
 
 
+
 <text
    x="13.564745"
    y="784.88647"
@@ -358,6 +360,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3598"> </text>
+
 
 
 
@@ -425,6 +428,7 @@
 
 
 
+
 <text
    x="7.6918631"
    y="778.17456"
@@ -432,6 +436,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3603">Execution </text>
+
 
 
 
@@ -491,13 +496,14 @@
    id="rect3492"
    style="fill:url(#linearGradient3573);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
 			<text
-   x="26.469999"
-   y="771.59998"
+   x="24.792032"
+   y="773.69745"
    class="st4"
    v:langID="1043"
    id="text3494"
-   style="fill:#000000;font-family:Calibri"><v:paragraph
+   style="font-size:12px;fill:#000000;font-family:Calibri"><v:paragraph
    v:horizAlign="1" /><v:tabList />SUT</text>
+
 
 
 
@@ -632,6 +638,7 @@
 
 
 
+
 <text
    x="12.147628"
    y="779.08221"
@@ -639,6 +646,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3601">Pass/Fail</text>
+
 
 
 
@@ -705,6 +713,7 @@
 
 
 
+
 <text
    x="14.13"
    y="755.70001"
@@ -718,6 +727,7 @@
    x="18.389999"
    class="st5"
    id="tspan3558" /></text>
+
 
 
 
@@ -752,6 +762,7 @@
      style="font-size:8px">stimuli</tspan></text>
 
 
+
 <g
    id="shape12-54-8"
    v:mID="12"
@@ -782,6 +793,7 @@
      x="251.17436"
      y="129.82883"
      style="font-size:8px">response</tspan></text>
+
 
 
 </svg>

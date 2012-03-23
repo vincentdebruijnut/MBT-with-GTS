@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  22 MAR 2012 17:02
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  23 MAR 2012 17:00
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -706,10 +706,13 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
+(/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen207
+)
 (/usr/share/texmf-texlive/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen207
-\extrarowheight=\dimen208
+\col@sep=\dimen208
+\extrarowheight=\dimen209
 \NC@list=\toks38
 \extratabsurround=\skip54
 \backup@length=\skip55
@@ -727,29 +730,26 @@ Package: amsthm 2004/08/06 v2.20
 \dth@everypar=\toks44
 )
 \c@definition=\count149
- (./report.aux
-
-LaTeX Warning: Label `fig:trafo_basic_sts' multiply defined.
-
-)
+ (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-Package hyperref Info: Link coloring OFF on input line 24.
- (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+Package hyperref Info: Link coloring OFF on input line 23.
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
@@ -757,8 +757,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count150
 )
-LaTeX Info: Redefining \ref on input line 24.
-LaTeX Info: Redefining \pageref on input line 24.
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
  (./report.out)
 (./report.out)
 \@outlinefile=\write5
@@ -768,27 +768,27 @@ LaTeX Info: Redefining \pageref on input line 24.
  (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count151
-\scratchdimen=\dimen209
+\scratchdimen=\dimen210
 \scratchbox=\box63
 \nofMPsegments=\count152
 \nofMParguments=\count153
 \everyMPshowfont=\toks45
 \MPscratchCnt=\count154
-\MPscratchDim=\dimen210
+\MPscratchDim=\dimen211
 \MPnumerator=\count155
 \everyMPtoPDFconversion=\toks46
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
-LaTeX Info: Redefining \subref on input line 24.
+LaTeX Info: Redefining \subref on input line 23.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 29.
+LaTeX Font Info:    Try loading font information for U+msa on input line 28.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 29.
+LaTeX Font Info:    Try loading font information for U+msb on input line 28.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -800,79 +800,46 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 \openout6 = `report.toc'.
 
  [2]
-(./tex/introduction.tex [3]
-
-LaTeX Warning: Reference `app:planning' on page 4 undefined on input line 31.
-
-) (./tex/model_based_testing.tex [4]
-
-pdfTeX warning: pdflatex (file ./img/model-based-testing.pdf): PDF inclusion: f
-ound PDF version <1.5>, but at most version <1.4> allowed
-<./img/model-based-testing.pdf, id=254, 379.58545pt x 141.73691pt>
+(./tex/introduction.tex [3]) (./tex/model_based_testing.tex [4]
+<./img/model-based-testing.pdf, id=260, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-
-pdfTeX warning: pdflatex (file ./img/mbt-on-the-fly.pdf): PDF inclusion: found 
-PDF version <1.5>, but at most version <1.4> allowed
-<./img/mbt-on-the-fly.pdf, id=259, 357.48773pt x 141.7426pt>
+<./img/mbt-on-the-fly.pdf, id=265, 614.295pt x 794.97pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
-<use ./img/mbt-on-the-fly.pdf> [5 <./img/model-based-testing.pdf> <./img/mbt-on
--the-fly.pdf>]
+<use ./img/mbt-on-the-fly.pdf>
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 34.
- (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 34.
-
-(./img/iots-example.tex <xymatrix 2x2 182>) (./img/iots-test.tex <xymatrix 3x2
-145>) [6]) (./tex/first_order_logic.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--5
-
- []
-
-) (./tex/symbolic.tex [7] [8] (./img/sts_boardgame_1.tex <xymatrix 13x1 191>)
-(./img/trafo_sts.tex <xymatrix 1x3 151>) (./img/trafo_lts.tex <xymatrix 3x3
-348>)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9]) (./tex/graph_transform.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--4
-
- []
-
-[10] (./img/gg_graph.tex <xymatrix 2x1 51>)
-Underfull \hbox (badness 10000) in paragraph at lines 64--64
+ [5 <./img/model-based-testing.pdf>] [6 <./img/mbt-on-the-fly.pdf>] (./img/iots
+-example.tex <xymatrix 2x2
+182>) (./img/iots-test.tex <xymatrix 3x2 145>)) (./tex/first_order_logic.tex
+[7]) (./tex/symbolic.tex [8] (./img/sts_boardgame_1.tex <xymatrix 13x1 191>)
+[9] (./img/trafo_sts.tex <xymatrix 1x3 151>) (./img/trafo_lts.tex <xymatrix
+3x3 348>)) (./tex/graph_transform.tex [10] [11] (./img/gg_graph.tex <xymatrix
+2x1 51>)
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
 []\T1/cmr/m/n/8 (a) |The start
  []
 
-(./img/gg_graph.tex <xymatrix 2x1 51>) (./img/gg_nac.tex <xymatrix 2x2 100>)
-(./img/gg_rhs.tex <xymatrix 2x1 51>) [11] (./img/trafo_basic_sts.tex <xymatrix
-3x3 348>)) (./tex/tooling.tex [12]
+(./img/gg_graph.tex <xymatrix 2x1 51>) (./img/gg_nac1.tex <xymatrix 2x1 51>)
+(./img/gg_nac2.tex <xymatrix 2x1 51>)
+Underfull \hbox (badness 6542) in paragraph at lines 69--69
+[]\T1/cmr/m/n/8 (d) |The sec-ond
+ []
 
-pdfTeX warning: pdflatex (file ./img/axini_tool.pdf): PDF inclusion: found PDF 
-version <1.5>, but at most version <1.4> allowed
-<./img/axini_tool.pdf, id=400, 356.92177pt x 145.93393pt>
+(./img/gg_rhs.tex <xymatrix 2x1 51>) (./img/gg_rhs.tex <xymatrix 2x1 51>)
+[12] (./img/trafo_basic_sts.tex <xymatrix 3x3 348>)) (./tex/tooling.tex
+<./img/axini_tool.pdf, id=413, 356.92177pt x 145.93393pt>
 File: ./img/axini_tool.pdf Graphic file (type pdf)
 
-<use ./img/axini_tool.pdf>
-Underfull \hbox (badness 10000) in paragraph at lines 26--26
-[]\T1/cmr/m/n/10 read and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 26--26
-\T1/cmr/m/n/10 sum-ma-rize
- []
-
-[13 <./img/axini_tool.pdf>]
-
-pdfTeX warning: pdflatex (file ./img/groove_tool.pdf): PDF inclusion: found PDF
- version <1.5>, but at most version <1.4> allowed
-<./img/groove_tool.pdf, id=427, 374.51399pt x 161.01265pt>
+<use ./img/axini_tool.pdf> [13 <./img/axini_tool.pdf>]
+<./img/groove_tool.pdf, id=437, 374.51399pt x 161.01265pt>
 File: ./img/groove_tool.pdf Graphic file (type pdf)
 
 <use ./img/groove_tool.pdf> [14 <./img/groove_tool.pdf>] (./img/start.tikz
@@ -882,82 +849,80 @@ LaTeX Font Info:    Try loading font information for T1+cmss on input line 8.
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )) (./img/throws.tikz)
 (./img/move.tikz) (./img/nextTurn.tikz) (./img/gts-transition-example.tikz)
-(./img/target-graph-state.tikz)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[15] (./img/start2.tikz) (./img/throws2.tikz) (./img/move2.tikz) [16]
-(./img/move3.tikz) (./img/start3.tikz) (./img/lts.tikz)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(./img/lts2.tikz)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) (./tex/research_methods.tex [17]
-
-pdfTeX warning: pdflatex (file ./img/tooling.pdf): PDF inclusion: found PDF ver
-sion <1.5>, but at most version <1.4> allowed
-<./img/tooling.pdf, id=523, 599.542pt x 253.25618pt>
+(./img/target-graph-state.tikz) [15] (./img/start2.tikz) (./img/throws2.tikz)
+(./img/move2.tikz) (./img/move3.tikz) [16] (./img/start3.tikz) (./img/lts.tikz)
+(./img/lts2.tikz)) (./tex/research_method.tex [17]
+<./img/tooling.pdf, id=537, 599.542pt x 253.25618pt>
 File: ./img/tooling.pdf Graphic file (type pdf)
  <use ./img/tooling.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[18] [19]
-Overfull \hbox (8.70297pt too wide) in paragraph at lines 39--40
+[18]
+Overfull \hbox (8.70297pt too wide) in paragraph at lines 36--37
 []\T1/cmr/m/n/10 It al-ready im-ple-ments some fea-tures of GRATiS, such as the
  com-mu-ni-ca-tion be-tween GROOVE
  []
 
-[20 <./img/tooling.pdf>]) (./report.bbl [21] [22]) [23] (./report.aux)
+[19] [20] [21 <./img/tooling.pdf>]) (./report.bbl [22] [23]) [24]
+(./tex/appendix.tex
+Underfull \hbox (badness 1616) in paragraph at lines 8--8
+[]|\T1/cmr/m/n/10 Setting up trans-for-ma-tion rules for
+ []
 
-LaTeX Warning: There were undefined references.
+
+Underfull \hbox (badness 1540) in paragraph at lines 8--8
+\T1/cmr/m/n/10 GTS-to-STS. Im-ple-ment-ing trans-for-
+ []
+
+)
+Overfull \hbox (37.59346pt too wide) in paragraph at lines 4--49
+[]
+ []
 
 
-LaTeX Warning: There were multiply-defined labels.
+Underfull \hbox (badness 10000) in paragraph at lines 4--49
 
- ) 
+ []
+
+[25] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 21465 strings out of 495061
- 374832 string characters out of 1182622
- 1268785 words of memory out of 3000000
- 23970 multiletter control sequences out of 15000+50000
+ 21495 strings out of 495061
+ 375364 string characters out of 1182622
+ 1293976 words of memory out of 3000000
+ 23984 multiletter control sequences out of 15000+50000
  27371 words of font info for 71 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,22n,73p,1462b,1121s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0700.600pk
-> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk>
- </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0800.600pk> 
-</home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx0800.600pk> <
-/home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </
-home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </h
-ome/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </ho
-me/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </hom
-e/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home
-/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/
-vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/v
-incentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/vi
-ncentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/vin
-centdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> </home/vinc
-entdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </home/vince
-ntdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/vincen
-tdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/
-fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/
-public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.
-pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public
-/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on report.pdf (23 pages, 639233 bytes).
+ </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecss0700.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen
+/ec/ecss0800.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecsi0800.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/e
+c/ecsx0800.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecrm0800.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/
+ecrm0600.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
+crm0700.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ec
+bx1200.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ect
+i1000.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
+1000.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1
+440.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm10
+00.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm090
+0.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900
+.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.
+600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.6
+00pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.60
+0pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/symbols/msbm10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xya
+tip10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on report.pdf (25 pages, 649550 bytes).
 PDF statistics:
- 1184 PDF objects out of 1200 (max. 8388607)
- 157 named destinations out of 1000 (max. 500000)
- 342 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1211 PDF objects out of 1440 (max. 8388607)
+ 162 named destinations out of 1000 (max. 500000)
+ 350 words of extra memory for PDF output out of 10000 (max. 10000000)
 

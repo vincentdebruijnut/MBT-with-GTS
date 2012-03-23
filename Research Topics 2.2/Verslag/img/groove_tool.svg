@@ -38,7 +38,7 @@
    id="namedview3821"
    showgrid="false"
    inkscape:zoom="1.9070707"
-   inkscape:cx="212.36684"
+   inkscape:cx="213.41557"
    inkscape:cy="203.92838"
    inkscape:window-x="0"
    inkscape:window-y="0"
@@ -461,6 +461,7 @@
 
 
 
+
 		</g>
 		<g
    id="shape1-8"
@@ -528,6 +529,7 @@
 
 
 
+
 <text
    x="19.300169"
    y="778.17456"
@@ -535,6 +537,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3828">Strategy </text>
+
 
 
 
@@ -607,6 +610,7 @@
 
 
 
+
 <text
    x="7.0967798"
    y="763.77716"
@@ -620,6 +624,7 @@
 
 
 
+
 <text
    x="14.228135"
    y="776.36188"
@@ -627,6 +632,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3835">System </text>
+
 
 
 
@@ -650,6 +656,7 @@
 
 
 
+
 <text
    x="-280.52628"
    y="869.9256"
@@ -657,6 +664,7 @@
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
    id="text3837-4">Grammar</text>
+
 
 
 
@@ -683,6 +691,7 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
@@ -695,6 +704,7 @@
      x="-45.843887"
      y="754.93237"
      style="font-size:8px">output</tspan></text>
+
 
 
 
@@ -721,6 +731,7 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
@@ -738,6 +749,7 @@
      y="819.09711"
      style="font-size:8px"
      id="tspan3162">transition</tspan></text>
+
 
 
 
@@ -763,6 +775,7 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
@@ -780,23 +793,25 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="-48.193058"
+   x="-51.129498"
    y="876.63531"
    id="text3399-8-8-8-2-4"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
-     x="-48.193058"
+     x="-51.129498"
      y="876.63531"
      style="font-size:8px"
-     id="tspan3126-5-0">   rule</tspan><tspan
+     id="tspan3126-5-0">    rule</tspan><tspan
      sodipodi:role="line"
-     x="-48.193058"
+     x="-51.129498"
      y="886.63531"
      style="font-size:8px"
      id="tspan3162-9">transition</tspan></text>
+
 
 
 
@@ -890,6 +905,7 @@
 
 
 
+
 <text
    x="14.647629"
    y="779.01361"
@@ -897,6 +913,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3833">Applier </text>
+
 
 
 

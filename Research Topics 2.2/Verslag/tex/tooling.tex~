@@ -5,7 +5,7 @@ ATM is a web-based model-based testing application, developed in the Ruby on Rai
 
 The architecture is shown graphically in Figure~\ref{fig:axini_tool}. It has a similar structure to the on-the-fly model-based testing tool architecture in Figure~\ref{fig:model_based_testing_on_the_fly}.
 
-\begin{figure}[h!]
+\begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.75\textwidth]{axini_tool.pdf}
   \end{center}
@@ -16,14 +16,14 @@ The architecture is shown graphically in Figure~\ref{fig:axini_tool}. It has a s
 The tool functions as follows: 
 \begin{enumerate}
   \item An STS is given to an STS Engine, which keeps track of the current location and data values. It passes the possible switch relations from the current location to the Test Manager.
-  \item The Test Manager chooses a switch relation and the data values based on a test strategy. The choice is represented by an instantiated switch relation and passed back to the STS Engine, which updates its current location and data values. The communication between these two components is done by method calls.
+  \item The Test Manager chooses an enabled switch relation based on a test strategy, which can be a random strategy or a strategy designed to obtain a high location/switch relation coverage. The valuation of the variables in the guard are also chosen by a test strategy, which can be a random strategy or a strategy using boundary-value analysis. The choice is represented by an instantiated switch relation and passed back to the STS Engine, which updates its current location and data values. The communication between these two components is done by method calls.
   \item The gate of the instantiated switch relation is given to the Test Execution component as an \textit{abstract stimulus}. The term abstract indicates that the instantiated switch relation is an abstract representation of some computation steps taken in the SUT. For instance, a transition with label 'connect?' is an abstract stimulus of the actual setup of a TCP connection between two distributed components of the SUT. 
   \item The translation of an abstract stimulus to a concrete stimulus is done by the Test Execution component. This component provides the stimulus to the SUT. When the SUT responds, the Test Execution component translates this response to an abstract response. For instance, the Test Execution component receives an HTTP response that the TCP connect was succesful. This is a concrete response, which the Test Execution component translates to an abstract response, such as a transition with label 'ok!'. The Test Manager is notified with this abstract response.
   \item The Test Manager translates the abstract response to an instantiated switch relation and updates the STS Engine. If this is possible according to the model, the Test Manager gives a pass verdict for this test. Otherwise, the result is a fail verdict.
 \end{enumerate}
 
 \subsection{GROOVE}\label{sec:descriptiongroove}
-GROOVE is an open source, graph-based modelling tool in development at the University of Twente since 2004. \cite{Rensink2003a}\marginpar{read and summarize this paper}. It has been applied to several case studies, such as model transformations and security and leader election protocols~\cite{Ghamarian:GROOVE}.
+GROOVE is an open source, graph-based modelling tool in development at the University of Twente since 2004~\cite{Rensink:GROOVE}. It has been applied to several case studies, such as model transformations and security and leader election protocols~\cite{Ghamarian:GROOVE}.
 
 The architecture of the GROOVE tool is shown graphically in Figure~\ref{fig:groove_tool}. A graph grammar is given as input to the Rule Applier component, which determines the possible rule transitions. An Exploration Strategy can be started or the user can explore the states manually using the GUI. These components request the possible rule transitions and respond with the chosen rule transition (based on the exploration strategy or the user input). The Exploration Strategy can do an exhaustive search, resulting in a GTS. The graph states and rule transitions in this GTS can then be inspected using the GUI.
 
@@ -53,9 +53,9 @@ The rules can be described as follows:
   \item~\ref{fig:example_groove_next}: 'if a player has finished moving (number thrown is zero), the next player receives the turn.'
 \end{enumerate}
 
-The $turn$ flag on the \textbf{Player} node is a representation of a self-edge with label $turn$. The assignments on the \textbf{Die} node are representations of edges to integer nodes. The throws value assignment (:=) in the move rule is a shorthand for two edges: one edge in the $\mathit{LHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i$ and another edge in the $\mathit{RHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i-1$. In the next turn rule, the $turn$ edge exists in the $\mathit{LHS}$ as a self-edge of the left \textbf{Player} node and in the $\mathit{RHS}$ as a self-edge of the right \textbf{Player} node. In the same rule, the $throws$ edge from the left \textbf{Player} node to an integer node only exists in the $\mathit{LHS}$. The number '0' in the top left of the \textbf{int} node in the throw rule indicates that this integer is the first parameter in $params(l)$, where $l$ is the label on the rule transition created by applying the throws rule.
+The $turn$ flag on the \textbf{Player} node is a representation of a self-edge with label $turn$. The assignments on the \textbf{Die} node are representations of edges to integer nodes. The throws value assignment (:=) in the move rule is a shorthand for two edges: one edge in the $\mathit{LHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i$ and another edge in the $\mathit{RHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i-1$. In the next turn rule, the $turn$ edge exists in the $\mathit{LHS}$ as a self-edge of the left \textbf{Player} node and in the $\mathit{RHS}$ as a self-edge of the right \textbf{Player} node. In the same rule, the $throws$ edge from the left \textbf{Player} node to an integer node only exists in the $\mathit{LHS}$. The number '0' in the top left of the \textbf{int} node in the throw rule indicates that this integer is the first parameter in $param(l)$, where $l$ is the label on the rule transition created by applying the throws rule.
 
-\begin{figure}[h!]
+\begin{figure}[h]
   \begin{center}
     \subfloat[The start graph]{\label{fig:example_groove_start}\input{./img/start.tikz}}\quad
     \subfloat[The throw rule]{\label{fig:example_groove_throw}\input{./img/throws.tikz}}
@@ -68,7 +68,7 @@ The $turn$ flag on the \textbf{Player} node is a representation of a self-edge w
 
 The graph is transformed after the rule is applied. The resulting graph after the transformation is the new state of the system and the rule is the transition from the old state (the graph as it was before the rule was applied) to the new state. Figure~\ref{fig:gts_example} shows the GTS of one $throws$ rule application on the start graph. The number on the label is the \textit{parameter} of the label. State $s_1$ is a representation of the graph in Figure~\ref{fig:example_groove_start}. Figure~\ref{fig:target_graph_state} shows the graph represented by $s_2$.
 
-\begin{figure}[h!]
+\begin{figure}[h]
   \begin{center}
     \input{./img/gts-transition-example.tikz}
   \end{center}
@@ -76,7 +76,7 @@ The graph is transformed after the rule is applied. The resulting graph after th
   \label{fig:gts_example}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[h]
   \begin{center}
     \input{./img/target-graph-state.tikz}
   \end{center}
@@ -100,7 +100,7 @@ The GTS of the graph grammar of the boardgame example has a number of consecutiv
   \label{fig:example_groove2}
 \end{figure}
 
-The new graph grammar loses many advantages by structuring it in this way: the overview of the board is gone, the rules are less visual and extending the locations in different directions is much harder. On the other hand, there are less rules and the graphs are more compact. However, when finding the GTS corresponding to this GTS, the labels of the transitions of that GTS do not reflect the 'move(p:N, l:N)' label of the STS. This should be done by marking the correct nodes as described in section~\ref{sec:gts_example}. The problem is that the result of the equation in the 'move' rule is only derived when the rule is applied. Figure~\ref{fig:move3} shows a rule where the equation is shown graphically. The die roll, connected by the 'throws' edge, and the number of the \textbf{Location} the \textbf{Player} is at are added. The result is represented by the \textbf{int} node connected by the 'add' edge. This result modulo 4 is represented by the \textbf{int} node connected by the 'mod' edge. This node is marked as the second parameter, the number of the \textbf{Player} is marked as the first parameter. This labels the transitions with which player moves to which location.
+The new graph grammar loses many advantages by structuring it in this way: the overview of the board is gone, the rules are less visual and extending the locations in different directions is much harder. On the other hand, there are fewer rules and the graphs are more compact. However, when finding the GTS corresponding to this graph grammar, the labels of the transitions of that GTS do not reflect the 'move(p:N, l:N)' label of the STS. This should be done by marking the correct nodes as described in section~\ref{sec:gts_example}. The problem is that the result of the equation in the 'move' rule is only derived when the rule is applied. Figure~\ref{fig:move3} shows a rule where the equation is shown graphically. The die roll, connected by the 'throws' edge, and the number of the \textbf{Location} the \textbf{Player} is at are added. The result is represented by the \textbf{int} node connected by the 'add' edge. This result modulo 4 is represented by the \textbf{int} node connected by the 'mod' edge. This node is marked as the second parameter, the number of the \textbf{Player} is marked as the first parameter. This labels the transitions with which player moves to which location.
 
 \begin{figure}[h]
   \begin{center}
@@ -111,7 +111,7 @@ The new graph grammar loses many advantages by structuring it in this way: the o
 \end{figure}
 
 \subsubsection{Comparison of Transition Systems}
-The GTS of a graph grammar can be found using GROOVE and the STS can be transformed to an LTS. The two graph grammars and the STS of the board game example result in three transition systems which can be compared.
+The GTS of a graph grammar can be computed using GROOVE and the STS can be transformed to an LTS. The two graph grammars and the STS of the board game example result in three transition systems which can be compared.
 
 The graph grammar from Figure~\ref{fig:example_groove} generates a GTS with 32 states with 52 transitions, which can be seen visually in Figure~ \ref{fig:statespace_groove1}. The graph grammar from Figure \ref{fig:example_groove2}, using the 'move' rule from Figure~\ref{fig:move3}, generates 224 states with 384 transitions, shown as GTS in Figure~\ref{fig:statespace_groove2}. The reason of the difference in number of states and transitions is that the board is circular: to the first graph grammar, the players being at locations 1 and 3 is the same as them being at locations 2 and 4. However, this is not the same to the second graph grammar. Also, for the first graph grammar it does not matter which \textbf{Player} node is at a \textbf{Location} node; they are the same apart from which \textbf{Player} has the 'turn'. As an example, consider the start graph in Figure~\ref{fig:example_groove}. If both players throw a '1' and move to the next location, the state is as shown in Figure~\ref{fig:symmetry_example}. Both states are symmetrical and therefore they are the same state. This leads to a \textit{symmetry reduction} of the statespace for the first graph grammar.
 
@@ -125,7 +125,7 @@ The graph grammar from Figure~\ref{fig:example_groove} generates a GTS with 32 s
 
 The LTS where the STS in Figure~\ref{fig:example_sts} is transformed to has 224 states and 384 transitions. This is calculated by taking all possibilities of the data values except for the die roll. This leads to 32 states ($4 \times 4 \times 2$). These 32 'throw' states each have 6 'throw?' transitions to a 'move' state, thus there are 192 'move' states. The 'move' states only have one transition back to a 'throw' state. There are $6 \times 32 + 192 \times 1 = 384$ transitions.
 
-\begin{figure}[h]
+\begin{figure}[]
   \begin{center}
     \resizebox{\textwidth}{!}{\input{./img/lts.tikz}}
   \end{center}
@@ -133,7 +133,7 @@ The LTS where the STS in Figure~\ref{fig:example_sts} is transformed to has 224 
   \label{fig:statespace_groove1}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[]
   \begin{center}
     \resizebox{\textwidth}{!}{\input{./img/lts2.tikz}}
   \end{center}
