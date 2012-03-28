@@ -103,6 +103,11 @@ R.~De Nicola and M.C.B. Hennessy.
 \newblock Testing equivalences for processes.
 \newblock {\em Theoretical Computer Science}, 34(1-2):83 -- 133, 1984.
 
+\bibitem{Phillips:refusal}
+Iain Phillips.
+\newblock Refusal testing.
+\newblock {\em Theoretical Computer Science}, 50(3):241 -- 284, 1987.
+
 \bibitem{Pol:testing}
 Martin Pol.
 \newblock {\em Testen volgens Tmap (in dutch, Testing according to Tmap)}.

@@ -11,9 +11,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="746.62769"
+   width="578.63"
    height="315.38751"
-   viewBox="0 0 597.30215 252.31001"
+   viewBox="0 0 462.90401 252.31001"
    xml:space="preserve"
    color-interpolation-filters="sRGB"
    class="st20"
@@ -32,17 +32,17 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="1920"
-   inkscape:window-height="1029"
+   inkscape:window-width="1600"
+   inkscape:window-height="1178"
    id="namedview4464"
    showgrid="false"
    inkscape:zoom="1.3485026"
    inkscape:cx="300.70855"
-   inkscape:cy="244.96322"
-   inkscape:window-x="0"
-   inkscape:window-y="0"
+   inkscape:cy="244.96324"
+   inkscape:window-x="1672"
+   inkscape:window-y="-8"
    inkscape:window-maximized="1"
-   inkscape:current-layer="shape3-38-0-8"
+   inkscape:current-layer="shape7-24"
    fit-margin-top="0"
    fit-margin-left="0"
    fit-margin-right="0"
@@ -1787,7 +1787,7 @@
    class="st3"
    id="rect3460"
    style="fill:url(#linearGradient3569);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
-   x="23.704515"
+   x="24.297766"
    y="765.17035"
    class="st4"
    v:langID="1043"
@@ -1801,13 +1801,15 @@
 
 
 
+
 <text
-   x="9.9754295"
+   x="13.534933"
    y="779.78058"
    class="st4"
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3595">Manager</text>
+
 
 
 
@@ -1823,6 +1825,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3598" />
+
 
 
 
@@ -1885,13 +1888,15 @@
 
 
 
+
 <text
-   x="6.3017902"
-   y="779.95428"
+   x="11.641046"
+   y="780.54755"
    class="st4"
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3603">Execution</text>
+
 
 
 
@@ -1940,13 +1945,14 @@
    class="st3"
    id="rect3492"
    style="fill:url(#linearGradient3573);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
-   x="22.317245"
-   y="772.7865"
+   x="26.469999"
+   y="772.19324"
    class="st4"
    v:langID="1043"
    id="text3494"
    style="fill:#000000;font-family:Calibri"><v:paragraph
    v:horizAlign="1" /><v:tabList /> SUT</text>
+
 
 
 
@@ -2039,7 +2045,7 @@
    id="path3538"
    style="fill:url(#linearGradient3577);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-26)"
    inkscape:connector-curvature="0" /><text
-   x="14.287246"
+   x="18.440001"
    y="764.40002"
    class="st4"
    v:langID="1043"
@@ -2053,13 +2059,15 @@
 
 
 
+
 <text
-   x="11.278832"
-   y="778.41699"
+   x="16.024837"
+   y="779.01025"
    class="st4"
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3601">Pass/Fail</text>
+
 
 
 
@@ -2096,6 +2104,7 @@
      x="350.86728"
      y="149.75392"
      style="font-size:8px">stimulus</tspan></text>
+
 
 
 
@@ -2161,6 +2170,7 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
@@ -2178,6 +2188,7 @@
      y="125.84698"
      style="font-size:8px"
      id="tspan3426">stimulus</tspan></text>
+
 
 
 
@@ -2211,6 +2222,7 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
@@ -2236,6 +2248,7 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
@@ -2248,6 +2261,7 @@
      x="350.79535"
      y="177.7159"
      style="font-size:8px">response</tspan></text>
+
 
 
 
@@ -2311,6 +2325,7 @@
 
 
 
+
 </g><g
    id="shape7-24"
    v:mID="7"
@@ -2334,7 +2349,7 @@
    class="st8"
    id="path3787-7"
    style="fill:url(#linearGradient6291);stroke:#404040;stroke-width:0.22289298;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-40)" /><text
-   x="-272.51376"
+   x="-268.95425"
    y="929.53131"
    class="st4"
    v:langID="1043"
@@ -2348,13 +2363,15 @@
 
 
 
+
 <text
-   x="-283.40311"
-   y="942.11603"
+   x="-276.87735"
+   y="944.48901"
    class="st4"
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
    id="text3837-4">Grammar</text>
+
 
 
 
@@ -2389,6 +2406,7 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
@@ -2406,6 +2424,7 @@
      y="831.85065"
      style="font-size:8px"
      id="tspan3349">   and states</tspan></text>
+
 
 
 
@@ -2468,6 +2487,7 @@
 
 
 
+
 <text
    x="16.223808"
    y="778.17462"
@@ -2475,6 +2495,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3833">Applier</text>
+
 
 
 
@@ -2508,6 +2529,7 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
@@ -2525,6 +2547,7 @@
      y="125.53729"
      style="font-size:8px"
      id="tspan3162">transition</tspan></text>
+
 
 
 
@@ -2587,6 +2610,7 @@
 
 
 
+
 <text
    x="-7.0433588"
    y="748.87036"
@@ -2596,6 +2620,7 @@
    id="text3833-1-5">Engine</text>
 
 
+
 <text
    x="1.8554007"
    y="735.22559"
@@ -2603,6 +2628,7 @@
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
    id="text3833-1-7">STS</text>
+
 
 
 </g><g
@@ -2645,7 +2671,7 @@
    class="st3"
    id="rect3808-8-3"
    style="fill:url(#linearGradient6289-2-2);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
-   x="-13.438722"
+   x="-9.2859669"
    y="761.5636"
    class="st4"
    v:langID="1043"
@@ -2659,8 +2685,9 @@
 
 
 
+
 <text
-   x="-11.789374"
+   x="-7.0433693"
    y="747.6839"
    class="st4"
    v:langID="1043"
@@ -2668,13 +2695,15 @@
    id="text3833-1-9-5">Strategy</text>
 
 
+
 <text
-   x="-19.440239"
+   x="-15.880735"
    y="734.06256"
    class="st4"
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
    id="text3833-1-9-5-0">Exploration</text>
+
 
 
 </g><g
@@ -2854,6 +2883,7 @@
 
 
 
+
 <g
    id="shape9-35-4-5"
    v:mID="9"
@@ -2892,6 +2922,7 @@
      y="109.94277"
      style="font-size:8px"
      id="tspan3356" /></text>
+
 
 
 
