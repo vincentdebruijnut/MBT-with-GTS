@@ -11,16 +11,17 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="8.5in"
-   height="11in"
-   viewBox="0 0 612 792"
+   width="466.39349"
+   height="200.51387"
+   viewBox="0 0 373.11479 160.4111"
    xml:space="preserve"
    color-interpolation-filters="sRGB"
    class="st10"
    id="svg3717"
    version="1.1"
    inkscape:version="0.48.2 r9819"
-   sodipodi:docname="groove_tool.svg"><metadata
+   sodipodi:docname="groove_tool.svg"
+   style="font-size:12px;fill:none;stroke-linecap:square;stroke-miterlimit:3;overflow:visible"><metadata
    id="metadata3823"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
          rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
@@ -33,16 +34,20 @@
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
    inkscape:window-width="1920"
-   inkscape:window-height="1024"
+   inkscape:window-height="1029"
    id="namedview3821"
    showgrid="false"
    inkscape:zoom="1.9070707"
-   inkscape:cx="264.09486"
-   inkscape:cy="853.22587"
-   inkscape:window-x="-4"
-   inkscape:window-y="-4"
+   inkscape:cx="213.41557"
+   inkscape:cy="203.92838"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
    inkscape:window-maximized="1"
-   inkscape:current-layer="shape7-24" />
+   inkscape:current-layer="shape7-24"
+   fit-margin-top="0"
+   fit-margin-left="0"
+   fit-margin-right="0"
+   fit-margin-bottom="0" />
 	<v:documentProperties
    v:langID="1033"
    v:viewMarkup="false">
@@ -132,13 +137,13 @@
    inkscape:collect="always"
    xlink:href="#grad30-20"
    id="linearGradient3609"
-   x1="-320.06856"
-   y1="809.74826"
-   x2="-320.06856"
-   y2="742.19799"
+   x1="-320.06857"
+   y1="809.74823"
+   x2="-320.06857"
+   y2="742.198"
    gradientTransform="matrix(1.1216601,0,0,0.7086822,-299.66718,829.95454)"
    gradientUnits="userSpaceOnUse" /><marker
-   style="overflow:visible"
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
    id="mrkr5-23-3"
    class="st7"
    v:arrowType="5"
@@ -161,10 +166,10 @@
    x1="-0.11695569"
    y1="846.60803"
    x2="-0.11695569"
-   y2="779.00764"
+   y2="779.00763"
    gradientTransform="matrix(1.0687808,0,0,0.93564551,-0.41949155,0.41949174)"
    gradientUnits="userSpaceOnUse" /><marker
-   style="overflow:visible"
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
    id="mrkr5-23-8"
    class="st7"
    v:arrowType="5"
@@ -181,7 +186,7 @@
      xlink:href="#lend5"
      transform="scale(-3.52,-3.52)"
      id="use3737-5" /></marker><marker
-   style="overflow:visible"
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
    id="mrkr5-23-2"
    class="st7"
    v:arrowType="5"
@@ -198,7 +203,7 @@
      xlink:href="#lend5"
      transform="scale(-3.52,-3.52)"
      id="use3737-7" /></marker><marker
-   style="overflow:visible"
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
    id="mrkr5-23-1"
    class="st7"
    v:arrowType="5"
@@ -219,12 +224,12 @@
    xlink:href="#grad30-6"
    id="linearGradient3158"
    x1="-0.10215032"
-   y1="969.31289"
+   y1="969.31287"
    x2="-0.10215032"
-   y2="910.27"
+   y2="910.27002"
    gradientTransform="scale(1.2236868,0.81720259)"
    gradientUnits="userSpaceOnUse" /><marker
-   style="overflow:visible"
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
    id="mrkr5-23-5"
    class="st7"
    v:arrowType="5"
@@ -241,7 +246,7 @@
      xlink:href="#lend5"
      transform="scale(-3.52,-3.52)"
      id="use3737-1" /></marker><marker
-   style="overflow:visible"
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
    id="mrkr5-23-52"
    class="st7"
    v:arrowType="5"
@@ -258,7 +263,7 @@
      xlink:href="#lend5"
      transform="scale(-3.52,-3.52)"
      id="use3737-76" /></marker><marker
-   style="overflow:visible"
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
    id="mrkr5-23-32"
    class="st7"
    v:arrowType="5"
@@ -275,7 +280,7 @@
      xlink:href="#lend5"
      transform="scale(-3.52,-3.52)"
      id="use3737-21" /></marker><marker
-   style="overflow:visible"
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
    id="mrkr5-23-89"
    class="st7"
    v:arrowType="5"
@@ -291,15 +296,34 @@
      x="0"
      xlink:href="#lend5"
      transform="scale(-3.52,-3.52)"
-     id="use3737-27" /></marker></defs>
+     id="use3737-27" /></marker><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad30-6"
+   id="linearGradient3718"
+   x1="-0.093765183"
+   y1="1055.9956"
+   x2="-0.093765183"
+   y2="991.67273"
+   gradientTransform="scale(1.3331174,0.75012147)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad30-6"
+   id="linearGradient3720"
+   x1="-0.10215032"
+   y1="969.31289"
+   x2="-0.10215032"
+   y2="910.27"
+   gradientTransform="scale(1.2236868,0.81720259)"
+   gradientUnits="userSpaceOnUse" /></defs>
 	<defs
    id="Markers">
 		<g
    id="lend5">
 			<path
-   d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364515 1.67301 0.372641 1.98465 1.00043 "
+   d="M 2,1 0,0 1.98117,-0.993387 C 1.67173,-0.364515 1.67301,0.372641 1.98465,1.00043"
    style="stroke:none"
-   id="path3734" />
+   id="path3734"
+   inkscape:connector-curvature="0" />
 		</g>
 		<marker
    id="mrkr5-23"
@@ -307,14 +331,19 @@
    v:arrowType="5"
    v:arrowSize="2"
    v:setback="6.16"
-   refX="-6.16"
+   refX="-6.1599998"
    orient="auto"
    markerUnits="strokeWidth"
-   overflow="visible">
+   overflow="visible"
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible">
 			<use
    xlink:href="#lend5"
-   transform="scale(-3.52,-3.52) "
-   id="use3737" />
+   transform="scale(-3.52,-3.52)"
+   id="use3737"
+   x="0"
+   y="0"
+   width="3"
+   height="3" />
 		</marker>
 		<marker
    id="mrkr5-53"
@@ -322,21 +351,27 @@
    v:arrowType="5"
    v:arrowSize="2"
    v:setback="5.8"
-   refX="5.8"
+   refX="5.8000002"
    orient="auto"
    markerUnits="strokeWidth"
-   overflow="visible">
+   overflow="visible"
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible">
 			<use
    xlink:href="#lend5"
-   transform="scale(3.52) "
-   id="use3740" />
+   transform="scale(3.52,3.52)"
+   id="use3740"
+   x="0"
+   y="0"
+   width="3"
+   height="3" />
 		</marker>
 	</defs>
 	<g
    v:mID="0"
    v:index="1"
    v:groupContext="foregroundPage"
-   id="g3742">
+   id="g3742"
+   transform="translate(-42.221401,-34.7945)">
 		<v:userDefs>
 			<v:ud
    v:nameU="msvThemeColors"
@@ -413,13 +448,16 @@
    id="rect3754"
    style="fill:url(#linearGradient3158);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
 			<text
-   x="26.85"
-   y="771.59998"
+   x="26.011017"
+   y="772.85846"
    class="st4"
    v:langID="1043"
    id="text3756"
    style="fill:#000000;font-family:Calibri"><v:paragraph
    v:horizAlign="1" /><v:tabList />GUI</text>
+
+
+
 
 
 
@@ -458,15 +496,17 @@
    v:shadowOffsetX="1.44"
    v:shadowOffsetY="-1.44"
    v:shadowType="1"
-   transform="matrix(1,0,0,1,1.44,1.44)"
-   class="st1">
+   transform="translate(1.44,1.44)"
+   class="st1"
+   style="visibility:visible">
 				<rect
    x="0"
    y="744"
    width="85.5"
    height="48"
    class="st2"
-   id="rect3764" />
+   id="rect3764"
+   style="fill:#cdcdcd;fill-opacity:0.5;stroke:#cdcdcd;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" />
 			</g>
 			<rect
    x="0"
@@ -474,9 +514,10 @@
    width="85.5"
    height="48"
    class="st3"
-   id="rect3766" />
+   id="rect3766"
+   style="fill:url(#linearGradient3718);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
 			<text
-   x="15.105253"
+   x="10.071355"
    y="765.17035"
    class="st4"
    v:langID="1043"
@@ -486,13 +527,19 @@
 
 
 
+
+
+
 <text
-   x="21.397627"
+   x="19.300169"
    y="778.17456"
    class="st4"
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3828">Strategy </text>
+
+
+
 
 
 
@@ -551,8 +598,8 @@
    style="fill:url(#linearGradient3706);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round"
    inkscape:connector-curvature="0" />
 			<text
-   x="20.101019"
-   y="751.61194"
+   x="18.003561"
+   y="749.93396"
    class="st4"
    v:langID="1043"
    id="text3789"
@@ -561,8 +608,11 @@
 
 
 
+
+
+
 <text
-   x="11.711186"
+   x="7.0967798"
    y="763.77716"
    class="st4"
    v:langID="1043"
@@ -572,13 +622,19 @@
 
 
 
+
+
+
 <text
-   x="18.003559"
-   y="775.94238"
+   x="14.228135"
+   y="776.36188"
    class="st4"
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3835">System </text>
+
+
+
 
 
 
@@ -589,8 +645,8 @@
    class="st8"
    id="path3787-7"
    style="fill:url(#linearGradient3609);stroke:#404040;stroke-width:0.22289298;stroke-linecap:round;stroke-linejoin:round" /><text
-   x="-268.36099"
-   y="850.62903"
+   x="-271.29742"
+   y="855.6629"
    class="st4"
    v:langID="1043"
    id="text3789-1"
@@ -598,23 +654,23 @@
 
 
 
-<text
-   x="-289.3356"
-   y="863.21375"
-   class="st4"
-   v:langID="1043"
-   style="font-size:12px;fill:#000000;font-family:Calibri"
-   id="text3837-4">Transformation</text>
 
 
 
 <text
-   x="-270.03897"
-   y="875.37897"
+   x="-280.52628"
+   y="869.9256"
    class="st4"
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
-   id="text3835-2">System</text>
+   id="text3837-4">Grammar</text>
+
+
+
+
+
+
+
 
 
 
@@ -633,6 +689,9 @@
 
 
 
+
+
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
@@ -645,6 +704,9 @@
      x="-45.843887"
      y="754.93237"
      style="font-size:8px">output</tspan></text>
+
+
+
 
 
 
@@ -667,6 +729,9 @@
      id="tspan3126">transitions</tspan></text>
 
 
+
+
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
@@ -684,6 +749,9 @@
      y="819.09711"
      style="font-size:8px"
      id="tspan3162">transition</tspan></text>
+
+
+
 
 
 <text
@@ -705,6 +773,9 @@
      id="tspan3368">   and states</tspan></text>
 
 
+
+
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
@@ -720,23 +791,29 @@
 
 
 
+
+
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="-48.193058"
+   x="-51.129498"
    y="876.63531"
    id="text3399-8-8-8-2-4"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
-     x="-48.193058"
+     x="-51.129498"
      y="876.63531"
      style="font-size:8px"
-     id="tspan3126-5-0">   rule</tspan><tspan
+     id="tspan3126-5-0">    rule</tspan><tspan
      sodipodi:role="line"
-     x="-48.193058"
+     x="-51.129498"
      y="886.63531"
      style="font-size:8px"
      id="tspan3162-9">transition</tspan></text>
+
+
+
 
 </g>
 		<g
@@ -795,15 +872,17 @@
    v:shadowOffsetX="1.44"
    v:shadowOffsetY="-1.44"
    v:shadowType="1"
-   transform="matrix(1,0,0,1,1.44,1.44)"
-   class="st1">
+   transform="translate(1.44,1.44)"
+   class="st1"
+   style="visibility:visible">
 				<rect
    x="0"
    y="744"
    width="72"
    height="48"
    class="st2"
-   id="rect3806" />
+   id="rect3806"
+   style="fill:#cdcdcd;fill-opacity:0.5;stroke:#cdcdcd;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" />
 			</g>
 			<rect
    x="0"
@@ -811,10 +890,11 @@
    width="72"
    height="48"
    class="st3"
-   id="rect3808" />
+   id="rect3808"
+   style="fill:url(#linearGradient3720);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
 			<text
-   x="24.715424"
-   y="767.26782"
+   x="23.037458"
+   y="765.58984"
    class="st4"
    v:langID="1043"
    id="text3810"
@@ -823,13 +903,19 @@
 
 
 
+
+
+
 <text
-   x="18.003561"
-   y="778.17462"
+   x="14.647629"
+   y="779.01361"
    class="st4"
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3833">Applier </text>
+
+
+
 
 
 

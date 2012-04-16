@@ -3,5 +3,5 @@
 \textit{Pre-testing} transformation is the process of entirely transforming a model before starting test runs. \textit{On-the-fly} transformation is the process of transforming the needed parts of a model while doing a test run.
 
 Explore entire sts + coverage statistics vs. on the fly exploration and no coverage statistics.
-Reachability check in exploration strategy vs. in on the fly exploration.
+Reachability check in exploration strategy vs. check in on the fly exploration.
 

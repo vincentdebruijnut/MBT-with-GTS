@@ -1,25 +1,55 @@
 \contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
-\contentsline {chapter}{\numberline {2}Design}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}GTS to STS transformation rules}{4}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Graph state to location}{4}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Rule match to switch relation}{4}{subsection.2.1.2}
-\contentsline {subsubsection}{Variables}{4}{section*.2}
-\contentsline {subsubsection}{Guard}{4}{section*.3}
-\contentsline {subsubsection}{Update}{4}{section*.4}
-\contentsline {section}{\numberline {2.2}Exploration strategy}{4}{section.2.2}
-\contentsline {subsubsection}{Isomorphism}{4}{section*.5}
-\contentsline {subsubsection}{Eraser/creator pairs}{4}{section*.6}
-\contentsline {section}{\numberline {2.3}Partial matching}{4}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Theory}{4}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Application}{5}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Reachability}{5}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Theory}{5}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Application}{5}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}Pre-testing vs. on-the-fly transformation}{5}{section.2.5}
-\contentsline {chapter}{\numberline {3}Validation}{6}{chapter.3}
-\contentsline {section}{\numberline {3.1}Case Studies}{7}{section.3.1}
-\contentsline {section}{\numberline {3.2}Benchmarks}{7}{section.3.2}
-\contentsline {chapter}{\numberline {4}Conclusion}{8}{chapter.4}
-\contentsline {section}{\numberline {4.1}Summary}{9}{section.4.1}
-\contentsline {section}{\numberline {4.2}Conclusion}{9}{section.4.2}
-\contentsline {section}{\numberline {4.3}Future Work}{9}{section.4.3}
+\contentsline {section}{\numberline {1.1}Introduction}{3}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Research setup}{3}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Research questions}{4}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Structure of the report}{4}{subsection.1.1.3}
+\contentsline {section}{\numberline {1.2}Model-based Testing}{4}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Previous work}{5}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Labelled Transition Systems}{5}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Input-Output Transition Systems}{6}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Coverage}{7}{subsection.1.2.4}
+\contentsline {section}{\numberline {1.3}First Order Logic}{7}{section.1.3}
+\contentsline {section}{\numberline {1.4}Symbolic Transition Systems}{8}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Previous work}{8}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Definition}{8}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Example}{9}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}STS to LTS transformation}{9}{subsection.1.4.4}
+\contentsline {subsection}{\numberline {1.4.5}Coverage}{10}{subsection.1.4.5}
+\contentsline {section}{\numberline {1.5}Graph Transformation}{10}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Graphs \& morphisms}{11}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Graph transformation rules}{11}{subsection.1.5.2}
+\contentsline {subsection}{\numberline {1.5.3}Graph Transition Systems}{11}{subsection.1.5.3}
+\contentsline {subsection}{\numberline {1.5.4}Example}{12}{subsection.1.5.4}
+\contentsline {subsection}{\numberline {1.5.5}GTS to STS transformation}{12}{subsection.1.5.5}
+\contentsline {section}{\numberline {1.6}Tooling}{13}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}ATM}{13}{subsection.1.6.1}
+\contentsline {subsection}{\numberline {1.6.2}GROOVE}{14}{subsection.1.6.2}
+\contentsline {subsection}{\numberline {1.6.3}GROOVE example}{15}{subsection.1.6.3}
+\contentsline {subsection}{\numberline {1.6.4}Comparison of the examples}{15}{subsection.1.6.4}
+\contentsline {subsubsection}{Comparison of behavior}{15}{section*.14}
+\contentsline {subsubsection}{Comparison of Transition Systems}{16}{section*.17}
+\contentsline {chapter}{\numberline {2}Design}{20}{chapter.2}
+\contentsline {section}{\numberline {2.1}Graph grammar to STS transformation rules}{22}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Graph state to location}{22}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Rule match to switch relation}{22}{subsection.2.1.2}
+\contentsline {subsubsection}{Variables}{22}{section*.21}
+\contentsline {subsubsection}{Rule priority}{22}{section*.22}
+\contentsline {subsubsection}{Guard}{22}{section*.23}
+\contentsline {subsubsection}{Update}{22}{section*.24}
+\contentsline {section}{\numberline {2.2}Exploration strategy}{22}{section.2.2}
+\contentsline {subsubsection}{Isomorphism}{22}{section*.25}
+\contentsline {subsubsection}{Eraser/creator pairs}{22}{section*.26}
+\contentsline {section}{\numberline {2.3}Partial matching}{23}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Theory}{23}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Application}{23}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Reachability}{23}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Theory}{23}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Application}{23}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Pre-testing vs. on-the-fly transformation}{23}{section.2.5}
+\contentsline {chapter}{\numberline {3}Validation}{25}{chapter.3}
+\contentsline {section}{\numberline {3.1}Case Studies}{27}{section.3.1}
+\contentsline {section}{\numberline {3.2}Benchmarks}{27}{section.3.2}
+\contentsline {chapter}{\numberline {4}Conclusion}{28}{chapter.4}
+\contentsline {section}{\numberline {4.1}Summary}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}Conclusion}{29}{section.4.2}
+\contentsline {section}{\numberline {4.3}Future Work}{29}{section.4.3}

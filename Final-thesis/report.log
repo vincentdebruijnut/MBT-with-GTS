@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  5 MAR 2012 12:22
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  16 APR 2012 10:45
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -170,24 +170,55 @@ Package: a4wide 1994/08/30
 (/home/vincentdebruijn/texmf/tex/latex/a4/a4.sty
 Package: a4 1999/03/03 v1.2f A4 based page layout
 ))
-(/home/vincentdebruijn/texmf/tex/latex/wrapfig/wrapfig.sty
-\WF@wrappedlines=\count96
-\WF@size=\dimen108
+(/usr/share/texmf-texlive/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen108
+\WF@size=\dimen109
+\c@WF@wrappedlines=\count96
 \WF@box=\box26
-\WF@hsep=\dimen109
-\WF@tsep=\dimen110
+\WF@everypar=\toks16
+Package: wrapfig 2003/01/31  v 3.6
 )
-(/home/vincentdebruijn/texmf/tex/latex/subfig/subfig.sty
-Style Option: `subfig' v1.2 <28 Jan 92> (M.O.)
-\c@subfigure=\count97
-) (/home/vincentdebruijn/texmf/tex/latex/groove2tikz/groove2tikz.sty
+(/usr/share/texmf-texlive/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen110
+\captionmargin@=\dimen111
+\captionwidth=\dimen112
+\caption@indent=\dimen113
+\caption@parindent=\dimen114
+\caption@hangindent=\dimen115
+)
+\c@ContinuedFloat=\count97
+Package caption Info: hyperref package is loaded.
+Package caption Info: wrapfig package is loaded.
+)
+\c@KVtest=\count98
+\sf@farskip=\skip43
+\sf@captopadj=\dimen116
+\sf@capskip=\skip44
+\sf@nearskip=\skip45
+\c@subfigure=\count99
+\c@subfigure@save=\count100
+\c@lofdepth=\count101
+\c@subtable=\count102
+\c@subtable@save=\count103
+\c@lotdepth=\count104
+\sf@top=\skip46
+\sf@bottom=\skip47
+)
+(/home/vincentdebruijn/texmf/tex/latex/groove2tikz/groove2tikz.sty
 Package: groove2tikz 
 
 (/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks16
+\pgfutil@everybye=\toks17
 )
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box27
@@ -206,26 +237,26 @@ Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
 Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks17
-\pgfkeys@temptoks=\toks18
+\pgfkeys@pathtoks=\toks18
+\pgfkeys@temptoks=\toks19
 
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks19
+\pgfkeys@tmptoks=\toks20
 ))
-\pgf@x=\dimen111
-\pgf@y=\dimen112
-\pgf@xa=\dimen113
-\pgf@ya=\dimen114
-\pgf@xb=\dimen115
-\pgf@yb=\dimen116
-\pgf@xc=\dimen117
-\pgf@yc=\dimen118
+\pgf@x=\dimen117
+\pgf@y=\dimen118
+\pgf@xa=\dimen119
+\pgf@ya=\dimen120
+\pgf@xb=\dimen121
+\pgf@yb=\dimen122
+\pgf@xc=\dimen123
+\pgf@yc=\dimen124
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count98
-\c@pgf@countb=\count99
-\c@pgf@countc=\count100
-\c@pgf@countd=\count101
+\c@pgf@counta=\count105
+\c@pgf@countb=\count106
+\c@pgf@countc=\count107
+\c@pgf@countd=\count108
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -240,8 +271,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count102
-\pgfsyssoftpath@bigbuffer@items=\count103
+\pgfsyssoftpath@smallbuffer@items=\count109
+\pgfsyssoftpath@bigbuffer@items=\count110
 )
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -270,12 +301,12 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen119
-\pgfmath@count=\count104
+\pgfmath@dimen=\dimen125
+\pgfmath@count=\count111
 \pgfmath@box=\box28
-\pgfmath@toks=\toks20
-\pgfmath@stack@operand=\toks21
-\pgfmath@stack@operation=\toks22
+\pgfmath@toks=\toks21
+\pgfmath@stack@operand=\toks22
+\pgfmath@stack@operation=\toks23
 )
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
@@ -286,51 +317,51 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count105
+\c@pgfmathroundto@lastzeros=\count112
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen120
-\pgf@picmaxx=\dimen121
-\pgf@picminy=\dimen122
-\pgf@picmaxy=\dimen123
-\pgf@pathminx=\dimen124
-\pgf@pathmaxx=\dimen125
-\pgf@pathminy=\dimen126
-\pgf@pathmaxy=\dimen127
-\pgf@xx=\dimen128
-\pgf@xy=\dimen129
-\pgf@yx=\dimen130
-\pgf@yy=\dimen131
-\pgf@zx=\dimen132
-\pgf@zy=\dimen133
+\pgf@picminx=\dimen126
+\pgf@picmaxx=\dimen127
+\pgf@picminy=\dimen128
+\pgf@picmaxy=\dimen129
+\pgf@pathminx=\dimen130
+\pgf@pathmaxx=\dimen131
+\pgf@pathminy=\dimen132
+\pgf@pathmaxy=\dimen133
+\pgf@xx=\dimen134
+\pgf@xy=\dimen135
+\pgf@yx=\dimen136
+\pgf@yy=\dimen137
+\pgf@zx=\dimen138
+\pgf@zy=\dimen139
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen134
-\pgf@path@lasty=\dimen135
+\pgf@path@lastx=\dimen140
+\pgf@path@lasty=\dimen141
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen136
-\pgf@shorten@start@additional=\dimen137
+\pgf@shorten@end@additional=\dimen142
+\pgf@shorten@start@additional=\dimen143
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box29
 \pgf@hbox=\box30
 \pgf@layerbox@main=\box31
-\pgf@picture@serial@count=\count106
+\pgf@picture@serial@count=\count113
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen138
+\pgflinewidth=\dimen144
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen139
-\pgf@pt@y=\dimen140
-\pgf@pt@temp=\dimen141
+\pgf@pt@x=\dimen145
+\pgf@pt@y=\dimen146
+\pgf@pt@temp=\dimen147
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -346,8 +377,8 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen142
-\pgf@sys@shading@range@num=\count107
+\pgf@max=\dimen148
+\pgf@sys@shading@range@num=\count114
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
@@ -374,8 +405,8 @@ File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 )
 (/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen143
-\pgf@nodesepend=\dimen144
+\pgf@nodesepstart=\dimen149
+\pgf@nodesepend=\dimen150
 )
 (/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
@@ -385,39 +416,39 @@ Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
 (/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-\pgffor@iter=\dimen145
-\pgffor@skip=\dimen146
-\pgffor@stack=\toks23
-\pgffor@toks=\toks24
+\pgffor@iter=\dimen151
+\pgffor@skip=\dimen152
+\pgffor@stack=\toks24
+\pgffor@toks=\toks25
 ))
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count108
-\pgfplotmarksize=\dimen147
+\pgf@plot@mark@count=\count115
+\pgfplotmarksize=\dimen153
 )
-\tikz@lastx=\dimen148
-\tikz@lasty=\dimen149
-\tikz@lastxsaved=\dimen150
-\tikz@lastysaved=\dimen151
-\tikzleveldistance=\dimen152
-\tikzsiblingdistance=\dimen153
+\tikz@lastx=\dimen154
+\tikz@lasty=\dimen155
+\tikz@lastxsaved=\dimen156
+\tikz@lastysaved=\dimen157
+\tikzleveldistance=\dimen158
+\tikzsiblingdistance=\dimen159
 \tikz@figbox=\box34
 \tikz@tempbox=\box35
-\tikztreelevel=\count109
-\tikznumberofchildren=\count110
-\tikznumberofcurrentchild=\count111
-\tikz@fig@count=\count112
+\tikztreelevel=\count116
+\tikznumberofchildren=\count117
+\tikznumberofcurrentchild=\count118
+\tikz@fig@count=\count119
 
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count113
-\pgfmatrixcurrentcolumn=\count114
-\pgf@matrix@numberofcolumns=\count115
+\pgfmatrixcurrentrow=\count120
+\pgfmatrixcurrentcolumn=\count121
+\pgf@matrix@numberofcolumns=\count122
 )
-\tikz@expandcount=\count116
+\tikz@expandcount=\count123
 
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
 hs.code.tex
@@ -435,7 +466,7 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
-\arrowsize=\dimen154
+\arrowsize=\dimen160
 ))
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautom
 ata.code.tex
@@ -484,10 +515,7 @@ File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.c
 ode.tex
 File: pgflibraryshapes.geometric.code.tex 2008/06/26 v2.10 (rcs-revision 1.1)
-)))) (/home/vincentdebruijn/texmf/tex/latex/epstopdf/epstopdf.sty
-Package: epstopdf 2001/02/04 v1.1 Conversion with epstopdf on the fly (HO)
-)
-(/usr/share/texmf-texlive/tex/generic/xypic/xy.sty
+)))) (/usr/share/texmf-texlive/tex/generic/xypic/xy.sty
 (/usr/share/texmf-texlive/tex/generic/xypic/xy.tex Bootstrap'ing: catcodes,
 docmode, (/usr/share/texmf-texlive/tex/generic/xypic/xyrecat.tex)
 (/usr/share/texmf-texlive/tex/generic/xypic/xyidioms.tex)
@@ -497,51 +525,51 @@ docmode, (/usr/share/texmf-texlive/tex/generic/xypic/xyrecat.tex)
  Xy-pic is free software: see the User's Guide for details.
 
 Loading kernel: messages; fonts; allocations: state,
-\X@c=\dimen155
-\Y@c=\dimen156
-\U@c=\dimen157
-\D@c=\dimen158
-\L@c=\dimen159
-\R@c=\dimen160
-\Edge@c=\toks25
-\X@p=\dimen161
-\Y@p=\dimen162
-\U@p=\dimen163
-\D@p=\dimen164
-\L@p=\dimen165
-\R@p=\dimen166
-\Edge@p=\toks26
-\X@origin=\dimen167
-\Y@origin=\dimen168
-\X@xbase=\dimen169
-\Y@xbase=\dimen170
-\X@ybase=\dimen171
-\Y@ybase=\dimen172
-\X@min=\dimen173
-\Y@min=\dimen174
-\X@max=\dimen175
-\Y@max=\dimen176
+\X@c=\dimen161
+\Y@c=\dimen162
+\U@c=\dimen163
+\D@c=\dimen164
+\L@c=\dimen165
+\R@c=\dimen166
+\Edge@c=\toks26
+\X@p=\dimen167
+\Y@p=\dimen168
+\U@p=\dimen169
+\D@p=\dimen170
+\L@p=\dimen171
+\R@p=\dimen172
+\Edge@p=\toks27
+\X@origin=\dimen173
+\Y@origin=\dimen174
+\X@xbase=\dimen175
+\Y@xbase=\dimen176
+\X@ybase=\dimen177
+\Y@ybase=\dimen178
+\X@min=\dimen179
+\Y@min=\dimen180
+\X@max=\dimen181
+\Y@max=\dimen182
 \lastobjectbox@=\box56
 \zerodotbox@=\box57
-\almostz@=\dimen177
+\almostz@=\dimen183
  direction,
-\d@X=\dimen178
-\d@Y=\dimen179
-\K@=\count117
-\KK@=\count118
-\Direction=\count119
-\K@dXdY=\dimen180
-\K@dYdX=\dimen181
+\d@X=\dimen184
+\d@Y=\dimen185
+\K@=\count124
+\KK@=\count125
+\Direction=\count126
+\K@dXdY=\dimen186
+\K@dYdX=\dimen187
 \xyread@=\read2
 \xywrite@=\write4
-\csp@=\count120
-\quotPTK@=\dimen182
+\csp@=\count127
+\quotPTK@=\dimen188
 
 utility macros; pictures: \xy, positions,
-\swaptoks@@=\toks27
+\swaptoks@@=\toks28
 \connectobjectbox@@=\box58
  objects,
-\styletoks@=\toks28
+\styletoks@=\toks29
  decorations;
 kernel objects: directionals, circles, text; options; algorithms: directions,
 edges, connections;  Xy-pic loaded)
@@ -551,15 +579,15 @@ Package: xy 1999/02/16 Xy-pic version 3.7
  Xy-pic option: All features v.3.3
 (/usr/share/texmf-texlive/tex/generic/xypic/xycurve.tex
  Xy-pic option: Curve and Spline extension v.3.7 curve,
-\crv@cnt@=\count121
-\crvpts@=\toks29
+\crv@cnt@=\count128
+\crvpts@=\toks30
 \splinebox@=\box59
-\splineval@=\dimen183
-\splinedepth@=\dimen184
-\splinetol@=\dimen185
-\splinelength@=\dimen186
+\splineval@=\dimen189
+\splinedepth@=\dimen190
+\splinetol@=\dimen191
+\splinelength@=\dimen192
  circles,
-\L@=\dimen187
+\L@=\dimen193
  loaded)
 (/usr/share/texmf-texlive/tex/generic/xypic/xyframe.tex
  Xy-pic option: Frame and Bracket extension v.3.7 loaded)
@@ -569,7 +597,7 @@ Package: xy 1999/02/16 Xy-pic version 3.7
  Xy-pic option: More Tips extension v.3.3 loaded) loaded)
 (/usr/share/texmf-texlive/tex/generic/xypic/xyline.tex
  Xy-pic option: Line styles extension v.3.6
-\xylinethick@=\dimen188
+\xylinethick@=\dimen194
  loaded)
 (/usr/share/texmf-texlive/tex/generic/xypic/xyrotate.tex
  Xy-pic option: Rotate and Scale extension v.3.3 loaded)
@@ -577,13 +605,13 @@ Package: xy 1999/02/16 Xy-pic version 3.7
  Xy-pic option: Colour extension v.3.3 loaded)
 (/usr/share/texmf-texlive/tex/generic/xypic/xymatrix.tex
  Xy-pic option: Matrix feature v.3.4
-\Row=\count122
-\Col=\count123
-\queue@=\toks30
-\queue@@=\toks31
-\qcount@=\count124
-\qcount@@=\count125
-\matrixsize@=\count126
+\Row=\count129
+\Col=\count130
+\queue@=\toks31
+\queue@@=\toks32
+\qcount@=\count131
+\qcount@@=\count132
+\matrixsize@=\count133
  loaded)
 (/usr/share/texmf-texlive/tex/generic/xypic/xyarrow.tex
  Xy-pic option: Arrow and Path feature v.3.5 path, \ar, loaded)
@@ -594,23 +622,23 @@ Package: mathtools 2008/08/01 v1.06 mathematical typesetting tools (MH)
 
 (/usr/share/texmf-texlive/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count127
-\calc@Bcount=\count128
-\calc@Adimen=\dimen189
-\calc@Bdimen=\dimen190
-\calc@Askip=\skip43
-\calc@Bskip=\skip44
+\calc@Acount=\count134
+\calc@Bcount=\count135
+\calc@Adimen=\dimen195
+\calc@Bdimen=\dimen196
+\calc@Askip=\skip48
+\calc@Bskip=\skip49
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count129
-\calc@Cskip=\skip45
+\calc@Ccount=\count136
+\calc@Cskip=\skip50
 )
 (/usr/share/texmf-texlive/tex/latex/mh/mhsetup.sty
 Package: mhsetup 2007/12/03 v1.2 programming setup (MH)
 )
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip46
+\@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
@@ -618,56 +646,56 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks32
-\ex@=\dimen191
+\@emptytoks=\toks33
+\ex@=\dimen197
 ))
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen192
+\pmbraise@=\dimen198
 )
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count130
+\inf@bad=\count137
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count131
-\leftroot@=\count132
+\uproot@=\count138
+\leftroot@=\count139
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count133
-\DOTSCASE@=\count134
+\classnum@=\count140
+\DOTSCASE@=\count141
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box60
 \strutbox@=\box61
-\big@size=\dimen193
+\big@size=\dimen199
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count135
-\c@MaxMatrixCols=\count136
+\macc@depth=\count142
+\c@MaxMatrixCols=\count143
 \dotsspace@=\muskip11
-\c@parentequation=\count137
-\dspbrk@lvl=\count138
-\tag@help=\toks33
-\row@=\count139
-\column@=\count140
-\maxfields@=\count141
-\andhelp@=\toks34
-\eqnshift@=\dimen194
-\alignsep@=\dimen195
-\tagshift@=\dimen196
-\tagwidth@=\dimen197
-\totwidth@=\dimen198
-\lineht@=\dimen199
-\@envbody=\toks35
-\multlinegap=\skip47
-\multlinetaggap=\skip48
-\mathdisplay@stack=\toks36
+\c@parentequation=\count144
+\dspbrk@lvl=\count145
+\tag@help=\toks34
+\row@=\count146
+\column@=\count147
+\maxfields@=\count148
+\andhelp@=\toks35
+\eqnshift@=\dimen200
+\alignsep@=\dimen201
+\tagshift@=\dimen202
+\tagwidth@=\dimen203
+\totwidth@=\dimen204
+\lineht@=\dimen205
+\@envbody=\toks36
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks37
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-\g_MT_multlinerow_int=\count142
-\l_MT_multwidth_dim=\dimen200
+\g_MT_multlinerow_int=\count149
+\l_MT_multwidth_dim=\dimen206
 )
 (/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2009/06/22 v3.00
@@ -679,31 +707,48 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
+(/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen207
+)
 (/usr/share/texmf-texlive/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen201
-\extrarowheight=\dimen202
-\NC@list=\toks37
-\extratabsurround=\skip49
-\backup@length=\skip50
-) (./report.aux)
+\col@sep=\dimen208
+\extrarowheight=\dimen209
+\NC@list=\toks38
+\extratabsurround=\skip54
+\backup@length=\skip55
+)
+(/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks39
+\thm@bodyfont=\toks40
+\thm@headfont=\toks41
+\thm@notefont=\toks42
+\thm@headpunct=\toks43
+\thm@preskip=\skip56
+\thm@postskip=\skip57
+\thm@headsep=\skip58
+\dth@everypar=\toks44
+)
+\c@definition=\count150
+ (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-Package hyperref Info: Link coloring OFF on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+Package hyperref Info: Link coloring OFF on input line 24.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -711,10 +756,10 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count143
+\c@section@level=\count151
 )
-LaTeX Info: Redefining \ref on input line 22.
-LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \ref on input line 24.
+LaTeX Info: Redefining \pageref on input line 24.
  (./report.out)
 (./report.out)
 \@outlinefile=\write5
@@ -723,23 +768,28 @@ LaTeX Info: Redefining \pageref on input line 22.
 \AtBeginShipoutBox=\box62
  (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count144
-\scratchdimen=\dimen203
+\scratchcounter=\count152
+\scratchdimen=\dimen210
 \scratchbox=\box63
-\nofMPsegments=\count145
-\nofMParguments=\count146
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count147
-\MPscratchDim=\dimen204
-\MPnumerator=\count148
-\everyMPtoPDFconversion=\toks39
-) ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+\nofMPsegments=\count153
+\nofMParguments=\count154
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count155
+\MPscratchDim=\dimen211
+\MPnumerator=\count156
+\everyMPtoPDFconversion=\toks46
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
+LaTeX Info: Redefining \subref on input line 24.
+Package caption Info: End \AtBeginDocument code.
+ ABD: EveryShipout initializing macros
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -759,51 +809,524 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.32   \newpage
+l.34   \newpage
                 [1
 
 ]
 Chapter 1.
 [2
 
-]
+] (./tex/introduction.tex
+
+LaTeX Warning: Citation `McConnell:testing' on page 3 undefined on input line 2
+.
+
+
+LaTeX Warning: Citation `Pol:testing' on page 3 undefined on input line 2.
+
+
+LaTeX Warning: Citation `Blackburn:testing' on page 3 undefined on input line 4
+.
+
+
+LaTeX Warning: Citation `McCabe:testing' on page 3 undefined on input line 6.
+
+
+LaTeX Warning: Citation `Andries1999' on page 3 undefined on input line 10.
+
+
+LaTeX Warning: Citation `Heckel2006187' on page 3 undefined on input line 10.
+
+[3]
+
+LaTeX Warning: Reference `sec:research_methods_validation' on page 4 undefined 
+on input line 26.
+
+
+LaTeX Warning: Reference `sec:research_methods_validation' on page 4 undefined 
+on input line 28.
+
+
+LaTeX Warning: Reference `sec:first_order_logic' on page 4 undefined on input l
+ine 31.
+
+
+LaTeX Warning: Reference `sec:symbolic' on page 4 undefined on input line 31.
+
+
+LaTeX Warning: Reference `sec:graph' on page 4 undefined on input line 31.
+
+
+LaTeX Warning: Reference `sec:tooling' on page 4 undefined on input line 31.
+
+
+LaTeX Warning: Reference `sec:research_methods' on page 4 undefined on input li
+ne 31.
+
+
+LaTeX Warning: Reference `app:planning' on page 4 undefined on input line 31.
+
+) (./tex/model_based_testing.tex
+
+LaTeX Warning: Reference `fig:model_based_testing' on page 4 undefined on input
+ line 3.
+
+[4] <./img/model-based-testing.pdf, id=73, 379.58545pt x 141.73691pt>
+File: ./img/model-based-testing.pdf Graphic file (type pdf)
+
+<use ./img/model-based-testing.pdf>
+
+LaTeX Warning: Reference `fig:model_based_testing_on_the_fly' on page 5 undefin
+ed on input line 13.
+
+
+LaTeX Warning: Citation `Tretmans:TorX' on page 5 undefined on input line 13.
+
+
+LaTeX Warning: Citation `Belinfante:JTorX' on page 5 undefined on input line 13
+.
+
+<./img/mbt-on-the-fly.pdf, id=75, 614.295pt x 794.97pt>
+File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
+
+<use ./img/mbt-on-the-fly.pdf>
+
+LaTeX Warning: Citation `denicola:testing' on page 5 undefined on input line 26
+.
+
+
+LaTeX Warning: Citation `brinksma:testgeneration' on page 5 undefined on input 
+line 26.
+
+
+LaTeX Warning: Citation `Tretmans:conformancetesting' on page 5 undefined on in
+put line 26.
+
+
+LaTeX Warning: Citation `Tretmans:testgeneration' on page 5 undefined on input 
+line 26.
+
+
+LaTeX Warning: Citation `Broy:ModelBasedTesting' on page 5 undefined on input l
+ine 26.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 34.
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 34.
+ [5 <./img/model-based-testing.pdf>]
+
+LaTeX Warning: Citation `Tretmans:testgeneration' on page 6 undefined on input 
+line 43.
+
+
+LaTeX Warning: Reference `fig:iots_example' on page 6 undefined on input line 4
+5.
+
+
+LaTeX Warning: Reference `fig:iots_test' on page 6 undefined on input line 45.
+
+[6 <./img/mbt-on-the-fly.pdf>] (./img/iots-example.tex <xymatrix 2x2 182>)
+(./img/iots-test.tex <xymatrix 3x2 145>)
+
+LaTeX Warning: Citation `Lee:testing' on page 7 undefined on input line 57.
+
+
+LaTeX Warning: Citation `Nachmanson:testing' on page 7 undefined on input line 
+57.
+
+
+LaTeX Warning: Citation `Hasan:testing' on page 7 undefined on input line 57.
+
+
+LaTeX Warning: Reference `fig:iots_test' on page 7 undefined on input line 59.
+
+
+LaTeX Warning: Citation `Zhu:coverage' on page 7 undefined on input line 61.
+
+) (./tex/first_order_logic.tex
+
+LaTeX Warning: Reference `sec:symbolic' on page 7 undefined on input line 3.
+
+
+LaTeX Warning: Citation `Huth:logic' on page 7 undefined on input line 3.
+
+[7]) (./tex/symbolic.tex
+
+LaTeX Warning: Citation `Frantzen:Symbolic' on page 8 undefined on input line 5
+.
+
+
+LaTeX Warning: Reference `sec:sts_definition' on page 8 undefined on input line
+ 5.
+
+
+LaTeX Warning: Citation `rusu:symbolic' on page 8 undefined on input line 5.
+
+
+LaTeX Warning: Citation `Frantzen:Symbolic' on page 8 undefined on input line 5
+.
+
+
+LaTeX Warning: Citation `Frantzen:Symbolic' on page 8 undefined on input line 5
+.
+
+
+LaTeX Warning: Citation `clarke:STG' on page 8 undefined on input line 5.
+
+[8]
+
+LaTeX Warning: Reference `fig:example_sts' on page 9 undefined on input line 25
+.
+
+
+LaTeX Warning: Reference `fig:example_sts' on page 9 undefined on input line 30
+.
+
+(./img/sts_boardgame_1.tex <xymatrix 13x1 191>) [9]
+
+LaTeX Warning: Reference `fig:example_trafo' on page 10 undefined on input line
+ 50.
+
+(./img/trafo_sts.tex <xymatrix 1x3 151>) (./img/trafo_lts.tex <xymatrix 3x3
+348>)
+
+LaTeX Warning: Reference `fig:trafo_sts' on page 10 undefined on input line 62.
+
+
+
+LaTeX Warning: Citation `Myers:2004' on page 10 undefined on input line 62.
+
+
+LaTeX Warning: Citation `Reid:partitioning' on page 10 undefined on input line 
+62.
+
+) (./tex/graph_transform.tex [10]
+
+LaTeX Warning: Citation `Rensink:graph_grammars' on page 11 undefined on input 
+line 12.
+
+
+LaTeX Warning: Citation `Heckel2006187' on page 11 undefined on input line 12.
+
+
+LaTeX Warning: Citation `Andries1999' on page 11 undefined on input line 12.
+
+[11]
+
+LaTeX Warning: Reference `fig:gts' on page 12 undefined on input line 61.
+
+
+LaTeX Warning: Reference `fig:gg_result' on page 12 undefined on input line 61.
+
+
+(./img/gg_graph.tex <xymatrix 2x1 51>)
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
+[]\T1/cmr/m/n/8 (a) |The start
+ []
+
+(./img/gg_graph.tex <xymatrix 2x1 51>) (./img/gg_nac1.tex <xymatrix 2x1 51>)
+(./img/gg_nac2.tex <xymatrix 2x1 51>)
+Underfull \hbox (badness 6542) in paragraph at lines 69--69
+[]\T1/cmr/m/n/8 (d) |The sec-ond
+ []
+
+(./img/gg_rhs.tex <xymatrix 2x1 51>) (./img/gg_rhs.tex <xymatrix 2x1 51>)
+
+LaTeX Warning: Reference `sec:init_design' on page 12 undefined on input line 7
+8.
+
+[12]
+
+LaTeX Warning: Reference `fig:trafo_lts' on page 13 undefined on input line 88.
+
+
+
+LaTeX Warning: Reference `fig:trafo_basic_sts' on page 13 undefined on input li
+ne 88.
+
+(./img/trafo_basic_sts.tex <xymatrix 3x3 348>)
+
+LaTeX Warning: Reference `fig:trafo_lts' on page 13 undefined on input line 94.
+
+
+
+LaTeX Warning: Reference `fig:trafo_lts' on page 13 undefined on input line 94.
+
+
+) (./tex/tooling.tex
+
+LaTeX Warning: Reference `fig:axini_tool' on page 13 undefined on input line 6.
+
+
+
+LaTeX Warning: Reference `fig:model_based_testing_on_the_fly' on page 13 undefi
+ned on input line 6.
+
+<./img/axini_tool.pdf, id=184, 356.92177pt x 145.93393pt>
+File: ./img/axini_tool.pdf Graphic file (type pdf)
+
+<use ./img/axini_tool.pdf> [13 <./img/axini_tool.pdf>]
+
+LaTeX Warning: Citation `Rensink:GROOVE' on page 14 undefined on input line 26.
+
+
+
+LaTeX Warning: Citation `Ghamarian:GROOVE' on page 14 undefined on input line 2
+6.
+
+
+LaTeX Warning: Reference `fig:groove_tool' on page 14 undefined on input line 2
+8.
+
+<./img/groove_tool.pdf, id=206, 374.51399pt x 161.01265pt>
+File: ./img/groove_tool.pdf Graphic file (type pdf)
+
+<use ./img/groove_tool.pdf>
+
+LaTeX Warning: Reference `fig:example_sts' on page 14 undefined on input line 3
+9.
+
+
+LaTeX Warning: Reference `fig:example_groove' on page 14 undefined on input lin
+e 39.
+
+
+LaTeX Warning: Reference `fig:example_groove_start' on page 14 undefined on inp
+ut line 39.
+
+[14 <./img/groove_tool.pdf>]
+
+LaTeX Warning: Reference `fig:example_groove_throw' on page 15 undefined on inp
+ut line 51.
+
+
+LaTeX Warning: Reference `fig:example_groove_move' on page 15 undefined on inpu
+t line 52.
+
+
+LaTeX Warning: Reference `fig:example_groove_next' on page 15 undefined on inpu
+t line 53.
+
+(./img/start.tikz
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 8.
+ (/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+))
+(./img/throws.tikz) (./img/move.tikz) (./img/nextTurn.tikz)
+
+LaTeX Warning: Reference `fig:example_sts' on page 15 undefined on input line 6
+5.
+
+
+LaTeX Warning: Reference `fig:example_sts' on page 15 undefined on input line 6
+5.
+
+
+LaTeX Warning: Reference `fig:gts_example' on page 15 undefined on input line 6
+9.
+
+
+LaTeX Warning: Reference `fig:example_groove_start' on page 15 undefined on inp
+ut line 69.
+
+
+LaTeX Warning: Reference `fig:target_graph_state' on page 15 undefined on input
+ line 69.
+
+(./img/gts-transition-example.tikz)
+
+LaTeX Warning: Reference `fig:example_groove' on page 15 undefined on input lin
+e 75.
+
+
+LaTeX Warning: Reference `fig:example_groove' on page 15 undefined on input lin
+e 75.
+
+(./img/target-graph-state.tikz)
+
+LaTeX Warning: Reference `fig:gts_example' on page 15 undefined on input line 8
+3.
+
+
+LaTeX Warning: Reference `fig:gts_example' on page 15 undefined on input line 8
+3.
+
+
+LaTeX Warning: Reference `fig:example_sts' on page 15 undefined on input line 8
+8.
+
+
+LaTeX Warning: Reference `fig:example_groove' on page 15 undefined on input lin
+e 88.
+
+
+LaTeX Warning: Reference `fig:example_groove2' on page 15 undefined on input li
+ne 91.
+
+[15] (./img/start2.tikz) (./img/throws2.tikz) (./img/move2.tikz)
+
+LaTeX Warning: Reference `sec:gts_example' on page 16 undefined on input line 1
+03.
+
+
+LaTeX Warning: Reference `fig:move3' on page 16 undefined on input line 103.
+
+(./img/move3.tikz) [16]
+
+LaTeX Warning: Reference `fig:example_groove' on page 17 undefined on input lin
+e 116.
+
+
+LaTeX Warning: Reference `fig:statespace_groove1' on page 17 undefined on input
+ line 116.
+
+
+LaTeX Warning: Reference `fig:example_groove2' on page 17 undefined on input li
+ne 116.
+
+
+LaTeX Warning: Reference `fig:move3' on page 17 undefined on input line 116.
+
+
+LaTeX Warning: Reference `fig:statespace_groove2' on page 17 undefined on input
+ line 116.
+
+
+LaTeX Warning: Reference `fig:example_groove' on page 17 undefined on input lin
+e 116.
+
+
+LaTeX Warning: Reference `fig:symmetry_example' on page 17 undefined on input l
+ine 116.
+
+(./img/start3.tikz)
+
+LaTeX Warning: Reference `fig:example_groove' on page 17 undefined on input lin
+e 122.
+
+
+LaTeX Warning: Reference `fig:example_groove' on page 17 undefined on input lin
+e 122.
+
+
+LaTeX Warning: Reference `fig:example_sts' on page 17 undefined on input line 1
+26.
+
+(./img/lts.tikz)
+
+LaTeX Warning: Reference `fig:example_groove' on page 17 undefined on input lin
+e 132.
+
+
+LaTeX Warning: Reference `fig:example_groove' on page 17 undefined on input lin
+e 132.
+
+(./img/lts2.tikz)
+
+LaTeX Warning: Reference `fig:example_groove2' on page 17 undefined on input li
+ne 140.
+
+
+LaTeX Warning: Reference `fig:example_groove2' on page 17 undefined on input li
+ne 140.
+
+) [17] [18] [19]
 Chapter 2.
-[3
+[20
 
-] (./tex/gts-to-sts-transformation.tex) (./tex/exploration-strategy.tex)
-(./tex/partial-matching.tex) (./tex/reachability.tex [4])
-(./tex/pre-testing-vs-on-the-fly-transformation.tex) [5]
+] (./tex/design-introduction.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+[]\T1/cmr/m/n/10 revise this
+ []
+
+
+LaTeX Warning: Reference `sec:gg-to-sts' on page 21 undefined on input line 3.
+
+
+LaTeX Warning: Reference `sec:exploration' on page 21 undefined on input line 3
+.
+
+
+LaTeX Warning: Reference `sec:reachability' on page 21 undefined on input line 
+3.
+
+
+LaTeX Warning: Reference `sec:pre-testing-vs-on-the-fly' on page 21 undefined o
+n input line 3.
+
+) [21] (./tex/gg-to-sts-transformation.tex) (./tex/exploration-strategy.tex)
+(./tex/partial-matching.tex [22]) (./tex/reachability.tex)
+(./tex/pre-testing-vs-on-the-fly-transformation.tex) [23]
+(./tex/design-conclusions.tex) [24]
 Chapter 3.
-[6
+[25
 
-] (./tex/case-studies.tex) (./tex/benchmarks.tex) [7]
+] (./tex/validation-introduction.tex
+
+LaTeX Warning: Reference `sec:case-studies' on page 26 undefined on input line 
+1.
+
+
+LaTeX Warning: Reference `sec:benchmarks' on page 26 undefined on input line 1.
+
+
+) [26] (./tex/case-studies.tex) (./tex/benchmarks.tex) [27]
 Chapter 4.
-[8
+[28
 
-] (./tex/summary.tex) (./tex/conclusion.tex) (./tex/future-work.tex) [9]
+] (./tex/summary.tex) (./tex/conclusion.tex) (./tex/future-work.tex)
+[29]
 No file report.bbl.
-(./report.aux) ) 
+(./report.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 17603 strings out of 495061
- 311521 string characters out of 1182622
- 417703 words of memory out of 3000000
- 20318 multiletter control sequences out of 15000+50000
- 21076 words of font info for 60 fonts, out of 3000000 for 9000
+ 21487 strings out of 495061
+ 375426 string characters out of 1182622
+ 1289392 words of memory out of 3000000
+ 23963 multiletter control sequences out of 15000+50000
+ 28240 words of font info for 72 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 63i,6n,62p,603b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/
-ecbx1200.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
-cbx1440.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ec
-bx2074.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecb
-x2488.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti
-1000.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1
-000.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx10
-00.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm120
-0.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728
-.600pk>
-Output written on report.pdf (11 pages, 116997 bytes).
+ 63i,22n,73p,1459b,1123s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0700.600pk
+> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk>
+ </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0800.600pk> 
+</home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx0800.600pk> <
+/home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </
+home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </h
+ome/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </ho
+me/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </hom
+e/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home
+/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/
+vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/v
+incentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/vi
+ncentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/vin
+centdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/vinc
+entdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/vince
+ntdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on report.pdf (31 pages, 577000 bytes).
 PDF statistics:
- 454 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
- 173 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 893 PDF objects out of 1000 (max. 8388607)
+ 143 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

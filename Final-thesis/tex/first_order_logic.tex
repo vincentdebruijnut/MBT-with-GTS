@@ -1,0 +1,11 @@
+\section{First Order Logic}\label{sec:first_order_logic}
+
+Some basic concepts from first order logic are described here, used in the definitions of section~\ref{sec:symbolic}. For a general introduction into logic we refer to~\cite{Huth:logic}.
+ 
+Let $\mathcal{V}$ be a set of \textit{variables}. \textit{Terms} over $V$, denoted $\mathcal{T}(V)$, are built from a set of function symbols $F$ and variables $V \subset \mathcal{V}$. Each $f\in F$ has a corresponding arity $n\in \mathbb{N}$. if $n = 0$ we call $f$ a constant. We write $var(t)$ to denote the set of variables appearing in a term $t$. Terms $t\in \mathcal{T}(\emptyset)$ are called ground terms.
+
+A \textit{term-mapping} is a function $\sigma:\mathcal{V} \mapsto \mathcal{T}(\mathcal{V})$. For sets $V$, $W$ with $V \cup W \subset \mathcal{V}$, we write $\mathcal{T}(W)^X$ for the set of term-mappings that assign to each variable $v\in V$ a term $t\in \mathcal{T}(W)$, and to each variable $v \not\in V$ the term $v$.
+
+A \textit{valuation} $\nu$ is a function $\nu:\mathcal{V} \mapsto \mathcal{U}$, where $\mathcal{U}$ is a non-empty set called a \textit{universe}. An example of a universe is $\mathbb{N}$, the non-zero integers. Additionally, $\nu:\mathit{n-tuple:x} \mapsto \mathit{n-tuple:y}$, maps the values of tuple $x$ to the values of tuple $y$.
+
+An \textit{evaluation} of $\mathcal{T}(\mathcal{V})$ is given by $\epsilon:(\mathcal{T}(\mathcal{V}),\nu:\mathcal{V}) \mapsto \mathcal{U}$. An evaluation $\epsilon:\mathcal{T}(\mathcal{V}),\nu_\mathit{before}:\mathcal{V})$ of the terms in a term-mapping results in a set $X \subseteq \mathcal{U}$. A new valuation can then be constructed by: $\nu_\mathit{after}:\mathcal{V} \mapsto X$.

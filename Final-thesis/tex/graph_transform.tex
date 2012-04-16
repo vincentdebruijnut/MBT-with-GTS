@@ -1,85 +1,96 @@
-\section{Graph Transformation Systems}\label{sec:graph}
-A Graph Transformation System is composed of a start graph and a set of transition rules. The start graph describes the system in its initial state. The transition rules apply changes to the graph, creating a new graph which describes the system in its new state. 
+\section{Graph Transformation}\label{sec:graph}
+A \textit{graph grammar} is composed of a start graph and a set of transformation rules. The start graph describes the system in its initial state. The transformation rules describe what changes are made to the graph, resulting in a new graph which describes the system in its new state. The definition is as follows.
 
-\subsection{Graphs \& Morphisms}
+\begin{definition}
+A graph grammar is a tuple $\langle G, R\rangle$, where:
+\begin{itemize}
+  \item $G$ is the start graph
+  \item $R$ is a set of graph transformation rules
+\end{itemize}
+\end{definition} 
+
+The rest of this section is ordered as follows: first, graphs and graph morphisms are explained. This is then used to explain graph transformation rules, followed by the definition of a graph grammar. Then, the definition of a \textit{Graph Transition System} (GTS) is given. An example of a graph grammar and a GTS is then given. Finally, a method for transforming a GTS to an STS is given. For a more detailed overview of graph grammars, we refer to~\cite{Rensink:graph_grammars, Heckel2006187, Andries1999}.
+
+\subsection{Graphs \& morphisms}
+\begin{definition}
 A graph is a tuple $\langle L, N, E\rangle$, where:
 \begin{itemize}
   \item $L$ is a set of labels
   \item $N$ is a set of nodes, where each $n \in N$ has a label $l \in L$
   \item $E$ is a set of edges, where each $e \in E$ has a label $l \in L$ and nodes $source,target \in N$
 \end{itemize}
+\end{definition}
 
-%A graph $H$ is a \textit{subgraph} of graph $G$, denoted $H \subseteq G$, if the node and edge sets of $H$ are subsets of the node and edge sets of $G$, where nodes are considered equal if their labels are equal and edges are considered equal if their labels and their source and target nodes are equal.
+A graph $H$ has an \textit{occurrence} in a graph $G$, denoted by $H \rightarrow G$, if there is a mapping from the nodes and the edges of $H$ to the nodes and the edges of $G$ respectively. Such a mapping is called a \textit{morphism}. An element $e$ in graph $H$ is then said to have an \textit{image} in graph $G$ and $e$ is a \textit{pre-image} of the image. A graph $H$ has a partial morphism to a graph $G$ if there are elements in $H$ without an image in $G$.
 
-A graph $H$ has an \textit{occurrence} in a graph $G$, denoted by $L \rightarrow G$, if there is a mapping $occ$ which maps the nodes and the edges of $H$ to the nodes and the edges of $G$ respectively.
-
-\subsection{Graph Transformation rules}
-A transformation rule is a tuple $\langle \mathit{LHS}, \mathit{NAC}, \mathit{RHS}, \mathit{Map}\rangle$, where:
+\subsection{Graph transformation rules}
+\begin{definition}
+A transformation rule is a tuple $\langle \mathit{LHS}, \mathit{NAC}, \mathit{RHS}, \mathit{M}\rangle$, where:
 \begin{itemize}
   \item $\mathit{LHS}$ is a graph representing the left-hand side of the rule
   \item $\mathit{NAC}$ is a set of graphs representing the negative application conditions
   \item $\mathit{RHS}$ is a graph representing the right-hand side of the rule
-  \item $\mathit{Map}$ is a mapping of elements in $\mathit{LHS}$ to elements in $\mathit{RHS}$
+  \item $\mathit{M_{RHS}}$ is a partial morphism of $\mathit{LHS}$ to $\mathit{RHS}$ 
+  \item $\mathit{M_{NAC}}$ are partial morphisms of $\mathit{LHS}$ to each $n \in \mathit{NAC}$
 \end{itemize}
+\end{definition}
 
-%Nodes and edges in the $\mathit{LHS}$ graph have a mapping $\mathit{Map}$ to nodes and edges in the $\mathit{RHS}$ graph. This mapping is not defined formally, as this is out of the scope of this report.\marginpar{ik kan de mapping ook onderdeel maken van de rule, dan 'bestaat' deze gewoon} One property of the mapping is that if an element in $\mathit{LHS}$ maps to an element in $\mathit{RHS}$, it must hold that their labels are the same.
+A rule $R$ is applicable on a graph $G$ if its $\mathit{LHS}$ has an occurrence in $G$ and $\not\ exists n \in \mathit{NAC}$ such that $n$ has an occurence in $G$ and $\forall e \in \mathit{LHS}$, if $e$ has an image $i$ in $n$ and an image $j$ in $G$, then $j$ should be an image of $j$. After the rule application, all elements in $\mathit{LHS}$ not part of $\mathit{M_{RHS}}$, i.e. they do not have an image in $\mathit{RHS}$, are removed from $G$ and all elements in $\mathit{RHS}$ not part of $\mathit{M_{RHS}}$, i.e. they do not have a pre-image in $\mathit{LHS}$, are added to $G$.
 
-A rule $R$ is applicable on a graph $G$ if its $\mathit{LHS}$ has an occurrence in $G$ and none of the graphs in its $\mathit{NAC}$ have an occurrence in $G$. After the rule application, all elements in $\mathit{LHS}$ not part of $\mathit{Map}$ are removed from $G$ and all elements in $\mathit{RHS}$ not part of $\mathit{Map}$ are added to $G$. All elements in $\mathit{Map}$ are kept.
+\subsection{Graph Transition Systems}
+By repeatedly applying graph transformation rules to the start graph and all its consecutive graphs, a graph grammar can be explored to reveal a \textit{Graph Transition System} (GTS). This transition system consists of \textit{graph states} connected by \textit{rule transitions}.
 
-%the occurrence of $\mathit{LHS}$ is removed in $G$. This leaves \textit{dangling} edges, which are edges where the one of the source or target nodes is removed from $G$ and one is kept. The label of the removed node is remembered on the dangling edge. The $\mathit{RHS}$ of $R$ is added to $G$, such that each dangling edge is connected to a node in $\mathit{RHS}$ with the same label as its remembered node label. If such a node does not exist, the dangling edge is removed.
-
-\subsection{GTS Definition}
-A Graph Transformation System is a tuple $\langle G, R\rangle$, where:
+\begin{definition}
+A graph transition system is an 8-tuple	$\langle S, L, T, G, R, M_G, M_R, s0\rangle$, where:
 \begin{itemize}
-  \item $G$ is a graph of the start state
-  \item $R$ is a set of transformation rules
+\item $S$ is a finite, non-empty set of graph states
+\item $L$ is a finite set of labels. For each label $l\in L$, the arity of $l$, denoted $\mathit{arity(l)}$, is a natural number. The parameters of $l$, denoted $\mathit{param(l)}$, is a tuple of length $\mathit{arity(l)}$ of variables.
+\item $T \in S \times (L \cup \{\tau\}) \times S$, with $\tau \notin L$, is the rule transition relation. The parameters of a transition $t \in T$ with label $l \in L$, denoted $\mathit{param(t)}$, is a tuple of length $\mathit{arity(l)}$ of constants, such that $\Sigma:\mathit{param(l)} \mapsto \mathit{param(t)}$ is the valuation of the variables of the label.
+\item $G$ is a set of graphs.
+\item $R$ is a set of rules.
+\item $M_G$ is a mapping $\forall s \in S . s \mapsto g \in G \land \not\exists s' \in S . s \neq s' \land s' \mapsto g \in M_G$
+\item $M_R$ is a mapping $\forall t \in T . t \mapsto r \in R \land \not\exists t' \in T . t \neq t' \land t' \mapsto r \in M_R$
+\item $s0 \in s$ is the initial graph state.
 \end{itemize}
+We write $s \xrightarrow{\mu}s'$ if there is a rule transition labelled $\mu$ from state s to state s', i.e., $(s, \mu, s') \in T$.
+\end{definition}
 
-By applying one of the transformation rules on the graph of the start state, a new graph state is explored. These two graph states are connected by a \textit{rule transition}, meaning the application of the rule on the start state yielding the new state. This structure resembles that of an LTS; by repeatedly applying all applicable transformation rules to each graph state until no new graph states can be explored, a transition system of graph states and rule transitions is found. This is called the \textit{Graph Transition System} (GTiS) of the GTS. The rule transitions are labelled with a unique identifier of the rule, such as the name of the rule. This entails that each transition derived from the same rule, has the same label.
+These systems are very similar to LTSs. A GTS can be transformed to an LTS by omitting the graphs, rules, mappings and parameters on labels.
 
 \subsection{Example}\label{sec:gts_example}
-The running example from Figure~\ref{fig:example_sts} is displayed as a GTS, as visualized in GROOVE, in Figure~\ref{fig:example_groove}. Figure~\ref{fig:example_groove_start} is the start graph of the system. The rules can be described as follows:
-\begin{enumerate}
-  \item~\ref{fig:example_groove_throw}: 'if a player has the turn and he has not thrown the die yet, he may do so.'
-  \item~\ref{fig:example_groove_move}: 'if a player has the turn and he has thrown the die and this number is larger than zero, he may move one place and then it is as if he has thrown one less.'
-  \item~\ref{fig:example_groove_next}: 'if a player has finished moving (number thrown is zero), the next player receives the turn.'
-\end{enumerate}
+Figure \ref{fig:gts} shows an example of the start graph and one rule of a graph grammar. $\mathit{M_{RHS}}$ maps the $A$ and $B$ nodes in $\mathit{LHS}$ to the A and B nodes in $\mathit{RHS}$ respectively. $\mathit{M_{NAC}}$ maps the $A$ node in $\mathit{LHS}$ to the $A$ node in both graphs in $\mathit{NAC}$. The a-edge in $\mathit{LHS}$ is mapped to the a-edge in the first $\mathit{NAC}$. The $\mathit{LHS}$ of the rule has an occurrence in the start graph, as the $A$ and $B$ nodes connected by the a-edge exist in both graphs. None of the graphs in the $\mathit{NAC}$ have an occurrence in the start graph, because the $C$ node does not exist in the start graph. The new graph after applying the rule is in Figure~\ref{fig:gg_result}.
 
-The $\mathit{LHS}$, $\mathit{NAC}$ and $\mathit{RHS}$ of each rule are displayed as one graph. The colored nodes and edges in the rules indicate to which part they belong:
-\begin{enumerate}
-  \item normal line (black): This node or edge is part of both the $\mathit{LHS}$ and $\mathit{RHS}$. $\mathit{Map}$ contains the mapping of this node as part of the $\mathit{LHS}$ to itself as part of the $\mathit{RHS}$.
-  \item dotted line (red): This node or edge is part of the $\mathit{NAC}$ only.
-  \item thick line (green): This node or edge is part of the $\mathit{RHS}$ only.
-  \item dashed line (blue): This node or edge is part of the $\mathit{LHS}$ only.
-\end{enumerate}
-
-The $turn$ flag on the \textbf{Player} node is a representation of a self-edge with label $turn$. The assignments on the \textbf{Die} node are representations of edges to integer nodes. The throws value assignment (:=) in the move rule is a shorthand for two edges: one edge in the $\mathit{LHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i$ and another edge in the $\mathit{RHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i-1$. In the next turn rule, the $turn$ edge exists in the $\mathit{LHS}$ as a self-edge of the left \textbf{Player} node and in the $\mathit{RHS}$ as a self-edge of the right \textbf{Player} node. In the same rule, the $throws$ edge from the left \textbf{Player} node to an integer node only exists in the $\mathit{LHS}$.
-
-\begin{figure}[h!]
+\begin{figure}[ht]
   \begin{center}
-    \subfloat[The start graph]{\label{fig:example_groove_start}\input{./img/start.tikz}}\quad
-    \subfloat[The throw rule]{\label{fig:example_groove_throw}\input{./img/throws.tikz}}
-    \subfloat[The move rule]{\label{fig:example_groove_move}\input{./img/move.tikz}}
-    \subfloat[The next turn rule]{\label{fig:example_groove_next}\input{./img/nextTurn.tikz}}
+    \subfloat[The start graph]{\label{fig:gg_graph}\input{./img/gg_graph.tex}}\hspace{20px}
+    \subfloat[The LHS]{\label{fig:gg_lhs}\input{./img/gg_graph.tex}}\hspace{20px}
+    \subfloat[The first NAC]{\label{fig:gg_nac1}\input{./img/gg_nac1.tex}}\hspace{20px}
+    
+    \subfloat[The second NAC]{\label{fig:gg_nac2}\input{./img/gg_nac2.tex}}\hspace{20px}
+    \subfloat[The RHS]{\label{fig:gg_rhs}\input{./img/gg_rhs.tex}}\hspace{20px}
+    \subfloat[The result]{\label{fig:gg_result}\input{./img/gg_rhs.tex}}
   \end{center}
-  \caption{The GTS of the board game example in Figure~\ref{fig:example_sts}}
-  \label{fig:example_groove}
+  \caption{An example of a graph grammar}
+  \label{fig:gts}
 \end{figure}
 
-The graph is transformed after the rule is applied. The resulting graph after the transformation is the new state of the system and the rule is the transition from the old state (the graph as it was before the rule was applied) to the new state. Figure~\ref{fig:gtis_example} shows the GTiS of one $throws$ rule application on the start graph. The number on the label is the \textit{parameter} of the label. This number is represented by the \textbf{int} node marked with a '0'. State $s_1$ is a representation of the graph in Figure~\ref{fig:example_groove_start}. Figure~\ref{fig:target_graph_state} shows the graph represented by $s_2$. 
+\subsection{GTS to STS transformation}\label{sec:gts_sts_trafo}
+The method described here transforms a GTS to an STS. This STS is not \textit{optimal}, i.e. it is reducible to an STS with fewer locations and switch relations. This method only serves as a proof used in section~\ref{sec:init_design}.
 
-\begin{figure}[h!]
-  \begin{center}
-    \input{./img/gts-transition-example.tikz}
-  \end{center}
-  \caption{The GTiS after one rule application on the board game example in Figure~\ref{fig:example_groove}}
-  \label{fig:gtis_example}
-\end{figure}
+For each graph state $s \in S$ create a location $l \in L$. The start location $l_0 \in L$ is the location created by the state $s0 \in S$. Set $\mathcal{V} = \emptyset$ and $\imath = \emptyset$. For each label $l \in L$ create a gate $\lambda \in \Lambda$. For each $p \in \mathit{param}(l)$ create an interaction variable $i \in \mathcal{I}$ of the same type as $p$ and add $i$ to $param(\lambda)$. Set $\mathit{arity}(\lambda) = \mathit{arity}(l)$. For each rule transition $t \in T$ create a switch relation $r \in \rightarrow$, where:
+\begin{itemize}
+  \item the source and the target locations of $r$ are the locations created by the source and target graph states of the rule transition.
+  \item the gate of $r$ is the gate created by the label on the transition.
+  \item for each $p \in \mathit{param}(l)$ and $i \in \mathcal{I}$ created by $p$ create an $i = p$ expression. The guard of $r$ is those expressions joined by the $\land$ operator.
+  \item the update mapping of $r$ is empty.
+\end{itemize}
 
-\begin{figure}[h!]
+An example of such a transformation is done using the LTS in Figure~\ref{fig:trafo_lts}. Consider this LTS to be a GTS where the states are graph states, the transitions are rule transitions with label 'do' with $\mathit{arity(do)} = 1$ and $\mathit{param(do)}$ the integers between brackets are The STS resulting from the transformation is in Figure~\ref{fig:trafo_basic_sts}.
+
+\begin{figure}[ht]
   \begin{center}
-    \input{./img/target-graph-state.tikz}
+    \input{./img/trafo_basic_sts.tex}
   \end{center}
-  \caption{The graph of state $s2$ in Figure~\ref{fig:gtis_example}}
-  \label{fig:target_graph_state}
+  \caption{The basic STS resulting from the transformation of the LTS in Figure~\ref{fig:trafo_lts}}
+  \label{fig:trafo_basic_sts}
 \end{figure}

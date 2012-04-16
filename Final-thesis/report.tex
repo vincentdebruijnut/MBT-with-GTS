@@ -6,18 +6,20 @@
 \usepackage{wrapfig}
 \usepackage{subfig}
 \usepackage{groove2tikz}
-%\usepackage{pdftex}
-\usepackage{epstopdf}
 \usepackage[all]{xy}
 \usepackage{mathtools}
 \usepackage{amssymb}
-%\usepackage{multirow}
+\usepackage{multirow}
 \usepackage{array}
+\usepackage{amsthm}
 
 \graphicspath{{./img/}}
 %\renewcommand*\familydefault{\sfdefault}
 
 \hypersetup{pdfborder = {0 0 0 0}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
 
 \begin{document}
 	\title{\textbf{Model-Based Testing with Graph Transformation Systems}}
@@ -36,28 +38,30 @@
 	\newpage
 	%\input{./tex/introduction.tex}
 	%\input{./tex/model_based_testing.tex}
+	%\input{./tex/first_order_logic.tex}
 	%\input{./tex/symbolic.tex}
 	%\input{./tex/graph_transform.tex}
 	%\input{./tex/tooling.tex}
-	%\input{./tex/research_methods.tex}
 	
 	\newpage
 	\chapter{Design}
+	\input{./tex/design-introduction}
 	\newpage
 	
-	\input{./tex/gts-to-sts-transformation.tex}
-	\input{./tex/exploration-strategy.tex}
-	\input{./tex/partial-matching.tex}
-	\input{./tex/reachability.tex}
+	\input{./tex/gg-to-sts-transformation.tex}
+	\input{./tex/gg-exploration.tex}
+	\input{./tex/groove-side.tex}
+	\input{./tex/atm-side.tex}
 	\input{./tex/pre-testing-vs-on-the-fly-transformation.tex}
 	
 	\newpage
 	\chapter{Validation}
+	\input{./tex/validation-introduction}
 	\newpage
 	
 	\input{./tex/case-studies.tex}
 	\input{./tex/benchmarks.tex}
-	
+
 	\newpage
 	\chapter{Conclusion}
 	\newpage

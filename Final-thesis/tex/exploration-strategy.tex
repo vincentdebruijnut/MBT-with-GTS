@@ -1,9 +1,11 @@
-\section{Exploration strategy}
+\section{Graph grammar exploration}
 
-A GROOVE exploration strategy finds all graph states and rule matches.
+This section describes a system to transform a graph grammar to an STS without having to explore the entire GTS.
 
-\subsubsection{Isomorphism}
-Isomorphism prevents correct tracking of location variables. Solve with sets.
+\subsection{Partial matching}
+A rule can be checked to see if it \textit{could} match a given graph, if certain elements of the rule were different. In other words, a \textit{partial match} of a rule  can be found on a graph. For example, if the value nodes in a rule match were omitted from the match, the resulting partial match indicates the existence of a rule transition on a graph state with a different value node. Such a partial match therefore indicates the existence of an outgoing switch relation from the location represented by abstracted graph state in the transformed STS. The guard and update mapping can be constructed from the rule, by inspecting which value nodes \textit{would} match the LHS, NACs and RHS. The exploration can then skip graph states which have abstractions isomorphic to graph states already encountered.
 
-\subsubsection{Eraser/creator pairs}
-Location variables should be persistent and declared at the start state. Therefore, every eraser edge to a variable node should be paired with a creator edge. This edge should have the same source node and label.
+This system can potentially lead to an infinitely continuing exploration. An example of a graph grammar where this occurs is shown in Figure~\ref{fig:}. A new graph state is found with each application of the 'add_one' rule. With the partial matching system, this means the GTS and also the transformed STS will expand infinitely. With the normal matching system, this is not the case, as the rule can only be applied three times and then the rule does not match anymore. A solution is to set a modelling constraint on GRATiS, stating that a construction such as the one in Figure~\ref{fig:} may not occur. Section~\ref{sec:reachability} provides another solution to this problem. 
+
+\subsection{Reachability}\label{sec:reachability}
+With each new location in the transformed STS the question arises whether that location is reachable from the start location. The MSc thesis of Floor Sietsma "A Case Study in Formal Testing and an Algorithm for Automatic Test Case Generation with Symbolic Transition Systems" gives an algorithm for checking whether a location is reachable. This algorithm works on a specific path, starting from the start location and ending in the location to check. However, with the presence of loops, the number of paths is infinite. A location deemed as unreachable can therefore still be reachable, following a different path. A solution is allow user input for the amount of graph states
