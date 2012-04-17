@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  16 APR 2012 10:45
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  17 APR 2012 15:27
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -734,21 +734,21 @@ Package: amsthm 2004/08/06 v2.20
  (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-Package hyperref Info: Link coloring OFF on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+Package hyperref Info: Link coloring OFF on input line 27.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -758,8 +758,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count151
 )
-LaTeX Info: Redefining \ref on input line 24.
-LaTeX Info: Redefining \pageref on input line 24.
+LaTeX Info: Redefining \ref on input line 27.
+LaTeX Info: Redefining \pageref on input line 27.
  (./report.out)
 (./report.out)
 \@outlinefile=\write5
@@ -781,18 +781,23 @@ LaTeX Info: Redefining \pageref on input line 24.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
-LaTeX Info: Redefining \subref on input line 24.
+LaTeX Info: Redefining \subref on input line 27.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 29.
+LaTeX Font Info:    Try loading font information for U+msa on input line 44.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 29.
+LaTeX Font Info:    Try loading font information for U+msb on input line 44.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 44.
+
+(/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./tex/abstract.texpdfTeX 
@@ -801,228 +806,44 @@ ready used, duplicate ignored
 <to be read again> 
                    \relax 
 l.3 \end{abstract}
-                   [1]) (./report.toc)
+                   [1]) (./report.tocpdfTeX warning (ext4): destination with th
+e same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.42 ...}Point algebra}{20}{subsubsection.2.4.1.2}
+                                                   [1
+
+])
 \tf@toc=\write6
 \openout6 = `report.toc'.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.34   \newpage
-                [1
-
-]
+ [2]
 Chapter 1.
-[2
+(./tex/introduction.tex [3
 
-] (./tex/introduction.tex
-
-LaTeX Warning: Citation `McConnell:testing' on page 3 undefined on input line 2
-.
-
-
-LaTeX Warning: Citation `Pol:testing' on page 3 undefined on input line 2.
-
-
-LaTeX Warning: Citation `Blackburn:testing' on page 3 undefined on input line 4
-.
-
-
-LaTeX Warning: Citation `McCabe:testing' on page 3 undefined on input line 6.
-
-
-LaTeX Warning: Citation `Andries1999' on page 3 undefined on input line 10.
-
-
-LaTeX Warning: Citation `Heckel2006187' on page 3 undefined on input line 10.
-
-[3]
-
-LaTeX Warning: Reference `sec:research_methods_validation' on page 4 undefined 
-on input line 26.
-
-
-LaTeX Warning: Reference `sec:research_methods_validation' on page 4 undefined 
-on input line 28.
-
-
-LaTeX Warning: Reference `sec:first_order_logic' on page 4 undefined on input l
-ine 31.
-
-
-LaTeX Warning: Reference `sec:symbolic' on page 4 undefined on input line 31.
-
-
-LaTeX Warning: Reference `sec:graph' on page 4 undefined on input line 31.
-
-
-LaTeX Warning: Reference `sec:tooling' on page 4 undefined on input line 31.
-
-
-LaTeX Warning: Reference `sec:research_methods' on page 4 undefined on input li
-ne 31.
-
-
-LaTeX Warning: Reference `app:planning' on page 4 undefined on input line 31.
-
-) (./tex/model_based_testing.tex
-
-LaTeX Warning: Reference `fig:model_based_testing' on page 4 undefined on input
- line 3.
-
-[4] <./img/model-based-testing.pdf, id=73, 379.58545pt x 141.73691pt>
+]) [4] (./tex/goals.tex)
+(./tex/model_based_testing.tex
+<./img/model-based-testing.pdf, id=356, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-
-LaTeX Warning: Reference `fig:model_based_testing_on_the_fly' on page 5 undefin
-ed on input line 13.
-
-
-LaTeX Warning: Citation `Tretmans:TorX' on page 5 undefined on input line 13.
-
-
-LaTeX Warning: Citation `Belinfante:JTorX' on page 5 undefined on input line 13
-.
-
-<./img/mbt-on-the-fly.pdf, id=75, 614.295pt x 794.97pt>
+<./img/mbt-on-the-fly.pdf, id=361, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
-<use ./img/mbt-on-the-fly.pdf>
-
-LaTeX Warning: Citation `denicola:testing' on page 5 undefined on input line 26
-.
-
-
-LaTeX Warning: Citation `brinksma:testgeneration' on page 5 undefined on input 
-line 26.
-
-
-LaTeX Warning: Citation `Tretmans:conformancetesting' on page 5 undefined on in
-put line 26.
-
-
-LaTeX Warning: Citation `Tretmans:testgeneration' on page 5 undefined on input 
-line 26.
-
-
-LaTeX Warning: Citation `Broy:ModelBasedTesting' on page 5 undefined on input l
-ine 26.
-
+<use ./img/mbt-on-the-fly.pdf> [5 <./img/model-based-testing.pdf>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 34.
+
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 34.
- [5 <./img/model-based-testing.pdf>]
-
-LaTeX Warning: Citation `Tretmans:testgeneration' on page 6 undefined on input 
-line 43.
-
-
-LaTeX Warning: Reference `fig:iots_example' on page 6 undefined on input line 4
-5.
-
-
-LaTeX Warning: Reference `fig:iots_test' on page 6 undefined on input line 45.
-
-[6 <./img/mbt-on-the-fly.pdf>] (./img/iots-example.tex <xymatrix 2x2 182>)
-(./img/iots-test.tex <xymatrix 3x2 145>)
-
-LaTeX Warning: Citation `Lee:testing' on page 7 undefined on input line 57.
-
-
-LaTeX Warning: Citation `Nachmanson:testing' on page 7 undefined on input line 
-57.
-
-
-LaTeX Warning: Citation `Hasan:testing' on page 7 undefined on input line 57.
-
-
-LaTeX Warning: Reference `fig:iots_test' on page 7 undefined on input line 59.
-
-
-LaTeX Warning: Citation `Zhu:coverage' on page 7 undefined on input line 61.
-
-) (./tex/first_order_logic.tex
-
-LaTeX Warning: Reference `sec:symbolic' on page 7 undefined on input line 3.
-
-
-LaTeX Warning: Citation `Huth:logic' on page 7 undefined on input line 3.
-
-[7]) (./tex/symbolic.tex
-
-LaTeX Warning: Citation `Frantzen:Symbolic' on page 8 undefined on input line 5
-.
-
-
-LaTeX Warning: Reference `sec:sts_definition' on page 8 undefined on input line
- 5.
-
-
-LaTeX Warning: Citation `rusu:symbolic' on page 8 undefined on input line 5.
-
-
-LaTeX Warning: Citation `Frantzen:Symbolic' on page 8 undefined on input line 5
-.
-
-
-LaTeX Warning: Citation `Frantzen:Symbolic' on page 8 undefined on input line 5
-.
-
-
-LaTeX Warning: Citation `clarke:STG' on page 8 undefined on input line 5.
-
-[8]
-
-LaTeX Warning: Reference `fig:example_sts' on page 9 undefined on input line 25
-.
-
-
-LaTeX Warning: Reference `fig:example_sts' on page 9 undefined on input line 30
-.
-
-(./img/sts_boardgame_1.tex <xymatrix 13x1 191>) [9]
-
-LaTeX Warning: Reference `fig:example_trafo' on page 10 undefined on input line
- 50.
-
-(./img/trafo_sts.tex <xymatrix 1x3 151>) (./img/trafo_lts.tex <xymatrix 3x3
-348>)
-
-LaTeX Warning: Reference `fig:trafo_sts' on page 10 undefined on input line 62.
-
-
-
-LaTeX Warning: Citation `Myers:2004' on page 10 undefined on input line 62.
-
-
-LaTeX Warning: Citation `Reid:partitioning' on page 10 undefined on input line 
-62.
-
-) (./tex/graph_transform.tex [10]
-
-LaTeX Warning: Citation `Rensink:graph_grammars' on page 11 undefined on input 
-line 12.
-
-
-LaTeX Warning: Citation `Heckel2006187' on page 11 undefined on input line 12.
-
-
-LaTeX Warning: Citation `Andries1999' on page 11 undefined on input line 12.
-
-[11]
-
-LaTeX Warning: Reference `fig:gts' on page 12 undefined on input line 61.
-
-
-LaTeX Warning: Reference `fig:gg_result' on page 12 undefined on input line 61.
-
-
-(./img/gg_graph.tex <xymatrix 2x1 51>)
+ [6 <./img/mbt-on-the-fly.pdf>] (./img/iots-example.tex <xymatrix 2x2 182>) (./
+img/iots-test.tex <xymatrix
+3x2 145>)) (./tex/first_order_logic.tex) (./tex/symbolic.tex [7] [8]
+(./img/sts_boardgame_1.tex <xymatrix 13x1 191>) [9] (./img/trafo_sts.tex
+<xymatrix 1x3 151>) (./img/trafo_lts.tex <xymatrix 3x3 348>))
+(./tex/graph_transform.tex [10] [11] (./img/gg_graph.tex <xymatrix 2x1 51>)
 Underfull \hbox (badness 10000) in paragraph at lines 65--65
 []\T1/cmr/m/n/8 (a) |The start
  []
@@ -1034,299 +855,95 @@ Underfull \hbox (badness 6542) in paragraph at lines 69--69
  []
 
 (./img/gg_rhs.tex <xymatrix 2x1 51>) (./img/gg_rhs.tex <xymatrix 2x1 51>)
-
-LaTeX Warning: Reference `sec:init_design' on page 12 undefined on input line 7
-8.
-
-[12]
-
-LaTeX Warning: Reference `fig:trafo_lts' on page 13 undefined on input line 88.
-
-
-
-LaTeX Warning: Reference `fig:trafo_basic_sts' on page 13 undefined on input li
-ne 88.
-
-(./img/trafo_basic_sts.tex <xymatrix 3x3 348>)
-
-LaTeX Warning: Reference `fig:trafo_lts' on page 13 undefined on input line 94.
-
-
-
-LaTeX Warning: Reference `fig:trafo_lts' on page 13 undefined on input line 94.
-
-
-) (./tex/tooling.tex
-
-LaTeX Warning: Reference `fig:axini_tool' on page 13 undefined on input line 6.
-
-
-
-LaTeX Warning: Reference `fig:model_based_testing_on_the_fly' on page 13 undefi
-ned on input line 6.
-
-<./img/axini_tool.pdf, id=184, 356.92177pt x 145.93393pt>
+[12] (./img/trafo_basic_sts.tex <xymatrix 3x3 348>)) (./tex/tooling.tex
+<./img/axini_tool.pdf, id=512, 356.92177pt x 145.93393pt>
 File: ./img/axini_tool.pdf Graphic file (type pdf)
 
 <use ./img/axini_tool.pdf> [13 <./img/axini_tool.pdf>]
-
-LaTeX Warning: Citation `Rensink:GROOVE' on page 14 undefined on input line 26.
-
-
-
-LaTeX Warning: Citation `Ghamarian:GROOVE' on page 14 undefined on input line 2
-6.
-
-
-LaTeX Warning: Reference `fig:groove_tool' on page 14 undefined on input line 2
-8.
-
-<./img/groove_tool.pdf, id=206, 374.51399pt x 161.01265pt>
+<./img/groove_tool.pdf, id=535, 374.51399pt x 161.01265pt>
 File: ./img/groove_tool.pdf Graphic file (type pdf)
 
-<use ./img/groove_tool.pdf>
-
-LaTeX Warning: Reference `fig:example_sts' on page 14 undefined on input line 3
-9.
-
-
-LaTeX Warning: Reference `fig:example_groove' on page 14 undefined on input lin
-e 39.
-
-
-LaTeX Warning: Reference `fig:example_groove_start' on page 14 undefined on inp
-ut line 39.
-
-[14 <./img/groove_tool.pdf>]
-
-LaTeX Warning: Reference `fig:example_groove_throw' on page 15 undefined on inp
-ut line 51.
-
-
-LaTeX Warning: Reference `fig:example_groove_move' on page 15 undefined on inpu
-t line 52.
-
-
-LaTeX Warning: Reference `fig:example_groove_next' on page 15 undefined on inpu
-t line 53.
-
-(./img/start.tikz
+<use ./img/groove_tool.pdf> [14 <./img/groove_tool.pdf>] (./img/start.tikz
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 8.
- (/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
+
+(/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-))
-(./img/throws.tikz) (./img/move.tikz) (./img/nextTurn.tikz)
-
-LaTeX Warning: Reference `fig:example_sts' on page 15 undefined on input line 6
-5.
-
-
-LaTeX Warning: Reference `fig:example_sts' on page 15 undefined on input line 6
-5.
-
-
-LaTeX Warning: Reference `fig:gts_example' on page 15 undefined on input line 6
-9.
-
-
-LaTeX Warning: Reference `fig:example_groove_start' on page 15 undefined on inp
-ut line 69.
-
-
-LaTeX Warning: Reference `fig:target_graph_state' on page 15 undefined on input
- line 69.
-
-(./img/gts-transition-example.tikz)
-
-LaTeX Warning: Reference `fig:example_groove' on page 15 undefined on input lin
-e 75.
-
-
-LaTeX Warning: Reference `fig:example_groove' on page 15 undefined on input lin
-e 75.
-
-(./img/target-graph-state.tikz)
-
-LaTeX Warning: Reference `fig:gts_example' on page 15 undefined on input line 8
-3.
-
-
-LaTeX Warning: Reference `fig:gts_example' on page 15 undefined on input line 8
-3.
-
-
-LaTeX Warning: Reference `fig:example_sts' on page 15 undefined on input line 8
-8.
-
-
-LaTeX Warning: Reference `fig:example_groove' on page 15 undefined on input lin
-e 88.
-
-
-LaTeX Warning: Reference `fig:example_groove2' on page 15 undefined on input li
-ne 91.
-
-[15] (./img/start2.tikz) (./img/throws2.tikz) (./img/move2.tikz)
-
-LaTeX Warning: Reference `sec:gts_example' on page 16 undefined on input line 1
-03.
-
-
-LaTeX Warning: Reference `fig:move3' on page 16 undefined on input line 103.
-
-(./img/move3.tikz) [16]
-
-LaTeX Warning: Reference `fig:example_groove' on page 17 undefined on input lin
-e 116.
-
-
-LaTeX Warning: Reference `fig:statespace_groove1' on page 17 undefined on input
- line 116.
-
-
-LaTeX Warning: Reference `fig:example_groove2' on page 17 undefined on input li
-ne 116.
-
-
-LaTeX Warning: Reference `fig:move3' on page 17 undefined on input line 116.
-
-
-LaTeX Warning: Reference `fig:statespace_groove2' on page 17 undefined on input
- line 116.
-
-
-LaTeX Warning: Reference `fig:example_groove' on page 17 undefined on input lin
-e 116.
-
-
-LaTeX Warning: Reference `fig:symmetry_example' on page 17 undefined on input l
-ine 116.
-
-(./img/start3.tikz)
-
-LaTeX Warning: Reference `fig:example_groove' on page 17 undefined on input lin
-e 122.
-
-
-LaTeX Warning: Reference `fig:example_groove' on page 17 undefined on input lin
-e 122.
-
-
-LaTeX Warning: Reference `fig:example_sts' on page 17 undefined on input line 1
-26.
-
-(./img/lts.tikz)
-
-LaTeX Warning: Reference `fig:example_groove' on page 17 undefined on input lin
-e 132.
-
-
-LaTeX Warning: Reference `fig:example_groove' on page 17 undefined on input lin
-e 132.
-
-(./img/lts2.tikz)
-
-LaTeX Warning: Reference `fig:example_groove2' on page 17 undefined on input li
-ne 140.
-
-
-LaTeX Warning: Reference `fig:example_groove2' on page 17 undefined on input li
-ne 140.
-
-) [17] [18] [19]
+)) (./img/throws.tikz)
+(./img/move.tikz) (./img/nextTurn.tikz) (./img/gts-transition-example.tikz)
+(./img/target-graph-state.tikz)) [15] [16]
 Chapter 2.
-[20
+(./tex/design-introduction.tex) [17
 
-] (./tex/design-introduction.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-[]\T1/cmr/m/n/10 revise this
+] (./tex/gg-to-sts-transformation.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
  []
 
+[18]) (./tex/gg-exploration.tex
 
-LaTeX Warning: Reference `sec:gg-to-sts' on page 21 undefined on input line 3.
-
-
-LaTeX Warning: Reference `sec:exploration' on page 21 undefined on input line 3
-.
+LaTeX Warning: Reference `fig:' on page 19 undefined on input line 8.
 
 
-LaTeX Warning: Reference `sec:reachability' on page 21 undefined on input line 
-3.
+LaTeX Warning: Reference `fig:' on page 19 undefined on input line 8.
 
-
-LaTeX Warning: Reference `sec:pre-testing-vs-on-the-fly' on page 21 undefined o
-n input line 3.
-
-) [21] (./tex/gg-to-sts-transformation.tex) (./tex/exploration-strategy.tex)
-(./tex/partial-matching.tex [22]) (./tex/reachability.tex)
-(./tex/pre-testing-vs-on-the-fly-transformation.tex) [23]
-(./tex/design-conclusions.tex) [24]
+) (./tex/gratis-design.tex [19]) (./tex/implementation.tex) [20]
 Chapter 3.
-[25
+(./tex/validation-introduction.tex) [21
 
-] (./tex/validation-introduction.tex
-
-LaTeX Warning: Reference `sec:case-studies' on page 26 undefined on input line 
-1.
-
-
-LaTeX Warning: Reference `sec:benchmarks' on page 26 undefined on input line 1.
-
-
-) [26] (./tex/case-studies.tex) (./tex/benchmarks.tex) [27]
+] (./tex/case-studies.tex)
+(./tex/measurements.tex) [22]
 Chapter 4.
-[28
+[23
 
 ] (./tex/summary.tex) (./tex/conclusion.tex) (./tex/future-work.tex)
-[29]
-No file report.bbl.
-(./report.aux)
+(./tex/acknowledgements.tex) [24] (./report.bbl [25
+
+]) [26] (./report.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 21487 strings out of 495061
- 375426 string characters out of 1182622
- 1289392 words of memory out of 3000000
- 23963 multiletter control sequences out of 15000+50000
- 28240 words of font info for 72 fonts, out of 3000000 for 9000
+ 19440 strings out of 495061
+ 343053 string characters out of 1182622
+ 664217 words of memory out of 3000000
+ 21908 multiletter control sequences out of 15000+50000
+ 29237 words of font info for 74 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 63i,22n,73p,1459b,1123s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,22n,72p,1462b,1121s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0700.600pk
 > </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk>
  </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0800.600pk> 
 </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx0800.600pk> <
-/home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </
-home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </h
-ome/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </ho
-me/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </hom
-e/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home
-/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/
-vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/v
-incentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/vi
-ncentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/vin
-centdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/vinc
+/home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </
+home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </h
+ome/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </ho
+me/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </hom
+e/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home
+/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/
+vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/v
+incentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/vi
+ncentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/vin
+centdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/vinc
 entdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/vince
-ntdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/te
-xmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1
-/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-t
-exlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm
-10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/sh
-are/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on report.pdf (31 pages, 577000 bytes).
+ntdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/vincen
+tdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/vincent
+debruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.p
+fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on report.pdf (28 pages, 520606 bytes).
 PDF statistics:
- 893 PDF objects out of 1000 (max. 8388607)
- 143 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1286 PDF objects out of 1440 (max. 8388607)
+ 165 named destinations out of 1000 (max. 500000)
+ 497 words of extra memory for PDF output out of 10000 (max. 10000000)
 

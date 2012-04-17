@@ -26,19 +26,6 @@ author = "R. De Nicola and M.C.B. Hennessy"
   publisher = "Springer-Verlag Berlin Heidelberg",
   year = 2005
 }
-
-@misc{Tretmans:IOCO,
-          volume = {3},
-          number = {TR-CTI},
-          author = {G.J. {Tretmans}},
-         address = {Enschede},
-           title = {Test Generation with Inputs, Outputs and Repetitive Quiescence},
-       publisher = {Centre for Telematics and Information Technology, University of Twente},
-         journal = {Software---Concepts and Tools},
-            year = {1996},
-             url = {http://doc.utwente.nl/65463/},
-        abstract = {This paper studies testing based on labelled transition systems, using the assumption that implementations communicate with their environment via inputs and outputs. Such implementations are formalized by restricting the class of transition systems to those systems that can always accept input actions, as in Input/Output Automata. Implementation relations, formalizing the notion of correctness of these implementations with respect to labelled transition system specifications, are defined analogous to the theories of testing equivalence and preorder, and refusal testing. A test generation algorithm is given which is proved to produce a sound and exhaustive test suite from a specification, i.e., a test suite that fully characterizes the set of correct implementations.}
-}
         
 @incollection {Tretmans:testgeneration,
    author = {Tretmans, Jan},
@@ -57,11 +44,12 @@ author = "R. De Nicola and M.C.B. Hennessy"
    year = {1996}
 }
 
-@thesis{Tretmans:conformancetesting, 
+@PhdThesis{Tretmans:conformancetesting, 
    author = {Tretmans, Jan},
    institution = {University of Twente, Enschede, The Netherlands},
    title = {A Formal Approach to Conformance Testing},
-   year = {1992}
+   year = {1992},
+   school = {University of Twente, Enschede, The Netherlands}
 }
 
 @ARTICLE{lynch:ioautomata,
@@ -75,7 +63,8 @@ author = "R. De Nicola and M.C.B. Hennessy"
 @article{brinksma:testgeneration, 
   author = {E. Brinksma},
   title = {A theory for the derivation of tests},
-  year = {1988}
+  year = {1988},
+  journal = {Protocol Specification, Testing, and Verification VIII}
 }
 
 @incollection {brinksma:testing,
@@ -166,23 +155,73 @@ keywords = "protocol testing"
 @book{Pol:testing,
   author = {Martin Pol},
   title = {Testen volgens Tmap (in dutch, Testing according to Tmap)},
-  year = {1995}
+  year = {1995},
+  publisher = {Uitgeverij Tutein Nolthenius}
 }
 
 @article{Blackburn:testing,
-  author = {M. Blackburn, R. Busser, and A. Nauman},
-  title = {Why model-based test automation is diﬀerent and what you should know to get started.},
+  author = {M. Blackburn, R. Busser and A. Nauman},
+  title = {Why model-based test automation is different and what you should know to get started.},
   journal = {International Conference on Practical Software Quality and Testing},
   year = {2004}
 }
 
 @ARTICLE{McCabe:testing,
 author={McCabe, Thomas J.},
-title={STRUCTURED TESTING: A SOFTWARE TESTING METHODOLOGY USING THE CYCLOMATIC COMPLEXITY METRIC, 1982.},
+title={STRUCTURED TESTING: A SOFTWARE TESTING METHODOLOGY USING THE CYCLOMATIC COMPLEXITY METRIC},
 journal={National Bureau of Standards, Special Publication},
 year={1982},
 url={http://www.scopus.com/inward/record.url?eid=2-s2.0-0020257692&partnerID=40&md5=fcfee055fd5e949cc92a563fee8167d8},
 source={Scopus}
+}
+
+@article{Zhu:coverage,
+ author = {Zhu, Hong and Hall, Patrick A. V. and May, John H. R.},
+ title = {Software unit test coverage and adequacy},
+ journal = {ACM Comput. Surv.},
+ issue_date = {Dec. 1997},
+ volume = {29},
+ number = {4},
+ month = dec,
+ year = {1997},
+ issn = {0360-0300},
+ pages = {366--427},
+ numpages = {62},
+ url = {http://doi.acm.org/10.1145/267580.267590},
+ doi = {10.1145/267580.267590},
+ acmid = {267590},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {comparing testing effectiveness, fault detection, software unit test, test adequacy criteria, test coverage, testing methods},
+} 
+
+@book{Huth:logic,
+ author = {M.R.A. Huth and M. Ryan},
+ title = {Logic in computer science: modelling and reasoning about systems},
+ publisher = {Cambridge University Press},
+ year = {2000}
+}
+
+@book{Myers:2004,
+ author = {Myers, Glenford J. and Sandler, Corey},
+ title = {The Art of Software Testing},
+ year = {2004},
+ isbn = {0471469122},
+ publisher = {John Wiley \& Sons},
+}
+
+@INPROCEEDINGS{Reid:partitioning, 
+author={Reid, S.C.}, 
+booktitle={Software Metrics Symposium, 1997. Proceedings., Fourth International}, 
+title={An empirical analysis of equivalence partitioning, boundary value analysis and random testing}, 
+year={1997}, 
+month={nov}, 
+volume={}, 
+number={}, 
+pages={64 -73}, 
+keywords={Ada code;BVA;EP;absolute values;arbitrarily chosen values;boundary value analysis;empirical analysis;equivalence partitioning;experimental methodology;input values;operational avionics system;random testing;test cases;test technique;Ada;aircraft computers;military avionics;military computing;program testing;software metrics;}, 
+doi={10.1109/METRIC.1997.637166}, 
+ISSN={}
 }
 
 @inproceedings{Tretmans:TorX,
@@ -214,7 +253,7 @@ source={Scopus}
 @incollection{Belinfante:JTorX,
    author = {Belinfante, Axel},
    affiliation = {University of Twente Formal Methods and Tools The Netherlands},
-   title = {JTorX: A Tool for On-Line Model-Driven Test Derivation and Execution},
+   title = {J{T}orX: A Tool for On-Line Model-Driven Test Derivation and Execution},
    booktitle = {Tools and Algorithms for the Construction and Analysis of Systems},
    series = {Lecture Notes in Computer Science},
    editor = {Esparza, Javier and Majumdar, Rupak},
@@ -244,27 +283,88 @@ source={Scopus}
 
 @article{Ghamarian:GROOVE,
           eprintid = {20208},
-             month = {March},
+            number = {1},
+             month = {February},
       official_url = {http://dx.doi.org/10.1007/s10009-011-0186-x},
               issn = {1433-2779},
             author = {A. H. {Ghamarian} and M. J. {de Mol} and A. {Rensink} and E. {Zambon} and M. V. {Zimakova}},
          num_pages = {26},
-       ispublished = {Online pre-publication},
+       ispublished = {Published},
            address = {Berlin},
          publisher = {Springer Verlag},
          id_number = {10.1007/s10009-011-0186-x},
            journal = {International journal on software tools for technology transfer},
       howpublished = {http://eprints.eemcs.utwente.nl/20208/},
-            volume = {online pre-publication},
+            volume = {14},
    research_groups = {EWI-FMT: Formal Methods and Tools},
           refereed = {Yes},
   research_programs = {CTIT-DSN: Dependable Systems and Networks},
-  research_projects = {GROOVE: Graphs for Object-Oriented Verification, GRAIL: Graphs for the Abstract Interpretation of Languages, GRASLAND: Graphs for Software Language Definitions, CHARTER: Critical and High Assurance Requirements Transformed through Engineering Rigor},
-             title = {Modelling and analysis using GROOVE},
-          abstract = {In this paper we present case studies that describe how the graph transformation tool GROOVE has been used to model problems from a wide variety of domains. These case studies highlight the wide applicability of GROOVE in particular, and of graph transformation in general. They also give concrete templates for using GROOVE in practice. Furthermore, we use the case studies to analyse the main strong and weak points of GROOVE.
+  research_projects = {{GROOVE}: Graphs for Object-Oriented Verification, GRAIL: Graphs for the Abstract Interpretation of Languages, GRASLAND: Graphs for Software Language Definitions, CHARTER: Critical and High Assurance Requirements Transformed through Engineering Rigor},
+             title = {Modelling and analysis using {GROOVE}},
+          abstract = {In this paper we present case studies that describe how the graph transformation tool {GROOVE} has been used to model problems from a wide variety of domains. These case studies highlight the wide applicability of {GROOVE} in particular, and of graph transformation in general. They also give concrete templates for using {GROOVE} in practice. Furthermore, we use the case studies to analyse the main strong and weak points of {GROOVE}.
 },
      international = {Yes},
-              year = {2011}
+              year = {2012},
+             pages = {15--40}
+}
+
+@inproceedings{Rensink:GROOVE,
+          eprintid = {6926},
+      official_url = {http://dx.doi.org/10.1007/978-3-540-25959-6_40},
+              issn = {0302-9743},
+            author = {A. {Rensink}},
+         num_pages = {7},
+            series = {Lecture Notes in Computer Science},
+        pres_types = {Other},
+       ispublished = {Published},
+            editor = {J. L. {Pfaltz} and M. {Nagl} and B. {B{\"o}hlen}},
+           address = {Berlin},
+         publisher = {Springer Verlag},
+         id_number = {10.1007/978-3-540-25959-6_40},
+           isbn_13 = {978-3-540-22120-3},
+      howpublished = {http://eprints.eemcs.utwente.nl/6926/},
+            volume = {3062},
+        event_type = {Conference},
+   research_groups = {EWI-SE: Software Engineering},
+         booktitle = {Applications of Graph Transformations with Industrial Relevance (AGTIVE)},
+          refereed = {Yes},
+  research_programs = {CTIT-ASI: A-services Internet},
+  research_projects = {{GROOVE}: Graphs for Object-Oriented Verification},
+             title = {The {GROOVE} Simulator: A Tool for State Space Generation},
+          abstract = {The tool described here is the first part of a tool set called {GROOVE} (GRaph-based Object-Oriented VErification) for software model checking of object-oriented systems. The special feature of {GROOVE}, which sets it apart from other model checking approaches, is that it is based on graph transformations. It uses graphs to represent state snapshots; transitions arise from the application of graph production rules. This yields so-called Graph Transition Systems (GTSrsquos) as computational models.},
+     international = {Yes},
+              year = {2004},
+             pages = {479--485}
+}
+
+@inproceedings{Rensink:graph_grammars,
+          eprintid = {6922},
+      official_url = {http://eprints.ecs.soton.ac.uk/7198/},
+            author = {A. {Rensink}},
+         num_pages = {11},
+            series = {Technical Report},
+        pres_types = {Talk},
+       ispublished = {Published},
+            editor = {S. {Gruner} and S. L. {Presti}},
+           address = {Southampton},
+         publisher = {University of Southampton},
+      howpublished = {http://eprints.eemcs.utwente.nl/6922/},
+            volume = {DSSE-TR-2003-02},
+          location = {Southampton, UK},
+        event_type = {Workshop},
+   research_groups = {EWI-SE: Software Engineering},
+         booktitle = {Workshop on Automated Verification of Critical Systems (AVoCS), Southampton, UK},
+          refereed = {Yes},
+  research_programs = {CTIT-ASI: A-services Internet},
+             title = {Towards model checking graph grammars},
+          abstract = {We sketch a setup in which transition systems are generated from graph grammars and
+subsequently checked for properties expressed in a temporal logic on graphs. We envisage this
+as part of an approach where graph grammars are used to express the behavioural semantics of
+object-oriented programs, thus enabling automatic verification of those programs.
+This paper describes work in progress.},
+     international = {Yes},
+              year = {2003},
+             pages = {150--160}
 }
 
 @ARTICLE{Heckel2006187,
@@ -275,7 +375,6 @@ year={2006},
 volume={148},
 number={1 SPEC. ISS.},
 pages={187-198},
-note={cited By (since 1996) 16},
 url={http://www.scopus.com/inward/record.url?eid=2-s2.0-31044439391&partnerID=40&md5=fbc8fe07f17411d4295396acc4e44d0e},
 document_type={Conference Paper},
 source={Scopus},
@@ -292,7 +391,7 @@ note = "",
 issn = "0167-6423",
 doi = "10.1016/S0167-6423(98)00023-9",
 url = "http://www.sciencedirect.com/science/article/pii/S0167642398000239",
-author = "Marc Andries and Gregor Engels and Annegret Habel and Berthold Hoffmann and Hans-Jörg Kreowski and Sabine Kuske and Detlef Plump and Andy Schürr and Gabriele Taentzer",
+author = "Marc Andries and Gregor Engels and Annegret Habel and Berthold Hoffmann and Hans-J{\"o}rg Kreowski and Sabine Kuske and Detlef Plump and Andy Sch{\"u}rr and Gabriele Taentzer",
 keywords = "Graph transformation",
 keywords = "Rule-based specification",
 keywords = "Transformation units",
@@ -326,7 +425,7 @@ keywords = "Structuring"
 @incollection {clarke:STG,
    author = {Clarke, Duncan and J$\acute{e}$ron, Thierry and Rusu, Vlad and Zinovieva, Elena},
    affiliation = {University of South Carolina Columbia South Carolina USA},
-   title = {STG: A Symbolic Test Generation Tool},
+   title = {{STG}: A Symbolic Test Generation Tool},
    booktitle = {Tools and Algorithms for the Construction and Analysis of Systems},
    series = {Lecture Notes in Computer Science},
    editor = {Katoen, Joost-Pieter and Stevens, Perdita},
@@ -338,4 +437,11 @@ keywords = "Structuring"
    url = {http://dx.doi.org/10.1007/3-540-46002-0\_34},
    note = {10.1007/3-540-46002-0\_34},
    year = {2002}
+}
+
+@mastersthesis {Sietsma:reachability,
+  author = {Sietsma, Floor},
+  title = {A Case Study in Formal Testing and an Algorithm for Automatic Test Case Generation with Symbolic Transition Systems},
+  school = {Universiteit van Amsterdam},
+  year = {2009}
 }

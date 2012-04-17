@@ -18,12 +18,27 @@
 
 \hypersetup{pdfborder = {0 0 0 0}}
 
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{4}
+
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 
 \begin{document}
-	\title{\textbf{Model-Based Testing with Graph Transformation Systems}}
-	\author{Vincent de Bruijn}
+	\title{\textbf{Model-Based Testing with Graph\\Transformation Systems}}
+	\author{\textbf{MSc Thesis} \textit{(Afstudeerscriptie)}\\
+	\\
+	written by
+	\\
+	\\
+	Vincent de Bruijn\\
+	\\
+	Formal Methods \& Tools,\\
+	University of Twente,
+	\\Enschede,\\
+	The Netherlands\\
+	\\
+	\texttt{v.debruijn@student.utwente.nl}}
 	\date{\today}
 	\maketitle
 	
@@ -35,13 +50,15 @@
   
   \newpage
 	\chapter{Introduction}
+	\input{./tex/introduction.tex}
 	\newpage
-	%\input{./tex/introduction.tex}
-	%\input{./tex/model_based_testing.tex}
-	%\input{./tex/first_order_logic.tex}
-	%\input{./tex/symbolic.tex}
-	%\input{./tex/graph_transform.tex}
-	%\input{./tex/tooling.tex}
+	
+	\input{./tex/goals.tex}
+	\input{./tex/model_based_testing.tex}
+	\input{./tex/first_order_logic.tex}
+	\input{./tex/symbolic.tex}
+	\input{./tex/graph_transform.tex}
+	\input{./tex/tooling.tex}
 	
 	\newpage
 	\chapter{Design}
@@ -50,9 +67,8 @@
 	
 	\input{./tex/gg-to-sts-transformation.tex}
 	\input{./tex/gg-exploration.tex}
-	\input{./tex/groove-side.tex}
-	\input{./tex/atm-side.tex}
-	\input{./tex/pre-testing-vs-on-the-fly-transformation.tex}
+	\input{./tex/gratis-design.tex}
+	\input{./tex/implementation.tex}
 	
 	\newpage
 	\chapter{Validation}
@@ -60,7 +76,7 @@
 	\newpage
 	
 	\input{./tex/case-studies.tex}
-	\input{./tex/benchmarks.tex}
+	\input{./tex/measurements.tex}
 
 	\newpage
 	\chapter{Conclusion}
@@ -69,11 +85,10 @@
 	\input{./tex/summary.tex}
 	\input{./tex/conclusion.tex}
 	\input{./tex/future-work.tex}
+	
+	\input{./tex/acknowledgements}
 
   \newpage
 	\bibliography{bib/bibliography}{}
 	\bibliographystyle{plain}
-	
-	\appendix
-  \newpage
 \end{document}

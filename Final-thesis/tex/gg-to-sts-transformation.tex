@@ -1,31 +1,44 @@
-\section{Graph grammar to STS transformation rules}
+\section{Graph Grammar to STS Transformation Rules}\label{sec:gg-to-sts}
 
+\subsection{Variables in graph grammars}
 Exploring a graph grammar leads to a GTS. A transformation of a GTS to an STS as specified in section~\ref{sec:gts_sts_trafo} is not very efficient. In order to make a better transformation, we must extend our definition of graph grammars to include 'variables' in a graph.
-
+\\
 \begin{definition}
 A graph grammar is a tuple $\langle G, R\rangle$, where:
 \begin{itemize}
   \item $G$ is the start graph
   \item $R$ is a set of graph transformation rules
-  \item $V$ is a set of nodes in $G$ which are considered \textit{variable nodes}
+  \item $V$ is a set of nodes in $G$ which are \textit{variable nodes}
 \end{itemize}
 \end{definition}
 
-The concrete implementation of this can differ. For example, a variable node can be restricted to one self edges, giving the name, and an edge labeled value to a node with one self-edge, representing the value of the variable. We will use \textit{value node} to indicate this node. EXAMPLE.
+The concrete implementation of this can differ. For example, a variable node can be restricted to one self edge, giving the name, and an edge labeled 'value' to a node with one self-edge, representing the value of the variable. We will use \textit{value node} to indicate this node. 
 
-\subsection{Graph states}
+EXAMPLE
+
+\subsection{Graph states transformation}
 Graph states are a representation of the state of a system. In an STS, this representation is done by the locations and the location variables. In order to obtain an STS from a graph grammar, the explored graph states must be transformed to locations and location variables. 
 
-The locations of the transformation are obtained by abstracting the variable nodes in the graph states. For the example specifically, the value nodes are removed from the graph. The abstracted graphs are considered to be the same location in the transformed STS when they are isomorphic. The location variables are identified by the variable nodes $V$. The value nodes connected to the variable nodes in the start graph give the initialization $\imath$ of the STS.
+The locations $L$ of the transformation are obtained by abstracting the variable nodes in the graph states. For the example specifically, the value nodes are removed from the graph. The abstracted graphs are considered to be the same location in the transformed STS when they are isomorphic. The location variables $\mathcal{L}$ are identified by the variable nodes $V$. The value nodes connected to the variable nodes in the start graph give the initialization $\imath$ of the STS.
 
-\subsection{Rule transitions}
-Rule transitions are a representation of the switch from one system state to another. In STSs, this representation is done by the switch relations. In order to obtain an STS from a graph grammar, the explored rule transitions must be transformed to switch relations.
+EXAMPLE
+
+\subsection{Rule transitions transformation}
+Rule transitions are a representation of the switch from one system state to another. In STSs, this representation is done by the switch relations. In order to obtain an STS from a graph grammar, the explored rule transitions are transformed to the switch relations.
 
 \subsubsection{Rule LHSs}\label{sec:rule_lhss}
-When the LHS of a rule has an occurence in the graph of a graph state and the NACs of the rule do not, a rule transition exists. As described in section~\ref{sec:gts_sts_trafo}, the label on the rule transition is transformed to a gate $\lambda \in \Lambda$ of the STS. When a variable node is an image of a node in the LHS, then a constraint is specified on the variable represented by that node. In some graph states of the example, the value node of the variable node will be an image of a node in the LHS, whereas in other graph states it will not. When the abstraction of the graphs of these graph states are isomorphic, this indicates the existence of a switch relation in the transformed STS with as source the location represented by these graph states. However, as the LHS of the rule does not have an occurrence in all the graph states, a guard must be specified. This guard specifies the possible values the location variable represented by the variable node may have.
+When the LHS of a rule has an occurence in the graph of a graph state and the NACs of the rule do not, a rule transition exists. This also indicates the presence of a switch relation $r \in \rightarrow$. As described in section~\ref{sec:gts_sts_trafo}, the label on the rule transition is transformed to a gate $\lambda \in \Lambda$ of the STS.
+
+When a variable node is an image of a node in the LHS, then a constraint is specified on the variable represented by that node. In some graph states of the example, the value node of the variable node will be an image of a node in the LHS, whereas in other graph states it will not. When the abstraction of the graphs of these graph states are isomorphic, this indicates the existence of a switch relation in the transformed STS with as source the location represented by these graph states. However, as the LHS of the rule does not have an occurrence in all the graph states, a guard $\phi$ must be specified. This guard specifies the possible values the location variable represented by the variable node may have. 
+
+EXAMPLE
 
 \subsubsection{Rule NACs}
-The absence of occurences of the NACs of a rule indicates the existence of a rule transition. However, as with the LHS, when the value node of a variable node is the image of a node in a NAC, a constraint is specified on that value. With the same reasoning as in section~\ref{sec:rule_lhss}, this constraint must be included in the guard. The guard then also specifies the possible values the location variable represented by the variable node may not have.
+The absence of occurences of the NACs of a rule indicates the existence of a rule transition. However, as with the LHS, when the value node of a variable node is the image of a node in a NAC, a constraint is specified on that value. With the same reasoning as in section~\ref{sec:rule_lhss}, this constraint must be included in the guard $\phi$. The guard then also specifies the possible values the location variable represented by the variable node may not have.
+
+EXAMPLE
 
 \subsubsection{Rule RHSs}
-The RHS of a rule gives the target graph state of a rule transition. This indicates the target location of the switch relation represented by the rule transition. However, when a variable node is the image of a node in the RHS and the value node of the image has no pre-image in the RHS, a change of the value of the variable has occurred. This change can be made into an update mapping in the transformed STS; the location variable represented by the variable node is mapped to the value specified by the value node in the RHS. Note that we assume the existence of such a node in the RHS.
+The RHS of a rule gives the target graph state of a rule transition. This indicates the target location of the switch relation represented by the rule transition. However, when a variable node is the image of a node in the RHS and the value node of the image has no pre-image in the RHS, a change of the value of the variable has occurred. This change can be made into an update mapping $\rho$ in the transformed STS; the location variable represented by the variable node is mapped to the value specified by the value node in the RHS. Note that we assume the existence of such a node in the RHS.
+
+EXAMPLE

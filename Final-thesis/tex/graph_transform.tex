@@ -75,7 +75,7 @@ Figure \ref{fig:gts} shows an example of the start graph and one rule of a graph
 \end{figure}
 
 \subsection{GTS to STS transformation}\label{sec:gts_sts_trafo}
-The method described here transforms a GTS to an STS. This STS is not \textit{optimal}, i.e. it is reducible to an STS with fewer locations and switch relations. This method only serves as a proof used in section~\ref{sec:init_design}.
+The method described here transforms a GTS to an STS. This STS is not \textit{optimal}, i.e. it is reducible to an STS with fewer locations and switch relations.
 
 For each graph state $s \in S$ create a location $l \in L$. The start location $l_0 \in L$ is the location created by the state $s0 \in S$. Set $\mathcal{V} = \emptyset$ and $\imath = \emptyset$. For each label $l \in L$ create a gate $\lambda \in \Lambda$. For each $p \in \mathit{param}(l)$ create an interaction variable $i \in \mathcal{I}$ of the same type as $p$ and add $i$ to $param(\lambda)$. Set $\mathit{arity}(\lambda) = \mathit{arity}(l)$. For each rule transition $t \in T$ create a switch relation $r \in \rightarrow$, where:
 \begin{itemize}
