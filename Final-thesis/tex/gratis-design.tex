@@ -1,0 +1,9 @@
+\section{GRATiS Design}\label{sec:gratis-design}
+
+\subsection{Tool architecture}
+Show figure here of GRATiS architecture.
+
+\subsection{Offline vs. on-the-fly model exploration}
+The exploration of the graph grammar can be done in two ways: \textit{on the fly}, rule transitions are explored only when chosen by the Test Manager, or \textit{offline}, the graph grammar is transformed to an STS and sent to the Test Manager.
+
+On-the-fly model exploration does not encounter the reachability problems discussed in the previous section. However, coverage statistics cannot be calculated on GRATiS, if the model exploration is done on the fly. The number of states/locations and transitions/switch relations the model has when completely explored are not known, so a percentage cannot be derived.

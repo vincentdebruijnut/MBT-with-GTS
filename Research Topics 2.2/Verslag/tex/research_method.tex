@@ -29,22 +29,22 @@ Before the problems in~\ref{sec:problems} are tackled and the design of GRATiS i
 This setup can be classified as on the model-based testing with \textit{offline} model exploration.
 
 There are a number of advantages to GRATiS-Min:
-\begin{itemize}
+\begin{enumerate}
   \item It allows automatic test generation on models which GROOVE is able to fully explore. This has been done on some interesting systems, as described in section~\ref{sec:descriptiongroove}.
-  \item It is easy to implement. Only the transformation in section~\ref{sec:gts_sts_trafo} and a basic protocol for transmitting an STS needs to be implemented.
+  \item It is easy to implement. Only the transformation in section~\ref{sec:gts_sts_trafo} and a basic protocol for transmitting an STS need to be implemented.
   \item It can calculate coverage statistics, because the number of states and transitions are known. Note that the location and switch relation coverage is the same as graph state and rule transition coverage, as the transformation creates one location and one switch relation for each graph state and rule transition respectively. Therefore, we will call location and switch relation coverage statics not \textit{relevant} for suboptimal STSs.
   \item It already implements some features of GRATiS, such as the communication between GROOVE and ATM, which makes GRATiS easier to build.
-\end{itemize}
+\end{enumerate}
 There are also some disadvantages:
-\begin{itemize}
+\begin{enumerate}
   \item All states and transitions in the GTS need to be explored first. This is very costly in terms of time and memory.
   \item The test strategies of ATM do not work on the suboptimal STS. First of all, the strategy designed to obtain a high location/switch relation coverage will attempt to achieve a high graph state/rule transition coverage. The coverage on the reduced, optimal STS may therefore have been higher, as the strategy is satisfied by choosing switch relations it has already chosen with different data values (note that these are different switch relations in the suboptimal STS). Secondly, boundary-value analysis cannot be used, as each switch relation has one specific set of data values needed to enable the switch relation.
-\end{itemize}
+\end{enumerate}
 
 \subsubsection{Solutions}
 A tool with on-the-fly model exploration can not calculate coverage statistics, as clarified in section~\ref{sec:problems}. However, it does not suffer the disadvantages of GRATiS-Min, depending on whether graph states can be transformed to locations with location variables and the rule transitions to switch relations, such that the resulting STS is optimal. However, this transformation of a GTS to an optimal STS can also be applied to GRATiS-Min to solve the second disadvantage. This also makes location and switch relation coverage relevant. The first disadvantage can be solved by finding a transformation from a graph grammar to an STS, without constructing the GTS first. If such a transformation can be found, the resulting tool will be an on the fly model-based testing tool with offline model exploration and coverage statistics. If such a transformation cannot be found, this tool will be very costly in terms of time and memory. The alternative is an on the fly model-based testing tool with on the fly model exploration and no coverage statistics.
 
-\subsection{Validation}\label{sec:research_methods_validation}
+\subsection{GRATiS Validation}\label{sec:research_methods_validation}
 There are two steps in the validation:
 \begin{enumerate}
   \item The boardgame example is tested. A SUT is made for this game and ATM is used to test this game. Then, GRATiS is used to test the boardgame. The results should reveal no errors, fail verdicts or other differences in the output of both tools. An intentional error is then made in the SUT and the process is repeated. Still no errors or differences are expected, but both tools should find the error and give a fail verdict.

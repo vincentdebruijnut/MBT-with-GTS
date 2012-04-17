@@ -1,0 +1,13 @@
+\section{Graph Grammar Exploration}\label{sec:gg-exploration}
+
+This section describes a system to transform a graph grammar to an STS without having to explore the entire GTS.
+
+\subsection{Partial matching}
+A rule may have a \textit{partial match} on a graph $G$, when not every element of the rule has an image in $G$. For example, if the value nodes in a rule match were omitted from the match, the resulting partial match indicates the existence of a rule transition on a graph state with a different value node. Such a partial match therefore indicates the existence of an outgoing switch relation from the location represented by abstracted graph state in the transformed STS. The guard and update mapping can be constructed from the rule, by inspecting the value nodes preventing a full match in the LHS, NACs and RHS. The exploration can then skip graph states which have abstractions isomorphic to graph states already encountered.
+
+EXAMPLE
+
+This system can potentially lead to an infinitely continuing exploration. An example of a graph grammar where this occurs is shown in Figure~\ref{fig:}. A new graph state is found with each application of the 'add-one' rule. With the partial matching system, this means the GTS and also the transformed STS will expand infinitely. With the normal matching system, this is not the case, as the rule can only be applied three times and then the rule does not match anymore. A solution is to set a modelling constraint on GRATiS, stating that a construction such as the one in Figure~\ref{fig:} may not occur. Another solution is to allow user input for the maximum depth of the exploration. However, the coverage statistics for such models are often incorrect, as many locations are stil unreachable. Section~\ref{sec:reachability} provides a solution to this problem. 
+
+\subsection{Reachability}\label{sec:reachability}
+With each new location in the transformed STS the question arises whether that location is reachable from the start location. The MSc thesis of Sietsma~\cite{Sietsma:reachability} gives an algorithm for checking whether a location is reachable. This algorithm works on a specific path, starting from the start location and ending in the location to check. However, with the presence of loops, the number of paths is infinite. A location deemed as unreachable can therefore still be reachable, following a different path. Still, this factor can be included in the coverage statistics: the number of reachability checks to each unreachable location can be reported. This allows the tester to determine whether additional testing to these 'unreachable' locations is necessary.

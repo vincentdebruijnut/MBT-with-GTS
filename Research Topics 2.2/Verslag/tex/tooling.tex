@@ -17,8 +17,8 @@ The tool functions as follows:
 \begin{enumerate}
   \item An STS is given to an STS Engine, which keeps track of the current location and data values. It passes the possible switch relations from the current location to the Test Manager.
   \item The Test Manager chooses an enabled switch relation based on a test strategy, which can be a random strategy or a strategy designed to obtain a high location/switch relation coverage. The valuation of the variables in the guard are also chosen by a test strategy, which can be a random strategy or a strategy using boundary-value analysis. The choice is represented by an instantiated switch relation and passed back to the STS Engine, which updates its current location and data values. The communication between these two components is done by method calls.
-  \item The gate of the instantiated switch relation is given to the Test Execution component as an \textit{abstract stimulus}. The term abstract indicates that the instantiated switch relation is an abstract representation of some computation steps taken in the SUT. For instance, a transition with label 'connect?' is an abstract stimulus of the actual setup of a TCP connection between two distributed components of the SUT. 
-  \item The translation of an abstract stimulus to a concrete stimulus is done by the Test Execution component. This component provides the stimulus to the SUT. When the SUT responds, the Test Execution component translates this response to an abstract response. For instance, the Test Execution component receives an HTTP response that the TCP connect was succesful. This is a concrete response, which the Test Execution component translates to an abstract response, such as a transition with label 'ok!'. The Test Manager is notified with this abstract response.
+  \item The gate of the instantiated switch relation is given to the Test Execution component as an \textit{abstract stimulus}. The term abstract indicates that the instantiated switch relation is an abstract representation of some computation steps taken in the SUT. For instance, a transition with label 'connect?' is an abstract stimulus of the actual setup of a TCP connection between two distributed components of the SUT. The communication between these two components is done by method calls.
+  \item The translation of an abstract stimulus to a concrete stimulus is done by the Test Execution component. This component provides the stimulus to the SUT. When the SUT responds, the Test Execution component translates this response to an abstract response. For instance, the Test Execution component receives an HTTP response that the TCP connect was succesful. This is a concrete response, which the Test Execution component translates to an abstract response, such as a transition with label 'ok!'. The Test Manager is notified with this abstract response. The communication between the Test Execution component and the SUT is done through sockets on both ends.
   \item The Test Manager translates the abstract response to an instantiated switch relation and updates the STS Engine. If this is possible according to the model, the Test Manager gives a pass verdict for this test. Otherwise, the result is a fail verdict.
 \end{enumerate}
 
@@ -35,7 +35,7 @@ The architecture of the GROOVE tool is shown graphically in Figure~\ref{fig:groo
   \label{fig:groove_tool}
 \end{figure}
 
-\subsection{GROOVE example}
+\subsubsection{GROOVE example}
 The $\mathit{LHS}$, $\mathit{RHS}$ and $\mathit{NAC}$ of a rule in graph transformation tools, such as GROOVE, are often visualized together in one graph. The running example from Figure~\ref{fig:example_sts} is displayed as a graph grammar, as visualized in GROOVE, in Figure~\ref{fig:example_groove}. Figure~\ref{fig:example_groove_start} is the start graph of the system.
 
 The colors on the nodes and edges in the rules represent whether they belong to the $\mathit{LHS}$, $\mathit{RHS}$ or $\mathit{NAC}$ of the rule.
@@ -110,7 +110,7 @@ The new graph grammar loses many advantages by structuring it in this way: the o
   \label{fig:move3}
 \end{figure}
 
-\subsubsection{Comparison of Transition Systems}
+\subsubsection{Comparison of transition systems}
 The GTS of a graph grammar can be computed using GROOVE and the STS can be transformed to an LTS. The two graph grammars and the STS of the board game example result in three transition systems which can be compared.
 
 The graph grammar from Figure~\ref{fig:example_groove} generates a GTS with 32 states with 52 transitions, which can be seen visually in Figure~ \ref{fig:statespace_groove1}. The graph grammar from Figure \ref{fig:example_groove2}, using the 'move' rule from Figure~\ref{fig:move3}, generates 224 states with 384 transitions, shown as GTS in Figure~\ref{fig:statespace_groove2}. The reason of the difference in number of states and transitions is that the board is circular: to the first graph grammar, the players being at locations 1 and 3 is the same as them being at locations 2 and 4. However, this is not the same to the second graph grammar. Also, for the first graph grammar it does not matter which \textbf{Player} node is at a \textbf{Location} node; they are the same apart from which \textbf{Player} has the 'turn'. As an example, consider the start graph in Figure~\ref{fig:example_groove}. If both players throw a '1' and move to the next location, the state is as shown in Figure~\ref{fig:symmetry_example}. Both states are symmetrical and therefore they are the same state. This leads to a \textit{symmetry reduction} of the statespace for the first graph grammar.

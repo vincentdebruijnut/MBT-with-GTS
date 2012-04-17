@@ -103,11 +103,6 @@ R.~De Nicola and M.C.B. Hennessy.
 \newblock Testing equivalences for processes.
 \newblock {\em Theoretical Computer Science}, 34(1-2):83 -- 133, 1984.
 
-\bibitem{Phillips:refusal}
-Iain Phillips.
-\newblock Refusal testing.
-\newblock {\em Theoretical Computer Science}, 50(3):241 -- 284, 1987.
-
 \bibitem{Pol:testing}
 Martin Pol.
 \newblock {\em Testen volgens Tmap (in dutch, Testing according to Tmap)}.
@@ -143,6 +138,12 @@ Vlad Rusu, Lydie du~Bousquet, and Thierry J$\acute{e}$ron.
   {\em Integrated Formal Methods}, volume 1945 of {\em Lecture Notes in
   Computer Science}, pages 338--357. Springer Berlin / Heidelberg, 2000.
 \newblock 10.1007/3-540-40911-4\_20.
+
+\bibitem{Sietsma:reachability}
+Floor Sietsma.
+\newblock A case study in formal testing and an algorithm for automatic test
+  case generation with symbolic transition systems.
+\newblock Master's thesis, Universiteit van Amsterdam, 2009.
 
 \bibitem{Tretmans:TorX}
 G.~J. {Tretmans} and H.~{Brinksma}.
