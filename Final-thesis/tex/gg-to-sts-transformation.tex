@@ -8,20 +8,33 @@ A graph grammar is a tuple $\langle G, R\rangle$, where:
 \begin{itemize}
   \item $G$ is the start graph
   \item $R$ is a set of graph transformation rules
-  \item $V$ is a set of nodes in $G$ which are \textit{variable nodes}
+  \item $V$ is a set of nodes which are \textit{variable nodes}
 \end{itemize}
 \end{definition}
 
-The concrete implementation of this can differ. For example, a variable node can be restricted to one self edge, giving the name, and an edge labeled 'value' to a node with one self-edge, representing the value of the variable. We will use \textit{value node} to indicate this node. 
+The concrete implementation of this can differ. For example, a variable node can be restricted to one self edge, giving the name, and an edge labeled 'value' to a node with one self-edge, representing the value of the variable. We will use the term \textit{value node} to indicate this node. Figure~\ref{fig:variable_node} shows an example of a variable node 'name' and a value node with the value '25'.
 
-EXAMPLE
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/variable_node.tex}}
+  \end{center}
+  \caption{An example of a variable in a graph}
+  \label{fig:variable_node}
+\end{figure}
 
 \subsection{Graph states transformation}
 Graph states are a representation of the state of a system. In an STS, this representation is done by the locations and the location variables. In order to obtain an STS from a graph grammar, the explored graph states must be transformed to locations and location variables. 
 
-The locations $L$ of the transformation are obtained by abstracting the variable nodes in the graph states. For the example specifically, the value nodes are removed from the graph. The abstracted graphs are considered to be the same location in the transformed STS when they are isomorphic. The location variables $\mathcal{L}$ are identified by the variable nodes $V$. The value nodes connected to the variable nodes in the start graph give the initialization $\imath$ of the STS.
+The locations $L$ of the transformation are obtained by abstracting the variable nodes in the graph states. For the example specifically, the value nodes are removed from the graph. The abstracted graphs are considered to be the same location in the transformed STS when they are isomorphic. The location variables $\mathcal{L}$ are identified by the variable nodes $V$. The value nodes in the start graph give the initialization $\imath$ of the STS.
 
-EXAMPLE
+Figure~\ref{fig:abstract_graph} shows the abstraction of the graph in Figure~\ref{fig:variable_node}. Assuming this is the graph of a start graph state, the transformed STS is as follows: $L = \{l_0\}, \mathcal{L} = \{'name'\}, \imath = \{'name' \mapsto 25\}$, where the start location $l_0$ is represented by the abstraction.
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/abstract_graph.tex}}
+  \end{center}
+  \caption{An example of a graph abstraction}
+\end{figure}
 
 \subsection{Rule transitions transformation}
 Rule transitions are a representation of the switch from one system state to another. In STSs, this representation is done by the switch relations. In order to obtain an STS from a graph grammar, the explored rule transitions are transformed to the switch relations.
