@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  17 APR 2012 15:27
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  20 APR 2012 16:12
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -823,11 +823,11 @@ Chapter 1.
 
 ]) [4] (./tex/goals.tex)
 (./tex/model_based_testing.tex
-<./img/model-based-testing.pdf, id=356, 379.58545pt x 141.73691pt>
+<./img/model-based-testing.pdf, id=361, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-<./img/mbt-on-the-fly.pdf, id=361, 357.48773pt x 141.7426pt>
+<./img/mbt-on-the-fly.pdf, id=366, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
 <use ./img/mbt-on-the-fly.pdf> [5 <./img/model-based-testing.pdf>]
@@ -856,11 +856,11 @@ Underfull \hbox (badness 6542) in paragraph at lines 69--69
 
 (./img/gg_rhs.tex <xymatrix 2x1 51>) (./img/gg_rhs.tex <xymatrix 2x1 51>)
 [12] (./img/trafo_basic_sts.tex <xymatrix 3x3 348>)) (./tex/tooling.tex
-<./img/axini_tool.pdf, id=512, 356.92177pt x 145.93393pt>
+<./img/axini_tool.pdf, id=517, 356.92177pt x 145.93393pt>
 File: ./img/axini_tool.pdf Graphic file (type pdf)
 
 <use ./img/axini_tool.pdf> [13 <./img/axini_tool.pdf>]
-<./img/groove_tool.pdf, id=535, 374.51399pt x 161.01265pt>
+<./img/groove_tool.pdf, id=540, 374.51399pt x 161.01265pt>
 File: ./img/groove_tool.pdf Graphic file (type pdf)
 
 <use ./img/groove_tool.pdf> [14 <./img/groove_tool.pdf>] (./img/start.tikz
@@ -879,35 +879,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
 
-[18]) (./tex/gg-exploration.tex
+(./img/variable_node.tex <xymatrix 2x1 51>)
 
-LaTeX Warning: Reference `fig:' on page 19 undefined on input line 8.
+LaTeX Warning: Reference `fig:abstract_graph' on page 18 undefined on input lin
+e 30.
+
+(./img/abstract_graph.tex <xymatrix 1x1 6>) [18] (./img/lhs_trafo.tex
+<xymatrix 2x1 51>) (./img/nac_trafo.tex <xymatrix 2x1 51>) (./img/rhs_trafo.tex
+<xymatrix 2x1 51>)) (./tex/gg-exploration.tex [19]
+
+LaTeX Warning: Reference `fig:' on page 20 undefined on input line 10.
 
 
-LaTeX Warning: Reference `fig:' on page 19 undefined on input line 8.
+LaTeX Warning: Reference `fig:' on page 20 undefined on input line 10.
 
-) (./tex/gratis-design.tex [19]) (./tex/implementation.tex) [20]
+) (./tex/gratis-design.tex [20]) (./tex/implementation.tex
+
+LaTeX Warning: Reference `sec:algebra' on page 21 undefined on input line 9.
+
+
+LaTeX Warning: Reference `fig:' on page 21 undefined on input line 9.
+
+
+LaTeX Warning: Reference `fig:' on page 21 undefined on input line 9.
+
+
+LaTeX Warning: Reference `fig:groove-example' on page 21 undefined on input lin
+e 12.
+
+
+LaTeX Warning: Reference `fig:' on page 21 undefined on input line 12.
+
+
+LaTeX Warning: Reference `fig:' on page 21 undefined on input line 14.
+
+
+LaTeX Warning: Reference `fig:' on page 21 undefined on input line 14.
+
+[21]
+
+LaTeX Warning: Reference `fig:' on page 22 undefined on input line 17.
+
+
+LaTeX Warning: Reference `fig:' on page 22 undefined on input line 17.
+
+) [22]
 Chapter 3.
-(./tex/validation-introduction.tex) [21
+(./tex/validation-introduction.tex) [23
 
 ] (./tex/case-studies.tex)
-(./tex/measurements.tex) [22]
+(./tex/measurements.tex) [24]
 Chapter 4.
-[23
+[25
 
 ] (./tex/summary.tex) (./tex/conclusion.tex) (./tex/future-work.tex)
-(./tex/acknowledgements.tex) [24] (./report.bbl [25
+(./tex/acknowledgements.tex) [26] (./report.bbl [27
 
-]) [26] (./report.aux)
+]) [28] (./report.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 19440 strings out of 495061
- 343053 string characters out of 1182622
- 664217 words of memory out of 3000000
- 21908 multiletter control sequences out of 15000+50000
+ 19472 strings out of 495061
+ 343597 string characters out of 1182622
+ 664492 words of memory out of 3000000
+ 21917 multiletter control sequences out of 15000+50000
  29237 words of font info for 74 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,22n,72p,1462b,1121s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -941,9 +981,9 @@ amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
 /cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/shar
 e/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on report.pdf (28 pages, 520606 bytes).
+Output written on report.pdf (30 pages, 530972 bytes).
 PDF statistics:
- 1286 PDF objects out of 1440 (max. 8388607)
- 165 named destinations out of 1000 (max. 500000)
- 497 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1312 PDF objects out of 1440 (max. 8388607)
+ 173 named destinations out of 1000 (max. 500000)
+ 505 words of extra memory for PDF output out of 10000 (max. 10000000)
 
