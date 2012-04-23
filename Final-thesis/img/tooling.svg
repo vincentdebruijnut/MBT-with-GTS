@@ -11,9 +11,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="746.62769"
-   height="315.38751"
-   viewBox="0 0 597.30215 252.31001"
+   width="747.06915"
+   height="301.94995"
+   viewBox="0 0 597.65532 241.55996"
    xml:space="preserve"
    color-interpolation-filters="sRGB"
    class="st20"
@@ -32,17 +32,17 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="1920"
-   inkscape:window-height="1029"
+   inkscape:window-width="1152"
+   inkscape:window-height="813"
    id="namedview4464"
    showgrid="false"
    inkscape:zoom="1.3485026"
-   inkscape:cx="300.70855"
-   inkscape:cy="244.96322"
+   inkscape:cx="367.66854"
+   inkscape:cy="336.72023"
    inkscape:window-x="0"
    inkscape:window-y="0"
    inkscape:window-maximized="1"
-   inkscape:current-layer="shape3-38-0-8"
+   inkscape:current-layer="shape4-18-7"
    fit-margin-top="0"
    fit-margin-left="0"
    fit-margin-right="0"
@@ -89,7 +89,20 @@
 	</style>
 
 	<defs
-   id="Patterns_And_Gradients">
+   id="Patterns_And_Gradients"><pattern
+   inkscape:stockid="Stripes 1:1"
+   id="Strips1_1"
+   patternTransform="translate(0,0) scale(10,10)"
+   height="1"
+   width="2"
+   patternUnits="userSpaceOnUse"
+   inkscape:collect="always"><rect
+     id="rect6147"
+     height="2"
+     width="1"
+     y="-0.5"
+     x="0"
+     style="fill:black;stroke:none" /></pattern>
 		<linearGradient
    id="grad30-6"
    v:fillPattern="30"
@@ -870,15 +883,6 @@
      offset="1"
      style="stop-color:#6b9bc7;stop-opacity:0.5"
      id="stop5991" /></linearGradient><linearGradient
-   inkscape:collect="always"
-   xlink:href="#grad30-6-3"
-   id="linearGradient3158-1"
-   x1="-0.10215032"
-   y1="969.31287"
-   x2="-0.10215032"
-   y2="910.27002"
-   gradientTransform="matrix(1.2236868,0,0,0.81720259,-1.1865012,0)"
-   gradientUnits="userSpaceOnUse" /><linearGradient
    id="linearGradient5994"
    v:fillPattern="30"
    v:foreground="#6b9bc7"
@@ -1561,7 +1565,306 @@
    x1="21.87229"
    y1="1898.7115"
    x2="21.87229"
-   y2="1881.568" /></defs>
+   y2="1881.568" /><marker
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
+   id="mrkr5-34-50"
+   class="st7"
+   v:arrowType="5"
+   v:arrowSize="2"
+   v:setback="6.16"
+   refX="-6.1599998"
+   orient="auto"
+   markerUnits="strokeWidth"
+   overflow="visible"><use
+     height="3"
+     width="3"
+     y="0"
+     x="0"
+     xlink:href="#lend5"
+     transform="scale(-3.52,-3.52)"
+     id="use3446-5" /></marker><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad30-6-82-4-8"
+   id="linearGradient6289-2-2-2"
+   x1="-0.10215032"
+   y1="969.31287"
+   x2="-0.10215032"
+   y2="910.27002"
+   gradientTransform="matrix(1.2236868,0,0,0.81720259,-21.950273,-23.730025)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   id="grad30-6-82-4-8"
+   v:fillPattern="30"
+   v:foreground="#6b9bc7"
+   v:foregroundOpacity="0.5"
+   v:background="#6b9bc7"
+   v:backgroundOpacity="0.5"
+   x1="0"
+   y1="1"
+   x2="0"
+   y2="0"><stop
+     offset="0"
+     style="stop-color:#6b9bc7;stop-opacity:0.5"
+     id="stop4230-8-2-3" /><stop
+     offset="1"
+     style="stop-color:#6b9bc7;stop-opacity:0.5"
+     id="stop4232-9-5-7" /></linearGradient><marker
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
+   id="mrkr5-34-95"
+   class="st7"
+   v:arrowType="5"
+   v:arrowSize="2"
+   v:setback="6.16"
+   refX="-6.1599998"
+   orient="auto"
+   markerUnits="strokeWidth"
+   overflow="visible"><use
+     height="3"
+     width="3"
+     y="0"
+     x="0"
+     xlink:href="#lend5"
+     transform="scale(-3.52,-3.52)"
+     id="use3446-50" /></marker><marker
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
+   id="marker3452"
+   class="st7"
+   v:arrowType="5"
+   v:arrowSize="2"
+   v:setback="6.16"
+   refX="-6.1599998"
+   orient="auto"
+   markerUnits="strokeWidth"
+   overflow="visible"><use
+     height="3"
+     width="3"
+     y="0"
+     x="0"
+     xlink:href="#lend5"
+     transform="scale(-3.52,-3.52)"
+     id="use3454" /></marker><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad30-21"
+   id="linearGradient3505"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(2.4427241,0.40937902)"
+   x1="21.87229"
+   y1="1898.7115"
+   x2="21.87229"
+   y2="1881.568" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad30-21"
+   id="linearGradient3507"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(2.4427241,0.40937902)"
+   x1="21.87229"
+   y1="1898.7115"
+   x2="21.87229"
+   y2="1881.568" /><marker
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
+   id="mrkr5-34-51"
+   class="st7"
+   v:arrowType="5"
+   v:arrowSize="2"
+   v:setback="6.16"
+   refX="-6.1599998"
+   orient="auto"
+   markerUnits="strokeWidth"
+   overflow="visible"><use
+     height="3"
+     width="3"
+     y="0"
+     x="0"
+     xlink:href="#lend5"
+     transform="scale(-3.52,-3.52)"
+     id="use3446-8" /></marker><marker
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
+   id="marker3452-6"
+   class="st7"
+   v:arrowType="5"
+   v:arrowSize="2"
+   v:setback="6.16"
+   refX="-6.1599998"
+   orient="auto"
+   markerUnits="strokeWidth"
+   overflow="visible"><use
+     height="3"
+     width="3"
+     y="0"
+     x="0"
+     xlink:href="#lend5"
+     transform="scale(-3.52,-3.52)"
+     id="use3454-5" /></marker><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad30-21"
+   id="linearGradient3546"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(2.4427241,0.40937902)"
+   x1="21.87229"
+   y1="1898.7115"
+   x2="21.87229"
+   y2="1881.568" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad30-21"
+   id="linearGradient3548"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(2.4427241,0.40937902)"
+   x1="21.87229"
+   y1="1898.7115"
+   x2="21.87229"
+   y2="1881.568" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad30-6-82-4-3"
+   id="linearGradient6289-2-2-0"
+   x1="-0.10215032"
+   y1="969.31287"
+   x2="-0.10215032"
+   y2="910.27002"
+   gradientTransform="matrix(1.2236868,0,0,0.81720259,-21.950273,-23.730025)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   id="grad30-6-82-4-3"
+   v:fillPattern="30"
+   v:foreground="#6b9bc7"
+   v:foregroundOpacity="0.5"
+   v:background="#6b9bc7"
+   v:backgroundOpacity="0.5"
+   x1="0"
+   y1="1"
+   x2="0"
+   y2="0"><stop
+     offset="0"
+     style="stop-color:#6b9bc7;stop-opacity:0.5"
+     id="stop4230-8-2-2" /><stop
+     offset="1"
+     style="stop-color:#6b9bc7;stop-opacity:0.5"
+     id="stop4232-9-5-8" /></linearGradient><marker
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
+   id="mrkr5-34-87"
+   class="st7"
+   v:arrowType="5"
+   v:arrowSize="2"
+   v:setback="6.16"
+   refX="-6.1599998"
+   orient="auto"
+   markerUnits="strokeWidth"
+   overflow="visible"><use
+     height="3"
+     width="3"
+     y="0"
+     x="0"
+     xlink:href="#lend5"
+     transform="scale(-3.52,-3.52)"
+     id="use3446-3" /></marker><marker
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
+   id="marker3616"
+   class="st7"
+   v:arrowType="5"
+   v:arrowSize="2"
+   v:setback="6.16"
+   refX="-6.1599998"
+   orient="auto"
+   markerUnits="strokeWidth"
+   overflow="visible"><use
+     height="3"
+     width="3"
+     y="0"
+     x="0"
+     xlink:href="#lend5"
+     transform="scale(-3.52,-3.52)"
+     id="use3618" /></marker><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad30-21"
+   id="linearGradient3651"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(2.4427241,0.40937902)"
+   x1="21.87229"
+   y1="1898.7115"
+   x2="21.87229"
+   y2="1881.568" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad30-21"
+   id="linearGradient3653"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(2.4427241,0.40937902)"
+   x1="21.87229"
+   y1="1898.7115"
+   x2="21.87229"
+   y2="1881.568" /><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad30-6-6-4"
+   id="linearGradient3573-3"
+   x1="-0.10215032"
+   y1="969.31287"
+   x2="-0.10215032"
+   y2="910.27002"
+   gradientTransform="scale(1.2236868,0.81720259)"
+   gradientUnits="userSpaceOnUse" /><linearGradient
+   id="grad30-6-6-4"
+   v:fillPattern="30"
+   v:foreground="#6b9bc7"
+   v:foregroundOpacity="0.5"
+   v:background="#6b9bc7"
+   v:backgroundOpacity="0.5"
+   x1="0"
+   y1="1"
+   x2="0"
+   y2="0"><stop
+     offset="0"
+     style="stop-color:#6b9bc7;stop-opacity:0.5"
+     id="stop3429-6" /><stop
+     offset="1"
+     style="stop-color:#6b9bc7;stop-opacity:0.5"
+     id="stop3431-9" /></linearGradient><linearGradient
+   inkscape:collect="always"
+   xlink:href="#grad30-21-6"
+   id="linearGradient3505-7"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="scale(2.4427241,0.40937902)"
+   x1="21.87229"
+   y1="1898.7115"
+   x2="21.87229"
+   y2="1881.568" /><linearGradient
+   id="grad30-21-6"
+   v:fillPattern="30"
+   v:foreground="#f0f0f0"
+   v:background="#ffffff"
+   x1="21.87229"
+   y1="1898.7115"
+   x2="21.87229"
+   y2="1881.568"
+   gradientTransform="scale(2.4427241,0.40937902)"
+   gradientUnits="userSpaceOnUse"><stop
+     offset="0"
+     style="stop-color:#f0f0f0;stop-opacity:1"
+     id="stop13-5" /><stop
+     offset="1"
+     style="stop-color:#ffffff;stop-opacity:1"
+     id="stop15-7" /></linearGradient><marker
+   style="fill:#404040;fill-opacity:1;stroke:#404040;stroke-width:0.28409091;stroke-opacity:1;overflow:visible"
+   id="mrkr5-34-3"
+   class="st7"
+   v:arrowType="5"
+   v:arrowSize="2"
+   v:setback="6.16"
+   refX="-6.1599998"
+   orient="auto"
+   markerUnits="strokeWidth"
+   overflow="visible"><use
+     height="3"
+     width="3"
+     y="0"
+     x="0"
+     xlink:href="#lend5"
+     transform="scale(-3.52,-3.52)"
+     id="use3446-75" /></marker><linearGradient
+   y2="1881.568"
+   x2="21.87229"
+   y1="1898.7115"
+   x1="21.87229"
+   gradientTransform="scale(2.4427241,0.40937902)"
+   gradientUnits="userSpaceOnUse"
+   id="linearGradient3722"
+   xlink:href="#grad30-21-6"
+   inkscape:collect="always" /></defs>
 	<defs
    id="Markers">
 		<g
@@ -1638,7 +1941,7 @@
    v:index="1"
    v:groupContext="foregroundPage"
    id="g4257"
-   transform="translate(-4.1868758,-37.323459)">
+   transform="translate(-3.8337041,-37.323459)">
 		<v:userDefs>
 			<v:ud
    v:nameU="msvThemeColors"
@@ -1751,7 +2054,7 @@
    id="shape2-1"
    v:mID="2"
    v:groupContext="shape"
-   transform="translate(273.27479,-695.65704)"><title
+   transform="translate(392.51817,-606.66945)"><title
    id="title3453">Rectangle.2</title><desc
    id="desc3455">Test Derivation Module</desc><v:userDefs><v:ud
      v:nameU="visVersion"
@@ -1801,6 +2104,7 @@
 
 
 
+
 <text
    x="9.9754295"
    y="779.78058"
@@ -1808,6 +2112,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3595">Manager</text>
+
 
 
 
@@ -1831,11 +2136,12 @@
 
 
 
+
 </g><g
    id="shape3-10"
    v:mID="3"
    v:groupContext="shape"
-   transform="translate(273.27479,-605.65704)"><title
+   transform="translate(392.51817,-516.66945)"><title
    id="title3469">Rectangle.3</title><desc
    id="desc3471">Test Execution Module</desc><v:userDefs><v:ud
      v:nameU="visVersion"
@@ -1885,6 +2191,7 @@
 
 
 
+
 <text
    x="6.3017902"
    y="779.95428"
@@ -1900,11 +2207,12 @@
 
 
 
+
 </g><g
    id="shape4-18"
    v:mID="4"
    v:groupContext="shape"
-   transform="translate(392.95151,-605.65704)"><title
+   transform="translate(512.19489,-516.66945)"><title
    id="title3485">Rectangle.4</title><desc
    id="desc3487">SUT</desc><v:userDefs><v:ud
      v:nameU="visVersion"
@@ -1955,12 +2263,13 @@
 
 
 
+
 </g><g
    id="shape9-35"
    v:mID="9"
    v:groupContext="shape"
    v:layerMember="0"
-   transform="translate(321.37101,-627.7884)"><title
+   transform="translate(440.61439,-538.80081)"><title
      id="title3502">Dynamic connector.9</title><v:userDefs><v:ud
        v:nameU="msvThemeColors"
        v:val="VT0(36):26" /><v:ud
@@ -1976,7 +2285,7 @@
    v:mID="10"
    v:groupContext="shape"
    v:layerMember="0"
-   transform="translate(392.11254,-614.78415)"><title
+   transform="translate(511.35592,-525.79656)"><title
      id="title3507">Dynamic connector.10</title><v:userDefs><v:ud
        v:nameU="msvThemeColors"
        v:val="VT0(36):26" /><v:ud
@@ -1992,7 +2301,7 @@
    v:mID="12"
    v:groupContext="shape"
    v:layerMember="0"
-   transform="matrix(-1,0,0,1,321.75661,-711.26721)"><title
+   transform="matrix(-1,0,0,1,440.99999,-622.27962)"><title
      id="title3526">Dynamic connector.12</title><v:userDefs><v:ud
        v:nameU="msvThemeColors"
        v:val="VT0(36):26" /><v:ud
@@ -2007,7 +2316,7 @@
    id="shape13-60"
    v:mID="13"
    v:groupContext="shape"
-   transform="translate(393.14219,-695.42824)"><title
+   transform="translate(512.38557,-606.44065)"><title
    id="title3531">Ellipse.13</title><desc
    id="desc3533">Verdict Pass/Fail</desc><v:userDefs><v:ud
      v:nameU="visVersion"
@@ -2053,6 +2362,7 @@
 
 
 
+
 <text
    x="11.278832"
    y="778.41699"
@@ -2068,12 +2378,13 @@
 
 
 
+
 </g><g
    id="shape9-35-4"
    v:mID="9"
    v:groupContext="shape"
    v:layerMember="0"
-   transform="translate(200.9909,-715.41186)"><title
+   transform="translate(320.23428,-626.42427)"><title
      id="title3502-0">Dynamic connector.9</title><v:userDefs><v:ud
        v:nameU="msvThemeColors"
        v:val="VT0(36):26" /><v:ud
@@ -2087,15 +2398,16 @@
      sodipodi:nodetypes="cc" /></g><text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="350.86728"
-   y="149.75392"
+   x="470.11066"
+   y="238.74152"
    id="text3399"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3401"
-     x="350.86728"
-     y="149.75392"
+     x="470.11066"
+     y="238.74152"
      style="font-size:8px">stimulus</tspan></text>
+
 
 
 
@@ -2109,7 +2421,7 @@
    v:mID="12"
    v:groupContext="shape"
    v:layerMember="0"
-   transform="matrix(0,-1,1,0,-477.89438,191.11839)"><title
+   transform="matrix(0,-1,1,0,-358.651,280.10598)"><title
      id="title3526-2">Dynamic connector.12</title><v:userDefs><v:ud
        v:nameU="msvThemeColors"
        v:val="VT0(36):26" /><v:ud
@@ -2126,7 +2438,7 @@
    v:mID="12"
    v:groupContext="shape"
    v:layerMember="0"
-   transform="matrix(0,1,1,0,-453.56387,42.595075)"><title
+   transform="matrix(0,1,1,0,-334.32049,131.58267)"><title
      id="title3526-2-9">Dynamic connector.12</title><v:userDefs><v:ud
        v:nameU="msvThemeColors"
        v:val="VT0(36):26" /><v:ud
@@ -2144,15 +2456,16 @@
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="355.328"
-   y="65.130653"
+   x="474.57138"
+   y="154.11826"
    id="text3399-2"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3401-4"
-     x="355.328"
-     y="65.130653"
+     x="474.57138"
+     y="154.11826"
      style="font-size:8px">output</tspan></text>
+
 
 
 
@@ -2164,18 +2477,18 @@
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="257.45993"
-   y="115.84698"
+   x="376.70331"
+   y="204.83458"
    id="text3399-5"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3401-5"
-     x="257.45993"
-     y="115.84698"
+     x="376.70331"
+     y="204.83458"
      style="font-size:8px">abstract</tspan><tspan
      sodipodi:role="line"
-     x="257.45993"
-     y="125.84698"
+     x="376.70331"
+     y="214.83458"
      style="font-size:8px"
      id="tspan3426">stimulus</tspan></text>
 
@@ -2186,21 +2499,22 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="323.15479"
-   y="115.88088"
+   x="442.39816"
+   y="204.86848"
    id="text3399-5-1"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3401-5-7"
-     x="323.15479"
-     y="115.88088"
+     x="442.39816"
+     y="204.86848"
      style="font-size:8px"> abstract</tspan><tspan
      sodipodi:role="line"
-     x="323.15479"
-     y="125.88088"
+     x="442.39816"
+     y="214.86848"
      style="font-size:8px"
      id="tspan3426-1">response</tspan></text>
 
@@ -2211,21 +2525,22 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="208.87068"
-   y="51.541393"
+   x="328.11404"
+   y="140.52899"
    id="text3399-8-2"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
-     x="208.87068"
-     y="51.541393"
+     x="328.11404"
+     y="140.52899"
      style="font-size:8px"
      id="tspan3457">     possible </tspan><tspan
      sodipodi:role="line"
-     x="208.87068"
-     y="61.541393"
+     x="328.11404"
+     y="150.52899"
      style="font-size:8px"
      id="tspan3360">switch relations</tspan></text>
 
@@ -2236,17 +2551,18 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="350.79535"
-   y="177.7159"
+   x="470.03873"
+   y="266.70346"
    id="text3403"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3405"
-     x="350.79535"
-     y="177.7159"
+     x="470.03873"
+     y="266.70346"
      style="font-size:8px">response</tspan></text>
 
 
@@ -2256,66 +2572,12 @@
 
 
 
+
 <g
-   id="shape5-1"
-   v:mID="5"
-   v:groupContext="shape"
-   transform="translate(165.24078,-604.0855)"><title
-   id="title3747">Rectangle.5</title><desc
-   id="desc3749">GUI</desc><v:userDefs><v:ud
-     v:nameU="visVersion"
-     v:val="VT0(14):26" /><v:ud
-     v:nameU="msvThemeColors"
-     v:val="VT0(36):26" /><v:ud
-     v:nameU="msvThemeEffects"
-     v:val="VT0(16):26" /></v:userDefs><v:textBlock
-   v:margins="rect(4,4,4,4)" /><v:textRect
-   cx="36"
-   cy="768"
-   width="72"
-   height="48" /><g
-   id="shadow5-2"
-   v:groupContext="shadow"
-   v:shadowOffsetX="1.44"
-   v:shadowOffsetY="-1.44"
-   v:shadowType="1"
-   transform="translate(1.44,1.44)"
-   class="st1"
-   style="visibility:visible"><rect
-     x="0"
-     y="744"
-     width="72"
-     height="48"
-     class="st2"
-     id="rect3752"
-     style="fill:#cdcdcd;fill-opacity:0.5;stroke:#cdcdcd;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" /></g><rect
-   x="-1.1865013"
-   y="744"
-   width="72"
-   height="48"
-   class="st3"
-   id="rect3754"
-   style="fill:url(#linearGradient3158-1);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
-   x="22.103996"
-   y="772.7865"
-   class="st4"
-   v:langID="1043"
-   id="text3756"
-   style="fill:#000000;font-family:Calibri"><v:paragraph
-   v:horizAlign="1" /><v:tabList /> GUI</text>
-
-
-
-
-
-
-
-
-</g><g
    id="shape7-24"
    v:mID="7"
    v:groupContext="shape"
-   transform="translate(309.03625,-671.85548)"><title
+   transform="translate(305.47675,-759.06332)"><title
    id="title3780">Ellipse</title><desc
    id="desc3782">Graph Transition System</desc><v:userDefs><v:ud
      v:nameU="visVersion"
@@ -2348,6 +2610,7 @@
 
 
 
+
 <text
    x="-283.40311"
    y="942.11603"
@@ -2355,6 +2618,7 @@
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
    id="text3837-4">Grammar</text>
+
 
 
 
@@ -2389,23 +2653,8 @@
 
 
 
-<text
-   xml:space="preserve"
-   style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="-211.83279"
-   y="821.85065"
-   id="text3399-8-8-8-7"
-   sodipodi:linespacing="125%"><tspan
-     sodipodi:role="line"
-     x="-211.83279"
-     y="821.85065"
-     style="font-size:8px"
-     id="tspan3126-1">rule transitions</tspan><tspan
-     sodipodi:role="line"
-     x="-211.83279"
-     y="831.85065"
-     style="font-size:8px"
-     id="tspan3349">   and states</tspan></text>
+
+
 
 
 
@@ -2418,7 +2667,7 @@
    id="shape3-38"
    v:mID="3"
    v:groupContext="shape"
-   transform="translate(19.320848,-603.49225)"><title
+   transform="translate(15.761344,-690.70009)"><title
    id="title3801">Rectangle.3</title><desc
    id="desc3803">Graph Exploration Module</desc><v:userDefs><v:ud
      v:nameU="visVersion"
@@ -2468,6 +2717,7 @@
 
 
 
+
 <text
    x="16.223808"
    y="778.17462"
@@ -2483,23 +2733,25 @@
 
 
 
+
 </g><text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="73.601768"
-   y="115.3678"
+   x="90.212791"
+   y="53.669735"
    id="text3399-8-8-8"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3401-8-9-8"
-     x="73.601768"
-     y="115.3678"
+     x="90.212791"
+     y="53.669735"
      style="font-size:8px">    rule </tspan><tspan
      sodipodi:role="line"
-     x="73.601768"
-     y="125.3678"
+     x="90.212791"
+     y="63.669735"
      style="font-size:8px"
      id="tspan3126">transitions</tspan></text>
+
 
 
 
@@ -2511,20 +2763,21 @@
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="4.1868758"
-   y="115.53729"
+   x="93.174469"
+   y="93.587021"
    id="text3399-8-8-8-2"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
-     x="4.1868758"
-     y="115.53729"
+     x="93.174469"
+     y="93.587021"
      style="font-size:8px"
      id="tspan3126-5">   rule</tspan><tspan
      sodipodi:role="line"
-     x="4.1868758"
-     y="125.53729"
+     x="93.174469"
+     y="103.58702"
      style="font-size:8px"
      id="tspan3162">transition</tspan></text>
+
 
 
 
@@ -2537,7 +2790,7 @@
    id="shape3-38-0"
    v:mID="3"
    v:groupContext="shape"
-   transform="translate(157.27295,-671.41647)"><title
+   transform="translate(275.32983,-580.05588)"><title
    id="title3801-7">Rectangle.3</title><desc
    id="desc3803-8">Graph Exploration Module</desc><v:userDefs><v:ud
      v:nameU="visVersion"
@@ -2572,13 +2825,7 @@
    height="48"
    class="st3"
    id="rect3808-8"
-   style="fill:url(#linearGradient6289-2);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
-   x="-12.845472"
-   y="762.15686"
-   class="st4"
-   v:langID="1043"
-   style="fill:#000000;font-family:Calibri"
-   id="text3833-1">Interface</text>
+   style="fill:url(#linearGradient6289-2);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" />
 
 
 
@@ -2589,27 +2836,29 @@
 
 <text
    x="-7.0433588"
-   y="748.87036"
+   y="753.61639"
    class="st4"
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
    id="text3833-1-5">Engine</text>
 
 
+
 <text
    x="1.8554007"
-   y="735.22559"
+   y="739.97162"
    class="st4"
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
    id="text3833-1-7">STS</text>
 
 
+
 </g><g
    id="shape3-38-0-8"
    v:mID="3"
    v:groupContext="shape"
-   transform="translate(42.18234,-671.4165)"><title
+   transform="translate(157.86621,-580.05591)"><title
    id="title3801-7-6">Rectangle.3</title><desc
    id="desc3803-8-2">Graph Exploration Module</desc><v:userDefs><v:ud
      v:nameU="visVersion"
@@ -2645,12 +2894,13 @@
    class="st3"
    id="rect3808-8-3"
    style="fill:url(#linearGradient6289-2-2);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
-   x="-13.438722"
-   y="761.5636"
+   x="-14.031972"
+   y="736.05383"
    class="st4"
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
-   id="text3833-1-9">Interface</text>
+   id="text3833-1-9">Symbolic</text>
+
 
 
 
@@ -2661,62 +2911,30 @@
 
 <text
    x="-11.789374"
-   y="747.6839"
+   y="761.32867"
    class="st4"
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
    id="text3833-1-9-5">Strategy</text>
 
 
+
 <text
-   x="-19.440239"
-   y="734.06256"
+   x="-20.62674"
+   y="748.8938"
    class="st4"
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
    id="text3833-1-9-5-0">Exploration</text>
 
 
+
 </g><g
-   id="shape12-54-8-6"
-   v:mID="12"
-   v:groupContext="shape"
-   v:layerMember="0"
-   transform="matrix(0,-1,1,0,-728.40354,192.92221)"><title
-     id="title3526-2-1">Dynamic connector.12</title><v:userDefs><v:ud
-       v:nameU="msvThemeColors"
-       v:val="VT0(36):26" /><v:ud
-       v:nameU="msvThemeEffects"
-       v:val="VT0(16):26" /></v:userDefs><path
-     d="m 94.805086,773.77119 -35.217119,0"
-     class="st8"
-     id="path3528-4-8"
-     inkscape:connector-curvature="0"
-     style="stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-34)"
-     clip-path="none"
-     sodipodi:nodetypes="cc" /></g><g
-   id="shape12-54-8-0-2"
-   v:mID="12"
-   v:groupContext="shape"
-   v:layerMember="0"
-   transform="matrix(0,1,1,0,-704.07303,44.39889)"><title
-     id="title3526-2-9-1">Dynamic connector.12</title><v:userDefs><v:ud
-       v:nameU="msvThemeColors"
-       v:val="VT0(36):26" /><v:ud
-       v:nameU="msvThemeEffects"
-       v:val="VT0(16):26" /></v:userDefs><path
-     d="m 94.805086,773.77119 -35.217119,0"
-     class="st8"
-     id="path3528-4-4-1"
-     inkscape:connector-curvature="0"
-     style="stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-34)"
-     clip-path="none"
-     sodipodi:nodetypes="cc" /></g><g
    id="shape12-54-8-0-2-6"
    v:mID="12"
    v:groupContext="shape"
    v:layerMember="0"
-   transform="matrix(0,1,1,0,-717.42479,134.46811)"><title
+   transform="matrix(0,1,1,0,-720.98429,47.260269)"><title
      id="title3526-2-9-1-2">Dynamic connector.12</title><v:userDefs><v:ud
        v:nameU="msvThemeColors"
        v:val="VT0(36):26" /><v:ud
@@ -2728,124 +2946,19 @@
      inkscape:connector-curvature="0"
      style="stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-34)"
      clip-path="none"
-     sodipodi:nodetypes="cc" /></g><g
-   id="shape12-54-8-0-8-0"
-   v:mID="12"
-   v:groupContext="shape"
-   v:layerMember="0"
-   transform="matrix(-1,0,0,1,188.86389,-608.25623)"><title
-     id="title3526-2-9-6-0">Dynamic connector.12</title><v:userDefs><v:ud
-       v:nameU="msvThemeColors"
-       v:val="VT0(36):26" /><v:ud
-       v:nameU="msvThemeEffects"
-       v:val="VT0(16):26" /></v:userDefs><path
-     d="m 97.771339,773.77119 -66.659402,0"
-     class="st8"
-     id="path3528-4-4-0-3"
-     inkscape:connector-curvature="0"
-     style="stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-34)"
-     clip-path="none"
-     sodipodi:nodetypes="cc" /></g><g
-   style="font-size:12px;fill:none;stroke-linecap:square;stroke-miterlimit:3;overflow:visible"
-   id="g7051"
-   transform="translate(130.12913,212.64176)"><g
-     id="g6955"
-     v:groupContext="foregroundPage"
-     v:index="1"
-     v:mID="0">
-		<v:userDefs>
-			<v:ud
-   v:val="VT0(36):26"
-   v:nameU="msvThemeColors" />
-			<v:ud
-   v:val="VT0(16):26"
-   v:nameU="msvThemeEffects" />
-			<v:ud
-   v:val="VT0(0):26"
-   v:nameU="msvThemeOrder" />
-		</v:userDefs>
-		<title
-   id="title6957">Page-1</title>
-		<v:pageProperties
-   v:shadowOffsetY="-9"
-   v:shadowOffsetX="9"
-   v:drawingUnits="0"
-   v:pageScale="1"
-   v:drawingScale="1" />
-		<v:layer
-   v:index="0"
-   v:name="Connector" />
-		<g
-   transform="translate(54,-702)"
-   v:groupContext="shape"
-   v:mID="5"
-   id="shape5-1-8">
-			<title
-   id="title6960">Rectangle.5</title>
-			<desc
-   id="desc6962">GUI</desc>
-			<v:userDefs>
-				<v:ud
-   v:val="VT0(14):26"
-   v:nameU="visVersion" />
-				<v:ud
-   v:val="VT0(36):26"
-   v:nameU="msvThemeColors" />
-				<v:ud
-   v:val="VT0(16):26"
-   v:nameU="msvThemeEffects" />
-			</v:userDefs>
-			<v:textBlock
-   v:margins="rect(4,4,4,4)" />
-			<v:textRect
-   height="48"
-   width="72"
-   cy="768"
-   cx="36" />
-			
-			
-					</g>
-		
-		<g
-   transform="translate(34.26283,-921.07821)"
-   v:layerMember="0"
-   v:groupContext="shape"
-   v:mID="6"
-   id="shape6-16">
-			<title
-   id="title6988">Dynamic connector.6</title>
-			<v:userDefs>
-				<v:ud
-   v:val="VT0(36):26"
-   v:nameU="msvThemeColors" />
-				<v:ud
-   v:val="VT0(16):26"
-   v:nameU="msvThemeEffects" />
-			</v:userDefs>
-			<path
-   id="path6990"
-   class="st6"
-   d="m -34.27603,783.59325 -15.191265,0 -17.559206,0"
-   inkscape:connector-curvature="0"
-   style="stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:7, 5;marker-start:url(#mrkr5-24);marker-end:url(#mrkr5-26)"
-   sodipodi:nodetypes="ccc" />
-		</g>
-		
-		
-		
-		
-	</g></g><text
+     sodipodi:nodetypes="cc" /></g><text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="101.03893"
-   y="67.984299"
+   x="222.06206"
+   y="67.391052"
    id="text3399-8-5-9"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
-     id="tspan3401-8-0-3"
-     x="101.03893"
-     y="67.984299"
-     style="font-size:8px">socket</tspan></text>
+     x="222.06206"
+     y="67.391052"
+     style="font-size:8px"
+     id="tspan3382">STS</tspan></text>
+
 
 
 
@@ -2859,7 +2972,7 @@
    v:mID="9"
    v:groupContext="shape"
    v:layerMember="0"
-   transform="matrix(-1,0,0,1,280.17542,-702.2951)"><title
+   transform="matrix(-1,0,0,1,399.4188,-613.30751)"><title
      id="title3502-0-5">Dynamic connector.9</title><v:userDefs><v:ud
        v:nameU="msvThemeColors"
        v:val="VT0(36):26" /><v:ud
@@ -2873,23 +2986,23 @@
      sodipodi:nodetypes="cc" /></g><text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="210.86488"
-   y="89.942772"
+   x="330.10825"
+   y="178.93037"
    id="text3399-5-15"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
-     x="210.86488"
-     y="89.942772"
+     x="330.10825"
+     y="178.93037"
      style="font-size:8px"
      id="tspan3367">  instantiated</tspan><tspan
      sodipodi:role="line"
-     x="210.86488"
-     y="99.942772"
+     x="330.10825"
+     y="188.93037"
      style="font-size:8px"
      id="tspan3350">switch relation</tspan><tspan
      sodipodi:role="line"
-     x="210.86488"
-     y="109.94277"
+     x="330.10825"
+     y="198.93037"
      style="font-size:8px"
      id="tspan3356" /></text>
 
@@ -2901,6 +3014,394 @@
 
 
 
+
+<g
+   id="shape9-35-4-9"
+   v:mID="9"
+   v:groupContext="shape"
+   v:layerMember="0"
+   transform="matrix(0.65219535,0,0,1,206.43152,-708.11086)"
+   style="fill:url(#Strips1_1);fill-opacity:1"><title
+     id="title3502-0-3">Dynamic connector.9</title><v:userDefs><v:ud
+       v:nameU="msvThemeColors"
+       v:val="VT0(36):26" /><v:ud
+       v:nameU="msvThemeEffects"
+       v:val="VT0(16):26" /></v:userDefs><path
+     d="M 7.1313558,783 65.84,783"
+     class="st8"
+     id="path3504-9-2"
+     inkscape:connector-curvature="0"
+     style="fill:url(#Strips1_1);fill-opacity:1;stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-34)"
+     sodipodi:nodetypes="cc" /></g><g
+   id="shape3-38-0-8-3"
+   v:mID="3"
+   v:groupContext="shape"
+   transform="translate(159.08684,-668.3335)"><title
+     id="title3801-7-6-0">Rectangle.3</title><desc
+     id="desc3803-8-2-4">Graph Exploration Module</desc><v:userDefs><v:ud
+       v:nameU="visVersion"
+       v:val="VT0(14):26" /><v:ud
+       v:nameU="msvThemeColors"
+       v:val="VT0(36):26" /><v:ud
+       v:nameU="msvThemeEffects"
+       v:val="VT0(16):26" /></v:userDefs><v:textBlock
+     v:margins="rect(4,4,4,4)" /><v:textRect
+     cx="36"
+     cy="768"
+     width="72"
+     height="48" /><g
+     id="shadow3-39-1-6-3"
+     v:groupContext="shadow"
+     v:shadowOffsetX="1.44"
+     v:shadowOffsetY="-1.44"
+     v:shadowType="1"
+     transform="translate(-20.510273,-22.290025)"
+     class="st1"
+     style="visibility:visible"><rect
+       x="0"
+       y="744"
+       width="72"
+       height="48"
+       class="st2"
+       id="rect3806-5-5-4"
+       style="fill:#cdcdcd;fill-opacity:0.5;stroke:#cdcdcd;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" /></g><rect
+     x="-21.950274"
+     y="720.27002"
+     width="72"
+     height="48"
+     class="st3"
+     id="rect3808-8-3-4"
+     style="fill:url(#linearGradient6289-2-2-2);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
+     x="-9.2859669"
+     y="736.64709"
+     class="st4"
+     v:langID="1043"
+     style="fill:#000000;font-family:Calibri"
+     id="text3833-1-9-1">Remote</text>
+<text
+     x="-11.789374"
+     y="761.32867"
+     class="st4"
+     v:langID="1043"
+     style="font-size:12px;fill:#000000;font-family:Calibri"
+     id="text3833-1-9-5-7">Strategy</text>
+<text
+     x="-20.62674"
+     y="748.8938"
+     class="st4"
+     v:langID="1043"
+     style="font-size:12px;fill:#000000;font-family:Calibri"
+     id="text3833-1-9-5-0-5">Exploration</text>
+</g><text
+   xml:space="preserve"
+   style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+   x="189.97803"
+   y="116.67104"
+   id="text3399-8-8-8-3"
+   sodipodi:linespacing="125%"><tspan
+     sodipodi:role="line"
+     id="tspan3401-8-9-8-4"
+     x="189.97803"
+     y="116.67104"
+     style="font-size:8px">    rule </tspan><tspan
+     sodipodi:role="line"
+     x="189.97803"
+     y="126.67104"
+     style="font-size:8px"
+     id="tspan3126-54">transitions</tspan></text>
+<text
+   xml:space="preserve"
+   style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+   x="120.56313"
+   y="116.84053"
+   id="text3399-8-8-8-2-9"
+   sodipodi:linespacing="125%"><tspan
+     sodipodi:role="line"
+     x="120.56313"
+     y="116.84053"
+     style="font-size:8px"
+     id="tspan3126-5-2">   rule</tspan><tspan
+     sodipodi:role="line"
+     x="120.56313"
+     y="126.84053"
+     style="font-size:8px"
+     id="tspan3162-5">transition</tspan></text>
+<g
+   id="shape12-54-8-6-1"
+   v:mID="12"
+   v:groupContext="shape"
+   v:layerMember="0"
+   transform="matrix(0,-1,1,0,-612.02729,194.22546)"><title
+     id="title3526-2-1-7">Dynamic connector.12</title><v:userDefs><v:ud
+       v:nameU="msvThemeColors"
+       v:val="VT0(36):26" /><v:ud
+       v:nameU="msvThemeEffects"
+       v:val="VT0(16):26" /></v:userDefs><path
+     d="m 94.805086,773.77119 -35.217119,0"
+     class="st8"
+     id="path3528-4-8-4"
+     inkscape:connector-curvature="0"
+     style="fill:url(#linearGradient3505);stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-34)"
+     clip-path="none"
+     sodipodi:nodetypes="cc" /></g><g
+   id="shape12-54-8-0-2-5"
+   v:mID="12"
+   v:groupContext="shape"
+   v:layerMember="0"
+   transform="matrix(0,1,1,0,-587.69678,45.70213)"><title
+     id="title3526-2-9-1-8">Dynamic connector.12</title><v:userDefs><v:ud
+       v:nameU="msvThemeColors"
+       v:val="VT0(36):26" /><v:ud
+       v:nameU="msvThemeEffects"
+       v:val="VT0(16):26" /></v:userDefs><path
+     d="m 94.805086,773.77119 -35.217119,0"
+     class="st8"
+     id="path3528-4-4-1-3"
+     inkscape:connector-curvature="0"
+     style="fill:url(#linearGradient3507);stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-34)"
+     clip-path="none"
+     sodipodi:nodetypes="cc" /></g><text
+   xml:space="preserve"
+   style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+   x="191.16452"
+   y="205.65863"
+   id="text3399-8-8-8-23"
+   sodipodi:linespacing="125%"><tspan
+     sodipodi:role="line"
+     id="tspan3401-8-9-8-6"
+     x="191.16452"
+     y="205.65863"
+     style="font-size:8px">    rule </tspan><tspan
+     sodipodi:role="line"
+     x="191.16452"
+     y="215.65863"
+     style="font-size:8px"
+     id="tspan3126-4">transitions</tspan></text>
+<text
+   xml:space="preserve"
+   style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+   x="121.74963"
+   y="205.82812"
+   id="text3399-8-8-8-2-1"
+   sodipodi:linespacing="125%"><tspan
+     sodipodi:role="line"
+     x="121.74963"
+     y="205.82812"
+     style="font-size:8px"
+     id="tspan3126-5-1">   rule</tspan><tspan
+     sodipodi:role="line"
+     x="121.74963"
+     y="215.82812"
+     style="font-size:8px"
+     id="tspan3162-6">transition</tspan></text>
+<g
+   id="shape12-54-8-6-4"
+   v:mID="12"
+   v:groupContext="shape"
+   v:layerMember="0"
+   transform="matrix(0,-1,1,0,-610.84079,283.21305)"><title
+     id="title3526-2-1-6">Dynamic connector.12</title><v:userDefs><v:ud
+       v:nameU="msvThemeColors"
+       v:val="VT0(36):26" /><v:ud
+       v:nameU="msvThemeEffects"
+       v:val="VT0(16):26" /></v:userDefs><path
+     d="m 94.805086,773.77119 -35.217119,0"
+     class="st8"
+     id="path3528-4-8-1"
+     inkscape:connector-curvature="0"
+     style="fill:url(#linearGradient3546);stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-34)"
+     clip-path="none"
+     sodipodi:nodetypes="cc" /></g><g
+   id="shape12-54-8-0-2-0"
+   v:mID="12"
+   v:groupContext="shape"
+   v:layerMember="0"
+   transform="matrix(0,1,1,0,-586.51028,134.68973)"><title
+     id="title3526-2-9-1-7">Dynamic connector.12</title><v:userDefs><v:ud
+       v:nameU="msvThemeColors"
+       v:val="VT0(36):26" /><v:ud
+       v:nameU="msvThemeEffects"
+       v:val="VT0(16):26" /></v:userDefs><path
+     d="m 94.805086,773.77119 -35.217119,0"
+     class="st8"
+     id="path3528-4-4-1-5"
+     inkscape:connector-curvature="0"
+     style="fill:url(#linearGradient3548);stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-34)"
+     clip-path="none"
+     sodipodi:nodetypes="cc" /></g><g
+   id="shape3-38-0-8-1"
+   v:mID="3"
+   v:groupContext="shape"
+   transform="translate(160.27333,-490.95156)"><title
+     id="title3801-7-6-7">Rectangle.3</title><desc
+     id="desc3803-8-2-6">Graph Exploration Module</desc><v:userDefs><v:ud
+       v:nameU="visVersion"
+       v:val="VT0(14):26" /><v:ud
+       v:nameU="msvThemeColors"
+       v:val="VT0(36):26" /><v:ud
+       v:nameU="msvThemeEffects"
+       v:val="VT0(16):26" /></v:userDefs><v:textBlock
+     v:margins="rect(4,4,4,4)" /><v:textRect
+     cx="36"
+     cy="768"
+     width="72"
+     height="48" /><g
+     id="shadow3-39-1-6-7"
+     v:groupContext="shadow"
+     v:shadowOffsetX="1.44"
+     v:shadowOffsetY="-1.44"
+     v:shadowType="1"
+     transform="translate(-20.510273,-22.290025)"
+     class="st1"
+     style="visibility:visible"><rect
+       x="0"
+       y="744"
+       width="72"
+       height="48"
+       class="st2"
+       id="rect3806-5-5-2"
+       style="fill:#cdcdcd;fill-opacity:0.5;stroke:#cdcdcd;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" /></g><rect
+     x="-21.950274"
+     y="720.27002"
+     width="72"
+     height="48"
+     class="st3"
+     id="rect3808-8-3-47"
+     style="fill:url(#linearGradient6289-2-2-0);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
+     x="-11.789374"
+     y="756.58264"
+     class="st4"
+     v:langID="1043"
+     style="font-size:12px;fill:#000000;font-family:Calibri"
+     id="text3833-1-9-5-1">Strategy</text>
+<text
+     x="-20.033489"
+     y="743.5545"
+     class="st4"
+     v:langID="1043"
+     style="font-size:12px;fill:#000000;font-family:Calibri"
+     id="text3833-1-9-5-0-1">Exploration</text>
+</g><g
+   id="shape9-35-3"
+   v:mID="9"
+   v:groupContext="shape"
+   v:layerMember="0"
+   transform="translate(64.543476,-713.43887)"><title
+     id="title3502-7">Dynamic connector.9</title><v:userDefs><v:ud
+       v:nameU="msvThemeColors"
+       v:val="VT0(36):26" /><v:ud
+       v:nameU="msvThemeEffects"
+       v:val="VT0(16):26" /></v:userDefs><path
+     d="M 23.730025,783 65.84,783"
+     class="st8"
+     id="path3504-0"
+     inkscape:connector-curvature="0"
+     style="fill:url(#linearGradient3651);stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-34)"
+     sodipodi:nodetypes="cc" /></g><g
+   id="shape10-41-0"
+   v:mID="10"
+   v:groupContext="shape"
+   v:layerMember="0"
+   transform="translate(135.28501,-700.43463)"><title
+     id="title3507-4">Dynamic connector.10</title><v:userDefs><v:ud
+       v:nameU="msvThemeColors"
+       v:val="VT0(36):26" /><v:ud
+       v:nameU="msvThemeEffects"
+       v:val="VT0(16):26" /></v:userDefs><path
+     d="m 0,783 -40.923474,0"
+     class="st8"
+     id="path3509-4"
+     inkscape:connector-curvature="0"
+     style="fill:url(#linearGradient3653);stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-34)"
+     sodipodi:nodetypes="cc" /></g><g
+   id="shape4-18-7"
+   v:mID="4"
+   v:groupContext="shape"
+   transform="translate(252.82042,-692.0635)"><title
+     id="title3485-1">Rectangle.4</title><desc
+     id="desc3487-5">SUT</desc><v:userDefs><v:ud
+       v:nameU="visVersion"
+       v:val="VT0(14):26" /><v:ud
+       v:nameU="msvThemeColors"
+       v:val="VT0(36):26" /><v:ud
+       v:nameU="msvThemeEffects"
+       v:val="VT0(16):26" /></v:userDefs><v:textBlock
+     v:margins="rect(4,4,4,4)" /><v:textRect
+     cx="36"
+     cy="768"
+     width="72"
+     height="48" /><g
+     id="shadow4-19-8"
+     v:groupContext="shadow"
+     v:shadowOffsetX="1.44"
+     v:shadowOffsetY="-1.44"
+     v:shadowType="1"
+     transform="translate(1.44,1.44)"
+     class="st1"
+     style="visibility:visible"><rect
+       x="0"
+       y="744"
+       width="72"
+       height="48"
+       class="st2"
+       id="rect3490-5"
+       style="fill:#cdcdcd;fill-opacity:0.5;stroke:#cdcdcd;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" /></g><rect
+     x="0"
+     y="744"
+     width="72"
+     height="48"
+     class="st3"
+     id="rect3492-2"
+     style="fill:url(#linearGradient3573-3);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
+     x="9.8589821"
+     y="773.37976"
+     class="st4"
+     v:langID="1043"
+     id="text3494-0"
+     style="fill:#000000;font-family:Calibri"></text>
+<text
+     x="9.2657318"
+     y="779.90552"
+     class="st4"
+     v:langID="1043"
+     style="fill:#000000;font-family:Calibri"
+     id="text6898">Interface</text>
+<text
+     x="24.398922"
+     y="764.29486"
+     class="st4"
+     v:langID="1043"
+     style="font-size:12px;fill:#000000;font-family:Calibri"
+     id="text6898-7">ATM</text>
+</g><g
+   id="shape12-54-8-6-1-1"
+   v:mID="12"
+   v:groupContext="shape"
+   v:layerMember="0"
+   transform="matrix(0,-1,1,0,-483.64991,194.92356)"><title
+     id="title3526-2-1-7-9">Dynamic connector.12</title><v:userDefs><v:ud
+       v:nameU="msvThemeColors"
+       v:val="VT0(36):26" /><v:ud
+       v:nameU="msvThemeEffects"
+       v:val="VT0(16):26" /></v:userDefs><path
+     d="m 94.805086,773.77119 -35.217119,0"
+     class="st8"
+     id="path3528-4-8-4-6"
+     inkscape:connector-curvature="0"
+     style="fill:url(#linearGradient3722);stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-34)"
+     clip-path="none"
+     sodipodi:nodetypes="cc" /></g><text
+   xml:space="preserve"
+   style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+   x="296.80725"
+   y="123.46916"
+   id="text3399-8-5-9-1"
+   sodipodi:linespacing="125%"><tspan
+     sodipodi:role="line"
+     x="296.80725"
+     y="123.46916"
+     style="font-size:8px"
+     id="tspan3382-4">STS</tspan></text>
 </g>
 <style
    id="style6932"

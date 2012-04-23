@@ -1,4 +1,4 @@
-\section{Graph Transformation}\label{sec:graph}
+\section{Graph Grammars}\label{sec:graph}
 A \textit{graph grammar} is composed of a start graph and a set of transformation rules. The start graph describes the system in its initial state. The transformation rules describe what changes are made to the graph, resulting in a new graph which describes the system in its new state. The definition is as follows.
 
 \begin{definition}
@@ -35,7 +35,7 @@ A transformation rule is a tuple $\langle \mathit{LHS}, \mathit{NAC}, \mathit{RH
 \end{itemize}
 \end{definition}
 
-A rule $R$ is applicable on a graph $G$ if its $\mathit{LHS}$ has an occurrence in $G$ and $\not\ exists n \in \mathit{NAC}$ such that $n$ has an occurence in $G$ and $\forall e \in \mathit{LHS}$, if $e$ has an image $i$ in $n$ and an image $j$ in $G$, then $j$ should be an image of $j$. After the rule application, all elements in $\mathit{LHS}$ not part of $\mathit{M_{RHS}}$, i.e. they do not have an image in $\mathit{RHS}$, are removed from $G$ and all elements in $\mathit{RHS}$ not part of $\mathit{M_{RHS}}$, i.e. they do not have a pre-image in $\mathit{LHS}$, are added to $G$.
+A rule $R$ is applicable on a graph $G$ if its $\mathit{LHS}$ has an occurrence in $G$ and $\not\ exists n \in \mathit{NAC}$ such that $n$ has an occurence in $G$ and $\forall e \in \mathit{LHS}$, if $e$ has an image $i$ in $n$ and an image $j$ in $G$, then $j$ should be an image of $j$. This 'applicability' as defined here is refered to as a rule \textit{match}. After the rule match is applied to the graph, all elements in $\mathit{LHS}$ not part of $\mathit{M_{RHS}}$, i.e. they do not have an image in $\mathit{RHS}$, are removed from $G$ and all elements in $\mathit{RHS}$ not part of $\mathit{M_{RHS}}$, i.e. they do not have a pre-image in $\mathit{LHS}$, are added to $G$.
 
 \subsection{Graph Transition Systems}
 By repeatedly applying graph transformation rules to the start graph and all its consecutive graphs, a graph grammar can be explored to reveal a \textit{Graph Transition System} (GTS). This transition system consists of \textit{graph states} connected by \textit{rule transitions}.
@@ -44,8 +44,8 @@ By repeatedly applying graph transformation rules to the start graph and all its
 A graph transition system is an 8-tuple	$\langle S, L, T, G, R, M_G, M_R, s0\rangle$, where:
 \begin{itemize}
 \item $S$ is a finite, non-empty set of graph states
-\item $L$ is a finite set of labels. For each label $l\in L$, the arity of $l$, denoted $\mathit{arity(l)}$, is a natural number. The parameters of $l$, denoted $\mathit{param(l)}$, is a tuple of length $\mathit{arity(l)}$ of variables.
-\item $T \in S \times (L \cup \{\tau\}) \times S$, with $\tau \notin L$, is the rule transition relation. The parameters of a transition $t \in T$ with label $l \in L$, denoted $\mathit{param(t)}$, is a tuple of length $\mathit{arity(l)}$ of constants, such that $\Sigma:\mathit{param(l)} \mapsto \mathit{param(t)}$ is the valuation of the variables of the label.
+\item $L$ is a finite set of labels.
+\item $T \in S \times (L \cup \{\tau\}) \times S$, with $\tau \notin L$, is the rule transition relation.
 \item $G$ is a set of graphs.
 \item $R$ is a set of rules.
 \item $M_G$ is a mapping $\forall s \in S . s \mapsto g \in G \land \not\exists s' \in S . s \neq s' \land s' \mapsto g \in M_G$
@@ -55,7 +55,7 @@ A graph transition system is an 8-tuple	$\langle S, L, T, G, R, M_G, M_R, s0\ran
 We write $s \xrightarrow{\mu}s'$ if there is a rule transition labelled $\mu$ from state s to state s', i.e., $(s, \mu, s') \in T$.
 \end{definition}
 
-These systems are very similar to LTSs. A GTS can be transformed to an LTS by omitting the graphs, rules, mappings and parameters on labels.
+These systems are very similar to LTSs. A GTS can be transformed to an LTS by omitting the graphs, rules and mappings.
 
 \subsection{Example}\label{sec:gts_example}
 Figure \ref{fig:gts} shows an example of the start graph and one rule of a graph grammar. $\mathit{M_{RHS}}$ maps the $A$ and $B$ nodes in $\mathit{LHS}$ to the A and B nodes in $\mathit{RHS}$ respectively. $\mathit{M_{NAC}}$ maps the $A$ node in $\mathit{LHS}$ to the $A$ node in both graphs in $\mathit{NAC}$. The a-edge in $\mathit{LHS}$ is mapped to the a-edge in the first $\mathit{NAC}$. The $\mathit{LHS}$ of the rule has an occurrence in the start graph, as the $A$ and $B$ nodes connected by the a-edge exist in both graphs. None of the graphs in the $\mathit{NAC}$ have an occurrence in the start graph, because the $C$ node does not exist in the start graph. The new graph after applying the rule is in Figure~\ref{fig:gg_result}.
@@ -72,25 +72,4 @@ Figure \ref{fig:gts} shows an example of the start graph and one rule of a graph
   \end{center}
   \caption{An example of a graph grammar}
   \label{fig:gts}
-\end{figure}
-
-\subsection{GTS to STS transformation}\label{sec:gts_sts_trafo}
-The method described here transforms a GTS to an STS. This STS is not \textit{optimal}, i.e. it is reducible to an STS with fewer locations and switch relations.
-
-For each graph state $s \in S$ create a location $l \in L$. The start location $l_0 \in L$ is the location created by the state $s0 \in S$. Set $\mathcal{V} = \emptyset$ and $\imath = \emptyset$. For each label $l \in L$ create a gate $\lambda \in \Lambda$. For each $p \in \mathit{param}(l)$ create an interaction variable $i \in \mathcal{I}$ of the same type as $p$ and add $i$ to $param(\lambda)$. Set $\mathit{arity}(\lambda) = \mathit{arity}(l)$. For each rule transition $t \in T$ create a switch relation $r \in \rightarrow$, where:
-\begin{itemize}
-  \item the source and the target locations of $r$ are the locations created by the source and target graph states of the rule transition.
-  \item the gate of $r$ is the gate created by the label on the transition.
-  \item for each $p \in \mathit{param}(l)$ and $i \in \mathcal{I}$ created by $p$ create an $i = p$ expression. The guard of $r$ is those expressions joined by the $\land$ operator.
-  \item the update mapping of $r$ is empty.
-\end{itemize}
-
-An example of such a transformation is done using the LTS in Figure~\ref{fig:trafo_lts}. Consider this LTS to be a GTS where the states are graph states, the transitions are rule transitions with label 'do' with $\mathit{arity(do)} = 1$ and $\mathit{param(do)}$ the integers between brackets are The STS resulting from the transformation is in Figure~\ref{fig:trafo_basic_sts}.
-
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/trafo_basic_sts.tex}
-  \end{center}
-  \caption{The basic STS resulting from the transformation of the LTS in Figure~\ref{fig:trafo_lts}}
-  \label{fig:trafo_basic_sts}
 \end{figure}

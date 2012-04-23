@@ -1,0 +1,29 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n1)  at (0.570, -0.920) {\ml{\textbf{Player}\\\textit{turn}}};
+\node[node, attr] (n4)  at (1.635, -0.865) {\ml{\textbf{int}}};
+\node[parnode] (n4p)  at (n4.north west) {0};
+\node[node, attr] (n2)  at (0.525, -1.775) {\ml{\textbf{int}}};
+\node[node, attr] (n0)  at (0.500, -2.325) {\ml{0}};
+\node[node, attr] (n6)  at (0.980, -1.555) {\ml{1}};
+\node[node, attr] (n7)  at (3.600, -0.865) {\ml{6}};
+\node[node, prod] (n8)  at (1.655, -1.575){};
+\node[node, attr] (n9)  at (2.790, -1.565) {\ml{true}};
+\node[node, prod] (n3)  at (2.785, -0.875){};
+\path[newedge](n1.east |- 1.635, -0.865) -- node[newlab]{throws} (n4) ;
+\path[edge] (n3)  -- node[lab]{$\pi$1} (n7) ;
+\path[edge] (n8)  -- node[lab]{le} (n9) ;
+\path[edge] (n8)  -- node[lab]{$\pi$1} (n4) ;
+\path[edge, -](n0.north -| 0.525, -1.775) -- node[lab]{\textit{=}} (n2) ;
+\path[edge] (n8)  -- node[lab]{$\pi$0} (n6) ;
+\path[edge] (n3)  -- node[lab]{le} (n9) ;
+\path[edge] (n3)  -- node[lab]{$\pi$0} (n4) ;
+\path[deledge](n1.south -| 0.525, -1.775) -- node[dellab]{throws} (n2) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

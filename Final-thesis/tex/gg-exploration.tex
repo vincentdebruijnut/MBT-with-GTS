@@ -1,13 +1,45 @@
-\section{Graph Grammar Exploration}\label{sec:gg-exploration}
+\section{Symbolic Graph Grammar Exploration}\label{sec:gg-exploration}
 
-This section describes a system to transform a graph grammar to an STS without having to explore the entire GTS.
+In the previous section, rules are given for transforming graph states and rule transitions to an STS. However, completely exploring the GTS is often unfeasable, as GTSs, like LTSs, have states for each concrete data value. This section describes an exploration technique to transform a graph grammar to an STS without having to explore the entire GTS.
 
 \subsection{Partial matching}\label{sec:partial-matching}
-A rule may have a \textit{partial match} on a graph $G$, when not every element of the rule has an image in $G$. For example, if the value nodes in a rule match were omitted from the match, the resulting partial match indicates the existence of a rule transition on a graph state with a different value node. Such a partial match therefore indicates the existence of an outgoing switch relation from the location represented by abstracted graph state in the transformed STS. The guard and update mapping can be constructed from the rule, by inspecting the value nodes preventing a full match in the LHS, NACs and RHS. Graph states can then be omitted from the exploration, when they have an abstraction isomorphic to the abstraction of graph states already encountered.
+A rule may have a \textit{partial match} on a graph $G$, when not every element of the rule has an image in $G$. For example, if the value nodes were omitted from a rule match, the result is a partial match. This partial match indicates the existence of a rule transition on a graph state with some unknown value node. Therefore, it also indicates the existence of an outgoing switch relation from the location represented by abstracted graph state in the transformed STS. The guard and update mapping can be constructed from the rule, by inspecting the variable and value nodes in the LHS, NAC and RHS. Graph states can then be omitted from the exploration, when they are transformed to a location already encountered.
 
-EXAMPLE
+The rule in Figure~\ref{fig:algebra} in section~\ref{sec:extended-graph-grammars} leads to a new graph state for each possible value of 'x'. A graph grammar with this rule and the initial graph state in Figure~\ref{fig:algebra_start_graph} leads to a GTS as shown in Figure~\ref{fig:algebra_gts}, where $s_0$, $s_1$ and $s_2$ are representations of the start graph state, the graph state after one rule application and  the graph state after two rule applications respectively. The abstractions of all three graph states are isomorphic, because only the value of the variable 'x' changes. The transformation of this graph grammar to an STS using partial matching is as follows: The start graph state is transformed to the start location $l_0$. The value nodes are omitted from the rule match, thus the partial match leads to the same graph state. This partial rule match is transformed to a switch relation with gate $add$ from $l_0$ to $l_0$. By inspecting the LHS, the guard on $r$ can be set to $x <= y$. By inspecting the RHS, the update mapping on $r$ can be set to $x \mapsto x + y$. The result is shown in Figure~\ref{fig:algebra_sts}
 
-This system can potentially lead to an infinitely continuing exploration. An example of a graph grammar where this occurs is shown in Figure~\ref{fig:}. A new graph state is found with each application of the 'add-one' rule. With the partial matching system, this means the GTS and also the transformed STS will expand infinitely. With the normal matching system, this is not the case, as the rule can only be applied three times and then the rule does not match anymore. A solution is to set a modelling constraint on GRATiS, stating that a construction such as the one in Figure~\ref{fig:} may not occur. Another solution is to allow user input for the maximum depth of the exploration. However, the coverage statistics for such models are often incorrect, as many locations are stil unreachable. Section~\ref{sec:reachability} provides a solution to this problem. 
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/algebra_start_graph.tex}
+  \end{center}
+  \caption{A start graph state}
+  \label{fig:algebra_start_graph}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/algebra_gts.tex}
+  \end{center}
+  \caption{The GTS resulting from Figures \ref{fig:algebra_start_graph} and \ref{fig:algebra}}
+  \label{fig:algebra_gts}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/algebra_sts.tex}
+  \end{center}
+  \caption{The result of the graph grammar to STS transformation}
+  \label{fig:algebra_sts}
+\end{figure}
+
+This exploration technique with partial matching can potentially lead to an infinitely continuing exploration. An example of this is given using the same start graph and rule as in Figures~\ref{fig:algebra_start_graph} and \ref{fig:algebra}. However, the RHS of the rule is changed to the one in Figure~\ref{fig:algebra_rhs2}. A new graph state is found with each application of the rule. With the partial matching system, this means that the transformed STS will expand infinitely. With the normal matching system, this is not the case, as the rule can only be applied two times and then the rule does not match anymore. One solution is to set a modelling constraint on GRATiS. This constraint disallows the use of a rule that causes an infinite expansion of graph states with the partial matching technique. Another solution is to allow user input for the maximum depth of the exploration. However, the coverage statistics for such models are often incorrect, as many locations are stil unreachable. Section~\ref{sec:reachability} provides a solution to this problem. 
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/algebra_rhs2.tex}
+  \end{center}
+  \caption{The RHS of a rule leading to infinite continuing exploration}
+  \label{fig:algebra_rhs2}
+\end{figure}
 
 \subsection{Reachability}\label{sec:reachability}
 With each new location in the transformed STS the question arises whether that location is reachable from the start location. The MSc thesis of Sietsma~\cite{Sietsma:reachability} gives an algorithm for checking whether a location is reachable. This algorithm works on a specific path, starting from the start location and ending in the location to check. However, with the presence of loops, the number of paths is infinite. A location deemed as unreachable can therefore still be reachable, following a different path. Still, this factor can be included in the coverage statistics: the number of reachability checks to each unreachable location can be reported. This allows the tester to determine whether additional testing to these 'unreachable' locations is necessary.

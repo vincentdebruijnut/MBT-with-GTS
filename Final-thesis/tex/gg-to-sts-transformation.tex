@@ -1,27 +1,5 @@
 \section{Graph Grammar to STS Transformation Rules}\label{sec:gg-to-sts}
 
-\subsection{Variables in graph grammars}
-Exploring a graph grammar leads to a GTS. A transformation of a GTS to an STS as specified in section~\ref{sec:gts_sts_trafo} is not very efficient. In order to make a better transformation, we must extend our definition of graph grammars to include 'variables' in a graph.
-\\
-\begin{definition}
-A graph grammar is a tuple $\langle G, R\rangle$, where:
-\begin{itemize}
-  \item $G$ is the start graph
-  \item $R$ is a set of graph transformation rules
-  \item $V$ is a set of nodes which are \textit{variable nodes}
-\end{itemize}
-\end{definition}
-
-The concrete implementation of this can differ. For example, a variable node can be restricted to one self edge, giving the x, and an edge labeled 'value' to a node with one self-edge, representing the value of the variable. We will use the term \textit{value node} to indicate this node. Figure~\ref{fig:variable_node} shows an example of a variable node 'x' and a value node with the value '25'.
-
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/variable_node.tex}
-  \end{center}
-  \caption{An example of a variable in a graph}
-  \label{fig:variable_node}
-\end{figure}
-
 \subsection{Graph states transformation}
 Graph states are a representation of the state of a system. In an STS, this representation is done by the locations and the location variables. In order to obtain an STS from a graph grammar, the explored graph states must be transformed to locations and location variables. 
 

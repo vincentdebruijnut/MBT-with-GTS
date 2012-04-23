@@ -1,28 +1,49 @@
 \section{Implementation}\label{sec:implementation}
 
-\subsection{GROOVE}
+\subsection{Point algebra}
+In the example of a graph grammar in GROOVE the support GROOVE gives to algebraic expressions can be seen. Different algebra families can be set for a graph grammar, such as the \textit{point algebra}. It has an interesting property: the value of any variable or expression is the same for each signature. Therefore, the value nodes in each graph state are the same. In the transformation rules, two graph states are considered to transform to the same location when they are isomorphic, omitting the values of the variables. Thus, exploring a graph grammar using the point algebra, produces the same result as the partial matching scheme in section~\ref{sec:partial-matching}. 
 
-\subsubsection{Symbolic exploration}
-GROOVE has several exploration strategies for exploring a graph grammar. A new strategy is added, the \textit{symbolic exploration} strategy. This strategy transforms the graph states and rule transitions found to an STS, following the transformation rules in section~\ref{sec:gg-to-sts}.
+The boolean expressions in the rules are also affected by the point algebra: the result of a boolean expression is always true as this is the default value of a boolean in the point algebra. Therefore, the effect of using this algebra family is that all constraints on the values of variable nodes expressed by a rule system are ignored. There is one exception, shown in Figure~\ref{fig:not_equals_wrong}. This is a short-hand for the construction in Figure~\ref{fig:not_equals_right}. The values are directly compared, therefore this will always prevent a rule match when using a point algebra, because the values will always be equal. The problem is solved by setting a modelling constraint on GRATiS, disallowing the use of the not-equals construction in Figure~\ref{fig:not_equals_wrong}. Instead, the construction in Figure~\ref{fig:not_equals_right} should be used.
 
-\subsubsection{Point algebra}
-In section~\ref{sec:algebra} we have already discussed the support GROOVE gives to algebraic expressions. One of the algebra families, the point algebra, has an interesting property: the value of any variable or expression is the same for each signature. The effect of using such an algebra family is that all constraints on the values of variable nodes expressed by a rule system are disregarded. This follows from the property: there is but one value for each signature, therefore the value nodes in each graph state are the same. In the transformation rules, two graph states are considered to transform to the same location when they are isomorphic, omitting the values of the variables. Thus, exploring a graph grammar using the point algebra, produces the same result as the partial matching scheme in section~\ref{sec:partial-matching}. There is one exception, shown in Figure~\ref{fig:}. This construction will always prevent a rule match when using a point algebra, because the values will always be equal. The slightly larger construction in Figure~\ref{fig:} solves this problem; the result of the expression now is true, because this is the default value of boolean nodes in a point algera.
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/not_equals_wrong.tikz}
+  \end{center}
+  \caption{A not equals expression in GROOVE}
+  \label{fig:not_equals_wrong}
+\end{figure}
 
-\subsubsection{Control program}
-Modelling a random value in a graph grammar is difficult. For example, to model a die, all possible values of the die must be included in the model. Then, a rule transition can be created for each of these values. AS IN FIGURE~\ref{fig:groove-example}. The random 'choice' is now a non-deterministic one. However, when using a point algebra, this can be done easier. The model in Figure~\ref{fig:} represents the possible values of the die with lower- and upper-bounds. The Die node is still required to produce a match, because the rule systems in GROOVE cannot match an 'unknown' variable node. A variable node is unknown when it has no value and no connecting edges. Note that the edges expressing the lower- and upper-bound are not part of the match and therefore not considered as connecting edges.
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/not_equals_right.tikz}
+  \end{center}
+  \caption{Another not equals expression in GROOVE}
+  \label{fig:not_equals_right}
+\end{figure}
 
-The Die node in the rule is visually intuitive, as it shows that the random value is produced from a die. However, in the start graph, the Die node must be present with at least one value. This is not an intuitive part of the model and we would preferably omit this. A solution is using a \textit{control program}. The rule in Figure~\ref{fig:} shows an int: node which obtains its value from an external program. An example of such a program is in Figure~\ref{fig:}. The program always sets the value of the int: node to 0. This node still matches other values, when using a point algebra.
+\subsection{Control program}
+Modelling a random value in a graph grammar is difficult. For example, to model a die, all possible values of the die must be included in the model, as in Figure~\ref{fig:groove-example}. Then, a rule transition can be created for each of these values. The random 'choice' is now a non-deterministic one. However, when using a point algebra, this can be done easier. The model in Figure~\ref{fig:placeholder_rule} represents the possible values of the die with lower- and upper-bounds. The Die node is still required to produce a match, because the rule systems in GROOVE cannot match an 'unknown' variable node. A variable node is unknown when it has no value and no connecting edges. Note that the edges expressing the lower- and upper-bound are not part of the match and therefore not considered as connecting edges.
 
-\subsubsection{Rule priority}
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/placeholder_rule.tikz}
+  \end{center}
+  \caption{A rule in GROOVE}
+  \label{fig:placeholder_rule}
+\end{figure}
+
+The Die node in the rule is visually intuitive, as it shows that the random value is produced from a die. However, in the start graph, the Die node must be present with at least one value. This is not an intuitive part of the model and we would preferably omit this. A solution is using a \textit{control program}. The rule in Figure~\ref{fig:ctrl_node} shows an int: node which obtains its value from an external program. An example of such a program is in Figure~\ref{fig:}. The program always sets the value of the int: node to 1. This node still matches other values, when using a point algebra.
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The control node]{\label{fig:ctrl_node}\input{./img/ctrl_node.tikz}}
+    \subfloat[The control program]{\label{fig:ctrl_prog}\input{./img/ctrl_prog.tex}}
+  \end{center}
+  \caption{A control node and program in GROOVE}
+  \label{fig:ctrl_program}
+\end{figure}
+
+\subsection{Rule priority}
 From a graph state, there can be several outgoing rule transitions. There is no order or chance a rule transition is explored before another, this is done non-deterministically. However, GROOVE can set different priority levels on rules. A rule transition with a higher priority rule is explored before rule transitions with lower priority rules. Consider the graph grammar in Figure~\ref{fig:}. The ?? rule produces a rule transition to a graph state, where the ?? rule produces a rule transition back to the start graph state. The abstractions of these graph states are isomorphic, so they represent the same location. The STS of transforming this graph grammar is in Figure~\ref{fig:}. This STS is wrong, because the ?? relation can be taken from the start. 
 
 The solution is to add the negated guard on the ?? relation to the ?? relation. In general, for each outgoing switch relation, the negated guard of all switch relations represented by higher priority rules must be added to the guard. Note that if a switch relation has no guard, no switch relation with the same source location can exist, if the latter switch relation is represented by a lower priority rule than the rule represented by the first switch relation.
-
-\subsubsection{Interface}
-The interface on the GROOVE side is implemented by means of a \textit{remote exploration} strategy. This strategy uses the symbolic exploration strategy to derive an STS and sends an HTTP POST request with the STS formatted as JSON to the ATM interface.
-
-\subsection{ATM}
-
-\subsubsection{Interface}
-The ATM interface receives an the HTTP request, parses the JSON and initiates the test run.
-

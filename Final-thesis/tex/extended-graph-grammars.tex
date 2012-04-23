@@ -1,0 +1,104 @@
+\section{Extended Graph Grammars}\label{sec:extended_graph}
+
+\subsection{Variables in graph grammars}
+In order to make an efficient transformation of a graph grammar to an STS, we must extend our definition of graph grammars to include 'variables' in a graph.
+\\
+\begin{definition}
+A graph grammar is a tuple $\langle G, R\rangle$, where:
+\begin{itemize}
+  \item $G$ is the start graph
+  \item $R$ is a set of graph transformation rules
+  \item $V$ is a set of nodes which are \textit{variable nodes}
+\end{itemize}
+\end{definition}
+
+Also, the definition of GTSs is extended:
+\\
+\begin{definition}
+\begin{itemize}
+\item $L$ is a finite set of labels. For each label $l\in L$, the arity of $l$, denoted $\mathit{arity(l)}$, is a natural number. The parameters of $l$, denoted $\mathit{param(l)}$, is a tuple of length $\mathit{arity(l)}$ of variables.
+\item $T \in S \times (L \cup \{\tau\}) \times S$, with $\tau \notin L$, is the rule transition relation. The parameters of a transition $t \in T$ with label $l \in L$, denoted $\mathit{param(t)}$, is a tuple of length $\mathit{arity(l)}$ of constants, such that $\Sigma:\mathit{param(l)} \mapsto \mathit{param(t)}$ is the valuation of the variables of the label.
+\end{itemize}
+\end{definition}
+
+The concrete implementation of this can differ. For example, a variable node can be restricted to one self edge giving the name and an edge labeled 'value' to a node with one self-edge, representing the value of the variable. We will use the term \textit{value node} to indicate this node. Figure~\ref{fig:variable_node} shows an example of a variable node with name 'x' and a value node with the value '25'.
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/variable_node.tex}
+  \end{center}
+  \caption{An example of a variable in a graph}
+  \label{fig:variable_node}
+\end{figure}
+
+\subsection{Graph algebras}
+With the existence of variables in graphs, algebraic expressions over these variables is a possibility. Again, the implementation of this can differ. Next is an example of a possible implementation. A formal definition of graph algebras is not given, as the use of algebras in this report is restricted to the examples.
+
+Figure~\ref{fig:algebra} shows the LHS and RHS of a rule. $\mathit{M_{RHS}}$ maps the variable nodes 'x' and 'y' and their value nodes in the LHS to the RHS. The '<=' and '+' labels have a special meaning here. The edge with the '<=' label is omitted from the rule matching, however, the rule will not match if the value of 'x' is larger than the value of 'y'. The result of this rule is not the creation of an edge from the value node of 'x' to the value node of 'y', but the creation of a self-edge on the value node 'x' with label equal to the value of 'x' plus the value of 'y'.  
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The LHS]{\label{fig:algebra_lhs}\input{./img/algebra_lhs.tex}}\hspace{20px}
+    \subfloat[The RHS]{\label{fig:algebra_rhs}\input{./img/algebra_rhs.tex}}
+  \end{center}
+  \caption{An example of algebraic expressions in a rule}
+  \label{fig:algebra}
+\end{figure}
+
+\subsection{Input-Output graph grammars}
+In order to specify stimuli and responses with graph grammars, a definition is given for an \textit{Input-Output graph grammar} (IOgg). Concretely, the IOgg places input and output labels on its rule transitions. Following the definition from IOLTSs, each rule transition label $l \in L$ has a type $t \in T$, where $T = \{input, output\}$. Exploring an IOgg leads to an \textit{Input-Output Graph Transition System} (IOGTS).
+
+\subsection{GROOVE example}
+The $\mathit{LHS}$, $\mathit{RHS}$ and $\mathit{NAC}$ of a rule in graph transformation tools, such as GROOVE, are often visualized together in one graph. The running example from Figure~\ref{fig:example_sts} is displayed as a graph grammar, as visualized in GROOVE, in Figure~\ref{fig:example_groove}. Figure~\ref{fig:example_groove_start} is the start graph of the system.
+
+The colors on the nodes and edges in the rules represent whether they belong to the $\mathit{LHS}$, $\mathit{RHS}$ or $\mathit{NAC}$ of the rule.
+\begin{enumerate}
+  \item normal line (black): This node or edge is part of both the $\mathit{LHS}$ and $\mathit{RHS}$.
+  \item dotted line (red): This node or edge is part of the $\mathit{NAC}$ only.
+  \item thick line (green): This node or edge is part of the $\mathit{RHS}$ only.
+  \item dashed line (blue): This node or edge is part of the $\mathit{LHS}$ only.
+\end{enumerate}
+
+The rules can be described as follows:
+\begin{enumerate}
+  \item~\ref{fig:example_groove_throw}: 'if a player has the turn and he has not thrown the die yet, he may do so.'
+  \item~\ref{fig:example_groove_move}: 'if a player has the turn and he has thrown the die and this number is larger than zero, he may move one place and then it is as if he has thrown one less.'
+  \item~\ref{fig:example_groove_next}: 'if a player has finished moving (number thrown is zero), the next player receives the turn.'
+\end{enumerate}
+
+The strings on the nodes are a short-hand notation. The bold strings, \textbf{Die}, \textbf{Player}, \textbf{Location} and \textbf{int} indicate the \textit{type} of the node. Nodes with a type starting with a lower case letter, such as \textbf{int}, are variable nodes. The italic string \textit{turn}, is a representation of a self-edge with label $turn$. In the next turn rule, the $turn$ edge exists in the $\mathit{LHS}$ as a self-edge of the left \textbf{Player} node and in the $\mathit{RHS}$ as a self-edge of the right \textbf{Player} node. In the same rule, the $throws$ edge from the left \textbf{Player} node to an integer node only exists in the $\mathit{LHS}$.
+
+The assignments on the \textbf{Die} node are representations of edges labelled 'canThrow' to variable nodes. The six variable nodes are of the type integer and each have an initial value of one to six. The throws value assignment (:=) in the move rule is a shorthand for two edges: one edge in the $\mathit{LHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i$ and another edge in the $\mathit{RHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i-1$. 
+
+The 'throws > 0' expression is an example of the use of algebra on variable nodes. In this case, the expression in boolean algebra must evaluate to true for the rule to match the graph.
+
+The number '0' in the top left of the \textbf{int} node in the throw rule indicates that this integer is the first parameter in $param(l)$, where $l$ is the label on the rule transition created by applying the throws rule.
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The start graph]{\label{fig:example_groove_start}\input{./img/start.tikz}}\quad
+    \subfloat[The throw rule]{\label{fig:example_groove_throw}\input{./img/throws.tikz}}
+    \subfloat[The move rule]{\label{fig:example_groove_move}\input{./img/move.tikz}}
+    \subfloat[The next turn rule]{\label{fig:example_groove_next}\input{./img/nextTurn.tikz}}
+  \end{center}
+  \caption{The graph grammar of the board game example in Figure~\ref{fig:example_sts}}
+  \label{fig:example_groove}
+\end{figure}
+
+The graph is transformed after the rule is applied. The resulting graph after the transformation is the new state of the system and the rule is the transition from the old state (the graph as it was before the rule was applied) to the new state. Figure~\ref{fig:gts_example} shows the IOGTS of one \textit{throws?} rule application on the start graph. Note that the \textit{throws?} is an input, as indicated by the '?'. State $s_1$ is a representation of the graph in Figure~\ref{fig:example_groove_start}. Figure~\ref{fig:target_graph_state} shows the graph represented by $s_2$.
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/gts-transition-example.tikz}
+  \end{center}
+  \caption{The GTS after one rule application on the board game example in Figure~\ref{fig:example_groove}}
+  \label{fig:gts_example}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/target-graph-state.tikz}
+  \end{center}
+  \caption{The graph of state $s2$ in Figure~\ref{fig:gts_example}}
+  \label{fig:target_graph_state}
+\end{figure}

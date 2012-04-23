@@ -1,0 +1,21 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n5)  at (2.600, -1.650) {\ml{\textbf{int}}};
+\node[node, attr] (n4)  at (0.580, -1.650) {\ml{\textbf{int}}};
+\node[node, attr] (n3)  at (1.600, -2.430) {\ml{false}};
+\node[node, prod] (n2)  at (1.600, -1.670){};
+\node[node] (n1)  at (2.590, -0.890) {\ml{B}};
+\node[node] (n0)  at (0.590, -0.870) {\ml{A}};
+\path[edge] (n2)  -- node[lab]{$\pi$0} (n4) ;
+\path[edge] (n2)  -- node[lab]{$\pi$1} (n5) ;
+\path[edge] (n2)  -- node[lab]{eq} (n3) ;
+\path[edge](n0.south -| 0.580, -1.650) -- node[lab]{value} (n4) ;
+\path[edge](n1.south -| 2.600, -1.650) -- node[lab]{value} (n5) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}
