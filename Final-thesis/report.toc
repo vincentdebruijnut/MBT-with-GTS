@@ -9,48 +9,48 @@
 \contentsline {section}{\numberline {1.4}Symbolic Transition Systems}{8}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Previous work}{8}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Definition}{8}{subsection.1.4.2}
-\contentsline {subsection}{\numberline {1.4.3}Example}{9}{subsection.1.4.3}
-\contentsline {subsection}{\numberline {1.4.4}STS to LTS transformation}{9}{subsection.1.4.4}
-\contentsline {subsection}{\numberline {1.4.5}Coverage}{10}{subsection.1.4.5}
+\contentsline {subsection}{\numberline {1.4.3}Input-Output Symbolic Transition Systems}{9}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Example}{9}{subsection.1.4.4}
+\contentsline {subsection}{\numberline {1.4.5}STS to LTS transformation}{9}{subsection.1.4.5}
+\contentsline {subsection}{\numberline {1.4.6}Coverage}{10}{subsection.1.4.6}
 \contentsline {section}{\numberline {1.5}Graph Grammars}{10}{section.1.5}
 \contentsline {subsection}{\numberline {1.5.1}Graphs \& morphisms}{11}{subsection.1.5.1}
 \contentsline {subsection}{\numberline {1.5.2}Graph transformation rules}{11}{subsection.1.5.2}
 \contentsline {subsection}{\numberline {1.5.3}Graph Transition Systems}{11}{subsection.1.5.3}
 \contentsline {subsection}{\numberline {1.5.4}Example}{12}{subsection.1.5.4}
-\contentsline {section}{\numberline {1.6}Tooling}{12}{section.1.6}
-\contentsline {subsection}{\numberline {1.6.1}ATM}{12}{subsection.1.6.1}
-\contentsline {subsection}{\numberline {1.6.2}GROOVE}{13}{subsection.1.6.2}
-\contentsline {section}{\numberline {1.7}Extended Graph Grammars}{14}{section.1.7}
-\contentsline {subsection}{\numberline {1.7.1}Variables in graph grammars}{14}{subsection.1.7.1}
-\contentsline {subsection}{\numberline {1.7.2}Graph algebras}{14}{subsection.1.7.2}
-\contentsline {subsection}{\numberline {1.7.3}Input-Output graph grammars}{15}{subsection.1.7.3}
-\contentsline {subsection}{\numberline {1.7.4}GROOVE example}{15}{subsection.1.7.4}
+\contentsline {subsection}{\numberline {1.5.5}Input-Output Graph Grammars}{12}{subsection.1.5.5}
+\contentsline {section}{\numberline {1.6}Tooling}{13}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}ATM}{13}{subsection.1.6.1}
+\contentsline {subsection}{\numberline {1.6.2}GROOVE}{14}{subsection.1.6.2}
+\contentsline {section}{\numberline {1.7}Variables in Graph Grammars}{14}{section.1.7}
+\contentsline {subsection}{\numberline {1.7.1}Graph algebras}{15}{subsection.1.7.1}
+\contentsline {subsection}{\numberline {1.7.2}Graph grammars in GROOVE}{15}{subsection.1.7.2}
 \contentsline {chapter}{\numberline {2}Design}{18}{chapter.2}
 \contentsline {section}{\numberline {2.1}Graph Grammar to STS Transformation Rules}{19}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Graph states transformation}{19}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Rule transitions transformation}{19}{subsection.2.1.2}
 \contentsline {subsubsection}{\numberline {2.1.2.1}Rule LHSs}{19}{subsubsection.2.1.2.1}
-\contentsline {subsubsection}{\numberline {2.1.2.2}Rule NACs}{19}{subsubsection.2.1.2.2}
+\contentsline {subsubsection}{\numberline {2.1.2.2}Rule NACs}{20}{subsubsection.2.1.2.2}
 \contentsline {subsubsection}{\numberline {2.1.2.3}Rule RHSs}{20}{subsubsection.2.1.2.3}
-\contentsline {section}{\numberline {2.2}Symbolic Graph Grammar Exploration}{20}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Partial matching}{20}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.2}Symbolic Graph Grammar Exploration}{21}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Partial matching}{21}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Reachability}{22}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}GRATiS Design}{22}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Offline vs. on-the-fly model exploration}{22}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Tool architecture}{22}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Implementation}{23}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Point algebra}{23}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Control program}{23}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.2}Control program}{24}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}Rule priority}{25}{subsection.2.4.3}
-\contentsline {chapter}{\numberline {3}Validation}{26}{chapter.3}
-\contentsline {section}{\numberline {3.1}Case Studies}{27}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Self-scan register}{27}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Navigation system}{27}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Health-care system}{27}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Measurements}{27}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Model comparison}{27}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Benchmarks}{27}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}Conclusion}{28}{chapter.4}
-\contentsline {section}{\numberline {4.1}Summary}{29}{section.4.1}
-\contentsline {section}{\numberline {4.2}Conclusion}{29}{section.4.2}
-\contentsline {section}{\numberline {4.3}Future Work}{29}{section.4.3}
+\contentsline {chapter}{\numberline {3}Validation}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Case Studies}{28}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Self-scan register}{28}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Navigation system}{28}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Health-care system}{28}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Measurements}{28}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Model comparison}{28}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Benchmarks}{28}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Conclusion}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Summary}{30}{section.4.1}
+\contentsline {section}{\numberline {4.2}Conclusion}{30}{section.4.2}
+\contentsline {section}{\numberline {4.3}Future Work}{30}{section.4.3}

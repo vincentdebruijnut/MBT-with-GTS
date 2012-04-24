@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  23 APR 2012 17:47
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  24 APR 2012 17:00
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -810,7 +810,7 @@ l.3 \end{abstract}
 e same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.42 ...2.4.1}Point algebra}{22}{subsection.2.4.1}
+l.42 ...2.4.1}Point algebra}{24}{subsection.2.4.1}
                                                    [1
 
 ])
@@ -821,17 +821,13 @@ l.42 ...2.4.1}Point algebra}{22}{subsection.2.4.1}
 Chapter 1.
 (./tex/introduction.tex [3
 
-]
-
-LaTeX Warning: Reference `sec:extended_graph_grammars' on page 4 undefined on i
-nput line 15.
-
-) [4] (./tex/goals.tex) (./tex/model-based-testing.tex
-<./img/model-based-testing.pdf, id=346, 379.58545pt x 141.73691pt>
+]) [4] (./tex/goals.tex)
+(./tex/model-based-testing.tex
+<./img/model-based-testing.pdf, id=347, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-<./img/mbt-on-the-fly.pdf, id=351, 357.48773pt x 141.7426pt>
+<./img/mbt-on-the-fly.pdf, id=352, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
 <use ./img/mbt-on-the-fly.pdf> [5 <./img/model-based-testing.pdf>]
@@ -847,149 +843,128 @@ img/iots-test.tex <xymatrix
 3x2 145>)) (./tex/first-order-logic.tex) (./tex/symbolic.tex [7] [8]
 (./img/sts_boardgame_1.tex <xymatrix 13x1 191>) [9] (./img/trafo_sts.tex
 <xymatrix 1x3 151>) (./img/trafo_lts.tex <xymatrix 3x3 348>))
-(./tex/graph-grammars.tex [10] [11] (./img/gg_graph.tex <xymatrix 2x1 51>)
-Underfull \hbox (badness 10000) in paragraph at lines 65--65
-[]\T1/cmr/m/n/8 (a) |The start
- []
-
-(./img/gg_graph.tex <xymatrix 2x1 51>) (./img/gg_nac1.tex <xymatrix 2x1 51>)
-(./img/gg_nac2.tex <xymatrix 2x1 51>)
-Underfull \hbox (badness 6542) in paragraph at lines 69--69
-[]\T1/cmr/m/n/8 (d) |The sec-ond
- []
-
-(./img/gg_rhs.tex <xymatrix 2x1 51>) (./img/gg_rhs.tex <xymatrix 2x1 51>))
-(./tex/tooling.tex <./img/axini_tool.pdf, id=487, 356.92177pt x 145.93393pt>
+(./tex/graph-grammars.tex [10] [11] (./img/gg_graph.tex <xymatrix 2x1 181>)
+(./img/gg_graph.tex <xymatrix 2x1 181>) (./img/gg_nac1.tex <xymatrix 2x1 181>)
+(./img/gg_nac2.tex <xymatrix 2x1 181>) (./img/gg_rhs.tex <xymatrix 2x1 181>)
+(./img/gg_rhs.tex <xymatrix 2x1 181>)) (./tex/tooling.tex [12]
+<./img/axini_tool.pdf, id=499, 356.92177pt x 145.93393pt>
 File: ./img/axini_tool.pdf Graphic file (type pdf)
 
-<use ./img/axini_tool.pdf> [12]
-<./img/groove_tool.pdf, id=506, 374.51399pt x 161.01265pt>
+<use ./img/axini_tool.pdf> [13 <./img/axini_tool.pdf>]
+<./img/groove_tool.pdf, id=525, 374.51399pt x 161.01265pt>
 File: ./img/groove_tool.pdf Graphic file (type pdf)
 
-<use ./img/groove_tool.pdf>) (./tex/extended-graph-grammars.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--6
+<use ./img/groove_tool.pdf>) (./tex/variables-in-graph-grammars.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
-[13 <./img/axini_tool.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 15--17
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
 
  []
 
-(./img/variable_node.tex <xymatrix 2x1 181>) [14 <./img/groove_tool.pdf>]
+[14 <./img/groove_tool.pdf>] (./img/variable_node.tex <xymatrix 2x1 181>)
 (./img/algebra_lhs.tex <xymatrix 2x2 271>) (./img/algebra_rhs.tex <xymatrix
-2x2 271>) [15] (./img/start.tikz
+2x2 271>) (./img/start.tikz
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 8.
-
-(/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
+ (/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)) (./img/throws.tikz)
-(./img/move.tikz) (./img/nextTurn.tikz) (./img/gts-transition-example.tikz)
-(./img/target-graph-state.tikz)) [16] [17]
+)) (./img/throws.tikz) (./img/move.tikz) (./img/nextTurn.tikz) [15] [16]
+(./img/gts-transition-example.tikz) (./img/target-graph-state.tikz)) [17]
 Chapter 2.
 (./tex/design-introduction.tex) [18
 
 ] (./tex/gg-to-sts-transformation.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+[]\T1/cmr/m/n/10 consistent
+ []
 
-LaTeX Warning: Reference `fig:abstract_graph' on page 19 undefined on input lin
-e 8.
 
-(./img/abstract_graph.tex <xymatrix 1x1 71>)
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+\T1/cmr/m/n/10 'ab-stracted
+ []
 
-LaTeX Warning: Reference `sec:gts_sts_trafo' on page 19 undefined on input line
- 21.
 
-(./img/lhs_trafo.tex <xymatrix 2x1 181>) [19] (./img/nac_trafo.tex <xymatrix
-2x1 181>) (./img/rhs_trafo.tex <xymatrix 2x1 181>)) (./tex/gg-exploration.tex
-[20]
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+\T1/cmr/m/n/10 graph' en
+ []
 
-LaTeX Warning: Reference `sec:extended-graph-grammars' on page 21 undefined on 
-input line 8.
 
-(./img/algebra_start_graph.tex <xymatrix 2x2 360>) (./img/algebra_gts.tex
-<xymatrix 3x1 96>) (./img/algebra_sts.tex <xymatrix 1x1 71>)
-(./img/algebra_rhs2.tex <xymatrix 2x3 340>)) (./tex/gratis-design.tex [21]
-<./img/tooling.pdf, id=649, 599.89655pt x 242.46582pt>
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+\T1/cmr/m/n/10 'ab-stracted
+ []
+
+(./img/abstract_graph.tex <xymatrix 1x1 71>) (./img/lhs_trafo.tex <xymatrix
+2x1 181>) [19] (./img/nac_trafo.tex <xymatrix 2x1 181>) (./img/rhs_trafo.tex
+<xymatrix 2x1 181>) (./img/sts_trafo.tex <xymatrix 1x1 71>))
+(./tex/gg-exploration.tex [20] (./img/algebra_start_graph.tex <xymatrix 2x2
+360>) (./img/algebra_gts.tex <xymatrix 5x1 104>) (./img/algebra_sts.tex
+<xymatrix 1x1 71>) [21] (./img/algebra_rhs2.tex <xymatrix 3x2 340>))
+(./tex/gratis-design.tex [22]
+<./img/tooling.pdf, id=674, 599.89655pt x 242.46582pt>
 File: ./img/tooling.pdf Graphic file (type pdf)
- <use ./img/tooling.pdf>) (./tex/implementation.tex [22] (./img/not_equals_wron
-g.tikz)
-(./img/not_equals_right.tikz)
-
-LaTeX Warning: Reference `fig:groove-example' on page 23 undefined on input lin
-e 25.
-
-[23 <./img/tooling.pdf>] (./img/placeholder_rule.tikz)
-
-LaTeX Warning: Reference `fig:' on page 24 undefined on input line 35.
-
-(./img/ctrl_node.tikz) (./img/ctrl_prog.tex)
-
-LaTeX Warning: Reference `fig:' on page 24 undefined on input line 47.
-
-
-LaTeX Warning: Reference `fig:' on page 24 undefined on input line 47.
-
-[24]) [25]
+ <use ./img/tooling.pdf>) (./tex/implementation.tex [23 <./img/tooling.pdf>]
+(./img/not_equals_wrong.tikz) (./img/not_equals_right.tikz)
+(./img/placeholder_rule.tikz) (./img/ctrl_node.tikz) (./img/ctrl_prog.tex)
+[24] (./img/priority_start.tex <xymatrix 2x1 181>) (./img/priority_lhs1.tex
+<xymatrix 2x2 230>) (./img/priority_rhs1.tex <xymatrix 2x2 230>)
+(./img/priority_lhs2.tex <xymatrix 2x2 230>) (./img/priority_rhs2.tex
+<xymatrix 2x2 230>) (./img/priority_sts_wrong.tex <xymatrix 1x1 136>) [25]
+(./img/priority_sts_right.tex <xymatrix 1x1 136>)) [26]
 Chapter 3.
-(./tex/validation-introduction.tex) [26
+(./tex/validation-introduction.tex) [27
 
 ] (./tex/case-studies.tex)
-(./tex/measurements.tex) [27]
+(./tex/measurements.tex) [28]
 Chapter 4.
-[28
+[29
 
 ] (./tex/summary.tex) (./tex/conclusion.tex) (./tex/future-work.tex)
-(./tex/acknowledgements.tex) [29] (./report.bbl [30
+(./tex/acknowledgements.tex) [30] (./report.bbl [31
 
-]) [31] (./report.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+]) [32] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 19599 strings out of 495061
- 345917 string characters out of 1182622
- 664573 words of memory out of 3000000
- 21998 multiletter control sequences out of 15000+50000
+ 19644 strings out of 495061
+ 346812 string characters out of 1182622
+ 671037 words of memory out of 3000000
+ 22009 multiletter control sequences out of 15000+50000
  29237 words of font info for 74 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 63i,22n,72p,1462b,1121s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0700.600pk
-> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk>
- </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0800.600pk> 
-</home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx0800.600pk> <
-/home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </
-home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </h
-ome/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </ho
-me/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </hom
-e/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home
-/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/
-vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/v
-incentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/vi
-ncentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/vin
-centdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/vinc
-entdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/vince
-ntdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/vincen
-tdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/vincent
-debruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.p
-fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10
-.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on report.pdf (33 pages, 581305 bytes).
+ 63i,21n,72p,1462b,1121s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecss0700.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ecss0800.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ecsi0800.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecsx0800.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen
+/ec/ecbx1440.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecrm0800.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/e
+c/ecrm0600.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecrm0700.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/
+ecbx2074.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
+cbx2488.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ec
+rm1000.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ect
+i1000.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
+1000.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1
+200.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm12
+00.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti120
+0.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200
+.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.
+600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/symbols/msbm10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/x
+yatip10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on report.pdf (34 pages, 616969 bytes).
 PDF statistics:
- 1380 PDF objects out of 1440 (max. 8388607)
- 187 named destinations out of 1000 (max. 500000)
+ 1428 PDF objects out of 1440 (max. 8388607)
+ 197 named destinations out of 1000 (max. 500000)
  486 words of extra memory for PDF output out of 10000 (max. 10000000)
 

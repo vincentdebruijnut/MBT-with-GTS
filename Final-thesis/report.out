@@ -9,22 +9,22 @@
 \BOOKMARK [1][-]{section.1.4}{Symbolic Transition Systems}{chapter.1}
 \BOOKMARK [2][-]{subsection.1.4.1}{Previous work}{section.1.4}
 \BOOKMARK [2][-]{subsection.1.4.2}{Definition}{section.1.4}
-\BOOKMARK [2][-]{subsection.1.4.3}{Example}{section.1.4}
-\BOOKMARK [2][-]{subsection.1.4.4}{STS to LTS transformation}{section.1.4}
-\BOOKMARK [2][-]{subsection.1.4.5}{Coverage}{section.1.4}
+\BOOKMARK [2][-]{subsection.1.4.3}{Input-Output Symbolic Transition Systems}{section.1.4}
+\BOOKMARK [2][-]{subsection.1.4.4}{Example}{section.1.4}
+\BOOKMARK [2][-]{subsection.1.4.5}{STS to LTS transformation}{section.1.4}
+\BOOKMARK [2][-]{subsection.1.4.6}{Coverage}{section.1.4}
 \BOOKMARK [1][-]{section.1.5}{Graph Grammars}{chapter.1}
 \BOOKMARK [2][-]{subsection.1.5.1}{Graphs \046 morphisms}{section.1.5}
 \BOOKMARK [2][-]{subsection.1.5.2}{Graph transformation rules}{section.1.5}
 \BOOKMARK [2][-]{subsection.1.5.3}{Graph Transition Systems}{section.1.5}
 \BOOKMARK [2][-]{subsection.1.5.4}{Example}{section.1.5}
+\BOOKMARK [2][-]{subsection.1.5.5}{Input-Output Graph Grammars}{section.1.5}
 \BOOKMARK [1][-]{section.1.6}{Tooling}{chapter.1}
 \BOOKMARK [2][-]{subsection.1.6.1}{ATM}{section.1.6}
 \BOOKMARK [2][-]{subsection.1.6.2}{GROOVE}{section.1.6}
-\BOOKMARK [1][-]{section.1.7}{Extended Graph Grammars}{chapter.1}
-\BOOKMARK [2][-]{subsection.1.7.1}{Variables in graph grammars}{section.1.7}
-\BOOKMARK [2][-]{subsection.1.7.2}{Graph algebras}{section.1.7}
-\BOOKMARK [2][-]{subsection.1.7.3}{Input-Output graph grammars}{section.1.7}
-\BOOKMARK [2][-]{subsection.1.7.4}{GROOVE example}{section.1.7}
+\BOOKMARK [1][-]{section.1.7}{Variables in Graph Grammars}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.7.1}{Graph algebras}{section.1.7}
+\BOOKMARK [2][-]{subsection.1.7.2}{Graph grammars in GROOVE}{section.1.7}
 \BOOKMARK [0][-]{chapter.2}{Design}{}
 \BOOKMARK [1][-]{section.2.1}{Graph Grammar to STS Transformation Rules}{chapter.2}
 \BOOKMARK [2][-]{subsection.2.1.1}{Graph states transformation}{section.2.1}

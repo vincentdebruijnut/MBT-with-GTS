@@ -1,28 +1,29 @@
 \section{Graph Grammar to STS Transformation Rules}\label{sec:gg-to-sts}
 
 \subsection{Graph states transformation}
-Graph states are a representation of the state of a system. In an STS, this representation is done by the locations and the location variables. In order to obtain an STS from a graph grammar, the explored graph states must be transformed to locations and location variables. 
+Graph states are a representation of the state of a system. In an STS, this representation is done by the locations and the location variables. In order to obtain an STS from a graph grammar, the explored graph states are transformed to locations and location variables. 
 
-The locations $L$ of the transformation are obtained by abstracting the variable nodes in the graph states. For the example specifically, the value nodes are removed from the graph. The abstracted graphs are considered to be the same location in the transformed STS when they are isomorphic. The location variables $\mathcal{L}$ are identified by the variable nodes $V$. The value nodes in the start graph give the initialization $\imath$ of the STS.
+The locations $L$ of the transformation are obtained by abstracting the variable nodes in the graph states. For the example specifically, the value nodes are removed from the graph. The abstracted graphs\marginpar{consistent 'abstracted graph' en 'abstracted graph state'} are considered to be the same location in the transformed STS when they are isomorphic. The location variables $\mathcal{L}$ are identified by the variable nodes $V$. The value nodes in the start graph give the initialization $\imath$ of the STS.
 
-Figure~\ref{fig:abstract_graph} shows the abstraction of the graph in Figure~\ref{fig:variable_node}. Assuming this is the graph of a start graph state, the transformed STS is as follows: $L = \{l_0\}, \mathcal{L} = \{'x'\}, \imath = \{'x' \mapsto 25\}$, where the start location $l_0$ is represented by the abstraction.
+Figure~\ref{fig:abstract_graph} shows the abstraction of the graph in Figure~\ref{fig:variable_node}. Assuming this is the graph of a start graph state, the transformed STS is as follows: $L = \{l_0\}, \mathcal{L} = \{x\}, \imath = \{x \mapsto 25\}$, where the start location $l_0$ is represented by the abstraction.
 
 \begin{figure}[ht]
   \begin{center}
     \input{./img/abstract_graph.tex}
   \end{center}
   \caption{An example of a graph abstraction}
+  \label{fig:abstract_graph}
 \end{figure}
 
 \subsection{Rule transitions transformation}
 Rule transitions are a representation of the switch from one system state to another. In STSs, this representation is done by the switch relations. In order to obtain an STS from a graph grammar, the explored rule transitions are transformed to the switch relations.
 
 \subsubsection{Rule LHSs}\label{sec:rule_lhss}
-When the LHS of a rule has an occurence in the graph of a graph state and the NACs of the rule do not, a rule transition exists. This also indicates the presence of a switch relation $r \in \rightarrow$. As described in section~\ref{sec:gts_sts_trafo}, the label on the rule transition is transformed to a gate $\lambda \in \Lambda$ of the STS.
+When the LHS of a rule has an occurence in the graph of a graph state and the NACs of the rule do not, a rule transition exists. This also indicates the presence of a switch relation $r \in \rightarrow$ in the STS. The label on the rule transition is transformed to a gate $\lambda \in \Lambda$ in the STS. The source location of the switch relation is the transformation of the source graph state of the rule transition and like-wise with the target location. This means that multiple rule transitions can transform to the same switch relation.
 
-When a variable node is an image of a node in the LHS, this indicates a constraint on the variable represented by that node. In some graph states of the example, the value node of the variable node will be an image of a node in the LHS, whereas in other graph states it will not. When the abstraction of the graphs of these graph states are isomorphic, this indicates the existence of a switch relation in the transformed STS with as source the location represented by these graph states. However, as the LHS of the rule does not have an occurrence in all the graph states, a guard $\phi$ must be specified. This guard specifies the possible values the location variable represented by the variable node may have. 
+When a variable node is an image of a node in the LHS, this indicates a constraint on the variable represented by that node. In some graph states, the value node of the variable node will be an image of a node in the LHS, whereas in other graph states it will not. When the abstractions of these graph states are isomorphic, i.e. transform to the same location, an outgoing switch relation represented by the rule transitions is present. However, since there are graph states where the switch relation should not be enabled, a guard $\phi$ must be specified on this switch relation. This guard specifies the possible values the location variable represented by the variable node may have. 
 
-Figure~\ref{fig:lhs_trafo} shows the LHS of a rule. This graph has an occurrence in a graph where the variable 'x' has the value '25'. In the graph grammar to STS transformation, this LHS will cause a 'x == 25' guard to be set on switch relations.
+Figure~\ref{fig:lhs_trafo} shows the LHS of a rule. This graph has an occurrence in a graph where the variable 'x' has the value '25'. In the graph grammar to STS transformation, this LHS will cause a 'x = 25' guard to be set on switch relations.
 
 \begin{figure}[ht]
   \begin{center}
@@ -48,7 +49,7 @@ Figure~\ref{fig:nac_trafo} shows a NAC of a rule. This graph has an occurrence i
 \subsubsection{Rule RHSs}
 The RHS of a rule gives the target graph state of a rule transition. This indicates the target location of the switch relation represented by the rule transition. However, when a variable node is the image of a node in the RHS and the value node of the image has no pre-image in the RHS, a change of the value of the variable has occurred. This change can be made into an update mapping $\rho$ in the transformed STS; the location variable represented by the variable node is mapped to the value specified by the value node in the RHS. Note that we assume the existence of such a node in the RHS.
 
-Figure~\ref{fig:rhs_trafo} shows the RHS of a rule. In the graph grammar to STS transformation, this RHS will add an update mapping on 'x' set to '5' on switch relations.
+Figure~\ref{fig:rhs_trafo} shows the RHS of a rule. In the graph grammar to STS transformation, this RHS will add $x \mapsto 5$ to the update mapping of a switch relation.
 
 \begin{figure}[ht]
   \begin{center}
@@ -56,4 +57,14 @@ Figure~\ref{fig:rhs_trafo} shows the RHS of a rule. In the graph grammar to STS 
   \end{center}
   \caption{The RHS of a rule}
   \label{fig:rhs_trafo}
+\end{figure}
+
+Figures~\ref{fig:variable_node}, \ref{fig:lhs_trafo}, \ref{fig:nac_trafo} and \ref{fig:rhs_trafo} are a graph grammar with one rule, which we will name 'rule' for the purpose of this example. The complete transformation according to the rules in this section is shown in Figure~\ref{fig:sts_trafo}.In this particular case, the LHS and the NAC are mutually exclusive, so the guard could be optimized. However, it still demonstrates the principle of the transformation rules.
+
+ \begin{figure}[ht]
+  \begin{center}
+    \input{./img/sts_trafo.tex}
+  \end{center}
+  \caption{The STS transformation of a simple graph grammar}
+  \label{fig:sts_trafo}
 \end{figure}

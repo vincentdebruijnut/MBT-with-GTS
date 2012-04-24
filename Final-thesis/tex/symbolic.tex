@@ -6,7 +6,7 @@ STSs are introduced by Frantzen et al.~\cite{Frantzen:Symbolic}. This paper incl
 
 \subsection{Definition}\label{sec:sts_definition}
 An STS has \textit{locations} and \textit{switch relations}. If the STS represents a model of a software system, a location in the STS represents a state of the system, not including data values. A switch relation defines the transition from one location to another. The \textit{location variables} are a representation of the data values in the system. A switch relation has a \textit{gate}, which is a label representating the execution steps of the system. Gates have \textit{interaction variables}, which represent some input or output data value. Switch relations also have \textit{guards} and \textit{update mappings}. A guard is a term $t$, where any evaluation on $t$ with any valuation results in a value from $\mathbb{B} = \{true, false\}$. Such a term is denoted by $\mathcal{F}(\mathcal{V})$. The guard disallows using the switch relation when the evaluation of the term results in $false$. When the evaluation results in $true$, the switch relation of the guard is \textit{enabled}. An update mapping is a term-mapping of location variables. After the system switches to a new location, the variables in the update mapping will have the value corresponding to the evaluation of the term they map to.
-
+\vspace{5px}
 \begin{definition}
 A Symbolic Transition System is a tuple $\langle L,l_0,\mathcal{L},\imath,\mathcal{I},\Lambda,\rightarrow\rangle$, where:
 \begin{itemize}
@@ -19,6 +19,7 @@ A Symbolic Transition System is a tuple $\langle L,l_0,\mathcal{L},\imath,\mathc
 \end{itemize}
 \end{definition}
 
+\subsection{Input-Output Symbolic Transition Systems}
 An IOSTS can now easily be defined. The same difference between LTSs and IOTSs applies, namely each gate in an IOSTS has a type $t \in T$, where $T = \{input, output\}$. As with IOSTSs, each gate is preceded by a '?' or '!' to indicate whether it is an input or an output respectively.
 
 \subsection{Example}\label{sec:sts_example}
@@ -39,7 +40,7 @@ The variables $T, P$ and $D$ are the location variables symbolizing the player's
 
 \subsection{STS to LTS transformation}\label{sec:sts_lts_trafo}
 Consider an STS $S$ and its transformation LTS $L$. The following defines a mapping between $\mathcal{L}$, $\mathcal{V}$, $\mathcal{I}$ and $\rightarrow$ of $S$ to the states $Q$ and transitions $T$ of $L$.
-
+\vspace{5px}
 \begin{definition}
   \item $\mu_l:(l \in L, \nu:\mathcal{V}) \mapsto q \in Q$
   \item $\mu_r:(r \in \rightarrow, \nu:\mathcal{I}) \mapsto t \in T$

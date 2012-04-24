@@ -1,10 +1,9 @@
-\section{Extended Graph Grammars}\label{sec:extended_graph}
+\section{Variables in Graph Grammars}\label{sec:variables-in-graph-grammars}
 
-\subsection{Variables in graph grammars}
-In order to make an efficient transformation of a graph grammar to an STS, we must extend our definition of graph grammars to include 'variables' in a graph.
+The definition of graph grammars, as given in section~\ref{sec:graph}, does not support the use of variables and algebraic expressions. This makes modelling a software system with integers difficult. In this section, we extend our definition of graph grammars to include 'variables' in a graph. Also, a sketch is given for \textit{graph algebras}.
 \\
 \begin{definition}
-A graph grammar is a tuple $\langle G, R\rangle$, where:
+A graph grammar is a tuple $\langle G, R, V\rangle$, where:
 \begin{itemize}
   \item $G$ is the start graph
   \item $R$ is a set of graph transformation rules
@@ -31,6 +30,8 @@ The concrete implementation of this can differ. For example, a variable node can
   \label{fig:variable_node}
 \end{figure}
 
+We will use this example of a variable/value node pair in chapter \ref{chapter:design}.
+
 \subsection{Graph algebras}
 With the existence of variables in graphs, algebraic expressions over these variables is a possibility. Again, the implementation of this can differ. Next is an example of a possible implementation. A formal definition of graph algebras is not given, as the use of algebras in this report is restricted to the examples.
 
@@ -45,11 +46,23 @@ Figure~\ref{fig:algebra} shows the LHS and RHS of a rule. $\mathit{M_{RHS}}$ map
   \label{fig:algebra}
 \end{figure}
 
-\subsection{Input-Output graph grammars}
-In order to specify stimuli and responses with graph grammars, a definition is given for an \textit{Input-Output graph grammar} (IOgg). Concretely, the IOgg places input and output labels on its rule transitions. Following the definition from IOLTSs, each rule transition label $l \in L$ has a type $t \in T$, where $T = \{input, output\}$. Exploring an IOgg leads to an \textit{Input-Output Graph Transition System} (IOGTS).
+We will use this example of algebraic expressions over variable nodes in chapter \ref{chapter:design}.
 
-\subsection{GROOVE example}
-The $\mathit{LHS}$, $\mathit{RHS}$ and $\mathit{NAC}$ of a rule in graph transformation tools, such as GROOVE, are often visualized together in one graph. The running example from Figure~\ref{fig:example_sts} is displayed as a graph grammar, as visualized in GROOVE, in Figure~\ref{fig:example_groove}. Figure~\ref{fig:example_groove_start} is the start graph of the system.
+\subsection{Graph grammars in GROOVE}\label{sec:example_groove}
+The graph grammars in GROOVE give support to variables and graph algebras. In the following example, a graph grammar is shown as modelled in GROOVE. 
+
+The running example from Figure~\ref{fig:example_sts} is displayed as a graph grammar, as visualized in GROOVE, in Figure~\ref{fig:example_groove}. The $\mathit{LHS}$, $\mathit{RHS}$ and $\mathit{NAC}$ of a rule in GROOVE are visualized together in one graph. Figures~\ref{fig:example_groove_throw}, \ref{fig:example_groove_move} and \ref{fig:example_groove_next} show three rules. Figure~\ref{fig:example_groove_start} shows the start graph of the system.
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The start graph]{\label{fig:example_groove_start}\input{./img/start.tikz}}\quad
+    \subfloat[The throw rule]{\label{fig:example_groove_throw}\input{./img/throws.tikz}}
+    \subfloat[The move rule]{\label{fig:example_groove_move}\input{./img/move.tikz}}
+    \subfloat[The next turn rule]{\label{fig:example_groove_next}\input{./img/nextTurn.tikz}}
+  \end{center}
+  \caption{The graph grammar of the board game example in Figure~\ref{fig:example_sts}}
+  \label{fig:example_groove}
+\end{figure}
 
 The colors on the nodes and edges in the rules represent whether they belong to the $\mathit{LHS}$, $\mathit{RHS}$ or $\mathit{NAC}$ of the rule.
 \begin{enumerate}
@@ -74,18 +87,7 @@ The 'throws > 0' expression is an example of the use of algebra on variable node
 
 The number '0' in the top left of the \textbf{int} node in the throw rule indicates that this integer is the first parameter in $param(l)$, where $l$ is the label on the rule transition created by applying the throws rule.
 
-\begin{figure}[ht]
-  \begin{center}
-    \subfloat[The start graph]{\label{fig:example_groove_start}\input{./img/start.tikz}}\quad
-    \subfloat[The throw rule]{\label{fig:example_groove_throw}\input{./img/throws.tikz}}
-    \subfloat[The move rule]{\label{fig:example_groove_move}\input{./img/move.tikz}}
-    \subfloat[The next turn rule]{\label{fig:example_groove_next}\input{./img/nextTurn.tikz}}
-  \end{center}
-  \caption{The graph grammar of the board game example in Figure~\ref{fig:example_sts}}
-  \label{fig:example_groove}
-\end{figure}
-
-The graph is transformed after the rule is applied. The resulting graph after the transformation is the new state of the system and the rule is the transition from the old state (the graph as it was before the rule was applied) to the new state. Figure~\ref{fig:gts_example} shows the IOGTS of one \textit{throws?} rule application on the start graph. Note that the \textit{throws?} is an input, as indicated by the '?'. State $s_1$ is a representation of the graph in Figure~\ref{fig:example_groove_start}. Figure~\ref{fig:target_graph_state} shows the graph represented by $s_2$.
+The graph is transformed after the rule is applied. The resulting graph after the transformation is the new state of the system and the rule is the transition from the old state (the graph as it was before the rule was applied) to the new state. Figure~\ref{fig:gts_example} shows the IOGTS of one \textit{?throws} rule application on the start graph. Note that the \textit{?throws} is an input, as indicated by the '?'. State $s_1$ is a representation of the graph in Figure~\ref{fig:example_groove_start}. Figure~\ref{fig:target_graph_state} shows the graph represented by $s_2$.
 
 \begin{figure}[ht]
   \begin{center}
