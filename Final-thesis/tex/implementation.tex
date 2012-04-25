@@ -1,9 +1,9 @@
 \section{Implementation}\label{sec:implementation}
 
-This section features several implementation issues on GRATiS.
+This section features several implementation issues of GRATiS.
 
 \subsection{Point algebra}
-In Figure~\ref{fig:example_groove} the support GROOVE gives to algebraic expressions can be seen. Different algebra families can be set for a graph grammar, such as the \textit{point algebra}. It has an interesting property: the value of any variable or expression is the same for each signature. Therefore, the value nodes in each graph state are the same. In the transformation rules, two graph states are considered to transform to the same location when they are isomorphic, omitting the values of the variables. Thus, exploring a graph grammar using the point algebra, produces the same result as the partial matching scheme in section~\ref{sec:partial-matching}. 
+In Figure~\ref{fig:example_groove} the support GROOVE gives to algebraic expressions can be seen. Different algebra families can be set for a graph grammar, such as the \textit{point algebra}. It has an interesting property: the value of any variable or expression is the same for each variable type. Therefore, the value nodes in each graph state are the same. In the transformation rules, two graph states are considered to transform to the same location when they are isomorphic, omitting the values of the variables. Thus, exploring a graph grammar using the point algebra, produces the same result as the partial matching scheme in section~\ref{sec:partial-matching}. 
 
 The boolean expressions in the rules are also affected by the point algebra: the result of a boolean expression is always true as this is the default value of a boolean in the point algebra. Therefore, the effect of using this algebra family is that all constraints on the values of variable nodes expressed by a rule system are ignored. There is one exception, shown in Figure~\ref{fig:not_equals_wrong}. This is a short-hand for the construction in Figure~\ref{fig:not_equals_right}. The values are directly compared, therefore this will always prevent a rule match when using a point algebra, because the values will always be equal. The problem is solved by setting a modelling constraint on GRATiS, disallowing the use of the not-equals construction in Figure~\ref{fig:not_equals_wrong}. Instead, the construction in Figure~\ref{fig:not_equals_right} should be used.
 
@@ -24,7 +24,7 @@ The boolean expressions in the rules are also affected by the point algebra: the
 \end{figure}
 
 \subsection{Control program}
-Modelling a random value in a graph grammar is difficult. For example, to model a die, all possible values of the die must be included in the model, as in Figure~\ref{fig:example_groove}. Then, a rule transition can be created for each of these values. The random 'choice' is now a non-deterministic one. However, when using a point algebra, this can be done easier. The model in Figure~\ref{fig:placeholder_rule} represents the possible values of the die with lower- and upper-bounds. The Die node is still required to produce a match, because the rule systems in GROOVE cannot match an 'unknown' variable node. A variable node is unknown when it has no value and no connecting edges. Note that the edges expressing the lower- and upper-bound are not part of the match and therefore not considered as connecting edges.
+Modelling a random value in a graph grammar is difficult. For example, to model a die, all possible values of the die must be included in the model, as in Figure~\ref{fig:example_groove}. Then, a rule transition can be created for each of these values. The random 'choice' is now a non-deterministic one. However, when using a point algebra, this can be done easier. The rule in Figure~\ref{fig:placeholder_rule} represents the possible values of the die with lower- and upper-bounds. The Die node is still required to produce a match, because the rule systems in GROOVE cannot match an 'unknown' variable node. A variable node is unknown when it has no value and no connecting edges. Note that the edges expressing the lower- and upper-bound are not part of the match and therefore not considered as connecting edges.
 
 \begin{figure}[ht]
   \begin{center}
@@ -34,14 +34,14 @@ Modelling a random value in a graph grammar is difficult. For example, to model 
   \label{fig:placeholder_rule}
 \end{figure}
 
-The Die node in the rule is visually intuitive, as it shows that the random value is produced from a die. However, in the start graph, the Die node must be present with at least one value. This is not an intuitive part of the model and we would preferably omit this. A solution is using a \textit{control program}. The rule in Figure~\ref{fig:ctrl_node} shows an int: node which obtains its value from an external program. An example of such a program is in Figure~\ref{fig:ctrl_prog}. The program always sets the value of the int: node to 1. This node still matches other values, when using a point algebra.
+The Die node in the rule is visually intuitive, as it shows that the random value is produced from a die. However, in the start graph, the Die node must be present with at least one value. This is not an intuitive part of the model and we would preferably omit this. A solution is using a \textit{control program}. The rule in Figure~\ref{fig:ctrl_node} shows an \textbf{int:} node, with '?0' in the top left, which obtains its value from an external program. An example of such a program is in Figure~\ref{fig:ctrl_prog}. The program tries, as long as possible ('alap'), to set the value of the \textbf{int:} node in the 'throws' rule to '1'. This node still matches other values, when using a point algebra.
 
 \begin{figure}[ht]
   \begin{center}
-    \subfloat[The control node]{\label{fig:ctrl_node}\input{./img/ctrl_node.tikz}}
+    \subfloat[The rule with control node]{\label{fig:ctrl_node}\input{./img/ctrl_node.tikz}}
     \subfloat[The control program]{\label{fig:ctrl_prog}\input{./img/ctrl_prog.tex}}
   \end{center}
-  \caption{A control node and program in GROOVE}
+  \caption{A rule with control node and program in GROOVE}
   \label{fig:ctrl_program}
 \end{figure}
 
@@ -50,10 +50,10 @@ From a graph state, there can be several outgoing rule transitions. However, GRO
 
 \begin{figure}[ht]
   \begin{center}
-    \subfloat[The start graph state]{\label{fig:priority_start}\input{./img/priority_start.tex}}
-    \subfloat[The LHS of rule 'sub' with priority 1]{\label{fig:priority_lhs1}\input{./img/priority_lhs1.tex}}
-    \subfloat[The RHS of rule 'sub' with priority 1]{\label{fig:priority_rhs1}\input{./img/priority_rhs1.tex}}
-    \subfloat[The LHS of rule 'add' with priority 2]{\label{fig:priority_lhs2}\input{./img/priority_lhs2.tex}}
+    \subfloat[The start graph state]{\label{fig:priority_start}\input{./img/priority_start.tex}}\hspace{20px}
+    \subfloat[The LHS of rule 'sub' with priority 1]{\label{fig:priority_lhs1}\input{./img/priority_lhs1.tex}}\hspace{20px}
+    \subfloat[The RHS of rule 'sub' with priority 1]{\label{fig:priority_rhs1}\input{./img/priority_rhs1.tex}}\hspace{20px}
+    \subfloat[The LHS of rule 'add' with priority 2]{\label{fig:priority_lhs2}\input{./img/priority_lhs2.tex}}\hspace{20px}
     \subfloat[The RHS of rule 'add' with priority 2]{\label{fig:priority_rhs2}\input{./img/priority_rhs2.tex}}
   \end{center}
   \caption{A control node and program in GROOVE}

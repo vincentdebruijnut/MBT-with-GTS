@@ -3,7 +3,7 @@
 \subsection{Graph states transformation}
 Graph states are a representation of the state of a system. In an STS, this representation is done by the locations and the location variables. In order to obtain an STS from a graph grammar, the explored graph states are transformed to locations and location variables. 
 
-The locations $L$ of the transformation are obtained by abstracting the variable nodes in the graph states. For the example specifically, the value nodes are removed from the graph. The abstracted graphs\marginpar{consistent 'abstracted graph' en 'abstracted graph state'} are considered to be the same location in the transformed STS when they are isomorphic. The location variables $\mathcal{L}$ are identified by the variable nodes $V$. The value nodes in the start graph give the initialization $\imath$ of the STS.
+The locations $L$ of the transformation are obtained by abstracting the variable nodes in the graph states. For the example given of graphs with variable nodes specifically, the value nodes are removed from the graph. The abstracted graph states are considered to be the same location in the transformed STS when they are isomorphic. The location variables $\mathcal{L}$ are identified by the variable nodes $V$. The value nodes in the start graph give the initialization $\imath$ of the STS.
 
 Figure~\ref{fig:abstract_graph} shows the abstraction of the graph in Figure~\ref{fig:variable_node}. Assuming this is the graph of a start graph state, the transformed STS is as follows: $L = \{l_0\}, \mathcal{L} = \{x\}, \imath = \{x \mapsto 25\}$, where the start location $l_0$ is represented by the abstraction.
 

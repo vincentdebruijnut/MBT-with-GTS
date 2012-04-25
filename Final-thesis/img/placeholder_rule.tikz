@@ -7,7 +7,7 @@
 scale=\tikzscale]
 \node[node] (n1)  at (0.570, -0.920) {\ml{\textbf{Player}\\\textit{turn}}};
 \node[node, attr] (n4)  at (1.635, -0.865) {\ml{\textbf{int}}};
-\node[parnode] (n4p)  at (n4.north west) {0};
+\node[parnode] (n4p)  at (1.535, -0.765) {0};
 \node[node, attr] (n2)  at (0.525, -1.775) {\ml{\textbf{int}}};
 \node[node] (n5)  at (1.640, -0.255) {\ml{\textbf{Die}}};
 \node[node, attr] (n0)  at (0.500, -2.325) {\ml{0}};
