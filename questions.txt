@@ -1,0 +1,2 @@
+- subfolders in rules?
+- wat is betekenis van een account die weer naar idle gaat? als de klant weer een keer terugkomt? legacy?
