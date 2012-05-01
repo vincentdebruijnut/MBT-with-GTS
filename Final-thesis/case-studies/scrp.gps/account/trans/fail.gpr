@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="signon">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.trans.fail">
+        <attr name="transitionLabel">
+            <string>!fail</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>90 55 31 31</string>
+                <string>83 63 109 70</string>
             </attr>
         </node>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:CR</string>
+                <string>type:Account</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>del:flag:SS_OFF</string>
+                <string>del:flag:AS_TRANSING</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>new:flag:SS_ON</string>
+                <string>new:flag:AS_CLOSED</string>
             </attr>
         </edge>
     </graph>

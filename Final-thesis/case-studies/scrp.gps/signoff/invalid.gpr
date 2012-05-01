@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="1 - initialize-account">
+    <graph edgemode="directed" edgeids="false" role="rule" id="signoff.invalid">
         <attr name="transitionLabel">
-            <string>init</string>
+            <string>450</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -10,109 +10,109 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n1">
+        <node id="n3">
             <attr name="layout">
-                <string>83 22 36 34</string>
+                <string>136 221 29 33</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>237 20 41 38</string>
-            </attr>
-        </node>
-        <node id="n5">
-            <attr name="layout">
-                <string>198 137 41 38</string>
+                <string>66 223 28 33</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>68 135 70 52</string>
+                <string>94 58 40 33</string>
             </attr>
         </node>
-        <node id="n3">
+        <node id="n1">
             <attr name="layout">
-                <string>266 85 43 43</string>
+                <string>73 153 82 50</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>393 88 27 38</string>
+                <string>337 59 48 33</string>
             </attr>
         </node>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>new:</string>
+        <node id="n5">
+            <attr name="layout">
+                <string>199 50 81 50</string>
             </attr>
-        </edge>
-        <edge to="n5" from="n0">
+        </node>
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>id</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n1">
-            <attr name="label">
-                <string>new:highest_id</string>
+                <string>forall:</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>int:</string>
+                <string>exists:</string>
             </attr>
         </edge>
-        <edge to="n0" from="n1">
+        <edge to="n3" from="n2">
             <attr name="label">
-                <string>has</string>
+                <string>in</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>flag:AS_IDLE</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>del:highest_id</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n3">
-            <attr name="label">
-                <string>arg:1</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>prod:</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>int:</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n3">
-            <attr name="label">
-                <string>arg:0</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge to="n1" from="n0">
             <attr name="label">
-                <string>int:1</string>
+                <string>has</string>
             </attr>
         </edge>
-        <edge to="n5" from="n3">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>int:add</string>
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>not:flag:AS_IDLE</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n1">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n4">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n5">
+            <attr name="label">
+                <string>del:</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n5">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n5">
+            <attr name="label">
+                <string>flag:signoff</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n5">
+            <attr name="label">
+                <string>to</string>
             </attr>
         </edge>
     </graph>

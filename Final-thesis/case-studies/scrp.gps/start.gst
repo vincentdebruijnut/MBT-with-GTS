@@ -7,9 +7,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
+        <node id="n0">
             <attr name="layout">
-                <string>200 84 30 37</string>
+                <string>69 73 67 67</string>
             </attr>
         </node>
         <node id="n1">
@@ -17,29 +17,14 @@
                 <string>305 83 48 33</string>
             </attr>
         </node>
-        <node id="n0">
+        <node id="n2">
             <attr name="layout">
-                <string>79 76 46 50</string>
+                <string>200 84 30 37</string>
             </attr>
         </node>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>int:0</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
         <edge to="n0" from="n0">
             <attr name="label">
                 <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>flag:SS_OFF</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -50,6 +35,16 @@
         <edge to="n2" from="n0">
             <attr name="label">
                 <string>accounts</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>int:0</string>
             </attr>
         </edge>
     </graph>
