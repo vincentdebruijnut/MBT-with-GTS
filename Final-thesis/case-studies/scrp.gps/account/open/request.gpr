@@ -22,7 +22,7 @@
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>43 95 40 33</string>
+                <string>31 86 63 50</string>
             </attr>
         </node>
         <node id="n11">
@@ -80,12 +80,12 @@
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
+        <edge to="n1" from="n11">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n1" from="n11">
+        <edge to="n0" from="n11">
             <attr name="label">
                 <string>from</string>
             </attr>

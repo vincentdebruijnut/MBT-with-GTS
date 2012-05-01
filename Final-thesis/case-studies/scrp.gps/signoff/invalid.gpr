@@ -10,24 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n5">
             <attr name="layout">
-                <string>136 221 29 33</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>66 223 28 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>94 58 40 33</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>73 153 82 50</string>
+                <string>199 50 81 50</string>
             </attr>
         </node>
         <node id="n4">
@@ -35,34 +20,54 @@
                 <string>337 59 48 33</string>
             </attr>
         </node>
-        <node id="n5">
+        <node id="n1">
             <attr name="layout">
-                <string>199 50 81 50</string>
+                <string>73 153 82 50</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
+        <node id="n0">
+            <attr name="layout">
+                <string>94 58 40 33</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>66 223 28 33</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>136 221 29 33</string>
+            </attr>
+        </node>
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string>forall:</string>
+                <string>del:</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string>exists:</string>
+                <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n3" from="n2">
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string>in</string>
+                <string>flag:signoff</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n0" from="n5">
             <attr name="label">
-                <string>type:CR</string>
+                <string>to</string>
             </attr>
         </edge>
-        <edge to="n1" from="n0">
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>has</string>
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n4">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -85,34 +90,34 @@
                 <string>at</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:SFU</string>
+                <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n5" from="n4">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>from</string>
+                <string>flag:SS_ON</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge to="n1" from="n0">
             <attr name="label">
-                <string>del:</string>
+                <string>has</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:Request</string>
+                <string>exists:</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge to="n3" from="n2">
             <attr name="label">
-                <string>flag:signoff</string>
+                <string>in</string>
             </attr>
         </edge>
-        <edge to="n0" from="n5">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>to</string>
+                <string>forall:</string>
             </attr>
         </edge>
     </graph>
