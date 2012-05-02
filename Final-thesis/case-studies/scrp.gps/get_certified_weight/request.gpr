@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="terminate.terminate">
+    <graph edgemode="directed" edgeids="false" role="rule" id="get_certified_weight.request">
         <attr name="transitionLabel">
-            <string>stop</string>
+            <string>?GET_CERTDATA</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -10,74 +10,84 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n1">
             <attr name="layout">
-                <string>46 155 82 50</string>
+                <string>154 202 81 33</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>36 40 103 67</string>
+                <string>152 13 81 50</string>
             </attr>
         </node>
-        <node id="n1">
+        <node id="n11">
             <attr name="layout">
-                <string>215 91 79 33</string>
+                <string>291 101 48 33</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>240 153 29 33</string>
+                <string>50 102 40 33</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>not:flag:AS_IDLE</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>del:flag:SS_ON</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>del:flag:terminating</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>not:has</string>
+                <string>not:</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
             <attr name="label">
-                <string>del:</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Account</string>
+                <string>type:Request</string>
             </attr>
         </edge>
         <edge to="n2" from="n1">
             <attr name="label">
-                <string>at</string>
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>new:</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>flag:get_certdata</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n11">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n11">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n11">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>forall:</string>
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n2">
+            <attr name="label">
+                <string>connection</string>
             </attr>
         </edge>
     </graph>

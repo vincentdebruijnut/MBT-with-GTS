@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.open.success">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.open.success_no_idle">
         <attr name="transitionLabel">
             <string>230</string>
         </attr>
@@ -10,6 +10,11 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
+        <node id="n10">
+            <attr name="layout">
+                <string>6 114 79 50</string>
+            </attr>
+        </node>
         <node id="n3">
             <attr name="layout">
                 <string>319 48 81 50</string>
@@ -65,6 +70,16 @@
                 <string>497 310 52 37</string>
             </attr>
         </node>
+        <edge to="n10" from="n10">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n10" from="n10">
+            <attr name="label">
+                <string>flag:AS_IDLE</string>
+            </attr>
+        </edge>
         <edge to="n3" from="n3">
             <attr name="label">
                 <string>del:</string>
@@ -135,19 +150,24 @@
                 <string>not:flag:terminating</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
         <edge to="n1" from="n2">
             <attr name="label">
                 <string>not:has</string>
             </attr>
         </edge>
+        <edge to="n0" from="n2">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
         <edge to="n4" from="n2">
             <attr name="label">
                 <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n10" from="n2">
+            <attr name="label">
+                <string>not:has</string>
             </attr>
         </edge>
         <edge to="n4" from="n4">
@@ -177,7 +197,7 @@
         </edge>
         <edge to="n7" from="n7">
             <attr name="label">
-                <string>int:10</string>
+                <string>int:3</string>
             </attr>
         </edge>
         <edge to="n8" from="n8">
@@ -185,14 +205,14 @@
                 <string>prod:</string>
             </attr>
         </edge>
-        <edge to="n7" from="n8">
-            <attr name="label">
-                <string>arg:1</string>
-            </attr>
-        </edge>
         <edge to="n6" from="n8">
             <attr name="label">
                 <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n8">
+            <attr name="label">
+                <string>arg:1</string>
             </attr>
         </edge>
         <edge to="n9" from="n8">

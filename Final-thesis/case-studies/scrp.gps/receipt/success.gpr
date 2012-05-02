@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="terminate.terminate">
+    <graph edgemode="directed" edgeids="false" role="rule" id="receipt.success">
         <attr name="transitionLabel">
-            <string>stop</string>
+            <string>261</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -10,34 +10,54 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n2">
             <attr name="layout">
-                <string>46 155 82 50</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>36 40 103 67</string>
+                <string>177 76 81 50</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>215 91 79 33</string>
+                <string>309 84 48 33</string>
             </attr>
         </node>
-        <node id="n2">
+        <node id="n0">
             <attr name="layout">
-                <string>240 153 29 33</string>
+                <string>63 75 63 50</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
+        <node id="n3">
+            <attr name="layout">
+                <string>47 181 96 50</string>
+            </attr>
+        </node>
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:Account</string>
+                <string>del:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>not:flag:AS_IDLE</string>
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:receipt</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n2">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -47,37 +67,22 @@
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>del:flag:SS_ON</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>del:flag:terminating</string>
+                <string>flag:SS_ON</string>
             </attr>
         </edge>
         <edge to="n3" from="n0">
             <attr name="label">
-                <string>not:has</string>
+                <string>has</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>del:</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
+        <edge to="n3" from="n3">
             <attr name="label">
                 <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>at</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>forall:</string>
+                <string>flag:AS_ENDING</string>
             </attr>
         </edge>
     </graph>
