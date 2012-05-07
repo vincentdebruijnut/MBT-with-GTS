@@ -27,7 +27,7 @@
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>56 174 96 50</string>
+                <string>51 165 105 67</string>
             </attr>
         </node>
         <edge to="n3" from="n3">
@@ -77,17 +77,17 @@
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>del:</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
                 <string>type:Account</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>flag:AS_ENDING</string>
+                <string>del:flag:AS_ENDING</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>new:flag:AS_IDLE</string>
             </attr>
         </edge>
     </graph>

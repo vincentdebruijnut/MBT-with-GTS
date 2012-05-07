@@ -15,39 +15,34 @@
                 <string>144 23 81 50</string>
             </attr>
         </node>
-        <node id="n6">
-            <attr name="layout">
-                <string>361 182 28 33</string>
-            </attr>
-        </node>
         <node id="n5">
             <attr name="layout">
-                <string>240 212 79 33</string>
+                <string>231 327 79 33</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>68 322 79 33</string>
+                <string>59 437 79 33</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>386 22 112 50</string>
+                <string>272 158 112 50</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>393 101 96 50</string>
+                <string>101 160 96 50</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>45 203 127 67</string>
+                <string>36 318 127 67</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>362 234 29 33</string>
+                <string>362 327 29 33</string>
             </attr>
         </node>
         <node id="n8">
@@ -80,27 +75,12 @@
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n6" from="n6">
-            <attr name="label">
-                <string>exists:</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n6">
-            <attr name="label">
-                <string>in</string>
-            </attr>
-        </edge>
         <edge to="n5" from="n5">
             <attr name="label">
                 <string>type:Account</string>
             </attr>
         </edge>
         <edge to="n7" from="n5">
-            <attr name="label">
-                <string>at</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n5">
             <attr name="label">
                 <string>at</string>
             </attr>
@@ -186,6 +166,16 @@
             </attr>
         </edge>
         <edge to="n0" from="n8">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n8">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n8">
             <attr name="label">
                 <string>has</string>
             </attr>

@@ -17,12 +17,7 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>102 308 29 33</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>25 309 28 33</string>
+                <string>61 314 29 33</string>
             </attr>
         </node>
         <node id="n2">
@@ -50,11 +45,6 @@
                 <string>258 56 48 33</string>
             </attr>
         </node>
-        <node id="n7">
-            <attr name="layout">
-                <string>486 218 56 37</string>
-            </attr>
-        </node>
         <edge to="n8" from="n8">
             <attr name="label">
                 <string>del:</string>
@@ -80,16 +70,6 @@
                 <string>forall:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>exists:</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n3">
-            <attr name="label">
-                <string>in</string>
-            </attr>
-        </edge>
         <edge to="n2" from="n2">
             <attr name="label">
                 <string>type:Account</string>
@@ -105,19 +85,14 @@
                 <string>flag:AS_CLOSED</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>not:next</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n1">
-            <attr name="label">
-                <string>at</string>
-            </attr>
-        </edge>
         <edge to="n4" from="n1">
             <attr name="label">
                 <string>at</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>not:next</string>
             </attr>
         </edge>
         <edge to="n0" from="n1">
@@ -140,11 +115,6 @@
                 <string>new:flag:AS_CLOSED</string>
             </attr>
         </edge>
-        <edge to="n7" from="n0">
-            <attr name="label">
-                <string>del:amount</string>
-            </attr>
-        </edge>
         <edge to="n5" from="n5">
             <attr name="label">
                 <string>type:CR</string>
@@ -155,12 +125,12 @@
                 <string>flag:SS_ON</string>
             </attr>
         </edge>
-        <edge to="n1" from="n5">
+        <edge to="n0" from="n5">
             <attr name="label">
                 <string>has</string>
             </attr>
         </edge>
-        <edge to="n0" from="n5">
+        <edge to="n1" from="n5">
             <attr name="label">
                 <string>has</string>
             </attr>
@@ -173,16 +143,6 @@
         <edge to="n8" from="n6">
             <attr name="label">
                 <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n7">
-            <attr name="label">
-                <string>real:</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n7">
-            <attr name="label">
-                <string>par:0</string>
             </attr>
         </edge>
     </graph>

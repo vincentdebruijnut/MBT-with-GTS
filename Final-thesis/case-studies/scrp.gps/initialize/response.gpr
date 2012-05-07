@@ -10,26 +10,21 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n1">
-            <attr name="layout">
-                <string>236 36 48 33</string>
-            </attr>
-        </node>
         <node id="n0">
             <attr name="layout">
                 <string>25 35 82 50</string>
             </attr>
         </node>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
+        <node id="n1">
+            <attr name="layout">
+                <string>236 36 48 33</string>
             </attr>
-        </edge>
-        <edge to="n0" from="n1">
-            <attr name="label">
-                <string>del:init</string>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>22 132 79 50</string>
             </attr>
-        </edge>
+        </node>
         <edge to="n0" from="n0">
             <attr name="label">
                 <string>type:CR</string>
@@ -46,6 +41,36 @@
             </attr>
             <attr name="layout">
                 <string>500 0 74 54 167 103 260 53 12</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n1">
+            <attr name="label">
+                <string>del:init</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>new:</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:AS_IDLE</string>
             </attr>
         </edge>
     </graph>

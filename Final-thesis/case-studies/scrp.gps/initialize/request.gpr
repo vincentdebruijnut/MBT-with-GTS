@@ -20,11 +20,6 @@
                 <string>221 53 48 33</string>
             </attr>
         </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>40 153 79 50</string>
-            </attr>
-        </node>
         <edge to="n0" from="n0">
             <attr name="label">
                 <string>type:CR</string>
@@ -38,11 +33,6 @@
                 <string>500 0 83 70 164 114 245 69 12</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:SFU</string>
@@ -53,19 +43,12 @@
                 <string>new:init</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n0" from="n1">
             <attr name="label">
-                <string>new:</string>
+                <string>not:init</string>
             </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>flag:AS_IDLE</string>
+            <attr name="layout">
+                <string>500 0 245 69 164 26 83 70 12</string>
             </attr>
         </edge>
     </graph>
