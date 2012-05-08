@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="initialize.request">
+    <graph edgemode="directed" edgeids="false" role="rule" id="initialize.ready">
         <attr name="transitionLabel">
-            <string>?init</string>
+            <string>220</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -12,12 +12,12 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>63 54 40 33</string>
+                <string>25 35 82 50</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>221 53 48 33</string>
+                <string>258 36 48 33</string>
             </attr>
         </node>
         <edge to="n0" from="n0">
@@ -25,30 +25,27 @@
                 <string>type:CR</string>
             </attr>
         </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>new:flag:SS_OFF</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n0">
+            <attr name="label">
+                <string>new:connection</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 74 54 167 103 260 53 12</string>
+            </attr>
+        </edge>
         <edge to="n1" from="n0">
             <attr name="label">
                 <string>not:connection</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 83 70 164 114 245 69 12</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n1">
-            <attr name="label">
-                <string>new:init</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n1">
-            <attr name="label">
-                <string>not:init</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 245 69 164 26 83 70 12</string>
             </attr>
         </edge>
     </graph>

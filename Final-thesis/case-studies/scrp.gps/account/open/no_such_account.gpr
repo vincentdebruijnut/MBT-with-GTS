@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.open.success_no_idle">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.open.no_such_account">
         <attr name="transitionLabel">
-            <string>230</string>
+            <string>530</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -10,9 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n10">
+        <node id="n1">
             <attr name="layout">
-                <string>6 114 79 50</string>
+                <string>130 171 80 50</string>
             </attr>
         </node>
         <node id="n3">
@@ -25,34 +25,24 @@
                 <string>489 56 48 33</string>
             </attr>
         </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>59 173 80 50</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>147 174 80 50</string>
-            </attr>
-        </node>
         <node id="n2">
             <attr name="layout">
-                <string>118 44 103 67</string>
+                <string>138 52 63 50</string>
             </attr>
         </node>
-        <edge to="n10" from="n10">
+        <edge to="n1" from="n1">
             <attr name="label">
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n10" from="n10">
+        <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n10" from="n10">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>flag:AS_IDLE</string>
+                <string>flag:AS_OPEN</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
@@ -67,7 +57,7 @@
         </edge>
         <edge to="n3" from="n3">
             <attr name="label">
-                <string>flag:open</string>
+                <string>flag:open_nexist</string>
             </attr>
         </edge>
         <edge to="n2" from="n3">
@@ -85,36 +75,6 @@
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>flag:AS_OPEN</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>new:</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>flag:AS_OPEN</string>
-            </attr>
-        </edge>
         <edge to="n2" from="n2">
             <attr name="label">
                 <string>type:CR</string>
@@ -123,21 +83,6 @@
         <edge to="n2" from="n2">
             <attr name="label">
                 <string>flag:SS_ON</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>not:flag:terminating</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
-        <edge to="n10" from="n2">
-            <attr name="label">
-                <string>has</string>
             </attr>
         </edge>
         <edge to="n1" from="n2">

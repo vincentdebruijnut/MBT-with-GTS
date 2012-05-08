@@ -10,24 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
+        <node id="n5">
             <attr name="layout">
-                <string>246 83 81 33</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>411 83 48 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>74 83 40 33</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>55 189 79 33</string>
+                <string>30 17 87 37</string>
             </attr>
         </node>
         <node id="n4">
@@ -35,59 +20,34 @@
                 <string>41 253 107 37</string>
             </attr>
         </node>
-        <node id="n5">
+        <node id="n3">
             <attr name="layout">
-                <string>30 17 87 37</string>
+                <string>55 189 79 33</string>
             </attr>
         </node>
-        <node id="n6">
+        <node id="n0">
             <attr name="layout">
-                <string>205 4 155 37</string>
+                <string>74 83 40 33</string>
             </attr>
         </node>
-        <edge to="n2" from="n2">
+        <node id="n1">
+            <attr name="layout">
+                <string>411 83 48 33</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>246 83 81 33</string>
+            </attr>
+        </node>
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string>del:</string>
+                <string>string:&quot;SS_ON&quot;</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n2">
-            <attr name="label">
-                <string>type</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n0">
-            <attr name="label">
-                <string>state</string>
+                <string>string:&quot;AS_OPEN&quot;</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
@@ -105,19 +65,49 @@
                 <string>state</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>string:&quot;AS_OPEN&quot;</string>
+                <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge to="n3" from="n0">
             <attr name="label">
-                <string>string:&quot;SS_ON&quot;</string>
+                <string>has</string>
             </attr>
         </edge>
-        <edge to="n6" from="n6">
+        <edge to="n5" from="n0">
             <attr name="label">
-                <string>string:&quot;GET_CERTDATA&quot;</string>
+                <string>state</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>del:</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:get_certdata</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n2">
+            <attr name="label">
+                <string>to</string>
             </attr>
         </edge>
     </graph>

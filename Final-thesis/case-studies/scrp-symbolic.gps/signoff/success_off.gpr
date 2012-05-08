@@ -10,19 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
+        <node id="n4">
             <attr name="layout">
-                <string>279 144 81 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>75 127 82 67</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>436 144 48 33</string>
+                <string>123 60 93 37</string>
             </attr>
         </node>
         <node id="n3">
@@ -30,49 +20,29 @@
                 <string>7 60 87 37</string>
             </attr>
         </node>
-        <node id="n4">
+        <node id="n1">
             <attr name="layout">
-                <string>123 60 93 37</string>
+                <string>436 144 48 33</string>
             </attr>
         </node>
-        <node id="n5">
+        <node id="n0">
             <attr name="layout">
-                <string>294 62 102 37</string>
+                <string>96 144 40 33</string>
             </attr>
         </node>
-        <edge to="n2" from="n2">
+        <node id="n2">
+            <attr name="layout">
+                <string>279 144 81 33</string>
+            </attr>
+        </node>
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>del:</string>
+                <string>string:&quot;SS_OFF&quot;</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n2">
-            <attr name="label">
-                <string>type</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n0">
-            <attr name="label">
-                <string>new:state</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>del:state</string>
+                <string>string:&quot;SS_ON&quot;</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -85,19 +55,39 @@
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>string:&quot;SS_ON&quot;</string>
+                <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge to="n3" from="n0">
             <attr name="label">
-                <string>string:&quot;SS_OFF&quot;</string>
+                <string>del:state</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge to="n4" from="n0">
             <attr name="label">
-                <string>string:&quot;SIGNOFF&quot;</string>
+                <string>new:state</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>del:</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:signoff</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n2">
+            <attr name="label">
+                <string>to</string>
             </attr>
         </edge>
     </graph>

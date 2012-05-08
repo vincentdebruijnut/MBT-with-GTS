@@ -10,14 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n1">
+        <node id="n11">
             <attr name="layout">
-                <string>158 198 81 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>160 15 81 50</string>
+                <string>307 103 48 33</string>
             </attr>
         </node>
         <node id="n2">
@@ -25,61 +20,16 @@
                 <string>56 104 40 33</string>
             </attr>
         </node>
-        <node id="n11">
+        <node id="n0">
             <attr name="layout">
-                <string>307 103 48 33</string>
+                <string>160 23 81 33</string>
             </attr>
         </node>
-        <node id="n3">
+        <node id="n1">
             <attr name="layout">
-                <string>291 23 130 37</string>
+                <string>158 198 81 33</string>
             </attr>
         </node>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>new:</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>type</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n11" from="n2">
-            <attr name="label">
-                <string>connection</string>
-            </attr>
-        </edge>
         <edge to="n11" from="n11">
             <attr name="label">
                 <string>type:SFU</string>
@@ -95,9 +45,49 @@
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>string:&quot;IDLE&quot;</string>
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n2">
+            <attr name="label">
+                <string>connection</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>new:</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>flag:idle</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>to</string>
             </attr>
         </edge>
     </graph>

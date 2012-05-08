@@ -10,6 +10,16 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
+        <node id="n6">
+            <attr name="layout">
+                <string>10 321 34 38</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>83 323 29 33</string>
+            </attr>
+        </node>
         <node id="n3">
             <attr name="layout">
                 <string>124 34 83 37</string>
@@ -22,7 +32,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>42 328 97 37</string>
+                <string>180 278 97 37</string>
             </attr>
         </node>
         <node id="n0">
@@ -35,6 +45,36 @@
                 <string>50 258 79 33</string>
             </attr>
         </node>
+        <node id="n7">
+            <attr name="layout">
+                <string>261 125 48 33</string>
+            </attr>
+        </node>
+        <node id="n8">
+            <attr name="layout">
+                <string>321 50 72 37</string>
+            </attr>
+        </node>
+        <node id="n9">
+            <attr name="layout">
+                <string>198 43 73 37</string>
+            </attr>
+        </node>
+        <edge to="n6" from="n6">
+            <attr name="label">
+                <string>exists=x:</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n6">
+            <attr name="label">
+                <string>in</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n5">
+            <attr name="label">
+                <string>forall:</string>
+            </attr>
+        </edge>
         <edge to="n3" from="n3">
             <attr name="label">
                 <string>string:&quot;DOWN&quot;</string>
@@ -65,14 +105,14 @@
                 <string>del:state</string>
             </attr>
         </edge>
-        <edge to="n4" from="n0">
-            <attr name="label">
-                <string>not:has</string>
-            </attr>
-        </edge>
         <edge to="n3" from="n0">
             <attr name="label">
                 <string>new:state</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n0">
+            <attr name="label">
+                <string>not=x:has</string>
             </attr>
         </edge>
         <edge to="n4" from="n4">
@@ -80,9 +120,39 @@
                 <string>type:Account</string>
             </attr>
         </edge>
+        <edge to="n5" from="n4">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
         <edge to="n1" from="n4">
             <attr name="label">
                 <string>not:state</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n7">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n9" from="n7">
+            <attr name="label">
+                <string>del:request</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n7">
+            <attr name="label">
+                <string>new:request</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n8">
+            <attr name="label">
+                <string>string:&quot;none&quot;</string>
+            </attr>
+        </edge>
+        <edge to="n9" from="n9">
+            <attr name="label">
+                <string>string:</string>
             </attr>
         </edge>
     </graph>

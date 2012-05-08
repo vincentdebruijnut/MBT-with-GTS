@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="terminate.terminating">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.article_return.no_such_article">
         <attr name="transitionLabel">
-            <string>221</string>
+            <string>511</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -10,44 +10,59 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n4">
-            <attr name="layout">
-                <string>40 238 97 37</string>
-            </attr>
-        </node>
         <node id="n3">
             <attr name="layout">
-                <string>47 163 79 33</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>200 58 81 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>33 49 109 50</string>
+                <string>23 154 80 50</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>369 53 48 33</string>
+                <string>285 73 48 33</string>
             </attr>
         </node>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>string:&quot;AS_IDLE&quot;</string>
+        <node id="n0">
+            <attr name="layout">
+                <string>29 62 63 50</string>
             </attr>
-        </edge>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>130 65 105 50</string>
+            </attr>
+        </node>
         <edge to="n3" from="n3">
             <attr name="label">
                 <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n4" from="n3">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>not:state</string>
+                <string>flag:AS_OPEN</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>flag:SS_ON</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n0">
+            <attr name="label">
+                <string>has</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -62,37 +77,12 @@
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>flag:quit</string>
+                <string>flag:artret_nexist</string>
             </attr>
         </edge>
         <edge to="n0" from="n2">
             <attr name="label">
                 <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>new:flag:terminating</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
             </attr>
         </edge>
     </graph>

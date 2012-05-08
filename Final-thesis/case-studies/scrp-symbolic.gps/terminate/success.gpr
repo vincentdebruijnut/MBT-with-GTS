@@ -10,29 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n4">
+        <node id="n3">
             <attr name="layout">
-                <string>78 263 79 33</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>535 102 48 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>41 94 103 50</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>281 161 81 50</string>
-            </attr>
-        </node>
-        <node id="n8">
-            <attr name="layout">
-                <string>114 15 83 37</string>
+                <string>244 294 97 37</string>
             </attr>
         </node>
         <node id="n9">
@@ -40,64 +20,54 @@
                 <string>0 15 73 37</string>
             </attr>
         </node>
-        <node id="n3">
+        <node id="n8">
             <attr name="layout">
-                <string>244 294 97 37</string>
+                <string>114 15 83 37</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>281 161 81 50</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>41 94 103 50</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>535 102 48 33</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>78 263 79 33</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>357 232 70 37</string>
+                <string>95 324 29 33</string>
             </attr>
         </node>
-        <edge to="n4" from="n4">
+        <node id="n6">
+            <attr name="layout">
+                <string>28 322 34 38</string>
+            </attr>
+        </node>
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>type:Account</string>
+                <string>string:&quot;AS_IDLE&quot;</string>
             </attr>
         </edge>
-        <edge to="n3" from="n4">
+        <edge to="n9" from="n9">
             <attr name="label">
-                <string>not:state</string>
+                <string>string:</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n8" from="n8">
             <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>not:flag:terminating</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n0">
-            <attr name="label">
-                <string>del:connection</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n0">
-            <attr name="label">
-                <string>not:has</string>
-            </attr>
-        </edge>
-        <edge to="n8" from="n0">
-            <attr name="label">
-                <string>new:state</string>
-            </attr>
-        </edge>
-        <edge to="n9" from="n0">
-            <attr name="label">
-                <string>del:state</string>
+                <string>string:&quot;DOWN&quot;</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -110,34 +80,84 @@
                 <string>type:Request</string>
             </attr>
         </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:quit</string>
+            </attr>
+        </edge>
         <edge to="n0" from="n2">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n5" from="n2">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>type</string>
+                <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n8" from="n8">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>string:&quot;DOWN&quot;</string>
+                <string>not:flag:terminating</string>
             </attr>
         </edge>
-        <edge to="n9" from="n9">
+        <edge to="n4" from="n0">
             <attr name="label">
-                <string>string:</string>
+                <string>not=x:has</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n8" from="n0">
             <attr name="label">
-                <string>string:&quot;AS_IDLE&quot;</string>
+                <string>new:state</string>
+            </attr>
+        </edge>
+        <edge to="n9" from="n0">
+            <attr name="label">
+                <string>del:state</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n0">
+            <attr name="label">
+                <string>del:connection</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n4">
+            <attr name="label">
+                <string>not:state</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n4">
+            <attr name="label">
+                <string>at</string>
             </attr>
         </edge>
         <edge to="n5" from="n5">
             <attr name="label">
-                <string>string:&quot;QUIT&quot;</string>
+                <string>forall:</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n6">
+            <attr name="label">
+                <string>exists=x:</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n6">
+            <attr name="label">
+                <string>in</string>
             </attr>
         </edge>
     </graph>

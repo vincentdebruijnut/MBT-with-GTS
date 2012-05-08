@@ -4,15 +4,23 @@
         <attr name="transitionLabel">
             <string>?QUIT</string>
         </attr>
-        <attr name="$version">
-            <string>curly</string>
+        <attr name="enabled">
+            <string>false</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n11">
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n1">
             <attr name="layout">
-                <string>306 99 48 33</string>
+                <string>167 193 81 33</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>164 19 81 33</string>
             </attr>
         </node>
         <node id="n2">
@@ -20,34 +28,44 @@
                 <string>64 100 40 33</string>
             </attr>
         </node>
-        <node id="n0">
+        <node id="n11">
             <attr name="layout">
-                <string>164 11 81 50</string>
+                <string>306 99 48 33</string>
             </attr>
         </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>167 193 81 33</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>311 7 70 37</string>
-            </attr>
-        </node>
-        <edge to="n11" from="n11">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>type:SFU</string>
+                <string>not:</string>
             </attr>
         </edge>
-        <edge to="n1" from="n11">
+        <edge to="n2" from="n1">
             <attr name="label">
-                <string>from</string>
+                <string>to</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>from</string>
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>new:</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>flag:quit</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:Request</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -60,44 +78,19 @@
                 <string>connection</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n1" from="n11">
             <attr name="label">
-                <string>new:</string>
+                <string>from</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n0" from="n11">
             <attr name="label">
-                <string>type:Request</string>
+                <string>from</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
+        <edge to="n11" from="n11">
             <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>type</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>string:&quot;QUIT&quot;</string>
+                <string>type:SFU</string>
             </attr>
         </edge>
     </graph>

@@ -10,14 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n5">
+        <node id="n1">
             <attr name="layout">
-                <string>0 32 83 37</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>71 -5 93 37</string>
+                <string>301 57 48 33</string>
             </attr>
         </node>
         <node id="n0">
@@ -25,36 +20,16 @@
                 <string>111 64 40 33</string>
             </attr>
         </node>
-        <node id="n1">
+        <node id="n3">
             <attr name="layout">
-                <string>301 57 48 33</string>
+                <string>71 -5 93 37</string>
             </attr>
         </node>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>string:&quot;DOWN&quot;</string>
+        <node id="n5">
+            <attr name="layout">
+                <string>0 32 83 37</string>
             </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>string:&quot;SS_OFF&quot;</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>new:state</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n0">
-            <attr name="label">
-                <string>del:state</string>
-            </attr>
-        </edge>
+        </node>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:SFU</string>
@@ -63,6 +38,39 @@
         <edge to="n0" from="n1">
             <attr name="label">
                 <string>del:init</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n0">
+            <attr name="label">
+                <string>del:state</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n0">
+            <attr name="label">
+                <string>new:state</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n0">
+            <attr name="label">
+                <string>new:connection</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 131 80 229 129 325 73 12</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>string:&quot;SS_OFF&quot;</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n5">
+            <attr name="label">
+                <string>string:&quot;DOWN&quot;</string>
             </attr>
         </edge>
     </graph>

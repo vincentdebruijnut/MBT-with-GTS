@@ -10,14 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n2">
             <attr name="layout">
-                <string>47 181 96 50</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>63 75 63 50</string>
+                <string>166 76 102 50</string>
             </attr>
         </node>
         <node id="n1">
@@ -25,14 +20,44 @@
                 <string>309 84 48 33</string>
             </attr>
         </node>
-        <node id="n2">
+        <node id="n0">
             <attr name="layout">
-                <string>177 76 81 50</string>
+                <string>74 83 40 33</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
+        <node id="n3">
+            <attr name="layout">
+                <string>55 189 79 33</string>
+            </attr>
+        </node>
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:Account</string>
+                <string>del:</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:rhcopy_exist</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n2">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -50,34 +75,9 @@
                 <string>has</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>del:</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>flag:rhcopy</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
+                <string>type:Account</string>
             </attr>
         </edge>
     </graph>

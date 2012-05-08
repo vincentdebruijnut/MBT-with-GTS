@@ -2,7 +2,7 @@
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
     <graph edgemode="directed" edgeids="false" role="rule" id="account.trans.fail">
         <attr name="transitionLabel">
-            <string>!fail</string>
+            <string>542</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -12,7 +12,12 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>83 63 109 70</string>
+                <string>78 115 121 67</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>84 33 40 33</string>
             </attr>
         </node>
         <edge to="n0" from="n0">
@@ -28,6 +33,16 @@
         <edge to="n0" from="n0">
             <attr name="label">
                 <string>new:flag:AS_CLOSED</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n1">
+            <attr name="label">
+                <string>has</string>
             </attr>
         </edge>
     </graph>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="print.request">
+    <graph edgemode="directed" edgeids="false" role="rule" id="receipt.hardcopy.request_nexist">
         <attr name="transitionLabel">
-            <string>?PRINT</string>
+            <string>?RHCOPY_NEXIST</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -22,7 +22,7 @@
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>152 13 81 50</string>
+                <string>141 13 102 50</string>
             </attr>
         </node>
         <node id="n1">
@@ -45,12 +45,12 @@
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n1" from="n11">
+        <edge to="n0" from="n11">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
+        <edge to="n1" from="n11">
             <attr name="label">
                 <string>from</string>
             </attr>
@@ -67,7 +67,7 @@
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>flag:print</string>
+                <string>flag:rhcopy_nexist</string>
             </attr>
         </edge>
         <edge to="n2" from="n0">

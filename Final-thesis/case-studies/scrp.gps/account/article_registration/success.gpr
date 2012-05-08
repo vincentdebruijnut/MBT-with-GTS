@@ -10,14 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n2">
             <attr name="layout">
-                <string>50 166 80 50</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>72 61 40 33</string>
+                <string>155 56 81 50</string>
             </attr>
         </node>
         <node id="n1">
@@ -25,19 +20,44 @@
                 <string>303 63 48 33</string>
             </attr>
         </node>
-        <node id="n2">
+        <node id="n0">
             <attr name="layout">
-                <string>155 56 81 50</string>
+                <string>60 52 63 50</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
+        <node id="n3">
+            <attr name="layout">
+                <string>50 166 80 50</string>
+            </attr>
+        </node>
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:Account</string>
+                <string>del:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>flag:AS_OPEN</string>
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:artreg_exist</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n2">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -55,34 +75,14 @@
                 <string>has</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>type:SFU</string>
+                <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>del:</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>flag:artreg</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
+                <string>flag:AS_OPEN</string>
             </attr>
         </edge>
     </graph>

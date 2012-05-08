@@ -10,24 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
+        <node id="n5">
             <attr name="layout">
-                <string>188 64 81 50</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>41 71 40 33</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>375 72 48 33</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>23 162 79 33</string>
+                <string>7 218 107 37</string>
             </attr>
         </node>
         <node id="n4">
@@ -35,34 +20,54 @@
                 <string>15 0 87 37</string>
             </attr>
         </node>
-        <node id="n5">
+        <node id="n3">
             <attr name="layout">
-                <string>7 218 107 37</string>
+                <string>23 162 79 33</string>
             </attr>
         </node>
-        <node id="n6">
+        <node id="n1">
             <attr name="layout">
-                <string>178 0 94 37</string>
+                <string>375 72 48 33</string>
             </attr>
         </node>
-        <edge to="n2" from="n2">
+        <node id="n0">
+            <attr name="layout">
+                <string>41 71 40 33</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>188 72 81 33</string>
+            </attr>
+        </node>
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string>del:</string>
+                <string>string:&quot;AS_OPEN&quot;</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>type:Request</string>
+                <string>string:&quot;SS_ON&quot;</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>to</string>
+                <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n6" from="n2">
+        <edge to="n5" from="n3">
             <attr name="label">
-                <string>type</string>
+                <string>state</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -80,39 +85,24 @@
                 <string>state</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:SFU</string>
+                <string>del:</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>from</string>
+                <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:Account</string>
+                <string>flag:artreg</string>
             </attr>
         </edge>
-        <edge to="n5" from="n3">
+        <edge to="n0" from="n2">
             <attr name="label">
-                <string>state</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>string:&quot;SS_ON&quot;</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>string:&quot;AS_OPEN&quot;</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n6">
-            <attr name="label">
-                <string>string:&quot;ARTREG&quot;</string>
+                <string>to</string>
             </attr>
         </edge>
     </graph>

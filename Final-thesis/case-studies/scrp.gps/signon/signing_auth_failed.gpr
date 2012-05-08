@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.trans.request">
+    <graph edgemode="directed" edgeids="false" role="rule" id="signon.signing_auth_failed">
         <attr name="transitionLabel">
-            <string>?TRANS</string>
+            <string>551</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -12,37 +12,22 @@
         </attr>
         <node id="n1">
             <attr name="layout">
-                <string>293 108 48 33</string>
+                <string>361 54 48 33</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>54 107 40 33</string>
+                <string>73 45 63 50</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>154 17 81 50</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>157 203 81 33</string>
-            </attr>
-        </node>
-        <node id="n4">
-            <attr name="layout">
-                <string>315 32 109 37</string>
+                <string>215 49 81 50</string>
             </attr>
         </node>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n1">
-            <attr name="label">
-                <string>from</string>
             </attr>
         </edge>
         <edge to="n2" from="n1">
@@ -55,14 +40,14 @@
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n1" from="n0">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>connection</string>
+                <string>flag:SS_OFF</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>new:</string>
+                <string>del:</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -72,37 +57,12 @@
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>flag:trans</string>
+                <string>flag:signon</string>
             </attr>
         </edge>
         <edge to="n0" from="n2">
             <attr name="label">
                 <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n3">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>string:&quot;TM_BANK&quot;</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>par:0</string>
             </attr>
         </edge>
     </graph>

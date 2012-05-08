@@ -10,24 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n5">
             <attr name="layout">
-                <string>55 189 79 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>74 83 40 33</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>309 84 48 33</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>177 76 81 50</string>
+                <string>8 14 87 37</string>
             </attr>
         </node>
         <node id="n4">
@@ -35,24 +20,64 @@
                 <string>32 262 126 37</string>
             </attr>
         </node>
-        <node id="n5">
+        <node id="n2">
             <attr name="layout">
-                <string>8 14 87 37</string>
+                <string>212 85 81 33</string>
             </attr>
         </node>
-        <node id="n6">
+        <node id="n1">
             <attr name="layout">
-                <string>166 9 95 37</string>
+                <string>354 84 48 33</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
+        <node id="n0">
+            <attr name="layout">
+                <string>74 83 40 33</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>55 189 79 33</string>
+            </attr>
+        </node>
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string>type:Account</string>
+                <string>string:&quot;SS_ON&quot;</string>
             </attr>
         </edge>
-        <edge to="n4" from="n3">
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>state</string>
+                <string>string:&quot;AS_ENDING&quot;</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>del:</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:receipt</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n2">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -70,49 +95,14 @@
                 <string>state</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>type:SFU</string>
+                <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge to="n4" from="n3">
             <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>del:</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n2">
-            <attr name="label">
-                <string>type</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>string:&quot;AS_ENDING&quot;</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>string:&quot;SS_ON&quot;</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n6">
-            <attr name="label">
-                <string>string:&quot;RECEIPT&quot;</string>
+                <string>state</string>
             </attr>
         </edge>
     </graph>

@@ -7,24 +7,64 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n1">
-            <attr name="layout">
-                <string>284 92 48 33</string>
-            </attr>
-        </node>
         <node id="n0">
             <attr name="layout">
                 <string>82 90 40 33</string>
             </attr>
         </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>284 92 48 33</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>25 156 79 50</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>127 158 79 50</string>
+            </attr>
+        </node>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n0">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:CR</string>
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:AS_IDLE</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>flag:AS_IDLE</string>
             </attr>
         </edge>
     </graph>

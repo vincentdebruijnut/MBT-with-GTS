@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.article_registration.request">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.article_return.invalid">
         <attr name="transitionLabel">
-            <string>?ARTREG</string>
+            <string>531</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -10,49 +10,44 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n2">
             <attr name="layout">
-                <string>160 167 81 33</string>
+                <string>45 170 80 50</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>294 98 48 33</string>
+                <string>421 82 48 33</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>65 99 40 33</string>
+                <string>52 71 63 50</string>
             </attr>
         </node>
-        <node id="n2">
+        <node id="n3">
             <attr name="layout">
-                <string>157 16 81 50</string>
+                <string>150 72 203 50</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
+        <edge to="n2" from="n2">
             <attr name="label">
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:Request</string>
+                <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n0" from="n3">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>to</string>
+                <string>flag:AS_OPEN</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
             </attr>
         </edge>
         <edge to="n3" from="n1">
@@ -65,27 +60,32 @@
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n1" from="n0">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>connection</string>
+                <string>flag:SS_ON</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n2" from="n0">
             <attr name="label">
-                <string>new:</string>
+                <string>has</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>del:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>flag:artreg</string>
+                <string>flag:?[artret_exist,artret_nexist]</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
+        <edge to="n0" from="n3">
             <attr name="label">
                 <string>to</string>
             </attr>

@@ -32,12 +32,12 @@
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>295 204 97 37</string>
+                <string>253 223 97 37</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>35 234 73 37</string>
+                <string>31 246 73 37</string>
             </attr>
         </node>
         <node id="n6">
@@ -57,7 +57,17 @@
         </node>
         <node id="n9">
             <attr name="layout">
-                <string>320 0 103 37</string>
+                <string>272 158 79 33</string>
+            </attr>
+        </node>
+        <node id="n10">
+            <attr name="layout">
+                <string>419 160 79 33</string>
+            </attr>
+        </node>
+        <node id="n11">
+            <attr name="layout">
+                <string>437 219 29 33</string>
             </attr>
         </node>
         <edge to="n0" from="n0">
@@ -85,6 +95,16 @@
                 <string>new:state</string>
             </attr>
         </edge>
+        <edge to="n9" from="n0">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n10" from="n0">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:SFU</string>
@@ -105,14 +125,14 @@
                 <string>type:Request</string>
             </attr>
         </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:resetcr</string>
+            </attr>
+        </edge>
         <edge to="n0" from="n2">
             <attr name="label">
                 <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n9" from="n2">
-            <attr name="label">
-                <string>type</string>
             </attr>
         </edge>
         <edge to="n4" from="n4">
@@ -145,14 +165,14 @@
                 <string>del:state</string>
             </attr>
         </edge>
-        <edge to="n5" from="n6">
-            <attr name="label">
-                <string>new:state</string>
-            </attr>
-        </edge>
         <edge to="n4" from="n6">
             <attr name="label">
                 <string>at</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n6">
+            <attr name="label">
+                <string>new:state</string>
             </attr>
         </edge>
         <edge to="n7" from="n7">
@@ -167,7 +187,32 @@
         </edge>
         <edge to="n9" from="n9">
             <attr name="label">
-                <string>string:&quot;RESETCR&quot;</string>
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n10" from="n9">
+            <attr name="label">
+                <string>del:next</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n9">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge to="n10" from="n10">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n10">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n11">
+            <attr name="label">
+                <string>forall:</string>
             </attr>
         </edge>
     </graph>

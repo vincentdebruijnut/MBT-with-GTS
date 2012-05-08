@@ -10,24 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n0">
+        <node id="n4">
             <attr name="layout">
-                <string>242 93 81 50</string>
-            </attr>
-        </node>
-        <node id="n11">
-            <attr name="layout">
-                <string>402 100 48 33</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>53 99 40 33</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>231 15 100 37</string>
+                <string>0 20 115 37</string>
             </attr>
         </node>
         <node id="n3">
@@ -35,29 +20,44 @@
                 <string>126 15 87 37</string>
             </attr>
         </node>
-        <node id="n4">
+        <node id="n2">
             <attr name="layout">
-                <string>0 20 115 37</string>
+                <string>53 99 40 33</string>
             </attr>
         </node>
-        <edge to="n0" from="n0">
+        <node id="n11">
+            <attr name="layout">
+                <string>402 100 48 33</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>242 101 81 33</string>
+            </attr>
+        </node>
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>del:</string>
+                <string>string:&quot;SS_ERROR&quot;</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>type:Request</string>
+                <string>string:&quot;SS_ON&quot;</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>to</string>
+                <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n1" from="n0">
+        <edge to="n3" from="n2">
             <attr name="label">
-                <string>type</string>
+                <string>new:state</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n2">
+            <attr name="label">
+                <string>del:state</string>
             </attr>
         </edge>
         <edge to="n11" from="n11">
@@ -70,34 +70,24 @@
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:CR</string>
+                <string>del:</string>
             </attr>
         </edge>
-        <edge to="n4" from="n2">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>del:state</string>
+                <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n3" from="n2">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>new:state</string>
+                <string>flag:resume</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n2" from="n0">
             <attr name="label">
-                <string>string:&quot;RESUME&quot;</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>string:&quot;SS_ON&quot;</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>string:&quot;SS_ERROR&quot;</string>
+                <string>to</string>
             </attr>
         </edge>
     </graph>

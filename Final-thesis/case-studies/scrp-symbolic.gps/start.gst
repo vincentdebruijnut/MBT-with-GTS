@@ -29,7 +29,7 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>105 263 97 37</string>
+                <string>130 263 97 37</string>
             </attr>
         </node>
         <node id="n5">
@@ -42,11 +42,6 @@
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
         <edge to="n3" from="n0">
             <attr name="label">
                 <string>has</string>
@@ -57,19 +52,24 @@
                 <string>state</string>
             </attr>
         </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
         <edge to="n4" from="n2">
             <attr name="label">
                 <string>state</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:Account</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">

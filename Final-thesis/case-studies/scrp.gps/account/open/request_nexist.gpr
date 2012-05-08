@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.open.request">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.open.request_nexist">
         <attr name="transitionLabel">
-            <string>?OPEN</string>
+            <string>?OPEN_NEXIST</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -10,34 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n4">
-            <attr name="layout">
-                <string>594 388 52 37</string>
-            </attr>
-        </node>
-        <node id="n5">
-            <attr name="layout">
-                <string>600 309 43 43</string>
-            </attr>
-        </node>
         <node id="n3">
             <attr name="layout">
-                <string>606 229 30 37</string>
-            </attr>
-        </node>
-        <node id="n7">
-            <attr name="layout">
-                <string>472 313 43 37</string>
-            </attr>
-        </node>
-        <node id="n8">
-            <attr name="layout">
-                <string>387 315 29 33</string>
-            </attr>
-        </node>
-        <node id="n6">
-            <attr name="layout">
-                <string>359 232 79 33</string>
+                <string>318 237 79 50</string>
             </attr>
         </node>
         <node id="n1">
@@ -47,12 +22,12 @@
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>148 21 81 50</string>
+                <string>143 21 90 50</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>10 85 103 50</string>
+                <string>41 93 40 33</string>
             </attr>
         </node>
         <node id="n11">
@@ -60,59 +35,14 @@
                 <string>299 93 48 33</string>
             </attr>
         </node>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>bool:true</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>prod:</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n5">
-            <attr name="label">
-                <string>int:lt</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n5">
-            <attr name="label">
-                <string>arg:0</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n5">
-            <attr name="label">
-                <string>arg:1</string>
-            </attr>
-        </edge>
         <edge to="n3" from="n3">
-            <attr name="label">
-                <string>int:2</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n7">
-            <attr name="label">
-                <string>int:</string>
-            </attr>
-        </edge>
-        <edge to="n8" from="n8">
-            <attr name="label">
-                <string>forall:</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n8">
-            <attr name="label">
-                <string>count</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n6">
             <attr name="label">
                 <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n8" from="n6">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>at</string>
+                <string>flag:AS_IDLE</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -142,7 +72,7 @@
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>flag:open</string>
+                <string>flag:open_nexist</string>
             </attr>
         </edge>
         <edge to="n2" from="n0">
@@ -153,11 +83,6 @@
         <edge to="n2" from="n2">
             <attr name="label">
                 <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>not:flag:terminating</string>
             </attr>
         </edge>
         <edge to="n11" from="n2">
