@@ -1,0 +1,3 @@
+alap {
+	get_variable_success("name", "value") | other;
+}

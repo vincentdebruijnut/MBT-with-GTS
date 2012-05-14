@@ -43,6 +43,11 @@
                 <string>connection</string>
             </attr>
         </edge>
+        <edge to="n11" from="n11">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
         <edge to="n1" from="n11">
             <attr name="label">
                 <string>from</string>
@@ -51,11 +56,6 @@
         <edge to="n0" from="n11">
             <attr name="label">
                 <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n11" from="n11">
-            <attr name="label">
-                <string>type:SFU</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">

@@ -10,41 +10,21 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n1">
-            <attr name="layout">
-                <string>361 54 48 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>73 45 63 50</string>
-            </attr>
-        </node>
         <node id="n2">
             <attr name="layout">
                 <string>215 49 81 50</string>
             </attr>
         </node>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
+        <node id="n0">
+            <attr name="layout">
+                <string>84 53 40 33</string>
             </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>361 54 48 33</string>
             </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>flag:SS_OFF</string>
-            </attr>
-        </edge>
+        </node>
         <edge to="n2" from="n2">
             <attr name="label">
                 <string>del:</string>
@@ -57,12 +37,27 @@
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>flag:signon</string>
+                <string>flag:signon_nexist</string>
             </attr>
         </edge>
         <edge to="n0" from="n2">
             <attr name="label">
                 <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
     </graph>

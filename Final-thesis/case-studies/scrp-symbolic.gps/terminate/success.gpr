@@ -10,11 +10,6 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
-            <attr name="layout">
-                <string>244 294 97 37</string>
-            </attr>
-        </node>
         <node id="n9">
             <attr name="layout">
                 <string>0 15 73 37</string>
@@ -40,26 +35,6 @@
                 <string>535 102 48 33</string>
             </attr>
         </node>
-        <node id="n4">
-            <attr name="layout">
-                <string>78 263 79 33</string>
-            </attr>
-        </node>
-        <node id="n5">
-            <attr name="layout">
-                <string>95 324 29 33</string>
-            </attr>
-        </node>
-        <node id="n6">
-            <attr name="layout">
-                <string>28 322 34 38</string>
-            </attr>
-        </node>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>string:&quot;AS_IDLE&quot;</string>
-            </attr>
-        </edge>
         <edge to="n9" from="n9">
             <attr name="label">
                 <string>string:</string>
@@ -95,14 +70,9 @@
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n1" from="n0">
             <attr name="label">
-                <string>not:flag:terminating</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n0">
-            <attr name="label">
-                <string>not=x:has</string>
+                <string>del:connection</string>
             </attr>
         </edge>
         <edge to="n8" from="n0">
@@ -115,11 +85,6 @@
                 <string>del:state</string>
             </attr>
         </edge>
-        <edge to="n1" from="n0">
-            <attr name="label">
-                <string>del:connection</string>
-            </attr>
-        </edge>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:SFU</string>
@@ -128,36 +93,6 @@
         <edge to="n2" from="n1">
             <attr name="label">
                 <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n4">
-            <attr name="label">
-                <string>not:state</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n4">
-            <attr name="label">
-                <string>at</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>forall:</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n6">
-            <attr name="label">
-                <string>exists=x:</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n6">
-            <attr name="label">
-                <string>in</string>
             </attr>
         </edge>
     </graph>

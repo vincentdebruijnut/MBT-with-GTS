@@ -4,6 +4,9 @@
         <attr name="transitionLabel">
             <string>?RHCOPY</string>
         </attr>
+        <attr name="enabled">
+            <string>false</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -62,11 +65,6 @@
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
                 <string>flag:rhcopy</string>
             </attr>
         </edge>
@@ -75,19 +73,24 @@
                 <string>to</string>
             </attr>
         </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
         <edge to="n2" from="n1">
             <attr name="label">
                 <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:Request</string>
             </attr>
         </edge>
     </graph>

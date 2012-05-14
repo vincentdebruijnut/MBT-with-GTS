@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="get_variable.success">
+    <graph edgemode="directed" edgeids="false" role="rule" id="artid.no_such_article">
         <attr name="transitionLabel">
-            <string>210</string>
+            <string>511</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>75 84 40 33</string>
+                <string>74 84 40 33</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>309 84 48 33</string>
+                <string>319 83 48 33</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>177 76 81 50</string>
+                <string>174 76 87 50</string>
             </attr>
         </node>
         <edge to="n0" from="n0">
@@ -49,7 +52,7 @@
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>flag:get</string>
+                <string>flag:artid_nexist</string>
             </attr>
         </edge>
         <edge to="n0" from="n2">

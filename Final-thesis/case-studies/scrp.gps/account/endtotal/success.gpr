@@ -2,7 +2,7 @@
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
     <graph edgemode="directed" edgeids="false" role="rule" id="account.endtotal.success">
         <attr name="transitionLabel">
-            <string>201</string>
+            <string>230_endtot</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -40,24 +40,24 @@
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>flag:endtot</string>
-            </attr>
-        </edge>
         <edge to="n2" from="n0">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n11" from="n11">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:SFU</string>
+                <string>flag:endtot</string>
             </attr>
         </edge>
         <edge to="n0" from="n11">
             <attr name="label">
                 <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n11">
+            <attr name="label">
+                <string>type:SFU</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">

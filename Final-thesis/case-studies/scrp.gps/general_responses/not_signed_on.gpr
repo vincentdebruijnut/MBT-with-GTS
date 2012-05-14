@@ -7,6 +7,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
         <node id="n0">
             <attr name="layout">
                 <string>47 33 72 50</string>
@@ -19,7 +22,7 @@
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>183 30 81 50</string>
+                <string>183 12 81 84</string>
             </attr>
         </node>
         <edge to="n0" from="n0">

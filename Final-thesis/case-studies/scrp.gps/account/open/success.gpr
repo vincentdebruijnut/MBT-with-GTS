@@ -2,7 +2,7 @@
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
     <graph edgemode="directed" edgeids="false" role="rule" id="account.open.success">
         <attr name="transitionLabel">
-            <string>230</string>
+            <string>231</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -57,12 +57,12 @@
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:Account</string>
+                <string>del:flag:AS_IDLE</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>del:flag:AS_IDLE</string>
+                <string>type:Account</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -85,9 +85,9 @@
                 <string>del:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n2" from="n3">
             <attr name="label">
-                <string>type:Request</string>
+                <string>to</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
@@ -95,9 +95,9 @@
                 <string>flag:open_exist</string>
             </attr>
         </edge>
-        <edge to="n2" from="n3">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>to</string>
+                <string>type:Request</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -107,12 +107,12 @@
         </edge>
         <edge to="n1" from="n1">
             <attr name="label">
-                <string>type:Account</string>
+                <string>flag:AS_OPEN</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
             <attr name="label">
-                <string>flag:AS_OPEN</string>
+                <string>type:Account</string>
             </attr>
         </edge>
     </graph>

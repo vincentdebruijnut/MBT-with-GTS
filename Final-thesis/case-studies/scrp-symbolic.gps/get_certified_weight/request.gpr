@@ -4,6 +4,9 @@
         <attr name="transitionLabel">
             <string>?GET_CERTDATA</string>
         </attr>
+        <attr name="enabled">
+            <string>false</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -35,19 +38,24 @@
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
         <edge to="n2" from="n1">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
         <edge to="n0" from="n0">
             <attr name="label">
                 <string>new:</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>to</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -58,11 +66,6 @@
         <edge to="n0" from="n0">
             <attr name="label">
                 <string>flag:get_certdata</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>to</string>
             </attr>
         </edge>
         <edge to="n11" from="n11">

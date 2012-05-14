@@ -4,6 +4,9 @@
         <attr name="transitionLabel">
             <string>?GET</string>
         </attr>
+        <attr name="enabled">
+            <string>false</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -32,7 +35,12 @@
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>335 42 103 37</string>
+                <string>349 19 105 37</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>385 145 73 37</string>
             </attr>
         </node>
         <edge to="n2" from="n2">
@@ -45,14 +53,24 @@
                 <string>connection</string>
             </attr>
         </edge>
+        <edge to="n0" from="n11">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n11">
+            <attr name="label">
+                <string>del:var_name</string>
+            </attr>
+        </edge>
         <edge to="n11" from="n11">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
+        <edge to="n3" from="n11">
             <attr name="label">
-                <string>from</string>
+                <string>new:var_name</string>
             </attr>
         </edge>
         <edge to="n1" from="n11">
@@ -65,9 +83,9 @@
                 <string>new:</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n2" from="n0">
             <attr name="label">
-                <string>type:Request</string>
+                <string>to</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -75,9 +93,9 @@
                 <string>flag:get</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>to</string>
+                <string>type:Request</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -85,14 +103,14 @@
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
         <edge to="n2" from="n1">
             <attr name="label">
                 <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:Request</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
@@ -103,6 +121,11 @@
         <edge to="n3" from="n3">
             <attr name="label">
                 <string>par:0</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>string:</string>
             </attr>
         </edge>
     </graph>

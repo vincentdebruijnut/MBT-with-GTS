@@ -4,6 +4,9 @@
         <attr name="transitionLabel">
             <string>?ARTID</string>
         </attr>
+        <attr name="enabled">
+            <string>false</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -60,6 +63,11 @@
                 <string>new:</string>
             </attr>
         </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
         <edge to="n0" from="n0">
             <attr name="label">
                 <string>type:Request</string>
@@ -70,24 +78,19 @@
                 <string>flag:artid</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
         <edge to="n2" from="n1">
             <attr name="label">
                 <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:Request</string>
             </attr>
         </edge>
     </graph>

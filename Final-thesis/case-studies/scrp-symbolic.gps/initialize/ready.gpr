@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="signoff.success_off">
+    <graph edgemode="directed" edgeids="false" role="rule" id="initialize.ready">
         <attr name="transitionLabel">
-            <string>250</string>
+            <string>220</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -10,49 +10,34 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n4">
+        <node id="n5">
             <attr name="layout">
-                <string>123 60 93 37</string>
+                <string>0 32 83 37</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>7 60 87 37</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>436 144 48 33</string>
+                <string>71 -5 93 37</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>96 144 40 33</string>
+                <string>111 64 40 33</string>
             </attr>
         </node>
-        <node id="n2">
+        <node id="n1">
             <attr name="layout">
-                <string>279 144 81 33</string>
+                <string>301 57 48 33</string>
             </attr>
         </node>
-        <edge to="n4" from="n4">
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string>string:&quot;SS_OFF&quot;</string>
+                <string>string:&quot;DOWN&quot;</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
             <attr name="label">
-                <string>string:&quot;SS_ON&quot;</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
+                <string>string:&quot;SS_OFF&quot;</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -62,32 +47,30 @@
         </edge>
         <edge to="n3" from="n0">
             <attr name="label">
-                <string>del:state</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n0">
-            <attr name="label">
                 <string>new:state</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n5" from="n0">
             <attr name="label">
-                <string>del:</string>
+                <string>del:state</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n1" from="n0">
             <attr name="label">
-                <string>type:Request</string>
+                <string>new:connection</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 131 80 229 129 325 73 12</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n1" from="n0">
             <attr name="label">
-                <string>flag:signoff</string>
+                <string>not:connection</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>to</string>
+                <string>type:SFU</string>
             </attr>
         </edge>
     </graph>

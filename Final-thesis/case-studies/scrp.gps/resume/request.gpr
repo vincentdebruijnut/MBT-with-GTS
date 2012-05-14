@@ -40,6 +40,11 @@
                 <string>connection</string>
             </attr>
         </edge>
+        <edge to="n0" from="n11">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
         <edge to="n11" from="n11">
             <attr name="label">
                 <string>type:SFU</string>
@@ -50,19 +55,9 @@
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
         <edge to="n0" from="n0">
             <attr name="label">
                 <string>new:</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:Request</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -75,19 +70,24 @@
                 <string>to</string>
             </attr>
         </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
         <edge to="n2" from="n1">
             <attr name="label">
                 <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:Request</string>
             </attr>
         </edge>
     </graph>

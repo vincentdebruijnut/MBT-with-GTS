@@ -12,7 +12,7 @@
         </attr>
         <node id="n2">
             <attr name="layout">
-                <string>69 64 63 50</string>
+                <string>80 72 40 33</string>
             </attr>
         </node>
         <node id="n1">
