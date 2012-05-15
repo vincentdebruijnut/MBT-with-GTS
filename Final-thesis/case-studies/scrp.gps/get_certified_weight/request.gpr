@@ -2,7 +2,7 @@
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
     <graph edgemode="directed" edgeids="false" role="rule" id="get_certified_weight.request">
         <attr name="transitionLabel">
-            <string>?GET_CERTDATA</string>
+            <string>?GET</string>
         </attr>
         <attr name="enabled">
             <string>false</string>
@@ -13,6 +13,11 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
+        <node id="n3">
+            <attr name="layout">
+                <string>39 263 117 37</string>
+            </attr>
+        </node>
         <node id="n1">
             <attr name="layout">
                 <string>154 202 81 33</string>
@@ -20,7 +25,7 @@
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>152 13 81 50</string>
+                <string>141 13 102 50</string>
             </attr>
         </node>
         <node id="n11">
@@ -33,14 +38,19 @@
                 <string>50 102 40 33</string>
             </attr>
         </node>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>string:&quot;CERTDATA&quot;</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>par:0</string>
+            </attr>
+        </edge>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>to</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -48,9 +58,19 @@
                 <string>type:Request</string>
             </attr>
         </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
         <edge to="n0" from="n0">
             <attr name="label">
                 <string>new:</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:Request</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -63,22 +83,17 @@
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n11">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
         <edge to="n11" from="n11">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
         <edge to="n1" from="n11">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n11">
             <attr name="label">
                 <string>from</string>
             </attr>

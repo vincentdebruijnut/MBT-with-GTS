@@ -10,14 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
+        <node id="n3">
             <attr name="layout">
-                <string>45 170 80 50</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>421 82 48 33</string>
+                <string>150 72 203 50</string>
             </attr>
         </node>
         <node id="n0">
@@ -25,46 +20,16 @@
                 <string>63 79 40 33</string>
             </attr>
         </node>
-        <node id="n3">
+        <node id="n1">
             <attr name="layout">
-                <string>150 72 203 50</string>
+                <string>421 82 48 33</string>
             </attr>
         </node>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>not:</string>
+        <node id="n2">
+            <attr name="layout">
+                <string>45 170 80 50</string>
             </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>flag:AS_OPEN</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
+        </node>
         <edge to="n3" from="n3">
             <attr name="label">
                 <string>del:</string>
@@ -83,6 +48,46 @@
         <edge to="n0" from="n3">
             <attr name="label">
                 <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>flag:SS_ON</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:AS_OPEN</string>
             </attr>
         </edge>
     </graph>

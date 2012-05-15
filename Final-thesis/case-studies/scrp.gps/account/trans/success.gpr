@@ -4,25 +4,53 @@
         <attr name="transitionLabel">
             <string>240</string>
         </attr>
-        <attr name="$version">
-            <string>curly</string>
+        <attr name="enabled">
+            <string>false</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n0">
-            <attr name="layout">
-                <string>55 126 121 67</string>
-            </attr>
-        </node>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
         <node id="n1">
             <attr name="layout">
-                <string>89 23 40 33</string>
+                <string>86 66 40 33</string>
             </attr>
         </node>
-        <edge to="n0" from="n0">
+        <node id="n0">
+            <attr name="layout">
+                <string>52 169 121 67</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>193 16 60 37</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>204 89 52 37</string>
+            </attr>
+        </node>
+        <edge to="n2" from="n1">
             <attr name="label">
-                <string>type:Account</string>
+                <string>del:stored_account</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n1">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n1">
+            <attr name="label">
+                <string>new:stored_account</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:CR</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -35,14 +63,19 @@
                 <string>del:flag:AS_TRANSING</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:CR</string>
+                <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n0" from="n1">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>has</string>
+                <string>bool:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>bool:true</string>
             </attr>
         </edge>
     </graph>

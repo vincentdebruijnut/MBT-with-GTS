@@ -4,68 +4,90 @@
         <attr name="transitionLabel">
             <string>?OPEN_EXIST</string>
         </attr>
-        <attr name="enabled">
-            <string>false</string>
-        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n4">
             <attr name="layout">
-                <string>53 299 79 50</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>151 180 81 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>143 21 90 50</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>41 93 40 33</string>
+                <string>364 173 63 50</string>
             </attr>
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>299 93 48 33</string>
+                <string>341 95 48 33</string>
             </attr>
         </node>
-        <node id="n4">
+        <node id="n2">
             <attr name="layout">
-                <string>58 219 63 50</string>
+                <string>83 95 40 33</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
+        <node id="n0">
+            <attr name="layout">
+                <string>185 23 90 50</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>193 182 81 33</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>359 253 79 50</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>75 211 52 37</string>
+            </attr>
+        </node>
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>type:Account</string>
+                <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>flag:AS_IDLE</string>
+                <string>flag:SS_ON</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n3" from="n4">
             <attr name="label">
-                <string>not:</string>
+                <string>has</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n11" from="n11">
             <attr name="label">
-                <string>type:Request</string>
+                <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge to="n0" from="n11">
             <attr name="label">
-                <string>to</string>
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n11">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n2">
+            <attr name="label">
+                <string>connection</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n2">
+            <attr name="label">
+                <string>stored_account</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -88,44 +110,34 @@
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>type:CR</string>
+                <string>not:</string>
             </attr>
         </edge>
-        <edge to="n11" from="n2">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>connection</string>
+                <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
+        <edge to="n2" from="n1">
             <attr name="label">
-                <string>from</string>
+                <string>to</string>
             </attr>
         </edge>
-        <edge to="n1" from="n11">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>from</string>
+                <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n11" from="n11">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>type:SFU</string>
+                <string>flag:AS_IDLE</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string>flag:SS_ON</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n4">
-            <attr name="label">
-                <string>has</string>
+                <string>bool:true</string>
             </attr>
         </edge>
     </graph>

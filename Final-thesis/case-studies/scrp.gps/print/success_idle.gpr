@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="receipt.hardcopy.request_nexist">
+    <graph edgemode="directed" edgeids="false" role="rule" id="print.success_idle">
         <attr name="transitionLabel">
-            <string>?RHCOPY_NEXIST</string>
+            <string>260</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -12,82 +12,77 @@
         </attr>
         <node id="n2">
             <attr name="layout">
-                <string>50 102 40 33</string>
-            </attr>
-        </node>
-        <node id="n11">
-            <attr name="layout">
-                <string>291 101 48 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>141 13 102 50</string>
+                <string>170 76 95 50</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>154 202 81 33</string>
+                <string>309 84 48 33</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>63 75 63 50</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>56 182 79 50</string>
             </attr>
         </node>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:CR</string>
+                <string>del:</string>
             </attr>
         </edge>
-        <edge to="n11" from="n2">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>connection</string>
+                <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n1" from="n11">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>from</string>
+                <string>flag:print_nexist</string>
             </attr>
         </edge>
-        <edge to="n11" from="n11">
+        <edge to="n0" from="n2">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
+        <edge to="n2" from="n1">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>new:</string>
+                <string>type:CR</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:Request</string>
+                <string>flag:SS_ON</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
+        <edge to="n3" from="n0">
             <attr name="label">
-                <string>to</string>
+                <string>has</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>flag:rhcopy_nexist</string>
+                <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Request</string>
+                <string>flag:AS_IDLE</string>
             </attr>
         </edge>
     </graph>

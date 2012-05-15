@@ -7,19 +7,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n4">
             <attr name="layout">
-                <string>127 158 79 50</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>25 156 79 50</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>284 92 48 33</string>
+                <string>350 25 32 37</string>
             </attr>
         </node>
         <node id="n0">
@@ -27,29 +17,49 @@
                 <string>82 90 40 33</string>
             </attr>
         </node>
-        <node id="n4">
+        <node id="n1">
             <attr name="layout">
-                <string>350 25 32 37</string>
+                <string>284 92 48 33</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
+        <node id="n2">
+            <attr name="layout">
+                <string>63 160 79 50</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>200 300 91 50</string>
+            </attr>
+        </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>94 386 296 37</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>74 21 56 37</string>
+            </attr>
+        </node>
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>type:Account</string>
+                <string>string:&quot;&quot;</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>flag:AS_IDLE</string>
+                <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n2" from="n0">
             <attr name="label">
-                <string>type:Account</string>
+                <string>has</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n3" from="n0">
             <attr name="label">
-                <string>flag:AS_IDLE</string>
+                <string>stored_account</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -62,24 +72,39 @@
                 <string>var_name</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:CR</string>
+                <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n3" from="n0">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>has</string>
+                <string>flag:AS_IDLE</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string>has</string>
+                <string>type:Comment</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string>string:&quot;&quot;</string>
+                <string>flag:final</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n5">
+            <attr name="label">
+                <string>comment</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n6">
+            <attr name="label">
+                <string>string:&quot;This is used to display comments&quot;</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>bool:false</string>
             </attr>
         </edge>
     </graph>

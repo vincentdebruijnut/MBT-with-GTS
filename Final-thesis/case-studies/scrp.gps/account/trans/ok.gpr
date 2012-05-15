@@ -10,39 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n10">
+        <node id="n9">
             <attr name="layout">
-                <string>144 23 81 50</string>
-            </attr>
-        </node>
-        <node id="n5">
-            <attr name="layout">
-                <string>231 327 79 33</string>
-            </attr>
-        </node>
-        <node id="n4">
-            <attr name="layout">
-                <string>59 437 79 33</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>272 158 112 50</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>101 160 96 50</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>36 318 127 67</string>
-            </attr>
-        </node>
-        <node id="n7">
-            <attr name="layout">
-                <string>362 327 29 33</string>
+                <string>285 32 48 33</string>
             </attr>
         </node>
         <node id="n8">
@@ -50,109 +20,49 @@
                 <string>32 22 63 50</string>
             </attr>
         </node>
-        <node id="n9">
+        <node id="n7">
             <attr name="layout">
-                <string>285 32 48 33</string>
+                <string>362 327 29 33</string>
             </attr>
         </node>
-        <edge to="n10" from="n10">
+        <node id="n0">
+            <attr name="layout">
+                <string>36 318 127 67</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>101 160 96 50</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>272 158 112 50</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>59 437 79 33</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>231 327 79 33</string>
+            </attr>
+        </node>
+        <node id="n10">
+            <attr name="layout">
+                <string>144 23 81 50</string>
+            </attr>
+        </node>
+        <edge to="n9" from="n9">
             <attr name="label">
-                <string>del:</string>
+                <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n10" from="n10">
+        <edge to="n10" from="n9">
             <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n10" from="n10">
-            <attr name="label">
-                <string>flag:trans</string>
-            </attr>
-        </edge>
-        <edge to="n8" from="n10">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n5">
-            <attr name="label">
-                <string>at</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n4">
-            <attr name="label">
-                <string>next</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>flag:AS_TRANSING</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>flag:AS_ENDING</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>del:flag:AS_CLOSED</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>new:flag:AS_TRANSING</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n0">
-            <attr name="label">
-                <string>del:next</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n7">
-            <attr name="label">
-                <string>forall:</string>
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n8" from="n8">
@@ -180,14 +90,104 @@
                 <string>has</string>
             </attr>
         </edge>
-        <edge to="n9" from="n9">
+        <edge to="n7" from="n7">
             <attr name="label">
-                <string>type:SFU</string>
+                <string>forall:</string>
             </attr>
         </edge>
-        <edge to="n10" from="n9">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>from</string>
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>del:flag:AS_CLOSED</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>new:flag:AS_ENDING</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n0">
+            <attr name="label">
+                <string>del:next</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:AS_ENDING</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>flag:AS_TRANSING</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n4">
+            <attr name="label">
+                <string>next</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n5">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n5">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge to="n10" from="n10">
+            <attr name="label">
+                <string>del:</string>
+            </attr>
+        </edge>
+        <edge to="n10" from="n10">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n10" from="n10">
+            <attr name="label">
+                <string>flag:trans</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n10">
+            <attr name="label">
+                <string>to</string>
             </attr>
         </edge>
     </graph>

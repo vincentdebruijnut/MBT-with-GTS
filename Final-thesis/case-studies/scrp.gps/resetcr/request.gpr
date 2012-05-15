@@ -4,9 +4,6 @@
         <attr name="transitionLabel">
             <string>?RESETCR</string>
         </attr>
-        <attr name="enabled">
-            <string>false</string>
-        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -33,17 +30,17 @@
                 <string>154 202 81 33</string>
             </attr>
         </node>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
         <edge to="n11" from="n2">
             <attr name="label">
                 <string>connection</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n11">
             <attr name="label">
                 <string>from</string>
             </attr>
@@ -53,7 +50,7 @@
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n1" from="n11">
+        <edge to="n0" from="n11">
             <attr name="label">
                 <string>from</string>
             </attr>

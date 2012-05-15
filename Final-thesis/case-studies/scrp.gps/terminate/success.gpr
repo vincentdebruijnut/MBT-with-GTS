@@ -10,21 +10,46 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
-            <attr name="layout">
-                <string>276 115 81 50</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>67 48 40 50</string>
-            </attr>
-        </node>
         <node id="n1">
             <attr name="layout">
                 <string>530 56 48 33</string>
             </attr>
         </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>16 49 201 50</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>276 115 81 50</string>
+            </attr>
+        </node>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>del:flag:?[SS_ON,SS_OFF,SS_HALT]</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n0">
+            <attr name="label">
+                <string>del:connection</string>
+            </attr>
+        </edge>
         <edge to="n2" from="n2">
             <attr name="label">
                 <string>del:</string>
@@ -43,31 +68,6 @@
         <edge to="n0" from="n2">
             <attr name="label">
                 <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>del:flag:?</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n0">
-            <attr name="label">
-                <string>del:connection</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
             </attr>
         </edge>
     </graph>

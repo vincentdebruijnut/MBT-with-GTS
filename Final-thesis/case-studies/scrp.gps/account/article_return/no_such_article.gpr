@@ -10,14 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n2">
             <attr name="layout">
-                <string>23 154 80 50</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>285 73 48 33</string>
+                <string>150 66 197 50</string>
             </attr>
         </node>
         <node id="n0">
@@ -25,29 +20,49 @@
                 <string>29 62 63 50</string>
             </attr>
         </node>
-        <node id="n2">
+        <node id="n1">
             <attr name="layout">
-                <string>130 65 105 50</string>
+                <string>437 75 48 33</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
+        <node id="n3">
+            <attr name="layout">
+                <string>23 154 80 50</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>303 218 91 50</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>289 154 73 37</string>
+            </attr>
+        </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>32 387 672 37</string>
+            </attr>
+        </node>
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:Account</string>
+                <string>del:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>flag:AS_OPEN</string>
+                <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:SFU</string>
+                <string>flag:?[artret_exist,artret_nexist]</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge to="n0" from="n2">
             <attr name="label">
-                <string>from</string>
+                <string>to</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -65,24 +80,54 @@
                 <string>has</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>del:</string>
+                <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n2" from="n1">
             <attr name="label">
-                <string>type:Request</string>
+                <string>from</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>flag:artret_nexist</string>
+                <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>to</string>
+                <string>flag:AS_OPEN</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>type:Comment</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>flag:final</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n4">
+            <attr name="label">
+                <string>del:comment</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n4">
+            <attr name="label">
+                <string>new:comment</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n5">
+            <attr name="label">
+                <string>string:</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n6">
+            <attr name="label">
+                <string>string:&quot;511 wordt ook gebruikt om aan te geven dat het artikel nog niet is geregistreerd&quot;</string>
             </attr>
         </edge>
     </graph>

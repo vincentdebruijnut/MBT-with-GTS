@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="resetcr.invalid">
+    <graph edgemode="directed" edgeids="false" role="rule" id="general_responses.syntax_error">
         <attr name="transitionLabel">
-            <string>531</string>
+            <string>501</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -12,17 +12,17 @@
         </attr>
         <node id="n0">
             <attr name="layout">
-                <string>63 75 63 50</string>
+                <string>39 31 88 50</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>309 84 48 33</string>
+                <string>334 32 48 33</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>177 76 81 50</string>
+                <string>183 30 81 50</string>
             </attr>
         </node>
         <edge to="n0" from="n0">

@@ -4,6 +4,9 @@
         <attr name="transitionLabel">
             <string>542</string>
         </attr>
+        <attr name="enabled">
+            <string>false</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
@@ -22,12 +25,12 @@
         </node>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:Account</string>
+                <string>del:flag:AS_TRANSING</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>del:flag:AS_TRANSING</string>
+                <string>type:Account</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -35,14 +38,14 @@
                 <string>new:flag:AS_CLOSED</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
         <edge to="n0" from="n1">
             <attr name="label">
                 <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:CR</string>
             </attr>
         </edge>
     </graph>
