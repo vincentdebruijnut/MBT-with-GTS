@@ -10,6 +10,11 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
+        <node id="n6">
+            <attr name="layout">
+                <string>23 436 731 50</string>
+            </attr>
+        </node>
         <node id="n4">
             <attr name="layout">
                 <string>364 173 63 50</string>
@@ -45,6 +50,21 @@
                 <string>75 211 52 37</string>
             </attr>
         </node>
+        <node id="n7">
+            <attr name="layout">
+                <string>27 365 226 33</string>
+            </attr>
+        </node>
+        <edge to="n6" from="n6">
+            <attr name="label">
+                <string>rem:The protocol should also work with multiple accounts, but one has to be in AS_IDLE before OPEN can be done,</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n6">
+            <attr name="label">
+                <string>rem:to ensure the finite statespace of this model.</string>
+            </attr>
+        </edge>
         <edge to="n4" from="n4">
             <attr name="label">
                 <string>type:CR</string>
@@ -65,12 +85,12 @@
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
+        <edge to="n1" from="n11">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n1" from="n11">
+        <edge to="n0" from="n11">
             <attr name="label">
                 <string>from</string>
             </attr>
@@ -138,6 +158,11 @@
         <edge to="n5" from="n5">
             <attr name="label">
                 <string>bool:true</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n7">
+            <attr name="label">
+                <string>rem:Do an OPEN on a stored account</string>
             </attr>
         </edge>
     </graph>

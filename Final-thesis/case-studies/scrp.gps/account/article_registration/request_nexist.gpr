@@ -10,14 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n2">
             <attr name="layout">
-                <string>160 167 81 33</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>294 98 48 33</string>
+                <string>145 16 105 50</string>
             </attr>
         </node>
         <node id="n0">
@@ -25,51 +20,21 @@
                 <string>65 99 40 33</string>
             </attr>
         </node>
-        <node id="n2">
+        <node id="n1">
             <attr name="layout">
-                <string>149 16 97 50</string>
+                <string>294 98 48 33</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>not:</string>
+        <node id="n3">
+            <attr name="layout">
+                <string>160 167 81 33</string>
             </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>type:Request</string>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>45 259 281 33</string>
             </attr>
-        </edge>
-        <edge to="n0" from="n3">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n0">
-            <attr name="label">
-                <string>connection</string>
-            </attr>
-        </edge>
+        </node>
         <edge to="n2" from="n2">
             <attr name="label">
                 <string>new:</string>
@@ -88,6 +53,51 @@
         <edge to="n0" from="n2">
             <attr name="label">
                 <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n0">
+            <attr name="label">
+                <string>connection</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n3">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>rem:Do an ARTREG on a non-existing article</string>
             </attr>
         </edge>
     </graph>

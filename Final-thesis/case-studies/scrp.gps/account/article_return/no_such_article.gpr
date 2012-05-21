@@ -10,14 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
+        <node id="n3">
             <attr name="layout">
-                <string>150 66 197 50</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>29 62 63 50</string>
+                <string>23 154 80 50</string>
             </attr>
         </node>
         <node id="n1">
@@ -25,26 +20,56 @@
                 <string>437 75 48 33</string>
             </attr>
         </node>
-        <node id="n3">
+        <node id="n0">
             <attr name="layout">
-                <string>23 154 80 50</string>
+                <string>29 62 63 50</string>
             </attr>
         </node>
-        <node id="n4">
+        <node id="n2">
             <attr name="layout">
-                <string>303 218 91 50</string>
-            </attr>
-        </node>
-        <node id="n5">
-            <attr name="layout">
-                <string>289 154 73 37</string>
+                <string>150 66 197 50</string>
             </attr>
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>32 387 672 37</string>
+                <string>62 313 544 33</string>
             </attr>
         </node>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>flag:AS_OPEN</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>flag:SS_ON</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n0">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
         <edge to="n2" from="n2">
             <attr name="label">
                 <string>del:</string>
@@ -65,69 +90,9 @@
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>flag:SS_ON</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>flag:AS_OPEN</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>type:Comment</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>flag:final</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n4">
-            <attr name="label">
-                <string>del:comment</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n4">
-            <attr name="label">
-                <string>new:comment</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>string:</string>
-            </attr>
-        </edge>
         <edge to="n6" from="n6">
             <attr name="label">
-                <string>string:&quot;511 wordt ook gebruikt om aan te geven dat het artikel nog niet is geregistreerd&quot;</string>
+                <string>rem:511 wordt ook gebruikt om aan te geven dat het artikel nog niet is geregistreerd</string>
             </attr>
         </edge>
     </graph>

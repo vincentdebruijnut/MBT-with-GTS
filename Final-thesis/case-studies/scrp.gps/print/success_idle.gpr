@@ -10,14 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
+        <node id="n3">
             <attr name="layout">
-                <string>170 76 95 50</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>309 84 48 33</string>
+                <string>56 182 79 50</string>
             </attr>
         </node>
         <node id="n0">
@@ -25,11 +20,56 @@
                 <string>63 75 63 50</string>
             </attr>
         </node>
-        <node id="n3">
+        <node id="n1">
             <attr name="layout">
-                <string>56 182 79 50</string>
+                <string>309 84 48 33</string>
             </attr>
         </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>170 76 95 50</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>17 284 399 33</string>
+            </attr>
+        </node>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>flag:AS_IDLE</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>flag:SS_ON</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n0">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
         <edge to="n2" from="n2">
             <attr name="label">
                 <string>del:</string>
@@ -50,39 +90,9 @@
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>flag:SS_ON</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>flag:AS_IDLE</string>
+                <string>rem:PRINT ignores the account number when in state AS_IDLE</string>
             </attr>
         </edge>
     </graph>

@@ -12,29 +12,34 @@
         </attr>
         <node id="n2">
             <attr name="layout">
-                <string>50 102 40 33</string>
+                <string>83 104 40 33</string>
             </attr>
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>291 101 48 33</string>
+                <string>324 103 48 33</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>141 13 102 50</string>
+                <string>174 15 102 50</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>154 202 81 33</string>
+                <string>187 204 81 33</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>42 172 52 37</string>
+                <string>75 174 52 37</string>
             </attr>
         </node>
+        <edge to="n3" from="n2">
+            <attr name="label">
+                <string>stored_account</string>
+            </attr>
+        </edge>
         <edge to="n2" from="n2">
             <attr name="label">
                 <string>type:CR</string>
@@ -45,14 +50,9 @@
                 <string>connection</string>
             </attr>
         </edge>
-        <edge to="n3" from="n2">
+        <edge to="n0" from="n11">
             <attr name="label">
-                <string>stored_account</string>
-            </attr>
-        </edge>
-        <edge to="n11" from="n11">
-            <attr name="label">
-                <string>type:SFU</string>
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n1" from="n11">
@@ -60,9 +60,9 @@
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
+        <edge to="n11" from="n11">
             <attr name="label">
-                <string>from</string>
+                <string>type:SFU</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -72,12 +72,12 @@
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:Request</string>
+                <string>flag:rhcopy_exist</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>flag:rhcopy_exist</string>
+                <string>type:Request</string>
             </attr>
         </edge>
         <edge to="n2" from="n0">
@@ -90,14 +90,14 @@
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
         <edge to="n2" from="n1">
             <attr name="label">
                 <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:Request</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">

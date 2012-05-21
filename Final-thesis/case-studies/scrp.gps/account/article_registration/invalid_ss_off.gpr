@@ -10,24 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n4">
+        <node id="n1">
             <attr name="layout">
-                <string>4 217 73 37</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>195 148 91 50</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>176 63 225 50</string>
-            </attr>
-        </node>
-        <node id="n11">
-            <attr name="layout">
-                <string>437 74 48 33</string>
+                <string>40 208 371 33</string>
             </attr>
         </node>
         <node id="n2">
@@ -35,37 +20,39 @@
                 <string>66 63 67 50</string>
             </attr>
         </node>
-        <node id="n1">
+        <node id="n11">
             <attr name="layout">
-                <string>0 300 455 37</string>
+                <string>437 74 48 33</string>
             </attr>
         </node>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>string:</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>type:Comment</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>flag:final</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n3">
-            <attr name="label">
-                <string>del:comment</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n3">
-            <attr name="label">
-                <string>new:comment</string>
-            </attr>
+        <node id="n0">
             <attr name="layout">
-                <string>500 0 0 0 0 0 12</string>
+                <string>187 63 203 50</string>
+            </attr>
+        </node>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>rem:The 531 error is the preferred reponse instead of 550</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:SS_OFF</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n11">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n11">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -86,31 +73,6 @@
         <edge to="n2" from="n0">
             <attr name="label">
                 <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n11" from="n11">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n11">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>flag:SS_OFF</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>string:&quot;The 531 error is the preferred reponse instead of 550&quot;</string>
             </attr>
         </edge>
     </graph>

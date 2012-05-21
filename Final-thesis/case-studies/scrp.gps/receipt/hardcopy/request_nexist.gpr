@@ -10,9 +10,14 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
+        <node id="n1">
             <attr name="layout">
-                <string>50 102 40 33</string>
+                <string>154 202 81 33</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>137 13 110 50</string>
             </attr>
         </node>
         <node id="n11">
@@ -20,39 +25,29 @@
                 <string>291 101 48 33</string>
             </attr>
         </node>
-        <node id="n0">
+        <node id="n2">
             <attr name="layout">
-                <string>141 13 102 50</string>
+                <string>50 102 40 33</string>
             </attr>
         </node>
-        <node id="n1">
+        <node id="n3">
             <attr name="layout">
-                <string>154 202 81 33</string>
+                <string>36 312 287 33</string>
             </attr>
         </node>
-        <edge to="n2" from="n2">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>type:CR</string>
+                <string>not:</string>
             </attr>
         </edge>
-        <edge to="n11" from="n2">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>connection</string>
+                <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n1" from="n11">
+        <edge to="n2" from="n1">
             <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n11" from="n11">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n11">
-            <attr name="label">
-                <string>from</string>
+                <string>to</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -65,29 +60,44 @@
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
         <edge to="n0" from="n0">
             <attr name="label">
                 <string>flag:rhcopy_nexist</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
+        <edge to="n2" from="n0">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n11" from="n11">
             <attr name="label">
-                <string>type:Request</string>
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n11">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n11">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n2">
+            <attr name="label">
+                <string>connection</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>rem:Do a RHCOPY on a non-existing account</string>
             </attr>
         </edge>
     </graph>
