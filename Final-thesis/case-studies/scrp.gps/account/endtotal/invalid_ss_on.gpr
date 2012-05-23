@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.article_return.invalid">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.endtotal.invalid_ss_on">
         <attr name="transitionLabel">
             <string>531</string>
         </attr>
@@ -10,79 +10,84 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n2">
             <attr name="layout">
-                <string>153 72 197 50</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>52 71 63 50</string>
+                <string>80 72 40 33</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>421 82 48 33</string>
+                <string>61 169 80 50</string>
             </attr>
         </node>
-        <node id="n2">
+        <node id="n11">
             <attr name="layout">
-                <string>45 170 80 50</string>
+                <string>327 73 48 33</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
+        <node id="n0">
+            <attr name="layout">
+                <string>155 63 114 50</string>
+            </attr>
+        </node>
+        <edge to="n1" from="n2">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:SS_ON</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>flag:AS_OPEN</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n11">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n11">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
             <attr name="label">
                 <string>del:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:Request</string>
+                <string>flag:endtot_display</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>flag:?[artret_exist,artret_nexist]</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n3">
+        <edge to="n2" from="n0">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>flag:AS_OPEN</string>
+                <string>type:Request</string>
             </attr>
         </edge>
     </graph>

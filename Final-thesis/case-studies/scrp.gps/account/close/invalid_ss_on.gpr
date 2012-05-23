@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.article_registration.invalid_ss_off">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.close.invalid_ss_on">
         <attr name="transitionLabel">
             <string>531</string>
         </attr>
@@ -10,29 +10,34 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n1">
+        <node id="n11">
             <attr name="layout">
-                <string>40 208 371 33</string>
+                <string>298 72 48 33</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>66 63 67 50</string>
-            </attr>
-        </node>
-        <node id="n11">
-            <attr name="layout">
-                <string>437 74 48 33</string>
+                <string>80 72 40 33</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>187 63 203 50</string>
+                <string>167 64 81 50</string>
             </attr>
         </node>
-        <edge to="n1" from="n1">
+        <node id="n1">
+            <attr name="layout">
+                <string>60 153 80 50</string>
+            </attr>
+        </node>
+        <edge to="n11" from="n11">
             <attr name="label">
-                <string>rem:The 531 error is the preferred reponse instead of 550</string>
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n11">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -42,17 +47,12 @@
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>flag:SS_OFF</string>
+                <string>flag:SS_ON</string>
             </attr>
         </edge>
-        <edge to="n11" from="n11">
+        <edge to="n1" from="n2">
             <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n11">
-            <attr name="label">
-                <string>from</string>
+                <string>has</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -67,12 +67,27 @@
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>flag:?[artreg_exist, artreg_nexist]</string>
+                <string>flag:close</string>
             </attr>
         </edge>
         <edge to="n2" from="n0">
             <attr name="label">
                 <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>flag:AS_OPEN</string>
             </attr>
         </edge>
     </graph>

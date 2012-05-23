@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.ending.invalid">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.article_return.no_such_article_registered">
         <attr name="transitionLabel">
-            <string>531</string>
+            <string>511</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -10,79 +10,89 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n0">
+        <node id="n3">
             <attr name="layout">
-                <string>56 174 96 50</string>
+                <string>23 154 80 50</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>77 60 63 50</string>
+                <string>437 75 48 33</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>29 62 63 50</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>321 65 48 33</string>
+                <string>150 66 197 50</string>
             </attr>
         </node>
-        <node id="n3">
+        <node id="n6">
             <attr name="layout">
-                <string>194 60 81 50</string>
+                <string>76 313 516 33</string>
             </attr>
         </node>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
+        <edge to="n3" from="n3">
             <attr name="label">
                 <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>flag:AS_ENDING</string>
+                <string>flag:AS_OPEN</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
             <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n0" from="n1">
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>flag:SS_ON</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n0">
             <attr name="label">
                 <string>has</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n2">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
                 <string>del:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n2" from="n2">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>flag:idle</string>
+                <string>flag:artret_exist</string>
             </attr>
         </edge>
-        <edge to="n1" from="n3">
+        <edge to="n0" from="n2">
             <attr name="label">
                 <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n6">
+            <attr name="label">
+                <string>rem:511 wordt ook gebruikt om aan te geven dat het artikel niet is geregistreerd</string>
             </attr>
         </edge>
     </graph>

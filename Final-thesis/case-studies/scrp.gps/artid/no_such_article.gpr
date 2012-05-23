@@ -60,5 +60,10 @@
                 <string>type:CR</string>
             </attr>
         </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>flag:SS_ON</string>
+            </attr>
+        </edge>
     </graph>
 </gxl>

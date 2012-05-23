@@ -10,19 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n4">
             <attr name="layout">
-                <string>183 135 81 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>47 33 72 50</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>347 39 48 33</string>
+                <string>21 227 617 33</string>
             </attr>
         </node>
         <node id="n2">
@@ -30,44 +20,24 @@
                 <string>183 3 81 101</string>
             </attr>
         </node>
-        <node id="n4">
+        <node id="n1">
             <attr name="layout">
-                <string>21 227 617 33</string>
+                <string>347 39 48 33</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>not:</string>
+        <node id="n0">
+            <attr name="layout">
+                <string>2 33 161 50</string>
             </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>type:Request</string>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>183 135 81 33</string>
             </attr>
-        </edge>
-        <edge to="n2" from="n3">
+        </node>
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>next</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>not:flag:SS_ON</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
+                <string>rem:Timeout is sometimes used to close a series of responses, also if the response is just a 550</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -105,9 +75,39 @@
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>rem:Timeout is sometimes used to close a series of responses, also if the response is just a 550</string>
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>flag:?[SS_OFF,SS_HALT]</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n3">
+            <attr name="label">
+                <string>next</string>
             </attr>
         </edge>
     </graph>
