@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.trans.request">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.trans.request_tm_cash">
         <attr name="transitionLabel">
             <string>?TRANS</string>
         </attr>
@@ -10,39 +10,74 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n4">
+        <node id="n1">
             <attr name="layout">
-                <string>315 32 109 37</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>157 203 81 33</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>154 17 81 50</string>
+                <string>256 107 48 33</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>54 107 40 33</string>
+                <string>17 106 40 33</string>
             </attr>
         </node>
-        <node id="n1">
+        <node id="n2">
             <attr name="layout">
-                <string>293 108 48 33</string>
+                <string>100 16 115 50</string>
             </attr>
         </node>
-        <edge to="n4" from="n4">
+        <node id="n3">
+            <attr name="layout">
+                <string>120 202 81 33</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>321 41 109 37</string>
+            </attr>
+        </node>
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>string:&quot;TM_STORE&quot;</string>
+                <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge to="n2" from="n1">
             <attr name="label">
-                <string>par:0</string>
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n0">
+            <attr name="label">
+                <string>connection</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>new:</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:trans_tm_cash</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n2">
+            <attr name="label">
+                <string>to</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
@@ -60,49 +95,14 @@
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>new:</string>
+                <string>string:&quot;TM_CASH&quot;</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>flag:trans</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n0">
-            <attr name="label">
-                <string>connection</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n1">
-            <attr name="label">
-                <string>from</string>
+                <string>par:0</string>
             </attr>
         </edge>
     </graph>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="get_variable.request">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.trans.request_tm_store">
         <attr name="transitionLabel">
-            <string>?GET</string>
+            <string>?TRANS</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -10,119 +10,99 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
+        <node id="n1">
             <attr name="layout">
-                <string>50 102 40 33</string>
-            </attr>
-        </node>
-        <node id="n11">
-            <attr name="layout">
-                <string>291 101 48 33</string>
+                <string>256 107 48 33</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>152 13 81 50</string>
+                <string>17 106 40 33</string>
             </attr>
         </node>
-        <node id="n1">
+        <node id="n2">
             <attr name="layout">
-                <string>154 202 81 33</string>
+                <string>117 16 81 50</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>349 19 105 37</string>
+                <string>120 202 81 33</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>385 145 73 37</string>
+                <string>317 41 117 37</string>
             </attr>
         </node>
-        <edge to="n11" from="n2">
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n1">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n0">
             <attr name="label">
                 <string>connection</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n11">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n11" from="n11">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n11">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n11">
-            <attr name="label">
-                <string>del:var_name</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n11">
-            <attr name="label">
-                <string>new:var_name</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
                 <string>new:</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>flag:get</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
+        <edge to="n2" from="n2">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>flag:trans_tm_store</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n2">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
             <attr name="label">
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n3" from="n3">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge to="n0" from="n3">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>string:&quot;CS_SIGN&quot;</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>par:0</string>
+                <string>string:&quot;TM_STORE&quot;</string>
             </attr>
         </edge>
         <edge to="n4" from="n4">
             <attr name="label">
-                <string>string:</string>
+                <string>par:0</string>
             </attr>
         </edge>
     </graph>

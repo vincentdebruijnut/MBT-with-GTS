@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.trans.success">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.trans.success_tm_store">
         <attr name="transitionLabel">
             <string>240</string>
         </attr>
@@ -10,54 +10,69 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
+        <node id="n6">
+            <attr name="layout">
+                <string>0 121 60 37</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>50 209 52 37</string>
+            </attr>
+        </node>
         <node id="n9">
             <attr name="layout">
-                <string>285 32 48 33</string>
+                <string>449 33 48 33</string>
             </attr>
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>32 22 63 50</string>
+                <string>138 23 63 50</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>362 327 29 33</string>
+                <string>468 328 29 33</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>36 318 127 67</string>
+                <string>150 319 111 67</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>101 160 96 50</string>
+                <string>207 161 96 50</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>272 158 112 50</string>
+                <string>378 159 112 50</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>59 437 79 33</string>
+                <string>165 438 79 33</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>231 327 79 33</string>
+                <string>337 328 79 33</string>
             </attr>
         </node>
         <node id="n10">
             <attr name="layout">
-                <string>144 23 81 50</string>
+                <string>308 24 81 50</string>
             </attr>
         </node>
-        <edge to="n10" from="n9">
+        <edge to="n6" from="n6">
             <attr name="label">
-                <string>from</string>
+                <string>bool:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>bool:true</string>
             </attr>
         </edge>
         <edge to="n9" from="n9">
@@ -65,9 +80,9 @@
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n8" from="n8">
+        <edge to="n10" from="n9">
             <attr name="label">
-                <string>flag:SS_ON</string>
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n8" from="n8">
@@ -75,7 +90,12 @@
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n0" from="n8">
+        <edge to="n8" from="n8">
+            <attr name="label">
+                <string>flag:SS_ON</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n8">
             <attr name="label">
                 <string>has</string>
             </attr>
@@ -85,9 +105,19 @@
                 <string>has</string>
             </attr>
         </edge>
-        <edge to="n2" from="n8">
+        <edge to="n0" from="n8">
             <attr name="label">
                 <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n8">
+            <attr name="label">
+                <string>new:stored_account</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n8">
+            <attr name="label">
+                <string>del:stored_account</string>
             </attr>
         </edge>
         <edge to="n7" from="n7">
@@ -95,9 +125,9 @@
                 <string>forall:</string>
             </attr>
         </edge>
-        <edge to="n5" from="n0">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>del:next</string>
+                <string>type:Account</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -110,9 +140,9 @@
                 <string>new:flag:AS_ENDING</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n5" from="n0">
             <attr name="label">
-                <string>type:Account</string>
+                <string>del:next</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -150,14 +180,14 @@
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n0" from="n4">
-            <attr name="label">
-                <string>next</string>
-            </attr>
-        </edge>
         <edge to="n4" from="n4">
             <attr name="label">
                 <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n4">
+            <attr name="label">
+                <string>next</string>
             </attr>
         </edge>
         <edge to="n5" from="n5">
@@ -182,7 +212,7 @@
         </edge>
         <edge to="n10" from="n10">
             <attr name="label">
-                <string>flag:trans</string>
+                <string>flag:trans_tm_store</string>
             </attr>
         </edge>
         <edge to="n8" from="n10">

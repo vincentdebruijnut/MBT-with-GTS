@@ -10,34 +10,64 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n4">
+        <node id="n3">
             <attr name="layout">
-                <string>21 227 617 33</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>183 3 81 101</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>347 39 48 33</string>
+                <string>261 306 81 33</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>2 33 161 50</string>
+                <string>10 33 145 50</string>
             </attr>
         </node>
-        <node id="n3">
+        <node id="n1">
             <attr name="layout">
-                <string>183 135 81 33</string>
+                <string>504 35 48 33</string>
             </attr>
         </node>
-        <edge to="n4" from="n4">
+        <node id="n2">
+            <attr name="layout">
+                <string>241 15 119 254</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>25 376 617 33</string>
+            </attr>
+        </node>
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>rem:Timeout is sometimes used to close a series of responses, also if the response is just a 550</string>
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n3">
+            <attr name="label">
+                <string>next</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>flag:?[SS_OFF,SS_HALT]</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -52,12 +82,57 @@
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
+                <string>not:flag:artreg_exist</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>not:flag:artreg_nexist</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>not:flag:artret_exist</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>not:flag:close</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>not:flag:endtot</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
                 <string>not:flag:get</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
+                <string>not:flag:idle</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>not:flag:open</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>not:flag:print_nexist</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
                 <string>not:flag:resetcr</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>not:flag:rhcopy_nexist</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -75,39 +150,9 @@
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>flag:?[SS_OFF,SS_HALT]</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n3">
-            <attr name="label">
-                <string>next</string>
+                <string>rem:Timeout is sometimes used to close a series of responses, also if the response is just a 550</string>
             </attr>
         </edge>
     </graph>

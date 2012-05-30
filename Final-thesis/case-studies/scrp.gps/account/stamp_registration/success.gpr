@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="get_variable_success">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.stamp_registration.success">
         <attr name="transitionLabel">
-            <string>210</string>
-        </attr>
-        <attr name="enabled">
-            <string>false</string>
+            <string>232</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -13,69 +10,49 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n5">
-            <attr name="layout">
-                <string>422 84 73 37</string>
-            </attr>
-        </node>
-        <node id="n4">
-            <attr name="layout">
-                <string>210 166 81 37</string>
-            </attr>
-        </node>
         <node id="n3">
             <attr name="layout">
-                <string>417 164 81 37</string>
+                <string>42 166 96 50</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>75 84 40 33</string>
+                <string>60 52 63 50</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>309 84 48 33</string>
+                <string>303 63 48 33</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>177 76 81 50</string>
+                <string>147 56 97 50</string>
             </attr>
         </node>
-        <edge to="n5" from="n5">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>string:</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n5">
-            <attr name="label">
-                <string>=</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>string:</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>parin:1</string>
+                <string>type:Account</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
             <attr name="label">
-                <string>string:</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>parin:0</string>
+                <string>flag:AS_CLOSED</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
                 <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>flag:SS_ON</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n0">
+            <attr name="label">
+                <string>has</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -86,11 +63,6 @@
         <edge to="n2" from="n1">
             <attr name="label">
                 <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n1">
-            <attr name="label">
-                <string>var_name</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -105,7 +77,7 @@
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>flag:get</string>
+                <string>flag:stampreg</string>
             </attr>
         </edge>
         <edge to="n0" from="n2">

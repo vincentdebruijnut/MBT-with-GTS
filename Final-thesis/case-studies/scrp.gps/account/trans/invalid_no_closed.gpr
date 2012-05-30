@@ -10,49 +10,44 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
+        <node id="n3">
             <attr name="layout">
-                <string>326 46 48 33</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>95 47 40 33</string>
+                <string>135 35 334 50</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>68 145 96 50</string>
+                <string>22 141 96 50</string>
             </attr>
         </node>
-        <node id="n3">
+        <node id="n1">
             <attr name="layout">
-                <string>187 40 81 50</string>
+                <string>37 34 63 50</string>
             </attr>
         </node>
-        <edge to="n2" from="n2">
+        <node id="n2">
+            <attr name="layout">
+                <string>513 42 48 33</string>
+            </attr>
+        </node>
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>type:SFU</string>
+                <string>del:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n2">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>from</string>
+                <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>type:CR</string>
+                <string>flag:?[trans_tm_store, trans_tm_bank, trans_tm_cash]</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n1" from="n3">
             <attr name="label">
-                <string>flag:SS_ON</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n1">
-            <attr name="label">
-                <string>has</string>
+                <string>to</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -70,24 +65,29 @@
                 <string>flag:AS_CLOSED</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>del:</string>
+                <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>type:Request</string>
+                <string>flag:SS_ON</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n0" from="n1">
             <attr name="label">
-                <string>flag:trans</string>
+                <string>has</string>
             </attr>
         </edge>
-        <edge to="n1" from="n3">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>to</string>
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n2">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
     </graph>

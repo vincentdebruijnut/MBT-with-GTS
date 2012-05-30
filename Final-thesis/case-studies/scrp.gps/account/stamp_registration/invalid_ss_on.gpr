@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="general_responses.error.to_error_state">
+    <graph edgemode="directed" edgeids="false" role="rule" id="account.stamp_registration.invalid_ss_on">
         <attr name="transitionLabel">
-            <string>503</string>
-        </attr>
-        <attr name="enabled">
-            <string>false</string>
+            <string>531</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -13,24 +10,44 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
+        <node id="n3">
+            <attr name="layout">
+                <string>210 72 82 50</string>
+            </attr>
+        </node>
         <node id="n0">
             <attr name="layout">
-                <string>31 22 103 67</string>
+                <string>51 70 63 50</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>334 32 48 33</string>
+                <string>421 82 48 33</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>183 30 81 50</string>
+                <string>37 170 96 50</string>
             </attr>
         </node>
-        <edge to="n0" from="n0">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>del:flag:?[SS_ON, SS_OFF]</string>
+                <string>del:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>flag:stampreg_start</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n3">
+            <attr name="label">
+                <string>to</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -40,12 +57,12 @@
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>new:flag:SS_ERROR</string>
+                <string>flag:SS_ON</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n2" from="n0">
             <attr name="label">
-                <string>not:flag:SS_ERROR</string>
+                <string>has</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -53,29 +70,24 @@
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge to="n3" from="n1">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>del:</string>
+                <string>not:</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>not:flag:get</string>
+                <string>type:Account</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
+                <string>flag:AS_CLOSED</string>
             </attr>
         </edge>
     </graph>
