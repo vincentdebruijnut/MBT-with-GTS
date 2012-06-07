@@ -13,6 +13,7 @@
 \usepackage{array}
 \usepackage{amsthm}
 \usepackage{fancybox}
+\usepackage{verbatim}
 
 \graphicspath{{./img/}}
 %\renewcommand*\familydefault{\sfdefault}
@@ -60,34 +61,40 @@
 	\input{./tex/symbolic.tex}
 	\input{./tex/graph-grammars.tex}
 	\input{./tex/tooling.tex}
-	\input{./tex/variables-in-graph-grammars.tex}
+
 	
 	\newpage
 	\chapter{Design}\label{chapter:design}
 	\input{./tex/design-introduction}
 	\newpage
-	
-	\input{./tex/gg-to-sts-transformation.tex}
-	\input{./tex/gg-exploration.tex}
+	\begin{comment}
 	\input{./tex/gratis-design.tex}
+	\end{comment}
+	
+	\newpage
+	\chapter{Graph Grammar to STS Algorithm}\label{chapter:gg_to_sts}
+	\newpage
+	\begin{comment}
+	\input{./tex/gg-to-sts-transformation}
 	\input{./tex/implementation.tex}
+	\end{comment}
 	
 	\newpage
 	\chapter{Validation}
 	\input{./tex/validation-introduction}
 	\newpage
-	
+	\begin{comment}
 	\input{./tex/case-studies.tex}
 	\input{./tex/measurements.tex}
-
+  \end{comment}
 	\newpage
 	\chapter{Conclusion}
 	\newpage
-	
+	\begin{comment}
 	\input{./tex/summary.tex}
 	\input{./tex/conclusion.tex}
 	\input{./tex/future-work.tex}
-	
+	\end{comment}
 	\input{./tex/acknowledgements}
 
   \newpage

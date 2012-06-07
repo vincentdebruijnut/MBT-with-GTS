@@ -2,14 +2,21 @@
 
 Some basic concepts from algebra are described here. For a general introduction into logic we refer to~\cite{Huth:logic}.
 
-A \textit{signature} $\langle D_1, D_2, D_3, ..., add, mul, eq, ...\rangle$ lists and describes non-logical, functional and relational symbols of a formal language. $D_1, D_2, D_3, ...$ each describe a domain of non-logical symbols, e.g. 'integer', 'real' and 'boolean'. $add, mul, eq, ...$ describe the possible functional and relational symbols over the domains, e.g. '+', '*' and '='.
+A \textit{multi-sorted signature} $\langle S, F\rangle$ describes the function symbols and sorts of a formal language. $F$ is a set of function symbols, e.g. '+', '*', '=', '<', '0', '1'. Each $f\in F$ has an arity $n \in \mathbb{N}$, where a function symbol with arity $n = 0$ is called a constant symbol. The sort of a function symbol $f \in F$ is given by $\sigma(f) = S_1 ... S_n$. 
 
-An \textit{algebra} $\langle \mathcal{I}, \mathcal{R}, \mathcal{B}, ..., +, *, =$
+An \textit{algebra} $\mathcal{A} = \langle \mathbb{U}, \mathcal{F}\rangle$ has a non-empty set $\mathbb{U}$ of constants called a \textit{universe} and a set $\mathcal{F}$ of functions. A function $f_\mathcal{A}$ is typed $\mathbb{U}_1^{S_1} \times ... \mathbb{U}_{n-1}^{S_{n-1}} \rightarrow \mathbb{U}_n^{S_n}$, where $S$ is the sort of the function symbol given by the signature. For example, $<_\mathcal{A}: \mathbb{U}_\mathcal{A}^{int} \times \mathbb{U}_\mathcal{A}^{int} \rightarrow \mathbb{U}_\mathcal{A}^{bool}$ represents the 'less-than' comparison of two integers.
  
-Let $\mathcal{V}$ be a set of \textit{variables}. \textit{Terms} over $V$, denoted $\mathcal{T}(V)$, are built from a set of function symbols $F$ and variables $V \subset \mathcal{V}$. Each $f\in F$ has a corresponding arity $n\in \mathbb{N}$. if $n = 0$ we call $f$ a constant. We write $var(t)$ to denote the set of variables appearing in a term $t$. Terms $t\in \mathcal{T}(\emptyset)$ are called ground terms.
+We define $\mathcal{V} = \mathcal{V}^{int} \sqcup \mathcal{V}^{real} \sqcup \mathcal{V}^{bool} \sqcup \mathcal{V}^{string}$ to be the set of \textit{variables}. \textit{Terms} over $V$, denoted $\mathcal{T}(V)$, are built from function symbols $F$ and variables $V \subseteq \mathcal{V}$. The definition of a term is:
+\vspace{8px}\\
+$\begin{array}{lrl}t & ::= & f(t_1 ... t_n) \\ & | & x\end{array}$, where $x$ is a constant.
+\vspace{8px}\\
+We write $var(t)$ to denote the set of variables appearing in a term $t \in \mathcal{T}(V)$. Terms $t\in \mathcal{T}(\emptyset)$ are called ground terms. An example of a term $\mathit{t}$ is $(x+y)$, with $var(t) = \{x,y\}$. The type of a term is given by:
+\vspace{8px}\\
+$\begin{array}{lll}\sigma: t \mapsto & s       & \mathit{if}\: t = x \in \mathcal{V}^S \\ 
+                                     & s_{n+1} & \mathit{if}\: t = f(t_1 ... t_n) \mathit{\:and\:} \sigma(f) = S_1 ... S_{n+1}\mathit{,\:provided\:} \sigma(t_i) = S_i
+\end{array}$
+\vspace{8px}\\
+A term with type $\mathbb{U}^{bool}$, is denoted as $\mathcal{R}(\mathcal{V})$. An example is $(x < y)$, where the result is $\mathit{true}$ or $\mathit{false}$.
 
-A \textit{term-mapping} is a function $\sigma:\mathcal{V} \mapsto \mathcal{T}(\mathcal{V})$. For sets $V$, $W$ with $V \cup W \subset \mathcal{V}$, we write $\mathcal{T}(W)^X$ for the set of term-mappings that assign to each variable $v\in V$ a term $t\in \mathcal{T}(W)$, and to each variable $v \not\in V$ the term $v$.
-
-A \textit{valuation} $\nu$ is a function $\nu:\mathcal{V} \mapsto \mathcal{U}$, where $\mathcal{U}$ is a non-empty set called a \textit{universe}. An example of a universe is $\mathbb{N}$, the non-zero integers. Additionally, $\nu:\mathit{n-tuple:x} \mapsto \mathit{n-tuple:y}$, maps the values of tuple $x$ to the values of tuple $y$.
-
-An \textit{evaluation} of $\mathcal{T}(\mathcal{V})$ is given by $\epsilon:(\mathcal{T}(\mathcal{V}),\nu:\mathcal{V}) \mapsto \mathcal{U}$. An evaluation $\epsilon:\mathcal{T}(\mathcal{V}),\nu_\mathit{before}:\mathcal{V})$ of the terms in a term-mapping results in a set $X \subseteq \mathcal{U}$. A new valuation can then be constructed by: $\nu_\mathit{after}:\mathcal{V} \mapsto X$.
+A \textit{term-mapping} is a function $\sigma:\mathcal{V} \rightarrow \mathcal{T}(\mathcal{V})$. A \textit{valuation} $\nu$ is a function $\nu:\mathcal{V} \rightarrow \mathbb{U}$ that assigns constants to variables. For example, given an algebra, $\nu:\{(x \mapsto 1), (y \mapsto 2))\}$ assigns the constants 1 and 2 to the variables $x$ and $y$ respectively.
+A valuation of a term given $\mathcal{A}$ is defined by $\nu(f(t_1 ... t_n)) \mapsto f_\mathcal{A}(\nu(t_1) ... \nu(t_n))$.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  25 APR 2012 13:58
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  7 JUN 2012 19:45
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -743,27 +743,33 @@ Style option: `fancybox' v1.3 <2000/09/19> (tvz)
 \EndVerbatimTokens=\toks48
 \Verbatim@Outfile=\write5
 \Verbatim@Infile=\read3
+) (/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks49
+\verbatim@line=\toks50
+\verbatim@in@stream=\read4
 )
 \c@definition=\count150
  (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-Package hyperref Info: Link coloring OFF on input line 28.
- (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+Package hyperref Info: Link coloring OFF on input line 29.
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
@@ -771,8 +777,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count151
 )
-LaTeX Info: Redefining \ref on input line 28.
-LaTeX Info: Redefining \pageref on input line 28.
+LaTeX Info: Redefining \ref on input line 29.
+LaTeX Info: Redefining \pageref on input line 29.
  (./report.out)
 (./report.out)
 \@outlinefile=\write6
@@ -786,28 +792,28 @@ LaTeX Info: Redefining \pageref on input line 28.
 \scratchbox=\box65
 \nofMPsegments=\count153
 \nofMParguments=\count154
-\everyMPshowfont=\toks49
+\everyMPshowfont=\toks51
 \MPscratchCnt=\count155
 \MPscratchDim=\dimen212
 \MPnumerator=\count156
-\everyMPtoPDFconversion=\toks50
+\everyMPtoPDFconversion=\toks52
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
-LaTeX Info: Redefining \subref on input line 28.
+LaTeX Info: Redefining \subref on input line 29.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 45.
+LaTeX Font Info:    Try loading font information for U+msa on input line 46.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 45.
+LaTeX Font Info:    Try loading font information for U+msb on input line 46.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 45.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 46.
 
 (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -819,147 +825,285 @@ ready used, duplicate ignored
 <to be read again> 
                    \relax 
 l.3 \end{abstract}
-                   [1]) (./report.tocpdfTeX warning (ext4): destination with th
-e same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.42 ...2.4.1}Point algebra}{23}{subsection.2.4.1}
-                                                   [1
-
-])
+                   [1]) (./report.toc)
 \tf@toc=\write7
 \openout7 = `report.toc'.
 
- [2]
-Chapter 1.
-(./tex/introduction.tex [3
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.51   \newpage
+                [1
 
-]) [4] (./tex/goals.tex)
-(./tex/model-based-testing.tex
-<./img/model-based-testing.pdf, id=347, 379.58545pt x 141.73691pt>
+]
+Chapter 1.
+(./tex/introduction.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+[]\T1/cmr/m/n/10 citations
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+\T1/cmr/m/n/10 needed.'this
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+\T1/cmr/m/n/10 con-trasts
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+\T1/cmr/m/n/10 often-heard
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+\T1/cmr/m/n/10 state-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+\T1/cmr/m/n/10 on test-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+\T1/cmr/m/n/10 takes x%
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--1
+\T1/cmr/m/n/10 vel-op-ment
+ []
+
+[2
+
+]) [3] (./tex/goals.tex) (./tex/model-based-testing.tex
+<./img/model-based-testing.pdf, id=212, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-<./img/mbt-on-the-fly.pdf, id=352, 357.48773pt x 141.7426pt>
+<./img/mbt-on-the-fly.pdf, id=217, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
-<use ./img/mbt-on-the-fly.pdf> [5 <./img/model-based-testing.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 34.
+<use ./img/mbt-on-the-fly.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]\T1/cmr/m/n/10 A: Shrink
+ []
+
+
+Underfull \hbox (badness 4316) in paragraph at lines 21--21
+\T1/cmr/m/n/10 font? V:
+ []
+
+[4 <./img/model-based-testing.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 36.
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 34.
- [6 <./img/mbt-on-the-fly.pdf>] (./img/iots-example.tex <xymatrix 2x2 182>) (./
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
+ [5 <./img/mbt-on-the-fly.pdf>] (./img/iots-example.tex <xymatrix 2x2 182>) (./
 img/iots-test.tex <xymatrix
-3x2 145>)) (./tex/first-order-logic.tex) (./tex/symbolic.tex [7] [8]
-(./img/sts_boardgame_1.tex <xymatrix 13x1 191>) [9] (./img/trafo_sts.tex
-<xymatrix 1x3 151>) (./img/trafo_lts.tex <xymatrix 3x3 348>))
-(./tex/graph-grammars.tex [10] [11] (./img/gg_graph.tex <xymatrix 2x1 181>)
-(./img/gg_graph.tex <xymatrix 2x1 181>) (./img/gg_nac1.tex <xymatrix 2x1 181>)
+3x2 145>)) (./tex/algebra.tex [6]) (./tex/symbolic.tex [7]
+(./img/sts_boardgame_1.tex <xymatrix 14x1 236>)
+Underfull \hbox (badness 7203) in paragraph at lines 43--43
+\T1/cmr/m/n/10 the cor-rect
+ []
+
+[8] (./img/trafo_sts.tex <xymatrix 1x3 151>) (./img/trafo_lts.tex <xymatrix
+3x3 348>)
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]\T1/cmr/m/n/10 A:Explain!
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+\T1/cmr/m/n/10 (ex-am-
+ []
+
+
+Underfull \hbox (badness 4328) in paragraph at lines 67--67
+\T1/cmr/m/n/10 ple) V: Ik
+ []
+
+
+Underfull \hbox (badness 1953) in paragraph at lines 67--67
+\T1/cmr/m/n/10 denk eigen-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+\T1/cmr/m/n/10 lijk niet
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+\T1/cmr/m/n/10 dat deze
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+\T1/cmr/m/n/10 tech-nieken
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+\T1/cmr/m/n/10 rel-e-vant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+\T1/cmr/m/n/10 gaan zijn
+ []
+
+) (./tex/graph-grammars.tex [9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+[]\T1/cmr/m/n/10 A: what
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+\T1/cmr/m/n/10 are the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+\T1/cmr/m/n/10 hoe be-doel
+ []
+
+(./img/gg_graph.tex <xymatrix 2x1 181>)
+Underfull \hbox (badness 2662) in paragraph at lines 60--60
+[]\T1/cmr/m/n/8 (a) |The ini-tial
+ []
+
+(./img/gg_lhs.tex <xymatrix 2x1 181>) (./img/gg_nac1.tex <xymatrix 2x1 181>)
+Underfull \hbox (badness 10000) in paragraph at lines 62--62
+[]\T1/cmr/m/n/8 (c) |The first
+ []
+
 (./img/gg_nac2.tex <xymatrix 2x1 181>) (./img/gg_rhs.tex <xymatrix 2x1 181>)
-(./img/gg_rhs.tex <xymatrix 2x1 181>)) (./tex/tooling.tex [12]
-<./img/axini_tool.pdf, id=499, 356.92177pt x 145.93393pt>
+(./img/gg_result.tex <xymatrix 2x1 181>)
+Underfull \hbox (badness 10000) in paragraph at lines 70--70
+\T1/cmr/m/n/10 struc-ture,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--70
+\T1/cmr/m/n/10 of nest-ing
+ []
+
+) (./tex/tooling.tex [11]
+<./img/axini_tool.pdf, id=363, 356.92177pt x 145.93393pt>
 File: ./img/axini_tool.pdf Graphic file (type pdf)
 
-<use ./img/axini_tool.pdf> [13 <./img/axini_tool.pdf>]
-<./img/groove_tool.pdf, id=525, 374.51399pt x 161.01265pt>
+<use ./img/axini_tool.pdf> [12 <./img/axini_tool.pdf>]
+<./img/groove_tool.pdf, id=389, 374.51399pt x 161.01265pt>
 File: ./img/groove_tool.pdf Graphic file (type pdf)
 
-<use ./img/groove_tool.pdf>) (./tex/variables-in-graph-grammars.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--5
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--16
-
- []
-
-[14 <./img/groove_tool.pdf>] (./img/variable_node.tex <xymatrix 2x1 181>)
-(./img/algebra_lhs.tex <xymatrix 2x2 271>) (./img/algebra_rhs.tex <xymatrix
-2x2 271>) (./img/start.tikz
+<use ./img/groove_tool.pdf> (./img/start.tikz
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 8.
- (/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
+
+(/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)) (./img/throws.tikz) (./img/move.tikz) (./img/nextTurn.tikz) [15] [16]
-(./img/gts-transition-example.tikz) (./img/target-graph-state.tikz)) [17]
+)) (./img/throws.tikz)
+(./img/move.tikz) (./img/nextTurn.tikz) [13 <./img/groove_tool.pdf>]
+(./img/gts-transition-example.tikz) (./img/target-graph-state.tikz)) [14]
+[15]
 Chapter 2.
-(./tex/design-introduction.tex) [18
+(./tex/design-introduction.tex
 
-] (./tex/gg-to-sts-transformation.tex
-(./img/abstract_graph.tex <xymatrix 1x1 71>) (./img/lhs_trafo.tex <xymatrix
-2x1 181>) [19] (./img/nac_trafo.tex <xymatrix 2x1 181>) (./img/rhs_trafo.tex
-<xymatrix 2x1 181>) (./img/sts_trafo.tex <xymatrix 1x1 71>))
-(./tex/gg-exploration.tex [20] (./img/algebra_start_graph.tex <xymatrix 2x2
-360>) (./img/algebra_gts.tex <xymatrix 5x1 104>) (./img/algebra_sts.tex
-<xymatrix 1x1 71>) [21] (./img/algebra_rhs2.tex <xymatrix 3x2 340>))
-(./tex/gratis-design.tex [22]
-<./img/tooling.pdf, id=675, 599.89655pt x 242.46582pt>
-File: ./img/tooling.pdf Graphic file (type pdf)
- <use ./img/tooling.pdf>) (./tex/implementation.tex [23 <./img/tooling.pdf>]
-(./img/not_equals_wrong.tikz) (./img/not_equals_right.tikz)
-(./img/placeholder_rule.tikz) (./img/ctrl_node.tikz) (./img/ctrl_prog.tex)
-[24] (./img/priority_start.tex <xymatrix 2x1 181>) (./img/priority_lhs1.tex
-<xymatrix 2x2 230>) (./img/priority_rhs1.tex <xymatrix 2x2 230>)
-(./img/priority_lhs2.tex <xymatrix 2x2 230>) (./img/priority_rhs2.tex
-<xymatrix 2x2 230>) (./img/priority_sts_wrong.tex <xymatrix 1x1 136>) [25]
-(./img/priority_sts_right.tex <xymatrix 1x1 136>)) [26]
+LaTeX Warning: Reference `sec:gg-to-sts' on page 16 undefined on input line 3.
+
+
+LaTeX Warning: Reference `sec:gg-exploration' on page 16 undefined on input lin
+e 3.
+
+
+LaTeX Warning: Reference `sec:gratis-design' on page 16 undefined on input line
+ 3.
+
+
+LaTeX Warning: Reference `sec:implementation' on page 16 undefined on input lin
+e 3.
+
+) [16
+
+]
 Chapter 3.
-(./tex/validation-introduction.tex) [27
+[17
 
-] (./tex/case-studies.tex)
-(./tex/measurements.tex) [28]
+]
 Chapter 4.
-[29
+(./tex/validation-introduction.tex
 
-] (./tex/summary.tex) (./tex/conclusion.tex) (./tex/future-work.tex)
-(./tex/acknowledgements.tex) [30] (./report.bbl [31
+LaTeX Warning: Reference `sec:case-studies' on page 18 undefined on input line 
+1.
 
-]) [32] (./report.aux) ) 
+
+LaTeX Warning: Reference `sec:measurements' on page 18 undefined on input line 
+1.
+
+) [18
+
+]
+Chapter 5.
+[19
+
+] (./tex/acknowledgements.tex) [20] (./report.bbl [21
+
+]) [22] (./report.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 19828 strings out of 495061
- 349075 string characters out of 1182622
- 674501 words of memory out of 3000000
- 22189 multiletter control sequences out of 15000+50000
+ 19549 strings out of 495061
+ 343923 string characters out of 1182622
+ 683624 words of memory out of 3000000
+ 22077 multiletter control sequences out of 15000+50000
  29237 words of font info for 74 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 63i,21n,72p,1462b,1121s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jkna
-ppen/ec/ecss0700.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecss0800.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknapp
-en/ec/ecsi0800.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecsx0800.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen
-/ec/ecbx1440.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecrm0800.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecrm0600.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecrm0700.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/
-ecbx2074.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
-cbx2488.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ec
-rm1000.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ect
-i1000.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
-1000.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1
-200.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm12
-00.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti120
-0.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200
-.600pk> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.
-600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
-/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf
--texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/latxfont/lcircle1.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
-onts/symbols/msbm10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xyat
-ip10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on report.pdf (34 pages, 621149 bytes).
+ 63i,22n,72p,1494b,1085s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0700.600pk
+> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk>
+ </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0800.600pk> 
+</home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx0800.600pk> <
+/home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </
+home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </h
+ome/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </ho
+me/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </hom
+e/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home
+/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/
+vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/v
+incentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/vi
+ncentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/vin
+centdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/vinc
+entdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/vince
+ntdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/vincen
+tdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/vincent
+debruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmsy5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+msy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-texlive/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-texlive/fonts/
+type1/public/xypic/xyatip10.pfb></usr/share/texmf-texlive/fonts/type1/public/xy
+pic/xybtip10.pfb>
+Output written on report.pdf (24 pages, 515210 bytes).
 PDF statistics:
- 1435 PDF objects out of 1440 (max. 8388607)
- 197 named destinations out of 1000 (max. 500000)
- 486 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1113 PDF objects out of 1200 (max. 8388607)
+ 128 named destinations out of 1000 (max. 500000)
+ 273 words of extra memory for PDF output out of 10000 (max. 10000000)
 

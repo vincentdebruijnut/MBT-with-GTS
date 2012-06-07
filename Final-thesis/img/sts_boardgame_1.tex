@@ -1,2 +1,3 @@
 $\xymatrix{
-   \ar[rrrrr]^{init\,|\,true\,|\,T\,:=\,0;\,P\,:=\,[0,2];\,D\,:=\,0} &&&&& {throw} \ar@/^/[rrrrrrr]^{?throw(d:N)\,|\,1\,<=\,d\,<=\,6\,|\,D\,:=\,d} &&&&&&& {move} \ar@/^/[lllllll]^{!move(p:N,\,l:N) | T=p \land l = (P[p]\,+\,D)\,\%\,4\,|\,[p]\,:=\,l;\,T\,:=\,p\,\%\,2}}$
+   \ar[rrrrr]^{init\:|\:true\:|\:T:=0;\:P1:=0;\:P2:=2;\:D:=0} &&&&& {t} \ar[rrrrrrrr]^{?throw(d:N)\,|\,1\,<=\,d\,<=\,6\,|\,D\,:=\,d} &&&&&&&& {m} \ar@/_2pc/[llllllll]_{!move(p:N,l:N)\: |\: T=1 \:\land\: p=1 \:\land\: l = (P1+D)\%4\:|\:P1:=l;\:T:=2} \ar@/^2pc/[llllllll]^{!move(p:N,l:N) \:|\: T=2 \:\land\: p=2 \land l = (P2+D)\,\%4;\: P2:=l;\:T:=1}
+}$
