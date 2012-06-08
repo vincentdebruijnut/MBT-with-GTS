@@ -2,18 +2,18 @@
 
 Some basic concepts from algebra are described here. For a general introduction into logic we refer to~\cite{Huth:logic}.
 
-A \textit{multi-sorted signature} $\langle S, F\rangle$ describes the function symbols and sorts of a formal language. $F$ is a set of function symbols, e.g. '+', '*', '=', '<', '0', '1'. Each $f\in F$ has an arity $n \in \mathbb{N}$, where a function symbol with arity $n = 0$ is called a constant symbol. The sort of a function symbol $f \in F$ is given by $\sigma(f) = S_1 ... S_n$. 
+A \textit{multi-sorted signature} $\langle S, F\rangle$ describes the function symbols and sorts of a formal language. $F$ is a set of function symbols, e.g. '+', '*', '=', '<', '0', '1'. $S$ is a set of sorts. Each $f\in F$ has an arity $n \in \mathbb{N}$, where a function symbol with arity $n = 0$ is called a constant symbol. The sort of a function symbol $f \in F$ with arity $n$ is given by $\sigma(f) = s_1 ... s_n+1$, with $s_i \in S$ for $1 \leq i \leq n$. $S_{n+1}$ is the return sort.
 
-An \textit{algebra} $\mathcal{A} = \langle \mathbb{U}, \mathcal{F}\rangle$ has a non-empty set $\mathbb{U}$ of constants called a \textit{universe} and a set $\mathcal{F}$ of functions. A function $f_\mathcal{A}$ is typed $\mathbb{U}_1^{S_1} \times ... \mathbb{U}_{n-1}^{S_{n-1}} \rightarrow \mathbb{U}_n^{S_n}$, where $S$ is the sort of the function symbol given by the signature. For example, $<_\mathcal{A}: \mathbb{U}_\mathcal{A}^{int} \times \mathbb{U}_\mathcal{A}^{int} \rightarrow \mathbb{U}_\mathcal{A}^{bool}$ represents the 'less-than' comparison of two integers.
+An \textit{algebra} $\mathcal{A} = \langle \mathbb{U}, \mathcal{F}\rangle$ has a non-empty set $\mathbb{U}$ of constants called a \textit{universe}, partitioned into $\mathcal{U}^s$ for each $s\in S$, and a set $\mathcal{F}$ of functions. A function $f_\mathcal{A}$ is typed $\mathbb{U}_\mathcal{A}^{s_1} \times ... \mathbb{U}_\mathcal{A}^{s_n} \rightarrow \mathbb{U}_\mathcal{A}^{s_{n+1}}$, where $s_1 ... s_{n+1}$ is the sort of the function symbol given by the signature. For example, $<_\mathcal{A}: \mathbb{U}_\mathcal{A}^{int} \times \mathbb{U}_\mathcal{A}^{int} \rightarrow \mathbb{U}_\mathcal{A}^{bool}$ represents the 'less-than' comparison of two integers.
  
-We define $\mathcal{V} = \mathcal{V}^{int} \sqcup \mathcal{V}^{real} \sqcup \mathcal{V}^{bool} \sqcup \mathcal{V}^{string}$ to be the set of \textit{variables}. \textit{Terms} over $V$, denoted $\mathcal{T}(V)$, are built from function symbols $F$ and variables $V \subseteq \mathcal{V}$. The definition of a term is:
+We define $\mathcal{V} = \mathcal{V}^{int} \uplus \mathcal{V}^{real} \uplus \mathcal{V}^{bool} \uplus \mathcal{V}^{string}$ to be the set of \textit{variables}. \textit{Terms} over $V$, denoted $\mathcal{T}(V)$, are built from function symbols $F$ and variables $V \subseteq \mathcal{V}$. The definition of a term is:
 \vspace{8px}\\
-$\begin{array}{lrl}t & ::= & f(t_1 ... t_n) \\ & | & x\end{array}$, where $x$ is a constant.
+$\begin{array}{lrlr}t & ::= & f(t_1 ... t_n) &\\ & | & x&\mathit{,\: where\: x\: is\: a\: constant.}\end{array}$
 \vspace{8px}\\
 We write $var(t)$ to denote the set of variables appearing in a term $t \in \mathcal{T}(V)$. Terms $t\in \mathcal{T}(\emptyset)$ are called ground terms. An example of a term $\mathit{t}$ is $(x+y)$, with $var(t) = \{x,y\}$. The type of a term is given by:
 \vspace{8px}\\
 $\begin{array}{lll}\sigma: t \mapsto & s       & \mathit{if}\: t = x \in \mathcal{V}^S \\ 
-                                     & s_{n+1} & \mathit{if}\: t = f(t_1 ... t_n) \mathit{\:and\:} \sigma(f) = S_1 ... S_{n+1}\mathit{,\:provided\:} \sigma(t_i) = S_i
+                                     & s_{n+1} & \mathit{if}\: t = f(t_1 ... t_n) \mathit{\:and\:} \sigma(f) = s_1 ... s_{n+1}\mathit{,\:provided\:} \sigma(t_i) = s_i
 \end{array}$
 \vspace{8px}\\
 A term with type $\mathbb{U}^{bool}$, is denoted as $\mathcal{R}(\mathcal{V})$. An example is $(x < y)$, where the result is $\mathit{true}$ or $\mathit{false}$.

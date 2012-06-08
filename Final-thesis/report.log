@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  7 JUN 2012 19:45
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  8 JUN 2012 14:51
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -838,54 +838,100 @@ l.51   \newpage
 
 ]
 Chapter 1.
-(./tex/introduction.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
+[2
+
+] (./tex/introduction.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--2
 []\T1/cmr/m/n/10 citations
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
+Underfull \hbox (badness 10000) in paragraph at lines 2--2
 \T1/cmr/m/n/10 needed.'this
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
+Underfull \hbox (badness 10000) in paragraph at lines 2--2
 \T1/cmr/m/n/10 con-trasts
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
+Underfull \hbox (badness 10000) in paragraph at lines 2--2
 \T1/cmr/m/n/10 often-heard
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
+Underfull \hbox (badness 10000) in paragraph at lines 2--2
 \T1/cmr/m/n/10 state-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
+Underfull \hbox (badness 10000) in paragraph at lines 2--2
 \T1/cmr/m/n/10 on test-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
+Underfull \hbox (badness 10000) in paragraph at lines 2--2
 \T1/cmr/m/n/10 takes x%
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
+Underfull \hbox (badness 10000) in paragraph at lines 2--2
 \T1/cmr/m/n/10 vel-op-ment
  []
 
-[2
 
-]) [3] (./tex/goals.tex) (./tex/model-based-testing.tex
-<./img/model-based-testing.pdf, id=212, 379.58545pt x 141.73691pt>
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+[]\T1/cmr/m/n/10 A: That's
+ []
+
+
+Underfull \hbox (badness 2941) in paragraph at lines 7--7
+\T1/cmr/m/n/10 not an ar-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+\T1/cmr/m/n/10 gu-ment in
+ []
+
+
+Underfull \hbox (badness 1418) in paragraph at lines 7--7
+\T1/cmr/m/n/10 fa-vor V: It
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+\T1/cmr/m/n/10 mars vs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+\T1/cmr/m/n/10 for-malisms
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+\T1/cmr/m/n/10 in model-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
+\T1/cmr/m/n/10 based
+ []
+
+
+Overfull \hbox (1.65527pt too wide) in paragraph at lines 14--14
+\T1/cmr/m/n/10 tem states, com-plex ob-jects, di-a-grams, and net-works, like f
+lowcharts, entity-relationship
+ []
+
+[3]) (./tex/goals.tex) (./tex/model-based-testing.tex
+<./img/model-based-testing.pdf, id=235, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
-<use ./img/model-based-testing.pdf>
-<./img/mbt-on-the-fly.pdf, id=217, 357.48773pt x 141.7426pt>
+<use ./img/model-based-testing.pdf> [4]
+<./img/mbt-on-the-fly.pdf, id=248, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
 <use ./img/mbt-on-the-fly.pdf>
@@ -898,7 +944,7 @@ Underfull \hbox (badness 4316) in paragraph at lines 21--21
 \T1/cmr/m/n/10 font? V:
  []
 
-[4 <./img/model-based-testing.pdf>]
+[5 <./img/model-based-testing.pdf> <./img/mbt-on-the-fly.pdf>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 36.
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
@@ -906,16 +952,16 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
- [5 <./img/mbt-on-the-fly.pdf>] (./img/iots-example.tex <xymatrix 2x2 182>) (./
-img/iots-test.tex <xymatrix
-3x2 145>)) (./tex/algebra.tex [6]) (./tex/symbolic.tex [7]
-(./img/sts_boardgame_1.tex <xymatrix 14x1 236>)
+ (./img/iots-example.tex
+<xymatrix 2x2 182>) (./img/iots-test.tex <xymatrix 3x2 145>) [6])
+(./tex/algebra.tex) (./tex/symbolic.tex [7] [8] (./img/sts_boardgame_1.tex
+<xymatrix 14x1 236>)
 Underfull \hbox (badness 7203) in paragraph at lines 43--43
 \T1/cmr/m/n/10 the cor-rect
  []
 
-[8] (./img/trafo_sts.tex <xymatrix 1x3 151>) (./img/trafo_lts.tex <xymatrix
-3x3 348>)
+(./img/trafo_sts.tex <xymatrix 1x3 151>) (./img/trafo_lts.tex <xymatrix 3x3
+348>)
 Underfull \hbox (badness 10000) in paragraph at lines 67--67
 []\T1/cmr/m/n/10 A:Explain!
  []
@@ -960,7 +1006,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--67
 \T1/cmr/m/n/10 gaan zijn
  []
 
-) (./tex/graph-grammars.tex [9] [10]
+[9]) (./tex/graph-grammars.tex [10]
 Underfull \hbox (badness 10000) in paragraph at lines 46--46
 []\T1/cmr/m/n/10 A: what
  []
@@ -975,7 +1021,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--46
 \T1/cmr/m/n/10 hoe be-doel
  []
 
-(./img/gg_graph.tex <xymatrix 2x1 181>)
+[11] (./img/gg_graph.tex <xymatrix 2x1 181>)
 Underfull \hbox (badness 2662) in paragraph at lines 60--60
 []\T1/cmr/m/n/8 (a) |The ini-tial
  []
@@ -996,12 +1042,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--70
 \T1/cmr/m/n/10 of nest-ing
  []
 
-) (./tex/tooling.tex [11]
-<./img/axini_tool.pdf, id=363, 356.92177pt x 145.93393pt>
+) (./tex/tooling.tex <./img/axini_tool.pdf, id=377, 356.92177pt x 145.93393pt>
 File: ./img/axini_tool.pdf Graphic file (type pdf)
 
 <use ./img/axini_tool.pdf> [12 <./img/axini_tool.pdf>]
-<./img/groove_tool.pdf, id=389, 374.51399pt x 161.01265pt>
+<./img/groove_tool.pdf, id=404, 374.51399pt x 161.01265pt>
 File: ./img/groove_tool.pdf Graphic file (type pdf)
 
 <use ./img/groove_tool.pdf> (./img/start.tikz
@@ -1010,9 +1055,8 @@ LaTeX Font Info:    Try loading font information for T1+cmss on input line 8.
 (/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )) (./img/throws.tikz)
-(./img/move.tikz) (./img/nextTurn.tikz) [13 <./img/groove_tool.pdf>]
-(./img/gts-transition-example.tikz) (./img/target-graph-state.tikz)) [14]
-[15]
+(./img/move.tikz) (./img/nextTurn.tikz) [13] [14 <./img/groove_tool.pdf>]
+(./img/gts-transition-example.tikz) (./img/target-graph-state.tikz)) [15]
 Chapter 2.
 (./tex/design-introduction.tex
 
@@ -1061,21 +1105,21 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19549 strings out of 495061
- 343923 string characters out of 1182622
- 683624 words of memory out of 3000000
- 22077 multiletter control sequences out of 15000+50000
+ 19557 strings out of 495061
+ 344049 string characters out of 1182622
+ 748098 words of memory out of 3000000
+ 22081 multiletter control sequences out of 15000+50000
  29237 words of font info for 74 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 63i,22n,72p,1494b,1085s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,22n,72p,1514b,1085s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0700.600pk
 > </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk>
  </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0800.600pk> 
 </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx0800.600pk> <
-/home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </
-home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </h
-ome/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </ho
-me/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </hom
+/home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </
+home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </h
+ome/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </ho
+me/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </hom
 e/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home
 /vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/
 vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/v
@@ -1094,16 +1138,15 @@ pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/sha
 re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texl
 ive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/typ
 e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmsy5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-msy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/te
-xmf-texlive/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-texlive/
-fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-texlive/fonts/
-type1/public/xypic/xyatip10.pfb></usr/share/texmf-texlive/fonts/type1/public/xy
-pic/xybtip10.pfb>
-Output written on report.pdf (24 pages, 515210 bytes).
+msfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+msy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/xypic/xybtip10.pfb>
+Output written on report.pdf (24 pages, 511838 bytes).
 PDF statistics:
- 1113 PDF objects out of 1200 (max. 8388607)
- 128 named destinations out of 1000 (max. 500000)
- 273 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1131 PDF objects out of 1200 (max. 8388607)
+ 132 named destinations out of 1000 (max. 500000)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
 

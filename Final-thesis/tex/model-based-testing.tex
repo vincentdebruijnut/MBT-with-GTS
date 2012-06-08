@@ -10,7 +10,7 @@ Model-based testing is a testing technique where a System Under Test (SUT) is te
   \label{fig:model_based_testing}
 \end{figure}
 
-This type of model-based testing is called \textit{batch testing} or \textit{offline testing}. Another type of model-based testing is \textit{on-the-fly} testing. The main difference is that no test cases are derived, instead a transition in the model is chosen and tested on the system directly. The general architecture for this process is shown in Figure~\ref{fig:model_based_testing_on_the_fly}. A tool for on-the-fly testing is TorX~\cite{Tretmans:TorX}, which integrates automatic test generation, test execution, and test analysis. A version of this tool written in Java under continuous development is JTorX~\cite{Belinfante:JTorX}.
+This type of model-based testing is called \textit{batch testing} or \textit{offline testing}. Another type of model-based testing is \textit{on-the-fly} testing. The main difference is that no test cases are derived, instead a transition in the model is chosen and tested on the system directly. The general architecture for this process is shown in Figure~\ref{fig:model_based_testing_on_the_fly}. An example of an on-the-fly testing is TorX~\cite{Tretmans:TorX}.
 
 \begin{figure}[ht]
   \begin{center}
@@ -31,14 +31,14 @@ Formal testing theory was introduced by De Nicola et al.~\cite{denicola:testing}
 A labelled transition system is a structure consisting of states with labelled transitions between them.
 \vspace{5px}
 \begin{definition}
-A labelled transition system is a 4-tuple	$\langle Q, L, T, q0\rangle$, where:
+A labelled transition system is a 4-tuple	$\langle Q, L, T, q_0\rangle$, where:
 \begin{itemize}
 \item $Q$ is a finite, non-empty set of states
 \item $L$ is a finite set of labels
 \item $T \in Q \times (L \cup \{\tau\}) \times Q$, with $\tau \notin L$, is the transition relation
-\item $q0 \in Q$ is the initial state.
+\item $q_0 \in Q$ is the initial state.
 \end{itemize}
-We write $q \xrightarrow{\mu}q'$ if there is a transition labelled $\mu$ from state q to state q', i.e., $(q, \mu, q') \in T$. The informal idea of such a transition is that when the system is in state $q$ it may perform action $\mu$, and go to state $q'$. 
+We write $q \xrightarrow{\mu}q'$ if there is a transition labelled $\mu$ from state $q$ to state $q'$, i.e., $(q, \mu, q') \in T$. The informal idea of such a transition is that when the system is in state $q$ it may perform action $\mu$, and go to state $q'$. 
 \end{definition}
 
 \subsection{Input-Output Transition Systems}

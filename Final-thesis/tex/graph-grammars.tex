@@ -1,5 +1,5 @@
 \section{Graph Grammars}\label{sec:graph}
-A \textit{GG} (GG) is composed of a set of graph transformation rules. These rules indicate how a graph can be transformed to a new graph. These graphs are called \textit{host graphs}. The rules are composed of graphs themselves, which are called \textit{rule graphs}.
+A \textit{Graph Grammar} (GG) is composed of a set of graph transformation rules. These rules indicate how a graph can be transformed to a new graph. These graphs are called \textit{host graphs}. The rules are composed of graphs themselves, which are called \textit{rule graphs}.
 
 The rest of this section is ordered as follows: first, host graphs are explained. This is then used to explain graph transformation rules. Then, the definition of a \textit{Graph Transition System} (GTS) is given. An example of a GG and a GTS is then given. Finally, a method for transforming a GTS to an STS is given. For a more detailed overview of GGs, we refer to~\cite{Rensink:graph_grammars, Heckel2006187, Andries1999}.
 
@@ -7,16 +7,16 @@ The rest of this section is ordered as follows: first, host graphs are explained
 A graph $\mathcal{G}^{graph}$ is a tuple $\langle V, E\rangle$, where:
 \begin{itemize}
   \item $V$ is a set of nodes
-  \item $E$ is a set of edges, where each $e \in E$ has a label $l \in L$ and source and target nodes in $N$
+  \item $E$ is a set of edges, where each $e \in E$ has a label and source and target nodes in $N$
 \end{itemize}
 
-A graph $H$ has an \textit{occurrence} in a graph $G$, denoted by $H \rightarrow G$, if there is a mapping from the nodes and the edges of $H$ to the nodes and the edges of $G$ respectively. Such a mapping is called a \textit{morphism}. An element $e$ in graph $H$ is then said to have an \textit{image} in graph $G$ and $e$ is a \textit{pre-image} of the image. A graph $H$ has a partial morphism to a graph $G$ if there are elements in $H$ without an image in $G$.
+A graph $H$ has an \textit{occurrence} in a graph $G$, denoted by $H \rightarrow G$, if there is a mapping from the nodes and the edges of $H$ to the nodes and the edges of $G$ respectively. Such a mapping is called a \textit{morphism}. A node or edge $x$ in graph $H$ is then said to have an \textit{image} in graph $G$ and $x$ is a \textit{pre-image} of the image. A graph $H$ has a partial morphism to a graph $G$ if there are elements in $H$ without an image in $G$.
 
 \subsection{Host graphs}
-A host graph, given an algebra $\mathcal{A}$, is given by: $\mathcal{G}_\mathcal{A}^{host} \subseteq \mathcal{G}^{graph} \cup \mathbb{U}_\mathcal{A}^{int} \cup \mathbb{U}_\mathcal{A}^{real} \cup \mathbb{U}_\mathcal{A}^{bool} \cup \mathbb{U}_\mathcal{A}^{string}$.
+A host graph, given an algebra $\mathcal{A}$, is given by: $\mathcal{G}_\mathcal{A}^{host} \subseteq \mathcal{G}^{graph} \uplus \mathbb{U}_\mathcal{A}^{int} \uplus \mathbb{U}_\mathcal{A}^{real} \uplus \mathbb{U}_\mathcal{A}^{bool} \uplus \mathbb{U}_\mathcal{A}^{string}$.
 
 \subsection{Graph transformation rules}\label{sec:graph_rules}
-A rule graph is given by $\mathcal{G}^{rule} \subseteq \mathcal{G}^{graph} \cup F_{constant}$. A variable $v \in \mathcal{V}^{S}$ can have an image $i$ in a host graph if $i \in \mathbb{U}_\mathcal{A}^{S}$. A constant symbol $c \notin \mathcal{V}$ can have an image $i$ in a host graph if $i \in \mathbb{U}_\mathcal{A}^{S}$ and $i$ is represented by the constant symbol $c$ in the signature.
+A rule graph is given by $\mathcal{G}^{rule} \subseteq \mathcal{G}^{graph} \uplus F_{constant}$. A variable $v \in \mathcal{V}^{s}, s \in S$ can have an image $i$ in a host graph if $i \in \mathbb{U}_\mathcal{A}^{s}$. A constant symbol $c \notin \mathcal{V}$ can have an image $i$ in a host graph if $i \in \mathbb{U}_\mathcal{A}^{s}$ and $i$ is represented by the constant symbol $c$ in the signature.
 \vspace{5px}
 \begin{definition}
 A transformation rule is a tuple $\langle \mathit{LHS}, \mathit{NAC}, \mathit{RHS}\rangle$, where:
