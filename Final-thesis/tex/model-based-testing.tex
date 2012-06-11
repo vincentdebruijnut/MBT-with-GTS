@@ -10,7 +10,7 @@ Model-based testing is a testing technique where a System Under Test (SUT) is te
   \label{fig:model_based_testing}
 \end{figure}
 
-This type of model-based testing is called \textit{batch testing} or \textit{offline testing}. Another type of model-based testing is \textit{on-the-fly} testing. The main difference is that no test cases are derived, instead a transition in the model is chosen and tested on the system directly. The general architecture for this process is shown in Figure~\ref{fig:model_based_testing_on_the_fly}. An example of an on-the-fly testing is TorX~\cite{Tretmans:TorX}.
+This type of model-based testing is called \textit{batch testing} or \textit{offline testing}. Another type of model-based testing is \textit{on-the-fly} testing. The main difference is that no test cases are derived, instead a transition in the model is chosen and tested on the system directly. The general architecture for this process is shown in Figure~\ref{fig:model_based_testing_on_the_fly}. An example of an on-the-fly testing tool is TorX~\cite{Tretmans:TorX}.
 
 \begin{figure}[ht]
   \begin{center}
@@ -31,20 +31,20 @@ Formal testing theory was introduced by De Nicola et al.~\cite{denicola:testing}
 A labelled transition system is a structure consisting of states with labelled transitions between them.
 \vspace{5px}
 \begin{definition}
-A labelled transition system is a 4-tuple	$\langle Q, L, T, q_0\rangle$, where:
+A labelled transition system is a 4-tuple	$\langle \States, \Labels, \Transitions, \initialState\rangle$, where:
 \begin{itemize}
-\item $Q$ is a finite, non-empty set of states
-\item $L$ is a finite set of labels
-\item $T \in Q \times (L \cup \{\tau\}) \times Q$, with $\tau \notin L$, is the transition relation
-\item $q_0 \in Q$ is the initial state.
+\item $\States$ \newnot{symbol:States} is a finite, non-empty set of states
+\item $\Labels$ \newnot{symbol:Labels} is a finite set of labels
+\item \newnot{symbol:Transitions} $\Transitions \in \States \times (\Labels \cup \{\tau\}) \times \States$, with $\tau \notin \Labels$, is the transition relation
+\item \newnot{symbol:initialState} $\initialState \in \States$ is the initial state.
 \end{itemize}
-We write $q \xrightarrow{\mu}q'$ if there is a transition labelled $\mu$ from state $q$ to state $q'$, i.e., $(q, \mu, q') \in T$. The informal idea of such a transition is that when the system is in state $q$ it may perform action $\mu$, and go to state $q'$. 
+We write $\state \xrightarrow{\mu}\state'$ if there is a transition labelled $\mu$ from state $\state$ to state $\state'$, i.e., $(\state, \mu, \state') \in \Transitions$. The informal idea of such a transition is that when the system is in state $\state$ it may perform action $\mu$, and go to state $\state'$. 
 \end{definition}
 
 \subsection{Input-Output Transition Systems}
-A useful type of transition system for model-based testing is the Input-Output Transition System (IOTS) by Tretmans~\cite{Tretmans:testgeneration}. Assuming that implementations communicate with their environment via inputs and outputs, this formalism is useful for describing system behavior. IOTSs have the same definition as LTSs with one addition: each label $l \in L$ has a type $t \in T$, where $T = \{input, output\}$. Each label can therefore specify whether the action represented by the label is a possible input or an expected output of the system under test.
+A useful type of transition system for model-based testing is the Input-Output Transition System (IOTS) by Tretmans~\cite{Tretmans:testgeneration}. Assuming that implementations communicate with their environment via inputs and outputs, this formalism is useful for describing system behavior. IOTSs have the same definition as LTSs with one addition: each label $\ltsLabel \in \Labels$ has a type $\iotype \in \IOTypes$, where $\IOTypes = \{input, output\}$\newnot{symbol:IOTypes}. Each label can therefore specify whether the action represented by the label is a possible input or an expected output of the system under test.
 
-An example of such an IOTS is shown in Figure~\ref{fig:iots_example}. This system allows an input of 20 or 50 cents and then outputs tea or coffee accordingly. The inputs are preceded by a question mark, the outputs are preceded by an exclamation mark. This system is a specification of a coffee machine. A test case can also be described by an IOTS with special pass and fail states. A test case for the coffee machine is given in Figure~\ref{fig:iots_test}. The test case shows that when an input of '50c' is done, an output of 'coffee' is expected from the tested system, as this results in a 'pass' verdict. When the system responds with 'tea', the test case results in a 'fail' verdict. The pass and fail verdicts are two special states in the test case, which are sink states, i.e., once in either of those the test case cannot leave that state. 
+An example of such an IOTS is shown in Figure~\ref{fig:iots_example}. This system allows an input of 20 or 50 cents and then outputs tea or coffee accordingly. The inputs are preceded by a '?', the outputs are preceded by an '!'. This system is a specification of a coffee machine. A test case can also be described by an IOTS with special pass and fail states. A test case for the coffee machine is given in Figure~\ref{fig:iots_test}. The test case shows that when an input of '50c' is done, an output of 'coffee' is expected from the tested system, as this results in a 'pass' verdict. When the system responds with 'tea', the test case results in a 'fail' verdict. The pass and fail verdicts are two special states in the test case, which are sink states, i.e., once in either of those the test case cannot leave that state. 
 
 Test cases should always reach a pass or fail state within finite time. This requirement ensures that the testing process halts.
 \begin{figure}[ht]

@@ -15,6 +15,12 @@
 \usepackage{fancybox}
 \usepackage{verbatim}
 
+% Macro for 'List of Symbols', 'List of Notations' etc...
+\input{symbol-macros}
+\def\listofsymbols{\input{symbols} \clearpage}
+\def\addsymbol #1: #2#3{$#1$ \> \parbox{5in}{#2 \dotfill \pageref{#3}}\\} 
+\def\newnot#1{\label{#1}} 
+
 \graphicspath{{./img/}}
 %\renewcommand*\familydefault{\sfdefault}
 
@@ -49,13 +55,17 @@
 	\newpage
 	\tableofcontents
   \newpage
-  
+
   \newpage
-	\chapter{Related Concepts}
-	\newpage
+	\chapter{Introduction}\label{chapter:introduction}
 	
 	\input{./tex/introduction.tex}
-	\input{./tex/goals.tex}
+	%\input{./tex/goals.tex}
+	
+	\newpage
+	\chapter{Background}\label{chapter:background}
+	\input{./tex/background-introduction}
+	
 	\input{./tex/model-based-testing.tex}
 	\input{./tex/algebra.tex}
 	\input{./tex/symbolic.tex}
@@ -66,30 +76,26 @@
 	\newpage
 	\chapter{Design}\label{chapter:design}
 	\input{./tex/design-introduction}
-	\newpage
 	\begin{comment}
 	\input{./tex/gratis-design.tex}
 	\end{comment}
 	
 	\newpage
 	\chapter{Graph Grammar to STS Algorithm}\label{chapter:gg_to_sts}
-	\newpage
 	\begin{comment}
 	\input{./tex/gg-to-sts-transformation}
 	\input{./tex/implementation.tex}
 	\end{comment}
 	
 	\newpage
-	\chapter{Validation}
+	\chapter{Validation}\label{chapter:validation}
 	\input{./tex/validation-introduction}
-	\newpage
 	\begin{comment}
 	\input{./tex/case-studies.tex}
 	\input{./tex/measurements.tex}
   \end{comment}
 	\newpage
-	\chapter{Conclusion}
-	\newpage
+	\chapter{Conclusion}\label{chapter:conclusion}
 	\begin{comment}
 	\input{./tex/summary.tex}
 	\input{./tex/conclusion.tex}
@@ -100,4 +106,7 @@
   \newpage
 	\bibliography{bib/bibliography}{}
 	\bibliographystyle{plain}
+	\newpage
+  \chapter*{List of Symbols\hfill} \addcontentsline{toc}{chapter}{List of Symbols}
+\listofsymbols
 \end{document}

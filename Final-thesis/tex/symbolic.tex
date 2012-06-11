@@ -5,29 +5,37 @@
 STSs are introduced by Frantzen et al.~\cite{Frantzen:Symbolic}. This paper includes a detailed definition, on which the definition in section~\ref{sec:sts_definition} is based. The authors also give a sound and complete test derivation algorithm from specifications expressed as STSs. Deriving tests from a symbolic specification or \textit{Symbolic test generation} is introduced by Rusu et al.~\cite{rusu:symbolic}. Here, the authors use \textit{Input-Output Symbolic Transition Systems} (IOSTSs). These systems are very similar to the STSs in~\cite{Frantzen:Symbolic}. However, the definition of IOSTSs we will use in this report is based on the STSs by~\cite{Frantzen:Symbolic}. A tool that generates tests based on symbolic specifications is the STG tool, described in Clarke et al.~\cite{clarke:STG}.
 
 \subsection{Definition}\label{sec:sts_definition}
-An STS has \textit{locations} and \textit{switch relations}. If the STS represents a model of a software system, a location in the STS represents a state of the system, not including data values. A switch relation defines the transition from one location to another. The \textit{location variables} are a representation of the data values in the system. A switch relation has a \textit{gate}, which is a label representating the execution steps of the system. Gates have \textit{interaction variables}, which represent some input or output data value. Switch relations also have \textit{guards} and \textit{update mappings}. A guard is a term $t \in \mathcal{R}(\mathcal{V})$. The guard disallows using the switch relation when the valuation of the term results in $\mathit{false}$. When the valuation results in $\mathit{true}$, the switch relation of the guard is \textit{enabled}. An update mapping is a term-mapping of location variables. After the system switches to a new location, the variables in the update mapping will have the value corresponding to the valuation of the term.
+An STS has \textit{locations} and \textit{switch relations}. If the STS represents a model of a software system, a location in the STS represents a state of the system, not including data values. A switch relation defines the transition from one location to another. The \textit{location variables} are a representation of the data values in the system. A switch relation has a \textit{gate}, which is a label representating the execution steps of the system. Gates have \textit{interaction variables}, which represent some input or output data value. Switch relations also have \textit{guards} and \textit{update mappings}. A guard is a term $\term \in \BooleanTerms(\Variables)$. The guard disallows using the switch relation when the valuation of the term results in $\mathit{false}$. When the valuation results in $\mathit{true}$, the switch relation of the guard is \textit{enabled}. An update mapping is a term-mapping of location variables. After the system switches to a new location, the variables in the update mapping will have the value corresponding to the valuation of the term.
 \vspace{5px}
 \begin{definition}
-A Symbolic Transition System is a tuple $\langle L,l_0,\mathcal{L},\imath,\mathcal{I},\Lambda,\rightarrow\rangle$, where:
+A Symbolic Transition System is a tuple $\langle \Locations,\initialLocation,\LocationVariables,\initializationFunction,\InteractionVariables,\Gates,\Switches\rangle$, where:
 \begin{itemize}
-\item $L$ is a finite set of locations and $l_0 \in L$ is the initial location.
-\item $\mathcal{L} \subseteq \mathcal{V}$ is a finite set of location variables.
-\item $\imath$ is a term-mapping $\mathcal{L} \rightarrow \mathcal{T}(\emptyset)$, representing the initialisation of the location variables.
-\item $\mathcal{I} \subseteq \mathcal{V}$ is a set of interaction variables, disjoint from $\mathcal{L}$.
-\item $\Lambda$ is a finite set of gates. The unobservable gate is denoted $\tau (\tau \notin \Lambda)$; we write $\Lambda_\tau$ for $\Lambda \cup \{\tau\}$. The arity of a gate $\lambda\in\Lambda_\tau$, denoted $arity(\lambda)$, is a natural number. The parameters of a gate $\lambda\in\Lambda_\tau$, denoted $param(\lambda)$, are a tuple of length $arity(\lambda)$ of distinct interaction variables. We fix arity($\tau$) = 0, i.e. the unobservable gate has no interaction variables.
-\item ${\rightarrow} \subseteq L \times \Lambda_\tau \times \mathcal{R}(\mathcal{V} \cup \mathcal{I}) \times (\mathcal{L} \rightarrow \mathcal{T}(\mathcal{L} \cup \mathcal{I})) \times L$, is the switch relation. We write $l\xrightarrow{\lambda,\phi,\rho}l'$ instead of $(l,\lambda,\phi,\rho,l')\in\rightarrow$, where $\phi$ is referred to as the guard and $\rho$ as the update mapping. We require $var(\phi) \cup var(\rho) \subseteq \mathcal{L} \cup param(\lambda)$. We define $out(l) \subset {\rightarrow}$ to be the outgoing switch relations from location $l$.
+\item $\Locations$\newnot{symbol:Locations} is a finite set of locations and $\initialLocation \in \Locations$\newnot{symbol:initialLocation} is the initial location.
+\item $\LocationVariables \subseteq \Variables$\newnot{symbol:LocationVariables} is a finite set of location variables.
+\item $\initializationFunction$\newnot{symbol:initializationFunction} is a term-mapping $\LocationVariables \rightarrow \Terms(\emptyset)$, representing the initialisation of the location variables.
+\item $\InteractionVariables \subseteq \Variables$\newnot{symbol:InteractionVariables} is a set of interaction variables, disjoint from $\LocationVariables$.
+\item $\Gates$\newnot{symbol:Gates} is a finite set of gates. The unobservable gate is denoted $\tau (\tau \notin \Gates)$; we write $\Gates_\tau$ for $\Gates \cup \{\tau\}$. The arity of a gate $\Gates\in\Gates_\tau$, denoted $arity(\Gates)$, is a natural number. The parameters of a gate $\Gates\in\Gates_\tau$, denoted $param(\Gates)$, are a tuple of length $arity(\Gates)$ of distinct interaction variables. We fix arity($\tau$) = 0, i.e. the unobservable gate has no interaction variables.
+\item $\Switches \subseteq \Locations \times \Gates_\tau \times \BooleanTerms(\LocationVariables \cup \InteractionVariables) \times (\LocationVariables \rightarrow \Terms(\LocationVariables \cup \InteractionVariables)) \times \Locations$\newnot{symbol:Switches}, is the switch relation. We write $\location\xrightarrow{\Gates,\guard,\updateMapping}\location'$ instead of $(\location,\Gates,\guard,\updateMapping,\location')\in\Switches$, where $\guard$\newnot{symbol:guard} is referred to as the guard and $\updateMapping$\newnot{symbol:updateMapping} as the update mapping. We require $var(\guard) \cup var(\updateMapping \subseteq \LocationVariables \cup param(\Gates)$. We define $out(\location) \subset \Switches$ to be the outgoing switch relations from location $\location$.
 \end{itemize}
 \end{definition}
 
 \subsection{Input-Output Symbolic Transition Systems}
-An IOSTS can now easily be defined. The same difference between LTSs and IOTSs applies, namely each gate in an IOSTS has a type $t \in T$, where $T = \{input, output\}$. As with IOSTSs, each gate is preceded by a '?' or '!' to indicate whether it is an input or an output respectively.
+An IOSTS can now easily be defined. The same difference between LTSs and IOTSs applies, namely each gate in an IOSTS has a type $\iotype \in \IOTypes$, where $\IOTypes = \{input, output\}$. As with IOSTSs, each gate is preceded by a '?' or '!' to indicate whether it is an input or an output respectively.
 
 \subsection{Example}\label{sec:sts_example}
-In Figure~\ref{fig:example_sts} the IOSTS of a simple board game is shown, where two players consecutively throw a die and move along four squares. The 'init' switch relation is a graphical representation of the variable initialization $\imath$. The defining tuple of the IOSTS is:
+In Figure~\ref{fig:example_sts} the IOSTS of a simple board game is shown, where two players consecutively throw a die and move along four squares. The 'init' switch relation is a graphical representation of the variable initialization $\initializationFunction$. The values in the tuple of the IOSTS are defined as follows:
 
-$\langle\{t, m\},t,\{T, P1, P2, D\},\{T \mapsto 0, P1 \mapsto 0, P2 \mapsto 2, D \mapsto 0\},\{d, p, l\},\{?throw, !move\},\\
-\{t\xrightarrow{?throw, 1 <= d <= 6, D \mapsto d}m, m\xrightarrow{!move, T=1 \land l=(P1+D)\%4, P1 \mapsto l, T \mapsto 2}t,\\
-m\xrightarrow{!move, T=2 \land l=(P2+D)\%4, P2 \mapsto l, T \mapsto 1}t\}\rangle$
+$\begin{array}{lcl}
+\Locations & = & \{t, m\} \\
+\initialLocation & = & t \\
+\LocationVariables & = & \{T, P1, P2, D\} \\
+\initializationFunction & = & \{T \mapsto 0, P1 \mapsto 0, P2 \mapsto 2, D \mapsto 0\} \\
+\InteractionVariables & = & \{d, p, l\} \\
+\Gates & = & \{?throw, !move\} \\
+\Switches & = & \{t\xrightarrow{?throw, 1 <= d <= 6, D \mapsto d}m, \\
+ & & m\xrightarrow{!move, T=1 \land l=(P1+D)\%4, P1 \mapsto l, T \mapsto 2}t, \\
+ & & m\xrightarrow{!move, T=2 \land l=(P2+D)\%4, P2 \mapsto l, T \mapsto 1}t\}
+\end{array}$
 
 The variables $T, P1, P2$ and $D$ are the location variables symbolizing the player's turn, the positions of the players and the number of the die thrown respectively. The output gate $!move$ has $param = \langle p, l\rangle$ symbolizing which player moves to which location. The input gate $?throw$ has $param = \langle d\rangle$ symbolizing which number is thrown by the die. The switch relation with gate $?throw$ has the restriction that the number of the die thrown is between one and six and the update sets the location variable $D$ to the value of interaction variable $d$. The switch relations with gate $!move$ have the restriction that it must be the turn of the player moving and that the new location of the player is the number of steps ahead as thrown by the die. The update mapping sets the location of the player to the correct value and passes the turn to the next player. In Figure~\ref{fig:example_sts} the gates, guards and updates are separated by pipe symbols '|' respectively.
 
@@ -40,19 +48,20 @@ The variables $T, P1, P2$ and $D$ are the location variables symbolizing the pla
 \end{figure}
 
 \subsection{STS to LTS mapping}\label{sec:sts_lts_trafo}
-Consider an STS $s$ and an LTS $l$. There exists a mapping from the location and location variable valuations to the states of $l$ and from the switch relations and variable valuations of $s$ to the transitions of $l$, such that $l$ is equivalent\marginpar{Is equivalent the correct term here?} to $s$. These relations defined as follows:
-\begin{itemize}
-  \item $\mu_l:(L, \nu:\mathcal{L}) \rightarrow Q$
-  \item $\mu_r:({\rightarrow}, \nu:\mathcal{I}\cup \mathcal{L}) \rightarrow T$
-\end{itemize}
+Consider an STS $J$ and an LTS $K$. There exists a mapping from the location and location variable valuations to the states of $K$ and from the switch relations and variable valuations of $J$ to the transitions of $K$, such that $K$ is an expansion of $J$. These relations are defined as follows:
+$\begin{array}{ll}
+\StsExpansionMapping_\States: & (\Locations \times (\LocationVariables \rightarrow \mathbb{U})) \rightarrow \States \\
+\StsExpansionMapping_\Labels: & (\Gates \times (\InteractionVariables \rightarrow \mathbb{U})) \rightarrow \Labels \\
+\StsExpansionMapping_\Transitions: & (\location\xrightarrow{\gate,\guard,\updateMapping}\location', \valuation: ((\LocationVariables \cup \InteractionVariables) \rightarrow \mathbb{U})) \mapsto (\StsExpansionMapping_\States(\location, \valuation \restriction \LocationVariables) \xrightarrow{\StsExpansionMapping_\Labels(\gate, \valuation \restriction\InteractionVariables)} \StsExpansionMapping_\States(\location', \valuation_{after}(\updateMapping)))
+\end{array}$
 
 \begin{comment}
-These relations are constructed as follows: for a switch relation $r$ from location $A$ to location $B$, a valuation of the location variables $\nu_l$ and interaction variables $\nu_i$, $\mu_l:(A,\nu_l)$ maps to a state $q$, where $q$ is the source state of a transition $t$, if the result of the valuation $\nu:(\phi$ of $r, \nu_l \cup \nu_i)$ is true. $\nu_{l_new}$ is the new valuation of the location variables constructed by the valuation of $\rho$ of $r$. Then, the target state $q'$ of $t$ is the state mapped by $\mu_l:(B,\nu_{l_new}$). The label of $t$ is a textual representation of $\lambda$ of $r$ and $\nu_i$. Applying this rule for the topology to all locations, switch relations and concrete values for the variables, results in $L$. The start state $q0$ of $L$ is the state mapped by $\mu_l:(l_0,\imath)$. All states not reachable from $q0$ are removed from $L$.
+These relations are constructed as follows: for a switch relation $r$ from location $A$ to location $B$, a valuation of the location variables $\nu_l$ and interaction variables $\nu_i$, $\mu_l:(A,\nu_l)$ maps to a state $q$, where $q$ is the source state of a transition $t$, if the result of the valuation $\nu:(\phi$ of $r, \nu_l \cup \nu_i)$ is true. $\nu_{l_new}$ is the new valuation of the location variables constructed by the valuation of $\rho$ of $r$. Then, the target state $q'$ of $t$ is the state mapped by $\mu_l:(B,\nu_{l_new}$). The label of $t$ is a textual representation of $\Gates$ of $r$ and $\nu_i$. Applying this rule for the topology to all locations, switch relations and concrete values for the variables, results in $L$. The start state $q0$ of $L$ is the state mapped by $\mu_l:(l_0,\initializationFunction)$. All states not reachable from $q0$ are removed from $L$.
 \end{comment}
 
-When the number of possible valuations for $\mathcal{L}$ and $\mathcal{I}$ and the number of locations in an STS is considered to be finite, the transformation is always possible to an LTS with finite number of states.
+When the number of possible valuations for $\LocationVariables$ and $\InteractionVariables$ and the number of locations in an STS is considered to be finite, the transformation is always possible to an LTS with finite number of states.
 
-An example of this transformation is shown in Figure~\ref{fig:example_trafo}. The label 'do(1)' in the LTS is a textual representation of the gate 'do' plus a valuation of the interaction variable 'd'. The transformation of a switch relation and concrete values to a transition is also called \textit{instantiating} the switch relation. Another term we will use for a switch relation with a set of concrete data values is an \textit{instantiated switch relation}.\marginpar{Wat is hier mis mee?}
+An example of this transformation is shown in Figure~\ref{fig:example_trafo}. The label 'do(1)' in the LTS is a textual representation of the gate 'do' plus a valuation of the interaction variable 'd'. The transformation of a switch relation and concrete values to a transition is also called \textit{instantiating} the switch relation. Another term we will use for a switch relation with a set of concrete data values is an \textit{instantiated switch relation}.
 
 \begin{figure}[ht]
   \begin{center}

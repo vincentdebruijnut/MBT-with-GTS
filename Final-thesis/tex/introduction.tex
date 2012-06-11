@@ -1,21 +1,31 @@
-\section{Introduction}
 In software development projects, often limited time and resources are available for testing\marginpar{citations needed.'this contrasts often-heard statement on testing takes x\% of total development cost'}. However, testing is an important part of software development, because it decreases future maintainance costs~\cite{McConnell:testing}. Testing is a complex process and should be done often~\cite{Pol:testing}. Therefore, the testing process should be as efficient as possible in order to save resources.
 
 Test automation allows repeated testing during the development process. The advantage of this is that bugs are found early and can therefore be fixed early.  A widely used practice is maintaining a \textit{test suite}, which is a collection of test-cases. However, when the creation of a test suite is done manually, this still leaves room for human error~\cite{Blackburn:testing}. Also, manual creation of test-cases is not time-efficient.
 
-\subsection{Model-based Testing}
+\section{Model-based Testing}
 Creating an abstract representation or a \textit{model} of the system is a way to tackle these problems. What is meant by a model in this report, is the description of the behavior of a system. UML models are not considered here. A model can be used to systematically generate tests for the system. This is referred to as \textit{model-based testing}. This leads to a larger test suite in a shorter amount of time than if done manually. These models are created from the specification documents provided by the end-user. These specification documents are 'notoriously error-prone'~\cite{McCabe:testing}\marginpar{A: That's not an argument in favor V: It is in favor of graph grammars vs other model formalisms in model-based testing.}. If the tester copies an error in the document or makes a wrong interpretation, the constructed model becomes incorrect.
 
 Tools for automatic test generation already exist. One such tool is TorX~\cite{Tretmans:TorX}, which integrates automatic test generation, test execution, and test analysis. A version of this tool written in Java under continuous development is JTorX~\cite{Belinfante:JTorX}. The testing tool developed by Axini\footnote{http://www.axini.nl/} is used for the automatic test generation on \textit{symbolic} models, which combine a state and data type oriented approach. This tool will be referred to in this report as Axini Test Manager (ATM).
 
 The stakeholders evaluate the constructed model to verify its correctness. However, the visual or textual representation of large models may become troublesome to understand, which is referred to as the model having a low model transparency. The feedback process of the stakeholders is obstructed by low transparency models. Models that are often used are state machines, i.e. a collection of nodes representing the states of the system connected by transitions representing an action taken by the system. The problem in such models with a large number of states is the decrease of model transparency. Errors in models with a low transparency are not easily detected.
 
-\subsection{Graph Transformation}
+\section{Graph Transformation}
 A formalism with more model transparency is Graph Transformation. The system states are represented by graphs and the transitions between the states are accomplished by applying graph change rules to those graphs. These rules can be expressed as graphs themselves. A graph transformation model of a software system is therefore a collection of graphs, each a visual representation of one aspect of the system. This formalism may therefore provide a more intuitive approach to system modelling than traditional state machines. Graph Transformation and its potential benefits have been studied since the early '70s. The usage of this computational paradigm is best described by the following quote from Andries et al.~\cite{Andries1999}: \begin{quote}Graphs are well-known, well-understood, and frequently used means to represent system states, complex objects, diagrams, and networks, like flowcharts, entity-relationship diagrams, Petri nets, and many more. Rules have proved to be extremely useful for describing computations by local transformations: Arithmetic, syntactic, and deduction rules are well-known examples.\end{quote} An informative paper on graph transformations is written by Heckel et al.~\cite{Heckel2006187}. A quote from this paper: \begin{quote}Graphs and diagrams provide a simple and powerful approach to a variety of problems that are typical to computer science in general, and software engineering in particular.\end{quote}
 
 The graph transformation tool GROOVE\footnote{http://sourceforge.net/projects/groove/} is used to model and explore graph grammars.
 
-\subsection{Roadmap}
+\section{Research goals}\label{sec:goals}
+
 The motivation above is given for using graph grammars as a modelling technique. The goal of this research is to create a system for automatic test generation on graph grammars. If the assumptions that graph grammars provide a more intuitive modelling and testing process hold, this new testing approach will lead to a more efficient testing process and fewer incorrect models. The to be designed system, once implemented and validated, provides a valuable contribution to the testing paradigm. The tools GROOVE and ATM are used to create this system.
 
-The structure of the rest of this chapter is as follows: the goals of this research are set out and clarified in section~\ref{sec:goals}. The general model-based testing process is set out in section \ref{sec:model_based_testing}. Some basic concepts from algebra are described in section~\ref{sec:algebra}. The symbolic models from ATM are then described in section \ref{sec:symbolic}. Section \ref{sec:graph} describes the graph grammar formalism. GROOVE and ATM are described in section \ref{sec:tooling}.
+The research goals are split into a design and validation component:
+\begin{enumerate}
+    \item \textbf{Design}: Design and implement a system using ATM and GROOVE which performs model-based testing on graph grammars.
+    \item \textbf{Validation}: Validate the design and implementation using case studies and performance measurements.
+\end{enumerate}
+
+The result of the design goal is one system called the GROOVE-Axini Testing System (GRATiS). The validation goal uses case-studies with existing specifications from systems tested by Axini. Each case-study has a graph grammar and a symbolic model which describe the same system. GRATiS and ATM are used for the automatic test generation on these models respectively. Both the models and the test processes are compared as part of the validation.
+
+\section{Roadmap}
+
+This report features five more chapters: first, the concepts described in this chapter are elaborated in chapter \ref{chapter:background}. Chapter \ref{chapter:design} features the design of GRATiS and the choices made. The algorithm used in GRATiS is described in chapter \ref{chapter:gg_to_sts}. GRATiS is validated in chapter \ref{chapter:validation} and conclusions are drawn in chapter \ref{chapter:conclusion}.
