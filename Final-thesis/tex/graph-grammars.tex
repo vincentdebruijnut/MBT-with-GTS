@@ -4,19 +4,27 @@ A \textit{Graph Grammar} (GG) is composed of a set of graph transformation rules
 The rest of this section is ordered as follows: first, host graphs are explained. This is then used to explain graph transformation rules. Then, the definition of a \textit{Graph Transition System} (GTS) is given. An example of a GG and a GTS is then given. Finally, a method for transforming a GTS to an STS is given. For a more detailed overview of GGs, we refer to~\cite{Rensink:graph_grammars, Heckel2006187, Andries1999}.
 
 \subsection{Graphs and morphisms}
-A graph $\mathcal{G}^{graph}$ is a tuple $\langle V, E\rangle$, where:
+In this report, we assume a universe of nodes $\Nodes$\newnot{symbol:Nodes} such that $\mathbb{U} \subset \Nodes$, $\Variables \subset \Nodes$ and $\FunctionSymbols^0 \subset \Nodes$.
+
+A graph $\hostGraph$ is a tuple $\langle \DefinedNodes, \DefinedEdges\rangle$\newnot{symbol:hostGraph}, where:
 \begin{itemize}
-  \item $V$ is a set of nodes
-  \item $E$ is a set of edges, where each $e \in E$ has a label and source and target nodes in $N$
+  \item $\DefinedNodes \subseteq (\Nodes \backslash \FunctionSymbols^0)$
+  \item $\DefinedEdges$ is a set of edges, where each $\edge \in \DefinedEdges$ has a label and source and target nodes in $\DefinedNodes$
 \end{itemize}
 
-A graph $H$ has an \textit{occurrence} in a graph $G$, denoted by $H \rightarrow G$, if there is a mapping from the nodes and the edges of $H$ to the nodes and the edges of $G$ respectively. Such a mapping is called a \textit{morphism}. A node or edge $x$ in graph $H$ is then said to have an \textit{image} in graph $G$ and $x$ is a \textit{pre-image} of the image. A graph $H$ has a partial morphism to a graph $G$ if there are elements in $H$ without an image in $G$.
+A graph $H$ has an \textit{occurrence} in a graph $\hostGraph$ if there is a structure-preserving mapping from the nodes and the edges of $H$ to the nodes and the edges of $\hostGraph$ respectively. Such a mapping is called a \textit{morphism}. A node or edge $x$ in graph $H$ is then said to have an \textit{image} in graph $\hostGraph$ and $x$ is a \textit{pre-image} of the image. A graph $H$ has a partial morphism to a graph $\hostGraph$ if there are elements in $H$ without an image in $\hostGraph$.
 
-\subsection{Host graphs}
-A host graph, given an algebra $\mathcal{A}$, is given by: $\mathcal{G}_\mathcal{A}^{host} \subseteq \mathcal{G}^{graph} \uplus \mathbb{U}_\mathcal{A}^{int} \uplus \mathbb{U}_\mathcal{A}^{real} \uplus \mathbb{U}_\mathcal{A}^{bool} \uplus \mathbb{U}_\mathcal{A}^{string}$.
+\subsection{Rule graphs}
+A rule graph $\ruleGraph$ is a tuple $\langle \DefinedRuleNodes, \DefinedRuleEdges, \FunctionSymbols \rangle$\newnot{symbol:ruleGraph}, where:
+\begin{itemize}
+  \item $\DefinedRuleNodes \subseteq (\Nodes \backslash \mathbb{U})$
+  \item $\DefinedRuleEdges$ is a set of edges, where each $\edge \in \DefinedRuleEdges$ has a label and source and target nodes in $\DefinedRuleNodes$
+  \item The function symbols have to form the terms over the constants matched by the constant symbols.
+\end{itemize}
+
+A variable $\variable \in \Variables^{\sort}, \sort \in \Sorts$, can have an image $i$ in a graph if $i \in \mathbb{U}^{\sort}$. A constant symbol $c \in \FunctionSymbols^0$ can have an image $i$ in a graph if $i \in \mathbb{U}^{\sort}$ and $i$ is represented by the constant symbol $c$ in the signature.
 
 \subsection{Graph transformation rules}\label{sec:graph_rules}
-A rule graph is given by $\mathcal{G}^{rule} \subseteq \mathcal{G}^{graph} \uplus F_{constant}$. A variable $v \in \mathcal{V}^{s}, s \in S$ can have an image $i$ in a host graph if $i \in \mathbb{U}_\mathcal{A}^{s}$. A constant symbol $c \notin \mathcal{V}$ can have an image $i$ in a host graph if $i \in \mathbb{U}_\mathcal{A}^{s}$ and $i$ is represented by the constant symbol $c$ in the signature.
 \vspace{5px}
 \begin{definition}
 A transformation rule is a tuple $\langle \mathit{LHS}, \mathit{NAC}, \mathit{RHS}\rangle$, where:
@@ -33,24 +41,21 @@ $\mathit{LHS}$ is a tuple $\langle \mathcal{V}_{LHS}, \mathcal{E}_{LHS}, \mathca
 
 A rule $R$ is applicable on a graph $G$ if its $\mathit{LHS}$ has an occurrence in $G$ and $\not\exists\,n \in \mathit{NAC}$ such that $n$ has an occurence in $G$ and $\forall\,e \in \mathit{LHS}$, if $e$ has an image $i$ in $n$, and an image $j$ in $G$, then $j$ should be an image of $i$.
 
-This 'applicability' as defined here is refered to as a rule \textit{match}. After the rule match is applied to the graph, all elements in $\mathit{LHS}$ that do not have an image in $\mathit{RHS}$, are removed from $G$ and all elements in $\mathit{RHS}$ that do not have a pre-image in $\mathit{LHS}$, are added to $G$.
+This 'applicability' as defined here is refered to as a rule \textit{match}. After the rule match is applied to the graph, all elements in $\mathit{LHS}$ that do not have an image in $\mathit{RHS}$, are removed from $G$ and all elements in $\mathit{RHS}$ that do not have a pre-image in $\mathit{LHS}$, are added to $\hostGraph$.
 
 \subsection{Graph Transition Systems}
-By repeatedly applying graph transformation rules to the start graph and all its consecutive graphs, a GG can be explored to reveal a \textit{Graph Transition System} (GTS). This transition system consists of \textit{graph states} connected by \textit{rule transitions}.
+By repeatedly applying graph transformation rules to the start graph and all its consecutive graphs, a GG can be explored to reveal a \textit{Graph Transition System} (GTS). This transition system consists of graphs connected by \textit{rule transitions}.
 \vspace{5px}
 \begin{definition}
-A graph transition system is an 8-tuple	$\langle G, R, L, T_{gts}, g_0\rangle$, where:
+A graph transition system is a tuple	$\langle \Graphs, \Rules, \RuleTransitions, \startGraph\rangle$, where:
 \begin{itemize}
-\item $G$ is a set of host graphs
-\item $R$ is a set of transformation rules
-\item $L$ is a finite set of labels\marginpar{A: what are the labels? V: hoe bedoel je? strings?}
-\item $T_{gts} \in G \times (L \cup \{\tau\}) \times G \times R$, with $\tau \notin L$, is the rule transition relation
-\item $g_0 \in G$ is the initial graph
+\item $\Graphs$\newnot{symbol:Graphs} is a set of graphs
+\item $\Rules$\newnot{symbol:Rules} is a set of transformation rules
+\item $\RuleTransitions \in \Graphs \times \Rules \times \Graphs$\newnot{symbol:RuleTransitions} is the rule transition relation
+\item $\startGraph \in \Graphs$\newnot{symbol:startGraph} is the initial graph
 \end{itemize}
-We write $s \xrightarrow{\mu}s'$ if there is a rule transition labelled $\mu$ from state s to state s', i.e., $(s, \mu, s') \in T$.
+We write $\hostGraph \xrightarrow{\ggrule}\hostGraph'$ if there is a rule transition with rule $\ggrule$ from graph $\hostGraph$ to $\hostGraph'$, i.e., $(\hostGraph, \ggrule, \hostGraph') \in \RuleTransitions$.
 \end{definition}
-
-These systems are very similar to LTSs. A GTS can be transformed to an LTS by omitting the graphs, rules and mappings.
 
 \subsection{Example}\label{sec:gts_example}
 Figure \ref{fig:gts} shows an example of the initial graph and one rule of a GG. The initial graph can be represented by $\langle\{n1,n2\},\{\langle n1,a,n1\rangle, \langle n1,A,n2\rangle,\langle n2,B,n2\rangle\}\rangle$. The $\mathit{LHS}$ of the rule has an occurrence in the initial graph. None of the graphs in the $\mathit{NAC}$ have an occurrence in the initial graph, because the edge with label $C$ does not exist in the initial graph. The new graph after applying the rule is in Figure~\ref{fig:gg_result}.
@@ -70,4 +75,4 @@ Figure \ref{fig:gts} shows an example of the initial graph and one rule of a GG.
 \end{figure}\marginpar{This picture needs to be placed in a structure, need a way of nesting graphs...}
 
 \subsection{Input-Output GGs}
-In order to specify stimuli and responses with GGs, a definition is given for an \textit{Input-Output GG} (IOGG). Concretely, the IOGG places input and output labels on its rule transitions. Following the definition from IOLTSs, each rule transition label $l \in L$ has a type $t \in T$, where $T = \{input, output\}$. Exploring an IOGG leads to an \textit{Input-Output Graph Transition System} (IOGTS).
+In order to specify stimuli and responses with GGs, a definition is given for an \textit{Input-Output GG} (IOGG). Concretely, the IOGG places input and output labels on its rule transitions. Following the definition from IOLTSs, each rule transition label $l \in L$ has a type $\iotype \in \IOTypes$. Exploring an IOGG leads to an \textit{Input-Output Graph Transition System} (IOGTS).

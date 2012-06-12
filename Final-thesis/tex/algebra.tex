@@ -16,7 +16,7 @@ $\begin{array}{lll}\sortFunction: \term \mapsto & \sort       & \mathit{if}\: \t
  & \sort_{n+1} & \mathit{if}\: \term = \function(\term_1 ... \term_n) \mathit{\:and\:} \sortFunction(\function) = \sort_1 ... \sort_{n+1}\mathit{,\:provided\:} \sortFunction(\term_i) = \sort_i
 \end{array}$
 \vspace{8px}\\
-A term with type $\mathbb{U}^{bool}$, is denoted as $\BooleanTerms(\Variables)$. An example is $(x < y)$, where the result is $\mathit{true}$ or $\mathit{false}$.
+The set of terms with return types $\mathbb{U}^{bool}$, is denoted as $\BooleanTerms(\Variables)$. An example is $(x < y)$, where the result is $\mathit{true}$ or $\mathit{false}$.
 
 A \textit{term-mapping} is a function $\termMapping:\Variables \rightarrow \Terms(\Variables)$\newnot{symbol:termMapping}. A \textit{valuation} $\valuation$\newnot{symbol:valuation} is a function $\valuation:\Variables \rightarrow \mathbb{U}$ that assigns constants to variables. For example, given an algebra, $\valuation:\{(x \mapsto 1), (y \mapsto 2))\}$ assigns the constants 1 and 2 to the variables $x$ and $y$ respectively.
 A valuation of a term given $\Algebra$ is defined by $\valuation(\function(\term_1 ... \term_n)) \mapsto \function_\Algebra(\valuation(\term_1) ... \valuation(\term_n))$. When every variable in a term is defined by a valuation, the term can be valuated to a constant. Therefore, when every variable in a term-mapping is defined by a valuation, a new valuation can be obtained. Formally, this is defined as: $\valuation_{after}:(\Variables \rightarrow \Terms(\Variables)) \rightarrow (\Variables \rightarrow \mathbb{U})$.

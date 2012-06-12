@@ -19,7 +19,7 @@
 \BOOKMARK [2][-]{subsection.2.3.6}{Coverage}{section.2.3}
 \BOOKMARK [1][-]{section.2.4}{Graph Grammars}{chapter.2}
 \BOOKMARK [2][-]{subsection.2.4.1}{Graphs and morphisms}{section.2.4}
-\BOOKMARK [2][-]{subsection.2.4.2}{Host graphs}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.2}{Rule graphs}{section.2.4}
 \BOOKMARK [2][-]{subsection.2.4.3}{Graph transformation rules}{section.2.4}
 \BOOKMARK [2][-]{subsection.2.4.4}{Graph Transition Systems}{section.2.4}
 \BOOKMARK [2][-]{subsection.2.4.5}{Example}{section.2.4}
@@ -29,7 +29,24 @@
 \BOOKMARK [2][-]{subsection.2.5.2}{GROOVE}{section.2.5}
 \BOOKMARK [2][-]{subsection.2.5.3}{Graph grammars in GROOVE}{section.2.5}
 \BOOKMARK [0][-]{chapter.3}{Design}{}
+\BOOKMARK [1][-]{section.3.1}{General setup}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{Offline vs. on-the-fly model exploration}{chapter.3}
 \BOOKMARK [0][-]{chapter.4}{Graph Grammar to STS Algorithm}{}
+\BOOKMARK [1][-]{section.4.1}{Algorithm}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.1.1}{Point algebra}{section.4.1}
+\BOOKMARK [2][-]{subsection.4.1.2}{Graphs}{section.4.1}
+\BOOKMARK [3][-]{subsubsection.4.1.2.1}{Locations}{subsection.4.1.2}
+\BOOKMARK [3][-]{subsubsection.4.1.2.2}{Location variables}{subsection.4.1.2}
+\BOOKMARK [2][-]{subsection.4.1.3}{Rule transitions}{section.4.1}
+\BOOKMARK [3][-]{subsubsection.4.1.3.1}{Gates}{subsection.4.1.3}
+\BOOKMARK [3][-]{subsubsection.4.1.3.2}{Interaction variables}{subsection.4.1.3}
+\BOOKMARK [3][-]{subsubsection.4.1.3.3}{Guards}{subsection.4.1.3}
+\BOOKMARK [3][-]{subsubsection.4.1.3.4}{Update mapping}{subsection.4.1.3}
+\BOOKMARK [3][-]{subsubsection.4.1.3.5}{Switch relations}{subsection.4.1.3}
+\BOOKMARK [1][-]{section.4.2}{Constraints}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.2.1}{Constraint 1: creator/eraser pairs}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.2}{Constraint 2: no variables in NACs}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.3}{Constraint 3: structural constraints on node creating rules}{section.4.2}
 \BOOKMARK [0][-]{chapter.5}{Validation}{}
 \BOOKMARK [0][-]{chapter.6}{Conclusion}{}
-\BOOKMARK [0][-]{chapter*.15}{List of Symbols}{}
+\BOOKMARK [0][-]{chapter*.16}{List of Symbols}{}

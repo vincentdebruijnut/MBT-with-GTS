@@ -1,70 +1,33 @@
-\section{Graph Grammar to STS Transformation Rules}\label{sec:gg-to-sts}
+\section{Algorithm}
+This section describes an algorithm for creating an STS $J$ from a GG $K$ and an initial graph $\startGraph$. 
 
-\subsection{Graph states transformation}
-Graph states are a representation of the state of a system. In an STS, this representation is done by the locations and the location variables. In order to obtain an STS from a graph grammar, the explored graph states are transformed to locations and location variables. 
+\subsection{Point algebra}
+We define a \textit{point algebra} $\PointAlgebra$\newnot{symbol:PointAlgebra} to be an algebra with $\forall \sort \in \Sorts . |\mathbb{U}_\PointAlgebra^\sort| = 1$. We define $O$ to be the GTS obtained from exploring $K$ on $\startGraph$, using $\PointAlgebra$.
 
-The locations $L$ of the transformation are obtained by abstracting the variable nodes in the graph states. For the example given of graphs with variable nodes specifically, the value nodes are removed from the graph. The abstracted graph states are considered to be the same location in the transformed STS when they are isomorphic. The location variables $\mathcal{L}$ are identified by the variable nodes $V$. The value nodes in the start graph give the initialization $\imath$ of the STS.
+\subsection{Graphs}
+The graphs $\Graphs$ in a GTS are representations of the states of a transition system. In an STS, this representation is done by the locations and the location variables. In order to obtain the locations and location variables of $J$, the graphs of $O$ are used.
 
-Figure~\ref{fig:abstract_graph} shows the abstraction of the graph in Figure~\ref{fig:variable_node}. Assuming this is the graph of a start graph state, the transformed STS is as follows: $L = \{l_0\}, \mathcal{L} = \{x\}, \imath = \{x \mapsto 25\}$, where the start location $l_0$ is represented by the abstraction.
+\subsubsection{Locations}
+For each $\hostGraph \in \Graphs$ of $0$ a location $\location \in \Locations$ of $J$ is created. The location created from the initial graph $\startGraph$ is the initial location $\initialLocation$. We define the function $\mu_\Locations: \Graphs \rightarrow \Locations$ to obtain the location from the graph .
 
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/abstract_graph.tex}
-  \end{center}
-  \caption{An example of a graph abstraction}
-  \label{fig:abstract_graph}
-\end{figure}
+\subsubsection{Location variables}
+The location variables $\LocationVariables$ are identified by the $\mathbb{U}$ nodes in $\startGraph$. Concretely, for each node $n \in \mathbb{U}$, a location variable $\variable \in \LocationVariables$ is created and $\variable \mapsto n$ is added to the initialization $\initializationFunction$.
 
-\subsection{Rule transitions transformation}
-Rule transitions are a representation of the switch from one system state to another. In STSs, this representation is done by the switch relations. In order to obtain an STS from a graph grammar, the explored rule transitions are transformed to the switch relations.
+\subsection{Rule transitions}
+Rule transitions are a representation of the switch from one system state to another. In STSs, this representation is done by the switch relations.
 
-\subsubsection{Rule LHSs}\label{sec:rule_lhss}
-When the LHS of a rule has an occurence in the graph of a graph state and the NACs of the rule do not, a rule transition exists. This also indicates the presence of a switch relation $r \in \rightarrow$ in the STS. The label on the rule transition is transformed to a gate $\lambda \in \Lambda$ in the STS. The source location of the switch relation is the transformation of the source graph state of the rule transition and like-wise with the target location. This means that multiple rule transitions can transform to the same switch relation.
+\subsubsection{Gates}
+For each rule $\ggrule \in \Rules$ of $O$ a gate $\gate \in \Gates$ of $J$ is created, with $\mathit{arity}(\gate) = 0$. We define the function $\mu_\Gates: \Rules \rightarrow \Gates$ to obtain the gate from the rule.
 
-When a variable node is an image of a node in the LHS, this indicates a constraint on the variable represented by that node. In some graph states, the value node of the variable node will be an image of a node in the LHS, whereas in other graph states it will not. When the abstractions of these graph states are isomorphic, i.e. transform to the same location, an outgoing switch relation represented by the rule transitions is present. However, since there are graph states where the switch relation should not be enabled, a guard $\phi$ must be specified on this switch relation. This guard specifies the possible values the location variable represented by the variable node may have. 
+\subsubsection{Interaction variables}
+Not possible from GG, only GROOVE-GG specific.
 
-Figure~\ref{fig:lhs_trafo} shows the LHS of a rule. This graph has an occurrence in a graph where the variable 'x' has the value '25'. In the graph grammar to STS transformation, this LHS will cause a 'x = 25' guard to be set on switch relations.
+\subsubsection{Guards}
+Only possible if we define terms in GGs.
 
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/lhs_trafo.tex}
-  \end{center}
-  \caption{The LHS of a rule}
-  \label{fig:lhs_trafo}
-\end{figure}
+\subsubsection{Update mapping}
+Only possible if we define terms in GGs.
 
-\subsubsection{Rule NACs}
-The absence of occurences of the NACs of a rule indicates the existence of a rule transition. However, as with the LHS, when the value node of a variable node is the image of a node in a NAC, a constraint is specified on that value. With the same reasoning as in section~\ref{sec:rule_lhss}, this constraint must be included in the guard $\phi$. The guard then also specifies the possible values the location variable represented by the variable node may not have.
+\subsubsection{Switch relations}
+For each rule transition $\ruleTransition \in \RuleTransitions$ a switch relation $\switch \in \Switches$ is created. We define the function $\mu_\Switches: (\hostGraph \xrightarrow{\ggrule} \hostGraph') \rightarrow (\mu_\Locations(\hostGraph)\xrightarrow{\mu_\Gates(\ggrule), \guard, \updateMapping}\mu_\Locations(\hostGraph'))$
 
-Figure~\ref{fig:nac_trafo} shows a NAC of a rule. This graph has an occurrence in a graph where the variable 'x' has the value '10'. In the graph grammar to STS transformation, this NAC will cause a 'x != 10' guard to be set on switch relations.
-
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/nac_trafo.tex}
-  \end{center}
-  \caption{A NAC of a rule}
-  \label{fig:nac_trafo}
-\end{figure}
-
-\subsubsection{Rule RHSs}
-The RHS of a rule gives the target graph state of a rule transition. This indicates the target location of the switch relation represented by the rule transition. However, when a variable node is the image of a node in the RHS and the value node of the image has no pre-image in the RHS, a change of the value of the variable has occurred. This change can be made into an update mapping $\rho$ in the transformed STS; the location variable represented by the variable node is mapped to the value specified by the value node in the RHS. Note that we assume the existence of such a node in the RHS.
-
-Figure~\ref{fig:rhs_trafo} shows the RHS of a rule. In the graph grammar to STS transformation, this RHS will add $x \mapsto 5$ to the update mapping of a switch relation.
-
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/rhs_trafo.tex}
-  \end{center}
-  \caption{The RHS of a rule}
-  \label{fig:rhs_trafo}
-\end{figure}
-
-Figures~\ref{fig:variable_node}, \ref{fig:lhs_trafo}, \ref{fig:nac_trafo} and \ref{fig:rhs_trafo} are a graph grammar with one rule, which we will name 'rule' for the purpose of this example. The complete transformation according to the rules in this section is shown in Figure~\ref{fig:sts_trafo}.In this particular case, the LHS and the NAC are mutually exclusive, so the guard could be optimized. However, it still demonstrates the principle of the transformation rules.
-
- \begin{figure}[ht]
-  \begin{center}
-    \input{./img/sts_trafo.tex}
-  \end{center}
-  \caption{The STS transformation of a simple graph grammar}
-  \label{fig:sts_trafo}
-\end{figure}
