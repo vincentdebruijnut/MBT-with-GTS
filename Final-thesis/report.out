@@ -18,12 +18,13 @@
 \BOOKMARK [2][-]{subsection.2.3.5}{STS to LTS mapping}{section.2.3}
 \BOOKMARK [2][-]{subsection.2.3.6}{Coverage}{section.2.3}
 \BOOKMARK [1][-]{section.2.4}{Graph Grammars}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.4.1}{Graphs and morphisms}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.1}{Host graphs}{section.2.4}
 \BOOKMARK [2][-]{subsection.2.4.2}{Rule graphs}{section.2.4}
-\BOOKMARK [2][-]{subsection.2.4.3}{Graph transformation rules}{section.2.4}
-\BOOKMARK [2][-]{subsection.2.4.4}{Graph Transition Systems}{section.2.4}
-\BOOKMARK [2][-]{subsection.2.4.5}{Example}{section.2.4}
-\BOOKMARK [2][-]{subsection.2.4.6}{Input-Output GGs}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.3}{Morphisms \046 matches}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.4}{Graph transformation rules}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.5}{Graph Transition Systems}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.6}{Example}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.7}{Input-Output GGs}{section.2.4}
 \BOOKMARK [1][-]{section.2.5}{Tooling}{chapter.2}
 \BOOKMARK [2][-]{subsection.2.5.1}{ATM}{section.2.5}
 \BOOKMARK [2][-]{subsection.2.5.2}{GROOVE}{section.2.5}

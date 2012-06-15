@@ -18,12 +18,13 @@
 \contentsline {subsection}{\numberline {2.3.5}STS to LTS mapping}{11}{subsection.2.3.5}
 \contentsline {subsection}{\numberline {2.3.6}Coverage}{11}{subsection.2.3.6}
 \contentsline {section}{\numberline {2.4}Graph Grammars}{12}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Graphs and morphisms}{12}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.1}Host graphs}{12}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Rule graphs}{13}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Graph transformation rules}{13}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}Graph Transition Systems}{13}{subsection.2.4.4}
-\contentsline {subsection}{\numberline {2.4.5}Example}{13}{subsection.2.4.5}
-\contentsline {subsection}{\numberline {2.4.6}Input-Output GGs}{14}{subsection.2.4.6}
+\contentsline {subsection}{\numberline {2.4.3}Morphisms \& matches}{13}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Graph transformation rules}{13}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.5}Graph Transition Systems}{13}{subsection.2.4.5}
+\contentsline {subsection}{\numberline {2.4.6}Example}{14}{subsection.2.4.6}
+\contentsline {subsection}{\numberline {2.4.7}Input-Output GGs}{14}{subsection.2.4.7}
 \contentsline {section}{\numberline {2.5}Tooling}{14}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}ATM}{14}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}GROOVE}{15}{subsection.2.5.2}
