@@ -2,51 +2,11 @@
 
 This section features several implementation issues of GRATiS.
 
-\subsection{Point algebra}
-In Figure~\ref{fig:example_groove} the support GROOVE gives to algebraic expressions can be seen. Different algebra families can be set for a graph grammar, such as the \textit{point algebra}. It has an interesting property: the value of any variable or expression is the same for each variable type. Therefore, the value nodes in each graph state are the same. In the transformation rules, two graph states are considered to transform to the same location when they are isomorphic, omitting the values of the variables. Thus, exploring a graph grammar using the point algebra, produces the same result as the partial matching scheme in section~\ref{sec:partial-matching}. 
-
-The boolean expressions in the rules are also affected by the point algebra: the result of a boolean expression is always true as this is the default value of a boolean in the point algebra. Therefore, the effect of using this algebra family is that all constraints on the values of variable nodes expressed by a rule system are ignored. There is one exception, shown in Figure~\ref{fig:not_equals_wrong}. This is a short-hand for the construction in Figure~\ref{fig:not_equals_right}. The values are directly compared, therefore this will always prevent a rule match when using a point algebra, because the values will always be equal. The problem is solved by setting a modelling constraint on GRATiS, disallowing the use of the not-equals construction in Figure~\ref{fig:not_equals_wrong}. Instead, the construction in Figure~\ref{fig:not_equals_right} should be used.
-
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/not_equals_wrong.tikz}
-  \end{center}
-  \caption{A not equals expression in GROOVE}
-  \label{fig:not_equals_wrong}
-\end{figure}
-
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/not_equals_right.tikz}
-  \end{center}
-  \caption{Another not equals expression in GROOVE}
-  \label{fig:not_equals_right}
-\end{figure}
-
 \subsection{Control program}
-Modelling a random value in a graph grammar is difficult. For example, to model a die, all possible values of the die must be included in the model, as in Figure~\ref{fig:example_groove}. Then, a rule transition can be created for each of these values. The random 'choice' is now a non-deterministic one. However, when using a point algebra, this can be done easier. The rule in Figure~\ref{fig:placeholder_rule} represents the possible values of the die with lower- and upper-bounds. The Die node is still required to produce a match, because the rule systems in GROOVE cannot match an 'unknown' variable node. A variable node is unknown when it has no value and no connecting edges. Note that the edges expressing the lower- and upper-bound are not part of the match and therefore not considered as connecting edges.
-
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/placeholder_rule.tikz}
-  \end{center}
-  \caption{A rule in GROOVE}
-  \label{fig:placeholder_rule}
-\end{figure}
-
-The Die node in the rule is visually intuitive, as it shows that the random value is produced from a die. However, in the start graph, the Die node must be present with at least one value. This is not an intuitive part of the model and we would preferably omit this. A solution is using a \textit{control program}. The rule in Figure~\ref{fig:ctrl_node} shows an \textbf{int:} node, with '?0' in the top left, which obtains its value from an external program. An example of such a program is in Figure~\ref{fig:ctrl_prog}. The program tries, as long as possible ('alap'), to set the value of the \textbf{int:} node in the 'throws' rule to '1'. This node still matches other values, when using a point algebra.
-
-\begin{figure}[ht]
-  \begin{center}
-    \subfloat[The rule with control node]{\label{fig:ctrl_node}\input{./img/ctrl_node.tikz}}
-    \subfloat[The control program]{\label{fig:ctrl_prog}\input{./img/ctrl_prog.tex}}
-  \end{center}
-  \caption{A rule with control node and program in GROOVE}
-  \label{fig:ctrl_program}
-\end{figure}
+Make an interaction variable using $parin:$ node and control program $\mathit{alap} \{ \rule(n \in \mathbb{U}^\sort) | \mathit{other}\}$, where $\sort \in \Sorts$ is the sort of the interaction variable.
 
 \subsection{Rule priority}
-From a graph state, there can be several outgoing rule transitions. However, GROOVE can set different priority levels on rules. A rule transition with a higher priority rule is explored before rule transitions with lower priority rules. Consider the graph grammar in Figure~\ref{fig:priority_gg}. The 'add' rule produces a rule transition to a graph state, where the 'sub' rule produces a rule transition back to the start graph state. The 'sub' rule is not applicable in the start graph state, because it has a lower priority than the 'add' rule.
+There can be several outgoing rule transitions from a graph. However, GROOVE can set different priority levels on rules. A rule transition with a higher priority rule is explored before rule transitions with lower priority rules. Consider the graph grammar in Figure~\ref{fig:priority_gg}. The 'add' rule produces a rule transition to a graph, where the 'sub' rule produces a rule transition back to the start graph. The 'sub' rule does not match the start graph, because it has a lower priority than the 'add' rule.
 
 \begin{figure}[ht]
   \begin{center}
@@ -60,7 +20,7 @@ From a graph state, there can be several outgoing rule transitions. However, GRO
   \label{fig:priority_gg}
 \end{figure} 
 
-The abstractions of these graph states are isomorphic, so they represent the same location. The STS of transforming this graph grammar is in Figure~\ref{fig:priority_sts_wrong}, with $\imath = \{x \mapsto 25\}$. This STS is wrong, because the 'sub' switch relation can be taken from the start.
+The graphs are isomophic under the point algebra, so they represent the same location. The STS of transforming this graph grammar is in Figure~\ref{fig:priority_sts_wrong}, with $\imath = \{x \mapsto 25\}$. This STS is wrong, because the 'sub' switch relation can be taken from the start.
 
 \begin{figure}[ht]
   \begin{center}

@@ -2,32 +2,32 @@
 This section describes an algorithm for creating an STS $J$ from a GG $K$ and an initial graph $\startGraph$. 
 
 \subsection{Point algebra}
-We define a \textit{point algebra} $\PointAlgebra$\newnot{symbol:PointAlgebra} to be an algebra with $\forall \sort \in \Sorts . |\mathbb{U}_\PointAlgebra^\sort| = 1$. We define $O$ to be the GTS obtained from exploring $K$ on $\startGraph$, using $\PointAlgebra$.
+We define a \textit{point algebra} $\PointAlgebra$\newnot{symbol:PointAlgebra} to be an algebra with $\forall \sort \in \Sorts . |\mathbb{U}_\PointAlgebra^\sort| = 1$. $K_\PointAlgebra$ is explored to a GTS $O_\PointAlgebra$ on $\startGraph$.
 
 \subsection{Graphs}
 The graphs $\Graphs$ in a GTS are representations of the states of a transition system. In an STS, this representation is done by the locations and the location variables. In order to obtain the locations and location variables of $J$, the graphs of $O$ are used.
 
 \subsubsection{Locations}
-For each $\hostGraph \in \Graphs$ of $0$ a location $\location \in \Locations$ of $J$ is created. The location created from the initial graph $\startGraph$ is the initial location $\initialLocation$. We define the function $\mu_\Locations: \Graphs \rightarrow \Locations$ to obtain the location from the graph .
+We define the function $\_\Locations: \Graphs \stackrel{\sim}{\longrightarrow} \Locations$ to obtain the location from a graph. For each $\hostGraph \in \Graphs$ of $0_\PointAlgebra$, $\function_\Locations(\hostGraph) \mapsto \location$. Additionally, $\function_\Locations(\startGraph_\PointAlgebra) \mapsto \initialLocation$.
 
 \subsubsection{Location variables}
-The location variables $\LocationVariables$ are identified by the $\mathbb{U}$ nodes in $\startGraph$. Concretely, for each node $n \in \mathbb{U}$, a location variable $\variable \in \LocationVariables$ is created and $\variable \mapsto n$ is added to the initialization $\initializationFunction$.
+We define the function $\function_\LocationVariables: \Edges \stackrel{\sim}{\longrightarrow} \LocationVariables$ to obtain the location variable from an edge. The location variables are obtained from the edges in $\startGraph$ by: $\foreach \edge \in (\DefinedNodes\backslash\mathbb{U} \times \Labels \times \mathbb{U}), \function_\LocationVariables(\edge) \mapsto \variable$. The initialization is defined by: $\initializationFunction(\function_\LocationVariables(\node_s, \ltsLabel, \node_t)) \mapsto \node_t$.
 
 \subsection{Rule transitions}
-Rule transitions are a representation of the switch from one system state to another. In STSs, this representation is done by the switch relations.
+Rule transitions are a representation of the change from one system state to another. In STSs, this representation is done by the switch relations.
 
 \subsubsection{Gates}
-For each rule $\ggrule \in \Rules$ of $O$ a gate $\gate \in \Gates$ of $J$ is created, with $\mathit{arity}(\gate) = 0$. We define the function $\mu_\Gates: \Rules \rightarrow \Gates$ to obtain the gate from the rule.
+We define the function $\function_\Gates: \Labels \stackrel{\sim}{\longrightarrow} \Gates$ to obtain the gate from a rule label. For each gate $\gate$, $arity(\gate) = 0$.
 
 \subsubsection{Interaction variables}
-Not possible from GG, only GROOVE-GG specific.
+The set of interaction variables for $J$ is empty, i.e. $\InteractionVariables = \emptyset$. The reason for this is that the value for these variables comes from outside the GG, namely from the SUT. In section~\ref{sec:implementation} an implementation-specific solution is described to include interaction variables in the algorithm. 
 
 \subsubsection{Guards}
-Only possible if we define terms in GGs.
+We define a function $\function_\guard: \RuleMatches \rightarrow \guard$ to obtain the guard from the terms in a rule match. foreach edge in LHS . \variable = function_\LocationVariables(image of edge). if \variable exist then target of edge is variable in GG. Guards are boolean terms in LHS over variable in GG.
 
 \subsubsection{Update mapping}
-Only possible if we define terms in GGs.
+We define a function $\function_\updateMapping: \RuleMatches \rightarrow \updateMapping$ to obtain the update mapping from the terms in a rule match. foreach edge in LHS . \variable = function_\LocationVariables(image of edge). if \variable exist and edge not in rhs, find edge in RHS with source that is image of source of edge. update is \variable \mapsto target of edge in RHS if target is term.
 
 \subsubsection{Switch relations}
-For each rule transition $\ruleTransition \in \RuleTransitions$ a switch relation $\switch \in \Switches$ is created. We define the function $\mu_\Switches: (\hostGraph \xrightarrow{\ggrule} \hostGraph') \rightarrow (\mu_\Locations(\hostGraph)\xrightarrow{\mu_\Gates(\ggrule), \guard, \updateMapping}\mu_\Locations(\hostGraph'))$
+We define the function $\function_\Switches: (\hostGraph \xrightarrow{\ggrule, \ruleMatch} \hostGraph') \rightarrow (\function_\Locations(\hostGraph)\xrightarrow{\function_\Gates(\ggrule), \function_\guard(\ruleMatch), \function_\updateMapping(\ruleMatch)}\function_\Locations(\hostGraph'))$.
 

@@ -3,43 +3,53 @@ A \textit{Graph Grammar} (GG) is composed of a set of graph transformation rules
 
 The rest of this section is ordered as follows: first, host graphs, rule graphs and graph transformation rules are explained. Then, the definition of a \textit{Graph Transition System} (GTS) is given. An example of a GG and a GTS is then given. Finally, the definition of IOGGs is given. For a more detailed overview of GGs, we refer to~\cite{Rensink:graph_grammars, Heckel2006187, Andries1999}.
 
-\subsection{Host graphs}
-In this report, we assume a universe of nodes $\Nodes = \mathbb{W} \uplus \mathbb{U} \uplus \Variables \uplus 2^\Terms$\newnot{symbol:Nodes}.
+In this report, we assume a universe of nodes $\Nodes = \GraphNodes \uplus \mathbb{U} \uplus \Variables \uplus 2^\Terms$\newnot{symbol:Nodes}, where $\GraphNodes$ is the universe of standard graph nodes. $\Edges$ is the universe of edges between two nodes in $\Nodes$.
 
+\subsection{Host graphs}
 A host graph $\hostGraph$ is a tuple $\langle \DefinedNodes, \DefinedEdges\rangle$\newnot{symbol:hostGraph}, where:
 \begin{itemize}
-  \item $\DefinedNodes \subseteq (\mathbb{W} \uplus \mathbb{U})$
-  \item $\DefinedEdges$ is a set of edges, where each $\edge \in \DefinedEdges$ has a label and source node $\node_s \in \DefinedNodes\backslash\mathbb{U}$ and target node $\node_t\in\DefinedNodes$
+  \item $\DefinedNodes \subseteq (\mathbb{W} \uplus \mathbb{U})$ is the node set of $\hostGraph$
+  \item $\DefinedEdges \subseteq (\DefinedNodes\backslash\mathbb{U} \times \Labels \times \DefinedNodes)$ is the edge set of $\hostGraph$
 \end{itemize}
 
 \subsection{Rule graphs}
 A rule graph $\ruleGraph$ is a tuple $\langle \DefinedRuleNodes, \DefinedRuleEdges \rangle$\newnot{symbol:ruleGraph}, where:
 \begin{itemize}
-  \item $\DefinedRuleNodes \subseteq (\Nodes \backslash \mathbb{U})$
-  \item $\DefinedRuleEdges$ is a set of edges, where each $\edge \in \DefinedRuleEdges$ has a label and source and target nodes in $\DefinedRuleNodes$
+  \item $\DefinedRuleNodes \subseteq (\Nodes \backslash \mathbb{U})$ is the node set of $\ruleGraph$
+  \item $\DefinedRuleEdges \subseteq (\DefinedRuleNodes \times \Labels \times \DefinedRuleNodes$ is the edge set of $\ruleGraph$
 \end{itemize}
 
+In addition, the following must hold: $(\forall \node \in \DefinedRuleNodes \land \node \in 2^\Terms\: .\: var(\node) \subseteq \DefinedRuleNodes) \land (\forall \node \in \DefinedRuleNodes \land \node \in \Variables\: .\: \exists (\_, \_, \node) \in \DefinedRuleEdges$.
+
 \subsection{Morphisms \& matches}
-A graph $g$ has a \textit{morphism} to a graph $g'$ if there is a structure-preserving mapping from the nodes and the edges of $g$ to the nodes and the edges of $g'$ respectively. Such a mapping is called a \textit{morphism}. A node or edge $\node$ in graph $g$ is then said to have an \textit{image} in graph $g'$ and $\node$ is a \textit{pre-image} of the image. A \textit{match} is defined by a morphism from a rule graph to a host graph. A variable $\variable \in \Variables^{\sort}, \sort \in \Sorts$, has an image $i$ in a host graph if $i \in \mathbb{U}^{\sort}$. A node $\node \in 2^\Terms$ has an image $i$ in a host graph if $i$ is the valuation of all terms in $\Terms$. A graph $g$ has a partial morphism to a graph $g'$ if there are elements in $g$ without an image in $g'$.
+A graph $g$ has a \textit{morphism} to a graph $g'$ if there is a structure-preserving mapping from the nodes and the edges of $g$ to the nodes and the edges of $g'$ respectively. Such a mapping is called a \textit{morphism}. A node or edge $\node$ in graph $g$ is then said to have an \textit{image} in graph $g'$ and $\node$ is a \textit{pre-image} of the image. A \textit{match} is defined by a morphism from a rule graph to a host graph. A variable $\variable \in \Variables^{\sort}, \sort \in \Sorts$, has an image $i$ in a host graph if $i \in \mathbb{U}^{\sort}$. A node $\node \in 2^\Terms$ has an image $i$ in a host graph if $i$ is the valuation of all terms in $\node$. A graph $g$ has a partial morphism to a graph $g'$ if there are elements in $g$ without an image in $g'$.
 
 \subsection{Graph transformation rules}\label{sec:graph_rules}
 \vspace{5px}
 \begin{definition}
-A transformation rule is a tuple $\langle \mathit{LHS}, \mathit{NAC}, \mathit{RHS}\rangle$, where:
+A transformation rule $\ggrule \in \Rules$ is a tuple $\langle \mathit{LHS}, \mathit{NAC}, \mathit{RHS}, \ltsLabel \rangle$, where:
 \begin{itemize}
   \item $\mathit{LHS}$ is a rule graph representing the left-hand side of the rule
   \item $\mathit{NAC}$ is a set of rule graphs representing the negative application conditions
   \item $\mathit{RHS}$ is a rule graph representing the right-hand side of the rule
+  \item $\ltsLabel \in \Labels$ is the label of the rule
 \end{itemize}
 \end{definition}
 
-\begin{comment}\begin{definition}
-$\mathit{LHS}$ is a tuple $\langle \mathcal{V}_{LHS}, \mathcal{E}_{LHS}, \mathcal{O}_{LHS} \rangle$, where $\mathcal{O}_{LHS} \subseteq \mathcal{V}^n \times O_p \times \mathcal{V}$.
-\end{definition}\end{comment}
-
 A rule $R$ is applicable on a host graph $\hostGraph$ if its $\mathit{LHS}$ has a match in $\hostGraph$ and $\not\exists\,n \in \mathit{NAC}$ such that $n$ has a match in $\hostGraph$ and $\forall\,e \in \mathit{LHS}$, if $e$ has an image $i$ in $n$, and an image $j$ in $\hostGraph$, then $j$ should be an image of $i$.
 
-This 'applicability' as defined here is refered to as a \textit{rule match}. After the rule match is applied to the graph, all elements in $\mathit{LHS}$ that do not have an image in $\mathit{RHS}$, are removed from $\hostGraph$ and all elements in $\mathit{RHS}$ that do not have a pre-image in $\mathit{LHS}$, are added to $\hostGraph$. This process, called a \textit{rule transition}, is denoted $\hostGraph \xrightarrow{\ggrule, \rulematch}\hostGraph'$, where $\ggrule$ is the rule and $\rulematch$\newnot{symbol:RuleMatches} is the rule match, i.e. the morphism of the $\mathit{LHS}$ to $\hostGraph$.
+This 'applicability' as defined here is refered to as a \textit{rule match}. After the rule match is applied to the graph, all elements in $\mathit{LHS}$ that do not have an image in $\mathit{RHS}$, are removed from $\hostGraph$ and all elements in $\mathit{RHS}$ that do not have a pre-image in $\mathit{LHS}$, are added to $\hostGraph$. This process, called a \textit{rule transition}, is denoted $\hostGraph \xrightarrow{\ggrule \in \Rules, \rulematch \in \RuleMatches}\hostGraph'$, where $\rulematch$\newnot{symbol:RuleMatches} is the rule match, i.e. the morphism of the $\mathit{LHS}$ to $\hostGraph$.
+
+\subsection{Example}\label{sec:gts_example}
+Figure \ref{fig:gg_example} shows an example of the initial graph $\startGraph$, one rule of a GG and the corresponding rule match. $\startGraph$ can be represented by $\langle\{n1,n2\},\{\langle n1,a,n1\rangle, \langle n1,A,n2\rangle,\langle n2,B,n2\rangle\}\rangle$. The $\mathit{LHS}$ of the rule has a match in $\startGraph$. Neither $\mathit{NAC1}$ and $\mathit{NAC2}$ have a match in $\startGraph$, because the edge with label $C$ does not exist in $\startGraph$. The new graph after applying the rule is $\hostGraph_1$.
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/gg_example.tikz}
+  \end{center}
+  \caption{An example of a GG}
+  \label{fig:gg_example}
+\end{figure}
 
 \subsection{Graph Transition Systems}
 By repeatedly applying graph transformation rules to the start graph and all its consecutive graphs, a GG can be explored to reveal a \textit{Graph Transition System} (GTS). This transition system consists of graphs connected by rule transitions.
@@ -54,33 +64,6 @@ A graph transition system is a tuple	$\langle \Graphs, \Rules, \RuleMatches, \Ru
 \item $\startGraph \in \Graphs$\newnot{symbol:startGraph} is the initial graph
 \end{itemize}
 \end{definition}
-
-\subsection{Example}\label{sec:gts_example}
-Figure \ref{fig:gg_example} shows an example of the initial graph $\startGraph$ and one rule of a GG. $\startGraph$ can be represented by $\langle\{n1,n2\},\{\langle n1,a,n1\rangle, \langle n1,A,n2\rangle,\langle n2,B,n2\rangle\}\rangle$. The $\mathit{LHS}$ of the rule has a match in $\startGraph$. Neither $\mathit{NAC1}$ and $\mathit{NAC2}$ have an match in $\startGraph$, because the edge with label $C$ does not exist in $\startGraph$. The new graph after applying the rule is $\hostGraph_1$.
-
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/gg_example.tikz}
-  \end{center}
-  \caption{An example of a GG}
-  \label{fig:gg_example}
-\end{figure}
-
-\begin{comment}
-\begin{figure}[ht]
-  \begin{center}
-    \subfloat[The initial graph]{\label{fig:gg_graph}\input{./img/gg_graph.tex}}\hspace{20px}
-    \subfloat[The LHS]{\label{fig:gg_lhs}\input{./img/gg_lhs.tex}}\hspace{20px}
-    \subfloat[The first NAC]{\label{fig:gg_nac1}\input{./img/gg_nac1.tex}}
-    
-    \subfloat[The second NAC]{\label{fig:gg_nac2}\input{./img/gg_nac2.tex}}\hspace{20px}
-    \subfloat[The RHS]{\label{fig:gg_rhs}\input{./img/gg_rhs.tex}}\hspace{20px}
-    \subfloat[The result]{\label{fig:gg_result}\input{./img/gg_result.tex}}
-  \end{center}
-  \caption{An example of a GG}
-  \label{fig:gts}
-\end{figure}\marginpar{This picture needs to be placed in a structure, need a way of nesting graphs...}
-\end{comment}
 
 \subsection{Input-Output GGs}
 In order to specify stimuli and responses with GGs, a definition is given for an \textit{Input-Output GG} (IOGG). Concretely, the IOGG places input and output labels on its rule transitions. Following the definition from IOLTSs, each rule transition label $l \in L$ has a type $\iotype \in \IOTypes$. Exploring an IOGG leads to an \textit{Input-Output Graph Transition System} (IOGTS).
