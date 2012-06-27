@@ -22,32 +22,39 @@
 \contentsline {subsection}{\numberline {2.4.2}Rule graphs}{13}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}Morphisms \& matches}{13}{subsection.2.4.3}
 \contentsline {subsection}{\numberline {2.4.4}Graph transformation rules}{13}{subsection.2.4.4}
-\contentsline {subsection}{\numberline {2.4.5}Graph Transition Systems}{13}{subsection.2.4.5}
-\contentsline {subsection}{\numberline {2.4.6}Example}{14}{subsection.2.4.6}
+\contentsline {subsection}{\numberline {2.4.5}Example}{13}{subsection.2.4.5}
+\contentsline {subsection}{\numberline {2.4.6}Graph Transition Systems}{14}{subsection.2.4.6}
 \contentsline {subsection}{\numberline {2.4.7}Input-Output GGs}{14}{subsection.2.4.7}
 \contentsline {section}{\numberline {2.5}Tooling}{14}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}ATM}{14}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}GROOVE}{15}{subsection.2.5.2}
 \contentsline {subsection}{\numberline {2.5.3}Graph grammars in GROOVE}{16}{subsection.2.5.3}
-\contentsline {chapter}{\numberline {3}Design}{18}{chapter.3}
-\contentsline {section}{\numberline {3.1}General setup}{18}{section.3.1}
-\contentsline {section}{\numberline {3.2}Offline vs. on-the-fly model exploration}{18}{section.3.2}
-\contentsline {chapter}{\numberline {4}Graph Grammar to STS Algorithm}{20}{chapter.4}
-\contentsline {section}{\numberline {4.1}Algorithm}{20}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Point algebra}{20}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Graphs}{20}{subsection.4.1.2}
-\contentsline {subsubsection}{\numberline {4.1.2.1}Locations}{20}{subsubsection.4.1.2.1}
-\contentsline {subsubsection}{\numberline {4.1.2.2}Location variables}{20}{subsubsection.4.1.2.2}
-\contentsline {subsection}{\numberline {4.1.3}Rule transitions}{20}{subsection.4.1.3}
-\contentsline {subsubsection}{\numberline {4.1.3.1}Gates}{21}{subsubsection.4.1.3.1}
-\contentsline {subsubsection}{\numberline {4.1.3.2}Interaction variables}{21}{subsubsection.4.1.3.2}
-\contentsline {subsubsection}{\numberline {4.1.3.3}Guards}{21}{subsubsection.4.1.3.3}
-\contentsline {subsubsection}{\numberline {4.1.3.4}Update mapping}{21}{subsubsection.4.1.3.4}
-\contentsline {subsubsection}{\numberline {4.1.3.5}Switch relations}{21}{subsubsection.4.1.3.5}
-\contentsline {section}{\numberline {4.2}Constraints}{21}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Constraint 1: creator/eraser pairs}{21}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Constraint 2: no variables in NACs}{21}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Constraint 3: structural constraints on node creating rules}{21}{subsection.4.2.3}
-\contentsline {chapter}{\numberline {5}Validation}{22}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion}{23}{chapter.6}
-\contentsline {chapter}{List of Symbols}{26}{chapter*.16}
+\contentsline {chapter}{\numberline {3}Design}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}General setup}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Offline vs. on-the-fly model exploration}{19}{section.3.2}
+\contentsline {chapter}{\numberline {4}Graph Grammar to STS Algorithm}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Algorithm}{21}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Point algebra}{21}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Graphs}{21}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Locations}{21}{subsubsection.4.1.2.1}
+\contentsline {subsubsection}{\numberline {4.1.2.2}Location variables}{21}{subsubsection.4.1.2.2}
+\contentsline {subsection}{\numberline {4.1.3}Rule transitions}{22}{subsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.3.1}Gates}{22}{subsubsection.4.1.3.1}
+\contentsline {subsubsection}{\numberline {4.1.3.2}Interaction variables}{22}{subsubsection.4.1.3.2}
+\contentsline {subsubsection}{\numberline {4.1.3.3}Guards}{22}{subsubsection.4.1.3.3}
+\contentsline {subsubsection}{\numberline {4.1.3.4}Update mapping}{22}{subsubsection.4.1.3.4}
+\contentsline {subsubsection}{\numberline {4.1.3.5}Switch relations}{22}{subsubsection.4.1.3.5}
+\contentsline {section}{\numberline {4.2}Constraints}{22}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Constraint 1: no isomorphism}{22}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Constraint 2: creator/eraser pairs}{23}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Constraint 3: no variables in NACs}{23}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Constraint 4: structural constraints on node creating rules}{23}{subsection.4.2.4}
+\contentsline {chapter}{\numberline {5}Validation}{24}{chapter.5}
+\contentsline {section}{\numberline {5.1}Case Studies}{24}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Self-scan register}{24}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Health-care system}{24}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Measurements}{25}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Model comparison}{25}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Benchmarks}{25}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {6}Conclusion}{26}{chapter.6}
+\contentsline {chapter}{List of Symbols}{29}{chapter*.16}

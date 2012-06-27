@@ -22,8 +22,8 @@
 \BOOKMARK [2][-]{subsection.2.4.2}{Rule graphs}{section.2.4}
 \BOOKMARK [2][-]{subsection.2.4.3}{Morphisms \046 matches}{section.2.4}
 \BOOKMARK [2][-]{subsection.2.4.4}{Graph transformation rules}{section.2.4}
-\BOOKMARK [2][-]{subsection.2.4.5}{Graph Transition Systems}{section.2.4}
-\BOOKMARK [2][-]{subsection.2.4.6}{Example}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.5}{Example}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.6}{Graph Transition Systems}{section.2.4}
 \BOOKMARK [2][-]{subsection.2.4.7}{Input-Output GGs}{section.2.4}
 \BOOKMARK [1][-]{section.2.5}{Tooling}{chapter.2}
 \BOOKMARK [2][-]{subsection.2.5.1}{ATM}{section.2.5}
@@ -45,9 +45,16 @@
 \BOOKMARK [3][-]{subsubsection.4.1.3.4}{Update mapping}{subsection.4.1.3}
 \BOOKMARK [3][-]{subsubsection.4.1.3.5}{Switch relations}{subsection.4.1.3}
 \BOOKMARK [1][-]{section.4.2}{Constraints}{chapter.4}
-\BOOKMARK [2][-]{subsection.4.2.1}{Constraint 1: creator/eraser pairs}{section.4.2}
-\BOOKMARK [2][-]{subsection.4.2.2}{Constraint 2: no variables in NACs}{section.4.2}
-\BOOKMARK [2][-]{subsection.4.2.3}{Constraint 3: structural constraints on node creating rules}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.1}{Constraint 1: no isomorphism}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.2}{Constraint 2: creator/eraser pairs}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.3}{Constraint 3: no variables in NACs}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.4}{Constraint 4: structural constraints on node creating rules}{section.4.2}
 \BOOKMARK [0][-]{chapter.5}{Validation}{}
+\BOOKMARK [1][-]{section.5.1}{Case Studies}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.1.1}{Self-scan register}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.2}{Health-care system}{section.5.1}
+\BOOKMARK [1][-]{section.5.2}{Measurements}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.2.1}{Model comparison}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.2}{Benchmarks}{section.5.2}
 \BOOKMARK [0][-]{chapter.6}{Conclusion}{}
 \BOOKMARK [0][-]{chapter*.16}{List of Symbols}{}

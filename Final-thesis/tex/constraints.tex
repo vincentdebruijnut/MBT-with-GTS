@@ -3,9 +3,13 @@
 This section describes the constraints on the algorithm of the previous section.
 
 \subsection{Constraint 1: no isomorphism}
+When obtaining the guard for a switch relation, the function $\function_\LocationVariables$ is used. This relation must be bijective, therefore $\function_\LocationVariables(\edge) \neq \function_\LocationVariables(\edge')$. Thus, $\edge$ and $\edge'$ cannot be isomorphic.
 
 \subsection{Constraint 2: creator/eraser pairs}
+When obtaining the update mapping for a switch relation, an edge $(\node, \ltsLabel, \variable)$ must exist in RHS if an edge $(\node, \ltsLabel, \variable')$ exists in $lHS$, but not in $RHS$. The first is the creator edge, the latter the eraser edge. These must always exist in pairs. 
 
 \subsection{Constraint 3: no variables in NACs}
+figure x shows a GROOVE example of a variable in a NAC. Using the point algebra, a rule with this NAC never matches.
 
 \subsection{Constraint 4: structural constraints on node creating rules}
+figure x shows a GROOVE example of a variable in a NAC. Using the point algebra, a rule with this LHS matches.infinitely often.

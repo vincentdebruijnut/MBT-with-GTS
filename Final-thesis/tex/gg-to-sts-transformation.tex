@@ -1,33 +1,33 @@
 \section{Algorithm}
-This section describes an algorithm for creating an STS $J$ from a GG $K$ and an initial graph $\startGraph$. 
+This section describes an algorithm for creating an STS $J: \langle \Locations_J,\initialLocation,\LocationVariables_J,\initializationFunction_J,\InteractionVariables_J,\Gates_J,\Switches_J\rangle$ from a GG $K: \langle \ruleGraph_{LHS}, \ruleGraph_{NAC}, \ruleGraph_{RHS}$ and an initial graph $\startGraph$. 
 
 \subsection{Point algebra}
-We define a \textit{point algebra} $\PointAlgebra$\newnot{symbol:PointAlgebra} to be an algebra with $\forall \sort \in \Sorts . |\mathbb{U}_\PointAlgebra^\sort| = 1$. $K_\PointAlgebra$ is explored to a GTS $O_\PointAlgebra$ on $\startGraph$.
+We define a \textit{point algebra} $\PointAlgebra$\newnot{symbol:PointAlgebra} to be an algebra with $\forall \sort \in \Sorts . |\mathbb{U}_\PointAlgebra^\sort| = 1$. The first step in the algorithm is to explore the GG $K$ using the point algebra $\PointAlgebra$ to a GTS $O_\PointAlgebra: \langle \hostGraph_O, \Rules_O, \RuleMatches_O, \RuleTransitions_O, \startGraph \rangle$.
 
 \subsection{Graphs}
-The graphs $\Graphs$ in a GTS are representations of the states of a transition system. In an STS, this representation is done by the locations and the location variables. In order to obtain the locations and location variables of $J$, the graphs of $O$ are used.
+The graphs $\Graphs$ in a GTS are representations of the states of a transition system. In an STS, this representation is done by the locations and the location variables. In order to obtain $\Locations_J$ and $\LocationVariables_J$, the graphs $\hostGraph_K$ of $O_\PointAlgebra$ are used.
 
 \subsubsection{Locations}
-We define the function $\_\Locations: \Graphs \stackrel{\sim}{\longrightarrow} \Locations$ to obtain the location from a graph. For each $\hostGraph \in \Graphs$ of $0_\PointAlgebra$, $\function_\Locations(\hostGraph) \mapsto \location$. Additionally, $\function_\Locations(\startGraph_\PointAlgebra) \mapsto \initialLocation$.
+We define the function $\function_\Locations: \Graphs \stackrel{\sim}{\longrightarrow} \Locations$ to obtain the location from a graph. For each graph a unique location is obtained by: $\forall\: \hostGraph \in \hostGraph_O\: .\:\function_\Locations(\hostGraph) \mapsto \location \in \Locations_J$. Additionally, the initial location is obtained by: $\function_\Locations(\startGraph) \mapsto \initialLocation$.
 
 \subsubsection{Location variables}
-We define the function $\function_\LocationVariables: \Edges \stackrel{\sim}{\longrightarrow} \LocationVariables$ to obtain the location variable from an edge. The location variables are obtained from the edges in $\startGraph$ by: $\foreach \edge \in (\DefinedNodes\backslash\mathbb{U} \times \Labels \times \mathbb{U}), \function_\LocationVariables(\edge) \mapsto \variable$. The initialization is defined by: $\initializationFunction(\function_\LocationVariables(\node_s, \ltsLabel, \node_t)) \mapsto \node_t$.
+We define the function $\function_\LocationVariables: \Edges \stackrel{\sim}{\longrightarrow} \LocationVariables$ to obtain the location variable from an edge. For each edge from a graph node to a value node a unique location variable is obtained by: $\forall\: \edge \in (\DefinedEdges\restriction(\GraphNodes \times \Labels \times \mathbb{U}))\: .\: \function_\LocationVariables(\edge) \mapsto \variable \in \LocationVariables_J$. The initialization $\initializationFunction$ for a variable $\variable$, such that $\function_\LocationVariables(\node_s, \ltsLabel, \node_t) \mapsto \variable$, is obtained by: $\variable \mapsto \node_t$. Note that the node is a value, i.e. $\node_t \in \mathbb{U}$.
 
 \subsection{Rule transitions}
-Rule transitions are a representation of the change from one system state to another. In STSs, this representation is done by the switch relations.
+Rule transitions are a representation of the change from one system state to another. In STSs, this representation is done by the switch relations. In order to obtain $\Switches_J$, the rules $\Rules_O$, rule matches $\RuleMatches_O$ and rule transitions $\RuleTransitions_O$ are used.
 
 \subsubsection{Gates}
-We define the function $\function_\Gates: \Labels \stackrel{\sim}{\longrightarrow} \Gates$ to obtain the gate from a rule label. For each gate $\gate$, $arity(\gate) = 0$.
+We define the function $\function_\Gates: \Rules \stackrel{\sim}{\longrightarrow} \Gates$ to obtain the gate from a rule. For each rule a unique gate is obtained by: $\forall\:\ggrule \in \Rules_O\: . \: \function_\Gates(\ggrule) \mapsto \gate$, where $arity(\gate) = 0$.
 
 \subsubsection{Interaction variables}
 The set of interaction variables for $J$ is empty, i.e. $\InteractionVariables = \emptyset$. The reason for this is that the value for these variables comes from outside the GG, namely from the SUT. In section~\ref{sec:implementation} an implementation-specific solution is described to include interaction variables in the algorithm. 
 
 \subsubsection{Guards}
-We define a function $\function_\guard: \RuleMatches \rightarrow \guard$ to obtain the guard from the terms in a rule match. foreach edge in LHS . \variable = function_\LocationVariables(image of edge). if \variable exist then target of edge is variable in GG. Guards are boolean terms in LHS over variable in GG.
+We define a function $\function_\guard: \RuleMatches \rightarrow \Terms$ to obtain the guard from a rule match. First, the variables in the terms in $\ruleGraph_{LHS}$ are replaced by location variabels by: $\forall (\edge:(\node, \ltsLabel, \node') \in \ruleGraph_{LHS}\restriction (\GraphNodes \times \Labels \times \Variables)\: .\: \forall \term \in 2^\Terms_{LHS}\restriction\BooleanTerms\: .\: \mathit{replace}(\node', \function_\LocationVariables(\mathit{image}(\edge)))$. The guard can then be constructed by joining the terms in $2^\Terms_{LHS}\restriction\BooleanTerms$ with the $\land$ operator.
 
 \subsubsection{Update mapping}
-We define a function $\function_\updateMapping: \RuleMatches \rightarrow \updateMapping$ to obtain the update mapping from the terms in a rule match. foreach edge in LHS . \variable = function_\LocationVariables(image of edge). if \variable exist and edge not in rhs, find edge in RHS with source that is image of source of edge. update is \variable \mapsto target of edge in RHS if target is term.
+We define a function $\function_\updateMapping: \RuleMatches \rightarrow \Terms$ to obtain the update mapping from a rule match. First we obtain all \textit{eraser-creator pairs} by: $\function_{RHS}: (\edge:(\node, \ltsLabel, \node') \in \ruleGraph_{LHS}\restriction (\GraphNodes \times \Labels \times \Variables)\: |\: \edge \notin \ruleGraph_{RHS} . (\mathit{image}(\node), \ltsLabel, \node'') \in \ruleGraph_{RHS}$. update is $\function_\LocationVariables(\edge) \mapsto \node''$, if $\node'' \in 2^\Terms_{RHS}$.
 
 \subsubsection{Switch relations}
-We define the function $\function_\Switches: (\hostGraph \xrightarrow{\ggrule, \ruleMatch} \hostGraph') \rightarrow (\function_\Locations(\hostGraph)\xrightarrow{\function_\Gates(\ggrule), \function_\guard(\ruleMatch), \function_\updateMapping(\ruleMatch)}\function_\Locations(\hostGraph'))$.
+We define the function $\function_\Switches: (\hostGraph \xrightarrow{\ggrule, \rulematch} \hostGraph') \rightarrow (\function_\Locations(\hostGraph)\xrightarrow{\function_\Gates(\ggrule), \function_\guard(\rulematch), \function_\updateMapping(\rulematch)}\function_\Locations(\hostGraph'))$ to obtain a switch relation from a rule match. 
 
