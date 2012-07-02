@@ -3,7 +3,7 @@
 This section features several implementation issues of GRATiS.
 
 \subsection{Control program}
-Make an interaction variable using $parin:$ node and control program $\mathit{alap} \{ \rule(n \in \mathbb{U}^\sort) | \mathit{other}\}$, where $\sort \in \Sorts$ is the sort of the interaction variable.
+Make an interaction variable using $parin:$ node and control program $\mathit{alap} \{ \ggrule(n \in \mathbb{U}^\sort) | \mathit{other}\}$, where $\sort \in \Sorts$ is the sort of the interaction variable.
 
 \subsection{Rule priority}
 There can be several outgoing rule transitions from a graph. However, GROOVE can set different priority levels on rules. A rule transition with a higher priority rule is explored before rule transitions with lower priority rules. Consider the graph grammar in Figure~\ref{fig:priority_gg}. The 'add' rule produces a rule transition to a graph, where the 'sub' rule produces a rule transition back to the start graph. The 'sub' rule does not match the start graph, because it has a lower priority than the 'add' rule.

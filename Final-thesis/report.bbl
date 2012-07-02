@@ -29,6 +29,13 @@ Duncan Clarke, Thierry J$\acute{e}$ron, Vlad Rusu, and Elena Zinovieva.
   Heidelberg, 2002.
 \newblock 10.1007/3-540-46002-0\_34.
 
+\bibitem{Cohen:AETG}
+D.M. Cohen, S.R. Dalal, M.L. Fredman, and G.C. Patton.
+\newblock The aetg system: an approach to testing based on combinatorial
+  design.
+\newblock {\em Software Engineering, IEEE Transactions on}, 23(7):437 --444,
+  jul 1997.
+
 \bibitem{Ghamarian:GROOVE}
 A.~H. {Ghamarian}, M.~J. {de Mol}, A.~{Rensink}, E.~{Zambon}, and M.~V.
   {Zimakova}.
@@ -52,6 +59,11 @@ M.R.A. Huth and M.~Ryan.
 \newblock {\em Logic in computer science: modelling and reasoning about
   systems}.
 \newblock Cambridge University Press, 2000.
+
+\bibitem{Laird:SoftwareMeasurement}
+C.~Laird, L. \&~Brennan.
+\newblock {\em Software measurement and estimation: A practical approach.}
+\newblock IEEE Computer Society/Wiley, 2006.
 
 \bibitem{Frantzen:Symbolic}
 Tim A.C.~Willemse Lars~Frantzen, Jan~Tretmans.
@@ -108,6 +120,12 @@ Martin Pol.
 \newblock {\em Testen volgens Tmap (in dutch, Testing according to Tmap)}.
 \newblock Uitgeverij Tutein Nolthenius, 1995.
 
+\bibitem{Prowell:JUMBL}
+S.J. Prowell.
+\newblock Jumbl: a tool for model-based statistical testing.
+\newblock In {\em System Sciences, 2003. Proceedings of the 36th Annual Hawaii
+  International Conference on}, page 9 pp., jan. 2003.
+
 \bibitem{Reid:partitioning}
 S.C. Reid.
 \newblock An empirical analysis of equivalence partitioning, boundary value
@@ -139,12 +157,6 @@ Vlad Rusu, Lydie du~Bousquet, and Thierry J$\acute{e}$ron.
   Computer Science}, pages 338--357. Springer Berlin / Heidelberg, 2000.
 \newblock 10.1007/3-540-40911-4\_20.
 
-\bibitem{Sietsma:reachability}
-Floor Sietsma.
-\newblock A case study in formal testing and an algorithm for automatic test
-  case generation with symbolic transition systems.
-\newblock Master's thesis, Universiteit van Amsterdam, 2009.
-
 \bibitem{Tretmans:TorX}
 G.~J. {Tretmans} and H.~{Brinksma}.
 \newblock Torx: Automated model-based testing.
@@ -165,6 +177,21 @@ Jan Tretmans.
   Lecture Notes in Computer Science}, pages 127--146. Springer Berlin /
   Heidelberg, 1996.
 \newblock 10.1007/3-540-61042-1\_42.
+
+\bibitem{Utting:MBTTaxonomy}
+Mark Utting, Alexander Pretschner, and Bruno Legeard.
+\newblock A taxonomy of model-based testing approaches.
+\newblock {\em Software Testing, Verification and Reliability}, pages n/a--n/a,
+  2011.
+
+\bibitem{Veanes:SpecExplorer}
+Margus Veanes, Colin Campbell, Wolfgang Grieskamp, Wolfram Schulte, Nikolai
+  Tillmann, and Lev Nachmanson.
+\newblock Model-based testing of object-oriented reactive systems with spec
+  explorer.
+\newblock In Robert Hierons, Jonathan Bowen, and Mark Harman, editors, {\em
+  Formal Methods and Testing}, volume 4949 of {\em Lecture Notes in Computer
+  Science}, pages 39--76. Springer Berlin / Heidelberg, 2008.
 
 \bibitem{Zhu:coverage}
 Hong Zhu, Patrick A.~V. Hall, and John H.~R. May.

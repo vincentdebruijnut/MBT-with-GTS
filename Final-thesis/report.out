@@ -49,12 +49,23 @@
 \BOOKMARK [2][-]{subsection.4.2.2}{Constraint 2: creator/eraser pairs}{section.4.2}
 \BOOKMARK [2][-]{subsection.4.2.3}{Constraint 3: no variables in NACs}{section.4.2}
 \BOOKMARK [2][-]{subsection.4.2.4}{Constraint 4: structural constraints on node creating rules}{section.4.2}
+\BOOKMARK [1][-]{section.4.3}{Implementation}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.3.1}{Control program}{section.4.3}
+\BOOKMARK [2][-]{subsection.4.3.2}{Rule priority}{section.4.3}
 \BOOKMARK [0][-]{chapter.5}{Validation}{}
-\BOOKMARK [1][-]{section.5.1}{Case Studies}{chapter.5}
-\BOOKMARK [2][-]{subsection.5.1.1}{Self-scan register}{section.5.1}
-\BOOKMARK [2][-]{subsection.5.1.2}{Health-care system}{section.5.1}
-\BOOKMARK [1][-]{section.5.2}{Measurements}{chapter.5}
-\BOOKMARK [2][-]{subsection.5.2.1}{Model comparison}{section.5.2}
-\BOOKMARK [2][-]{subsection.5.2.2}{Benchmarks}{section.5.2}
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}
-\BOOKMARK [0][-]{chapter*.16}{List of Symbols}{}
+\BOOKMARK [1][-]{section.5.1}{Model examples}{chapter.5}
+\BOOKMARK [1][-]{section.5.2}{Case study}{chapter.5}
+\BOOKMARK [1][-]{section.5.3}{Measurements}{chapter.5}
+\BOOKMARK [0][-]{chapter.6}{Model Examples}{}
+\BOOKMARK [1][-]{section.6.1}{Example 1: boardgame}{chapter.6}
+\BOOKMARK [1][-]{section.6.2}{Example 2: Farmer-Wolf-Goat-Cabbage}{chapter.6}
+\BOOKMARK [1][-]{section.6.3}{Example 3: customer reservations}{chapter.6}
+\BOOKMARK [1][-]{section.6.4}{Example 4: }{chapter.6}
+\BOOKMARK [0][-]{chapter.7}{Case Study}{}
+\BOOKMARK [1][-]{section.7.1}{Self-sCan Register Protocol}{chapter.7}
+\BOOKMARK [1][-]{section.7.2}{Measurements}{chapter.7}
+\BOOKMARK [0][-]{chapter.8}{Conclusion}{}
+\BOOKMARK [1][-]{section.8.1}{Summary}{chapter.8}
+\BOOKMARK [1][-]{section.8.2}{Conclusion}{chapter.8}
+\BOOKMARK [1][-]{section.8.3}{Future work}{chapter.8}
+\BOOKMARK [0][-]{chapter*.19}{List of Symbols}{}

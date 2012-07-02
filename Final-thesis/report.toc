@@ -2,7 +2,7 @@
 \contentsline {section}{\numberline {1.1}Model-based Testing}{3}{section.1.1}
 \contentsline {section}{\numberline {1.2}Graph Transformation}{4}{section.1.2}
 \contentsline {section}{\numberline {1.3}Research goals}{4}{section.1.3}
-\contentsline {section}{\numberline {1.4}Roadmap}{4}{section.1.4}
+\contentsline {section}{\numberline {1.4}Roadmap}{5}{section.1.4}
 \contentsline {chapter}{\numberline {2}Background}{6}{chapter.2}
 \contentsline {section}{\numberline {2.1}Model-based Testing}{6}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Previous work}{7}{subsection.2.1.1}
@@ -49,12 +49,23 @@
 \contentsline {subsection}{\numberline {4.2.2}Constraint 2: creator/eraser pairs}{23}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Constraint 3: no variables in NACs}{23}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}Constraint 4: structural constraints on node creating rules}{23}{subsection.4.2.4}
-\contentsline {chapter}{\numberline {5}Validation}{24}{chapter.5}
-\contentsline {section}{\numberline {5.1}Case Studies}{24}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Self-scan register}{24}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Health-care system}{24}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Measurements}{25}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Model comparison}{25}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Benchmarks}{25}{subsection.5.2.2}
-\contentsline {chapter}{\numberline {6}Conclusion}{26}{chapter.6}
-\contentsline {chapter}{List of Symbols}{29}{chapter*.16}
+\contentsline {section}{\numberline {4.3}Implementation}{23}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Control program}{23}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Rule priority}{23}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Validation}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Model examples}{25}{section.5.1}
+\contentsline {section}{\numberline {5.2}Case study}{25}{section.5.2}
+\contentsline {section}{\numberline {5.3}Measurements}{25}{section.5.3}
+\contentsline {chapter}{\numberline {6}Model Examples}{26}{chapter.6}
+\contentsline {section}{\numberline {6.1}Example 1: boardgame}{26}{section.6.1}
+\contentsline {section}{\numberline {6.2}Example 2: Farmer-Wolf-Goat-Cabbage}{26}{section.6.2}
+\contentsline {section}{\numberline {6.3}Example 3: customer reservations}{26}{section.6.3}
+\contentsline {section}{\numberline {6.4}Example 4: }{26}{section.6.4}
+\contentsline {chapter}{\numberline {7}Case Study}{27}{chapter.7}
+\contentsline {section}{\numberline {7.1}Self-sCan Register Protocol}{27}{section.7.1}
+\contentsline {section}{\numberline {7.2}Measurements}{27}{section.7.2}
+\contentsline {chapter}{\numberline {8}Conclusion}{28}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{28}{section.8.1}
+\contentsline {section}{\numberline {8.2}Conclusion}{28}{section.8.2}
+\contentsline {section}{\numberline {8.3}Future work}{28}{section.8.3}
+\contentsline {chapter}{List of Symbols}{32}{chapter*.19}
