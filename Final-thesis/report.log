@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  2 JUL 2012 17:00
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  3 JUL 2012 16:47
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -828,7 +828,7 @@ l.3 \end{abstract}
 e same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.41 ....3}Rule transitions}{22}{subsection.4.1.3}
+l.41 ...erline {4.3.1}Gates}{22}{subsection.4.3.1}
                                                    [1
 
 ])
@@ -838,60 +838,60 @@ l.41 ....3}Rule transitions}{22}{subsection.4.1.3}
  [2]
 Chapter 1.
 (./tex/introduction.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--9
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 []\T1/cmr/m/n/10 A: That's
  []
 
 
-Underfull \hbox (badness 2941) in paragraph at lines 9--9
+Underfull \hbox (badness 2941) in paragraph at lines 8--8
 \T1/cmr/m/n/10 not an ar-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--9
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/cmr/m/n/10 gu-ment in
  []
 
 
-Underfull \hbox (badness 1418) in paragraph at lines 9--9
+Underfull \hbox (badness 1418) in paragraph at lines 8--8
 \T1/cmr/m/n/10 fa-vor V: It
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--9
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/cmr/m/n/10 mars vs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--9
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/cmr/m/n/10 for-malisms
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--9
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/cmr/m/n/10 in model-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--9
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 \T1/cmr/m/n/10 based
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 13.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 12.
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
  [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
+Underfull \hbox (badness 10000) in paragraph at lines 20--20
 \T1/cmr/m/n/10 for these
  []
 
 
-Overfull \hbox (1.65527pt too wide) in paragraph at lines 24--24
+Overfull \hbox (1.65527pt too wide) in paragraph at lines 23--23
 \T1/cmr/m/n/10 tem states, com-plex ob-jects, di-a-grams, and net-works, like f
 lowcharts, entity-relationship
  []
@@ -899,11 +899,11 @@ lowcharts, entity-relationship
 [4]) [5]
 Chapter 2.
 (./tex/background-introduction.tex) (./tex/model-based-testing.tex
-<./img/model-based-testing.pdf, id=450, 379.58545pt x 141.73691pt>
+<./img/model-based-testing.pdf, id=445, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-<./img/mbt-on-the-fly.pdf, id=454, 357.48773pt x 141.7426pt>
+<./img/mbt-on-the-fly.pdf, id=449, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
 <use ./img/mbt-on-the-fly.pdf>
@@ -956,11 +956,11 @@ File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 <xymatrix 2x1 181>) (./img/gg_nac1.tex <xymatrix 2x1 181>) (./img/gg_nac2.tex
 <xymatrix 2x1 181>) (./img/gg_graph.tex <xymatrix 2x1 181>) (./img/gg_rhs.tex
 <xymatrix 2x1 181>) (./img/gg_result.tex <xymatrix 2x1 181>)) [13])
-(./tex/tooling.tex <./img/axini_tool.pdf, id=588, 356.92177pt x 145.93393pt>
+(./tex/tooling.tex <./img/axini_tool.pdf, id=583, 356.92177pt x 145.93393pt>
 File: ./img/axini_tool.pdf Graphic file (type pdf)
 
 <use ./img/axini_tool.pdf> [14]
-<./img/groove_tool.pdf, id=605, 374.51399pt x 161.01265pt>
+<./img/groove_tool.pdf, id=600, 374.51399pt x 161.01265pt>
 File: ./img/groove_tool.pdf Graphic file (type pdf)
 
 <use ./img/groove_tool.pdf> [15 <./img/axini_tool.pdf>] (./img/start.tikz)
@@ -969,7 +969,7 @@ ool.pdf>] (./img/gts-transition-example.tikz) (./img/target-graph-state.tikz))
 [17] [18]
 Chapter 3.
 (./tex/design-introduction.tex) (./tex/gratis-design.tex
-<./img/tooling.pdf, id=692, 599.89655pt x 242.46582pt>
+<./img/tooling.pdf, id=687, 599.89655pt x 242.46582pt>
 File: ./img/tooling.pdf Graphic file (type pdf)
  <use ./img/tooling.pdf>
 [19
@@ -1010,27 +1010,17 @@ Chapter 8.
 ] (./report.bbl [29
 
 ] [30]) [31] (./symbols.tex
-
-LaTeX Warning: Reference `symbol:Edges' on page 32 undefined on input line 41.
-
-
-LaTeX Warning: Reference `symbol:GraphNodes' on page 32 undefined on input line
- 42.
-
 [32
 
 ]) [33] (./report.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 19882 strings out of 495061
- 349074 string characters out of 1182622
- 851666 words of memory out of 3000000
+ 19881 strings out of 495061
+ 348976 string characters out of 1182622
+ 851816 words of memory out of 3000000
  22275 multiletter control sequences out of 15000+50000
  30003 words of font info for 75 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
@@ -1072,9 +1062,9 @@ fonts/symbols/msam7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.p
 fb></usr/share/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb></usr/share/
 texmf-texlive/fonts/type1/public/xypic/xydash10.pfb>
-Output written on report.pdf (35 pages, 687006 bytes).
+Output written on report.pdf (35 pages, 687561 bytes).
 PDF statistics:
- 1554 PDF objects out of 1728 (max. 8388607)
- 187 named destinations out of 1000 (max. 500000)
- 606 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1550 PDF objects out of 1728 (max. 8388607)
+ 186 named destinations out of 1000 (max. 500000)
+ 598 words of extra memory for PDF output out of 10000 (max. 10000000)
 

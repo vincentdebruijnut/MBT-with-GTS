@@ -33,36 +33,35 @@
 \contentsline {section}{\numberline {3.1}General setup}{19}{section.3.1}
 \contentsline {section}{\numberline {3.2}Offline vs. on-the-fly model exploration}{19}{section.3.2}
 \contentsline {chapter}{\numberline {4}Graph Grammar to STS Algorithm}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Algorithm}{21}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Point algebra}{21}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Graphs}{21}{subsection.4.1.2}
-\contentsline {subsubsection}{\numberline {4.1.2.1}Locations}{21}{subsubsection.4.1.2.1}
-\contentsline {subsubsection}{\numberline {4.1.2.2}Location variables}{21}{subsubsection.4.1.2.2}
-\contentsline {subsection}{\numberline {4.1.3}Rule transitions}{22}{subsection.4.1.3}
-\contentsline {subsubsection}{\numberline {4.1.3.1}Gates}{22}{subsubsection.4.1.3.1}
-\contentsline {subsubsection}{\numberline {4.1.3.2}Interaction variables}{22}{subsubsection.4.1.3.2}
-\contentsline {subsubsection}{\numberline {4.1.3.3}Guards}{22}{subsubsection.4.1.3.3}
-\contentsline {subsubsection}{\numberline {4.1.3.4}Update mapping}{22}{subsubsection.4.1.3.4}
-\contentsline {subsubsection}{\numberline {4.1.3.5}Switch relations}{22}{subsubsection.4.1.3.5}
-\contentsline {section}{\numberline {4.2}Constraints}{22}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Constraint 1: no isomorphism}{22}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Constraint 2: creator/eraser pairs}{23}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Constraint 3: no variables in NACs}{23}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Constraint 4: structural constraints on node creating rules}{23}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}Implementation}{23}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Control program}{23}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Rule priority}{23}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.1}Point algebra}{21}{section.4.1}
+\contentsline {section}{\numberline {4.2}Graphs}{21}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Locations}{21}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Location variables}{21}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Rule transitions}{21}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Gates}{22}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Interaction variables}{22}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Guards}{22}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Update mapping}{22}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Switch relations}{22}{subsection.4.3.5}
+\contentsline {section}{\numberline {4.4}Constraints}{22}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Constraint 1: no isomorphism}{22}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Constraint 2: creator/eraser pairs}{22}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Constraint 3: no variables in NACs}{23}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Constraint 4: structural constraints on node creating rules}{23}{subsection.4.4.4}
+\contentsline {section}{\numberline {4.5}Implementation}{23}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Control program}{23}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Rule priority}{23}{subsection.4.5.2}
 \contentsline {chapter}{\numberline {5}Validation}{25}{chapter.5}
 \contentsline {section}{\numberline {5.1}Model examples}{25}{section.5.1}
 \contentsline {section}{\numberline {5.2}Case study}{25}{section.5.2}
 \contentsline {section}{\numberline {5.3}Measurements}{25}{section.5.3}
 \contentsline {chapter}{\numberline {6}Model Examples}{26}{chapter.6}
 \contentsline {section}{\numberline {6.1}Example 1: boardgame}{26}{section.6.1}
-\contentsline {section}{\numberline {6.2}Example 2: Farmer-Wolf-Goat-Cabbage}{26}{section.6.2}
+\contentsline {section}{\numberline {6.2}Example 2: farmer-wolf-goat-cabbage}{26}{section.6.2}
 \contentsline {section}{\numberline {6.3}Example 3: customer reservations}{26}{section.6.3}
-\contentsline {section}{\numberline {6.4}Example 4: }{26}{section.6.4}
+\contentsline {section}{\numberline {6.4}Example 4: tab system}{26}{section.6.4}
 \contentsline {chapter}{\numberline {7}Case Study}{27}{chapter.7}
-\contentsline {section}{\numberline {7.1}Self-sCan Register Protocol}{27}{section.7.1}
+\contentsline {section}{\numberline {7.1}Scanflow Cash Register Protocol}{27}{section.7.1}
 \contentsline {section}{\numberline {7.2}Measurements}{27}{section.7.2}
 \contentsline {chapter}{\numberline {8}Conclusion}{28}{chapter.8}
 \contentsline {section}{\numberline {8.1}Summary}{28}{section.8.1}
