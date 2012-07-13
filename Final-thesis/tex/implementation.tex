@@ -2,6 +2,17 @@
 
 This section features several implementation issues of GRATiS.
 
+\section{General setup}\label{sec:general-setup}
+GRATiS uses GROOVE as a replacement of the IOSTS in ATM. Figure~\ref{fig:tooling} shows this graphically. GROOVE has several exploration strategies for exploring a GG to a GTS. GRATiS introduces two new strategies, the \textit{remote exploration strategy} and the \textit{symbolic exploration strategy}. The 'Exploration Strategy' is an exploration strategy in GROOVE such as the Breadth-First exploration strategy. The remote, symbolic and GROOVE exploration strategy form a chain where the possible rule transitions are passed down and the chosen rule transition is passed back up. The symbolic strategy transforms the GG to an STS based on the explored rule transitions. The remote exploration strategy waits until the IOSTS is done and then sends it to ATM. 'a' is the start of a new collaboration chain, representing the normal flow of ATM as depicted in Figure~\ref{fig:axini_tool}.
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=\textwidth]{tooling.pdf}
+  \end{center}
+  \caption{The GRATiS design: replacing the STS with GROOVE}
+  \label{fig:tooling}
+\end{figure}
+
 \subsection{Control program}
 Make an interaction variable using $parin:$ node and control program $\mathit{alap} \{ \ggrule(n \in \mathbb{U}^\sort) | \mathit{other}\}$, where $\sort \in \Sorts$ is the sort of the interaction variable.
 

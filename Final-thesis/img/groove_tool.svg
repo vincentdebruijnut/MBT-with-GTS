@@ -462,6 +462,7 @@
 
 
 
+
 		</g>
 		<g
    id="shape1-8"
@@ -530,6 +531,7 @@
 
 
 
+
 <text
    x="19.300169"
    y="778.17456"
@@ -537,6 +539,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3828">Strategy </text>
+
 
 
 
@@ -611,6 +614,7 @@
 
 
 
+
 <text
    x="7.0967798"
    y="763.77716"
@@ -625,6 +629,7 @@
 
 
 
+
 <text
    x="14.228135"
    y="776.36188"
@@ -632,6 +637,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3835">System </text>
+
 
 
 
@@ -657,6 +663,7 @@
 
 
 
+
 <text
    x="-280.52628"
    y="869.9256"
@@ -674,18 +681,20 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="-186.79305"
+   x="-188.05151"
    y="872.38995"
    id="text3399-8"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3401-8"
-     x="-186.79305"
+     x="-188.05151"
      y="872.38995"
-     style="font-size:8px">input</tspan></text>
+     style="font-size:8px">1: input</tspan></text>
+
 
 
 
@@ -695,15 +704,16 @@
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="-45.843887"
+   x="-48.360836"
    y="754.93237"
    id="text3399-8-8"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3401-8-9"
-     x="-45.843887"
+     x="-48.360836"
      y="754.93237"
-     style="font-size:8px">output</tspan></text>
+     style="font-size:8px">4: output</tspan></text>
+
 
 
 
@@ -713,20 +723,21 @@
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="-153.48825"
-   y="809.34711"
+   x="-169.00945"
+   y="808.92761"
    id="text3399-8-8-8"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3401-8-9-8"
-     x="-153.48825"
-     y="809.34711"
-     style="font-size:8px">    rule </tspan><tspan
+     x="-169.00945"
+     y="808.92761"
+     style="font-size:8px">2: get possible</tspan><tspan
      sodipodi:role="line"
-     x="-153.48825"
-     y="819.34711"
+     x="-169.00945"
+     y="818.92761"
      style="font-size:8px"
-     id="tspan3126">transitions</tspan></text>
+     id="tspan3126">rule transitions</tspan></text>
+
 
 
 
@@ -743,34 +754,19 @@
      x="-87.383904"
      y="809.09711"
      style="font-size:8px"
-     id="tspan3126-5">   rule</tspan><tspan
+     id="tspan3126-5">  3: rule</tspan><tspan
      sodipodi:role="line"
      x="-87.383904"
      y="819.09711"
      style="font-size:8px"
-     id="tspan3162">transition</tspan></text>
+     id="tspan3162">transitions</tspan></text>
 
 
 
 
 
-<text
-   xml:space="preserve"
-   style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="-63.053394"
-   y="838.46161"
-   id="text3399-8-8-8-7"
-   sodipodi:linespacing="125%"><tspan
-     sodipodi:role="line"
-     x="-63.053394"
-     y="838.46161"
-     style="font-size:8px"
-     id="tspan3126-1">rule transitions</tspan><tspan
-     sodipodi:role="line"
-     x="-63.053394"
-     y="848.46161"
-     style="font-size:8px"
-     id="tspan3368">   and states</tspan></text>
+
+
 
 
 
@@ -787,30 +783,15 @@
      id="tspan3401-8-2"
      x="39.732395"
      y="813.2417"
-     style="font-size:8px">input</tspan></text>
+     style="font-size:8px">5: input</tspan></text>
 
 
 
 
 
 
-<text
-   xml:space="preserve"
-   style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="-51.129498"
-   y="876.63531"
-   id="text3399-8-8-8-2-4"
-   sodipodi:linespacing="125%"><tspan
-     sodipodi:role="line"
-     x="-51.129498"
-     y="876.63531"
-     style="font-size:8px"
-     id="tspan3126-5-0">    rule</tspan><tspan
-     sodipodi:role="line"
-     x="-51.129498"
-     y="886.63531"
-     style="font-size:8px"
-     id="tspan3162-9">transition</tspan></text>
+
+
 
 
 
@@ -906,6 +887,7 @@
 
 
 
+
 <text
    x="14.647629"
    y="779.01361"
@@ -913,6 +895,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3833">Applier </text>
+
 
 
 
@@ -945,7 +928,7 @@
    v:mID="2"
    v:groupContext="shape"
    v:layerMember="0"
-   transform="matrix(0,1,-1,0,1032.585,82.165244)"><title
+   transform="matrix(0,1,-1,0,1019.1612,82.584736)"><title
      id="title3796-6">Dynamic connector</title><v:userDefs><v:ud
        v:nameU="msvThemeColors"
        v:val="VT0(36):26" /><v:ud
@@ -961,7 +944,7 @@
    v:mID="2"
    v:groupContext="shape"
    v:layerMember="0"
-   transform="matrix(0,-1,-1,0,1019.5808,147.92585)"><title
+   transform="matrix(0,-1,-1,0,1035.102,148.34534)"><title
      id="title3796-6-9">Dynamic connector</title><v:userDefs><v:ud
        v:nameU="msvThemeColors"
        v:val="VT0(36):26" /><v:ud
@@ -970,38 +953,6 @@
      d="M 7.9703391,783 52.34,783"
      class="st6"
      id="path3798-1-4"
-     inkscape:connector-curvature="0"
-     style="stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-23)"
-     sodipodi:nodetypes="cc" /></g><g
-   id="shape2-32-1"
-   v:mID="2"
-   v:groupContext="shape"
-   v:layerMember="0"
-   transform="translate(283.52119,-624.8393)"><title
-     id="title3796-4">Dynamic connector</title><v:userDefs><v:ud
-       v:nameU="msvThemeColors"
-       v:val="VT0(36):26" /><v:ud
-       v:nameU="msvThemeEffects"
-       v:val="VT0(16):26" /></v:userDefs><path
-     d="M -6.2923729,783 52.34,783"
-     class="st6"
-     id="path3798-2"
-     inkscape:connector-curvature="0"
-     style="stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-23)"
-     sodipodi:nodetypes="cc" /></g><g
-   id="shape2-32-1-6"
-   v:mID="2"
-   v:groupContext="shape"
-   v:layerMember="0"
-   transform="matrix(-1,0,0,1,334.80933,-610.99608)"><title
-     id="title3796-4-8">Dynamic connector</title><v:userDefs><v:ud
-       v:nameU="msvThemeColors"
-       v:val="VT0(36):26" /><v:ud
-       v:nameU="msvThemeEffects"
-       v:val="VT0(16):26" /></v:userDefs><path
-     d="M -6.2923729,783 52.34,783"
-     class="st6"
-     id="path3798-2-5"
      inkscape:connector-curvature="0"
      style="stroke:#404040;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#mrkr5-23)"
      sodipodi:nodetypes="cc" /></g><g

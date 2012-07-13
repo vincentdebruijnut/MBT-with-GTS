@@ -11,12 +11,12 @@ scale=\tikzscale]
 \node[node] (g)  at (2.200, -2.000) {\ml{\textbf{$\startGraph$} \\ \input{./img/gg_graph.tex}}};
 \node[node] (rhs)  at (5.000, 0.000) {\ml{\textbf{RHS} \\ \input{./img/gg_rhs.tex}}};
 \node[node] (g2)  at (5.000, -2.000) {\ml{\textbf{$\hostGraph_1$} \\ \input{./img/gg_result.tex}}};
-\path[edge] (lhs)  -- node[lab]{partial morphism} (n1) ;
-\path[edge] (lhs)  -- node[lab]{partial morphism} (rhs) ;
-\path[edge] (lhs)  -- node[lab]{partial morphism} (n2) ;
-\path[edge] (g)  -- node[lab]{trafo} (g2) ;
-\path[edge](lhs.south -| 2.200, -2.000) -- node[lab]{match} (g) ;
-\path[edge](rhs.south -| 5.000, -2.000) -- node[lab]{match} (g2) ;
+\path[edge] (lhs)  -- node[lab]{rule graph morphism} (n1) ;
+\path[edge] (lhs)  -- node[lab]{rule graph morphism} (rhs) ;
+\path[edge] (lhs)  -- node[lab]{rule graph morphism} (n2) ;
+\path[edge] (g)  -- node[lab]{partial morphism} (g2) ;
+\path[edge](lhs.south -| 2.200, -2.000) -- node[lab]{match morphism} (g) ;
+\path[edge](rhs.south -| 5.000, -2.000) -- node[lab]{partial morphism} (g2) ;
 \userdefinedmacro
 \end{tikzpicture}
 \renewcommand{\userdefinedmacro}{\relax}

@@ -12,8 +12,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="747.06915"
-   height="301.94995"
-   viewBox="0 0 597.65532 241.55996"
+   height="306.17072"
+   viewBox="0 0 597.65532 244.93657"
    xml:space="preserve"
    color-interpolation-filters="sRGB"
    class="st20"
@@ -32,17 +32,17 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="1152"
-   inkscape:window-height="813"
+   inkscape:window-width="1920"
+   inkscape:window-height="1029"
    id="namedview4464"
    showgrid="false"
    inkscape:zoom="1.3485026"
    inkscape:cx="367.66854"
-   inkscape:cy="336.72023"
+   inkscape:cy="247.73263"
    inkscape:window-x="0"
    inkscape:window-y="0"
    inkscape:window-maximized="1"
-   inkscape:current-layer="shape4-18-7"
+   inkscape:current-layer="g4257"
    fit-margin-top="0"
    fit-margin-left="0"
    fit-margin-right="0"
@@ -1941,7 +1941,7 @@
    v:index="1"
    v:groupContext="foregroundPage"
    id="g4257"
-   transform="translate(-3.8337041,-37.323459)">
+   transform="translate(-3.8337041,-33.946846)">
 		<v:userDefs>
 			<v:ud
    v:nameU="msvThemeColors"
@@ -2105,6 +2105,7 @@
 
 
 
+
 <text
    x="9.9754295"
    y="779.78058"
@@ -2121,6 +2122,7 @@
 
 
 
+
 <text
    x="13.564745"
    y="784.88647"
@@ -2128,6 +2130,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3598" />
+
 
 
 
@@ -2192,6 +2195,7 @@
 
 
 
+
 <text
    x="6.3017902"
    y="779.95428"
@@ -2199,6 +2203,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3603">Execution</text>
+
 
 
 
@@ -2255,6 +2260,7 @@
    id="text3494"
    style="fill:#000000;font-family:Calibri"><v:paragraph
    v:horizAlign="1" /><v:tabList /> SUT</text>
+
 
 
 
@@ -2363,6 +2369,7 @@
 
 
 
+
 <text
    x="11.278832"
    y="778.41699"
@@ -2370,6 +2377,7 @@
    v:langID="1043"
    style="fill:#000000;font-family:Calibri"
    id="text3601">Pass/Fail</text>
+
 
 
 
@@ -2398,15 +2406,16 @@
      sodipodi:nodetypes="cc" /></g><text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="470.11066"
+   x="467.14441"
    y="238.74152"
    id="text3399"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3401"
-     x="470.11066"
+     x="467.14441"
      y="238.74152"
-     style="font-size:8px">stimulus</tspan></text>
+     style="font-size:8px">e: stimulus</tspan></text>
+
 
 
 
@@ -2456,15 +2465,16 @@
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="474.57138"
+   x="471.60513"
    y="154.11826"
    id="text3399-2"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3401-4"
-     x="474.57138"
+     x="471.60513"
      y="154.11826"
-     style="font-size:8px">output</tspan></text>
+     style="font-size:8px">i: output</tspan></text>
+
 
 
 
@@ -2477,20 +2487,21 @@
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="376.70331"
-   y="204.83458"
+   x="367.80453"
+   y="203.64807"
    id="text3399-5"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3401-5"
-     x="376.70331"
-     y="204.83458"
-     style="font-size:8px">abstract</tspan><tspan
+     x="367.80453"
+     y="203.64807"
+     style="font-size:8px">d: abstract</tspan><tspan
      sodipodi:role="line"
-     x="376.70331"
-     y="214.83458"
+     x="367.80453"
+     y="213.64807"
      style="font-size:8px"
-     id="tspan3426">stimulus</tspan></text>
+     id="tspan3426">  stimulus</tspan></text>
+
 
 
 
@@ -2511,12 +2522,13 @@
      id="tspan3401-5-7"
      x="442.39816"
      y="204.86848"
-     style="font-size:8px"> abstract</tspan><tspan
+     style="font-size:8px">g: abstract</tspan><tspan
      sodipodi:role="line"
      x="442.39816"
      y="214.86848"
      style="font-size:8px"
-     id="tspan3426-1">response</tspan></text>
+     id="tspan3426-1"> response</tspan></text>
+
 
 
 
@@ -2537,7 +2549,7 @@
      x="328.11404"
      y="140.52899"
      style="font-size:8px"
-     id="tspan3457">     possible </tspan><tspan
+     id="tspan3457">   c: possible </tspan><tspan
      sodipodi:role="line"
      x="328.11404"
      y="150.52899"
@@ -2552,18 +2564,20 @@
 
 
 
+
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="470.03873"
+   x="466.47922"
    y="266.70346"
    id="text3403"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3405"
-     x="470.03873"
+     x="466.47922"
      y="266.70346"
-     style="font-size:8px">response</tspan></text>
+     style="font-size:8px">f: response</tspan></text>
+
 
 
 
@@ -2611,6 +2625,7 @@
 
 
 
+
 <text
    x="-283.40311"
    y="942.11603"
@@ -2618,6 +2633,7 @@
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
    id="text3837-4">Grammar</text>
+
 
 
 
@@ -2644,7 +2660,8 @@
      id="tspan3401-8"
      x="-247.30461"
      y="885.75922"
-     style="font-size:8px">input</tspan></text>
+     style="font-size:8px">1: input</tspan></text>
+
 
 
 
@@ -2718,6 +2735,7 @@
 
 
 
+
 <text
    x="16.223808"
    y="778.17462"
@@ -2734,23 +2752,25 @@
 
 
 
+
 </g><text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="90.212791"
-   y="53.669735"
+   x="81.314034"
+   y="40.024971"
    id="text3399-8-8-8"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
      id="tspan3401-8-9-8"
-     x="90.212791"
-     y="53.669735"
-     style="font-size:8px">    rule </tspan><tspan
+     x="81.314034"
+     y="40.024971"
+     style="font-size:8px">2: get possible</tspan><tspan
      sodipodi:role="line"
-     x="90.212791"
-     y="63.669735"
+     x="81.314034"
+     y="50.024971"
      style="font-size:8px"
-     id="tspan3126">transitions</tspan></text>
+     id="tspan3126">rule transitions</tspan></text>
+
 
 
 
@@ -2763,20 +2783,21 @@
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="93.174469"
+   x="89.614967"
    y="93.587021"
    id="text3399-8-8-8-2"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
-     x="93.174469"
+     x="89.614967"
      y="93.587021"
      style="font-size:8px"
-     id="tspan3126-5">   rule</tspan><tspan
+     id="tspan3126-5">3: give rule</tspan><tspan
      sodipodi:role="line"
-     x="93.174469"
+     x="89.614967"
      y="103.58702"
      style="font-size:8px"
-     id="tspan3162">transition</tspan></text>
+     id="tspan3162"> transitions</tspan></text>
+
 
 
 
@@ -2844,6 +2865,7 @@
 
 
 
+
 <text
    x="1.8554007"
    y="739.97162"
@@ -2851,6 +2873,7 @@
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
    id="text3833-1-7">STS</text>
+
 
 
 
@@ -2909,6 +2932,7 @@
 
 
 
+
 <text
    x="-11.789374"
    y="761.32867"
@@ -2919,6 +2943,7 @@
 
 
 
+
 <text
    x="-20.62674"
    y="748.8938"
@@ -2926,6 +2951,7 @@
    v:langID="1043"
    style="font-size:12px;fill:#000000;font-family:Calibri"
    id="text3833-1-9-5-0">Exploration</text>
+
 
 
 
@@ -2949,15 +2975,21 @@
      sodipodi:nodetypes="cc" /></g><text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="222.06206"
-   y="67.391052"
+   x="216.12956"
+   y="60.865295"
    id="text3399-8-5-9"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
-     x="222.06206"
-     y="67.391052"
+     x="216.12956"
+     y="60.865295"
      style="font-size:8px"
-     id="tspan3382">STS</tspan></text>
+     id="tspan3382">a: send</tspan><tspan
+     sodipodi:role="line"
+     x="216.12956"
+     y="70.865295"
+     style="font-size:8px"
+     id="tspan4627">  STS</tspan></text>
+
 
 
 
@@ -2994,7 +3026,7 @@
      x="330.10825"
      y="178.93037"
      style="font-size:8px"
-     id="tspan3367">  instantiated</tspan><tspan
+     id="tspan3367">h: instantiated</tspan><tspan
      sodipodi:role="line"
      x="330.10825"
      y="188.93037"
@@ -3005,6 +3037,7 @@
      y="198.93037"
      style="font-size:8px"
      id="tspan3356" /></text>
+
 
 
 
@@ -3037,95 +3070,83 @@
    v:mID="3"
    v:groupContext="shape"
    transform="translate(159.08684,-668.3335)"><title
-     id="title3801-7-6-0">Rectangle.3</title><desc
-     id="desc3803-8-2-4">Graph Exploration Module</desc><v:userDefs><v:ud
-       v:nameU="visVersion"
-       v:val="VT0(14):26" /><v:ud
-       v:nameU="msvThemeColors"
-       v:val="VT0(36):26" /><v:ud
-       v:nameU="msvThemeEffects"
-       v:val="VT0(16):26" /></v:userDefs><v:textBlock
-     v:margins="rect(4,4,4,4)" /><v:textRect
-     cx="36"
-     cy="768"
-     width="72"
-     height="48" /><g
-     id="shadow3-39-1-6-3"
-     v:groupContext="shadow"
-     v:shadowOffsetX="1.44"
-     v:shadowOffsetY="-1.44"
-     v:shadowType="1"
-     transform="translate(-20.510273,-22.290025)"
-     class="st1"
-     style="visibility:visible"><rect
-       x="0"
-       y="744"
-       width="72"
-       height="48"
-       class="st2"
-       id="rect3806-5-5-4"
-       style="fill:#cdcdcd;fill-opacity:0.5;stroke:#cdcdcd;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" /></g><rect
-     x="-21.950274"
-     y="720.27002"
+   id="title3801-7-6-0">Rectangle.3</title><desc
+   id="desc3803-8-2-4">Graph Exploration Module</desc><v:userDefs><v:ud
+     v:nameU="visVersion"
+     v:val="VT0(14):26" /><v:ud
+     v:nameU="msvThemeColors"
+     v:val="VT0(36):26" /><v:ud
+     v:nameU="msvThemeEffects"
+     v:val="VT0(16):26" /></v:userDefs><v:textBlock
+   v:margins="rect(4,4,4,4)" /><v:textRect
+   cx="36"
+   cy="768"
+   width="72"
+   height="48" /><g
+   id="shadow3-39-1-6-3"
+   v:groupContext="shadow"
+   v:shadowOffsetX="1.44"
+   v:shadowOffsetY="-1.44"
+   v:shadowType="1"
+   transform="translate(-20.510273,-22.290025)"
+   class="st1"
+   style="visibility:visible"><rect
+     x="0"
+     y="744"
      width="72"
      height="48"
-     class="st3"
-     id="rect3808-8-3-4"
-     style="fill:url(#linearGradient6289-2-2-2);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
-     x="-9.2859669"
-     y="736.64709"
-     class="st4"
-     v:langID="1043"
-     style="fill:#000000;font-family:Calibri"
-     id="text3833-1-9-1">Remote</text>
+     class="st2"
+     id="rect3806-5-5-4"
+     style="fill:#cdcdcd;fill-opacity:0.5;stroke:#cdcdcd;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" /></g><rect
+   x="-21.950274"
+   y="720.27002"
+   width="72"
+   height="48"
+   class="st3"
+   id="rect3808-8-3-4"
+   style="fill:url(#linearGradient6289-2-2-2);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
+   x="-9.2859669"
+   y="736.64709"
+   class="st4"
+   v:langID="1043"
+   style="fill:#000000;font-family:Calibri"
+   id="text3833-1-9-1">Remote</text>
+
 <text
-     x="-11.789374"
-     y="761.32867"
-     class="st4"
-     v:langID="1043"
-     style="font-size:12px;fill:#000000;font-family:Calibri"
-     id="text3833-1-9-5-7">Strategy</text>
+   x="-11.789374"
+   y="761.32867"
+   class="st4"
+   v:langID="1043"
+   style="font-size:12px;fill:#000000;font-family:Calibri"
+   id="text3833-1-9-5-7">Strategy</text>
+
 <text
-     x="-20.62674"
-     y="748.8938"
-     class="st4"
-     v:langID="1043"
-     style="font-size:12px;fill:#000000;font-family:Calibri"
-     id="text3833-1-9-5-0-5">Exploration</text>
-</g><text
-   xml:space="preserve"
-   style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="189.97803"
-   y="116.67104"
-   id="text3399-8-8-8-3"
-   sodipodi:linespacing="125%"><tspan
-     sodipodi:role="line"
-     id="tspan3401-8-9-8-4"
-     x="189.97803"
-     y="116.67104"
-     style="font-size:8px">    rule </tspan><tspan
-     sodipodi:role="line"
-     x="189.97803"
-     y="126.67104"
-     style="font-size:8px"
-     id="tspan3126-54">transitions</tspan></text>
+   x="-20.62674"
+   y="748.8938"
+   class="st4"
+   v:langID="1043"
+   style="font-size:12px;fill:#000000;font-family:Calibri"
+   id="text3833-1-9-5-0-5">Exploration</text>
+
+</g>
 <text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="120.56313"
+   x="112.85088"
    y="116.84053"
    id="text3399-8-8-8-2-9"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
-     x="120.56313"
+     x="112.85088"
      y="116.84053"
      style="font-size:8px"
-     id="tspan3126-5-2">   rule</tspan><tspan
+     id="tspan3126-5-2">4: give rule</tspan><tspan
      sodipodi:role="line"
-     x="120.56313"
+     x="112.85088"
      y="126.84053"
      style="font-size:8px"
-     id="tspan3162-5">transition</tspan></text>
+     id="tspan3162-5"> transitions</tspan></text>
+
 <g
    id="shape12-54-8-6-1"
    v:mID="12"
@@ -3171,29 +3192,14 @@
      id="tspan3401-8-9-8-6"
      x="191.16452"
      y="205.65863"
-     style="font-size:8px">    rule </tspan><tspan
+     style="font-size:8px">   6: chosen </tspan><tspan
      sodipodi:role="line"
      x="191.16452"
      y="215.65863"
      style="font-size:8px"
-     id="tspan3126-4">transitions</tspan></text>
-<text
-   xml:space="preserve"
-   style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="121.74963"
-   y="205.82812"
-   id="text3399-8-8-8-2-1"
-   sodipodi:linespacing="125%"><tspan
-     sodipodi:role="line"
-     x="121.74963"
-     y="205.82812"
-     style="font-size:8px"
-     id="tspan3126-5-1">   rule</tspan><tspan
-     sodipodi:role="line"
-     x="121.74963"
-     y="215.82812"
-     style="font-size:8px"
-     id="tspan3162-6">transition</tspan></text>
+     id="tspan3126-4">rule transition</tspan></text>
+
+
 <g
    id="shape12-54-8-6-4"
    v:mID="12"
@@ -3233,60 +3239,62 @@
    v:mID="3"
    v:groupContext="shape"
    transform="translate(160.27333,-490.95156)"><title
-     id="title3801-7-6-7">Rectangle.3</title><desc
-     id="desc3803-8-2-6">Graph Exploration Module</desc><v:userDefs><v:ud
-       v:nameU="visVersion"
-       v:val="VT0(14):26" /><v:ud
-       v:nameU="msvThemeColors"
-       v:val="VT0(36):26" /><v:ud
-       v:nameU="msvThemeEffects"
-       v:val="VT0(16):26" /></v:userDefs><v:textBlock
-     v:margins="rect(4,4,4,4)" /><v:textRect
-     cx="36"
-     cy="768"
-     width="72"
-     height="48" /><g
-     id="shadow3-39-1-6-7"
-     v:groupContext="shadow"
-     v:shadowOffsetX="1.44"
-     v:shadowOffsetY="-1.44"
-     v:shadowType="1"
-     transform="translate(-20.510273,-22.290025)"
-     class="st1"
-     style="visibility:visible"><rect
-       x="0"
-       y="744"
-       width="72"
-       height="48"
-       class="st2"
-       id="rect3806-5-5-2"
-       style="fill:#cdcdcd;fill-opacity:0.5;stroke:#cdcdcd;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" /></g><rect
-     x="-21.950274"
-     y="720.27002"
+   id="title3801-7-6-7">Rectangle.3</title><desc
+   id="desc3803-8-2-6">Graph Exploration Module</desc><v:userDefs><v:ud
+     v:nameU="visVersion"
+     v:val="VT0(14):26" /><v:ud
+     v:nameU="msvThemeColors"
+     v:val="VT0(36):26" /><v:ud
+     v:nameU="msvThemeEffects"
+     v:val="VT0(16):26" /></v:userDefs><v:textBlock
+   v:margins="rect(4,4,4,4)" /><v:textRect
+   cx="36"
+   cy="768"
+   width="72"
+   height="48" /><g
+   id="shadow3-39-1-6-7"
+   v:groupContext="shadow"
+   v:shadowOffsetX="1.44"
+   v:shadowOffsetY="-1.44"
+   v:shadowType="1"
+   transform="translate(-20.510273,-22.290025)"
+   class="st1"
+   style="visibility:visible"><rect
+     x="0"
+     y="744"
      width="72"
      height="48"
-     class="st3"
-     id="rect3808-8-3-47"
-     style="fill:url(#linearGradient6289-2-2-0);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
-     x="-11.789374"
-     y="756.58264"
-     class="st4"
-     v:langID="1043"
-     style="font-size:12px;fill:#000000;font-family:Calibri"
-     id="text3833-1-9-5-1">Strategy</text>
+     class="st2"
+     id="rect3806-5-5-2"
+     style="fill:#cdcdcd;fill-opacity:0.5;stroke:#cdcdcd;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" /></g><rect
+   x="-21.950274"
+   y="720.27002"
+   width="72"
+   height="48"
+   class="st3"
+   id="rect3808-8-3-47"
+   style="fill:url(#linearGradient6289-2-2-0);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
+   x="-11.789374"
+   y="756.58264"
+   class="st4"
+   v:langID="1043"
+   style="font-size:12px;fill:#000000;font-family:Calibri"
+   id="text3833-1-9-5-1">Strategy</text>
+
 <text
-     x="-20.033489"
-     y="743.5545"
-     class="st4"
-     v:langID="1043"
-     style="font-size:12px;fill:#000000;font-family:Calibri"
-     id="text3833-1-9-5-0-1">Exploration</text>
+   x="-20.033489"
+   y="743.5545"
+   class="st4"
+   v:langID="1043"
+   style="font-size:12px;fill:#000000;font-family:Calibri"
+   id="text3833-1-9-5-0-1">Exploration</text>
+
 </g><g
    id="shape9-35-3"
    v:mID="9"
    v:groupContext="shape"
    v:layerMember="0"
-   transform="translate(64.543476,-713.43887)"><title
+   transform="translate(65.136726,-699.20085)"><title
      id="title3502-7">Dynamic connector.9</title><v:userDefs><v:ud
        v:nameU="msvThemeColors"
        v:val="VT0(36):26" /><v:ud
@@ -3302,7 +3310,7 @@
    v:mID="10"
    v:groupContext="shape"
    v:layerMember="0"
-   transform="translate(135.28501,-700.43463)"><title
+   transform="translate(135.28501,-711.11314)"><title
      id="title3507-4">Dynamic connector.10</title><v:userDefs><v:ud
        v:nameU="msvThemeColors"
        v:val="VT0(36):26" /><v:ud
@@ -3318,61 +3326,64 @@
    v:mID="4"
    v:groupContext="shape"
    transform="translate(252.82042,-692.0635)"><title
-     id="title3485-1">Rectangle.4</title><desc
-     id="desc3487-5">SUT</desc><v:userDefs><v:ud
-       v:nameU="visVersion"
-       v:val="VT0(14):26" /><v:ud
-       v:nameU="msvThemeColors"
-       v:val="VT0(36):26" /><v:ud
-       v:nameU="msvThemeEffects"
-       v:val="VT0(16):26" /></v:userDefs><v:textBlock
-     v:margins="rect(4,4,4,4)" /><v:textRect
-     cx="36"
-     cy="768"
-     width="72"
-     height="48" /><g
-     id="shadow4-19-8"
-     v:groupContext="shadow"
-     v:shadowOffsetX="1.44"
-     v:shadowOffsetY="-1.44"
-     v:shadowType="1"
-     transform="translate(1.44,1.44)"
-     class="st1"
-     style="visibility:visible"><rect
-       x="0"
-       y="744"
-       width="72"
-       height="48"
-       class="st2"
-       id="rect3490-5"
-       style="fill:#cdcdcd;fill-opacity:0.5;stroke:#cdcdcd;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" /></g><rect
+   id="title3485-1">Rectangle.4</title><desc
+   id="desc3487-5">SUT</desc><v:userDefs><v:ud
+     v:nameU="visVersion"
+     v:val="VT0(14):26" /><v:ud
+     v:nameU="msvThemeColors"
+     v:val="VT0(36):26" /><v:ud
+     v:nameU="msvThemeEffects"
+     v:val="VT0(16):26" /></v:userDefs><v:textBlock
+   v:margins="rect(4,4,4,4)" /><v:textRect
+   cx="36"
+   cy="768"
+   width="72"
+   height="48" /><g
+   id="shadow4-19-8"
+   v:groupContext="shadow"
+   v:shadowOffsetX="1.44"
+   v:shadowOffsetY="-1.44"
+   v:shadowType="1"
+   transform="translate(1.44,1.44)"
+   class="st1"
+   style="visibility:visible"><rect
      x="0"
      y="744"
      width="72"
      height="48"
-     class="st3"
-     id="rect3492-2"
-     style="fill:url(#linearGradient3573-3);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
-     x="9.8589821"
-     y="773.37976"
-     class="st4"
-     v:langID="1043"
-     id="text3494-0"
-     style="fill:#000000;font-family:Calibri"></text>
+     class="st2"
+     id="rect3490-5"
+     style="fill:#cdcdcd;fill-opacity:0.5;stroke:#cdcdcd;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.5" /></g><rect
+   x="0"
+   y="744"
+   width="72"
+   height="48"
+   class="st3"
+   id="rect3492-2"
+   style="fill:url(#linearGradient3573-3);stroke:#404040;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round" /><text
+   x="9.8589821"
+   y="773.37976"
+   class="st4"
+   v:langID="1043"
+   id="text3494-0"
+   style="fill:#000000;font-family:Calibri" />
+
 <text
-     x="9.2657318"
-     y="779.90552"
-     class="st4"
-     v:langID="1043"
-     style="fill:#000000;font-family:Calibri"
-     id="text6898">Interface</text>
+   x="9.2657318"
+   y="779.90552"
+   class="st4"
+   v:langID="1043"
+   style="fill:#000000;font-family:Calibri"
+   id="text6898">Interface</text>
+
 <text
-     x="24.398922"
-     y="764.29486"
-     class="st4"
-     v:langID="1043"
-     style="font-size:12px;fill:#000000;font-family:Calibri"
-     id="text6898-7">ATM</text>
+   x="24.398922"
+   y="764.29486"
+   class="st4"
+   v:langID="1043"
+   style="font-size:12px;fill:#000000;font-family:Calibri"
+   id="text6898-7">ATM</text>
+
 </g><g
    id="shape12-54-8-6-1-1"
    v:mID="12"
@@ -3393,15 +3404,50 @@
      sodipodi:nodetypes="cc" /></g><text
    xml:space="preserve"
    style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
-   x="296.80725"
+   x="294.43423"
    y="123.46916"
    id="text3399-8-5-9-1"
    sodipodi:linespacing="125%"><tspan
      sodipodi:role="line"
-     x="296.80725"
+     x="294.43423"
      y="123.46916"
      style="font-size:8px"
-     id="tspan3382-4">STS</tspan></text>
+     id="tspan3382-4">b: input STS</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+   x="109.50903"
+   y="205.08252"
+   id="text3399-8-8-8-2-9-0"
+   sodipodi:linespacing="125%"><tspan
+     sodipodi:role="line"
+     x="109.50903"
+     y="205.08252"
+     style="font-size:8px"
+     id="tspan3126-5-2-3">5: give rule</tspan><tspan
+     sodipodi:role="line"
+     x="109.50903"
+     y="215.08252"
+     style="font-size:8px"
+     id="tspan3162-5-4"> transitions</tspan></text>
+<text
+   xml:space="preserve"
+   style="font-size:9.60000038px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+   x="187.27312"
+   y="117.28143"
+   id="text3399-8-8-8-23-4"
+   sodipodi:linespacing="125%"><tspan
+     sodipodi:role="line"
+     id="tspan3401-8-9-8-6-7"
+     x="187.27312"
+     y="117.28143"
+     style="font-size:8px">   7: chosen </tspan><tspan
+     sodipodi:role="line"
+     x="187.27312"
+     y="127.28143"
+     style="font-size:8px"
+     id="tspan3126-4-5">rule transition</tspan></text>
 </g>
 <style
    id="style6932"

@@ -1,65 +1,58 @@
-\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
-\contentsline {section}{\numberline {1.1}Model-based Testing}{3}{section.1.1}
-\contentsline {section}{\numberline {1.2}Graph Transformation}{4}{section.1.2}
-\contentsline {section}{\numberline {1.3}Research goals}{4}{section.1.3}
-\contentsline {section}{\numberline {1.4}Roadmap}{5}{section.1.4}
-\contentsline {chapter}{\numberline {2}Background}{6}{chapter.2}
-\contentsline {section}{\numberline {2.1}Model-based Testing}{6}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Previous work}{7}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Labelled Transition Systems}{7}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Input-Output Transition Systems}{7}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}Coverage}{8}{subsection.2.1.4}
-\contentsline {section}{\numberline {2.2}Algebra}{8}{section.2.2}
-\contentsline {section}{\numberline {2.3}Symbolic Transition Systems}{9}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Previous work}{9}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Definition}{10}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Input-Output Symbolic Transition Systems}{10}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Example}{10}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}STS to LTS mapping}{11}{subsection.2.3.5}
-\contentsline {subsection}{\numberline {2.3.6}Coverage}{11}{subsection.2.3.6}
-\contentsline {section}{\numberline {2.4}Graph Grammars}{12}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Host graphs}{12}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Rule graphs}{13}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Morphisms \& matches}{13}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}Graph transformation rules}{13}{subsection.2.4.4}
-\contentsline {subsection}{\numberline {2.4.5}Example}{13}{subsection.2.4.5}
-\contentsline {subsection}{\numberline {2.4.6}Graph Transition Systems}{14}{subsection.2.4.6}
-\contentsline {subsection}{\numberline {2.4.7}Input-Output GGs}{14}{subsection.2.4.7}
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Model-based Testing}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Graph Transformation}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Research goals}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Roadmap}{4}{section.1.4}
+\contentsline {chapter}{\numberline {2}Background}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Model-based Testing}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Previous work}{6}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Labelled Transition Systems}{6}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Input-Output Transition Systems}{6}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Coverage}{7}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}Algebra}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}Symbolic Transition Systems}{8}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Previous work}{8}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Definition}{9}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Input-Output Symbolic Transition Systems}{9}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Example}{9}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}STS to LTS mapping}{10}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}Coverage}{10}{subsection.2.3.6}
+\contentsline {section}{\numberline {2.4}Graph Grammars}{11}{section.2.4}
 \contentsline {section}{\numberline {2.5}Tooling}{14}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}ATM}{14}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}GROOVE}{15}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Graph grammars in GROOVE}{16}{subsection.2.5.3}
-\contentsline {chapter}{\numberline {3}Design}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}General setup}{19}{section.3.1}
-\contentsline {section}{\numberline {3.2}Offline vs. on-the-fly model exploration}{19}{section.3.2}
-\contentsline {chapter}{\numberline {4}Graph Grammar to STS Algorithm}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Point algebra}{21}{section.4.1}
-\contentsline {section}{\numberline {4.2}Graphs}{21}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Locations}{21}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Location variables}{21}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Rule transitions}{21}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Gates}{22}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Interaction variables}{22}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Guards}{22}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Update mapping}{22}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Switch relations}{22}{subsection.4.3.5}
-\contentsline {section}{\numberline {4.4}Constraints}{22}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Constraint 1: no isomorphism}{22}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Constraint 2: creator/eraser pairs}{22}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Constraint 3: no variables in NACs}{23}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}Constraint 4: structural constraints on node creating rules}{23}{subsection.4.4.4}
-\contentsline {section}{\numberline {4.5}Implementation}{23}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Control program}{23}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Rule priority}{23}{subsection.4.5.2}
-\contentsline {chapter}{\numberline {5}Validation}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Model examples}{25}{section.5.1}
-\contentsline {section}{\numberline {5.2}Case study}{25}{section.5.2}
-\contentsline {section}{\numberline {5.3}Measurements}{25}{section.5.3}
+\contentsline {subsection}{\numberline {2.5.3}Graph grammars in GROOVE}{15}{subsection.2.5.3}
+\contentsline {chapter}{\numberline {3}Design}{18}{chapter.3}
+\contentsline {section}{\numberline {3.1}Requirements}{18}{section.3.1}
+\contentsline {section}{\numberline {3.2}General setup}{18}{section.3.2}
+\contentsline {chapter}{\numberline {4}Graph Grammar to STS Algorithm}{20}{chapter.4}
+\contentsline {section}{\numberline {4.1}Algorithm}{20}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Graphs}{20}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Rule transitions}{20}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Constraints}{21}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Constraint 1: no isomorphism}{21}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Constraint 2: creator/eraser pairs}{21}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Constraint 3: no variables in NACs}{21}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Constraint 4: structural constraints on node creating rules}{21}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Implementation}{21}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Control program}{22}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Rule priority}{22}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Validation}{24}{chapter.5}
+\contentsline {section}{\numberline {5.1}Model examples}{24}{section.5.1}
+\contentsline {section}{\numberline {5.2}Case study}{24}{section.5.2}
+\contentsline {section}{\numberline {5.3}Measurements}{24}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Performance}{24}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Simulation}{25}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Error detection}{25}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Coverage comparison}{25}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Model complexity}{25}{subsection.5.3.5}
+\contentsline {subsection}{\numberline {5.3.6}Extendability}{25}{subsection.5.3.6}
 \contentsline {chapter}{\numberline {6}Model Examples}{26}{chapter.6}
 \contentsline {section}{\numberline {6.1}Example 1: boardgame}{26}{section.6.1}
 \contentsline {section}{\numberline {6.2}Example 2: farmer-wolf-goat-cabbage}{26}{section.6.2}
 \contentsline {section}{\numberline {6.3}Example 3: customer reservations}{26}{section.6.3}
-\contentsline {section}{\numberline {6.4}Example 4: tab system}{26}{section.6.4}
+\contentsline {section}{\numberline {6.4}Example 4: bar tab system}{26}{section.6.4}
+\contentsline {section}{\numberline {6.5}Example 5: communication protocol}{26}{section.6.5}
 \contentsline {chapter}{\numberline {7}Case Study}{27}{chapter.7}
 \contentsline {section}{\numberline {7.1}Scanflow Cash Register Protocol}{27}{section.7.1}
 \contentsline {section}{\numberline {7.2}Measurements}{27}{section.7.2}
@@ -67,4 +60,4 @@
 \contentsline {section}{\numberline {8.1}Summary}{28}{section.8.1}
 \contentsline {section}{\numberline {8.2}Conclusion}{28}{section.8.2}
 \contentsline {section}{\numberline {8.3}Future work}{28}{section.8.3}
-\contentsline {chapter}{List of Symbols}{32}{chapter*.19}
+\contentsline {chapter}{List of Symbols}{32}{chapter*.21}

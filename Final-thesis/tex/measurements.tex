@@ -2,8 +2,20 @@
 
 This sections lists possible measurements on the models and execution of GRATiS on those models. For each measurement, a motivation is given for doing or not doing the measurement on the model examples and case study.
 
-- transformatie sts vs gewone sts: gedrag, simuleert het een het ander.
-- Halstead's software science op model complexity?
--introduce an error in model and see how fast GG and STS can find it.
+\subsection{Performance}
+Performance in terms of execution time and 'heap-size' can be measured and compared.
 
-Oppassen dat we niet weer formalismes gaan vergelijken, eigenlijk is dat niet mijn onderzoek (wat handiger is, graph grammars of STSen)
+\subsection{Simulation}
+Does the transformation simulate the original STS? And vice versa?
+
+\subsection{Error detection}
+Introduce an error in model and see how fast GG and STS can find it. (mutation coverage)
+
+\subsection{Coverage comparison}
+Compare the Location/switch relation coverage of both the transformation and the original STS. Having a more complete STS is counter-beneficial here.
+
+\subsection{Model complexity}
+Halstead's software science op model complexity?
+
+\subsection{Extendability}
+Introduce a realistic scenario where functionality of the system is extended. Assess the needed changes to both models.

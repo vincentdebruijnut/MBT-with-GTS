@@ -1,32 +1,51 @@
-This section describes an algorithm for creating an STS $J: \langle \Locations_J,\initialLocation,\LocationVariables_J,\initializationFunction_J,\InteractionVariables_J,\Gates_J,\Switches_J\rangle$ from a GG $K: \langle \ruleGraph_{LHS}, \ruleGraph_{NAC}, \ruleGraph_{RHS}\rangle$ and an initial graph $\startGraph$. 
+\section{Requirements considerations}
+In order to do model-based testing with GGs, stimuli and responses have to be obtained from the GG. ATM uses an IOSTS, where the instantiated switch relations represent a stimulus to or a response from the SUT. To get an equivalent notion of stimuli/respones in GGs, the GG must be extended to an IOGG by indicating for each transformation rule whether it is of the input or output type. Then the IOGG can be explored to an IOGTS. The input/output rule transitions of the IOGTS can be used as the abstract stimuli and responses.
+
+The second requirement for the design is the possibility to measure coverage statistics. The exploration of a GG can be done in two ways: \textit{on the fly}, rule transitions are explored only when chosen by ATM, or \textit{offline}, the GG is first completely explored and then sent to ATM. On-the-fly model exploration works well on large and even infinite models. However, coverage statistics cannot be calculated with this technique. The number of states (graphs) and rule transitions the model has when completely explored are not known, so a percentage cannot be derived. As coverage statistics are an important metric, the offline model exploration is chosen for GRATiS.
+
+The last requirement is efficiency. An IOGTS can potentially be infinitely large, due to the range of data values. A model that is more efficient with data values is an STS. The setup of GRATiS is therefore to transform the IOGG directly to an IOSTS. Note that the first requirement is met, because locaton and switch relation coverage can be calculated on the IOSTS.
+
+Taking these requirements into account, the method to achieve the goal of model-based testing on GGs is the following three steps:
+\begin{enumerate}
+\item Assign I/O types to graph transformation rules
+\item Create an IOSTS from the IOGG
+\item Perform the model-based testing on the IOSTS
+\end{enumerate}
+This chapter describes an algorithm for creating an IOSTS from an IOGG.
 
 \section{Point algebra}
-We define a \textit{point algebra} $\PointAlgebra$\newnot{symbol:PointAlgebra} to be an algebra with $\forall \sort \in \Sorts . |\mathbb{U}_\PointAlgebra^\sort| = 1$. The first step in the algorithm is to explore the GG $K$ using the point algebra $\PointAlgebra$ to a GTS $O_\PointAlgebra: \langle \hostGraph_O, \Rules_O, \RuleMatches_O, \RuleTransitions_O, \startGraph \rangle$.
+We define a \textit{point algebra} $\PointAlgebra$\newnot{symbol:PointAlgebra} to be an algebra with $\forall \sort \in \Sorts . |\mathbb{U}_\PointAlgebra^\sort| = 1$. Each graph in $\Graphs$ using the point algebra is structurally unique upto isomorphism; different values on value nodes are eliminated by the point algebra and two structurally equivalent graphs are the same graph. Therefore, using this algebra is efficient when exploring the GTS. The loss of information is only in the concrete values at each state. This information is also not present in an STS, which treats the values symbolically as variables.
 
-\section{Graphs}
-The graphs $\Graphs$ in a GTS are representations of the states of a transition system. In an STS, this representation is done by the locations and the location variables. In order to obtain $\Locations_J$ and $\LocationVariables_J$, the graphs $\hostGraph_K$ of $O_\PointAlgebra$ are used.
+\section{Variables}
+The variables in an STS represent an aspect of the modelled system. For instance, if a system keeps track of the number of items in containers, the STS modelling this system could have integer location variables $\mathit{items}1..n$. The value nodes in a host graph are a representation of one element from the universe of elements of the same sort. Edges can exist between graph nodes and value nodes. The same example modelled in a graph grammar could be a graph node representing a container with an edge labelled 'items' to an integer node. This is shown in Figure~\ref{fig:item_example}. This is a common way of representing a variable in a GG. Here the combination of edge plus source node represents the variable. However, the source node identity is not consistent through graph transformations, as the graphs are structurally unique upto isomorphism. In order to have variables in GGs, the source node must be made structurally unique, by means of a self-edge. Figure~\ref{fig:item_example2} shows this for the container-items example. The variable $\mathit{items\_c}$, the number of items in container $c$, is now represented by this graph.
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[Common way]{\label{fig:item_example}\parbox{4cm}{\centering\input{./img/item_example.tex}}}
+    \subfloat[Persistent way]{\label{fig:item_example2}\parbox{4cm}{\centering\input{./img/item_example2.tex}}
+  \end{center}
+  \caption{Possible ways of modelling variables in GGs}
+  \label{fig:vars-in-ggs}
+\end{figure}
+
+\section{The algorithm}
+Let $J = \langle \Locations_J,\initialLocation,\LocationVariables_J,\initializationFunction_J,\InteractionVariables_J,\Gates_J,\Switches_J\rangle$ be an IOSTS and let $K = \langle \Rules_K, \startGraph \rangle$ be an IOGG. The first step in the algorithm is to explore the GG $K$ using the point algebra $\PointAlgebra$ to an IOGTS $O_\PointAlgebra: \langle \hostGraph_O, \Rules_O, \RuleMatches_O, \RuleTransitions_O, \startGraph \rangle$.
 
 \subsection{Locations}
-We define the function $\function_\Locations: \Graphs \stackrel{\sim}{\longrightarrow} \Locations$ to obtain the location from a graph. For each graph a unique location is obtained by: $\forall\: \hostGraph \in \hostGraph_O\: .\:\function_\Locations(\hostGraph) \mapsto \location \in \Locations_J$. Additionally, the initial location is obtained by: $\function_\Locations(\startGraph) \mapsto \initialLocation$.
+The set of locations $\Locations_J$ is chosen to be equal to the set of graphs $\hostGraph_K$. Additionally, the initial location $\initialLocation$ is equal to the initial graph $\startGraph$.
 
 \subsection{Location variables}
 We define the function $\function_\LocationVariables: \Edges \stackrel{\sim}{\longrightarrow} \LocationVariables$ to obtain the location variable from an edge. For each edge from a graph node to a value node a unique location variable is obtained by: $\forall\: \edge \in (\DefinedEdges\restriction(\GraphNodes \times \Labels \times \mathbb{U}))\: .\: \function_\LocationVariables(\edge) \mapsto \variable \in \LocationVariables_J$. The initialization $\initializationFunction$ for a variable $\variable$, such that $\function_\LocationVariables(\node_s, \ltsLabel, \node_t) \mapsto \variable$, is obtained by: $\variable \mapsto \node_t$. Note that the node is a value, i.e. $\node_t \in \mathbb{U}$.
 
-\section{Rule transitions}
-Rule transitions are a representation of the change from one system state to another. In STSs, this representation is done by the switch relations. In order to obtain $\Switches_J$, the rules $\Rules_O$, rule matches $\RuleMatches_O$ and rule transitions $\RuleTransitions_O$ are used.
-
 \subsection{Gates}
-We define the function $\function_\Gates: \Rules \stackrel{\sim}{\longrightarrow} \Gates$ to obtain the gate from a rule. For each rule a unique gate is obtained by: $\forall\:\ggrule \in \Rules_O\: . \: \function_\Gates(\ggrule) \mapsto \gate$, where $arity(\gate) = 0$.
-
-\subsection{Interaction variables}
-The set of interaction variables for $J$ is empty, i.e. $\InteractionVariables = \emptyset$. The reason for this is that the value for these variables comes from outside the GG, namely from the SUT. In section~\ref{sec:implementation} an implementation-specific solution is described to include interaction variables in the algorithm. 
+The gate of a switch relation represents the stimulus to or response from the SUT. In an IOGG, the rules are this representation. Therefore, the set of gates $\Gates_J$ is obtained by the set of rules $\Rules_O$. For each $\gate \in \Gates_J$, $arity(\gate) = 0$. The set of interaction variables for $J$ is empty, i.e. $\InteractionVariables = \emptyset$. The reason for this is that the value for these variables comes from outside the GG, namely from the SUT. In section~\ref{sec:implementation} an implementation-specific solution is described to include interaction variables in the algorithm. 
 
 \subsection{Guards}
-We define a function $\function_\guard: \RuleMatches \rightarrow \Terms$ to obtain the guard from a rule match. First, the variables in the terms in $\ruleGraph_{LHS}$ are replaced by location variabels by: $\forall (\edge:(\node, \ltsLabel, \node') \in \ruleGraph_{LHS}\restriction (\GraphNodes \times \Labels \times \Variables)\: .\: \forall \term \in 2^\Terms_{LHS}\restriction\BooleanTerms\: .\: \mathit{replace}(\node', \function_\LocationVariables(\mathit{image}(\edge)))$. The guard can then be constructed by joining the terms in $2^\Terms_{LHS}\restriction\BooleanTerms$ with the $\land$ operator.
+The guard of a switch relation restricts the use of the switch relation based on the values of the variables. In a GG, a rule is restricted by the terms. The variables used in the terms, $\mathit{var}(2^\Terms)$, have to be replaced by location variables to obtain the guard. To do this, a rule match is needed to find the images of the variables. The rule edges to the variables have as image the edges representing the location variables. We define a function to obtain the location variable from a rule edge: $\function_i: \Edges \times \RuleMatches \stackrel{\sim}{\longrightarrow} \LocationVariables$. For a rule edge $\edge$ and rule match $\rulematch$, the location variable is obtained by: $\function_i(\edge,\rulematch) \mapsto \function_\LocationVariables(image(\edge,\rulematch))$. We define a function $\function_\guard: \RuleMatches \rightarrow \Terms$ to obtain the guard from a rule match. $\forall (\edge:(\node, \ltsLabel, \node') \in \ruleGraph_{LHS}\restriction (\GraphNodes \times \Labels \times \Variables)\: .\: \mathit{join}(\mathit{replace}(2^\Terms_{LHS},\node', \function_i(\edge)), \land))$.\marginpar{use example with box and items}
 
-\subsection{Update mapping}
+\subsection{Update mappings}
 We define a function $\function_\updateMapping: \RuleMatches \rightarrow \Terms$ to obtain the update mapping from a rule match. First we obtain all \textit{eraser-creator pairs} by: $\function_{RHS}: (\edge:(\node, \ltsLabel, \node') \in \ruleGraph_{LHS}\restriction (\GraphNodes \times \Labels \times \Variables)\: |\: \edge \notin \ruleGraph_{RHS} . (\mathit{image}(\node), \ltsLabel, \node'') \in \ruleGraph_{RHS}$. update is $\function_\LocationVariables(\edge) \mapsto \node''$, if $\node'' \in 2^\Terms_{RHS}$.
 
 \subsection{Switch relations}
-We define the function $\function_\Switches: (\hostGraph \xrightarrow{\ggrule, \rulematch} \hostGraph') \rightarrow (\function_\Locations(\hostGraph)\xrightarrow{\function_\Gates(\ggrule), \function_\guard(\rulematch), \function_\updateMapping(\rulematch)}\function_\Locations(\hostGraph'))$ to obtain a switch relation from a rule match. 
+We define the function $\function_\Switches: (\hostGraph \xrightarrow{\ggrule, \rulematch} \hostGraph') \rightarrow (\hostGraph\xrightarrow{\function_\Gates(\ggrule), \function_\guard(\rulematch), \function_\updateMapping(\rulematch)}\hostGraph')$ to obtain a switch relation from a rule match. 
 
