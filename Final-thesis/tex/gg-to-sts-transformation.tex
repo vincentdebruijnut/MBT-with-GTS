@@ -17,35 +17,51 @@ This chapter describes an algorithm for creating an IOSTS from an IOGG.
 We define a \textit{point algebra} $\PointAlgebra$\newnot{symbol:PointAlgebra} to be an algebra with $\forall \sort \in \Sorts . |\mathbb{U}_\PointAlgebra^\sort| = 1$. Each graph in $\Graphs$ using the point algebra is structurally unique upto isomorphism; different values on value nodes are eliminated by the point algebra and two structurally equivalent graphs are the same graph. Therefore, using this algebra is efficient when exploring the GTS. The loss of information is only in the concrete values at each state. This information is also not present in an STS, which treats the values symbolically as variables.
 
 \section{Variables}
-The variables in an STS represent an aspect of the modelled system. For instance, if a system keeps track of the number of items in containers, the STS modelling this system could have integer location variables $\mathit{items}1..n$. The value nodes in a host graph are a representation of one element from the universe of elements of the same sort. Edges can exist between graph nodes and value nodes. The same example modelled in a graph grammar could be a graph node representing a container with an edge labelled 'items' to an integer node. This is shown in Figure~\ref{fig:item_example}. This is a common way of representing a variable in a GG. Here the combination of edge plus source node represents the variable. However, the source node identity is not consistent through graph transformations, as the graphs are structurally unique upto isomorphism. In order to have variables in GGs, the source node must be made structurally unique, by means of a self-edge. Figure~\ref{fig:item_example2} shows this for the container-items example. The variable $\mathit{items\_c}$, the number of items in container $c$, is now represented by this graph.
+The variables in an STS represent an aspect of the modelled system. For instance, if a system keeps track of the number of items in containers, the STS modelling this system could have integer location variables $\mathit{items}_1..\mathit{items}_n$. The value nodes in a host graph are a representation of one element from the universe of elements of the same sort. Edges can exist between graph nodes and value nodes. The same example modelled in a graph grammar could be a graph node representing a container with an edge labelled 'items' to an integer node. This is shown in Figure~\ref{fig:item_example}. This is a common way of representing a variable in a GG. Here the combination of edge plus source node represents the variable. However, the source node identity is not consistent through graph transformations, as the graphs are structurally unique upto isomorphism. In order to have variables in GGs, the source node must be made structurally unique, by means of a self-edge. Figure~\ref{fig:item_example2} shows the self-edge on the container node. The variable $\mathit{var1\_items}$, the number of items in the container, is now represented by this graph.
 
 \begin{figure}[ht]
   \begin{center}
-    \subfloat[Common way]{\label{fig:item_example}\parbox{4cm}{\centering\input{./img/item_example.tex}}}
-    \subfloat[Persistent way]{\label{fig:item_example2}\parbox{4cm}{\centering\input{./img/item_example2.tex}}
+    \subfloat[Common way]{\label{fig:item_example}\parbox[b]{4cm}{\input{./img/item_example.tex}}}
+    \subfloat[Persistent way]{\label{fig:item_example2}\parbox[b]{4cm}{\input{./img/item_example2.tex}}}
   \end{center}
   \caption{Possible ways of modelling variables in GGs}
   \label{fig:vars-in-ggs}
 \end{figure}
 
+On the basis of the discussion above, we introduce the following terminology. The labels on the self-edges we call \textit{variable labels}, represented by $\Labels_{var}$. The edge having a variable label we call a \textit{variable edge}. The source and target node of the variable edge we call the \textit{variable anchor}.
+
 \section{The algorithm}
-Let $J = \langle \Locations_J,\initialLocation,\LocationVariables_J,\initializationFunction_J,\InteractionVariables_J,\Gates_J,\Switches_J\rangle$ be an IOSTS and let $K = \langle \Rules_K, \startGraph \rangle$ be an IOGG. The first step in the algorithm is to explore the GG $K$ using the point algebra $\PointAlgebra$ to an IOGTS $O_\PointAlgebra: \langle \hostGraph_O, \Rules_O, \RuleMatches_O, \RuleTransitions_O, \startGraph \rangle$.
+Let $J = \langle \Locations,\initialLocation,\LocationVariables,\initializationFunction,\InteractionVariables,\Gates,\Switches\rangle$ be an IOSTS and let $K = \langle \Rules, \startGraph \rangle$ be an IOGG. The first step in the algorithm is to explore the GG $K$ using the point algebra $\PointAlgebra$ to an IOGTS $O_\PointAlgebra: \langle \hostGraph, \Rules, \RuleMatches, \RuleTransitions, \startGraph \rangle$.
 
 \subsection{Locations}
-The set of locations $\Locations_J$ is chosen to be equal to the set of graphs $\hostGraph_K$. Additionally, the initial location $\initialLocation$ is equal to the initial graph $\startGraph$.
+The set of locations $\Locations$ is chosen to be equal to the set of graphs $\hostGraph$. Additionally, the initial location $\initialLocation$ is equal to the initial graph $\startGraph$.
 
 \subsection{Location variables}
-We define the function $\function_\LocationVariables: \Edges \stackrel{\sim}{\longrightarrow} \LocationVariables$ to obtain the location variable from an edge. For each edge from a graph node to a value node a unique location variable is obtained by: $\forall\: \edge \in (\DefinedEdges\restriction(\GraphNodes \times \Labels \times \mathbb{U}))\: .\: \function_\LocationVariables(\edge) \mapsto \variable \in \LocationVariables_J$. The initialization $\initializationFunction$ for a variable $\variable$, such that $\function_\LocationVariables(\node_s, \ltsLabel, \node_t) \mapsto \variable$, is obtained by: $\variable \mapsto \node_t$. Note that the node is a value, i.e. $\node_t \in \mathbb{U}$.
+The location variables are a subset of the product of variable labels and regular labels, given by $\LocationVariables \subset \Labels_{var} \times \Labels$. The set of location variables in a host graph $\langle \DefinedNodes, \DefinedEdges\rangle$ is defined by the following. $\langle \ltsLabel_{var}, \ltsLabel \rangle \in \LocationVariables$ if:
+\begin{itemize}
+\item $\langle w \in \mathbb{W}, \ltsLabel, u \in \mathbb{U} \rangle \in \DefinedEdges$ - the label must be on an edge from a graph node to a value node.
+\item $\langle w, \ltsLabel_{var}, w \rangle \in \DefinedEdges$ - the variable label must be a self edge on the same graph node.
+\end{itemize}
+The initialization $\initializationFunction$ is then given by $\langle \ltsLabel_{var}, \ltsLabel \rangle \mapsto u$.
 
 \subsection{Gates}
-The gate of a switch relation represents the stimulus to or response from the SUT. In an IOGG, the rules are this representation. Therefore, the set of gates $\Gates_J$ is obtained by the set of rules $\Rules_O$. For each $\gate \in \Gates_J$, $arity(\gate) = 0$. The set of interaction variables for $J$ is empty, i.e. $\InteractionVariables = \emptyset$. The reason for this is that the value for these variables comes from outside the GG, namely from the SUT. In section~\ref{sec:implementation} an implementation-specific solution is described to include interaction variables in the algorithm. 
+The gate of a switch relation represents the stimulus to or response from the SUT. In an IOGG, the rules are this representation. Therefore, the set of gates $\Gates$ is chosen to be equal to the set of rules $\Rules$.
 
-\subsection{Guards}
-The guard of a switch relation restricts the use of the switch relation based on the values of the variables. In a GG, a rule is restricted by the terms. The variables used in the terms, $\mathit{var}(2^\Terms)$, have to be replaced by location variables to obtain the guard. To do this, a rule match is needed to find the images of the variables. The rule edges to the variables have as image the edges representing the location variables. We define a function to obtain the location variable from a rule edge: $\function_i: \Edges \times \RuleMatches \stackrel{\sim}{\longrightarrow} \LocationVariables$. For a rule edge $\edge$ and rule match $\rulematch$, the location variable is obtained by: $\function_i(\edge,\rulematch) \mapsto \function_\LocationVariables(image(\edge,\rulematch))$. We define a function $\function_\guard: \RuleMatches \rightarrow \Terms$ to obtain the guard from a rule match. $\forall (\edge:(\node, \ltsLabel, \node') \in \ruleGraph_{LHS}\restriction (\GraphNodes \times \Labels \times \Variables)\: .\: \mathit{join}(\mathit{replace}(2^\Terms_{LHS},\node', \function_i(\edge)), \land))$.\marginpar{use example with box and items}
+\subsection{Interaction variables}
+Interaction variables are used by the gates to represent a stimulus or response variable. The variable nodes in rule graphs are this representation. The set of interaction variables $\InteractionVariables$ is chosen to be equal to the set of variable nodes $\Variables$. For a rule $\ggrule$ and all variable nodes $\Variables_\ggrule$ in $\mathit{LHS}$ of $\ggrule$, $arity(\ggrule) = |\Variables_\ggrule|$. %The arity will always be greater than or equal to the required amount. Figure~\ref{fig:item-example3} shows the $\mathit{LHS}$ of a rule for the container-item example. This rule adds one item to the container. The interaction variables here would be the old number of items in the container and the new number. 
 
-\subsection{Update mappings}
-We define a function $\function_\updateMapping: \RuleMatches \rightarrow \Terms$ to obtain the update mapping from a rule match. First we obtain all \textit{eraser-creator pairs} by: $\function_{RHS}: (\edge:(\node, \ltsLabel, \node') \in \ruleGraph_{LHS}\restriction (\GraphNodes \times \Labels \times \Variables)\: |\: \edge \notin \ruleGraph_{RHS} . (\mathit{image}(\node), \ltsLabel, \node'') \in \ruleGraph_{RHS}$. update is $\function_\LocationVariables(\edge) \mapsto \node''$, if $\node'' \in 2^\Terms_{RHS}$.
+\subsection{Guards}\label{sec:guards}
+The guard of a switch relation restricts the use of the switch relation based on the values of the variables. In a GG, a rule is restricted by the terms. The variables used in the terms are interaction variables. Therefore, the first part of the guard is constructed by joining the terms for each term node by $\bigwedge_{\node \in \DefinedRuleNodes \cap \TermNodes}\bigwedge_{t_1, t_2 \in \node}t_1 = t_2$. Using a rule match $\rulematch$, the second part is constructed. For a $\mathit{LHS} = \langle \DefinedRuleNodes, \DefinedRuleEdges\rangle$ the smallest set of terms $T$, such that $\langle \rulematch(\node), \ltsLabel \rangle = x \in T$ when:
+\begin{itemize}
+\item $x \in \Variables \cap \DefinedRuleNodes$
+\item $\langle \node, \ltsLabel, x\rangle \in \DefinedRuleEdges$
+\item $\rulematch(\node)$ is a variable anchor
+\end{itemize}
+Then, the terms are joined by $\bigwedge_{t\in T}t$.
+
+\subsection{Update mappings}\label{sec:updates}
+An edge with label $\ltsLabel$ from a variable anchor $\node$ to a value node can be erased from the graph and a new edge with label $\ltsLabel$ from $\node$ to a new value node can be created by a rule. This inidicates an update for the location variable given by $\langle \node, \ltsLabel \rangle$. In the rule graph, the $\mathit{RHS}$ of the rule has the pre-image of the $\node$ and the edge to a variable node, given by the interaction variable $x$. The update mapping for this example is: $\langle \node, \ltsLabel \rangle \mapsto x$.
 
 \subsection{Switch relations}
-We define the function $\function_\Switches: (\hostGraph \xrightarrow{\ggrule, \rulematch} \hostGraph') \rightarrow (\hostGraph\xrightarrow{\function_\Gates(\ggrule), \function_\guard(\rulematch), \function_\updateMapping(\rulematch)}\hostGraph')$ to obtain a switch relation from a rule match. 
+A rule transition $\hostGraph \xrightarrow{\ggrule, \rulematch} \hostGraph' \in \RuleTransitions$ is mapped to a switch relation $(\hostGraph\xrightarrow{\ggrule, \guard, \updateMapping}\hostGraph') \in \Switches$. The guard and update mapping are constructed according to sections~\ref{sec:guards} and \ref{sec:updates} using $\ggrule$ and $\rulematch$.
 

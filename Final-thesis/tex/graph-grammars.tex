@@ -77,6 +77,10 @@ There exist implicit partial morphisms from the $\mathit{LHS}$ to each rule grap
 \vspace{5px}
 
 \begin{definition}
+A \textit{creator} edge is an edge in the $\mathit{RHS}$ of a rule, but not in the $\mathit{LHS}$ of the rule. An \textit{eraser} edge is an edge in the $\mathit{LHS}$ of a rule, but not in the $\mathit{RHS}$ or a rule.
+\end{definition}
+
+\begin{definition}
 A rule $\ggrule$ has a \textit{rule match} on a host graph $\hostGraph$ if its $\mathit{LHS}$ has a morphism in $\hostGraph$ and $\not\exists\,n \in \mathit{NAC}$ such that $n$ has a morphism in $\hostGraph$ and $\forall\,e \in \mathit{LHS}$, if $e$ has an image $i$ in $n$, and an image $j$ in $\hostGraph$, then $j$ should be an image of $i$. The morphism of the $\mathit{LHS}$ to a host graph is a \textit{match morphism}.
 \end{definition}
 

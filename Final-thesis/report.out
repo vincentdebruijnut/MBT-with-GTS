@@ -1,8 +1,4 @@
 \BOOKMARK [1][-]{section.0.1}{Graph Grammars}{}
-\BOOKMARK [1][-]{section.0.2}{Tooling}{}
-\BOOKMARK [2][-]{subsection.0.2.1}{ATM}{section.0.2}
-\BOOKMARK [2][-]{subsection.0.2.2}{GROOVE}{section.0.2}
-\BOOKMARK [2][-]{subsection.0.2.3}{Graph grammars in GROOVE}{section.0.2}
 \BOOKMARK [0][-]{chapter.1}{From Graph Grammar to STS}{}
 \BOOKMARK [1][-]{section.1.1}{Requirements considerations}{chapter.1}
 \BOOKMARK [1][-]{section.1.2}{Point algebra}{chapter.1}
@@ -11,34 +7,7 @@
 \BOOKMARK [2][-]{subsection.1.4.1}{Locations}{section.1.4}
 \BOOKMARK [2][-]{subsection.1.4.2}{Location variables}{section.1.4}
 \BOOKMARK [2][-]{subsection.1.4.3}{Gates}{section.1.4}
-\BOOKMARK [2][-]{subsection.1.4.4}{Guards}{section.1.4}
-\BOOKMARK [2][-]{subsection.1.4.5}{Update mappings}{section.1.4}
-\BOOKMARK [2][-]{subsection.1.4.6}{Switch relations}{section.1.4}
-\BOOKMARK [1][-]{section.1.5}{Constraints}{chapter.1}
-\BOOKMARK [2][-]{subsection.1.5.1}{Constraint 1: no isomorphism}{section.1.5}
-\BOOKMARK [2][-]{subsection.1.5.2}{Constraint 2: creator/eraser pairs}{section.1.5}
-\BOOKMARK [2][-]{subsection.1.5.3}{Constraint 3: no variables in NACs}{section.1.5}
-\BOOKMARK [2][-]{subsection.1.5.4}{Constraint 4: structural constraints on node creating rules}{section.1.5}
-\BOOKMARK [1][-]{section.1.6}{Implementation}{chapter.1}
-\BOOKMARK [1][-]{section.1.7}{General setup}{chapter.1}
-\BOOKMARK [2][-]{subsection.1.7.1}{Control program}{section.1.7}
-\BOOKMARK [2][-]{subsection.1.7.2}{Rule priority}{section.1.7}
-\BOOKMARK [0][-]{chapter.2}{Validation}{}
-\BOOKMARK [1][-]{section.2.1}{Model examples}{chapter.2}
-\BOOKMARK [1][-]{section.2.2}{Case study}{chapter.2}
-\BOOKMARK [1][-]{section.2.3}{Measurements}{chapter.2}
-\BOOKMARK [2][-]{subsection.2.3.1}{Performance}{section.2.3}
-\BOOKMARK [2][-]{subsection.2.3.2}{Simulation}{section.2.3}
-\BOOKMARK [2][-]{subsection.2.3.3}{Error detection}{section.2.3}
-\BOOKMARK [2][-]{subsection.2.3.4}{Coverage comparison}{section.2.3}
-\BOOKMARK [2][-]{subsection.2.3.5}{Model complexity}{section.2.3}
-\BOOKMARK [2][-]{subsection.2.3.6}{Extendability}{section.2.3}
-\BOOKMARK [0][-]{chapter.3}{Model Examples}{}
-\BOOKMARK [1][-]{section.3.1}{Example 1: boardgame}{chapter.3}
-\BOOKMARK [1][-]{section.3.2}{Example 2: farmer-wolf-goat-cabbage}{chapter.3}
-\BOOKMARK [1][-]{section.3.3}{Example 3: customer reservations}{chapter.3}
-\BOOKMARK [1][-]{section.3.4}{Example 4: bar tab system}{chapter.3}
-\BOOKMARK [1][-]{section.3.5}{Example 5: communication protocol}{chapter.3}
-\BOOKMARK [0][-]{chapter.4}{Case Study}{}
-\BOOKMARK [1][-]{section.4.1}{Scanflow Cash Register Protocol}{chapter.4}
-\BOOKMARK [1][-]{section.4.2}{Measurements}{chapter.4}
+\BOOKMARK [2][-]{subsection.1.4.4}{Interaction variables}{section.1.4}
+\BOOKMARK [2][-]{subsection.1.4.5}{Guards}{section.1.4}
+\BOOKMARK [2][-]{subsection.1.4.6}{Update mappings}{section.1.4}
+\BOOKMARK [2][-]{subsection.1.4.7}{Switch relations}{section.1.4}

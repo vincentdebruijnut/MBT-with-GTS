@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  13 JUL 2012 15:15
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  17 JUL 2012 15:52
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -839,137 +839,53 @@ File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ) (./img/gg_lhs.tex
 <xymatrix 2x1 181>) (./img/gg_nac1.tex <xymatrix 2x1 181>) (./img/gg_nac2.tex
 <xymatrix 2x1 181>) (./img/gg_graph.tex <xymatrix 2x1 181>) (./img/gg_rhs.tex
-<xymatrix 2x1 181>) (./img/gg_result.tex <xymatrix 2x1 181>)) [2])
-(./tex/tooling.tex
-
-LaTeX Warning: Reference `fig:model_based_testing_on_the_fly' on page 3 undefin
-ed on input line 6.
-
-<./img/axini_tool.pdf, id=228, 356.92177pt x 145.93393pt>
-File: ./img/axini_tool.pdf Graphic file (type pdf)
-
-<use ./img/axini_tool.pdf> [3 <./img/axini_tool.pdf>]
-
-LaTeX Warning: Citation `Rensink:GROOVE' on page 4 undefined on input line 26.
-
-
-LaTeX Warning: Citation `Ghamarian:GROOVE' on page 4 undefined on input line 26
-.
-
-<./img/groove_tool.pdf, id=251, 374.51399pt x 161.01265pt>
-File: ./img/groove_tool.pdf Graphic file (type pdf)
-
-<use ./img/groove_tool.pdf>
-
-LaTeX Warning: Reference `fig:example_sts' on page 4 undefined on input line 39
-.
-
-[4 <./img/groove_tool.pdf>] (./img/start.tikz) (./img/throws.tikz)
-(./img/move.tikz) (./img/nextTurn.tikz)
-
-LaTeX Warning: Reference `fig:example_sts' on page 5 undefined on input line 48
-.
-
-
-LaTeX Warning: Reference `fig:example_sts' on page 5 undefined on input line 48
-.
-
-[5] (./img/gts-transition-example.tikz) (./img/target-graph-state.tikz))
-[6]
+<xymatrix 2x1 181>) (./img/gg_result.tex <xymatrix 2x1 181>)) [2]) [3]
 Chapter 1.
-(./tex/gg-to-sts-transformation.tex [7
+(./tex/gg-to-sts-transformation.tex [4
 
-]
-
-LaTeX Warning: Reference `fig:item_example2' on page 8 undefined on input line 
-20.
-
-(./img/item_example.tex <xymatrix 1x2 51>) (./img/item_example2.tex <xymatrix
-1x2 114>)
-Underfull \hbox (badness 6493) in paragraph at lines 25--25
-[]\T1/cmr/m/n/8 (b) |Per-sis-tent
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
-\T1/cmr/m/n/10 with box
- []
-
-) (./tex/constraints.tex [9]) (./tex/implementation.tex
-<./img/tooling.pdf, id=341, 599.89655pt x 245.85509pt>
-File: ./img/tooling.pdf Graphic file (type pdf)
- <use ./img/tooling.pdf>
-[10 <./img/tooling.pdf>] (./img/priority_start.tex <xymatrix 2x1 181>)
-(./img/priority_lhs1.tex <xymatrix 2x2 230>) (./img/priority_rhs1.tex
-<xymatrix 2x2 230>) (./img/priority_lhs2.tex <xymatrix 2x2 230>)
-(./img/priority_rhs2.tex <xymatrix 2x2 230>) (./img/priority_sts_wrong.tex
-<xymatrix 1x1 136>) (./img/priority_sts_right.tex <xymatrix 1x1 136>)) [11]
-[12]
-Chapter 2.
-(./tex/validation-introduction.tex) (./tex/model-examples.tex)
-(./tex/case-study.tex) (./tex/measurements.tex [13
-
-]) [14]
-Chapter 3.
-(./tex/model-examples-introduction
-
-LaTeX Warning: Reference `' on page 15 undefined on input line 1.
-
-) (./tex/all-examples.tex) [15
-
-]
-Chapter 4.
-(./tex/case-study-introduction) (./tex/scrp.tex) (./tex/scrp-measurements.tex)
-[16
-
-] (./report.aux)
+] (./img/item_example.tex <xymatrix 1x2
+51>) (./img/item_example2.tex <xymatrix 1x2 114>) [5]) [6] (./report.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 19581 strings out of 495061
- 344068 string characters out of 1182622
- 654316 words of memory out of 3000000
- 22109 multiletter control sequences out of 15000+50000
- 24378 words of font info for 63 fonts, out of 3000000 for 9000
+ 19191 strings out of 495061
+ 337455 string characters out of 1182622
+ 641499 words of memory out of 3000000
+ 21869 multiletter control sequences out of 15000+50000
+ 22791 words of font info for 61 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 63i,24n,72p,1228b,1568s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk
-> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk>
- </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0700.600pk> 
-</home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> <
-/home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0800.600pk> </
-home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </h
-ome/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk> </ho
-me/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx0800.600pk> </hom
-e/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home
-/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/
-vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/v
-incentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/share/texmf-texliv
-e/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-texlive/font
+ 63i,24n,68p,1241b,1568s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk
+> </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk>
+ </home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> 
+</home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> <
+/home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk> </
+home/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx0800.600pk> </h
+ome/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </ho
+me/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </hom
+e/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home
+/vincentdebruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/font
 s/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-texlive/fonts/type
 1/public/xypic/xyatip10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/
 xybtip10.pfb>
-Output written on report.pdf (16 pages, 438092 bytes).
+Output written on report.pdf (6 pages, 281685 bytes).
 PDF statistics:
- 895 PDF objects out of 1000 (max. 8388607)
- 111 named destinations out of 1000 (max. 500000)
- 380 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 468 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

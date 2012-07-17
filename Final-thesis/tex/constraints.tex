@@ -2,14 +2,15 @@
 
 This section describes the constraints on the algorithm of the previous section.
 
-\subsection{Constraint 1: no isomorphism}
-When obtaining the guard for a switch relation, the function $\function_\LocationVariables$ is used. This relation must be bijective, therefore $\function_\LocationVariables(\edge) \neq \function_\LocationVariables(\edge')$. Thus, $\edge$ and $\edge'$ cannot be isomorphic.
+\subsection{Constraint 1: unique variables}
+A location variable is indicated by a node and label pair $\langle \node, \ltsLabel\rangle$. This pair must be unique, i.e. no two edges $\langle \node, \ltsLabel, \node'\rangle, \langle \node, \ltsLabel, \node''\rangle$ may exist where $\node' \neq \node''$. Otherwise, it is possible that a variable has two different values.
 
-\subsection{Constraint 2: creator/eraser pairs}
-When obtaining the update mapping for a switch relation, an edge $(\node, \ltsLabel, \variable)$ must exist in RHS if an edge $(\node, \ltsLabel, \variable')$ exists in $LHS$, but not in $RHS$. The first is the creator edge, the latter the eraser edge. These must always exist in pairs. 
+\subsection{Constraint 2: variable persistency}
+All locations variables in an STS are initialized and no new variables are added. In a GG, it is possible to delete and create new variables in the transformation rules. 
+Dit is eigenlijk geen probleem, zolang aan contraint 1 gehouden wordt. En dat is of triviaal of onmogelijk.
 
 \subsection{Constraint 3: no variables in NACs}
-figure x shows a GROOVE example of a variable in a NAC. Using the point algebra, a rule with this NAC never matches.
+Let $\langle \node, \ltsLabel, \variable \in \Variables\rangle$ be an edge in a rule graph in the NAC of a rule. Let $\variable = 1$ be a term in the same rule graph. This is a common way of expressing that the $\variable$ node may not have the value $1$ as image. However, using the point algebra this rule will never match, because there is only one possible value as image for the variable node and the value in the term represents this same value in the point algebra. Therefore, this construction is not allowed. The correct way of modelling this example, is having the term $\variable != 1$ in the $\mathit{LHS}$ of the rule. This term has only one image in a host graph. Setting the value for booleans in the point algebra to $true$, this 
 
 \subsection{Constraint 4: structural constraints on node creating rules}
 figure x shows a GROOVE example of a variable in a NAC. Using the point algebra, a rule with this LHS matches.infinitely often.
