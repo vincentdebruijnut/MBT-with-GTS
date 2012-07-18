@@ -30,7 +30,7 @@ The variables in an STS represent an aspect of the modelled system. For instance
 
 On the basis of the discussion above, we introduce the following terminology. The labels on the self-edges we call \textit{variable labels}, represented by $\Labels_{var}$. The edge having a variable label we call a \textit{variable edge}. The source and target node of the variable edge we call the \textit{variable anchor}.
 
-\section{The algorithm}
+\section{The algorithm}\label{sec:algorithm}
 Let $J = \langle \Locations,\initialLocation,\LocationVariables,\initializationFunction,\InteractionVariables,\Gates,\Switches\rangle$ be an IOSTS and let $K = \langle \Rules, \startGraph \rangle$ be an IOGG. The first step in the algorithm is to explore the GG $K$ using the point algebra $\PointAlgebra$ to an IOGTS $O_\PointAlgebra: \langle \hostGraph, \Rules, \RuleMatches, \RuleTransitions, \startGraph \rangle$.
 
 \subsection{Locations}

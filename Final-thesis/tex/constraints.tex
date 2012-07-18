@@ -1,16 +1,27 @@
 \section{Constraints}
 
-This section describes the constraints on the algorithm of the previous section.
+This section describes the constraints on the algorithm in section~\ref{sec:algorithm}.
 
 \subsection{Constraint 1: unique variables}
 A location variable is indicated by a node and label pair $\langle \node, \ltsLabel\rangle$. This pair must be unique, i.e. no two edges $\langle \node, \ltsLabel, \node'\rangle, \langle \node, \ltsLabel, \node''\rangle$ may exist where $\node' \neq \node''$. Otherwise, it is possible that a variable has two different values.
 
+\begin{comment}
 \subsection{Constraint 2: variable persistency}
 All locations variables in an STS are initialized and no new variables are added. In a GG, it is possible to delete and create new variables in the transformation rules. 
-Dit is eigenlijk geen probleem, zolang aan contraint 1 gehouden wordt. En dat is of triviaal of onmogelijk.
+Dit is eigenlijk geen probleem, zolang aan constraint 1 gehouden wordt. En dat is of triviaal of onmogelijk.
+\end{comment}
 
-\subsection{Constraint 3: no variables in NACs}
-Let $\langle \node, \ltsLabel, \variable \in \Variables\rangle$ be an edge in a rule graph in the NAC of a rule. Let $\variable = 1$ be a term in the same rule graph. This is a common way of expressing that the $\variable$ node may not have the value $1$ as image. However, using the point algebra this rule will never match, because there is only one possible value as image for the variable node and the value in the term represents this same value in the point algebra. Therefore, this construction is not allowed. The correct way of modelling this example, is having the term $\variable != 1$ in the $\mathit{LHS}$ of the rule. This term has only one image in a host graph. Setting the value for booleans in the point algebra to $true$, this 
+\subsection{Constraint 2: no variables in NACs}
+Let $\langle \node, \ltsLabel, \variable \in \Variables\rangle$ be an edge in a rule graph in the NAC of a rule. Let $\{\variable, 1\}$ be a term node in the same rule graph. This is a common way of expressing that the $\variable$ node may not have the value $1$ as image. However, using the point algebra this rule will never match, because there is only one possible image for the variable node and the value $1$ in the point algebra. A correct way of modelling this example, is having the term node $\{\variable = 1, false\}$ in the $\mathit{LHS}$ of the rule. In the point algebra, both terms valuate to the same boolean value and an image for this term node can always be found.
 
-\subsection{Constraint 4: structural constraints on node creating rules}
-figure x shows a GROOVE example of a variable in a NAC. Using the point algebra, a rule with this LHS matches.infinitely often.
+\subsection{Constraint 3: structural constraints on node creating rules}
+In the previous constraint it is shown that a term node in the $\mathit{LHS}$ always has an image, if all terms are of the same sort. Figure~\ref{fig:item_example_c4} shows the $\mathit{LHS}$ and $\mathit{RHS}$ of a rule in the container-items example. The rule adds an item to the container unless it is full, i.e. has five items. If an item is added, a new node is created in the host graph. Using the point algebra, this rule creates an infinite number of structurally unique graphs. Therefore, the exploration never ends. Node creating rules must have structural constraint(s), such that an infinite exploration is prohibited.
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[LHS]{\label{fig:item_example_c4_lhs}\parbox[b]{6cm}{\centering\input{./img/item_example_c4_lhs.tex}}}
+    \subfloat[RHS]{\label{fig:item_example_c4_rhs}\parbox[b]{6cm}{\centering\input{./img/item_example_c4_rhs.tex}}}
+  \end{center}
+  \caption{Node creating rule without structural constraint}
+  \label{fig:item_example_c4}
+\end{figure}

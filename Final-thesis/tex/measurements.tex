@@ -2,17 +2,17 @@
 
 This sections lists possible measurements on the models and execution of GRATiS on those models. For each measurement, a motivation is given for doing or not doing the measurement on the model examples and case study.
 
-\subsection{Performance}
-Performance in terms of execution time and 'heap-size' can be measured and compared.
-
 \subsection{Simulation}
-Does the transformation simulate the original STS? And vice versa?
+The STS created by GRATiS and the created STS by hand can be compared. It can be observed whether the STS created by GRATiS simulates the STS created by hand and vice versa. When either is not the case, the models show a different possible behaviour for the SUT. The reasons behind this difference is then explored. This measurement is included in the analysis.
+
+\subsection{Performance}
+The performance in terms of execution time and 'heap-size' can be measured and compared. Assuming both the STS created by GRATiS and by hand simulate each other, these metrics will be the same for the testing part. Initial tests show that the creation of the STS by GRATiS is negligible compared to the testing part. This measurement is therefore not included in the analysis.
 
 \subsection{Error detection}
-Introduce an error in model and see how fast GG and STS can find it. (mutation coverage)
+This measurement introduces an error in the SUT and records how fast the error is found by both models. Again, this measurement is redundant assuming both models simulate each other. This measurement is therefore not included in the analysis.
 
 \subsection{Coverage comparison}
-Compare the Location/switch relation coverage of both the transformation and the original STS. Having a more complete STS is counter-beneficial here.
+This measurement compares the location/switch relation coverage of both models. Having a more complete STS is counter-beneficial here.
 
 \subsection{Model complexity}
 Halstead's software science op model complexity?
