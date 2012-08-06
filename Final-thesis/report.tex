@@ -33,7 +33,6 @@
 \newtheorem{definition}{Definition}[section]
 
 \begin{document}
-\begin{comment}
 	\title{\textbf{Model-Based Testing with\\Graph Grammars}}
 	\author{\textbf{MSc Thesis} \textit{(Afstudeerscriptie)}\\
 	\\
@@ -71,19 +70,19 @@
 	\input{./tex/symbolic.tex}
 	\input{./tex/graph-grammars.tex}
 	\input{./tex/tooling.tex}
-	\end{comment}
 	
 	\newpage
 	\chapter{From Graph Grammar to STS}\label{chapter:gg_to_sts}
 	\input{./tex/gg-to-sts-transformation}
 	\input{./tex/constraints.tex}
+	
+  \chapter{Implementation}
 	\input{./tex/implementation.tex}
 	
 	\newpage
 	\chapter{Validation}\label{chapter:validation}
 	\input{./tex/validation-introduction}
 	\input{./tex/model-examples.tex}
-	\input{./tex/case-study.tex}
 	\input{./tex/measurements.tex}
 	
 	\newpage
@@ -96,14 +95,14 @@
   \input{./tex/case-study-introduction}
   \input{./tex/scrp}
   \input{./tex/scrp-measurements}
-\begin{comment}
+  
 	\newpage
 	\chapter{Conclusion}\label{chapter:conclusion}
 	\input{./tex/summary.tex}
 	\input{./tex/conclusion.tex}
 	\input{./tex/future-work.tex}
 	\input{./tex/acknowledgements}
-
+	
   \newpage
 	\bibliography{bib/bibliography}{}
 	\bibliographystyle{plain}
@@ -111,5 +110,4 @@
   \chapter*{List of Symbols\hfill} \addcontentsline{toc}{chapter}{List of Symbols}
 \listofsymbols
 
-	\end{comment}
 \end{document}

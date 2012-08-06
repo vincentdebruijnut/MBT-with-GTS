@@ -1,21 +1,21 @@
 \section{Measurements}\label{sec:measurements}
 
-This sections lists possible measurements on the models and execution of GRATiS on those models. For each measurement, a motivation is given for doing or not doing the measurement on the model examples and case study.
+This sections lists possible measurements on the models and execution of GRATiS on those models.
 
 \subsection{Simulation}
-The STS created by GRATiS and the created STS by hand can be compared. It can be observed whether the STS created by GRATiS simulates the STS created by hand and vice versa. When either is not the case, the models show a different possible behaviour for the SUT. The reasons behind this difference is then explored. This measurement is included in the analysis.
+The STS created by GRATiS and the created STS by hand can be compared. It can be observed whether the STS created by GRATiS simulates the STS created by hand and vice versa. When either is not the case, the models show a different possible behaviour for the SUT. The reasons behind this difference is then explored.
 
 \subsection{Performance}
-The performance in terms of execution time and 'heap-size' can be measured and compared. Assuming both the STS created by GRATiS and by hand simulate each other, these metrics will be the same for the testing part. Initial tests show that the creation of the STS by GRATiS is negligible compared to the testing part. This measurement is therefore not included in the analysis.
+The performance in terms of execution time and 'heap-size' can be measured and compared. Assuming both the STS created by GRATiS and by hand simulate each other, these metrics will be the same for the testing part. Therefore, the execution time and heap size of the STS creation is measured.
 
-\subsection{Error detection}
-This measurement introduces an error in the SUT and records how fast the error is found by both models. Again, this measurement is redundant assuming both models simulate each other. This measurement is therefore not included in the analysis.
+%\subsection{Error detection}
+%This measurement introduces an error in the SUT and records how fast the error is found by both models. Again, this measurement is redundant assuming both models simulate each other. This measurement is therefore not included in the analysis.
 
-\subsection{Coverage comparison}
-This measurement compares the location/switch relation coverage of both models. Having a more complete STS is counter-beneficial here.
+\subsection{Model redundancy}
+It is possible that the generated STS $s$ can be reduced to a smaller STS $t$. It is measured whether $t$ exists such that $\mathit{traces}(s) \subseteq \mathit{traces}(t) \land |\Switches_t| \lt |\Switches_s|$.
 
-\subsection{Model complexity}
-Halstead's software science op model complexity?
+\subsection{Model complexity}\label{sec:complexity_measurement}
+The complexity of the generated STS and the GG can be measured using Halstead's software science. The operators and operands are counted in both models and compared. The operators are the function symbols, the operands are the identifiers, nodes and edges. 
 
 \subsection{Extendability}
-Introduce a realistic scenario where functionality of the system is extended. Assess the needed changes to both models.
+The models can be extended to include more functionality. In this measurement, a realistic scenario is introduced where additional functionality is required. It is then measured how much the complexity increases, using the measurment in section~\ref{sec:complexity_measurement}.

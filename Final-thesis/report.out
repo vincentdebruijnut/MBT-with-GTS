@@ -1,20 +1,71 @@
-\BOOKMARK [0][-]{chapter.1}{From Graph Grammar to STS}{}
-\BOOKMARK [1][-]{section.1.1}{Requirements considerations}{chapter.1}
-\BOOKMARK [1][-]{section.1.2}{Point algebra}{chapter.1}
-\BOOKMARK [1][-]{section.1.3}{Variables}{chapter.1}
-\BOOKMARK [1][-]{section.1.4}{The algorithm}{chapter.1}
-\BOOKMARK [2][-]{subsection.1.4.1}{Locations}{section.1.4}
-\BOOKMARK [2][-]{subsection.1.4.2}{Location variables}{section.1.4}
-\BOOKMARK [2][-]{subsection.1.4.3}{Gates}{section.1.4}
-\BOOKMARK [2][-]{subsection.1.4.4}{Interaction variables}{section.1.4}
-\BOOKMARK [2][-]{subsection.1.4.5}{Guards}{section.1.4}
-\BOOKMARK [2][-]{subsection.1.4.6}{Update mappings}{section.1.4}
-\BOOKMARK [2][-]{subsection.1.4.7}{Switch relations}{section.1.4}
-\BOOKMARK [1][-]{section.1.5}{Constraints}{chapter.1}
-\BOOKMARK [2][-]{subsection.1.5.1}{Constraint 1: unique variables}{section.1.5}
-\BOOKMARK [2][-]{subsection.1.5.2}{Constraint 2: no variables in NACs}{section.1.5}
-\BOOKMARK [2][-]{subsection.1.5.3}{Constraint 3: structural constraints on node creating rules}{section.1.5}
-\BOOKMARK [1][-]{section.1.6}{Implementation}{chapter.1}
-\BOOKMARK [2][-]{subsection.1.6.1}{General setup}{section.1.6}
-\BOOKMARK [2][-]{subsection.1.6.2}{Control program}{section.1.6}
-\BOOKMARK [2][-]{subsection.1.6.3}{Rule priority}{section.1.6}
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}
+\BOOKMARK [1][-]{section.1.1}{Model-based Testing}{chapter.1}
+\BOOKMARK [1][-]{section.1.2}{Graph Transformation}{chapter.1}
+\BOOKMARK [1][-]{section.1.3}{Research goals}{chapter.1}
+\BOOKMARK [1][-]{section.1.4}{Roadmap}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{Background}{}
+\BOOKMARK [1][-]{section.2.1}{Model-based Testing}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.1.1}{Previous work}{section.2.1}
+\BOOKMARK [2][-]{subsection.2.1.2}{Labelled Transition Systems}{section.2.1}
+\BOOKMARK [2][-]{subsection.2.1.3}{Input-Output Transition Systems}{section.2.1}
+\BOOKMARK [2][-]{subsection.2.1.4}{Coverage}{section.2.1}
+\BOOKMARK [1][-]{section.2.2}{Algebra}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Symbolic Transition Systems}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.3.1}{Previous work}{section.2.3}
+\BOOKMARK [2][-]{subsection.2.3.2}{Definition}{section.2.3}
+\BOOKMARK [2][-]{subsection.2.3.3}{Input-Output Symbolic Transition Systems}{section.2.3}
+\BOOKMARK [2][-]{subsection.2.3.4}{Example}{section.2.3}
+\BOOKMARK [2][-]{subsection.2.3.5}{STS to LTS mapping}{section.2.3}
+\BOOKMARK [2][-]{subsection.2.3.6}{Coverage}{section.2.3}
+\BOOKMARK [1][-]{section.2.4}{Graph Grammars}{chapter.2}
+\BOOKMARK [1][-]{section.2.5}{Tooling}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.5.1}{ATM}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.2}{GROOVE}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.3}{Graph grammars in GROOVE}{section.2.5}
+\BOOKMARK [0][-]{chapter.3}{From Graph Grammar to STS}{}
+\BOOKMARK [1][-]{section.3.1}{Requirements considerations}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{Point algebra}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{Variables}{chapter.3}
+\BOOKMARK [1][-]{section.3.4}{The algorithm}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.4.1}{Locations}{section.3.4}
+\BOOKMARK [2][-]{subsection.3.4.2}{Location variables}{section.3.4}
+\BOOKMARK [2][-]{subsection.3.4.3}{Gates}{section.3.4}
+\BOOKMARK [2][-]{subsection.3.4.4}{Interaction variables}{section.3.4}
+\BOOKMARK [2][-]{subsection.3.4.5}{Guards}{section.3.4}
+\BOOKMARK [2][-]{subsection.3.4.6}{Update mappings}{section.3.4}
+\BOOKMARK [2][-]{subsection.3.4.7}{Switch relations}{section.3.4}
+\BOOKMARK [1][-]{section.3.5}{Constraints}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.5.1}{Constraint 1: unique variables}{section.3.5}
+\BOOKMARK [2][-]{subsection.3.5.2}{Constraint 2: no variables in NACs}{section.3.5}
+\BOOKMARK [2][-]{subsection.3.5.3}{Constraint 3: structural constraints on node creating rules}{section.3.5}
+\BOOKMARK [0][-]{chapter.4}{Implementation}{}
+\BOOKMARK [1][-]{section.4.1}{General setup}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{Description of added functionality}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.2.1}{Exploration Strategy Interface}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.2}{STS}{section.4.2}
+\BOOKMARK [2][-]{subsection.4.2.3}{ATM Interface}{section.4.2}
+\BOOKMARK [1][-]{section.4.3}{Rule priority}{chapter.4}
+\BOOKMARK [0][-]{chapter.5}{Validation}{}
+\BOOKMARK [1][-]{section.5.1}{Model examples}{chapter.5}
+\BOOKMARK [1][-]{section.5.2}{Case study}{chapter.5}
+\BOOKMARK [1][-]{section.5.3}{Measurements}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.3.1}{Simulation}{section.5.3}
+\BOOKMARK [2][-]{subsection.5.3.2}{Performance}{section.5.3}
+\BOOKMARK [2][-]{subsection.5.3.3}{Error detection}{section.5.3}
+\BOOKMARK [2][-]{subsection.5.3.4}{Coverage comparison}{section.5.3}
+\BOOKMARK [2][-]{subsection.5.3.5}{Model complexity}{section.5.3}
+\BOOKMARK [2][-]{subsection.5.3.6}{Extendability}{section.5.3}
+\BOOKMARK [0][-]{chapter.6}{Model Examples}{}
+\BOOKMARK [1][-]{section.6.1}{Example 1: boardgame}{chapter.6}
+\BOOKMARK [1][-]{section.6.2}{Example 2: farmer-wolf-goat-cabbage}{chapter.6}
+\BOOKMARK [1][-]{section.6.3}{Example 3: customer reservations}{chapter.6}
+\BOOKMARK [1][-]{section.6.4}{Example 4: bar tab system}{chapter.6}
+\BOOKMARK [1][-]{section.6.5}{Example 5: communication protocol}{chapter.6}
+\BOOKMARK [0][-]{chapter.7}{Case Study}{}
+\BOOKMARK [1][-]{section.7.1}{Scanflow Cash Register Protocol}{chapter.7}
+\BOOKMARK [1][-]{section.7.2}{Measurements}{chapter.7}
+\BOOKMARK [0][-]{chapter.8}{Conclusion}{}
+\BOOKMARK [1][-]{section.8.1}{Summary}{chapter.8}
+\BOOKMARK [1][-]{section.8.2}{Conclusion}{chapter.8}
+\BOOKMARK [1][-]{section.8.3}{Future work}{chapter.8}
+\BOOKMARK [0][-]{chapter*.25}{List of Symbols}{}

@@ -1,30 +1,61 @@
-\section{Implementation}\label{sec:implementation}
+\section{General setup}\label{sec:general-setup}
+GRATiS uses GROOVE as a replacement of the IOSTS in ATM. Figure~\ref{fig:class_diagram} shows the class diagram of GRATiS. GROOVE has several exploration strategies for exploring a GG to a GTS. The GROOVE interface is added to replace the exploration strategy. It contains functionality to build an STS from a GG and send an STS to a remote host. This is the most logical place in GROOVE, because the exploration strategy explores the GTS, which is needed to build the STS. On ATM, a component is added that receives an STS and starts a test run.
 
-This section features several implementation issues of GRATiS.
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=\textwidth]{tooling.pdf}
+  \end{center}
+  \caption{The GRATiS class diagram}
+  \label{fig:class_diagram}
+\end{figure}
 
-\subsection{General setup}\label{sec:general-setup}
-GRATiS uses GROOVE as a replacement of the IOSTS in ATM. Figure~\ref{fig:tooling} shows this graphically. GROOVE has several exploration strategies for exploring a GG to a GTS. GRATiS introduces two new strategies, the \textit{remote exploration strategy} and the \textit{symbolic exploration strategy}. The 'Exploration Strategy' is an exploration strategy in GROOVE such as the Breadth-First exploration strategy. The remote, symbolic and GROOVE exploration strategy form a chain where the possible rule transitions are passed down and the chosen rule transition is passed back up. The symbolic strategy transforms the GG to an STS based on the explored rule transitions. The remote exploration strategy waits until the IOSTS is done and then sends it to ATM. 'a' is the start of a new collaboration chain, representing the normal flow of ATM as depicted in Figure~\ref{fig:axini_tool}.
+\begin{comment}
+Figure~\ref{fig:collaboration_diagram} shows the collaboration diagram of GRATiS. The user uses the interface of GROOVE to input a graph grammar. Then the user inputs a remote host and  'a' is the start of a new collaboration chain, representing the normal flow of ATM as depicted in Figure~\ref{fig:axini_tool}.
 
 \begin{figure}[ht]
   \begin{center}
     \includegraphics[width=\textwidth]{tooling.pdf}
   \end{center}
   \caption{The GRATiS design: replacing the STS with GROOVE}
-  \label{fig:tooling}
+  \label{fig:collaboration_diagram}
+\end{figure}
+\end{comment}
+
+\section{Description of added functionality}
+This section covers in detail the added functionality to GROOVE and ATM. 
+
+\subsection{GROOVE Interface}
+Figure~\ref{fig:esi-diagram} shows the class diagram of the added exploration strategy interface. The symbolic exploration strategy has an exploration strategy such as the Breadth-First exploration strategy to explore the GTS. The remote exploration strategy extends the symbolic exploration strategy.
+
+The user starts the remote exploration strategy. This strategy starts a Breadth-First exploration strategy. This strategy explores the GTS and notifies the remote strategy when there are no more rule transitions to explore. The symbolic strategy builds the STS in Java objects using the explored rule transitions. The class diagram  of the STS is given in section~\ref{sec:sts-setup}. The remote strategy sends the STS in JSON format as a HTTP PUT request to the interface at ATM.
+
+The Breadth-First exploration strategy and the symbolic strategy are loosely coupled, such that other strategies can also be used if desired.
+ 
+\begin{figure}[ht]
+  \begin{center}
+   % \includegraphics[width=\textwidth]{tooling.pdf}
+  \end{center}
+  \caption{The class diagram of the exploration strategy interface}
+  \label{fig:esi-diagram}
 \end{figure}
 
-\subsection{Control program}
-GROOVE requires variable nodes to be connected to other nodes. This prevents the tool from crashing when a rule contains an unconstrained integer, real or string node. Interaction variables used in responses are often an unknown value coming from the SUT. To model this, a \textit{control program} is needed. This program regulates which rules are applied and chooses values for variables. Figure~\ref{fig:control_program} shows an example of a control program. Here $alap$ lets the program run as long as new graphs are explored. The rule $\ggrule$ is applied or any other rule. $n$ is the image of a variable node marked $parin\colon 0$ when the rule has a match. This node does not need to be connected to other nodes. Using the point algebra, any value can be used for $n \in \mathbb{U}^\sort$, as long as $\sort \in \Sorts$ is the sort of the variable node. This example shows how a variable node can be used to model a response value from the SUT.
+\subsection{STS}\label{sec:sts-setup}
+Figure~\ref{fig:sts-diagram} shows the class diagram of the STS in GRATiS. The STS has any number of Locations, Switch relations, Gates, Interaction and Location variables. A Location has pairs of Switch relations and locations. These are the outgoing switch relations and target locations. A Switch relation has one gate, which can have any number of interaction variables. The STS has a singleton class, the RuleInspector, which contains the functionality of building guards and updates from rule graphs.
 
 \begin{figure}[ht]
   \begin{center}
-$\mathit{alap} \{\ggrule(n) | \mathit{other}\}$
+   % \includegraphics[width=\textwidth]{tooling.pdf}
   \end{center}
-  \caption{A control program}
-  \label{fig:control_program}
+  \caption{The class diagram of the STS in GRATiS}
+  \label{fig:sts-diagram}
 \end{figure}
 
-\subsection{Rule priority}
+\subsection{ATM Interface}
+The ATM interface is one component in the Rails framework. It receives the STS request, builds the STS as Ruby objects and initiates the test run using this STS as model.
+
+\section{Rule priority}
+This section covers a specific implementation issue of setting rule priorities in GROOVE.
+
 There can be several outgoing rule transitions from a graph. However, GROOVE can set different priority levels on rules. A rule transition with a higher priority rule is explored before rule transitions with lower priority rules. Consider the graph grammar in Figure~\ref{fig:priority_gg}. The 'add' rule produces a rule transition to a graph, where the 'sub' rule produces a rule transition back to the start graph. The 'sub' rule does not match the start graph, because it has a lower priority than the 'add' rule.
 
 \begin{figure}[ht]
