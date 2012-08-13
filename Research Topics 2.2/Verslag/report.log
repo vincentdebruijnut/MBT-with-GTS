@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.10.14)  28 MAR 2012 15:40
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.10.14)  13 AUG 2012 12:12
 entering extended mode
 **D:/Documents/UT/MBT-with-GTS/Research*Topics*2.2/Verslag/report.tex
 ("D:/Documents/UT/MBT-with-GTS/Research Topics 2.2/Verslag/report.tex"
@@ -900,12 +900,12 @@ Underfull \hbox (badness 6542) in paragraph at lines 69--69
 ("D:\Documents\UT\MBT-with-GTS\Research Topics 2.2\Verslag\img\trafo_basic_sts.
 tex" <xymatrix 3x3 348>))
 ("D:\Documents\UT\MBT-with-GTS\Research Topics 2.2\Verslag\tex\tooling.tex"
-[12] <./img/axini_tool.pdf, id=429, 356.92177pt x 145.93393pt>
+[12] <./img/axini_tool.pdf, id=422, 356.92177pt x 145.93393pt>
 File: ./img/axini_tool.pdf Graphic file (type pdf)
 
 <use ./img/axini_tool.pdf> [13 <D:/Documents/UT/MBT-with-GTS/Research Topics 2.
 2/Verslag/img/axini_tool.pdf>]
-<./img/groove_tool.pdf, id=456, 374.51399pt x 161.01265pt>
+<./img/groove_tool.pdf, id=449, 374.51399pt x 161.01265pt>
 File: ./img/groove_tool.pdf Graphic file (type pdf)
 
 <use ./img/groove_tool.pdf> [14 <D:/Documents/UT/MBT-with-GTS/Research Topics 2
@@ -931,7 +931,7 @@ te.tikz") [15]
 ("D:\Documents\UT\MBT-with-GTS\Research Topics 2.2\Verslag\img\lts.tikz")
 ("D:\Documents\UT\MBT-with-GTS\Research Topics 2.2\Verslag\img\lts2.tikz"))
 ("D:\Documents\UT\MBT-with-GTS\Research Topics 2.2\Verslag\tex\research_method.
-tex" [17] <./img/tooling.pdf, id=552, 464.63988pt x 253.25618pt>
+tex" [17] <./img/tooling.pdf, id=545, 464.63988pt x 253.25618pt>
 File: ./img/tooling.pdf Graphic file (type pdf)
 
 <use ./img/tooling.pdf> [18] [19]
@@ -974,7 +974,7 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 Here is how much of TeX's memory you used:
  19109 strings out of 495285
  314719 string characters out of 3179820
- 1227569 words of memory out of 3000000
+ 1226569 words of memory out of 3000000
  21609 multiletter control sequences out of 15000+200000
  27653 words of font info for 73 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1010,9 +1010,9 @@ pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/cm-super/sfti0900.pfb
 ><C:/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/cm-super/sfti1000.pfb><C
 :/Program Files (x86)/MiKTeX 2.8/fonts/type1/public/xypic/xyatip10.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.8/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on report.pdf (24 pages, 798314 bytes).
+Output written on report.pdf (24 pages, 787339 bytes).
 PDF statistics:
- 760 PDF objects out of 1000 (max. 8388607)
+ 753 PDF objects out of 1000 (max. 8388607)
  167 named destinations out of 1000 (max. 500000)
  350 words of extra memory for PDF output out of 10000 (max. 10000000)
 
