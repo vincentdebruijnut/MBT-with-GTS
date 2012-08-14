@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
+    <graph edgemode="directed" edgeids="false" role="rule" id="freeTable">
+        <attr name="transitionLabel">
+            <string>!done</string>
+        </attr>
+        <attr name="priority">
+            <string>1</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n9">
+            <attr name="layout">
+                <string>114 402 107 33</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>265 364 60 33</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>138 274 71 33</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>373 368 107 33</string>
+            </attr>
+        </node>
+        <node id="n7">
+            <attr name="layout">
+                <string>347 286 54 37</string>
+            </attr>
+        </node>
+        <node id="n12">
+            <attr name="layout">
+                <string>442 287 54 37</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>500 400 54 37</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>256 287 54 37</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>304 207 43 43</string>
+            </attr>
+        </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>393 211 56 37</string>
+            </attr>
+        </node>
+        <node id="n8">
+            <attr name="layout">
+                <string>505 208 43 43</string>
+            </attr>
+        </node>
+        <edge to="n9" from="n9">
+            <attr name="label">
+                <string>type:Reservation</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n9">
+            <attr name="label">
+                <string>new:for</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n9">
+            <attr name="label">
+                <string>start</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n9">
+            <attr name="label">
+                <string>end</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n5">
+            <attr name="label">
+                <string>type:Table</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:Person</string>
+            </attr>
+        </edge>
+        <edge to="n9" from="n0">
+            <attr name="label">
+                <string>new:has</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 112 128 180 240 12</string>
+            </attr>
+        </edge>
+        <edge to="n9" from="n0">
+            <attr name="label">
+                <string>del:makes</string>
+            </attr>
+            <attr name="layout">
+                <string>500 0 162 302 111 355 157 407 12</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>type:Reservation</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n2">
+            <attr name="label">
+                <string>for</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n2">
+            <attr name="label">
+                <string>start</string>
+            </attr>
+        </edge>
+        <edge to="n12" from="n2">
+            <attr name="label">
+                <string>end</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n7">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge to="n12" from="n12">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>prod:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n4">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n4">
+            <attr name="label">
+                <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n4">
+            <attr name="label">
+                <string>real:le</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n6">
+            <attr name="label">
+                <string>bool:false</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n8">
+            <attr name="label">
+                <string>prod:</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n8">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge to="n12" from="n8">
+            <attr name="label">
+                <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n8">
+            <attr name="label">
+                <string>real:ge</string>
+            </attr>
+        </edge>
+    </graph>
+</gxl>

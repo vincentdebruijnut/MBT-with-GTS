@@ -1,0 +1,31 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n2)  at (1.430, -1.200){};
+\node[node] (n1)  at (3.235, -1.145) {\ml{bank}};
+\node[node] (n0)  at (1.345, -2.520) {\ml{bank}};
+\node[node] (n3)  at (2.215, -1.930) {\ml{farmer}};
+\node[quantnode] (n6)  at (2.655, -3.535) {\ml{$\forall$}};
+\node[node] (n4)  at (3.205, -2.505) {\ml{cabbage}};
+\node[node] (n5)  at (1.595, -3.525){};
+\path[newedge] (n3)  --  (n1) ;
+\node[newlab] at (5.530, -1.819){at};
+\path[newedge] (n4) .. controls (2.960, -2.860) and (3.050, -3.090) .. (3.050, -3.090).. controls (3.070, -3.160) and (3.420, -3.140) .. (3.440, -3.110).. controls (3.440, -3.110) and (3.500, -2.850) ..  (n4) ;
+\node[newlab] at (3.267, -3.101){moved};
+\path[newedge] (n3) .. controls (2.430, -1.720) and (2.410, -1.570) .. (2.410, -1.570).. controls (2.400, -1.520) and (2.160, -1.480) .. (2.140, -1.520).. controls (2.140, -1.520) and (2.060, -1.660) ..  (n3) ;
+\node[newlab] at (2.271, -1.544){moved};
+\path[deledge] (n3)  -- node[dellab]{at} (n0) ;
+\path[nacedge](n1.west |- 1.430, -1.200) -- node[naclab]{side} (n2) ;
+\path[deledge] (n5) .. controls (1.860, -3.240) and (1.820, -3.030) .. (1.820, -3.030).. controls (1.810, -2.980) and (1.510, -2.950) .. (1.490, -3.000).. controls (1.490, -3.000) and (1.400, -3.190) ..  (n5) ;
+\node[dellab] at (1.659, -3.015){moved};
+\path[edge](n0.north -| 1.430, -1.200) -- node[lab]{side} (n2) ;
+\path[quantedge](n5.east |- 2.655, -3.535) -- node[lab]{@} (n6) ;
+\path[deledge](n4.west |- 1.345, -2.520) -- node[dellab]{at} (n0) ;
+\path[newedge](n4.north -| 3.235, -1.145) -- node[newlab]{at} (n1) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

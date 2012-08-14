@@ -66,8 +66,6 @@ The rules can be described as follows:
 
 The strings on the nodes are a short-hand notation. The bold strings, \textbf{Die}, \textbf{Player}, \textbf{Location} and \textbf{int} indicate the \textit{type} of the node. Nodes with a type starting with a lower case letter, such as \textbf{int}, are variable nodes from $\mathcal{V}$. The italic string \textit{turn}, is a representation of a self-edge with label $turn$. In the next turn rule, the $turn$ edge exists in the $\mathit{LHS}$ as a self-edge of the left \textbf{Player} node and in the $\mathit{RHS}$ as a self-edge of the right \textbf{Player} node. In the same rule, the $throws$ edge from the left \textbf{Player} node to an integer node only exists in the $\mathit{LHS}$.
 
-The assignments on the \textbf{Die} node are representations of edges labelled 'canThrow' to variable nodes. The six variable nodes are of the type integer and each have an initial value of one to six. The throws value assignment (:=) in the move rule is a shorthand for two edges: one edge in the $\mathit{LHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i$ and another edge in the $\mathit{RHS}$ with label $throws$ from the \textbf{Player} node to an integer node with value $i-1$. 
-
 The 'throws > 0' is a term over the variable node that is the target of an outgoing edge labeled 'throws'. In this case, the valuation of the term be true for the rule to match the graph.
 
 The number '0' in the top left of the \textbf{int} node in the throw rule indicates that this integer is the first parameter in $param(l)$, where $l$ is the label on the rule transition created by applying the throws rule.

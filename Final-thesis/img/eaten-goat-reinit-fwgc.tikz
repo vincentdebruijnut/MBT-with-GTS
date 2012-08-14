@@ -1,0 +1,40 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n2)  at (0.690, -1.820){};
+\node[node] (n14)  at (3.875, -2.320) {\ml{bank}};
+\node[node] (n17)  at (3.845, -3.520) {\ml{bank}};
+\node[node] (n10)  at (2.755, -2.350) {\ml{farmer}};
+\node[node] (n11)  at (2.655, -2.720) {\ml{wolf}};
+\node[node] (n16)  at (3.825, -3.110) {\ml{bank}};
+\node[node] (n9)  at (1.495, -2.880) {\ml{bank}};
+\node[node] (n8)  at (0.645, -2.890) {\ml{left}};
+\node[node] (n13)  at (2.800, -3.530) {\ml{cabbage}};
+\node[node] (n5)  at (1.495, -1.150) {\ml{wolf}};
+\node[node] (n0)  at (2.035, -0.750) {\ml{farmer}};
+\node[node] (n15)  at (3.835, -2.720) {\ml{bank}};
+\node[node] (n1)  at (2.035, -1.740) {\ml{bank}};
+\node[node] (n4)  at (0.720, -0.570) {\ml{goat}};
+\node[node] (n3)  at (0.705, -1.160) {\ml{bank}};
+\node[node] (n12)  at (2.660, -3.130) {\ml{goat}};
+\path[newedge] (n13)  -- node[newlab]{at} (n9) ;
+\path[deledge](n11.east |- 3.835, -2.720) -- node[dellab]{at} (n15) ;
+\path[edge](n9.west |- 0.645, -2.890) -- node[lab]{side} (n8) ;
+\path[newedge] (n10)  -- node[newlab]{at} (n9) ;
+\path[newedge] (n12)  -- node[newlab]{at} (n9) ;
+\path[deledge](n12.east |- 3.825, -3.110) -- node[dellab]{at} (n16) ;
+\path[nacedge](n1.west |- 0.690, -1.820) -- node[naclab]{side} (n2) ;
+\path[edge](n5.west |- 0.705, -1.160) -- node[lab]{at} (n3) ;
+\path[deledge](n13.east |- 3.845, -3.520) -- node[dellab]{at} (n17) ;
+\path[edge](n3.south -| 0.690, -1.820) -- node[lab]{side} (n2) ;
+\path[deledge](n10.east |- 3.875, -2.320) -- node[dellab]{at} (n14) ;
+\path[edge](n0.south -| 2.035, -1.740) -- node[lab]{at} (n1) ;
+\path[edge](n4.south -| 0.705, -1.160) -- node[lab]{at} (n3) ;
+\path[newedge] (n11)  -- node[newlab]{at} (n9) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

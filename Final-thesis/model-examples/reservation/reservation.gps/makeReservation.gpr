@@ -1,77 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
     <graph edgemode="directed" edgeids="false" role="rule" id="makeReservation">
+        <attr name="transitionLabel">
+            <string>?make</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n7">
+            <attr name="layout">
+                <string>228 132 107 33</string>
+            </attr>
+        </node>
         <node id="n1">
             <attr name="layout">
                 <string>72 132 71 33</string>
             </attr>
         </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>261 133 161 33</string>
-            </attr>
-        </node>
         <node id="n2">
             <attr name="layout">
-                <string>263 235 62 37</string>
+                <string>184 190 56 37</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>362 234 62 37</string>
+                <string>335 191 62 37</string>
             </attr>
         </node>
-        <node id="n4">
-            <attr name="layout">
-                <string>266 44 54 37</string>
+        <edge to="n7" from="n7">
+            <attr name="label">
+                <string>new:</string>
             </attr>
-        </node>
-        <node id="n5">
-            <attr name="layout">
-                <string>365 44 54 37</string>
+        </edge>
+        <edge to="n7" from="n7">
+            <attr name="label">
+                <string>type:Reservation</string>
             </attr>
-        </node>
-        <node id="n6">
-            <attr name="layout">
-                <string>530 133 71 33</string>
+        </edge>
+        <edge to="n2" from="n7">
+            <attr name="label">
+                <string>new:start</string>
             </attr>
-        </node>
+        </edge>
+        <edge to="n3" from="n7">
+            <attr name="label">
+                <string>new:end</string>
+            </attr>
+        </edge>
         <edge to="n1" from="n1">
             <attr name="label">
                 <string>type:Person</string>
             </attr>
         </edge>
-        <edge to="n0" from="n1">
+        <edge to="n7" from="n1">
             <attr name="label">
-                <string>new:reserve</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:ReservationSystem</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>new:start</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>new:end</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n0">
-            <attr name="label">
-                <string>del:end</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n0">
-            <attr name="label">
-                <string>del:start</string>
+                <string>new:makes</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -81,7 +67,7 @@
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>parin:0</string>
+                <string>par:0</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
@@ -91,32 +77,7 @@
         </edge>
         <edge to="n3" from="n3">
             <attr name="label">
-                <string>parin:1</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>real:</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>real:</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n6">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n6">
-            <attr name="label">
-                <string>type:Person</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n6">
-            <attr name="label">
-                <string>reserve</string>
+                <string>par:1</string>
             </attr>
         </edge>
     </graph>

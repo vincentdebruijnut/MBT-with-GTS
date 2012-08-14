@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
+    <graph edgemode="directed" edgeids="false" role="rule" id="eaten-cabbage-reinit">
+        <attr name="transitionLabel">
+            <string>eaten!</string>
+        </attr>
+        <attr name="priority">
+            <string>2</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n2">
+            <attr name="layout">
+                <string>68 163 31 31</string>
+            </attr>
+        </node>
+        <node id="n14">
+            <attr name="layout">
+                <string>354 224 51 33</string>
+            </attr>
+        </node>
+        <node id="n17">
+            <attr name="layout">
+                <string>354 368 51 33</string>
+            </attr>
+        </node>
+        <node id="n10">
+            <attr name="layout">
+                <string>246 223 63 33</string>
+            </attr>
+        </node>
+        <node id="n11">
+            <attr name="layout">
+                <string>251 269 44 33</string>
+            </attr>
+        </node>
+        <node id="n16">
+            <attr name="layout">
+                <string>348 313 51 33</string>
+            </attr>
+        </node>
+        <node id="n9">
+            <attr name="layout">
+                <string>58 294 40 33</string>
+            </attr>
+        </node>
+        <node id="n8">
+            <attr name="layout">
+                <string>139 292 51 33</string>
+            </attr>
+        </node>
+        <node id="n13">
+            <attr name="layout">
+                <string>242 368 75 33</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>143 100 75 33</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>277 161 63 33</string>
+            </attr>
+        </node>
+        <node id="n15">
+            <attr name="layout">
+                <string>355 270 51 33</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>182 161 51 33</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>55 39 49 33</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>52 101 51 33</string>
+            </attr>
+        </node>
+        <node id="n12">
+            <attr name="layout">
+                <string>245 314 49 33</string>
+            </attr>
+        </node>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string></string>
+            </attr>
+        </edge>
+        <edge to="n14" from="n14">
+            <attr name="label">
+                <string>bank</string>
+            </attr>
+        </edge>
+        <edge to="n17" from="n17">
+            <attr name="label">
+                <string>bank</string>
+            </attr>
+        </edge>
+        <edge to="n10" from="n10">
+            <attr name="label">
+                <string>farmer</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n10">
+            <attr name="label">
+                <string>new:at</string>
+            </attr>
+        </edge>
+        <edge to="n14" from="n10">
+            <attr name="label">
+                <string>del:at</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n11">
+            <attr name="label">
+                <string>wolf</string>
+            </attr>
+        </edge>
+        <edge to="n15" from="n11">
+            <attr name="label">
+                <string>del:at</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n11">
+            <attr name="label">
+                <string>new:at</string>
+            </attr>
+        </edge>
+        <edge to="n16" from="n16">
+            <attr name="label">
+                <string>bank</string>
+            </attr>
+        </edge>
+        <edge to="n9" from="n9">
+            <attr name="label">
+                <string>left</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n8">
+            <attr name="label">
+                <string>bank</string>
+            </attr>
+        </edge>
+        <edge to="n9" from="n8">
+            <attr name="label">
+                <string>side</string>
+            </attr>
+        </edge>
+        <edge to="n13" from="n13">
+            <attr name="label">
+                <string>cabbage</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n13">
+            <attr name="label">
+                <string>new:at</string>
+            </attr>
+        </edge>
+        <edge to="n17" from="n13">
+            <attr name="label">
+                <string>del:at</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n5">
+            <attr name="label">
+                <string>cabbage</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n5">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>farmer</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n0">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge to="n15" from="n15">
+            <attr name="label">
+                <string>bank</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>bank</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n1">
+            <attr name="label">
+                <string>not:side</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>goat</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n4">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>bank</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n3">
+            <attr name="label">
+                <string>side</string>
+            </attr>
+        </edge>
+        <edge to="n12" from="n12">
+            <attr name="label">
+                <string>goat</string>
+            </attr>
+        </edge>
+        <edge to="n16" from="n12">
+            <attr name="label">
+                <string>del:at</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n12">
+            <attr name="label">
+                <string>new:at</string>
+            </attr>
+        </edge>
+    </graph>
+</gxl>

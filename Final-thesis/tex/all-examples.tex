@@ -2,22 +2,75 @@
 The STS and GG for for the boardgame example are given in Figures~\ref{fig:example_sts} and \ref{fig:example_groove} respectively. 
 
 \subsection{Simulation}
-The STS created by GRATiS and the created STS by hand can be compared. It can be observed whether the STS created by GRATiS simulates the STS created by hand and vice versa. When either is not the case, the models show a different possible behaviour for the SUT. The reasons behind this difference is then explored.
 
 \subsection{Performance}
-The performance in terms of execution time and 'heap-size' can be measured and compared. Assuming both the STS created by GRATiS and by hand simulate each other, these metrics will be the same for the testing part. Therefore, the execution time and heap size of the STS creation is measured.
+473 MB 415 ms
 
 \subsection{Model redundancy}
-It is possible that the generated STS $s$ can be reduced to a smaller STS $t$. It is measured whether $t$ exists such that $\mathit{traces}(s) \subseteq \mathit{traces}(t) \land |\Switches_t| < |\Switches_s|$.
 
-\subsection{Model complexity}\label{sec:complexity_measurement}
-The complexity of the generated STS and the GG can be measured using Halstead's software science. The operators and operands are counted in both models and compared. The operators are the function symbols, the operands are the identifiers, nodes and edges. 
+\subsection{Model complexity}
+start:
+13 distinct operands
+1 distinct operator
+33 operands
+3 operators
+
+move:
+2 new distinct operands
+5 new distinct operators
+27 operands
+6 operators
+
+nextTurn:
+0 new distinct operands
+1 new distinct operator
+13 operands
+5 operators
+
+throws:
+3 new distinct operands
+2 new distinct operators
+30 operands
+10 operators
+
+$n_1 = 9, n_2 = 18, N_1 = 24, N_2 = 103$ Volume is 127*4.75 = 603.25
+
+STS:
+22 distinct operands
+5 distinct operators
+62 operands
+25 operators
+
+$n_1 = 5, n_2 = 22, N_1 = 25, N_2 = 62$ Volume is 87*4.75 = 413.25
+
 
 \subsection{Extendability}
-The models can be extended to include more functionality. In this measurement, a realistic scenario is introduced where additional functionality is required. It is then measured how much the complexity increases, using the measurment in section~\ref{sec:complexity_measurement}.
+The boardgame is extended to include more players and locations. For the GG, this means adding new locations and players to the start graph. The players get a fixed order in which they play. This means that the next turn rule also has to be extended. The result is in Figure~\ref{fig:gg-bg-extended}. This extension reduces the distinct number of operators by 1 and introduces no new operands. The number of operator occurences has decreased by 1 and the number of operand occurences has grown by 10.
+
+The STS gains a variable and a switch relation for the new player. The result is in Figure~\ref{fig:sts-bg-extended}. The distinct number of operators has not increased and the distinct number of operands has increased by 1. The number of operator occurences has increased by 9 and the number of operand occurences has increased by 17.
+
+The volume of the GG has increased by 35.95. $n_1 = 8, n_2 = 18, N_1 = 23, N_2 = 113$ Volume is 136*4.70 = 639.20
+The volume of the STS has increased by 130.28. $n_1 = 5, n_2 = 23, N_1 = 34, N_2 = 79$ Volume is 113*4.81 = 543.53
+
 
 \section{Example 2: farmer-wolf-goat-cabbage}
-Tested already on Axel's model.
+In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one object to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The GG of this puzzle is in Figure~\ref{fig:}. EXPLANATION. The STS of this puzzle is in Figure~\ref{fig:}.
+
+\subsection{Simulation}
+
+
+\subsection{Performance}
+1 MB 917 ms
+
+\subsection{Model redundancy}
+
+
+\subsection{Model complexity}
+
+
+\subsection{Extendability}
+In another variant of this puzzle, when one of the objects is eaten, the puzzle does not reset but undoes the last action. 
+
 
 \section{Example 3: customer reservations}
 customers can place reservations for certain slots. Checked if slots are free. customers can cancel reservation.

@@ -1,0 +1,21 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n4)  at (0.990, -2.300){};
+\node[node] (n3)  at (1.670, -1.530) {\ml{goat}};
+\node[node] (n0)  at (1.085, -0.930) {\ml{bank}};
+\node[node] (n1)  at (2.275, -2.210) {\ml{bank}};
+\node[node] (n2)  at (2.285, -0.920) {\ml{farmer}};
+\path[newedge] (n3)  -- node[newlab]{at} (n1) ;
+\path[deledge] (n3)  -- node[dellab]{at} (n0) ;
+\path[deledge](n2.west |- 1.085, -0.930) -- node[dellab]{at} (n0) ;
+\path[newedge](n2.south -| 2.275, -2.210) -- node[newlab]{at} (n1) ;
+\path[edge](n0.south -| 0.990, -2.300) -- node[lab]{side} (n4) ;
+\path[nacedge](n1.west |- 0.990, -2.300) -- node[naclab]{side} (n4) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

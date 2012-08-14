@@ -5,14 +5,21 @@
 \begin{tikzpicture}[
 % Special color styles
 scale=\tikzscale]
-\node[node] (n1)  at (0.545, -0.470) {\ml{\textbf{Player}\\\textit{turn}}};
-\node[node] (n5)  at (1.595, -1.295) {\ml{\textbf{Die}}};
-\node[nacnode, attr] (n2)  at (0.495, -1.325) {\ml{\textbf{int}}};
-\node[node, attr] (n4)  at (1.605, -0.405) {\ml{\textbf{int}}};
+\node[node] (n8)  at (0.760, -1.210) {\ml{\textbf{Die}}};
+\node[node, attr] (n4)  at (1.735, -1.215) {\ml{\textbf{int}}};
 \node[parnode] (n4p)  at (n4.north west) {0};
-\path[newedge](n1.east |- 1.605, -0.405) -- node[newlab]{throws} (n4) ;
-\path[edge](n5.north -| 1.605, -0.405) -- node[lab]{canThrow} (n4) ;
-\path[nacedge](n1.south -| 0.495, -1.325) -- node[naclab]{throws} (n2) ;
+\node[node, attr] (n2)  at (0.775, -0.505) {\ml{\textbf{int}}};
+\node[node] (n1)  at (0.710, -2.620) {\ml{\textbf{Player}\\\textit{turn}}};
+\node[node, prod] (n5)  at (1.750, -2.060) {\ml{$\pi$0 = 1\\le = true}};
+\node[node, prod] (n7)  at (1.730, -0.490) {\ml{$\pi$0 = 6\\ge = true}};
+\path[deledge](n8.north -| 0.775, -0.505) -- node[dellab]{rolls} (n2) ;
+\path[newedge](n8.east |- 1.735, -1.215) -- node[newlab]{rolls} (n4) ;
+\path[edge] (n5)  -- node[lab]{$\pi$1} (n4) ;
+\path[edge] (n7)  -- node[lab]{$\pi$1} (n4) ;
+\path[newedge] (n1) .. controls (1.100, -2.270) and (1.130, -1.570) ..  (n8) ;
+\node[newlab] at (1.116, -1.927){throws};
+\path[nacedge] (n1) .. controls (0.380, -2.250) and (0.410, -1.550) ..  (n8) ;
+\node[naclab] at (0.403, -1.904){throws};
 \userdefinedmacro
 \end{tikzpicture}
 \renewcommand{\userdefinedmacro}{\relax}
