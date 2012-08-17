@@ -1,0 +1,15 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n2)  at (1.755, -1.545) {\ml{\textbf{Person}\\name = "Lisa Smith"}};
+\node[node] (n1)  at (3.265, -1.535) {\ml{\textbf{Person}\\name = "John Doe"}};
+\node[node] (n3)  at (2.540, -2.025) {\ml{\textbf{Table}\\number = 2}};
+\node[node] (n5)  at (3.210, -2.585) {\ml{\textbf{Table}\\number = 3}};
+\node[node] (n6)  at (1.860, -2.585) {\ml{\textbf{Table}\\number = 1}};
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}
