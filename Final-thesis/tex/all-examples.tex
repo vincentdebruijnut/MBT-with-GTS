@@ -45,7 +45,16 @@ $n_1 = 5, n_2 = 22, N_1 = 25, N_2 = 62$ Volume is 87*4.75 = 413.25
 
 
 \subsection{Extendability}
-The boardgame is extended to include more players and locations. For the GG, this means adding new locations and players to the start graph. The players get a fixed order in which they play. This means that the next turn rule also has to be extended. The result is in Figure~\ref{fig:gg-bg-extended}. This extension reduces the distinct number of operators by 1 and introduces no new operands. The number of operator occurences has decreased by 1 and the number of operand occurences has grown by 10.
+The boardgame is extended to include more players and locations. For the GG, this means adding new locations and players to the initial graph. The players get a fixed order in which they play. This means that the next turn rule also has to be extended. The result is in Figure~\ref{fig:gg-bg-extended}. This extension reduces the distinct number of operators by 1 and introduces no new operands. The number of operator occurences has decreased by 1 and the number of operand occurences has grown by 10.
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-bg-extended}\input{./img/start-bg-extended.tikz}}\hspace{20px}
+    \subfloat[The next turn rule]{\label{fig:nextTurn-bg-extended}\input{./img/nextTurn-bg-extended.tikz}}
+  \end{center}
+  \caption{The extended graph grammar of the board game example in Figure~\ref{fig:example_groove}}
+  \label{fig:gg-bg-extended}
+\end{figure}
 
 The STS gains a variable and a switch relation for the new player. The result is in Figure~\ref{fig:sts-bg-extended}. The distinct number of operators has not increased and the distinct number of operands has increased by 1. The number of operator occurences has increased by 9 and the number of operand occurences has increased by 17.
 
@@ -54,7 +63,19 @@ The volume of the STS has increased by 130.28. $n_1 = 5, n_2 = 23, N_1 = 34, N_2
 
 
 \section{Example 2: farmer-wolf-goat-cabbage}
-In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one object to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The GG of this puzzle is in Figure~\ref{fig:}. EXPLANATION. The STS of this puzzle is in Figure~\ref{fig:}.
+In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one object to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The GG of this puzzle is in Figure~\ref{fig:gg-fwgc}. EXPLANATION. The STS of this puzzle is in Figure~\ref{fig:}.
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-bg-extended}\input{./img/start-fwgc.tikz}}\hspace{20px}
+    \subfloat[The next turn rule]{\label{fig:c-fwgc}\input{./img/c-fwgc.tikz}}\\
+    \subfloat[The next turn rule]{\label{fig:c-invalid-fwgc}\input{./img/c-invalid-fwgc.tikz}}\hspace{20px}
+    \subfloat[The next turn rule]{\label{fig:retry-fwgc}\input{./img/retry-fwgc.tikz}}\\
+    \subfloat[The next turn rule]{\label{fig:reinit}\input{./img/eaten-cabbage-reinit-fwgc.tikz}}
+  \end{center}
+  \caption{The graph grammar of the farmer-wolf-goat-cabbage puzzle}
+  \label{fig:gg-fwgc}
+\end{figure}
 
 \subsection{Simulation}
 
@@ -71,6 +92,13 @@ In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The
 \subsection{Extendability}
 In another variant of this puzzle, when one of the objects is eaten, the puzzle does not reset but undoes the last action. 
 
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/c-fwgc-extended.tikz}
+  \end{center}
+  \caption{The extended graph grammar of the board game example in Figure~\ref{fig:example_groove}}
+  \label{fig:gg-fwgc-extended}
+\end{figure}
 
 \section{Example 3: customer reservations}
 customers can place reservations for certain slots. Checked if slots are free. customers can cancel reservation.

@@ -33,18 +33,18 @@ The Breadth-First exploration strategy and the symbolic strategy are loosely cou
  
 \begin{figure}[ht]
   \begin{center}
-   % \includegraphics[width=\textwidth]{tooling.pdf}
+    \includegraphics[width=0.5\textwidth]{strategy.pdf}
   \end{center}
   \caption{The class diagram of the exploration strategy interface}
   \label{fig:esi-diagram}
 \end{figure}
 
 \subsection{STS}\label{sec:sts-setup}
-Figure~\ref{fig:sts-diagram} shows the class diagram of the STS in GRATiS. The STS has any number of Locations, Switch relations, Gates, Interaction and Location variables. A Location has pairs of Switch relations and locations. These are the outgoing switch relations and target locations. A Switch relation has one gate, which can have any number of interaction variables. The STS has a singleton class, the RuleInspector, which contains the functionality of building guards and updates from rule graphs.
+Figure~\ref{fig:sts-diagram} shows the class diagram of the STS in GRATiS. The STS is composed of Locations, Switch relations, Gates, Interaction and Location variables. A Location can be the start and targent of any number of switch relations. A switch relation has two locations; the start and target location. A Switch relation has one gate and a gate can belong to any number of switch relations. A gate can have any number of interaction variables, but an interaction variable belongs to one gate. The STS has a singleton class, the RuleInspector, which contains the functionality of building guards and updates from rule graphs.
 
 \begin{figure}[ht]
   \begin{center}
-   % \includegraphics[width=\textwidth]{tooling.pdf}
+    \includegraphics[width=0.5\textwidth]{STS.pdf}
   \end{center}
   \caption{The class diagram of the STS in GRATiS}
   \label{fig:sts-diagram}
