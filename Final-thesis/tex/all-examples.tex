@@ -100,8 +100,19 @@ In another variant of this puzzle, when one of the objects is eaten, the puzzle 
   \label{fig:gg-fwgc-extended}
 \end{figure}
 
-\section{Example 3: customer reservations}
-customers can place reservations for certain slots. Checked if slots are free. customers can cancel reservation.
+\section{Example 3: restaurant reservations}
+Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a restaurant and two potential customers. Figure~\ref{fig:make-reservation} shows part of a rule that allows people to make reservations. The start and end times are timestamps represented by integers. This rule allows people to make multiple reservations. However, this rule violates the constraint in section~\ref{sec:constraint-1}, because the reservation objects are not unique. Allowing a dynamic amount of reservations per person means that variables need to be introduced dynamically as well or more complex variables have to be used, such as arrays. 
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:reservation_start}\input{./img/start-reservation.tikz}}\hspace{20px}
+    \subfloat[The make reservation rule]{\label{fig:make-reservation}\input{./img/makeReservation.tikz}}
+  \end{center}
+  \caption{A control node and program in GROOVE}
+  \label{fig:priority_gg}
+\end{figure} 
+
+The 
 
 \section{Example 4: bar tab system}
 customers can order beer wine and soda, which have real price. adds to tab. customers can pay tab with money, superfluous amount is returned (interaction variable).

@@ -1,0 +1,28 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n5)  at (2.070, -0.320) {\ml{\textbf{string}}};
+\node[parnode] (n5p)  at (n5.north west) {0};
+\node[node, attr] (n4)  at (3.580, -0.310) {\ml{\textbf{int}}};
+\node[parnode] (n4p)  at (n4.north west) {1};
+\node[node, attr] (n3)  at (3.650, -2.165) {\ml{\textbf{int}}};
+\node[parnode] (n3p)  at (n3.north west) {3};
+\node[node, attr] (n2)  at (2.030, -2.155) {\ml{\textbf{int}}};
+\node[parnode] (n2p)  at (n2.north west) {2};
+\node[node] (n1)  at (2.045, -0.915) {\ml{\textbf{Person}}};
+\node[newnode] (n7)  at (2.815, -1.485) {\ml{\textbf{Reservation}}};
+\node[node] (n0)  at (3.590, -0.920) {\ml{\textbf{Table}}};
+\path[newedge] (n1)  -- node[newlab]{has} (n7) ;
+\path[newedge] (n7)  -- node[newlab]{end\_time} (n3) ;
+\path[newedge] (n7)  --  (n2) ;
+\node[newlab] at (2.370, -1.780){start\_time};
+\path[newedge] (n7)  -- node[newlab]{for} (n0) ;
+\path[edge](n0.north -| 3.580, -0.310) -- node[lab]{number} (n4) ;
+\path[edge](n1.north -| 2.070, -0.320) -- node[lab]{name} (n5) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}
