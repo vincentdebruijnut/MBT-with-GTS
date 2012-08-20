@@ -15,12 +15,12 @@
         </attr>
         <node id="n3">
             <attr name="layout">
-                <string>35 171 51 33</string>
+                <string>53 260 51 33</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>47 93 49 33</string>
+                <string>24 94 31 31</string>
             </attr>
         </node>
         <node id="n1">
@@ -48,19 +48,19 @@
                 <string>212 133 29 33</string>
             </attr>
         </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>121 261 31 31</string>
-            </attr>
-        </node>
-        <edge to="n2" from="n3">
-            <attr name="label">
-                <string>side</string>
-            </attr>
-        </edge>
         <edge to="n3" from="n3">
             <attr name="label">
                 <string>bank</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n3">
+            <attr name="label">
+                <string>!=</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string></string>
             </attr>
         </edge>
         <edge to="n3" from="n4">
@@ -68,14 +68,9 @@
                 <string>at</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge to="n5" from="n4">
             <attr name="label">
-                <string>goat</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>not:side</string>
+                <string>eats</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -111,14 +106,19 @@
                 <string>new:at</string>
             </attr>
         </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>farmer</string>
+            </attr>
+        </edge>
         <edge to="n1" from="n0">
             <attr name="label">
                 <string>at</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string>farmer</string>
+                <string></string>
             </attr>
         </edge>
         <edge to="n3" from="n5">
@@ -126,19 +126,9 @@
                 <string>at</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>cabbage</string>
-            </attr>
-        </edge>
         <edge to="n7" from="n7">
             <attr name="label">
                 <string>forall:</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string></string>
             </attr>
         </edge>
     </graph>

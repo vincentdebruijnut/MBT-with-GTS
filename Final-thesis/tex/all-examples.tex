@@ -63,18 +63,27 @@ The volume of the STS has increased by 130.28. $n_1 = 5, n_2 = 23, N_1 = 34, N_2
 
 
 \section{Example 2: farmer-wolf-goat-cabbage}
-In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one object to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The GG of this puzzle is in Figure~\ref{fig:gg-fwgc}. EXPLANATION. The STS of this puzzle is in Figure~\ref{fig:}.
+In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one object to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The GG of this puzzle is in Figure~\ref{fig:gg-fwgc}. Here the 'move' and 'invalid' rules are similar, therefore only the 'move cabbage' rule is shown. The response rules '!retry', '!eaten' and '!done' have a higher priority. This ensures that a proper response is given after a move, before allowing more stimuli. The STS of this puzzle is in Figure~\ref{fig:sts-fwgc}.
 
 \begin{figure}[ht]
   \begin{center}
-    \subfloat[The initial graph]{\label{fig:start-bg-extended}\input{./img/start-fwgc.tikz}}\hspace{20px}
-    \subfloat[The next turn rule]{\label{fig:c-fwgc}\input{./img/c-fwgc.tikz}}\\
-    \subfloat[The next turn rule]{\label{fig:c-invalid-fwgc}\input{./img/c-invalid-fwgc.tikz}}\hspace{20px}
-    \subfloat[The next turn rule]{\label{fig:retry-fwgc}\input{./img/retry-fwgc.tikz}}\\
-    \subfloat[The next turn rule]{\label{fig:reinit}\input{./img/eaten-cabbage-reinit-fwgc.tikz}}
+    \subfloat[The initial graph]{\label{fig:start-bg}\input{./img/start-fwgc.tikz}}\hspace{20px}
+    \subfloat[The ?c (move cabbage) rule with priority 0]{\label{fig:c-fwgc}\input{./img/c-fwgc.tikz}}\\
+    \subfloat[The ?c (invalid cabbage move) rule with priority 0]{\label{fig:c-invalid-fwgc}\input{./img/c-invalid-fwgc.tikz}}\hspace{20px}
+    \subfloat[The !retry rule with priority 1]{\label{fig:retry-fwgc}\input{./img/retry-fwgc.tikz}}\\
+    \subfloat[The !eaten rule with priority 1]{\label{fig:reinit}\input{./img/eaten-reinit-fwgc.tikz}}\\
+    \subfloat[The !done rule with priority 1]{\label{fig:done}\input{./img/done-fwgc.tikz}}
   \end{center}
   \caption{The graph grammar of the farmer-wolf-goat-cabbage puzzle}
   \label{fig:gg-fwgc}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/sts_fwgc.tex}
+  \end{center}
+  \caption{The STS of the farmer-wolf-goat-cabbage puzzle}
+  \label{fig:sts-fwgc}
 \end{figure}
 
 \subsection{Simulation}
@@ -90,31 +99,72 @@ In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The
 
 
 \subsection{Extendability}
-In another variant of this puzzle, when one of the objects is eaten, the puzzle does not reset but undoes the last action. 
+In another variant of this puzzle, when one of the objects is eaten, the puzzle does not reset but undoes the last action. Figure~\ref{fig:gg-fwgc-extended} shows this extension in two rules: the 'move cabbage' and the 'eaten undo' rule. The rules keep track of the last moved items. When an item gets eaten, the last move can be undone.
 
 \begin{figure}[ht]
   \begin{center}
-    \input{./img/c-fwgc-extended.tikz}
+    \subfloat[The move cabbage rule]{\label{fig:start-bg-extended}\input{./img/c-fwgc-extended.tikz}}\hspace{20px}
+    \subfloat[The eaten undo rule]{\label{fig:c-fwgc}\input{./img/eaten-undo-fwgc.tikz}}
   \end{center}
   \caption{The extended graph grammar of the board game example in Figure~\ref{fig:example_groove}}
   \label{fig:gg-fwgc-extended}
 \end{figure}
 
 \section{Example 3: restaurant reservations}
-Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a restaurant and two potential customers. Figure~\ref{fig:make-reservation} shows part of a rule that allows people to make reservations. The start and end times are timestamps represented by integers. This rule allows people to make multiple reservations. However, this rule violates the constraint in section~\ref{sec:constraint-1}, because the reservation objects are not unique. Allowing a dynamic amount of reservations per person means that variables need to be introduced dynamically as well or more complex variables have to be used, such as arrays. 
+Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a restaurant and two potential customers. Figure~\ref{fig:make-reservation} shows part of a rule that allows people to make reservations. The start and end times are timestamps represented by integers. This rule allows people to make multiple reservations. However, this rule violates the constraint in section~\ref{sec:constraint-1}, because the reservation objects are not unique. Allowing a dynamic amount of reservations per person means that variables need to be introduced dynamically as well or more complex variables have to be used, such as arrays. To model this system using an STS, arrays are also needed.
 
 \begin{figure}[ht]
   \begin{center}
     \subfloat[The initial graph]{\label{fig:reservation_start}\input{./img/start-reservation.tikz}}\hspace{20px}
     \subfloat[The make reservation rule]{\label{fig:make-reservation}\input{./img/makeReservation.tikz}}
   \end{center}
-  \caption{A control node and program in GROOVE}
-  \label{fig:priority_gg}
+  \caption{The graph grammar of the restaurant reservation system}
+  \label{fig:gg-reservation}
 \end{figure} 
 
-The 
 
 \section{Example 4: bar tab system}
-customers can order beer wine and soda, which have real price. adds to tab. customers can pay tab with money, superfluous amount is returned (interaction variable).
+This example models a bar tab system, where customers can order beer, wine and soda. The price of the order adds to tab. Customers can pay their tab with money; they receive cash back if the payment exceeds the tab. Figure~\ref{fig:gg-bartab} shows the GG of the bar tab system. The '!process\_order' and '!process\_payment' rule have a higher priority than the '?order' and '?pay' rule. 
 
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-tab}\input{./img/start-tab.tikz}}\\
+    \subfloat[The ?order rule with priority 0]{\label{fig:order-tab}\input{./img/order-tab.tikz}}\hspace{20px}
+    \subfloat[The !process\_order rule with priority 1]{\label{fig:process_order}\input{./img/process_order.tikz}}\\
+    \subfloat[The ?pay rule with priority 0]{\label{fig:pay-tab}\input{./img/pay-tab.tikz}}\hspace{20px}
+    \subfloat[The !process\_payment rule with priority 1]{\label{fig:process_payment}\input{./img/process_payment.tikz}}
+  \end{center}
+  \caption{The graph grammar of the bar tab system}
+  \label{fig:gg-bartab}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{center}
+    %\input{./img/sts_tab.tex}
+  \end{center}
+  \caption{The STS of the bar tab system}
+  \label{fig:sts-bartab}
+\end{figure}
+
+\subsection{Simulation}
+
+
+\subsection{Performance}
+
+
+\subsection{Model redundancy}
+
+
+\subsection{Model complexity}
+
+
+\subsection{Extendability}
+
+
+\begin{comment}
 \section{Example 5: communication protocol}
+\end{comment}
+
+
+\section{Conclusions}
+Need more complex data structures. And it is possible!

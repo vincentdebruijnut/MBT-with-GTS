@@ -4,37 +4,43 @@
         <attr name="transitionLabel">
             <string>!process_order</string>
         </attr>
+        <attr name="priority">
+            <string>1</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
         <node id="n5">
             <attr name="layout">
-                <string>196 194 54 37</string>
+                <string>201 207 56 37</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>277 270 43 43</string>
+                <string>309 261 43 43</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>276 101 54 37</string>
+                <string>303 137 54 37</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>103 307 54 37</string>
+                <string>90 263 54 37</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>99 227 59 33</string>
+                <string>89 209 59 33</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>84 104 91 33</string>
+                <string>72 138 91 33</string>
             </attr>
         </node>
         <edge to="n5" from="n5">
@@ -52,6 +58,11 @@
                 <string>prod:</string>
             </attr>
         </edge>
+        <edge to="n3" from="n4">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
         <edge to="n5" from="n4">
             <attr name="label">
                 <string>real:add</string>
@@ -60,11 +71,6 @@
         <edge to="n2" from="n4">
             <attr name="label">
                 <string>arg:1</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n4">
-            <attr name="label">
-                <string>arg:0</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
@@ -87,24 +93,24 @@
                 <string>price</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:Customer</string>
-            </attr>
-        </edge>
         <edge to="n1" from="n0">
             <attr name="label">
                 <string>del:orders</string>
             </attr>
         </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>del:tab</string>
-            </attr>
-        </edge>
         <edge to="n5" from="n0">
             <attr name="label">
                 <string>new:tab</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:Customer</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n0">
+            <attr name="label">
+                <string>del:tab</string>
             </attr>
         </edge>
     </graph>

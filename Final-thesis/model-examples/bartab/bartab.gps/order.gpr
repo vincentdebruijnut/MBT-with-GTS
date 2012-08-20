@@ -7,19 +7,27 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
         <node id="n2">
             <attr name="layout">
-                <string>63 239 75 37</string>
+                <string>280 118 75 37</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>70 169 59 33</string>
+                <string>187 120 59 33</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>54 32 91 33</string>
+                <string>43 119 91 33</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>63 59 45 37</string>
             </attr>
         </node>
         <edge to="n2" from="n2">
@@ -29,7 +37,7 @@
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>par:0</string>
+                <string>par:1</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -49,18 +57,22 @@
         </edge>
         <edge to="n0" from="n1">
             <attr name="label">
-                <string>not:orders</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 100 49 61 117 100 186 12</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n1">
-            <attr name="label">
                 <string>new:orders</string>
             </attr>
-            <attr name="layout">
-                <string>500 0 107 60 142 118 107 174 12</string>
+        </edge>
+        <edge to="n3" from="n1">
+            <attr name="label">
+                <string>id</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>int:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>par:0</string>
             </attr>
         </edge>
     </graph>

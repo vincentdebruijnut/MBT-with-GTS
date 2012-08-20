@@ -10,29 +10,14 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n2">
             <attr name="layout">
-                <string>238 296 75 33</string>
+                <string>237 252 49 33</string>
             </attr>
         </node>
-        <node id="n4">
+        <node id="n7">
             <attr name="layout">
-                <string>366 231 51 33</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>239 213 44 33</string>
-            </attr>
-        </node>
-        <node id="n6">
-            <attr name="layout">
-                <string>108 179 40 33</string>
-            </attr>
-        </node>
-        <node id="n5">
-            <attr name="layout">
-                <string>365 177 49 33</string>
+                <string>105 225 51 50</string>
             </attr>
         </node>
         <node id="n0">
@@ -40,91 +25,21 @@
                 <string>241 175 63 33</string>
             </attr>
         </node>
-        <node id="n7">
+        <node id="n1">
             <attr name="layout">
-                <string>105 226 51 48</string>
+                <string>239 213 44 33</string>
             </attr>
         </node>
-        <node id="n2">
+        <node id="n4">
             <attr name="layout">
-                <string>237 252 49 33</string>
+                <string>366 222 51 50</string>
             </attr>
         </node>
-        <edge to="n4" from="n3">
-            <attr name="label">
-                <string>del:at</string>
+        <node id="n3">
+            <attr name="layout">
+                <string>238 296 75 33</string>
             </attr>
-        </edge>
-        <edge to="n7" from="n3">
-            <attr name="label">
-                <string>new:at</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>cabbage</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n4">
-            <attr name="label">
-                <string>side</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>bank</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n1">
-            <attr name="label">
-                <string>new:at</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>wolf</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n1">
-            <attr name="label">
-                <string>del:at</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n6">
-            <attr name="label">
-                <string>left</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>right</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n0">
-            <attr name="label">
-                <string>new:at</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>farmer</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n0">
-            <attr name="label">
-                <string>del:at</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n7">
-            <attr name="label">
-                <string>bank</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n7">
-            <attr name="label">
-                <string>side</string>
-            </attr>
-        </edge>
+        </node>
         <edge to="n2" from="n2">
             <attr name="label">
                 <string>goat</string>
@@ -138,6 +53,71 @@
         <edge to="n7" from="n2">
             <attr name="label">
                 <string>new:at</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n7">
+            <attr name="label">
+                <string>flag:left</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n7">
+            <attr name="label">
+                <string>bank</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>farmer</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n0">
+            <attr name="label">
+                <string>del:at</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n0">
+            <attr name="label">
+                <string>new:at</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>wolf</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n1">
+            <attr name="label">
+                <string>new:at</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n1">
+            <attr name="label">
+                <string>del:at</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>flag:right</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>bank</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>cabbage</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n3">
+            <attr name="label">
+                <string>new:at</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n3">
+            <attr name="label">
+                <string>del:at</string>
             </attr>
         </edge>
     </graph>

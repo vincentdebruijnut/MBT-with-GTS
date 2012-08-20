@@ -68,12 +68,17 @@
 \contentsline {subsection}{\numberline {6.2.5}Extendability}{31}{subsection.6.2.5}
 \contentsline {section}{\numberline {6.3}Example 3: restaurant reservations}{31}{section.6.3}
 \contentsline {section}{\numberline {6.4}Example 4: bar tab system}{31}{section.6.4}
-\contentsline {section}{\numberline {6.5}Example 5: communication protocol}{31}{section.6.5}
-\contentsline {chapter}{\numberline {7}Case Study}{34}{chapter.7}
-\contentsline {section}{\numberline {7.1}Scanflow Cash Register Protocol}{34}{section.7.1}
-\contentsline {section}{\numberline {7.2}Measurements}{34}{section.7.2}
-\contentsline {chapter}{\numberline {8}Conclusion}{35}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{35}{section.8.1}
-\contentsline {section}{\numberline {8.2}Conclusion}{35}{section.8.2}
-\contentsline {section}{\numberline {8.3}Future work}{35}{section.8.3}
-\contentsline {chapter}{List of Symbols}{38}{chapter*.29}
+\contentsline {subsection}{\numberline {6.4.1}Simulation}{31}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Performance}{31}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Model redundancy}{31}{subsection.6.4.3}
+\contentsline {subsection}{\numberline {6.4.4}Model complexity}{31}{subsection.6.4.4}
+\contentsline {subsection}{\numberline {6.4.5}Extendability}{31}{subsection.6.4.5}
+\contentsline {section}{\numberline {6.5}Conclusions}{31}{section.6.5}
+\contentsline {chapter}{\numberline {7}Case Study}{35}{chapter.7}
+\contentsline {section}{\numberline {7.1}Scanflow Cash Register Protocol}{35}{section.7.1}
+\contentsline {section}{\numberline {7.2}Measurements}{35}{section.7.2}
+\contentsline {chapter}{\numberline {8}Conclusion}{36}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{36}{section.8.1}
+\contentsline {section}{\numberline {8.2}Conclusion}{36}{section.8.2}
+\contentsline {section}{\numberline {8.3}Future work}{36}{section.8.3}
+\contentsline {chapter}{List of Symbols}{40}{chapter*.33}

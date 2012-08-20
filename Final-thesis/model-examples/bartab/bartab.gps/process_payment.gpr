@@ -4,67 +4,158 @@
         <attr name="transitionLabel">
             <string>!process_payment</string>
         </attr>
+        <attr name="priority">
+            <string>1</string>
+        </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n0">
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n12">
             <attr name="layout">
-                <string>59 58 91 33</string>
+                <string>88 283 54 58</string>
             </attr>
         </node>
-        <node id="n1">
+        <node id="n11">
             <attr name="layout">
-                <string>250 56 54 37</string>
+                <string>324 295 54 37</string>
             </attr>
         </node>
-        <node id="n2">
+        <node id="n10">
             <attr name="layout">
-                <string>143 150 54 37</string>
+                <string>329 226 43 43</string>
             </attr>
         </node>
-        <node id="n3">
+        <node id="n9">
             <attr name="layout">
-                <string>18 153 54 37</string>
+                <string>218 291 43 43</string>
+            </attr>
+        </node>
+        <node id="n8">
+            <attr name="layout">
+                <string>214 163 54 37</string>
+            </attr>
+        </node>
+        <node id="n7">
+            <attr name="layout">
+                <string>219 230 43 43</string>
+            </attr>
+        </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>125 231 44 37</string>
             </attr>
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>215 211 43 43</string>
+                <string>330 160 43 43</string>
             </attr>
         </node>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:Customer</string>
+        <node id="n3">
+            <attr name="layout">
+                <string>98 164 56 37</string>
             </attr>
-        </edge>
-        <edge to="n1" from="n0">
-            <attr name="label">
-                <string>del:pays</string>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>219 109 54 37</string>
             </attr>
-        </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>del:tab</string>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>324 107 54 37</string>
             </attr>
-        </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>new:tab</string>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>80 57 91 33</string>
             </attr>
-        </edge>
-        <edge to="n1" from="n1">
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>306 58 85 33</string>
+            </attr>
+        </node>
+        <edge to="n12" from="n12">
             <attr name="label">
                 <string>real:</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n12" from="n12">
+            <attr name="label">
+                <string>par:1</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n11">
             <attr name="label">
                 <string>real:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n10" from="n10">
+            <attr name="label">
+                <string>prod:</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n10">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n10">
+            <attr name="label">
+                <string>real:neg</string>
+            </attr>
+        </edge>
+        <edge to="n9" from="n9">
+            <attr name="label">
+                <string>prod:</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n9">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n9">
+            <attr name="label">
+                <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge to="n12" from="n9">
+            <attr name="label">
+                <string>real:max</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n8">
             <attr name="label">
                 <string>real:</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n7">
+            <attr name="label">
+                <string>prod:</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n7">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n7">
+            <attr name="label">
+                <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n7">
+            <attr name="label">
+                <string>real:max</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n6">
+            <attr name="label">
+                <string>real:0.0</string>
             </attr>
         </edge>
         <edge to="n4" from="n4">
@@ -72,7 +163,7 @@
                 <string>prod:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n4">
+        <edge to="n8" from="n4">
             <attr name="label">
                 <string>real:sub</string>
             </attr>
@@ -85,6 +176,56 @@
         <edge to="n1" from="n4">
             <attr name="label">
                 <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>par:0</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:Customer</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n0">
+            <attr name="label">
+                <string>del:pays</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n0">
+            <attr name="label">
+                <string>new:tab</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>del:tab</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n5">
+            <attr name="label">
+                <string>type:Payment</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n5">
+            <attr name="label">
+                <string>amount</string>
             </attr>
         </edge>
     </graph>

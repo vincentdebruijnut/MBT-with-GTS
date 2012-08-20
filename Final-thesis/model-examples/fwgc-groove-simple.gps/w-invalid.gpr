@@ -10,9 +10,24 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
+        <node id="n5">
             <attr name="layout">
-                <string>78 80 31 31</string>
+                <string>102 206 107 33</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>165 74 63 33</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>167 138 44 33</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>70 75 51 33</string>
             </attr>
         </node>
         <node id="n0">
@@ -20,59 +35,14 @@
                 <string>70 140 51 33</string>
             </attr>
         </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>181 78 51 33</string>
-            </attr>
-        </node>
-        <node id="n4">
-            <attr name="layout">
-                <string>186 140 44 33</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>180 25 63 33</string>
-            </attr>
-        </node>
-        <node id="n5">
-            <attr name="layout">
-                <string>102 206 107 33</string>
-            </attr>
-        </node>
-        <edge to="n2" from="n2">
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string></string>
+                <string>new:</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n5" from="n5">
             <attr name="label">
-                <string>bank</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>side</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>bank</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>not:side</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>wolf</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n4">
-            <attr name="label">
-                <string>at</string>
+                <string>type:InvalidMove</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
@@ -85,14 +55,29 @@
                 <string>at</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>new:</string>
+                <string>wolf</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge to="n0" from="n4">
             <attr name="label">
-                <string>type:InvalidMove</string>
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>bank</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n1">
+            <attr name="label">
+                <string>!=</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>bank</string>
             </attr>
         </edge>
     </graph>

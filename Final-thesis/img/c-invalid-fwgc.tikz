@@ -5,17 +5,15 @@
 \begin{tikzpicture}[
 % Special color styles
 scale=\tikzscale]
-\node[node] (n2)  at (0.960, -1.140){};
-\node[node] (n0)  at (0.975, -1.980) {\ml{bank}};
-\node[node] (n1)  at (2.085, -1.130) {\ml{bank}};
-\node[node] (n4)  at (2.060, -1.950) {\ml{cabbage}};
-\node[node] (n3)  at (2.125, -0.470) {\ml{farmer}};
-\node[newnode] (n5)  at (1.580, -2.670) {\ml{\textbf{InvalidMove}}};
-\path[edge](n0.north -| 0.960, -1.140) -- node[lab]{side} (n2) ;
-\path[nacedge](n1.west |- 0.960, -1.140) -- node[naclab]{side} (n2) ;
-\path[edge](n4.west |- 0.975, -1.980) -- node[lab]{at} (n0) ;
-\path[edge](n3.south -| 2.085, -1.130) --  (n1) ;
-\node[lab] at (2.105, -0.806){at};
+\node[newnode] (n5)  at (3.315, -1.515) {\ml{\textbf{InvalidMove}}};
+\node[node] (n3)  at (1.025, -1.005) {\ml{farmer}};
+\node[node] (n4)  at (2.085, -1.025) {\ml{cabbage}};
+\node[node] (n1)  at (1.015, -1.525) {\ml{bank}};
+\node[node] (n0)  at (2.065, -1.515) {\ml{bank}};
+\path[edge](n3.south -| 1.015, -1.525) --  (n1) ;
+\node[lab] at (1.020, -1.270){at};
+\path[edge](n4.south -| 2.065, -1.515) -- node[lab]{at} (n0) ;
+\path[edge, -](n1.east |- 2.065, -1.515) -- node[lab]{\textit{!=}} (n0) ;
 \userdefinedmacro
 \end{tikzpicture}
 \renewcommand{\userdefinedmacro}{\relax}

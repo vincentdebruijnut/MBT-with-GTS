@@ -5,18 +5,16 @@
 \begin{tikzpicture}[
 % Special color styles
 scale=\tikzscale]
-\node[node] (n4)  at (2.460, -2.370) {\ml{cabbage}};
-\node[node] (n3)  at (1.775, -1.670) {\ml{farmer}};
-\node[node] (n0)  at (0.945, -2.370) {\ml{bank}};
-\node[node] (n1)  at (2.495, -1.020) {\ml{bank}};
-\node[node] (n2)  at (0.970, -1.020){};
-\path[newedge] (n3)  --  (n1) ;
-\node[newlab] at (2.068, -1.303){at};
+\node[node] (n1)  at (2.495, -1.015) {\ml{bank}};
+\node[node] (n0)  at (0.945, -2.365) {\ml{bank}};
+\node[node] (n3)  at (1.985, -1.975) {\ml{farmer}};
+\node[node] (n4)  at (2.455, -2.365) {\ml{cabbage}};
+\path[deledge](n4.west |- 0.945, -2.365) -- node[dellab]{at} (n0) ;
 \path[deledge] (n3)  -- node[dellab]{at} (n0) ;
-\path[nacedge](n1.west |- 0.970, -1.020) -- node[naclab]{side} (n2) ;
-\path[edge](n0.north -| 0.970, -1.020) -- node[lab]{side} (n2) ;
-\path[deledge](n4.west |- 0.945, -2.370) -- node[dellab]{at} (n0) ;
-\path[newedge](n4.north -| 2.495, -1.020) -- node[newlab]{at} (n1) ;
+\path[newedge] (n3)  --  (n1) ;
+\node[newlab] at (2.063, -1.303){at};
+\path[newedge](n4.north -| 2.495, -1.015) -- node[newlab]{at} (n1) ;
+\path[edge, -] (n0)  -- node[lab]{\textit{!=}} (n1) ;
 \userdefinedmacro
 \end{tikzpicture}
 \renewcommand{\userdefinedmacro}{\relax}

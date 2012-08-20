@@ -7,6 +7,19 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n4">
+            <attr name="layout">
+                <string>292 179 54 37</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>224 103 85 33</string>
+            </attr>
+        </node>
         <node id="n2">
             <attr name="layout">
                 <string>75 181 45 37</string>
@@ -19,9 +32,29 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>257 102 62 37</string>
+                <string>176 181 56 37</string>
             </attr>
         </node>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>type:Payment</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n3">
+            <attr name="label">
+                <string>new:amount</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n3">
+            <attr name="label">
+                <string>del:amount</string>
+            </attr>
+        </edge>
         <edge to="n2" from="n2">
             <attr name="label">
                 <string>int:</string>
@@ -37,22 +70,14 @@
                 <string>type:Customer</string>
             </attr>
         </edge>
-        <edge to="n1" from="n0">
-            <attr name="label">
-                <string>new:pays</string>
-            </attr>
-        </edge>
         <edge to="n2" from="n0">
             <attr name="label">
                 <string>id</string>
             </attr>
         </edge>
-        <edge to="n1" from="n0">
+        <edge to="n3" from="n0">
             <attr name="label">
-                <string>not:pays</string>
-            </attr>
-            <attr name="layout">
-                <string>500 0 103 122 195 171 288 121 12</string>
+                <string>new:pays</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -62,7 +87,7 @@
         </edge>
         <edge to="n1" from="n1">
             <attr name="label">
-                <string>parin:1</string>
+                <string>par:1</string>
             </attr>
         </edge>
     </graph>

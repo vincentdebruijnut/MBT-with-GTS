@@ -1,0 +1,37 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n12)  at (1.150, -3.120) {\ml{\textbf{real}}};
+\node[parnode] (n12p)  at (n12.north west) {1};
+\node[node, attr] (n11)  at (3.510, -3.135) {\ml{\textbf{real}}};
+\node[node, prod] (n10)  at (3.505, -2.475){};
+\node[node, prod] (n9)  at (2.395, -3.125) {\ml{$\pi$0 = 0.0}};
+\node[node, attr] (n8)  at (2.410, -1.815) {\ml{\textbf{real}}};
+\node[node, prod] (n7)  at (2.405, -2.515) {\ml{$\pi$0 = 0.0}};
+\node[node, prod] (n4)  at (3.515, -1.815){};
+\node[node, attr] (n3)  at (1.260, -1.825) {\ml{\textbf{real}}};
+\node[parnode] (n3p)  at (n3.north west) {0};
+\node[node, attr] (n2)  at (2.460, -1.275) {\ml{\textbf{real}}};
+\node[node, attr] (n1)  at (3.510, -1.255) {\ml{\textbf{real}}};
+\node[node] (n0)  at (1.255, -0.735) {\ml{\textbf{Customer}}};
+\node[node] (n5)  at (3.485, -0.745) {\ml{\textbf{Payment}}};
+\path[edge] (n9)  -- node[lab]{$\pi$1} (n11) ;
+\path[edge] (n4)  -- node[lab]{$\pi$1} (n1) ;
+\path[edge](n5.south -| 3.510, -1.255) -- node[lab]{amount} (n1) ;
+\path[edge] (n7)  -- node[lab]{max} (n3) ;
+\path[edge] (n9)  -- node[lab]{max} (n12) ;
+\path[edge] (n10)  -- node[lab]{neg} (n11) ;
+\path[edge] (n7)  -- node[lab]{$\pi$1} (n8) ;
+\path[edge] (n10)  -- node[lab]{$\pi$0} (n8) ;
+\path[edge] (n4)  -- node[lab]{$\pi$0} (n2) ;
+\path[deledge] (n0)  -- node[dellab]{tab} (n2) ;
+\path[newedge](n0.south -| 1.260, -1.825) -- node[newlab]{tab} (n3) ;
+\path[edge] (n4)  -- node[lab]{sub} (n8) ;
+\path[deledge](n0.east |- 3.485, -0.745) -- node[dellab]{pays} (n5) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

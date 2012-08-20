@@ -5,7 +5,7 @@
 \begin{tikzpicture}[
 % Special color styles
 scale=\tikzscale]
-\node[delnode] (n0)  at (1.160, -0.910) {\ml{\textbf{InvalidMove}}};
+\node[delnode] (n0)  at (1.155, -0.905) {\ml{\textbf{InvalidMove}}};
 \userdefinedmacro
 \end{tikzpicture}
 \renewcommand{\userdefinedmacro}{\relax}
