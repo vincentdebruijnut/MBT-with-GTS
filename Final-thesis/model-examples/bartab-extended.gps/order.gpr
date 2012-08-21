@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
+    <graph edgemode="directed" edgeids="false" role="rule" id="order">
+        <attr name="transitionLabel">
+            <string>?order</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n2">
+            <attr name="layout">
+                <string>280 118 75 37</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>187 120 59 33</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>43 119 91 33</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>63 59 45 37</string>
+            </attr>
+        </node>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>string:</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>par:1</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>name</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:Drink</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n1">
+            <attr name="label">
+                <string>id</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n1">
+            <attr name="label">
+                <string>type:Customer</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n1">
+            <attr name="label">
+                <string>new:orders</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>int:</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n3">
+            <attr name="label">
+                <string>par:0</string>
+            </attr>
+        </edge>
+    </graph>
+</gxl>

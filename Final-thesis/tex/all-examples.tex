@@ -1,12 +1,11 @@
 \section{Example 1: boardgame}
-The STS and GG for for the boardgame example are given in Figures~\ref{fig:example_sts} and \ref{fig:example_groove} respectively. 
+The boardgame is the running example of which the IOSTS and IOGG are given in Figures~\ref{fig:example_sts} and \ref{fig:example_groove} respectively.
 
-\subsection{Simulation}
+\subsection{Simulation and redundancy}
+The responses used by the IOSTS and by the IOGG are different. Both models, used as examples to clarify the IOSTS and IOGG formalisms, were built with a different behaviour in mind. Both allow a die to be thrown, after which the IOSTS directly moves the player to the correct location and passes the turn and the IOGG moves the player by a series of responses ended with a $!nextTurn$. IOSTS has 9 locations, 12 switches and 3 location variables.
 
 \subsection{Performance}
-473 MB 415 ms
-
-\subsection{Model redundancy}
+The IOSTS is generated in a runtime of 300 ms using a heap-size of 1.9 MB.
 
 \subsection{Model complexity}
 start:
@@ -35,7 +34,7 @@ throws:
 
 $n_1 = 9, n_2 = 18, N_1 = 24, N_2 = 103$ Volume is 127*4.75 = 603.25
 
-STS:
+IOSTS:
 22 distinct operands
 5 distinct operators
 62 operands
@@ -45,7 +44,7 @@ $n_1 = 5, n_2 = 22, N_1 = 25, N_2 = 62$ Volume is 87*4.75 = 413.25
 
 
 \subsection{Extendability}
-The boardgame is extended to include more players and locations. For the GG, this means adding new locations and players to the initial graph. The players get a fixed order in which they play. This means that the next turn rule also has to be extended. The result is in Figure~\ref{fig:gg-bg-extended}. This extension reduces the distinct number of operators by 1 and introduces no new operands. The number of operator occurences has decreased by 1 and the number of operand occurences has grown by 10.
+The boardgame is extended to include more players and locations. For the IOGG, this means adding new locations and players to the initial graph. The players get a fixed order in which they play. This means that the next turn rule also has to be extended. The result is in Figure~\ref{fig:gg-bg-extended}. This extension reduces the distinct number of operators by 1 and introduces no new operands. The number of operator occurences has decreased by 1 and the number of operand occurences has grown by 10.
 
 \begin{figure}[ht]
   \begin{center}
@@ -56,14 +55,14 @@ The boardgame is extended to include more players and locations. For the GG, thi
   \label{fig:gg-bg-extended}
 \end{figure}
 
-The STS gains a variable and a switch relation for the new player. The result is in Figure~\ref{fig:sts-bg-extended}. The distinct number of operators has not increased and the distinct number of operands has increased by 1. The number of operator occurences has increased by 9 and the number of operand occurences has increased by 17.
+The IOSTS gains a variable and a switch relation for the new player. The result is in Figure~\ref{fig:sts-bg-extended}. The distinct number of operators has not increased and the distinct number of operands has increased by 1. The number of operator occurences has increased by 9 and the number of operand occurences has increased by 17.
 
-The volume of the GG has increased by 35.95. $n_1 = 8, n_2 = 18, N_1 = 23, N_2 = 113$ Volume is 136*4.70 = 639.20
-The volume of the STS has increased by 130.28. $n_1 = 5, n_2 = 23, N_1 = 34, N_2 = 79$ Volume is 113*4.81 = 543.53
+The volume of the IOGG has increased by 35.95. $n_1 = 8, n_2 = 18, N_1 = 23, N_2 = 113$ Volume is 136*4.70 = 639.20
+The volume of the IOSTS has increased by 130.28. $n_1 = 5, n_2 = 23, N_1 = 34, N_2 = 79$ Volume is 113*4.81 = 543.53
 
 
 \section{Example 2: farmer-wolf-goat-cabbage}
-In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one object to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The GG of this puzzle is in Figure~\ref{fig:gg-fwgc}. Here the 'move' and 'invalid' rules are similar, therefore only the 'move cabbage' rule is shown. The response rules '!retry', '!eaten' and '!done' have a higher priority. This ensures that a proper response is given after a move, before allowing more stimuli. The STS of this puzzle is in Figure~\ref{fig:sts-fwgc}.
+In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one object to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The IOGG of this puzzle is in Figure~\ref{fig:gg-fwgc}. Here the 'move' and 'invalid' rules are similar, therefore only the 'move cabbage' rule is shown. The response rules '!retry', '!eaten' and '!done' have a higher priority. This ensures that a proper response is given after a move, before allowing more stimuli. The IOSTS of this puzzle is in Figure~\ref{fig:sts-fwgc}.
 
 \begin{figure}[ht]
   \begin{center}
@@ -82,18 +81,15 @@ In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The
   \begin{center}
     \input{./img/sts_fwgc.tex}
   \end{center}
-  \caption{The STS of the farmer-wolf-goat-cabbage puzzle}
+  \caption{The IOSTS of the farmer-wolf-goat-cabbage puzzle}
   \label{fig:sts-fwgc}
 \end{figure}
 
-\subsection{Simulation}
-
+\subsection{Simulation and redundancy}
+Both the generated IOSTS and the IOSTS built by hand allow all inputs and give the appropriate responses when necessary. This shows that both IOSTSs simulate each other. The generated IOSTS has 50 switch relations and 0 location variables. The IOSTS built by hand has 11 switch relations and 4 location variables. The IOGG does not use variables to track the location of each item. Therefore the generated IOSTS has a location per state of the puzzle. 
 
 \subsection{Performance}
-1 MB 917 ms
-
-\subsection{Model redundancy}
-
+The IOSTS is generated in a runtime of 770 ms using a heap-size of 5.2 MB.
 
 \subsection{Model complexity}
 
@@ -111,7 +107,7 @@ In another variant of this puzzle, when one of the objects is eaten, the puzzle 
 \end{figure}
 
 \section{Example 3: restaurant reservations}
-Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a restaurant and two potential customers. Figure~\ref{fig:make-reservation} shows part of a rule that allows people to make reservations. The start and end times are timestamps represented by integers. This rule allows people to make multiple reservations. However, this rule violates the constraint in section~\ref{sec:constraint-1}, because the reservation objects are not unique. Allowing a dynamic amount of reservations per person means that variables need to be introduced dynamically as well or more complex variables have to be used, such as arrays. To model this system using an STS, arrays are also needed.
+Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a restaurant and two potential customers. Figure~\ref{fig:make-reservation} shows part of a rule that allows people to make reservations. The start and end times are timestamps represented by integers. This rule allows people to make multiple reservations. However, this rule violates the constraint in section~\ref{sec:constraint-1}, because the reservation objects are not unique. Allowing a dynamic amount of reservations per person means that variables need to be introduced dynamically as well or more complex variables have to be used, such as arrays. To model this system using an IOSTS, arrays are also needed.
 
 \begin{figure}[ht]
   \begin{center}
@@ -120,19 +116,21 @@ Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a 
   \end{center}
   \caption{The graph grammar of the restaurant reservation system}
   \label{fig:gg-reservation}
-\end{figure} 
+\end{figure}
 
 
 \section{Example 4: bar tab system}
-This example models a bar tab system, where customers can order beer, wine and soda. The price of the order adds to tab. Customers can pay their tab with money; they receive cash back if the payment exceeds the tab. Figure~\ref{fig:gg-bartab} shows the GG of the bar tab system. The '!process\_order' and '!process\_payment' rule have a higher priority than the '?order' and '?pay' rule. 
+This example models a bar tab system, where customers can order beer, wine and soda. The price of the order adds to tab. Customers can pay their tab with money; they receive cash back if the payment exceeds the tab. The model is abstracted to include three customers. Furthermore, a customer can order only one drink. Drinks and payments are processed immediately before other drinks or payments can occur. The stimuli accepted by the system are $?o(i,d), ?p(i,p)$ for ordering a drink $d$ on bar tab $i$ and paying amount $p$ on bar tab $i$ respectively. The responses by the system are $!po(b), !pp(b,r)$ for processing an order giving the new bar tab balance $b$ and processing a payment giving the new account balance $b$ and the return funds $r$ respectively.
+
+Figure~\ref{fig:gg-bartab} shows the IOGG of the bar tab system. The '!process\_order' and '!process\_payment' rule have a higher priority than the '?order' and '?pay' rule. Figure~\ref{fig:sts-bartab} shows the IOSTS of the bar tab system. The IOSTS uses the variables $T_1, T_2, T_3$ to keep track of the bar tabs of the three people. It uses the variables $I, P$ as temporary variables for the id and payment/price respectively. The function $m$ takes the maximum value of its parameters.
 
 \begin{figure}[ht]
   \begin{center}
     \subfloat[The initial graph]{\label{fig:start-tab}\input{./img/start-tab.tikz}}\\
-    \subfloat[The ?order rule with priority 0]{\label{fig:order-tab}\input{./img/order-tab.tikz}}\hspace{20px}
-    \subfloat[The !process\_order rule with priority 1]{\label{fig:process_order}\input{./img/process_order.tikz}}\\
-    \subfloat[The ?pay rule with priority 0]{\label{fig:pay-tab}\input{./img/pay-tab.tikz}}\hspace{20px}
-    \subfloat[The !process\_payment rule with priority 1]{\label{fig:process_payment}\input{./img/process_payment.tikz}}
+    \subfloat[The ?o rule with priority 0]{\label{fig:order-tab}\input{./img/order-tab.tikz}}\hspace{20px}
+    \subfloat[The !po rule with priority 1]{\label{fig:process_order}\input{./img/process_order.tikz}}\\
+    \subfloat[The ?p rule with priority 0]{\label{fig:pay-tab}\input{./img/pay-tab.tikz}}\hspace{20px}
+    \subfloat[The !pp rule with priority 1]{\label{fig:process_payment}\input{./img/process_payment.tikz}}
   \end{center}
   \caption{The graph grammar of the bar tab system}
   \label{fig:gg-bartab}
@@ -140,26 +138,23 @@ This example models a bar tab system, where customers can order beer, wine and s
 
 \begin{figure}[ht]
   \begin{center}
-    %\input{./img/sts_tab.tex}
+    \input{./img/sts_tab.tex}
   \end{center}
-  \caption{The STS of the bar tab system}
+  \caption{The IOSTS of the bar tab system}
   \label{fig:sts-bartab}
 \end{figure}
 
-\subsection{Simulation}
-
+\subsection{Simulation and redundancy}
+IOSTS has 14 locations, 14 switches and 13 location variables
 
 \subsection{Performance}
-
-
-\subsection{Model redundancy}
-
+The IOSTS is generated in a runtime of 250 ms using a heap-size of 2.1 MB.
 
 \subsection{Model complexity}
 
 
 \subsection{Extendability}
-
+The system is extended to allow ordering multiple drinks of different types.
 
 \begin{comment}
 \section{Example 5: communication protocol}
@@ -168,3 +163,6 @@ This example models a bar tab system, where customers can order beer, wine and s
 
 \section{Conclusions}
 Need more complex data structures. And it is possible!
+runtime and heap-size: negligible.
+fwgc: 50 locations doable, no need to look at the generated STS. 11 switches and 4 variables easier visualized than 50 switches. Is this true?
+bartab: more logical placement of concerns. tab is increased and deducted at the process rules, sts sets price of drink during ordering. IOGG uses OO by grouping names and prices and tabs and amounts.

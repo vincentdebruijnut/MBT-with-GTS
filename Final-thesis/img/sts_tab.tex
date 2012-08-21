@@ -1,3 +1,4 @@
 $\xymatrix{
-   \fbox{$l_0$} \ar@(ld,lu)[]^{?c\:|\:N=C\:|\:N:=(N+1)\%2;C:=(C+1)\%2} \ar@(dl,dr)[]_{!eaten\:|\:N!=G\land G=C\lor N!=W\land W=G\:|\:N:=0;W:=0;G:=0;C:=0} \ar@(ur,ul)[]_{!done\:|\:N=1\land W=1\land G=1\land C=1\:|\:N:=0;W:=0;G:=0;C:=0} \ar@/^/[rrrr]^{?c\:|\:N!=G\:|} &&&& \fbox{$l_1$} \ar@/^/[llll]^{!retry\:|\:true\:|}
+   \fbox{$l_0$} \ar[rrrrrrrrrr]|{?p(i, p)\:|\:1<=i\land i<=3\:|\:I:=i; P:=p} \ar@/_3pc/[ddrrrrrrrrrr]|{?o(i,o)\:|\:o="coke"\:|\:I:=i; P:=0.8} \ar@/_5pc/[ddrrrrrrrrrr]|{?o(i,o)\:|\:o="beer"\:|\:I:=i; P:=1.5} \ar@/_7pc/[ddrrrrrrrrrr]|{?o(i,o)\:|\:o="wine"\:|\:I:=i; P:=2.1} &&&&&&&&&& \fbox{$l_2$} \ar@/_1.5pc/[llllllllll]|{!pp(b, r)\:|\:I=1\land b=m(T_1-P,0)\land r=m(\scalebox{0.75}[1.0]{-}T_1+P,0)\:|\:T_1:=b} \ar@/_3pc/[llllllllll]|{!pp(b, r)\:|\:I=2\land b=m(T_2-P,0)\land r=m(\scalebox{0.75}[1.0]{-}T_2+P,0)\:|\:T_2:=b} \ar@/_5.2pc/[llllllllll]|{!pp(b, r)\:|\:I=3\land b=m(T_1-P,0)\land r=m(\scalebox{0.75}[1.0]{-}T_3+P,0)\:|\:T_3:=b} \\ \\
+   &&&&&&&&&& \fbox{$l_1$} \ar@/^1.5pc/[uullllllllll]|{!po(b)\:|\:I=1\:|\:T_1:=T_1+P} \ar[uullllllllll]|{!po(b)\:|\:I=2\:|\:T_2:=T_2+P} \ar@/_1.5pc/[uullllllllll]|{!po(b)\:|\:I=3\:|\:T_3:=T_3+P} 
 }$

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  20 AUG 2012 20:00
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  21 AUG 2012 19:17
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -869,11 +869,11 @@ lowcharts, entity-relationship
 [4]) [5]
 Chapter 2.
 (./tex/background-introduction.tex) (./tex/model-based-testing.tex
-<./img/model-based-testing.pdf, id=520, 379.58545pt x 141.73691pt>
+<./img/model-based-testing.pdf, id=500, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-<./img/mbt-on-the-fly.pdf, id=524, 357.48773pt x 141.7426pt>
+<./img/mbt-on-the-fly.pdf, id=504, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
 <use ./img/mbt-on-the-fly.pdf> [6
@@ -894,11 +894,11 @@ File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 <xymatrix 2x1 181>) (./img/gg_graph.tex <xymatrix 2x1 181>) (./img/gg_rhs.tex
 <xymatrix 2x1 181>) (./img/gg_result.tex <xymatrix 2x1 181>)) [13])
 (./tex/tooling.tex [14]
-<./img/axini_tool.pdf, id=677, 356.92177pt x 145.93393pt>
+<./img/axini_tool.pdf, id=657, 356.92177pt x 145.93393pt>
 File: ./img/axini_tool.pdf Graphic file (type pdf)
 
 <use ./img/axini_tool.pdf> [15 <./img/axini_tool.pdf>]
-<./img/groove_tool.pdf, id=703, 374.51399pt x 161.01265pt>
+<./img/groove_tool.pdf, id=683, 374.51399pt x 161.01265pt>
 File: ./img/groove_tool.pdf Graphic file (type pdf)
 
 <use ./img/groove_tool.pdf> (./img/start.tikz) (./img/throws.tikz)
@@ -914,16 +914,16 @@ Chapter 3.
 (./img/item_example_c4_rhs.tex <xymatrix 2x3 67>)) [22]
 Chapter 4.
 (./tex/implementation.tex
-<./img/tooling.pdf, id=801, 599.89655pt x 245.85509pt>
+<./img/tooling.pdf, id=781, 599.89655pt x 245.85509pt>
 File: ./img/tooling.pdf Graphic file (type pdf)
  <use ./img/tooling.pdf>
 [23
 
  <./img/tooling.pdf>]
-<./img/strategy.pdf, id=836, 202.07094pt x 136.22896pt>
+<./img/strategy.pdf, id=816, 202.07094pt x 136.22896pt>
 File: ./img/strategy.pdf Graphic file (type pdf)
 
-<use ./img/strategy.pdf> <./img/STS.pdf, id=839, 300.6472pt x 213.91919pt>
+<use ./img/strategy.pdf> <./img/STS.pdf, id=819, 300.6472pt x 213.91919pt>
 File: ./img/STS.pdf Graphic file (type pdf)
 
 <use ./img/STS.pdf> [24 <./img/strategy.pdf> <./img/STS.pdf>]
@@ -931,57 +931,52 @@ File: ./img/STS.pdf Graphic file (type pdf)
 <xymatrix 2x2 230>) (./img/priority_rhs1.tex <xymatrix 2x2 230>)
 (./img/priority_lhs2.tex <xymatrix 2x2 230>) (./img/priority_rhs2.tex
 <xymatrix 2x2 230>) (./img/priority_sts_wrong.tex <xymatrix 1x1 136>)
-(./img/priority_sts_right.tex <xymatrix 1x1 136>)) [25] [26]
+(./img/priority_sts_right.tex <xymatrix 1x1 136>)) [25]
 Chapter 5.
 (./tex/validation-introduction.tex) (./tex/model-examples.tex)
-(./tex/measurements.tex [27
+(./tex/measurements.tex [26
 
-]
-
-LaTeX Warning: Citation `Halstead:software-science' on page 28 undefined on inp
-ut line 18.
-
-) [28]
+]) [27]
 Chapter 6.
-(./tex/model-examples-introduction.tex) (./tex/all-examples.tex [29
+(./tex/model-examples-introduction.tex) (./tex/all-examples.tex [28
 
 ]
 (./img/start-bg-extended.tikz) (./img/nextTurn-bg-extended.tikz)
 
-LaTeX Warning: Reference `fig:sts-bg-extended' on page 30 undefined on input li
-ne 59.
+LaTeX Warning: Reference `fig:sts-bg-extended' on page 29 undefined on input li
+ne 58.
 
 (./img/start-fwgc.tikz) (./img/c-fwgc.tikz) (./img/c-invalid-fwgc.tikz)
 (./img/retry-fwgc.tikz) (./img/eaten-reinit-fwgc.tikz) (./img/done-fwgc.tikz)
-(./img/sts_fwgc.tex <xymatrix 5x1 313>) [30] (./img/c-fwgc-extended.tikz)
+(./img/sts_fwgc.tex <xymatrix 5x1 313>) [29] (./img/c-fwgc-extended.tikz)
 (./img/eaten-undo-fwgc.tikz) (./img/start-reservation.tikz)
 (./img/makeReservation.tikz) (./img/start-tab.tikz) (./img/order-tab.tikz)
-(./img/process_order.tikz) (./img/pay-tab.tikz) (./img/process_payment.tikz))
-[31] [32] [33] [34]
+(./img/process_order.tikz) (./img/pay-tab.tikz) (./img/process_payment.tikz)
+(./img/sts_tab.tex <xymatrix 11x3 560>) [30]) [31] [32] [33] [34] [35]
 Chapter 7.
 (./tex/case-study-introduction.tex) (./tex/scrp.tex
 
-LaTeX Warning: Reference `fig:' on page 35 undefined on input line 3.
+LaTeX Warning: Reference `fig:' on page 36 undefined on input line 3.
 
-) (./tex/scrp-measurements.tex) [35
+) (./tex/scrp-measurements.tex) [36
 
 ]
 Chapter 8.
 (./tex/summary.tex) (./tex/conclusion.tex) (./tex/future-work.tex)
-(./tex/acknowledgements.tex) [36
+(./tex/acknowledgements.tex) [37
 
-] (./report.bbl [37
+] (./report.bbl [38
 
-] [38]) [39] (./symbols.tex
+] [39]) [40] (./symbols.tex
 
-LaTeX Warning: Reference `symbol:Rules' on page 40 undefined on input line 10.
+LaTeX Warning: Reference `symbol:Rules' on page 41 undefined on input line 10.
 
 
-LaTeX Warning: Reference `symbol:Rules' on page 40 undefined on input line 27.
+LaTeX Warning: Reference `symbol:Rules' on page 41 undefined on input line 27.
 
-[40
+[41
 
-]) [41] (./report.aux)
+]) [42] (./report.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -990,10 +985,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20470 strings out of 495061
- 359574 string characters out of 1182622
- 962137 words of memory out of 3000000
- 22727 multiletter control sequences out of 15000+50000
+ 20474 strings out of 495061
+ 359556 string characters out of 1182622
+ 1434488 words of memory out of 3000000
+ 22731 multiletter control sequences out of 15000+50000
  30003 words of font info for 75 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,24n,72p,1581b,1568s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1036,9 +1031,9 @@ m10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam7.pfb
 /share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texmf-te
 xlive/fonts/type1/public/xypic/xybtip10.pfb></usr/share/texmf-texlive/fonts/typ
 e1/public/xypic/xydash10.pfb>
-Output written on report.pdf (43 pages, 843297 bytes).
+Output written on report.pdf (44 pages, 898616 bytes).
 PDF statistics:
- 1821 PDF objects out of 2073 (max. 8388607)
- 258 named destinations out of 1000 (max. 500000)
- 720 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1813 PDF objects out of 2073 (max. 8388607)
+ 255 named destinations out of 1000 (max. 500000)
+ 688 words of extra memory for PDF output out of 10000 (max. 10000000)
 
