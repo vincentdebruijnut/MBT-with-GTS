@@ -10,6 +10,21 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
+        <node id="n7">
+            <attr name="layout">
+                <string>166 321 52 37</string>
+            </attr>
+        </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>90 319 43 43</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>27 258 73 37</string>
+            </attr>
+        </node>
         <node id="n9">
             <attr name="layout">
                 <string>113 256 107 37</string>
@@ -47,9 +62,39 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>45 176 79 33</string>
+                <string>24 175 79 33</string>
             </attr>
         </node>
+        <edge to="n7" from="n7">
+            <attr name="label">
+                <string>bool:false</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n6">
+            <attr name="label">
+                <string>prod:</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n6">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge to="n9" from="n6">
+            <attr name="label">
+                <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n6">
+            <attr name="label">
+                <string>string:eq</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>string:</string>
+            </attr>
+        </edge>
         <edge to="n9" from="n9">
             <attr name="label">
                 <string>string:&quot;AS_OPEN&quot;</string>
@@ -70,17 +115,17 @@
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
         <edge to="n5" from="n2">
             <attr name="label">
                 <string>state</string>
             </attr>
         </edge>
         <edge to="n1" from="n2">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n2">
             <attr name="label">
                 <string>has</string>
             </attr>
@@ -132,20 +177,15 @@
         </edge>
         <edge to="n1" from="n1">
             <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
                 <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n9" from="n1">
+        <edge to="n4" from="n1">
             <attr name="label">
                 <string>state</string>
             </attr>
             <attr name="layout">
-                <string>500 0 100 208 132 264 12</string>
+                <string>500 0 64 203 64 263 12</string>
             </attr>
         </edge>
     </graph>

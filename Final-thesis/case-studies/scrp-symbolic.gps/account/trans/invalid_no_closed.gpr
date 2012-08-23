@@ -50,19 +50,19 @@
                 <string>string:&quot;SS_ON&quot;</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
         <edge to="n3" from="n2">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:CR</string>
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n1">
+            <attr name="label">
+                <string>state</string>
             </attr>
         </edge>
         <edge to="n0" from="n1">
@@ -70,9 +70,9 @@
                 <string>has</string>
             </attr>
         </edge>
-        <edge to="n4" from="n1">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>state</string>
+                <string>type:CR</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -97,12 +97,12 @@
         </edge>
         <edge to="n3" from="n3">
             <attr name="label">
-                <string>type:Request</string>
+                <string>flag:trans</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
             <attr name="label">
-                <string>flag:trans</string>
+                <string>type:Request</string>
             </attr>
         </edge>
         <edge to="n1" from="n3">

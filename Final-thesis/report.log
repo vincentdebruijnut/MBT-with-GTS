@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  21 AUG 2012 19:17
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  23 AUG 2012 16:34
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -927,11 +927,19 @@ File: ./img/strategy.pdf Graphic file (type pdf)
 File: ./img/STS.pdf Graphic file (type pdf)
 
 <use ./img/STS.pdf> [24 <./img/strategy.pdf> <./img/STS.pdf>]
-(./img/priority_start.tex <xymatrix 2x1 181>) (./img/priority_lhs1.tex
-<xymatrix 2x2 230>) (./img/priority_rhs1.tex <xymatrix 2x2 230>)
-(./img/priority_lhs2.tex <xymatrix 2x2 230>) (./img/priority_rhs2.tex
-<xymatrix 2x2 230>) (./img/priority_sts_wrong.tex <xymatrix 1x1 136>)
-(./img/priority_sts_right.tex <xymatrix 1x1 136>)) [25]
+(./img/start-priority.tikz)
+Underfull \hbox (badness 2564) in paragraph at lines 63--63
+[]\T1/cmr/m/n/8 (a) |The
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--63
+\T1/cmr/m/n/8 ini-tial
+ []
+
+(./img/sub-priority.tikz) (./img/add-priority.tikz)
+(./img/priority_sts_wrong.tex <xymatrix 1x1 136>) (./img/priority_sts_right.tex
+<xymatrix 1x1 136>)) [25]
 Chapter 5.
 (./tex/validation-introduction.tex) (./tex/model-examples.tex)
 (./tex/measurements.tex [26
@@ -952,7 +960,7 @@ ne 58.
 (./img/eaten-undo-fwgc.tikz) (./img/start-reservation.tikz)
 (./img/makeReservation.tikz) (./img/start-tab.tikz) (./img/order-tab.tikz)
 (./img/process_order.tikz) (./img/pay-tab.tikz) (./img/process_payment.tikz)
-(./img/sts_tab.tex <xymatrix 11x3 560>) [30]) [31] [32] [33] [34] [35]
+(./img/sts_tab.tex <xymatrix 11x6 617>) [30]) [31] [32] [33] [34] [35]
 Chapter 7.
 (./tex/case-study-introduction.tex) (./tex/scrp.tex
 
@@ -985,10 +993,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20474 strings out of 495061
- 359556 string characters out of 1182622
- 1434488 words of memory out of 3000000
- 22731 multiletter control sequences out of 15000+50000
+ 20492 strings out of 495061
+ 359666 string characters out of 1182622
+ 1437077 words of memory out of 3000000
+ 22757 multiletter control sequences out of 15000+50000
  30003 words of font info for 75 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,24n,72p,1581b,1568s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1031,9 +1039,9 @@ m10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam7.pfb
 /share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texmf-te
 xlive/fonts/type1/public/xypic/xybtip10.pfb></usr/share/texmf-texlive/fonts/typ
 e1/public/xypic/xydash10.pfb>
-Output written on report.pdf (44 pages, 898616 bytes).
+Output written on report.pdf (44 pages, 895245 bytes).
 PDF statistics:
- 1813 PDF objects out of 2073 (max. 8388607)
- 255 named destinations out of 1000 (max. 500000)
+ 1810 PDF objects out of 2073 (max. 8388607)
+ 253 named destinations out of 1000 (max. 500000)
  688 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,7 +2,7 @@
 The boardgame is the running example of which the IOSTS and IOGG are given in Figures~\ref{fig:example_sts} and \ref{fig:example_groove} respectively.
 
 \subsection{Simulation and redundancy}
-The responses used by the IOSTS and by the IOGG are different. Both models, used as examples to clarify the IOSTS and IOGG formalisms, were built with a different behaviour in mind. Both allow a die to be thrown, after which the IOSTS directly moves the player to the correct location and passes the turn and the IOGG moves the player by a series of responses ended with a $!nextTurn$. IOSTS has 9 locations, 12 switches and 3 location variables.
+The responses used by the IOSTS and by the IOGG are different. Both models, used as examples to clarify the IOSTS and IOGG formalisms, were built with a different behavior in mind. Both allow a die to be thrown, after which the IOSTS directly moves the player to the correct location and passes the turn and the IOGG moves the player by a series of responses ended with a $!nextTurn$. Therefore, both IOSTSs do not simulate each other.
 
 \subsection{Performance}
 The IOSTS is generated in a runtime of 300 ms using a heap-size of 1.9 MB.
@@ -145,7 +145,7 @@ Figure~\ref{fig:gg-bartab} shows the IOGG of the bar tab system. The '!process\_
 \end{figure}
 
 \subsection{Simulation and redundancy}
-IOSTS has 14 locations, 14 switches and 13 location variables
+Both the generated IOSTS and the IOSTS built by hand correctly allow the ordering of drinks and payment of bar tabs. This shows that both IOSTSs simulate each other. The generated IOSTS has 24 switch relations and 13 location variables. The IOSTS built by hand has 10 switch relations and 5 location variables. This shows that the generated IOSTSs is redundant. The first IOSTS keeps the name and price of drinks as location variables, whereas the latter IOSTS hard-codes these into the guards and updates. The generated IOSTS builds a switch relation with gate $?o$ for each combination of customer and drink. It also builds a switch relation with gate $?p$ for each customer. The target locations of all these switch relations have one switch relation back to the initial location. Therefore, the number of switch relations is $3*3*2+3*1*2 = 24$.
 
 \subsection{Performance}
 The IOSTS is generated in a runtime of 250 ms using a heap-size of 2.1 MB.
@@ -154,7 +154,7 @@ The IOSTS is generated in a runtime of 250 ms using a heap-size of 2.1 MB.
 
 
 \subsection{Extendability}
-The system is extended to allow ordering multiple drinks of different types.
+The system is extended to allow ordering multiple drinks of different types. Also, a customer can purchase the option of receiving 10\% discount on all ordered drinks for 50 euros (added to the tab). The stimulus given is $?\mathit{d}$ and the response is $!pd(b)$ where $b$ is the new balance.
 
 \begin{comment}
 \section{Example 5: communication protocol}
@@ -164,5 +164,6 @@ The system is extended to allow ordering multiple drinks of different types.
 \section{Conclusions}
 Need more complex data structures. And it is possible!
 runtime and heap-size: negligible.
+boardgame: different approaches in formalisms if requirements are not set. Note that abstract stimuli/responses are translated into non-abstract stimuli by Test Execution module. A response notifying player x has moved to location y can be translated to a serie of abstract responses. Advantage: allows model to be more flexible, have better design. Disadvantage: less clear according to specification, also more work in translating abstract stimuli/responses.
 fwgc: 50 locations doable, no need to look at the generated STS. 11 switches and 4 variables easier visualized than 50 switches. Is this true?
 bartab: more logical placement of concerns. tab is increased and deducted at the process rules, sts sets price of drink during ordering. IOGG uses OO by grouping names and prices and tabs and amounts.

@@ -56,21 +56,19 @@ The ATM interface is one component in the Rails framework. It receives the STS r
 \section{Rule priority}
 This section covers a specific implementation issue of setting rule priorities in GROOVE.
 
-There can be several outgoing rule transitions from a graph. However, GROOVE can set different priority levels on rules. A rule transition with a higher priority rule is explored before rule transitions with lower priority rules. Consider the graph grammar in Figure~\ref{fig:priority_gg}. The 'add' rule produces a rule transition to a graph, where the 'sub' rule produces a rule transition back to the start graph. The 'sub' rule does not match the start graph, because it has a lower priority than the 'add' rule.
+There can be several outgoing rule transitions from a graph. In GROOVE, rules can have different priority levels. A rule transition with a higher priority rule is explored before rule transitions with lower priority rules. Consider the graph grammar in Figure~\ref{fig:priority_gg}. The 'add' rule produces a rule transition to a graph, where the $sub$ rule produces a rule transition back to the start graph. The 'sub' rule does not match the start graph, because it has a lower priority than the $add$ rule.
 
 \begin{figure}[ht]
   \begin{center}
-    \subfloat[The initial graph]{\label{fig:priority_start}\input{./img/priority_start.tex}}\hspace{20px}
-    \subfloat[The LHS of rule 'sub' with priority 1]{\label{fig:priority_lhs1}\input{./img/priority_lhs1.tex}}\hspace{20px}
-    \subfloat[The RHS of rule 'sub' with priority 1]{\label{fig:priority_rhs1}\input{./img/priority_rhs1.tex}}\hspace{20px}
-    \subfloat[The LHS of rule 'add' with priority 2]{\label{fig:priority_lhs2}\input{./img/priority_lhs2.tex}}\hspace{20px}
-    \subfloat[The RHS of rule 'add' with priority 2]{\label{fig:priority_rhs2}\input{./img/priority_rhs2.tex}}
+    \subfloat[The initial graph]{\label{fig:priority_start}\input{./img/start-priority.tikz}}\hspace{20px}
+    \subfloat[The $sub$ rule with priority 0]{\label{fig:priority_sub}\input{./img/sub-priority.tikz}}\hspace{20px}
+    \subfloat[The $add$ rule with priority 1]{\label{fig:priority_add}\input{./img/add-priority.tikz}}
   \end{center}
   \caption{Priority rules}
   \label{fig:priority_gg}
 \end{figure} 
 
-The graphs are isomophic under the point algebra, so they represent the same location. The STS of transforming this graph grammar is in Figure~\ref{fig:priority_sts_wrong}, with $\imath = \{x \mapsto 25\}$. This STS is wrong, because the 'sub' switch relation can be taken from the start.
+The graphs are isomorphic under the point algebra, so they represent the same location. The STS of transforming this graph grammar is in Figure~\ref{fig:priority_sts_wrong}, with $\imath = \{x \mapsto 25\}$. This STS is wrong, because the 'sub' switch relation can be taken from the start.
 
 \begin{figure}[ht]
   \begin{center}

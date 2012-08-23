@@ -66,7 +66,7 @@
 \contentsline {section}{\numberline {6.3}Example 3: restaurant reservations}{30}{section.6.3}
 \contentsline {section}{\numberline {6.4}Example 4: bar tab system}{30}{section.6.4}
 \contentsline {subsection}{\numberline {6.4.1}Simulation and redundancy}{30}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Performance}{30}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.2}Performance}{31}{subsection.6.4.2}
 \contentsline {subsection}{\numberline {6.4.3}Model complexity}{31}{subsection.6.4.3}
 \contentsline {subsection}{\numberline {6.4.4}Extendability}{31}{subsection.6.4.4}
 \contentsline {section}{\numberline {6.5}Conclusions}{31}{section.6.5}

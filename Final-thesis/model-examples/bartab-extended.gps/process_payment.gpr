@@ -5,7 +5,7 @@
             <string>!process_payment</string>
         </attr>
         <attr name="priority">
-            <string>1</string>
+            <string>2</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -98,24 +98,19 @@
                 <string>prod:</string>
             </attr>
         </edge>
-        <edge to="n8" from="n10">
-            <attr name="label">
-                <string>arg:0</string>
-            </attr>
-        </edge>
         <edge to="n11" from="n10">
             <attr name="label">
                 <string>real:neg</string>
             </attr>
         </edge>
+        <edge to="n8" from="n10">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
         <edge to="n9" from="n9">
             <attr name="label">
                 <string>prod:</string>
-            </attr>
-        </edge>
-        <edge to="n12" from="n9">
-            <attr name="label">
-                <string>real:max</string>
             </attr>
         </edge>
         <edge to="n6" from="n9">
@@ -126,6 +121,11 @@
         <edge to="n11" from="n9">
             <attr name="label">
                 <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge to="n12" from="n9">
+            <attr name="label">
+                <string>real:max</string>
             </attr>
         </edge>
         <edge to="n8" from="n8">
@@ -143,14 +143,14 @@
                 <string>arg:0</string>
             </attr>
         </edge>
-        <edge to="n3" from="n7">
-            <attr name="label">
-                <string>real:max</string>
-            </attr>
-        </edge>
         <edge to="n8" from="n7">
             <attr name="label">
                 <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n7">
+            <attr name="label">
+                <string>real:max</string>
             </attr>
         </edge>
         <edge to="n6" from="n6">
@@ -163,9 +163,9 @@
                 <string>prod:</string>
             </attr>
         </edge>
-        <edge to="n1" from="n4">
+        <edge to="n8" from="n4">
             <attr name="label">
-                <string>arg:1</string>
+                <string>real:sub</string>
             </attr>
         </edge>
         <edge to="n2" from="n4">
@@ -173,9 +173,9 @@
                 <string>arg:0</string>
             </attr>
         </edge>
-        <edge to="n8" from="n4">
+        <edge to="n1" from="n4">
             <attr name="label">
-                <string>real:sub</string>
+                <string>arg:1</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
@@ -198,19 +198,14 @@
                 <string>real:</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>del:tab</string>
-            </attr>
-        </edge>
         <edge to="n0" from="n0">
             <attr name="label">
                 <string>type:Customer</string>
             </attr>
         </edge>
-        <edge to="n3" from="n0">
+        <edge to="n2" from="n0">
             <attr name="label">
-                <string>new:tab</string>
+                <string>del:tab</string>
             </attr>
         </edge>
         <edge to="n5" from="n0">
@@ -218,14 +213,19 @@
                 <string>del:pays</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge to="n3" from="n0">
             <attr name="label">
-                <string>type:Payment</string>
+                <string>new:tab</string>
             </attr>
         </edge>
         <edge to="n1" from="n5">
             <attr name="label">
                 <string>amount</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n5">
+            <attr name="label">
+                <string>type:Payment</string>
             </attr>
         </edge>
     </graph>

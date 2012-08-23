@@ -1,123 +1,125 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="order">
-        <attr name="transitionLabel">
-            <string>?order</string>
+    <graph edgemode="directed" edgeids="false" role="rule" id="process_discount">
+        <attr name="priority">
+            <string>2</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <attr name="$version">
-            <string>curly</string>
-        </attr>
-        <node id="n4">
+        <node id="n7">
             <attr name="layout">
-                <string>203 61 29 33</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>63 59 45 37</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>43 119 91 33</string>
+                <string>196 83 56 37</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>187 120 59 33</string>
+                <string>126 74 54 37</string>
             </attr>
         </node>
-        <node id="n2">
+        <node id="n1">
             <attr name="layout">
-                <string>280 118 75 37</string>
+                <string>133 24 43 43</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>53 83 54 37</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>196 240 54 37</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>129 181 43 37</string>
+                <string>65 242 54 37</string>
             </attr>
         </node>
-        <node id="n6">
+        <node id="n2">
             <attr name="layout">
-                <string>252 181 43 37</string>
+                <string>88 163 139 50</string>
             </attr>
         </node>
-        <edge to="n4" from="n4">
+        <edge to="n7" from="n7">
             <attr name="label">
-                <string>forall:</string>
+                <string>real:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>int:</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
+        <edge to="n7" from="n7">
             <attr name="label">
                 <string>par:0</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:Customer</string>
+                <string>real:50.0</string>
             </attr>
         </edge>
-        <edge to="n3" from="n1">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>id</string>
+                <string>prod:</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n1">
+            <attr name="label">
+                <string>arg:0</string>
             </attr>
         </edge>
         <edge to="n0" from="n1">
             <attr name="label">
-                <string>new:orders</string>
+                <string>arg:1</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n7" from="n1">
             <attr name="label">
-                <string>type:Drink</string>
+                <string>real:add</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>name</string>
+                <string>real:</string>
             </attr>
         </edge>
-        <edge to="n4" from="n0">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>at</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n0">
-            <attr name="label">
-                <string>del:quantity</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n0">
-            <attr name="label">
-                <string>new:quantity</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>string:</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>par:1</string>
+                <string>real:0.9</string>
             </attr>
         </edge>
         <edge to="n5" from="n5">
             <attr name="label">
-                <string>int:</string>
+                <string>real:</string>
             </attr>
         </edge>
-        <edge to="n6" from="n6">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>int:</string>
+                <string>type:Customer</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n2">
+            <attr name="label">
+                <string>del:request_discount</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n2">
+            <attr name="label">
+                <string>del:discount</string>
+            </attr>
+        </edge>
+        <edge to="n3" from="n2">
+            <attr name="label">
+                <string>new:discount</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n2">
+            <attr name="label">
+                <string>del:tab</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n2">
+            <attr name="label">
+                <string>new:tab</string>
             </attr>
         </edge>
     </graph>
