@@ -1,0 +1,5 @@
+$\xymatrix{
+   \ar[ddd]^<<<<{init\:|\:true\:|\:T_1:=0;T_2:=0;T_3:=0;D_1:=1;D_2:=1;D_3:=1} \\ \\ \\
+   \fbox{$l_0$} \ar[rrrrrrrrrr]|{?p(i, p)\:|\:i\%3=i\:|\:I:=i; P:=p} \ar@/_3pc/[ddrrrrrrrrrr]|{?o(i,o_1, q_1, o_2, q_2, o_3, q_3)\:|\:o_1="coke"\land o_2="beer"\land o_3="wine" \land q_1>0\land q_2>0\land q_3>0\land i\%3=i\:|\:I:=i; P:=0.8*q_1+1.5*q_2+2.1*q_3} &&&&&&&&&& \fbox{$l_2$} \ar@/_1.5pc/[llllllllll]|{!pp(b, r)\:|\:I=1\land b=m(T_1-P,0)\land r=m(\scalebox{0.75}[1.0]{-}T_1+P,0)\:|\:T_1:=b} \ar@/_3pc/[llllllllll]|{!pp(b, r)\:|\:I=2\land b=m(T_2-P,0)\land r=m(\scalebox{0.75}[1.0]{-}T_2+P,0)\:|\:T_2:=b} \ar@/_5.2pc/[llllllllll]|{!pp(b, r)\:|\:I=3\land b=m(T_1-P,0)\land r=m(\scalebox{0.75}[1.0]{-}T_3+P,0)\:|\:T_3:=b} \\ \\
+   &&&&&&&&&& \fbox{$l_1$} \ar@/^1.5pc/[uullllllllll]|{!po(b)\:|\:I=1\:|\:T_1:=T_1+P*D_1} \ar[uullllllllll]|{!po(b)\:|\:I=2\:|\:T_2:=T_2+P*D_2} \ar@/_1.5pc/[uullllllllll]|{!po(b)\:|\:I=3\:|\:T_3:=T_3+P*D_3} 
+}$

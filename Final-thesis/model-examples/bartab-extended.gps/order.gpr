@@ -10,54 +10,114 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n4">
+        <node id="n6">
             <attr name="layout">
-                <string>203 61 29 33</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>63 59 45 37</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>43 119 91 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>187 120 59 33</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>280 118 75 37</string>
+                <string>216 66 45 37</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>129 181 43 37</string>
+                <string>92 69 43 37</string>
             </attr>
         </node>
-        <node id="n6">
+        <node id="n0">
             <attr name="layout">
-                <string>252 181 43 37</string>
+                <string>148 122 59 33</string>
             </attr>
         </node>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>forall:</string>
+        <node id="n1">
+            <attr name="layout">
+                <string>248 233 91 33</string>
             </attr>
-        </edge>
-        <edge to="n3" from="n3">
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>195 236 45 37</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>241 120 75 37</string>
+            </attr>
+        </node>
+        <node id="n7">
+            <attr name="layout">
+                <string>212 388 45 37</string>
+            </attr>
+        </node>
+        <node id="n9">
+            <attr name="layout">
+                <string>90 388 43 37</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>148 327 59 33</string>
+            </attr>
+        </node>
+        <node id="n8">
+            <attr name="layout">
+                <string>241 325 75 37</string>
+            </attr>
+        </node>
+        <node id="n11">
+            <attr name="layout">
+                <string>490 300 43 37</string>
+            </attr>
+        </node>
+        <node id="n13">
+            <attr name="layout">
+                <string>367 300 43 37</string>
+            </attr>
+        </node>
+        <node id="n10">
+            <attr name="layout">
+                <string>425 239 59 33</string>
+            </attr>
+        </node>
+        <node id="n12">
+            <attr name="layout">
+                <string>518 237 75 37</string>
+            </attr>
+        </node>
+        <edge to="n6" from="n6">
             <attr name="label">
                 <string>int:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge to="n6" from="n6">
             <attr name="label">
-                <string>par:0</string>
+                <string>par:2</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n5">
+            <attr name="label">
+                <string>int:</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>type:Drink</string>
+            </attr>
+        </edge>
+        <edge to="n5" from="n0">
+            <attr name="label">
+                <string>del:quantity</string>
+            </attr>
+        </edge>
+        <edge to="n6" from="n0">
+            <attr name="label">
+                <string>new:quantity</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>name</string>
+            </attr>
+        </edge>
+        <edge to="n10" from="n0">
+            <attr name="label">
+                <string>!=</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -75,29 +135,24 @@
                 <string>new:orders</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n4" from="n1">
             <attr name="label">
-                <string>type:Drink</string>
+                <string>new:orders</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
+        <edge to="n10" from="n1">
             <attr name="label">
-                <string>name</string>
+                <string>new:orders</string>
             </attr>
         </edge>
-        <edge to="n4" from="n0">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>at</string>
+                <string>int:</string>
             </attr>
         </edge>
-        <edge to="n5" from="n0">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>del:quantity</string>
-            </attr>
-        </edge>
-        <edge to="n6" from="n0">
-            <attr name="label">
-                <string>new:quantity</string>
+                <string>par:0</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -110,14 +165,104 @@
                 <string>par:1</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge to="n7" from="n7">
             <attr name="label">
                 <string>int:</string>
             </attr>
         </edge>
-        <edge to="n6" from="n6">
+        <edge to="n7" from="n7">
+            <attr name="label">
+                <string>par:4</string>
+            </attr>
+        </edge>
+        <edge to="n9" from="n9">
             <attr name="label">
                 <string>int:</string>
+            </attr>
+        </edge>
+        <edge to="n4" from="n4">
+            <attr name="label">
+                <string>type:Drink</string>
+            </attr>
+        </edge>
+        <edge to="n9" from="n4">
+            <attr name="label">
+                <string>del:quantity</string>
+            </attr>
+        </edge>
+        <edge to="n7" from="n4">
+            <attr name="label">
+                <string>new:quantity</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n4">
+            <attr name="label">
+                <string>name</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n4">
+            <attr name="label">
+                <string>!=</string>
+            </attr>
+        </edge>
+        <edge to="n10" from="n4">
+            <attr name="label">
+                <string>!=</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n8">
+            <attr name="label">
+                <string>string:</string>
+            </attr>
+        </edge>
+        <edge to="n8" from="n8">
+            <attr name="label">
+                <string>par:3</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n11">
+            <attr name="label">
+                <string>int:</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n11">
+            <attr name="label">
+                <string>par:6</string>
+            </attr>
+        </edge>
+        <edge to="n13" from="n13">
+            <attr name="label">
+                <string>int:</string>
+            </attr>
+        </edge>
+        <edge to="n10" from="n10">
+            <attr name="label">
+                <string>type:Drink</string>
+            </attr>
+        </edge>
+        <edge to="n13" from="n10">
+            <attr name="label">
+                <string>del:quantity</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n10">
+            <attr name="label">
+                <string>new:quantity</string>
+            </attr>
+        </edge>
+        <edge to="n12" from="n10">
+            <attr name="label">
+                <string>name</string>
+            </attr>
+        </edge>
+        <edge to="n12" from="n12">
+            <attr name="label">
+                <string>string:</string>
+            </attr>
+        </edge>
+        <edge to="n12" from="n12">
+            <attr name="label">
+                <string>par:5</string>
             </attr>
         </edge>
     </graph>
