@@ -73,8 +73,13 @@
 \BOOKMARK [0][-]{chapter.7}{Case Study}{}
 \BOOKMARK [1][-]{section.7.1}{Scanflow Cash Register Protocol}{chapter.7}
 \BOOKMARK [1][-]{section.7.2}{Measurements}{chapter.7}
+\BOOKMARK [2][-]{subsection.7.2.1}{Simulation and redundancy}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.2}{Performance}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.3}{Model complexity}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.4}{Extendability}{section.7.2}
+\BOOKMARK [1][-]{section.7.3}{Measurements}{chapter.7}
 \BOOKMARK [0][-]{chapter.8}{Conclusion}{}
 \BOOKMARK [1][-]{section.8.1}{Summary}{chapter.8}
-\BOOKMARK [1][-]{section.8.2}{Conclusion}{chapter.8}
+\BOOKMARK [1][-]{section.8.2}{Conclusions}{chapter.8}
 \BOOKMARK [1][-]{section.8.3}{Future work}{chapter.8}
-\BOOKMARK [0][-]{chapter*.33}{List of Symbols}{}
+\BOOKMARK [0][-]{chapter*.42}{List of Symbols}{}

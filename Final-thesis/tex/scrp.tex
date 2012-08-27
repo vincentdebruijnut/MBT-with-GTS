@@ -1,11 +1,74 @@
 \section{Scanflow Cash Register Protocol}
 
-The system used for this case study is a \textit{self-scan register}, which allows customers of a supermarket to scan and pay for their products without help of an employee. Figure~\ref{fig:register} shows this self-scan register. The system contains a \textit{scan-flow unit}, which scans the products, and a \textit{cash register unit}, which allows for the payment. The communication protocol between these two units is modelled as a GG, shown in Figure~\ref{fig:}. 
+The system used for this case study is a \textit{self-scan register}, which allows customers of a supermarket to scan and pay for their products without help of an employee. Figure~\ref{fig:register} shows this self-scan register. The system contains a \textit{scanflow unit}, which scans the products, and a \textit{cash register}, which handles the payment. The communication protocol between the register and the scanflow unit is modelled as an IOGG and an IOSTS. The register is the SUT, stimuli and responses are given as http requests/responses.
 
 \begin{figure}[ht]
   \begin{center}
-    %\input{./img/register.png}
+    Hier komt een plaatje van het ding%\input{./img/register.png}
   \end{center}
   \caption{A self-scan register}
   \label{fig:register}
+\end{figure}
+
+Some selected rules of the GG of this communication protocol are shown in Figure~\ref{fig:gg-fwgc}. In total the IOGG has 94 rules. Figure~\ref{fig:start-scrp} shows the initial graph. The $CR$ node is the cash register, the $SFU$ is the scanflow unit. The first node has the flag $\mathit{SS\_OFF}$ representing that the register is off. There is one account which can be in states idle, open, closed and transing. When the customer places items on the belt, a new account is opened. Figure~\ref{fig:open-account-request} shows the general request structure. As long as there is no request, a request can be sent. This rule requests the opening of an account. Figure~\ref{fig:open-account-success} shows the rule for giving a success response. The request node is deleted such that new request nodes can be created again. The rule checks if an account is not already opened and opens an idle account. Figure~\ref{fig:open-account-invalid} shows the rule for the error message received when an account is already opened. 
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-scrp}\input{./img/start-scrp.tikz}}\hspace{20px}
+    \subfloat[The open account request rule]{\label{fig:open-account-request}\input{./img/account.open.request.tikz}}\\
+    \subfloat[The open account success rule]{\label{fig:open-account-success}\input{./img/account.open.success.tikz}}\hspace{20px}
+    \subfloat[The open account invalid rule]{\label{fig:open-account-invalid}\input{./img/account.open.invalid_ss_on.tikz}}\\
+    \subfloat[The not signed on error rule]{\label{fig:not-signed-on}\input{./img/general_responses.not_signed_on.tikz}}\hspace{20px}
+    \subfloat[The close account success rule]{\label{fig:close-account-success}\input{./img/account.close.success.tikz}}
+  \end{center}
+  \caption{The graph grammar of Scanflow Cash Register Protocol}
+  \label{fig:gg-fwgc}
+\end{figure}
+
+For all these rules, the $CR$ node has to have the flag $\mathit{SS\_ON}$ representing the register to signed on. Figure~\ref{fig:not-signed-on} shows the response to a request when the register is not signed on. Apart from the signon request, no other request is allowed in this state. Figure~\ref{fig:close-account-success} shows the rule closing the account.
+
+The IOSTS of the system as created by Axini is too large to show here. It has X switch relations and Y location variables. 
+
+
+\section{Measurements}
+
+\subsection{Simulation and redundancy}
+The generated IOSTS has 540 switch relations and 2 location variables. It simulates the IOSTS made by Axini, but not vice versa. The generated IOSTS allows every stimulus in every location. The IOSTS by hand is modelled to test a subset of the more interesting behavior.
+
+\subsection{Performance}
+The IOSTS is generated in a runtime of 9530 ms using a heap-size of 6.6 MB. Comparing to the examples in the previous chapter, this shows little increase in heap-size and approximately 20 times higher runtime. The algorithm scales reasonably well, considering the generated IOSTS is approximately 10 times larger in size than those of the examples in the previous chapter. 
+
+\subsection{Model complexity}
+\begin{comment}
+start:
+\end{comment}
+
+Table~\ref{tab:halstead-scrp} shows the measurements on the operators and operands of both models.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| l | c | c | c | c | c |}
+  \hline
+  & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume \\ \hline
+  IOGG & 9 & 18 & 24 & 103 & 603.25 \\ \hline
+  IOSTS & 5 & 22 & 25 & 62 & 413.25 \\
+  \hline
+\end{tabular}
+\end{center}
+\caption{The Halstead measurements on the case study}
+\label{tab:halstead-scrp}
+\end{table}
+
+\subsection{Extendability}
+A recent extension on the protocol allows multiple accounts. While an account is not in state open, an idle account can be opened. This allows for a customer to scan his/her products, while another customer pays. Figure~\ref{fig:gg-fwgc-extended} shows the changes to the initial graph and the open account rules. Figure~\ref{fig:close-account-success-ext} shows the success response rule for closing an account: the order of closed accounts have to be kept, because the accounts have to paid in that order.
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-scrp-ext}\input{./img/start-scrp-extended.tikz}}\hspace{20px}
+    \subfloat[The open account success rule]{\label{fig:open-account-success-ext}\input{./img/account.open.success-extended.tikz}}\\
+    \subfloat[The open account invalid rule]{\label{fig:open-account-invalid-ext}\input{./img/account.open.invalid_ss_on-extended.tikz}}\hspace{20px}
+    \subfloat[The close account success rule]{\label{fig:close-account-success-ext}\input{./img/account.close.success-extended.tikz}}
+  \end{center}
+  \caption{The extended graph grammar of Scanflow Cash Register Protocol}
+  \label{fig:gg-fwgc-extended}
 \end{figure}

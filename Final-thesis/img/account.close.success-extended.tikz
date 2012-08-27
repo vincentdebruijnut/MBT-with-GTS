@@ -1,0 +1,24 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[delnode] (n8)  at (1.695, -0.760) {\ml{\textbf{Request}\\\textit{close}}};
+\node[quantnode] (n4)  at (0.765, -2.515) {\ml{$\forall$}};
+\node[node] (n2)  at (2.245, -2.505) {\ml{\textbf{Account}}};
+\node[node] (n1)  at (0.740, -1.710) {\ml{\textbf{Account}\\\textit{AS\_CLOSED}}};
+\node[node] (n0)  at (2.415, -1.705) {\ml{\textbf{Account}\\{\color{\blue}\textit{$-$ AS\_OPEN}}\\{\color{\green}\textit{$+$ AS\_CLOSED}}}};
+\node[node] (n5)  at (0.595, -0.770) {\ml{\textbf{CR}\\\textit{SS\_ON}}};
+\node[node] (n6)  at (2.820, -0.725) {\ml{\textbf{SFU}}};
+\path[deledge](n6.west |- 1.695, -0.760) -- node[dellab]{from} (n8) ;
+\path[quantedge](n1.south -| 0.765, -2.515) -- node[lab]{@} (n4) ;
+\path[deledge](n8.west |- 0.595, -0.770) -- node[dellab]{to} (n5) ;
+\path[nacedge] (n1)  -- node[naclab]{next} (n2) ;
+\path[edge] (n5)  -- node[lab]{has} (n0) ;
+\path[edge](n5.south -| 0.740, -1.710) -- node[lab]{has} (n1) ;
+\path[newedge](n1.east |- 2.415, -1.705) -- node[newlab]{next} (n0) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

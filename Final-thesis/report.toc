@@ -65,16 +65,21 @@
 \contentsline {subsection}{\numberline {6.2.4}Extendability}{30}{subsection.6.2.4}
 \contentsline {section}{\numberline {6.3}Example 3: restaurant reservations}{30}{section.6.3}
 \contentsline {section}{\numberline {6.4}Example 4: bar tab system}{30}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Simulation and redundancy}{30}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.1}Simulation and redundancy}{31}{subsection.6.4.1}
 \contentsline {subsection}{\numberline {6.4.2}Performance}{31}{subsection.6.4.2}
 \contentsline {subsection}{\numberline {6.4.3}Model complexity}{31}{subsection.6.4.3}
 \contentsline {subsection}{\numberline {6.4.4}Extendability}{31}{subsection.6.4.4}
 \contentsline {section}{\numberline {6.5}Conclusions}{31}{section.6.5}
-\contentsline {chapter}{\numberline {7}Case Study}{36}{chapter.7}
-\contentsline {section}{\numberline {7.1}Scanflow Cash Register Protocol}{36}{section.7.1}
-\contentsline {section}{\numberline {7.2}Measurements}{36}{section.7.2}
-\contentsline {chapter}{\numberline {8}Conclusion}{37}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{37}{section.8.1}
-\contentsline {section}{\numberline {8.2}Conclusion}{37}{section.8.2}
-\contentsline {section}{\numberline {8.3}Future work}{37}{section.8.3}
-\contentsline {chapter}{List of Symbols}{41}{chapter*.33}
+\contentsline {chapter}{\numberline {7}Case Study}{39}{chapter.7}
+\contentsline {section}{\numberline {7.1}Scanflow Cash Register Protocol}{39}{section.7.1}
+\contentsline {section}{\numberline {7.2}Measurements}{40}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Simulation and redundancy}{40}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Performance}{40}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Model complexity}{40}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}Extendability}{41}{subsection.7.2.4}
+\contentsline {section}{\numberline {7.3}Measurements}{41}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusion}{42}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{42}{section.8.1}
+\contentsline {section}{\numberline {8.2}Conclusions}{42}{section.8.2}
+\contentsline {section}{\numberline {8.3}Future work}{42}{section.8.3}
+\contentsline {chapter}{List of Symbols}{47}{chapter*.42}

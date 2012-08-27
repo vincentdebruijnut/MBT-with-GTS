@@ -10,11 +10,11 @@ scale=\tikzscale]
 \node[node] (n3)  at (1.985, -1.975) {\ml{farmer}};
 \node[node] (n4)  at (2.455, -2.365) {\ml{cabbage}};
 \path[deledge](n4.west |- 0.945, -2.365) -- node[dellab]{at} (n0) ;
+\path[newedge](n4.north -| 2.495, -1.015) -- node[newlab]{at} (n1) ;
+\path[edge, -] (n0)  -- node[lab]{\textit{!=}} (n1) ;
 \path[deledge] (n3)  -- node[dellab]{at} (n0) ;
 \path[newedge] (n3)  --  (n1) ;
 \node[newlab] at (2.063, -1.303){at};
-\path[newedge](n4.north -| 2.495, -1.015) -- node[newlab]{at} (n1) ;
-\path[edge, -] (n0)  -- node[lab]{\textit{!=}} (n1) ;
 \userdefinedmacro
 \end{tikzpicture}
 \renewcommand{\userdefinedmacro}{\relax}

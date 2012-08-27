@@ -1,0 +1,14 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n0)  at (1.305, -0.930) {\ml{\textbf{Customer}\\{\color{\green}\textit{$+$ request\_discount}}\\discount = 1.0}};
+\node[node, attr] (n4)  at (2.505, -0.915) {\ml{\textbf{int}}};
+\node[parnode] (n4p)  at (n4.north west) {0};
+\path[edge](n0.east |- 2.505, -0.915) -- node[lab]{id} (n4) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

@@ -1,0 +1,14 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n2)  at (1.025, -1.850) {\ml{\textbf{Account}\\\textit{AS\_IDLE}}};
+\node[node] (n1)  at (2.520, -1.035) {\ml{\textbf{SFU}}};
+\node[node] (n0)  at (1.020, -1.065) {\ml{\textbf{CR}\\\textit{SS\_OFF}}};
+\path[edge](n0.south -| 1.025, -1.850) -- node[lab]{has} (n2) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

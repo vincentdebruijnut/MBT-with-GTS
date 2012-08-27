@@ -8,6 +8,7 @@ The responses used by the IOSTS and by the IOGG are different. Both models, used
 The IOSTS is generated in a runtime of 300 ms using a heap-size of 1.9 MB.
 
 \subsection{Model complexity}
+\begin{comment}
 start:
 13 distinct operands
 1 distinct operator
@@ -32,7 +33,8 @@ throws:
 30 operands
 10 operators
 
-$n_1 = 9, n_2 = 18, N_1 = 24, N_2 = 103$ Volume is 127*4.75 = 603.25
+$n_1 = 9, n_2 = 18, N_1 = 24, N_2 = 103$ 
+ Volume is 127*4.75 = 603.25
 
 IOSTS:
 22 distinct operands
@@ -40,7 +42,25 @@ IOSTS:
 62 operands
 25 operators
 
-$n_1 = 5, n_2 = 22, N_1 = 25, N_2 = 62$ Volume is 87*4.75 = 413.25
+$n_1 = 5, n_2 = 22, N_1 = 25, N_2 = 62$
+ Volume is 87*4.75 = 413.25
+\end{comment}
+
+Table~\ref{tab:halstead-bg} shows the measurements on the operators and operands of both models.\marginpar{lastig om te bepalen wat meegenomen moet worden. GGs hebben ook transition label, priority level, etc. Eigenlijk verborgen complexiteit}
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| l | c | c | c | c | c |}
+  \hline
+  & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume \\ \hline
+  IOGG & 9 & 18 & 24 & 103 & 603.25 \\ \hline
+  IOSTS & 5 & 22 & 25 & 62 & 413.25 \\
+  \hline
+\end{tabular}
+\end{center}
+\caption{The Halstead measurements on the boardgame models}
+\label{tab:halstead-bg}
+\end{table}\marginpar{Heb hier eigenlijk vrij weinig over te zeggen. Conclusies komen later.}
 
 
 \subsection{Extendability}
@@ -55,14 +75,14 @@ The boardgame is extended to include more players and locations. For the IOGG, t
   \label{fig:gg-bg-extended}
 \end{figure}
 
-The IOSTS gains a variable and a switch relation for the new player. The result is in Figure~\ref{fig:sts-bg-extended}. The distinct number of operators has not increased and the distinct number of operands has increased by 1. The number of operator occurences has increased by 9 and the number of operand occurences has increased by 17.
+The IOSTS gains a variable and a switch relation for the new player. \begin{comment}The result is in Figure~\ref{fig:sts-bg-extended}.\end{comment} The distinct number of operators has not increased and the distinct number of operands has increased by 1. The number of operator occurences has increased by 9 and the number of operand occurences has increased by 17.
 
 The volume of the IOGG has increased by 35.95. $n_1 = 8, n_2 = 18, N_1 = 23, N_2 = 113$ Volume is 136*4.70 = 639.20
 The volume of the IOSTS has increased by 130.28. $n_1 = 5, n_2 = 23, N_1 = 34, N_2 = 79$ Volume is 113*4.81 = 543.53
 
 
 \section{Example 2: farmer-wolf-goat-cabbage}
-In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one object to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The IOGG of this puzzle is in Figure~\ref{fig:gg-fwgc}. Here the 'move' and 'invalid' rules are similar, therefore only the 'move cabbage' rule is shown. The response rules '!retry', '!eaten' and '!done' have a higher priority. This ensures that a proper response is given after a move, before allowing more stimuli. The IOSTS of this puzzle is in Figure~\ref{fig:sts-fwgc}.
+In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one item to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The IOGG of this puzzle is in Figure~\ref{fig:gg-fwgc}. Here the 'move' and 'invalid' rules are similar, therefore only the 'move cabbage' rule is shown. The response rules '!retry', '!eaten' and '!done' have a higher priority. This ensures that a proper response is given after a move, before allowing more stimuli. The IOSTS of this puzzle is in Figure~\ref{fig:sts-fwgc}. It uses variables to keep track of the location of the items. These are checked to see if an invalid move is done, an item is being eaten or the puzzle has been completed.
 
 \begin{figure}[ht]
   \begin{center}
@@ -83,7 +103,7 @@ In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The
   \end{center}
   \caption{The IOSTS of the farmer-wolf-goat-cabbage puzzle}
   \label{fig:sts-fwgc}
-\end{figure}
+\end{figure}\marginpar{STSen zijn eigenlijk niet weer te geven via dit soort diagrammen. Wellicht Tikz proberen, anders de STS opschrijven in de formele defnitie.}
 
 \subsection{Simulation and redundancy}
 Both the generated IOSTS and the IOSTS built by hand allow all inputs and give the appropriate responses when necessary. This shows that both IOSTSs simulate each other. The generated IOSTS has 50 switch relations and 0 location variables. The IOSTS built by hand has 11 switch relations and 4 location variables. The IOGG does not use variables to track the location of each item. Therefore the generated IOSTS has a location per state of the puzzle. 
@@ -92,19 +112,43 @@ Both the generated IOSTS and the IOSTS built by hand allow all inputs and give t
 The IOSTS is generated in a runtime of 770 ms using a heap-size of 5.2 MB.
 
 \subsection{Model complexity}
+\begin{comment}
+start: 12 new operands, 26 operands
+?c: 3 new operators, 0 new operands. 5 operators, 17 operands
+?c-invalid: 0 new operators, 1 new operand. 2 operators, 14 operands
+!retry: 0-0. 1 operator, 2 operands.
+!eaten: 0-0. 9 operators, 36 operands
+!done: 8 operators, 30 operands
+\end{comment}
+
+Table~\ref{tab:halstead-fwgc} shows the measurements on the operators and operands of both models.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| l | c | c | c | c | c |}
+  \hline
+  & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume \\ \hline
+  IOGG & 3 & 13 & 25 & 125 & 498.29 \\ \hline
+  IOSTS & 9 & 22 & 25 & 62 & 431.02 \\
+  \hline
+\end{tabular}
+\end{center}
+\caption{The Halstead measurements of the farmer-wolf-goat-cabbage puzzle}
+\label{tab:halstead-fwgc}
+\end{table}\marginpar{berekening heeft weggelaten regels en switch relations niet meegenomen}
 
 
 \subsection{Extendability}
-In another variant of this puzzle, when one of the objects is eaten, the puzzle does not reset but undoes the last action. Figure~\ref{fig:gg-fwgc-extended} shows this extension in two rules: the 'move cabbage' and the 'eaten undo' rule. The rules keep track of the last moved items. When an item gets eaten, the last move can be undone.
+In another variant of this puzzle, when one of the items is eaten, the puzzle does not reset but undoes the last action. Figure~\ref{fig:gg-fwgc-extended} shows this extension in two rules: the 'move cabbage' and the 'eaten undo' rule. The rules keep track of the last moved items. When an item gets eaten, the last move can be undone.\marginpar{veranderde model complexity moet nog gegeven worden}\marginpar{Ik moet quantification nog uitleggen, in GROOVE}
 
 \begin{figure}[ht]
   \begin{center}
     \subfloat[The move cabbage rule]{\label{fig:start-bg-extended}\input{./img/c-fwgc-extended.tikz}}\hspace{20px}
     \subfloat[The eaten undo rule]{\label{fig:c-fwgc}\input{./img/eaten-undo-fwgc.tikz}}
   \end{center}
-  \caption{The extended graph grammar of the board game example in Figure~\ref{fig:example_groove}}
+  \caption{The extended graph grammar of the farmer-wolf-goat-cabbage puzzle in Figure~\ref{fig:gg-fwgc}}
   \label{fig:gg-fwgc-extended}
-\end{figure}
+\end{figure}\marginpar{Extended STS is ook nauwelijks weer te geven. Ik vraag me hier af ok ik niet gewoon de LTS moet geven, wellicht is die simpeler. De STS moet nu namelijk met variabelen de vorige posities van alle items bij gaan houden oid}
 
 \section{Example 3: restaurant reservations}
 Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a restaurant and two potential customers. Figure~\ref{fig:make-reservation} shows part of a rule that allows people to make reservations. The start and end times are timestamps represented by integers. This rule allows people to make multiple reservations. However, this rule violates the constraint in section~\ref{sec:constraint-1}, because the reservation objects are not unique. Allowing a dynamic amount of reservations per person means that variables need to be introduced dynamically as well or more complex variables have to be used, such as arrays. To model this system using an IOSTS, arrays are also needed.
@@ -151,19 +195,74 @@ Both the generated IOSTS and the IOSTS built by hand correctly allow the orderin
 The IOSTS is generated in a runtime of 250 ms using a heap-size of 2.1 MB.
 
 \subsection{Model complexity}
+\begin{comment}
+start: 1 - 25. 13 - 46
+?o: 1 - 2. 1 - 14
+!po: 2 - 3. 4 - 24
+?p: 0 - 0. 3 - 18
+!pp: 3 - 
+\end{comment}
+
+Table~\ref{tab:halstead-bartab} shows the measurements on the operators and operands of both models.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| l | c | c | c | c | c |}
+  \hline
+  & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume \\ \hline
+  IOGG & 3 & 13 & 25 & 125 & 498.29 \\ \hline
+  IOSTS & 9 & 22 & 25 & 62 & 431.02 \\
+  \hline
+\end{tabular}
+\end{center}
+\caption{The Halstead measurements of the farmer-wolf-goat-cabbage puzzle}
+\label{tab:halstead-bartab}
+\end{table}\marginpar{moet nog even een abs in groove hebben, maakt uit voor deze berekening}
 
 
 \subsection{Extendability}
-The system is extended to allow ordering multiple drinks of different types. Also, a customer can purchase the option of receiving 10\% discount on all ordered drinks for 50 euros (added to the tab). The stimulus given is $?\mathit{d}$ and the response is $!pd(b)$ where $b$ is the new balance.
+The system is extended to allow ordering multiple drinks of different types. The stimulus \\$?o(i,d_1,q_1,d_2,q_2,d_3,q_3)$ is used to order a quantity $q_n$ of drink $d_n$. The bar tab id is still given by $i$. Also, a customer can purchase the option of receiving 10\% discount on all ordered drinks for 50 euros (added to the tab). The stimulus given is $?\mathit{d}$ and the response is $!pd(b)$ where $b$ is the new balance. Figure~\ref{fig:gg-bartab-extended} shows the extended rules and initial graph. The $?p$ and $!pp$ rules have remained the same.\marginpar{Deze GG en STS zijn vrij lelijk}
 
-\begin{comment}
-\section{Example 5: communication protocol}
-\end{comment}
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-tab-extended}\input{./img/start-tab-extended.tikz}}\hspace{20px}
+    \subfloat[The !pd rule with priority 1]{\label{fig:process_discount}\input{./img/process_discount-extended.tikz}}\\
+    \subfloat[The extended ?o rule]{\label{fig:order-tab-extended}\input{./img/order-extended.tikz}}\hspace{20px}
+    \subfloat[The ?d rule with priority 0]{\label{fig:discount}\input{./img/discount-extended.tikz}}\\
+    \subfloat[The extended !po rule]{\label{fig:process_order-extended}\input{./img/process_order-extended.tikz}}\\
+  \end{center}
+  \caption{The extended graph grammar of the bar tab system}
+  \label{fig:gg-bartab-extended}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/sts_tab-extended.tex}
+  \end{center}
+  \caption{The extended IOSTS of the bar tab system}
+  \label{fig:sts-bartab-extended}
+\end{figure}
 
 
 \section{Conclusions}
-Need more complex data structures. And it is possible!
-runtime and heap-size: negligible.
-boardgame: different approaches in formalisms if requirements are not set. Note that abstract stimuli/responses are translated into non-abstract stimuli by Test Execution module. A response notifying player x has moved to location y can be translated to a serie of abstract responses. Advantage: allows model to be more flexible, have better design. Disadvantage: less clear according to specification, also more work in translating abstract stimuli/responses.
-fwgc: 50 locations doable, no need to look at the generated STS. 11 switches and 4 variables easier visualized than 50 switches. Is this true?
-bartab: more logical placement of concerns. tab is increased and deducted at the process rules, sts sets price of drink during ordering. IOGG uses OO by grouping names and prices and tabs and amounts.
+The simulation measurement in the boardgame example shows that not having a fixed specification leads to different behavior specified by the generated IOSTS. The translation of abstract stimuli and responses to the concrete stimuli and responses gives flexibility; an expected series of responses $!move(1) !move(1) !nextTurn$ can be translated from the concrete response $!move(1,2)$. However, this does give more work in the abstract to concrete stimuli/response translation. Also, the model does not reflect the specification precisely when using such a work-around.
+
+The redundancy measurement reveals an interesting result in the bar tab example. Here, the possible morphisms of the rules on the graph lead to more switch relations than when the IOSTS is created by hand. This effect is common: in a GG, it is easy to represent the actors and rules specifying the interaction between these actors. The result is a switch relation for each combination of customer and drink. This is not a problem as long as the size of the generated IOSTS is manageable by GRATiS. If the number of switch relations becomes too great, creating the smaller IOSTS by hand also becomes unmanageable.
+
+%The redundancy measurement also shows that for the farmer-wolf-goat-cabbage puzzle, the IOGG is easier expressed using no variables. 
+
+It can be conlcuded that for these small examples the runtime and heap-size of the IOSTS generation are negligible. The results on the case study will show how this measurement scales using larger models.
+
+Halstead conlcusions here.
+
+Extendability conclusions here.
+
+The lack of complex data structures, such as arrays, sets and objects is apparent from the restaurant reservation example. GGs inherently are Object-Oriented, which can be best seen in the bar tab example, where ids and tabs are combined, as well as names and prices. The lack of a summation operation in GROOVE causes the large GG of the extended bar tab system. Figure~\ref{fig:gg-tab-better} shows how this rule could look like. 
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/process_order-better.tikz}
+  \end{center}
+  \caption{A rule of the bar tab system containing the sum operation}
+  \label{fig:gg-tab-better}
+\end{figure}
