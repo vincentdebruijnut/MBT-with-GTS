@@ -1,0 +1,17 @@
+\begin{tikzpicture}[auto]
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt]
+
+	\node[initial, state] (s0) {\footnotesize $s_0$};
+	\node[state] (s1) [below of=s0] {\footnotesize $s_1$};
+	\visible<7>
+	{\node[state, draw=red] (s2) [right of=s0] {\footnotesize $s_2$};}
+
+	\visible<6>
+	{\path (s0) edge [loop right] node {$\delta$} (s0);}
+	\visible<7>{
+	\path[red] (s0) edge node {$\delta$} (s2)
+					(s2) edge [loop right] node {$\delta$} (s2);
+	}
+	\path	(s0) edge node [swap] {$a!$} (s1)
+		(s1) edge [loop right] node {$\delta$} (s1);
+\end{tikzpicture}

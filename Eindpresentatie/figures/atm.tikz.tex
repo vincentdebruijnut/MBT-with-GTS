@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt]
+
+	\node[state, initial left] (s0) {\footnotesize $s_0$};
+	\node[state] (s1) [right=3cm of s0] {\footnotesize $s_1$};
+   	\node[state] (s2) [right=3cm of s1] {\footnotesize $s_2$};
+	\node[state] (s3) [below=2cm of s2] {\footnotesize $s_3$};
+	\node[state] (s4) [below=2cm of s1] {\footnotesize $s_4$};
+   	\node[state] (s5) [below=2cm of s0] {\footnotesize $s_5$};
+	
+	\path        (s0) edge node [auto] {voerKaartIn?} (s1)
+					(s1) edge node [auto] {voerPINIn?} (s2)
+					(s2) edge node [auto] {voerBedragIn?} (s3)
+					(s3) edge node [auto] {bevestig?} (s4)
+					(s4) edge node [auto] {betaalGeldUit!} (s5)
+					(s5) edge node [auto] {$\tau$} (s0);
+\end{tikzpicture}

@@ -1,0 +1,22 @@
+\begin{tikzpicture}[node distance=1.5cm]
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt]
+
+	\visible<5>{
+	\node[initial, state] (s0) {\footnotesize $s_0$};
+	\node[state] (s1) [below left of=s0] {\footnotesize $s_1$};
+	\node[state] (s2) [below right of=s0] {\footnotesize $s_2$};
+	\node[state] (s3) [below of=s2] {\footnotesize $s_3$};
+	
+	\path (s0) edge node [swap]  {$a?$}  (s1)
+		  	 (s0) edge node {$\tau$}  (s2)
+			 (s2) edge node {$a?$}  (s3);
+	}
+
+	\visible<6->{
+	\node[initial, state] (s02) {\footnotesize $s_{02}$};
+	\node[state] (s13) [below of=s02] {\footnotesize $s_{13}$};
+	
+	\path (s02) edge node [swap]  {$a?$}  (s13);
+	}
+	
+\end{tikzpicture}

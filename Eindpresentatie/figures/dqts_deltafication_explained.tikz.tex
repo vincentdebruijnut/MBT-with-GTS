@@ -1,0 +1,24 @@
+\begin{tikzpicture}[node distance=1.5cm]
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt,scale=0.8]
+
+	\node[initial, state] (s0) {\footnotesize $s_0$};
+	\node[state] (s1) [below of=s0] {\footnotesize $s_1$};
+	
+	\visible<7>{
+		\node[state, draw=red] (q0) [left of=s0] {\footnotesize $q_0$};
+	}
+
+	\path (s0) edge [loop right] node {$\tau$}  (s0)
+			 (s0) edge node [swap] {$b!$}  (s1);
+	
+	\visible<5>{
+		\path[red] (s0) edge [loop left] node {$\delta$} (s0)
+				(s1) edge [loop below] node {$\delta$} (s1);
+	}
+	
+	\visible<7>{
+		\path[red] (s0) edge [swap] node {$\delta$} (q0)
+						(q0) edge [loop left] node {$\delta$} (q0)
+						(s1) edge [loop below] node {$\delta$} (s1);
+	}
+\end{tikzpicture}

@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt, node distance=1.5cm, scale=0.8]
+
+	\node[state, initial above] (s0) {\footnotesize $s_0$};
+	\node[state] (s1) [below of=s0] {\footnotesize $s_1$};
+	
+	\path        (s0) edge [bend right] node [swap] {\footnotesize geld!} (s1)
+					(s1) edge [bend right] node [swap] {\footnotesize koffie?} (s0);
+\end{tikzpicture}
