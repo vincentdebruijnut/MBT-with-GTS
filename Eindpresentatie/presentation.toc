@@ -1,4 +1,4 @@
-\beamer@endinputifotherversion {3.20pt}
+\beamer@endinputifotherversion {3.10pt}
 \beamer@sectionintoc {2}{Setup}{33}{0}{1}
 \beamer@sectionintoc {3}{From Graph Grammar to STS}{41}{0}{2}
 \beamer@sectionintoc {4}{Validation}{47}{0}{3}

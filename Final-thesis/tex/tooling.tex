@@ -3,13 +3,13 @@
 \subsection{ATM}\label{sec:atm}
 ATM is a model-based testing web application, developed in the Ruby on Rails framework. It is used to test the software of several big companies in the Netherlands since 2006. It is under continuous development by Axini.
 
-The architecture is shown graphically in Figure~\ref{fig:axini_tool}. It has a similar structure to the on-the-fly model-based testing tool architecture in Figure~\ref{fig:model_based_testing_on_the_fly}.
+The UML collaboration diagram of ATM is shown graphically in Figure~\ref{fig:axini_tool}.
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=0.75\textwidth]{axini_tool.pdf}
+    \includegraphics[width=0.5\textwidth]{atm-diagram.pdf}
   \end{center}
-  \caption{Architecture of ATM}
+  \caption{ATM collaboration diagram}
   \label{fig:axini_tool}
 \end{figure}
 
@@ -25,13 +25,13 @@ The tool functions as follows:
 \subsection{GROOVE}\label{sec:descriptiongroove}
 GROOVE is an open source, graph-based modelling tool in development at the University of Twente since 2004~\cite{Rensink:GROOVE}. It has been applied to several case studies, such as model transformations and security and leader election protocols~\cite{Ghamarian:GROOVE}.
 
-The architecture of the GROOVE tool is shown graphically in Figure~\ref{fig:groove_tool}. A graph grammar is given as input to the Rule Applier component, which determines the possible rule transitions. An Exploration Strategy can be started or the user can explore the states manually using the GUI. These components request the possible rule transitions and respond with the chosen rule transition (based on the exploration strategy or the user input). The Exploration Strategy can do an exhaustive search, resulting in a GTS. The graph states and rule transitions in this GTS can then be inspected using the GUI.
+The collaboration diagram of GROOVE is shown graphically in Figure~\ref{fig:groove_tool}. A graph grammar is given as input to the RuleApplier component, which determines the possible rule transitions. The user starts an ExplorationStrategy. The possible rule transitions are obtained from the RuleApplier and the chosen rule transition, based on the exploration strategy, is sent back. The ExplorationStrategy can do an exhaustive search, resulting in a GTS. The graph states and rule transitions in this GTS can then be inspected using the UserInterface.
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=0.75\textwidth]{groove_tool.pdf}
+    \includegraphics[width=0.5\textwidth]{groove-diagram.pdf}
   \end{center}
-  \caption{The GROOVE Tool}
+  \caption{GROOVE collaboration diagram}
   \label{fig:groove_tool}
 \end{figure}
 

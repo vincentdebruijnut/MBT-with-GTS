@@ -22,7 +22,7 @@
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>123 164 95 67</string>
+                <string>123 131 95 67</string>
             </attr>
         </node>
         <node id="n2">
@@ -37,12 +37,12 @@
         </edge>
         <edge to="n3" from="n3">
             <attr name="label">
-                <string>type:Request</string>
+                <string>flag:open</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
             <attr name="label">
-                <string>flag:open</string>
+                <string>type:Request</string>
             </attr>
         </edge>
         <edge to="n2" from="n3">
@@ -50,14 +50,14 @@
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n11" from="n11">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
         <edge to="n3" from="n11">
             <attr name="label">
                 <string>from</string>
+            </attr>
+        </edge>
+        <edge to="n11" from="n11">
+            <attr name="label">
+                <string>type:SFU</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -67,12 +67,12 @@
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>del:flag:AS_IDLE</string>
+                <string>new:flag:AS_OPEN</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>new:flag:AS_OPEN</string>
+                <string>del:flag:AS_IDLE</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">

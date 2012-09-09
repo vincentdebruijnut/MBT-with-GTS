@@ -1,30 +1,19 @@
 \section{General setup}\label{sec:general-setup}
-GRATiS uses GROOVE as a replacement of the IOSTS in ATM. Figure~\ref{fig:class_diagram} shows the class diagram of GRATiS. GROOVE has several exploration strategies for exploring a GG to a GTS. The GROOVE interface is added to replace the exploration strategy. It contains functionality to build an STS from a GG and send an STS to a remote host. This is the most logical place in GROOVE, because the exploration strategy explores the GTS, which is needed to build the STS. On ATM, a component is added that receives an STS and starts a test run.
+GRATiS uses GROOVE as a replacement of the IOSTS in ATM. Figure~\ref{fig:tooling} shows the collaboration diagram of GRATiS. GROOVE has several exploration strategies for exploring a GG to a GTS. The SymbolicStrategy is added as exploration strategy. It contains functionality to build an STS from a GG. The STS is sent as a JSON message by the GrooveInterface to a remote host. The ATMInterface receives the message and starts the test run.
 
 \begin{figure}[ht]
   \begin{center}
     \includegraphics[width=\textwidth]{tooling.pdf}
   \end{center}
-  \caption{The GRATiS class diagram}
-  \label{fig:class_diagram}
+  \caption{GRATiS collaboration diagram}
+  \label{fig:tooling}
 \end{figure}
 
-\begin{comment}
-Figure~\ref{fig:collaboration_diagram} shows the collaboration diagram of GRATiS. The user uses the interface of GROOVE to input a graph grammar. Then the user inputs a remote host and  'a' is the start of a new collaboration chain, representing the normal flow of ATM as depicted in Figure~\ref{fig:axini_tool}.
-
-\begin{figure}[ht]
-  \begin{center}
-    \includegraphics[width=\textwidth]{tooling.pdf}
-  \end{center}
-  \caption{The GRATiS design: replacing the STS with GROOVE}
-  \label{fig:collaboration_diagram}
-\end{figure}
-\end{comment}
 
 \section{Description of added functionality}
 This section covers in detail the added functionality to GROOVE and ATM. 
 
-\subsection{GROOVE Interface}
+\subsection{GROOVE exploration strategy}
 Figure~\ref{fig:esi-diagram} shows the class diagram of the added exploration strategy interface. The symbolic exploration strategy has an exploration strategy such as the Breadth-First exploration strategy to explore the GTS. The remote exploration strategy extends the symbolic exploration strategy.
 
 The user starts the remote exploration strategy. This strategy starts a Breadth-First exploration strategy. This strategy explores the GTS and notifies the remote strategy when there are no more rule transitions to explore. The symbolic strategy builds the STS in Java objects using the explored rule transitions. The class diagram  of the STS is given in section~\ref{sec:sts-setup}. The remote strategy sends the STS in JSON format as a HTTP PUT request to the interface at ATM.

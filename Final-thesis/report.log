@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  27 AUG 2012 19:11
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  28 AUG 2012 01:52
 entering extended mode
  %&-line parsing enabled.
 **report.tex
@@ -900,16 +900,16 @@ File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 <xymatrix 2x1 181>) (./img/gg_graph.tex <xymatrix 2x1 181>) (./img/gg_rhs.tex
 <xymatrix 2x1 181>) (./img/gg_result.tex <xymatrix 2x1 181>)) [13])
 (./tex/tooling.tex [14]
-<./img/axini_tool.pdf, id=682, 356.92177pt x 145.93393pt>
-File: ./img/axini_tool.pdf Graphic file (type pdf)
+<./img/atm-diagram.pdf, id=681, 239.35786pt x 318.4277pt>
+File: ./img/atm-diagram.pdf Graphic file (type pdf)
 
-<use ./img/axini_tool.pdf> [15 <./img/axini_tool.pdf>]
-<./img/groove_tool.pdf, id=708, 374.51399pt x 161.01265pt>
-File: ./img/groove_tool.pdf Graphic file (type pdf)
+<use ./img/atm-diagram.pdf> [15 <./img/atm-diagram.pdf>]
+<./img/groove-diagram.pdf, id=702, 242.8272pt x 204.6975pt>
+File: ./img/groove-diagram.pdf Graphic file (type pdf)
 
-<use ./img/groove_tool.pdf> (./img/start.tikz) (./img/throws.tikz)
-(./img/move.tikz) (./img/nextTurn.tikz) [16 <./img/groove_tool.pdf>]
-(./img/gts-transition-example.tikz) (./img/target-graph-state.tikz)) [17]
+<use ./img/groove-diagram.pdf> (./img/start.tikz) (./img/throws.tikz)
+(./img/move.tikz) (./img/nextTurn.tikz) [16 <./img/groove-diagram.pdf>]
+[17] (./img/gts-transition-example.tikz) (./img/target-graph-state.tikz))
 [18]
 Chapter 3.
 (./tex/gg-to-sts-transformation.tex [19
@@ -920,37 +920,36 @@ Chapter 3.
 (./img/item_example_c4_rhs.tex <xymatrix 2x3 67>)) [22]
 Chapter 4.
 (./tex/implementation.tex
-<./img/tooling.pdf, id=806, 599.89655pt x 245.85509pt>
+<./img/tooling.pdf, id=799, 464.10793pt x 342.51772pt>
 File: ./img/tooling.pdf Graphic file (type pdf)
  <use ./img/tooling.pdf>
 [23
 
  <./img/tooling.pdf>]
-<./img/strategy.pdf, id=841, 202.07094pt x 136.22896pt>
+<./img/strategy.pdf, id=817, 202.07094pt x 136.22896pt>
 File: ./img/strategy.pdf Graphic file (type pdf)
 
-<use ./img/strategy.pdf> <./img/STS.pdf, id=844, 300.6472pt x 213.91919pt>
+<use ./img/strategy.pdf> <./img/STS.pdf, id=820, 300.6472pt x 213.91919pt>
 File: ./img/STS.pdf Graphic file (type pdf)
 
-<use ./img/STS.pdf> [24 <./img/strategy.pdf> <./img/STS.pdf>]
-(./img/start-priority.tikz)
-Underfull \hbox (badness 2564) in paragraph at lines 63--63
+<use ./img/STS.pdf> [24 <./img/strategy.pdf>] (./img/start-priority.tikz)
+Underfull \hbox (badness 2564) in paragraph at lines 52--52
 []\T1/cmr/m/n/8 (a) |The
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--63
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
 \T1/cmr/m/n/8 ini-tial
  []
 
 (./img/sub-priority.tikz) (./img/add-priority.tikz)
-(./img/priority_sts_wrong.tex <xymatrix 1x1 136>) (./img/priority_sts_right.tex
-<xymatrix 1x1 136>)) [25]
+(./img/priority_sts_wrong.tex <xymatrix 1x1 136>) [25 <./img/STS.pdf>]
+(./img/priority_sts_right.tex <xymatrix 1x1 136>)) [26]
 Chapter 5.
 (./tex/validation-introduction.tex) (./tex/model-examples.tex)
-(./tex/measurements.tex [26
+(./tex/measurements.tex [27
 
-]) [27]
+]) [28]
 Chapter 6.
 (./tex/model-examples-introduction.tex) (./tex/all-examples.tex
 Overfull \hbox (1.3395pt too wide) in paragraph at lines 49--49
@@ -1023,9 +1022,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--63
  []
 
 
-LaTeX Warning: Marginpar on page 28 moved.
+LaTeX Warning: Marginpar on page 29 moved.
 
-[28
+[29
 
 ] (./img/start-bg-extended.tikz) (./img/nextTurn-bg-extended.tikz)
 
@@ -1088,7 +1087,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--106
 \T1/cmr/m/n/10 de formele
  []
 
-[29]
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 138--138
 []\T1/cmr/m/n/10 berekening
  []
@@ -1129,7 +1128,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--142
  []
 
 
-LaTeX Warning: Marginpar on page 30 moved.
+LaTeX Warning: Marginpar on page 31 moved.
 
 (./img/c-fwgc-extended.tikz) (./img/eaten-undo-fwgc.tikz)
 Underfull \hbox (badness 10000) in paragraph at lines 151--151
@@ -1192,12 +1191,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--151
  []
 
 
-LaTeX Warning: Marginpar on page 30 moved.
+LaTeX Warning: Marginpar on page 31 moved.
 
 (./img/start-reservation.tikz) (./img/makeReservation.tikz)
 (./img/start-tab.tikz) (./img/order-tab.tikz) (./img/process_order.tikz)
 (./img/pay-tab.tikz) (./img/process_payment.tikz) (./img/sts_tab.tex <xymatrix
-11x6 617>) [30]
+11x6 617>) [31]
 Underfull \hbox (badness 10000) in paragraph at lines 220--220
 []\T1/cmr/m/n/10 moet nog
  []
@@ -1232,20 +1231,20 @@ LaTeX Warning: Float too large for page by 19.40907pt on input line 236.
 
 Xy-pic Warning: start of break not found: bSTART=0.5, bEND=0.97095 [report:5].
 
-521>) [31] (./img/process_order-better.tikz)) [32] [33] [34] [35] [36] [37]
-[38]
+521>) [32] (./img/process_order-better.tikz)) [33] [34] [35] [36] [37] [38]
+[39]
 Chapter 7.
 (./tex/case-study-introduction.tex) (./tex/scrp.tex (./img/start-scrp.tikz)
 (./img/account.open.request.tikz) (./img/account.open.success.tikz)
 (./img/account.open.invalid_ss_on.tikz)
 (./img/general_responses.not_signed_on.tikz) (./img/account.close.success.tikz)
-[39
+[40
 
-] [40] (./img/start-scrp-extended.tikz)
+] [41] (./img/start-scrp-extended.tikz)
 (./img/account.open.success-extended.tikz)
 (./img/account.open.invalid_ss_on-extended.tikz)
 (./img/account.close.success-extended.tikz)) (./tex/scrp-measurements.tex)
-[41]
+[42]
 Chapter 8.
 (./tex/summary.tex) (./tex/conclusion.tex) (./tex/future-work.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--1
@@ -1257,21 +1256,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--1
 \T1/cmr/m/n/10 nog uit-ge-
  []
 
-[42
+[43
 
-]) (./tex/acknowledgements.tex) [43] (./report.bbl [44
+]) (./tex/acknowledgements.tex) [44] (./report.bbl [45
 
-] [45]) [46]
+] [46]) [47]
 (./symbols.tex
 
-LaTeX Warning: Reference `symbol:Rules' on page 47 undefined on input line 10.
+LaTeX Warning: Reference `symbol:Rules' on page 48 undefined on input line 10.
 
 
-LaTeX Warning: Reference `symbol:Rules' on page 47 undefined on input line 27.
+LaTeX Warning: Reference `symbol:Rules' on page 48 undefined on input line 27.
 
-[47
+[48
 
-]) [48] (./report.aux)
+]) [49] (./report.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1280,9 +1279,9 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20872 strings out of 495061
- 367213 string characters out of 1182622
- 1873860 words of memory out of 3000000
+ 20873 strings out of 495061
+ 367234 string characters out of 1182622
+ 1873873 words of memory out of 3000000
  23051 multiletter control sequences out of 15000+50000
  30003 words of font info for 75 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
@@ -1326,9 +1325,9 @@ m10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam7.pfb
 /share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texmf-te
 xlive/fonts/type1/public/xypic/xybtip10.pfb></usr/share/texmf-texlive/fonts/typ
 e1/public/xypic/xydash10.pfb>
-Output written on report.pdf (50 pages, 1003736 bytes).
+Output written on report.pdf (51 pages, 998854 bytes).
 PDF statistics:
- 1933 PDF objects out of 2073 (max. 8388607)
- 288 named destinations out of 1000 (max. 500000)
+ 1916 PDF objects out of 2073 (max. 8388607)
+ 289 named destinations out of 1000 (max. 500000)
  728 words of extra memory for PDF output out of 10000 (max. 10000000)
 

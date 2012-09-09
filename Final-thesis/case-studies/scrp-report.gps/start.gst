@@ -14,7 +14,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>228 87 48 33</string>
+                <string>179 88 48 33</string>
             </attr>
         </node>
         <node id="n0">
@@ -24,12 +24,12 @@
         </node>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>type:Account</string>
+                <string>flag:AS_IDLE</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
             <attr name="label">
-                <string>flag:AS_IDLE</string>
+                <string>type:Account</string>
             </attr>
         </edge>
         <edge to="n1" from="n1">
@@ -37,9 +37,9 @@
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n2" from="n0">
             <attr name="label">
-                <string>type:CR</string>
+                <string>has</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -47,9 +47,9 @@
                 <string>flag:SS_OFF</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
+        <edge to="n0" from="n0">
             <attr name="label">
-                <string>has</string>
+                <string>type:CR</string>
             </attr>
         </edge>
     </graph>
