@@ -4,19 +4,12 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n0">
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n4">
             <attr name="layout">
-                <string>30 15 58 33</string>
-            </attr>
-        </node>
-        <node id="n1">
-            <attr name="layout">
-                <string>9 65 43 37</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>82 62 43 37</string>
+                <string>51 190 30 37</string>
             </attr>
         </node>
         <node id="n3">
@@ -24,39 +17,34 @@
                 <string>44 123 43 43</string>
             </attr>
         </node>
-        <node id="n4">
+        <node id="n2">
             <attr name="layout">
-                <string>51 190 30 37</string>
+                <string>82 62 43 37</string>
             </attr>
         </node>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>Count</string>
+        <node id="n1">
+            <attr name="layout">
+                <string>9 65 43 37</string>
             </attr>
-        </edge>
-        <edge to="n1" from="n0">
-            <attr name="label">
-                <string>del:a</string>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>36 14 58 33</string>
             </attr>
-        </edge>
-        <edge to="n2" from="n0">
+        </node>
+        <edge to="n4" from="n4">
             <attr name="label">
-                <string>new:a</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>int:</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>int:</string>
+                <string>int:1</string>
             </attr>
         </edge>
         <edge to="n3" from="n3">
             <attr name="label">
                 <string>prod:</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n3">
+            <attr name="label">
+                <string>int:add</string>
             </attr>
         </edge>
         <edge to="n1" from="n3">
@@ -69,14 +57,29 @@
                 <string>arg:1</string>
             </attr>
         </edge>
-        <edge to="n2" from="n3">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>int:add</string>
+                <string>int:</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge to="n1" from="n1">
             <attr name="label">
-                <string>int:1</string>
+                <string>int:</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
+                <string>Count</string>
+            </attr>
+        </edge>
+        <edge to="n1" from="n0">
+            <attr name="label">
+                <string>del:c</string>
+            </attr>
+        </edge>
+        <edge to="n2" from="n0">
+            <attr name="label">
+                <string>new:c</string>
             </attr>
         </edge>
     </graph>

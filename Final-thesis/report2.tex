@@ -1,0 +1,39 @@
+\documentclass[a4paper]{report}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{a4wide}
+\usepackage{wrapfig}
+\usepackage{subfig}
+\usepackage{groove2tikz}
+\usepackage[all]{xy}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{fancybox}
+\usepackage{verbatim}
+
+% Macro for 'List of Symbols', 'List of Notations' etc...
+\input{symbol-macros}
+\def\listofsymbols{\input{symbols} \clearpage}
+\def\addsymbol #1: #2#3{$#1$ \> \parbox{5in}{#2 \dotfill \pageref{#3}}\\} 
+\def\newnot#1{\label{#1}} 
+
+\graphicspath{{./img/}}
+%\renewcommand*\familydefault{\sfdefault}
+
+\hypersetup{pdfborder = {0 0 0 0}}
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{4}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\begin{document}
+	$\xymatrix{
+   \bullet \ar@(dl,dr)[]_{?add\:|\:C:=C+1}
+}$
+\end{document}
