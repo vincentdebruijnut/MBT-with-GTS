@@ -17,7 +17,7 @@
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>379 61 48 33</string>
+                <string>261 131 48 33</string>
             </attr>
         </node>
         <node id="n0">
@@ -37,11 +37,6 @@
         </edge>
         <edge to="n3" from="n3">
             <attr name="label">
-                <string>flag:open</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
@@ -50,9 +45,9 @@
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n3" from="n11">
+        <edge to="n3" from="n3">
             <attr name="label">
-                <string>from</string>
+                <string>flag:open</string>
             </attr>
         </edge>
         <edge to="n11" from="n11">
@@ -60,9 +55,9 @@
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge to="n3" from="n11">
             <attr name="label">
-                <string>type:Account</string>
+                <string>from</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
@@ -72,12 +67,17 @@
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge to="n0" from="n0">
+            <attr name="label">
                 <string>del:flag:AS_IDLE</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge to="n0" from="n2">
             <attr name="label">
-                <string>type:CR</string>
+                <string>has</string>
             </attr>
         </edge>
         <edge to="n2" from="n2">
@@ -85,9 +85,9 @@
                 <string>flag:SS_ON</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
+        <edge to="n2" from="n2">
             <attr name="label">
-                <string>has</string>
+                <string>type:CR</string>
             </attr>
         </edge>
     </graph>

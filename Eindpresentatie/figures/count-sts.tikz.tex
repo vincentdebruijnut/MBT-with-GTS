@@ -5,7 +5,5 @@
 	\node[state] (s1) [right=7cm of s0] {\footnotesize $s_1$};
    	\node[state] (s2) [below=2cm of s1] {\footnotesize $s_2$};
 	
-	\path        (s0) edge node [auto] {$?coin(c)\:|\:c=0.20 \lor c=0.50\:|\:C:=c$ } (s1)
-					(s1) edge node [auto] {?button} (s2)
-					(s2) edge node [auto] {$!coffee\:|\:C=0.50\:|\:C:=0$} (s0);
+	\path        (s0) edge node [auto] {$?add\:|\:C:=C+1$ } (s0);
 \end{tikzpicture}

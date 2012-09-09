@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  9 SEP 2012 16:52
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  9 SEP 2012 22:41
 entering extended mode
  %&-line parsing enabled.
 **presentation.tex
@@ -1069,14 +1069,13 @@ File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [10
 
 ]
-(./figures/atm.tikz.tex
+(./figures/coffee.tikz.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 4.
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 4.
-
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+ (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ))
 File: logoblack.pdf Graphic file (type pdf)
@@ -1169,7 +1168,7 @@ File: logoblack.pdf Graphic file (type pdf)
 <use logoblack.pdf> [17
 
 ]
-<./figures/start.png, id=308, 391.4625pt x 169.63374pt>
+<./figures/start.png, id=308, 173.89969pt x 127.22531pt>
 File: ./figures/start.png Graphic file (type png)
 
 <use ./figures/start.png>
@@ -1177,56 +1176,54 @@ File: ./figures/start.png Graphic file (type png)
 File: ./figures/start1.png Graphic file (type png)
 
 <use ./figures/start1.png>
-Overfull \hbox (72.13054pt too wide) in paragraph at lines 85--85
- [][] 
- []
-
 File: logoblack.pdf Graphic file (type pdf)
-<use logoblack.pdf> [18
+ <use logoblack.pdf> [18
 
  <./figures/start.png (PNG copy)> <./figures/start1.png (PNG copy)>]
 File: ./figures/start.png Graphic file (type png)
  <use ./figures/start.png>
 File: ./figures/start1.png Graphic file (type png)
- <use ./figures/start1.png>
-Overfull \hbox (72.13054pt too wide) in paragraph at lines 85--85
- [][] 
- []
 
+<use ./figures/start1.png>
 File: logoblack.pdf Graphic file (type pdf)
-<use logoblack.pdf> [19
+ <use logoblack.pdf> [19
 
 ]
-<./figures/cross.png, id=337, 251.94125pt x 169.63374pt>
+File: ./figures/start.png Graphic file (type png)
+ <use ./figures/start.png>
+File: ./figures/start1.png Graphic file (type png)
+
+<use ./figures/start1.png>
+File: logoblack.pdf Graphic file (type pdf)
+ <use logoblack.pdf> [20
+
+]
+<./figures/cross.png, id=351, 251.94125pt x 169.63374pt>
 File: ./figures/cross.png Graphic file (type png)
 
 <use ./figures/cross.png>
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [20
+ <use logoblack.pdf> [21
 
  <./figures/cross.png (PNG copy)>]
 File: ./figures/cross.png Graphic file (type png)
  <use ./figures/cross.png>
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [21
+ <use logoblack.pdf> [22
 
 ]
 File: ./figures/cross.png Graphic file (type png)
 
 <use ./figures/cross.png>
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [22
+ <use logoblack.pdf> [23
 
 ]
 File: ./figures/cross.png Graphic file (type png)
  <use ./figures/cross.png>
 File: logoblack.pdf Graphic file (type pdf)
 
-<use logoblack.pdf> [23
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [24
+<use logoblack.pdf> [24
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
@@ -1234,12 +1231,12 @@ File: logoblack.pdf Graphic file (type pdf)
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [26
+ <use logoblack.pdf> [26
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [27
+
+<use logoblack.pdf> [27
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
@@ -1247,43 +1244,44 @@ File: logoblack.pdf Graphic file (type pdf)
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [29
+ <use logoblack.pdf> [29
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [30
+
+<use logoblack.pdf> [30
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [31
 
 ]
-(./presentation.toc)
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [32
+
+]
+(./presentation.toc)
+File: logoblack.pdf Graphic file (type pdf)
+ <use logoblack.pdf> [33
 
 ] (./presentation.toc)
 File: logoblack.pdf Graphic file (type pdf)
 
-<use logoblack.pdf> [33
+<use logoblack.pdf> [34
+
+] (./figures/coffee-sts.tikz.tex)
+File: logoblack.pdf Graphic file (type pdf)
+ <use logoblack.pdf>
+[35
+
+] (./figures/coffee-sts.tikz.tex)
+File: logoblack.pdf Graphic file (type pdf)
+ <use logoblack.pdf> [36
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [34
 
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [35
-
-]
-File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [36
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [37
+<use logoblack.pdf> [37
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
@@ -1291,56 +1289,82 @@ File: logoblack.pdf Graphic file (type pdf)
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [39
+ <use logoblack.pdf> [39
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [40
+
+<use logoblack.pdf> [40
+
+]
+File: logoblack.pdf Graphic file (type pdf)
+ <use logoblack.pdf> [41
 
 ] (./presentation.toc)
 File: logoblack.pdf Graphic file (type pdf)
 
-<use logoblack.pdf> [41
+<use logoblack.pdf> [42
 
 ]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [42
+<./figures/start-count.png, id=657, 68.255pt x 102.3825pt>
+File: ./figures/start-count.png Graphic file (type png)
 
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [43
+<use ./figures/start-count.png>
+<./figures/add.png, id=658, 126.4725pt x 161.60374pt>
+File: ./figures/add.png Graphic file (type png)
+ <use ./figures/add.png>
+(./figures/count-sts.tikz.tex)
+Overfull \vbox (50.77762pt too high) detected at line 162
+ []
 
-]
 File: logoblack.pdf Graphic file (type pdf)
+<use logoblack.pdf> [43
 
+ <./figures/start-count.png (PNG copy)> <./figures/add.png (PNG copy)>]
+File: ./figures/start-count.png Graphic file (type png)
+ <use ./figures/start-count.png>
+File: ./figures/add.png Graphic file (type png)
+ <use ./figures/add.png>
+(./figures/count-sts.tikz.tex)
+Overfull \vbox (50.77762pt too high) detected at line 162
+ []
+
+File: logoblack.pdf Graphic file (type pdf)
 <use logoblack.pdf> [44
 
 ]
+File: ./figures/start-count.png Graphic file (type png)
+ <use ./figures/start-count.png>
+File: ./figures/add.png Graphic file (type png)
+
+<use ./figures/add.png> (./figures/count-sts.tikz.tex)
+Overfull \vbox (50.77762pt too high) detected at line 162
+ []
+
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [45
+<use logoblack.pdf> [45
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [46
 
 ]
-(./presentation.toc)
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [47
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [48
+
+<use logoblack.pdf> [48
+
+] (./presentation.toc)
+File: logoblack.pdf Graphic file (type pdf)
+ <use logoblack.pdf> [49
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
 
-<use logoblack.pdf> [49
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [50
+<use logoblack.pdf> [50
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
@@ -1348,27 +1372,48 @@ File: logoblack.pdf Graphic file (type pdf)
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [52
+ <use logoblack.pdf> [52
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [53
+
+<use logoblack.pdf> [53
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [54
 
 ]
+<./figures/self-check-out.jpg, id=820, 501.875pt x 376.40625pt>
+File: ./figures/self-check-out.jpg Graphic file (type jpg)
+
+<use ./figures/self-check-out.jpg>
 File: logoblack.pdf Graphic file (type pdf)
+ <use logoblack.pdf> [55
 
-<use logoblack.pdf> [55
+ <./figures/self-check-out.jpg>] <./figures/start-scrp.png, id=835, 174.6525pt 
+x 138.5175pt>
+File: ./figures/start-scrp.png Graphic file (type png)
 
-] (./presentation.toc)
+<use ./figures/start-scrp.png>
+<./figures/open.png, id=836, 259.97125pt x 119.44624pt>
+File: ./figures/open.png Graphic file (type png)
+
+<use ./figures/open.png>
+<./figures/success.png, id=837, 213.79875pt x 156.585pt>
+File: ./figures/success.png Graphic file (type png)
+
+<use ./figures/success.png>
+<./figures/not_signed_on.png, id=838, 260.975pt x 115.43124pt>
+File: ./figures/not_signed_on.png Graphic file (type png)
+
+<use ./figures/not_signed_on.png>
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [56
 
-]
+ <./figures/start-scrp.png (PNG copy)> <./figures/open.png (PNG copy)> <./figur
+es/success.png (PNG copy)> <./figures/not_signed_on.png (PNG copy)>] (./present
+ation.toc)
 File: logoblack.pdf Graphic file (type pdf)
 
 <use logoblack.pdf> [57
@@ -1382,6 +1427,11 @@ File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [59
 
 ]
+File: logoblack.pdf Graphic file (type pdf)
+
+<use logoblack.pdf> [60
+
+]
 \tf@nav=\write6
 \openout6 = `presentation.nav'.
 
@@ -1391,31 +1441,32 @@ File: logoblack.pdf Graphic file (type pdf)
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-
-(./presentation.aux)
+ (./presentation.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 20033 strings out of 495061
- 391889 string characters out of 1182622
- 482833 words of memory out of 3000000
- 22568 multiletter control sequences out of 15000+50000
- 13333 words of font info for 43 fonts, out of 3000000 for 9000
+ 20098 strings out of 495061
+ 393328 string characters out of 1182622
+ 483833 words of memory out of 3000000
+ 22606 multiletter control sequences out of 15000+50000
+ 16176 words of font info for 54 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 55i,19n,78p,441b,880s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,19n,82p,441b,978s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmss8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmss9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi10.pfb>
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share
-/texmf-texlive/fonts/type1/urw/helvetic/uhvb8ac.pfb>
-Output written on presentation.pdf (59 pages, 369315 bytes).
+ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmss12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmss8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss9.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/t
+ype1/urw/helvetic/uhvb8ac.pfb>
+Output written on presentation.pdf (60 pages, 586193 bytes).
 PDF statistics:
- 939 PDF objects out of 1000 (max. 8388607)
- 123 named destinations out of 1000 (max. 500000)
- 515 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 967 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
+ 556 words of extra memory for PDF output out of 10000 (max. 10000000)
 

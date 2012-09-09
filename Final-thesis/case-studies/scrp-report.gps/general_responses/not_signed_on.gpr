@@ -17,7 +17,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>298 42 48 33</string>
+                <string>195 107 48 33</string>
             </attr>
         </node>
         <node id="n0">
@@ -57,12 +57,12 @@
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>type:CR</string>
+                <string>flag:?[SS_OFF,SS_HALT]</string>
             </attr>
         </edge>
         <edge to="n0" from="n0">
             <attr name="label">
-                <string>flag:?[SS_OFF,SS_HALT]</string>
+                <string>type:CR</string>
             </attr>
         </edge>
     </graph>
