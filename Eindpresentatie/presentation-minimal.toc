@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.10pt}
+\beamer@sectionintoc {2}{Setup}{10}{0}{1}
+\beamer@sectionintoc {3}{From Graph Grammar to STS}{13}{0}{2}
+\beamer@sectionintoc {4}{Validation}{15}{0}{3}
+\beamer@sectionintoc {5}{Conclusion}{19}{0}{4}

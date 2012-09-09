@@ -4,7 +4,7 @@
 \renewcommand{\thesubfigure}{\relax} 
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
 
-\title[Model-based Testing with\\Graph Grammars]{Model-based Testing with Graph Grammars}
+\title[Model-based Testing with Graph Grammars]{Model-based Testing with Graph Grammars}
 \conference{\!\!\!M.Sc. Colloquium}
 \author{Vincent de Bruijn}
 \institute{Formal Methods and Tools, Faculty of EECMS \\ University of Twente, The Netherlands}
@@ -27,7 +27,7 @@
 \section*{Introduction}
 
 \begin{frame}{Model-based Testing (1/3)}
-\begin{itemize}[<+->]
+\begin{itemize}
   \item Why testing?
   \begin{itemize}
     \item List of requirements
@@ -61,7 +61,7 @@
 \begin{figure}
 \includegraphics[scale=0.75]{./figures/mbt.png}
 \end{figure}
-\begin{enumerate}[<+->]
+\begin{enumerate}
 \item Take possible stimulus from model
 \item Apply stimulus to SUT
 \item Observe response(s)
@@ -78,7 +78,7 @@
     \subfloat[after]{\includegraphics[scale=0.5]{./figures/start1.png}}
 \end{figure}
 
-\begin{itemize}[<+->]
+\begin{itemize}
   \item Graphs represent system states
   \item Graph rules express possible changes to graph
   \item All possible changes make a \textit{Graph Transition System}
@@ -89,7 +89,7 @@
 \begin{figure}
 \includegraphics[scale=0.6]{./figures/cross.png}
 \end{figure}
-\begin{itemize}[<+->]
+\begin{itemize}
   \item Black and blue parts have to be present in graph
   \item Red parts may not be present in graph
   \item Blue is erased from graph
@@ -98,14 +98,14 @@
 \end{frame}
 
 \begin{frame}{Tools}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item Axini Test Manager (ATM)
 \item GRaphs for Object-Oriented VErification (GROOVE)
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Research Goals}
-\begin{itemize}[<+->]
+\begin{itemize}
   \item Goals
   \begin{itemize}
     \item Use GROOVE and ATM to create model-based testing tool with Graph Grammars
@@ -124,7 +124,7 @@
 \section[Setup]{Setup}
 
 \begin{frame}{Setup (1/2)}
-\begin{itemize}[<+->]
+\begin{itemize}
   \item Graphs for humans, transition systems for computers
   \item ATM uses \textit{Symbolic Transition Systems}
 \end{itemize}
@@ -134,7 +134,7 @@
 \end{frame}
 
 \begin{frame}{Setup (2/2)}
-\begin{itemize}[<+->]
+\begin{itemize}
   \item The tool:
   \begin{enumerate}
     \item creates STS from the GG in GROOVE
@@ -148,7 +148,7 @@
 \section[GG2STS]{From Graph Grammar to STS}
 
 \begin{frame}{Algorithm}
-\begin{enumerate}[<+->]
+\begin{enumerate}
 \item Create variables from data values
 \item Explore GTS disregarding data values
 \item Parse guards and updates from rules
@@ -162,7 +162,7 @@
 \end{frame}
 
 %\begin{frame}{Constraints}
-%  \begin{enumerate}[<+->]
+%  \begin{enumerate}
 %    \item Variables have to be unique
 %    \item Variables cannot be part of NACs
 %    \item Structural constraints on node creating rules
@@ -173,7 +173,7 @@
 \section[Validation]{Validation}
 
 \begin{frame}{Model Examples}
-\begin{itemize}[<+->]
+\begin{itemize}
   \item 4 small examples used:
   \begin{enumerate}
     \item a boardgame
@@ -185,7 +185,7 @@
 \end{frame}
 
 \begin{frame}{Case study (1/2)}
-  \begin{itemize}[<+->]
+  \begin{itemize}
   \item Self-checkout register
 \end{itemize}
 \begin{figure}
@@ -206,7 +206,7 @@
 \section[Conclusion]{Conclusion}
 
 \begin{frame}{Conclusion}
-  \begin{itemize}[<+->]
+  \begin{itemize}
     \item Created a tool for model-based testing with Graph Grammars
     \item Transformation needs to be extended: complex data structures
     \item Modelling behavior with GGs is effective

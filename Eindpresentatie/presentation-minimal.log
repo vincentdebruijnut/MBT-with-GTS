@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  9 SEP 2012 23:43
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  9 SEP 2012 23:49
 entering extended mode
  %&-line parsing enabled.
-**presentation.tex
-(./presentation.tex
+**presentation-minimal.tex
+(./presentation-minimal.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
@@ -847,8 +847,8 @@ File: tikzlibrarybackgrounds.code.tex 2010/02/08 v2.10 (rcs-revision 1.2)
 \pgf@layerboxsaved@background=\box82
 )
 \c@ruledefcounter=\count166
-) (./presentation.aux)
-\openout1 = `presentation.aux'.
+) (./presentation-minimal.aux)
+\openout1 = `presentation-minimal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
@@ -931,9 +931,10 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 LaTeX Info: Redefining \ref on input line 23.
 LaTeX Info: Redefining \pageref on input line 23.
- (./presentation.out) (./presentation.out)
+
+(./presentation-minimal.out) (./presentation-minimal.out)
 \@outlinefile=\write5
-\openout5 = `presentation.out'.
+\openout5 = `presentation-minimal.out'.
 
 \AtBeginShipoutBox=\box84
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -1007,8 +1008,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
 LaTeX Info: Redefining \subref on input line 23.
 Package caption Info: End \AtBeginDocument code.
- (./presentation.nav)
-<logoblack.pdf, id=27, 341.43309pt x 85.35826pt>
+ (./presentation-minimal.nav) <logoblack.pdf, id=27, 341.43309pt x 85.35826pt>
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf>
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 25.
@@ -1034,383 +1034,190 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 File: logoblack.pdf Graphic file (type pdf)
 <use logoblack.pdf> [2
 
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [3
+] (./figures/coffee.tikz.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
 
-]
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+))
+File: logoblack.pdf Graphic file (type pdf)
+ <use logoblack.pdf>
+[3
+
+] <./figures/mbt.png, id=104, 369.63094pt x 103.13531pt>
+File: ./figures/mbt.png Graphic file (type png)
+
+<use ./figures/mbt.png>
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [4
 
-]
+ <./figures/mbt.png>]
+<./figures/start.png, id=120, 173.89969pt x 127.22531pt>
+File: ./figures/start.png Graphic file (type png)
+
+<use ./figures/start.png>
+<./figures/start1.png, id=121, 240.9pt x 169.63374pt>
+File: ./figures/start1.png Graphic file (type png)
+
+<use ./figures/start1.png>
 File: logoblack.pdf Graphic file (type pdf)
+ <use logoblack.pdf> [5
 
-<use logoblack.pdf> [5
+ <./figures/start.png (PNG copy)> <./figures/start1.png (PNG copy)>]
+<./figures/cross.png, id=136, 251.94125pt x 169.63374pt>
+File: ./figures/cross.png Graphic file (type png)
 
-]
+<use ./figures/cross.png>
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [6
 
-]
+ <./figures/cross.png (PNG copy)>]
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [7
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
+ <use logoblack.pdf> [8
 
-<use logoblack.pdf> [8
-
-]
+] (./presentation-minimal.toc)
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [9
 
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [10
-
-]
-(./figures/coffee.tikz.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 4.
- (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 4.
- (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-))
+] (./presentation-minimal.toc)
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf>
-[11
+[10
 
-] <./figures/mbt.png, id=209, 369.63094pt x 103.13531pt>
-File: ./figures/mbt.png Graphic file (type png)
-
-<use ./figures/mbt.png>
+] (./figures/coffee-sts.tikz.tex)
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [12
-
- <./figures/mbt.png>]
-File: ./figures/mbt.png Graphic file (type png)
-
-<use ./figures/mbt.png>
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [13
+ <use logoblack.pdf> [11
 
 ]
-File: ./figures/mbt.png Graphic file (type png)
- <use ./figures/mbt.png>
 File: logoblack.pdf Graphic file (type pdf)
 
-<use logoblack.pdf> [14
+<use logoblack.pdf> [12
 
-]
-File: ./figures/mbt.png Graphic file (type png)
- <use ./figures/mbt.png>
+] (./presentation-minimal.toc)
+File: logoblack.pdf Graphic file (type pdf)
+ <use logoblack.pdf>
+[13
+
+] <./figures/start-count.png, id=261, 68.255pt x 102.3825pt>
+File: ./figures/start-count.png Graphic file (type png)
+
+<use ./figures/start-count.png>
+<./figures/add.png, id=262, 126.4725pt x 162.6075pt>
+File: ./figures/add.png Graphic file (type png)
+ <use ./figures/add.png>
+<./figures/count-sts.png, id=263, 70.01157pt x 37.64063pt>
+File: ./figures/count-sts.png Graphic file (type png)
+
+<use ./figures/count-sts.png>
+File: logoblack.pdf Graphic file (type pdf)
+ <use logoblack.pdf> [14
+
+ <./figures/start-count.png (PNG copy)> <./figures/add.png (PNG copy)> <./figur
+es/count-sts.png>]
+(./presentation-minimal.toc)
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [15
 
 ]
-File: ./figures/mbt.png Graphic file (type png)
-
-<use ./figures/mbt.png>
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [16
-
-]
-File: ./figures/mbt.png Graphic file (type png)
- <use ./figures/mbt.png>
-File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [17
-
-]
-<./figures/start.png, id=291, 173.89969pt x 127.22531pt>
-File: ./figures/start.png Graphic file (type png)
-
-<use ./figures/start.png>
-<./figures/start1.png, id=292, 240.9pt x 169.63374pt>
-File: ./figures/start1.png Graphic file (type png)
-
-<use ./figures/start1.png>
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [18
-
- <./figures/start.png (PNG copy)> <./figures/start1.png (PNG copy)>]
-File: ./figures/start.png Graphic file (type png)
- <use ./figures/start.png>
-File: ./figures/start1.png Graphic file (type png)
-
-<use ./figures/start1.png>
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [19
-
-]
-File: ./figures/start.png Graphic file (type png)
- <use ./figures/start.png>
-File: ./figures/start1.png Graphic file (type png)
-
-<use ./figures/start1.png>
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [20
-
-]
-<./figures/cross.png, id=334, 251.94125pt x 169.63374pt>
-File: ./figures/cross.png Graphic file (type png)
-
-<use ./figures/cross.png>
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [21
-
- <./figures/cross.png (PNG copy)>]
-File: ./figures/cross.png Graphic file (type png)
- <use ./figures/cross.png>
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [22
-
-]
-File: ./figures/cross.png Graphic file (type png)
-
-<use ./figures/cross.png>
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [23
-
-]
-File: ./figures/cross.png Graphic file (type png)
- <use ./figures/cross.png>
-File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [24
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [25
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [26
-
-]
-File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [27
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [28
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [29
-
-]
-File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [30
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [31
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [32
-
-]
-(./presentation.toc)
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [33
-
-] (./presentation.toc)
-File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [34
-
-] (./figures/coffee-sts.tikz.tex)
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf>
-[35
+[16
 
-] (./figures/coffee-sts.tikz.tex)
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [36
-
-]
-File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [37
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [38
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [39
-
-]
-File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [40
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [41
-
-] (./presentation.toc)
-File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [42
-
-]
-<./figures/start-count.png, id=640, 68.255pt x 102.3825pt>
-File: ./figures/start-count.png Graphic file (type png)
-
-<use ./figures/start-count.png>
-<./figures/add.png, id=641, 126.4725pt x 162.6075pt>
-File: ./figures/add.png Graphic file (type png)
- <use ./figures/add.png>
-<./figures/count-sts.png, id=642, 70.01157pt x 37.64063pt>
-File: ./figures/count-sts.png Graphic file (type png)
-
-<use ./figures/count-sts.png>
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [43
-
- <./figures/start-count.png (PNG copy)> <./figures/add.png (PNG copy)> <./figur
-es/count-sts.png>]
-File: ./figures/start-count.png Graphic file (type png)
-
-<use ./figures/start-count.png>
-File: ./figures/add.png Graphic file (type png)
- <use ./figures/add.png>
-File: ./figures/count-sts.png Graphic file (type png)
-
-<use ./figures/count-sts.png>
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [44
-
-]
-File: ./figures/start-count.png Graphic file (type png)
-
-<use ./figures/start-count.png>
-File: ./figures/add.png Graphic file (type png)
- <use ./figures/add.png>
-File: ./figures/count-sts.png Graphic file (type png)
-
-<use ./figures/count-sts.png>
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [45
-
-] (./presentation.toc)
-File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [46
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [47
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [48
-
-]
-File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [49
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [50
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [51
-
-]
-<./figures/self-check-out.jpg, id=766, 501.875pt x 376.40625pt>
+] <./figures/self-check-out.jpg, id=308, 501.875pt x 376.40625pt>
 File: ./figures/self-check-out.jpg Graphic file (type jpg)
 
 <use ./figures/self-check-out.jpg>
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [52
+ <use logoblack.pdf> [17
 
- <./figures/self-check-out.jpg>] <./figures/start-scrp.png, id=780, 174.6525pt 
+ <./figures/self-check-out.jpg>] <./figures/start-scrp.png, id=322, 174.6525pt 
 x 138.5175pt>
 File: ./figures/start-scrp.png Graphic file (type png)
 
 <use ./figures/start-scrp.png>
-<./figures/open.png, id=781, 259.97125pt x 119.44624pt>
+<./figures/open.png, id=323, 259.97125pt x 119.44624pt>
 File: ./figures/open.png Graphic file (type png)
 
 <use ./figures/open.png>
-<./figures/success.png, id=782, 213.79875pt x 156.585pt>
+<./figures/success.png, id=324, 213.79875pt x 156.585pt>
 File: ./figures/success.png Graphic file (type png)
 
 <use ./figures/success.png>
-<./figures/not_signed_on.png, id=783, 260.975pt x 115.43124pt>
+<./figures/not_signed_on.png, id=325, 260.975pt x 115.43124pt>
 File: ./figures/not_signed_on.png Graphic file (type png)
 
 <use ./figures/not_signed_on.png>
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [53
+ <use logoblack.pdf> [18
 
  <./figures/start-scrp.png (PNG copy)> <./figures/open.png (PNG copy)> <./figur
 es/success.png (PNG copy)> <./figures/not_signed_on.png (PNG copy)>] (./present
-ation.toc)
+ation-minimal.toc)
 File: logoblack.pdf Graphic file (type pdf)
 
-<use logoblack.pdf> [54
+<use logoblack.pdf> [19
 
 ]
 File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [55
-
-]
-File: logoblack.pdf Graphic file (type pdf)
- <use logoblack.pdf> [56
-
-]
-File: logoblack.pdf Graphic file (type pdf)
-
-<use logoblack.pdf> [57
+ <use logoblack.pdf> [20
 
 ]
 \tf@nav=\write6
-\openout6 = `presentation.nav'.
+\openout6 = `presentation-minimal.nav'.
 
 \tf@toc=\write7
-\openout7 = `presentation.toc'.
+\openout7 = `presentation-minimal.toc'.
 
 \tf@snm=\write8
-\openout8 = `presentation.snm'.
+\openout8 = `presentation-minimal.snm'.
 
- (./presentation.aux)
+ (./presentation-minimal.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 20087 strings out of 495061
- 393188 string characters out of 1182622
+ 20013 strings out of 495061
+ 392645 string characters out of 1182622
  482830 words of memory out of 3000000
- 22608 multiletter control sequences out of 15000+50000
+ 22606 multiletter control sequences out of 15000+50000
  16176 words of font info for 54 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 55i,19n,78p,441b,906s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmss12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmss8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss9.pfb><
-/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/t
-ype1/urw/helvetic/uhvb8ac.pfb>
-Output written on presentation.pdf (57 pages, 570835 bytes).
+ 55i,19n,78p,449b,906s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Navigation54} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Navigation46} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Navigation42} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Navigation34} has been referenced but does not exis
+t, replaced by a fixed one
+
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmss12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mss8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss9.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/typ
+e1/urw/helvetic/uhvb8ac.pfb>
+Output written on presentation-minimal.pdf (20 pages, 444536 bytes).
 PDF statistics:
- 912 PDF objects out of 1000 (max. 8388607)
- 119 named destinations out of 1000 (max. 500000)
- 543 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 414 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 500000)
+ 321 words of extra memory for PDF output out of 10000 (max. 10000000)
 
