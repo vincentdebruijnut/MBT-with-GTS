@@ -1,0 +1,15 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, start] (s0)  at (0.575, -0.165) {\ml{\textit{s0}}};
+\node[node, open] (s1)  at (0.575, -0.895) {\ml{\textit{s1}}};
+\node[node, open, bold] (s2)  at (0.575, -1.625) {\ml{\textit{s2}}};
+\path[edge](s0.south -| 0.575, -0.895) -- node[lab]{add(1,2)} (s1) ;
+\path[edge](s1.south -| 0.575, -1.625) -- node[lab]{add(2,3)} (s2) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

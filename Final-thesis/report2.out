@@ -1,0 +1,25 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}
+\BOOKMARK [1][-]{section.1.1}{Testing}{chapter.1}
+\BOOKMARK [1][-]{section.1.2}{Model-based Testing}{chapter.1}
+\BOOKMARK [1][-]{section.1.3}{Graph Transformation}{chapter.1}
+\BOOKMARK [1][-]{section.1.4}{Tools}{chapter.1}
+\BOOKMARK [1][-]{section.1.5}{Research goals}{chapter.1}
+\BOOKMARK [1][-]{section.1.6}{Roadmap}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{Background}{}
+\BOOKMARK [1][-]{section.2.1}{Model-based Testing}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.1.1}{Previous work}{section.2.1}
+\BOOKMARK [2][-]{subsection.2.1.2}{Labelled Transition Systems}{section.2.1}
+\BOOKMARK [1][-]{section.2.2}{Algebra}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Symbolic Transition Systems}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.3.1}{Previous work}{section.2.3}
+\BOOKMARK [2][-]{subsection.2.3.2}{Definition}{section.2.3}
+\BOOKMARK [2][-]{subsection.2.3.3}{Example}{section.2.3}
+\BOOKMARK [2][-]{subsection.2.3.4}{STS to LTS mapping}{section.2.3}
+\BOOKMARK [2][-]{subsection.2.3.5}{Coverage}{section.2.3}
+\BOOKMARK [1][-]{section.2.4}{Graph Grammars}{chapter.2}
+\BOOKMARK [1][-]{section.2.5}{Tooling}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.5.1}{ATM}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.2}{GROOVE}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.3}{GROOVE visual elements}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.4}{Example GROOVE graph grammar}{section.2.5}
+\BOOKMARK [0][-]{chapter*.34}{List of Symbols}{}

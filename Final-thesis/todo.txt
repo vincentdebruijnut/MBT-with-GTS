@@ -1,0 +1,58 @@
+introduction.tex
+- 4 small issues (1 hour)
+
+algebra.tex
+- 1 small issue (10 min) done
+
+graph-grammars.tex
+- Explain rule priorities (3 hours) done
+
+tooling.tex
+- sequence diagram ATM (2 hours) done
+- sequence diagram GROOVE (2 hours) done
+- describe quantification high level groove (2 hours)
+- describe exploration of GGs (2 hours) done
+- describe the visual items in Groove (1 hour)
+- 1 small issue (10 min)
+
+gg-to-sts-transformation
+- Base design requirements on research questions (30 min)
+- explain better what the effect of the point algebra is on graphs (1 hour)
+- Explain state variable definition in IOGGs clearly, use GROOVE examples (1 hour)
+- Adjust transformation steps to new variable definition, give summary list (3 hours)
+
+constraints.tex
+- Need to use new variable definition here (30 min)
+- Extend constraint to include not deleting variable labels and anchors (30 min)
+- explain constraint on variables in NACs better, use pictures (1.5 hours)
+- explain constraint on node creating rules better, use example (1.5 hours)
+
+implementation.tex
+- Make sequence diagram (1 hour)
+- Find good (UML) model to describe static architecture (2 hours)
+- 2 small issues (20 mins)
+
+measurements.tex
+- 2 small issues (20 mins)
+- Describe more complexity measurements (optional) (4 hours)
+
+all-examples.tex
+- show all models completely (in appendix if needed) (5 hours)
+- Make sure IOGGs uphold variable definition (30 mins)
+- Show the STSs in formal notation, not in state-transition diagram (too crowded) (3 hours)
+- More information on the case study (specs) (3 hours)
+- 2 small issues (20 mins)
+
+measurements_on_examples.tex
+- Need to verify simulation/bisimulation (LTSmin, difficult) (6 hours)
+- Need to conduct most measurements on the models (3 hours)
+- Draw conclusions per example (2 hours)
+
+conclusion.tex
+- Draw conclusions using the research question and design requirements (2 hours)
+
+future-work.tex
+- Write this section (1 hour)
+
+50.7 hours
+11.1 done

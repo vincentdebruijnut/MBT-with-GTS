@@ -1,68 +1,6 @@
 \section{Example 1: boardgame}
 The boardgame is the running example of which the IOSTS and IOGG are given in Figures~\ref{fig:example_sts} and \ref{fig:example_groove} respectively.
 
-\subsection{Simulation and redundancy}
-The responses used by the IOSTS and by the IOGG are different. Both models, used as examples to clarify the IOSTS and IOGG formalisms, were built with a different behavior in mind. Both allow a die to be thrown, after which the IOSTS directly moves the player to the correct location and passes the turn and the IOGG moves the player by a series of responses ended with a $!nextTurn$. Therefore, both IOSTSs do not simulate each other.
-
-\subsection{Performance}
-The IOSTS is generated in a runtime of 300 ms using a heap-size of 1.9 MB.
-
-\subsection{Model complexity}
-\begin{comment}
-start:
-13 distinct operands
-1 distinct operator
-33 operands
-3 operators
-
-move:
-2 new distinct operands
-5 new distinct operators
-27 operands
-6 operators
-
-nextTurn:
-0 new distinct operands
-1 new distinct operator
-13 operands
-5 operators
-
-throws:
-3 new distinct operands
-2 new distinct operators
-30 operands
-10 operators
-
-$n_1 = 9, n_2 = 18, N_1 = 24, N_2 = 103$ 
- Volume is 127*4.75 = 603.25
-
-IOSTS:
-22 distinct operands
-5 distinct operators
-62 operands
-25 operators
-
-$n_1 = 5, n_2 = 22, N_1 = 25, N_2 = 62$
- Volume is 87*4.75 = 413.25
-\end{comment}
-
-Table~\ref{tab:halstead-bg} shows the measurements on the operators and operands of both models.\marginpar{lastig om te bepalen wat meegenomen moet worden. GGs hebben ook transition label, priority level, etc. Eigenlijk verborgen complexiteit}
-
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{| l | c | c | c | c | c |}
-  \hline
-  & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume \\ \hline
-  IOGG & 9 & 18 & 24 & 103 & 603.25 \\ \hline
-  IOSTS & 5 & 22 & 25 & 62 & 413.25 \\
-  \hline
-\end{tabular}
-\end{center}
-\caption{The Halstead measurements on the boardgame models}
-\label{tab:halstead-bg}
-\end{table}\marginpar{Heb hier eigenlijk vrij weinig over te zeggen. Conclusies komen later.}
-
-
 \subsection{Extendability}
 The boardgame is extended to include more players and locations. For the IOGG, this means adding new locations and players to the initial graph. The players get a fixed order in which they play. This means that the next turn rule also has to be extended. The result is in Figure~\ref{fig:gg-bg-extended}. This extension reduces the distinct number of operators by 1 and introduces no new operands. The number of operator occurences has decreased by 1 and the number of operand occurences has grown by 10.
 
@@ -76,9 +14,6 @@ The boardgame is extended to include more players and locations. For the IOGG, t
 \end{figure}
 
 The IOSTS gains a variable and a switch relation for the new player. \begin{comment}The result is in Figure~\ref{fig:sts-bg-extended}.\end{comment} The distinct number of operators has not increased and the distinct number of operands has increased by 1. The number of operator occurences has increased by 9 and the number of operand occurences has increased by 17.
-
-The volume of the IOGG has increased by 35.95. $n_1 = 8, n_2 = 18, N_1 = 23, N_2 = 113$ Volume is 136*4.70 = 639.20
-The volume of the IOSTS has increased by 130.28. $n_1 = 5, n_2 = 23, N_1 = 34, N_2 = 79$ Volume is 113*4.81 = 543.53
 
 
 \section{Example 2: farmer-wolf-goat-cabbage}
@@ -95,7 +30,7 @@ In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The
   \end{center}
   \caption{The graph grammar of the farmer-wolf-goat-cabbage puzzle}
   \label{fig:gg-fwgc}
-\end{figure}
+\end{figure}\marginpar{Figuren compleet weergeven in appendix}
 
 \begin{figure}[ht]
   \begin{center}
@@ -104,39 +39,6 @@ In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The
   \caption{The IOSTS of the farmer-wolf-goat-cabbage puzzle}
   \label{fig:sts-fwgc}
 \end{figure}\marginpar{STSen zijn eigenlijk niet weer te geven via dit soort diagrammen. Wellicht Tikz proberen, anders de STS opschrijven in de formele defnitie.}
-
-\subsection{Simulation and redundancy}
-Both the generated IOSTS and the IOSTS built by hand allow all inputs and give the appropriate responses when necessary. This shows that both IOSTSs simulate each other. The generated IOSTS has 50 switch relations and 0 location variables. The IOSTS built by hand has 11 switch relations and 4 location variables. The IOGG does not use variables to track the location of each item. Therefore the generated IOSTS has a location per state of the puzzle. 
-
-\subsection{Performance}
-The IOSTS is generated in a runtime of 770 ms using a heap-size of 5.2 MB.
-
-\subsection{Model complexity}
-\begin{comment}
-start: 12 new operands, 26 operands
-?c: 3 new operators, 0 new operands. 5 operators, 17 operands
-?c-invalid: 0 new operators, 1 new operand. 2 operators, 14 operands
-!retry: 0-0. 1 operator, 2 operands.
-!eaten: 0-0. 9 operators, 36 operands
-!done: 8 operators, 30 operands
-\end{comment}
-
-Table~\ref{tab:halstead-fwgc} shows the measurements on the operators and operands of both models.
-
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{| l | c | c | c | c | c |}
-  \hline
-  & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume \\ \hline
-  IOGG & 3 & 13 & 25 & 125 & 498.29 \\ \hline
-  IOSTS & 9 & 22 & 25 & 62 & 431.02 \\
-  \hline
-\end{tabular}
-\end{center}
-\caption{The Halstead measurements of the farmer-wolf-goat-cabbage puzzle}
-\label{tab:halstead-fwgc}
-\end{table}\marginpar{berekening heeft weggelaten regels en switch relations niet meegenomen}
-
 
 \subsection{Extendability}
 In another variant of this puzzle, when one of the items is eaten, the puzzle does not reset but undoes the last action. Figure~\ref{fig:gg-fwgc-extended} shows this extension in two rules: the 'move cabbage' and the 'eaten undo' rule. The rules keep track of the last moved items. When an item gets eaten, the last move can be undone.\marginpar{veranderde model complexity moet nog gegeven worden}\marginpar{Ik moet quantification nog uitleggen, in GROOVE}
@@ -150,7 +52,7 @@ In another variant of this puzzle, when one of the items is eaten, the puzzle do
   \label{fig:gg-fwgc-extended}
 \end{figure}\marginpar{Extended STS is ook nauwelijks weer te geven. Ik vraag me hier af ok ik niet gewoon de LTS moet geven, wellicht is die simpeler. De STS moet nu namelijk met variabelen de vorige posities van alle items bij gaan houden oid}
 
-\section{Example 3: restaurant reservations}
+\section{Example 3: restaurant reservations}\marginpar{explain the system first}
 Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a restaurant and two potential customers. Figure~\ref{fig:make-reservation} shows part of a rule that allows people to make reservations. The start and end times are timestamps represented by integers. This rule allows people to make multiple reservations. However, this rule violates the constraint in section~\ref{sec:constraint-1}, because the reservation objects are not unique. Allowing a dynamic amount of reservations per person means that variables need to be introduced dynamically as well or more complex variables have to be used, such as arrays. To model this system using an IOSTS, arrays are also needed.
 
 \begin{figure}[ht]
@@ -164,7 +66,7 @@ Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a 
 
 
 \section{Example 4: bar tab system}
-This example models a bar tab system, where customers can order beer, wine and soda. The price of the order adds to tab. Customers can pay their tab with money; they receive cash back if the payment exceeds the tab. The model is abstracted to include three customers. Furthermore, a customer can order only one drink. Drinks and payments are processed immediately before other drinks or payments can occur. The stimuli accepted by the system are $?o(i,d), ?p(i,p)$ for ordering a drink $d$ on bar tab $i$ and paying amount $p$ on bar tab $i$ respectively. The responses by the system are $!po(b), !pp(b,r)$ for processing an order giving the new bar tab balance $b$ and processing a payment giving the new account balance $b$ and the return funds $r$ respectively.
+This example models a bar tab system, where customers can order beer, wine and soda. The price of the order adds to tab. Customers can pay their tab with money; they receive cash back if the payment exceeds the tab. The model is abstracted to include three customers. Furthermore, a customer can order only one drink. Drinks and payments are processed immediately before other drinks or payments can occur. The stimuli accepted by the system are $?o(i,d), ?p(i,p)$ for ordering a drink $d$ on bar tab $i$ and paying amount $p$ on bar tab $i$ respectively. The responses by the system are $!po(b), !pp(b,r)$ for processing an order giving the new bar tab balance $b$ and processing a payment giving the new account balance $b$ and the return funds $r$ respectively.\marginpar{use lists more}
 
 Figure~\ref{fig:gg-bartab} shows the IOGG of the bar tab system. The '!process\_order' and '!process\_payment' rule have a higher priority than the '?order' and '?pay' rule. Figure~\ref{fig:sts-bartab} shows the IOSTS of the bar tab system. The IOSTS uses the variables $T_1, T_2, T_3$ to keep track of the bar tabs of the three people. It uses the variables $I, P$ as temporary variables for the id and payment/price respectively. The function $m$ takes the maximum value of its parameters.
 
@@ -187,38 +89,6 @@ Figure~\ref{fig:gg-bartab} shows the IOGG of the bar tab system. The '!process\_
   \caption{The IOSTS of the bar tab system}
   \label{fig:sts-bartab}
 \end{figure}
-
-\subsection{Simulation and redundancy}
-Both the generated IOSTS and the IOSTS built by hand correctly allow the ordering of drinks and payment of bar tabs. This shows that both IOSTSs simulate each other. The generated IOSTS has 24 switch relations and 13 location variables. The IOSTS built by hand has 10 switch relations and 5 location variables. This shows that the generated IOSTSs is redundant. The first IOSTS keeps the name and price of drinks as location variables, whereas the latter IOSTS hard-codes these into the guards and updates. The generated IOSTS builds a switch relation with gate $?o$ for each combination of customer and drink. It also builds a switch relation with gate $?p$ for each customer. The target locations of all these switch relations have one switch relation back to the initial location. Therefore, the number of switch relations is $3*3*2+3*1*2 = 24$.
-
-\subsection{Performance}
-The IOSTS is generated in a runtime of 250 ms using a heap-size of 2.1 MB.
-
-\subsection{Model complexity}
-\begin{comment}
-start: 1 - 25. 13 - 46
-?o: 1 - 2. 1 - 14
-!po: 2 - 3. 4 - 24
-?p: 0 - 0. 3 - 18
-!pp: 3 - 
-\end{comment}
-
-Table~\ref{tab:halstead-bartab} shows the measurements on the operators and operands of both models.
-
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{| l | c | c | c | c | c |}
-  \hline
-  & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume \\ \hline
-  IOGG & 3 & 13 & 25 & 125 & 498.29 \\ \hline
-  IOSTS & 9 & 22 & 25 & 62 & 431.02 \\
-  \hline
-\end{tabular}
-\end{center}
-\caption{The Halstead measurements of the farmer-wolf-goat-cabbage puzzle}
-\label{tab:halstead-bartab}
-\end{table}\marginpar{moet nog even een abs in groove hebben, maakt uit voor deze berekening}
-
 
 \subsection{Extendability}
 The system is extended to allow ordering multiple drinks of different types. The stimulus \\$?o(i,d_1,q_1,d_2,q_2,d_3,q_3)$ is used to order a quantity $q_n$ of drink $d_n$. The bar tab id is still given by $i$. Also, a customer can purchase the option of receiving 10\% discount on all ordered drinks for 50 euros (added to the tab). The stimulus given is $?\mathit{d}$ and the response is $!pd(b)$ where $b$ is the new balance. Figure~\ref{fig:gg-bartab-extended} shows the extended rules and initial graph. The $?p$ and $!pp$ rules have remained the same.\marginpar{Deze GG en STS zijn vrij lelijk}
@@ -243,26 +113,47 @@ The system is extended to allow ordering multiple drinks of different types. The
   \label{fig:sts-bartab-extended}
 \end{figure}
 
+\section{Scanflow Cash Register Protocol}\marginpar{More info on the case study: external spec of required functionality, rough description of functionality, type graph of GG? existing STS description}
 
-\section{Conclusions}
-The simulation measurement in the boardgame example shows that not having a fixed specification leads to different behavior specified by the generated IOSTS. The translation of abstract stimuli and responses to the concrete stimuli and responses gives flexibility; an expected series of responses $!move(1) !move(1) !nextTurn$ can be translated from the concrete response $!move(1,2)$. However, this does give more work in the abstract to concrete stimuli/response translation. Also, the model does not reflect the specification precisely when using such a work-around.
-
-The redundancy measurement reveals an interesting result in the bar tab example. Here, the possible morphisms of the rules on the graph lead to more switch relations than when the IOSTS is created by hand. This effect is common: in a GG, it is easy to represent the actors and rules specifying the interaction between these actors. The result is a switch relation for each combination of customer and drink. This is not a problem as long as the size of the generated IOSTS is manageable by GRATiS. If the number of switch relations becomes too great, creating the smaller IOSTS by hand also becomes unmanageable.
-
-%The redundancy measurement also shows that for the farmer-wolf-goat-cabbage puzzle, the IOGG is easier expressed using no variables. 
-
-It can be conlcuded that for these small examples the runtime and heap-size of the IOSTS generation are negligible. The results on the case study will show how this measurement scales using larger models.
-
-Halstead conlcusions here.
-
-Extendability conclusions here.
-
-The lack of complex data structures, such as arrays, sets and objects is apparent from the restaurant reservation example. GGs inherently are Object-Oriented, which can be best seen in the bar tab example, where ids and tabs are combined, as well as names and prices. The lack of a summation operation in GROOVE causes the large GG of the extended bar tab system. Figure~\ref{fig:gg-tab-better} shows how this rule could look like. 
+The system used for this case study is a \textit{self-scan register}, which allows customers of a supermarket to scan and pay for their products without help of an employee. Figure~\ref{fig:register} shows this self-scan register. The system contains a \textit{scanflow unit}, which scans the products, and a \textit{cash register}, which handles the payment. The communication protocol between the register and the scanflow unit is modelled as an IOGG and an IOSTS. The register is the SUT, stimuli and responses are given as http requests/responses.
 
 \begin{figure}[ht]
   \begin{center}
-    \input{./img/process_order-better.tikz}
+    Hier komt een plaatje van het ding%\input{./img/register.png}
   \end{center}
-  \caption{A rule of the bar tab system containing the sum operation}
-  \label{fig:gg-tab-better}
+  \caption{A self-scan register}
+  \label{fig:register}
+\end{figure}
+
+Some selected rules of the GG of this communication protocol are shown in Figure~\ref{fig:gg-fwgc}. In total the IOGG has 94 rules. Figure~\ref{fig:start-scrp} shows the initial graph. The $CR$ node is the cash register, the $SFU$ is the scanflow unit. The first node has the flag $\mathit{SS\_OFF}$ representing that the register is off. There is one account which can be in states idle, open, closed and transing. When the customer places items on the belt, a new account is opened. Figure~\ref{fig:open-account-request} shows the general request structure. As long as there is no request, a request can be sent. This rule requests the opening of an account. Figure~\ref{fig:open-account-success} shows the rule for giving a success response. The request node is deleted such that new request nodes can be created again. The rule checks if an account is not already opened and opens an idle account. Figure~\ref{fig:open-account-invalid} shows the rule for the error message received when an account is already opened. 
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-scrp}\input{./img/start-scrp.tikz}}\hspace{20px}
+    \subfloat[The open account request rule]{\label{fig:open-account-request}\input{./img/account.open.request.tikz}}\\
+    \subfloat[The open account success rule]{\label{fig:open-account-success}\input{./img/account.open.success.tikz}}\hspace{20px}
+    \subfloat[The open account invalid rule]{\label{fig:open-account-invalid}\input{./img/account.open.invalid_ss_on.tikz}}\\
+    \subfloat[The not signed on error rule]{\label{fig:not-signed-on}\input{./img/general_responses.not_signed_on.tikz}}\hspace{20px}
+    \subfloat[The close account success rule]{\label{fig:close-account-success}\input{./img/account.close.success.tikz}}
+  \end{center}
+  \caption{The graph grammar of Scanflow Cash Register Protocol}
+  \label{fig:gg-fwgc}
+\end{figure}
+
+For all these rules, the $CR$ node has to have the flag $\mathit{SS\_ON}$ representing the register to be signed on. Figure~\ref{fig:not-signed-on} shows the response to a request when the register is not signed on. Apart from the signon request, no other request is allowed in this state. Figure~\ref{fig:close-account-success} shows the rule closing the account.
+
+The IOSTS of the system as created by Axini is too large to show here. It has X switch relations and Y location variables. 
+
+\subsection{Extendability}
+A recent extension on the protocol allows multiple accounts. While an account is not in state open, an idle account can be opened. This allows for a customer to scan his/her products, while another customer pays. Figure~\ref{fig:gg-fwgc-extended} shows the changes to the initial graph and the open account rules. Figure~\ref{fig:close-account-success-ext} shows the success response rule for closing an account: the order of closed accounts have to be kept, because the accounts have to be paid in that order.
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-scrp-ext}\input{./img/start-scrp-extended.tikz}}\hspace{20px}
+    \subfloat[The open account success rule]{\label{fig:open-account-success-ext}\input{./img/account.open.success-extended.tikz}}\\
+    \subfloat[The open account invalid rule]{\label{fig:open-account-invalid-ext}\input{./img/account.open.invalid_ss_on-extended.tikz}}\hspace{20px}
+    \subfloat[The close account success rule]{\label{fig:close-account-success-ext}\input{./img/account.close.success-extended.tikz}}
+  \end{center}
+  \caption{The extended graph grammar of Scanflow Cash Register Protocol}
+  \label{fig:gg-fwgc-extended}
 \end{figure}

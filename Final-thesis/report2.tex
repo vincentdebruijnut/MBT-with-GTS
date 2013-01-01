@@ -33,7 +33,49 @@
 \newtheorem{definition}{Definition}[section]
 
 \begin{document}
-	$\xymatrix{
-   \bullet \ar@(dl,dr)[]_{?add\:|\:C:=C+1}
-}$
+  \title{\textbf{Model-Based Testing with\\Graph Grammars}}
+  \author{\textbf{MSc Thesis} \textit{(Afstudeerscriptie)}\\
+  \\
+  written by
+  \\
+  \\
+  Vincent de Bruijn\\
+  \\
+  Formal Methods \& Tools,\\
+  University of Twente,
+  \\Enschede,\\
+  The Netherlands\\
+  \\
+  \texttt{v.debruijn@student.utwente.nl}}
+  \date{\today}
+  \maketitle
+  
+  \input{./tex/abstract.tex}
+  
+  \newpage
+  \tableofcontents
+  \newpage
+
+  \newpage
+  \chapter{Introduction}\label{chapter:introduction}
+  
+  \input{./tex/introduction.tex}
+  
+  \newpage
+  \chapter{Background}\label{chapter:background}
+  \input{./tex/background-introduction}
+  
+  \input{./tex/model-based-testing.tex}
+  \input{./tex/algebra.tex}
+  \input{./tex/symbolic.tex}
+  \input{./tex/graph-grammars.tex}
+  \input{./tex/tooling.tex}
+  
+  \newpage
+  \bibliography{bib/bibliography}{}
+  \bibliographystyle{plain}
+  \newpage
+  \chapter*{List of Symbols\hfill} \addcontentsline{toc}{chapter}{List of Symbols}
+\listofsymbols
+
 \end{document}

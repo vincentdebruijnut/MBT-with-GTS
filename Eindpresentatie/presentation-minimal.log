@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.3.1)  9 SEP 2012 23:49
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  10 SEP 2012 10:39
 entering extended mode
  %&-line parsing enabled.
 **presentation-minimal.tex
@@ -1107,14 +1107,14 @@ File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf>
 [13
 
-] <./figures/start-count.png, id=261, 68.255pt x 102.3825pt>
+] <./figures/start-count.png, id=259, 68.255pt x 102.3825pt>
 File: ./figures/start-count.png Graphic file (type png)
 
 <use ./figures/start-count.png>
-<./figures/add.png, id=262, 126.4725pt x 162.6075pt>
+<./figures/add.png, id=260, 126.4725pt x 162.6075pt>
 File: ./figures/add.png Graphic file (type png)
  <use ./figures/add.png>
-<./figures/count-sts.png, id=263, 70.01157pt x 37.64063pt>
+<./figures/count-sts.png, id=261, 70.01157pt x 37.64063pt>
 File: ./figures/count-sts.png Graphic file (type png)
 
 <use ./figures/count-sts.png>
@@ -1132,27 +1132,27 @@ File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf>
 [16
 
-] <./figures/self-check-out.jpg, id=308, 501.875pt x 376.40625pt>
+] <./figures/self-check-out.jpg, id=305, 501.875pt x 376.40625pt>
 File: ./figures/self-check-out.jpg Graphic file (type jpg)
 
 <use ./figures/self-check-out.jpg>
 File: logoblack.pdf Graphic file (type pdf)
  <use logoblack.pdf> [17
 
- <./figures/self-check-out.jpg>] <./figures/start-scrp.png, id=322, 174.6525pt 
+ <./figures/self-check-out.jpg>] <./figures/start-scrp.png, id=319, 174.6525pt 
 x 138.5175pt>
 File: ./figures/start-scrp.png Graphic file (type png)
 
 <use ./figures/start-scrp.png>
-<./figures/open.png, id=323, 259.97125pt x 119.44624pt>
+<./figures/open.png, id=320, 259.97125pt x 119.44624pt>
 File: ./figures/open.png Graphic file (type png)
 
 <use ./figures/open.png>
-<./figures/success.png, id=324, 213.79875pt x 156.585pt>
+<./figures/success.png, id=321, 213.79875pt x 156.585pt>
 File: ./figures/success.png Graphic file (type png)
 
 <use ./figures/success.png>
-<./figures/not_signed_on.png, id=325, 260.975pt x 115.43124pt>
+<./figures/not_signed_on.png, id=322, 260.975pt x 115.43124pt>
 File: ./figures/not_signed_on.png Graphic file (type png)
 
 <use ./figures/not_signed_on.png>
@@ -1187,37 +1187,25 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 20013 strings out of 495061
- 392645 string characters out of 1182622
+ 20009 strings out of 495061
+ 392597 string characters out of 1182622
  482830 words of memory out of 3000000
  22606 multiletter control sequences out of 15000+50000
  16176 words of font info for 54 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  55i,19n,78p,449b,906s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Navigation54} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Navigation46} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Navigation42} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Navigation34} has been referenced but does not exis
-t, replaced by a fixed one
-
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmss12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-mss8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss9.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texmf-texliv
-e/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/typ
-e1/urw/helvetic/uhvb8ac.pfb>
-Output written on presentation-minimal.pdf (20 pages, 444536 bytes).
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmss12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmss8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss9.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/t
+ype1/urw/helvetic/uhvb8ac.pfb>
+Output written on presentation-minimal.pdf (20 pages, 444348 bytes).
 PDF statistics:
- 414 PDF objects out of 1000 (max. 8388607)
- 49 named destinations out of 1000 (max. 500000)
+ 409 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
  321 words of extra memory for PDF output out of 10000 (max. 10000000)
 

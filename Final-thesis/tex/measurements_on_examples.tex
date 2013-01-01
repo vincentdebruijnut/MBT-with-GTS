@@ -1,0 +1,182 @@
+\section{Measurements on examples}
+
+\subsection{Simulation and redundancy 1}\marginpar{Need to verify this using LTS min}
+The responses used by the IOSTS and by the IOGG are different. Both models, used as examples to clarify the IOSTS and IOGG formalisms, were built with a different behavior in mind. Both allow a die to be thrown, after which the IOSTS directly moves the player to the correct location and passes the turn and the IOGG moves the player by a series of responses ended with a $!nextTurn$. Therefore, both IOSTSs do not simulate each other.
+
+\subsection{Simulation and redundancy 2}
+Both the generated IOSTS and the IOSTS built by hand allow all inputs and give the appropriate responses when necessary. This shows that both IOSTSs simulate each other. The generated IOSTS has 50 switch relations and 0 location variables. The IOSTS built by hand has 11 switch relations and 4 location variables. The IOGG does not use variables to track the location of each item. Therefore the generated IOSTS has a location per state of the puzzle. 
+
+\subsection{Simulation and redundancy 4}
+Both the generated IOSTS and the IOSTS built by hand correctly allow the ordering of drinks and payment of bar tabs. This shows that both IOSTSs simulate each other. The generated IOSTS has 24 switch relations and 13 location variables. The IOSTS built by hand has 10 switch relations and 5 location variables. This shows that the generated IOSTSs is redundant. The first IOSTS keeps the name and price of drinks as location variables, whereas the latter IOSTS hard-codes these into the guards and updates. The generated IOSTS builds a switch relation with gate $?o$ for each combination of customer and drink. It also builds a switch relation with gate $?p$ for each customer. The target locations of all these switch relations have one switch relation back to the initial location. Therefore, the number of switch relations is $3*3*2+3*1*2 = 24$.
+
+\subsection{Simulation and redundancy scrp}
+The generated IOSTS has 540 switch relations and 2 location variables. It simulates the IOSTS made by Axini, but not vice versa. The generated IOSTS allows every stimulus in every location. The IOSTS by hand is modelled to test a subset of the more interesting behavior.
+
+\subsection{Performance 1}
+The IOSTS is generated in a runtime of 300 ms using a heap-size of 1.9 MB.
+
+\subsection{Performance 2}
+The IOSTS is generated in a runtime of 770 ms using a heap-size of 5.2 MB.
+
+\subsection{Performance 4}
+The IOSTS is generated in a runtime of 250 ms using a heap-size of 2.1 MB.
+
+\subsection{Performance scrp}
+The IOSTS is generated in a runtime of 9530 ms using a heap-size of 6.6 MB. Comparing to the examples in the previous chapter, this shows little increase in heap-size and approximately 20 times higher runtime. The algorithm scales reasonably well, considering the generated IOSTS is approximately 10 times larger in size than those of the examples in the previous chapter. 
+
+\subsection{Model complexity 1}
+\begin{comment}
+start:
+13 distinct operands
+1 distinct operator
+33 operands
+3 operators
+
+move:
+2 new distinct operands
+5 new distinct operators
+27 operands
+6 operators
+
+nextTurn:
+0 new distinct operands
+1 new distinct operator
+13 operands
+5 operators
+
+throws:
+3 new distinct operands
+2 new distinct operators
+30 operands
+10 operators
+
+$n_1 = 9, n_2 = 18, N_1 = 24, N_2 = 103$ 
+ Volume is 127*4.75 = 603.25
+
+IOSTS:
+22 distinct operands
+5 distinct operators
+62 operands
+25 operators
+
+$n_1 = 5, n_2 = 22, N_1 = 25, N_2 = 62$
+ Volume is 87*4.75 = 413.25
+\end{comment}
+
+Table~\ref{tab:halstead-bg} shows the measurements on the operators and operands of both models.\marginpar{lastig om te bepalen wat meegenomen moet worden. GGs hebben ook transition label, priority level, etc. Eigenlijk verborgen complexiteit}
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| l | c | c | c | c | c |}
+  \hline
+  & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume \\ \hline
+  IOGG & 9 & 18 & 24 & 103 & 603.25 \\ \hline
+  IOSTS & 5 & 22 & 25 & 62 & 413.25 \\
+  \hline
+\end{tabular}
+\end{center}
+\caption{The Halstead measurements on the boardgame models}
+\label{tab:halstead-bg}
+\end{table}\marginpar{Heb hier eigenlijk vrij weinig over te zeggen. Conclusies komen later.}
+
+\subsection{Model complexity 2}
+\begin{comment}
+start: 12 new operands, 26 operands
+?c: 3 new operators, 0 new operands. 5 operators, 17 operands
+?c-invalid: 0 new operators, 1 new operand. 2 operators, 14 operands
+!retry: 0-0. 1 operator, 2 operands.
+!eaten: 0-0. 9 operators, 36 operands
+!done: 8 operators, 30 operands
+\end{comment}
+
+Table~\ref{tab:halstead-fwgc} shows the measurements on the operators and operands of both models.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| l | c | c | c | c | c |}
+  \hline
+  & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume \\ \hline
+  IOGG & 3 & 13 & 25 & 125 & 498.29 \\ \hline
+  IOSTS & 9 & 22 & 25 & 62 & 431.02 \\
+  \hline
+\end{tabular}
+\end{center}
+\caption{The Halstead measurements of the farmer-wolf-goat-cabbage puzzle}
+\label{tab:halstead-fwgc}
+\end{table}\marginpar{berekening heeft weggelaten regels en switch relations niet meegenomen}
+
+\subsection{Model complexity 4}
+\begin{comment}
+start: 1 - 25. 13 - 46
+?o: 1 - 2. 1 - 14
+!po: 2 - 3. 4 - 24
+?p: 0 - 0. 3 - 18
+!pp: 3 - 
+\end{comment}
+
+Table~\ref{tab:halstead-bartab} shows the measurements on the operators and operands of both models.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| l | c | c | c | c | c |}
+  \hline
+  & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume \\ \hline
+  IOGG & 3 & 13 & 25 & 125 & 498.29 \\ \hline
+  IOSTS & 9 & 22 & 25 & 62 & 431.02 \\
+  \hline
+\end{tabular}
+\end{center}
+\caption{The Halstead measurements of the farmer-wolf-goat-cabbage puzzle}
+\label{tab:halstead-bartab}
+\end{table}\marginpar{moet nog even een abs in groove hebben, maakt uit voor deze berekening}
+
+model complexity 1
+The volume of the IOGG has increased by 35.95. $n_1 = 8, n_2 = 18, N_1 = 23, N_2 = 113$ Volume is 136*4.70 = 639.20
+The volume of the IOSTS has increased by 130.28. $n_1 = 5, n_2 = 23, N_1 = 34, N_2 = 79$ Volume is 113*4.81 = 543.53
+
+\subsection{Model complexity scrp}
+\begin{comment}
+start:
+\end{comment}
+
+Table~\ref{tab:halstead-scrp} shows the measurements on the operators and operands of both models.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| l | c | c | c | c | c |}
+  \hline
+  & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume \\ \hline
+  IOGG & 9 & 18 & 24 & 103 & 603.25 \\ \hline
+  IOSTS & 5 & 22 & 25 & 62 & 413.25 \\
+  \hline
+\end{tabular}
+\end{center}
+\caption{The Halstead measurements on the case study}
+\label{tab:halstead-scrp}
+\end{table}
+
+\section{Conclusions}\marginpar{conclusions per measurement, conclusions per case? General conclusions later}
+The simulation measurement in the boardgame example shows that not having a fixed specification leads to different behavior specified by the generated IOSTS. The translation of abstract stimuli and responses to the concrete stimuli and responses gives flexibility; an expected series of responses $!move(1) !move(1) !nextTurn$ can be translated from the concrete response $!move(1,2)$. However, this does give more work in the abstract to concrete stimuli/response translation. Also, the model does not reflect the specification precisely when using such a work-around.
+
+The redundancy measurement reveals an interesting result in the bar tab example. Here, the possible morphisms of the rules on the graph lead to more switch relations than when the IOSTS is created by hand. This effect is common: in a GG, it is easy to represent the actors and rules specifying the interaction between these actors. The result is a switch relation for each combination of customer and drink. This is not a problem as long as the size of the generated IOSTS is manageable by GRATiS. If the number of switch relations becomes too great, creating the smaller IOSTS by hand also becomes unmanageable.
+
+%The redundancy measurement also shows that for the farmer-wolf-goat-cabbage puzzle, the IOGG is easier expressed using no variables. 
+
+It can be conlcuded that for these small examples the runtime and heap-size of the IOSTS generation are negligible. The results on the case study will show how this measurement scales using larger models.
+
+Halstead conlcusions here.
+
+Extendability conclusions here.
+
+The lack of complex data structures, such as arrays, sets and objects is apparent from the restaurant reservation example. GGs inherently are Object-Oriented, which can be best seen in the bar tab example, where ids and tabs are combined, as well as names and prices. The lack of a summation operation in GROOVE causes the large GG of the extended bar tab system. Figure~\ref{fig:gg-tab-better} shows how this rule could look like. 
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/process_order-better.tikz}
+  \end{center}
+  \caption{A rule of the bar tab system containing the sum operation}
+  \label{fig:gg-tab-better}
+\end{figure}
+
+\subsection{SCRP conclusions}
+The case study showed a real life example of a software system, succefully modelled as a GG. Here, the strength of behavioral rules is apparent: instead of state-transition thinking, the graph transformation rules allow each behavioral aspect of a software system to be modelled by one rule. This is most visible in the 'not signed on' error rule. This rule models the aspect of giving an error when a request is done in the signed off state, regardless of any other state the system is in. Restrictions of where this rule applies can be easily added, as shown with the exception made for the 'sign on' request. This shows that GGs are very useful when it comes to changing requirements: only few rules need to be adjusted to accomodate these changes. Another example is the request structure of the GG. The stimulus and expected response are automatically included for every system state. This again shows the strength of GGs; behavior is modelled once and tested in every system state. 

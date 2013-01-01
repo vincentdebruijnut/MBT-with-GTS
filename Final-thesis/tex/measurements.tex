@@ -3,15 +3,15 @@
 This sections lists possible measurements on the models and execution of GRATiS on those models.
 
 \subsection{Simulation and redundancy}
-The STS created by GRATiS and the created STS by hand can be compared. It can be observed whether the STS created by GRATiS simulates the STS created by hand and vice versa. When either is not the case, the models show a different possible behaviour for the SUT. The reasons behind this difference are then explored. 
+For each of the cases, we can create STSs in two ways: manually and through GRATiS. The STS created by GRATiS and the created STS by hand can be compared. It can be observed whether the STS created by GRATiS simulates the STS created by hand and vice versa. When either is not the case, the models show a different possible behaviour for the SUT. The reasons behind this difference are then explored. 
 
-It is possible that the generated STS $s$ is larger than the STS built by hand $t$, even if both simulate each other. It is measured whether $\mathit{traces}(s) \subseteq \mathit{traces}(t) \land ((|\Switches_t| < |\Switches_s| \land |\LocationVariables_t| <= |\LocationVariables_s|) \lor (|\Switches_t| <= |\Switches_s| \land |\LocationVariables_t| < |\LocationVariables_s|)$. This indicates the the STS $s$ is redundant.
+It is possible that the generated STS $s$ is larger than the STS built by hand $t$, even if both simulate each other. It is measured whether $\mathit{traces}(s) \subseteq \mathit{traces}(t) \land ((|\Switches_t| < |\Switches_s| \land |\LocationVariables_t| \leq |\LocationVariables_s|) \lor (|\Switches_t| \leq |\Switches_s| \land |\LocationVariables_t| < |\LocationVariables_s|)$. This indicates the the STS $s$ has redundancy.\marginpar{explain this in words}
 
 \subsection{Performance}
 The performance in terms of runtime and heap-size can be measured and compared. Assuming both the STS created by GRATiS and by hand simulate each other, these metrics will be the same for the testing part. Therefore, the runtime and heap size of the STS creation is measured.
 
 \subsection{Model complexity}\label{sec:complexity_measurement}
-The complexity of the generated STS and the GG can be measured using Halstead's software science~\cite{Halstead:software-science}. This method is used in measuring software complexity and the prediction of faults. However, it can also be used in analyzing model complexity. In Halstead's software science, the operators and operands in the program code are counted. The operators are the function symbols, the operands are the identifiers. 
+The complexity of the generated STS and the GG can be measured using Halstead's software science~\cite{Halstead:software-science}. This method is used in measuring software complexity and the prediction of faults. However, it can also be used in analyzing model complexity. In Halstead's software science, the operators and operands in the program code are counted. The operators are the function symbols, the operands are the identifiers. However, in order to apply these concepts to our setting, we have to identify what we consier to be operators and operands.\marginpar{explain also cyclomatic complexity and rest? bij gebrek aan beter: sociaal experiment}
 
 STSs and GGs both have identifiers and function symbols. However, they also have nodes and edges. In an STS, the locations are counted as nodes, the switch relations as edges. Nodes and edges are considered to be operands. In GROOVE, colors indicate a restriction or node/edge removal/creation. The node and edge colors are therefore considered as operators.
 

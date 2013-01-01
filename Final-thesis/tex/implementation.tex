@@ -7,7 +7,7 @@ GRATiS uses GROOVE as a replacement of the IOSTS in ATM. Figure~\ref{fig:tooling
   \end{center}
   \caption{GRATiS collaboration diagram}
   \label{fig:tooling}
-\end{figure}
+\end{figure}\marginpar{change into sequence diagram VISIO. What to use as static diagram?? UML. Should User be modelled? Not with sequence}
 
 
 \section{Description of added functionality}
@@ -16,7 +16,7 @@ This section covers in detail the added functionality to GROOVE and ATM.
 \subsection{GROOVE exploration strategy}
 Figure~\ref{fig:esi-diagram} shows the class diagram of the added exploration strategy interface. The symbolic exploration strategy has an exploration strategy such as the Breadth-First exploration strategy to explore the GTS. The remote exploration strategy extends the symbolic exploration strategy.
 
-The user starts the remote exploration strategy. This strategy starts a Breadth-First exploration strategy. This strategy explores the GTS and notifies the remote strategy when there are no more rule transitions to explore. The symbolic strategy builds the STS in Java objects using the explored rule transitions. The class diagram  of the STS is given in section~\ref{sec:sts-setup}. The remote strategy sends the STS in JSON format as a HTTP PUT request to the interface at ATM.
+The user starts the remote exploration strategy. This strategy starts a Breadth-First exploration strategy. This strategy explores the GTS and notifies the remote strategy when there are no more rule transitions to explore. The symbolic strategy builds the STS in Java objects using the explored rule transitions. The class diagram  of the STS is given in section~\ref{sec:sts-setup}. The remote strategy sends the STS in JSON format as a HTTP PUT request to the interface at ATM.\marginpar{need to say more about the way GROOVE does exploration. Here or in tooling? Where does point algebra come in?}
 
 The Breadth-First exploration strategy and the symbolic strategy are loosely coupled, such that other strategies can also be used if desired.
  
@@ -28,8 +28,8 @@ The Breadth-First exploration strategy and the symbolic strategy are loosely cou
   \label{fig:esi-diagram}
 \end{figure}
 
-\subsection{STS}\label{sec:sts-setup}
-Figure~\ref{fig:sts-diagram} shows the class diagram of the STS in GRATiS. The STS is composed of Locations, Switch relations, Gates, Interaction and Location variables. A Location can be the start and targent of any number of switch relations. A switch relation has two locations; the start and target location. A Switch relation has one gate and a gate can belong to any number of switch relations. A gate can have any number of interaction variables, but an interaction variable belongs to one gate. The STS has a singleton class, the RuleInspector, which contains the functionality of building guards and updates from rule graphs.
+\subsection{STSs}\label{sec:sts-setup}
+Figure~\ref{fig:sts-diagram} shows the class diagram of the STS in GRATiS. The STS is composed of Locations, Switch relations, Gates, Interaction and Location variables. A Location can be the start and target of any number of switch relations. A switch relation has two locations; the start and target location. A Switch relation has one gate and a gate can belong to any number of switch relations. A gate can have any number of interaction variables, but an interaction variable belongs to one gate. The STS has a singleton class, the RuleInspector, which contains the functionality of building guards and updates from rule graphs.\marginpar{discuss correspondence to small model}
 
 \begin{figure}[ht]
   \begin{center}
@@ -40,39 +40,4 @@ Figure~\ref{fig:sts-diagram} shows the class diagram of the STS in GRATiS. The S
 \end{figure}
 
 \subsection{ATM Interface}
-The ATM interface is one component in the Rails framework. It receives the STS request, builds the STS as Ruby objects and initiates the test run using this STS as model.
-
-\section{Rule priority}
-This section covers a specific implementation issue of setting rule priorities in GROOVE.
-
-There can be several outgoing rule transitions from a graph. In GROOVE, rules can have different priority levels. A rule transition with a higher priority rule is explored before rule transitions with lower priority rules. Consider the graph grammar in Figure~\ref{fig:priority_gg}. The 'add' rule produces a rule transition to a graph, where the $sub$ rule produces a rule transition back to the start graph. The 'sub' rule does not match the start graph, because it has a lower priority than the $add$ rule.
-
-\begin{figure}[ht]
-  \begin{center}
-    \subfloat[The initial graph]{\label{fig:priority_start}\input{./img/start-priority.tikz}}\hspace{20px}
-    \subfloat[The $sub$ rule with priority 0]{\label{fig:priority_sub}\input{./img/sub-priority.tikz}}\hspace{20px}
-    \subfloat[The $add$ rule with priority 1]{\label{fig:priority_add}\input{./img/add-priority.tikz}}
-  \end{center}
-  \caption{Priority rules}
-  \label{fig:priority_gg}
-\end{figure} 
-
-The graphs are isomorphic under the point algebra, so they represent the same location. The STS of transforming this graph grammar is in Figure~\ref{fig:priority_sts_wrong}, with $\imath = \{x \mapsto 25\}$. This STS is wrong, because the 'sub' switch relation can be taken from the start.
-
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/priority_sts_wrong.tex}
-  \end{center}
-  \caption{A wrong STS transformation of the graph grammar in Figure~\ref{fig:priority_gg}}
-  \label{fig:priority_sts_wrong}
-\end{figure}
-
-The solution is shown in Figure~\ref{fig:priority_sts_right}. The negated guard of the 'add' switch relation is added to the 'sub' switch relation. The optimized guard for this switch relation is 'x >= 30' of course, but this shows the main principle: for each outgoing switch relation, the negated guard of all switch relations represented by higher priority rules must be added to the guard. So, the 'x < 30' guard is negated to '!(x < 30)' and added to yield the 'x > 10 \&\& !(x < 30)' guard. Note that if the 'add' switch relation had no guard, it would be applicable on all graph states with isomorphic abstractions. Therefore, the 'sub' switch relation would not exist, because the 'add' rule is always applicable whenever the 'sub' rule also is.
-
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/priority_sts_right.tex}
-  \end{center}
-  \caption{A correct STS transformation of the graph grammar in Figure~\ref{fig:priority_gg}}
-  \label{fig:priority_sts_right}
-\end{figure}
+The ATM interface is one component in the Rails framework. It receives the STS request\marginpar{how?}, builds the STS as Ruby objects and initiates the test run using this STS as model.

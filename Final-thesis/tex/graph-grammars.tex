@@ -1,15 +1,15 @@
 \section{Graph Grammars}\label{sec:graph}
-A \textit{Graph Grammar} (GG) is composed of a set of graph transformation rules. These rules indicate how a graph can be transformed to a new graph. These graphs are called \textit{host graphs}. The rules are composed of graphs themselves, which are called \textit{rule graphs}.
+A \textit{Graph Grammar} (GG) is also a specification of system behavior like LTSs and STSs are. A GG is composed of a set of graph transformation rules. These rules indicate how a graph can be transformed to a new graph. These graphs are called \textit{host graphs}. The rules are composed of graphs themselves, which are called \textit{rule graphs}.
 
 The rest of this section is ordered as follows: first, graphs, host graphs, rule graphs and graph transformation rules are explained. Then, the definition of a \textit{Graph Transition System} (GTS) is given. An example of a GG and a GTS is then given. Finally, the definition of IOGGs is given. For a more detailed overview of GGs, we refer to~\cite{Rensink:graph_grammars, Heckel2006187, Andries1999}.
 
 \vspace{5px}
-\begin{definition}
+\begin{definition} Graphs \\
 A \textit{graph} is composed of nodes and edges. In this report, we assume a universe of nodes $\Nodes = \GraphNodes \uplus \mathbb{U} \uplus \Variables \uplus 2^\Terms$\newnot{symbol:Nodes}, where $\GraphNodes$\newnot{symbol:GraphNodes} is the universe of standard graph nodes. $\Edges$\newnot{symbol:Edges} is the universe of edges between two nodes in $\Nodes$.
 \end{definition}
 
 \vspace{5px}
-\begin{definition}
+\begin{definition} Host graphs \\
 A host graph $\hostGraph$ is a tuple $\langle \DefinedNodes, \DefinedEdges\rangle$\newnot{symbol:hostGraph}, where:
 \begin{itemize}
   \item $\DefinedNodes \subseteq (\mathbb{W} \uplus \mathbb{U})$ is the node set of $\hostGraph$
@@ -29,7 +29,7 @@ Figure~\ref{fig:hostgraph_example} shows an example of a host graph. Here, $n_1,
 \end{figure}
 
 \vspace{5px}
-\begin{definition}
+\begin{definition} Rule graphs \\
 A rule graph $\ruleGraph$ is a tuple $\langle \DefinedRuleNodes, \DefinedRuleEdges \rangle$\newnot{symbol:ruleGraph}, where:
 \begin{itemize}
   \item $\DefinedRuleNodes \subseteq (\Nodes \backslash \mathbb{U})$ is the node set of $\ruleGraph$
@@ -37,8 +37,8 @@ A rule graph $\ruleGraph$ is a tuple $\langle \DefinedRuleNodes, \DefinedRuleEdg
 \end{itemize}
 In addition, the following must hold:
 \begin{itemize}
-\item $\forall \node \in \DefinedRuleNodes \land \node \in 2^\Terms\: .\:\mathit{var}(\node) \subseteq \DefinedRuleNodes$ - The variables used in the terms must be present as nodes in the rule graph.
-\item $(\forall \node \in \DefinedRuleNodes \land \node \in \Variables\: .\: \exists (\_, \_, \node) \in \DefinedRuleEdges$ - If a variable is used in a rule graph, it needs context. Therefore, there must be an edge with the variable node as target.
+\item $\forall \node \in \DefinedRuleNodes \cap \node \in 2^\Terms\: .\:\mathit{var}(\node) \subseteq \DefinedRuleNodes$ - The variables used in the terms must be present as nodes in the rule graph.
+\item $\forall \node \in \DefinedRuleNodes \cap \node \in \Variables\: .\: \exists (\_, \_, \node) \in \DefinedRuleEdges$ - If a variable is used in a rule graph, it needs context. Therefore, there must be an edge with the variable node as target.
 \end{itemize}
 \end{definition}
 \vspace{5px}
@@ -54,18 +54,22 @@ Figure~\ref{fig:rulegraph_example} shows an example of a rule graph. Here, $r_1,
 \end{figure}
 
 \vspace{5px}
-\begin{definition}
+\begin{definition} Morphisms \\
 A graph $g$ has a \textit{morphism} to a graph $g'$ if there is a structure-preserving mapping from the nodes and the edges of $g$ to the nodes and the edges of $g'$ respectively. A graph $g$ has a partial morphism to a graph $g'$ if there are elements in $g$ without an image in $g'$.
 \end{definition}
 \vspace{5px}
 
-\begin{definition}
-A node or edge $\node$ in graph $g$ has an \textit{image} in graph $g'$ and $\node$ is a \textit{pre-image} of the image. For each type of node, an explanation is given  A variable $\variable \in \Variables^{\sort}, \sort \in \Sorts$, has an image $i$ in a host graph if $i \in \mathbb{U}^{\sort}$. A node $\node \in 2^\Terms$ has an image $i$ in a host graph if $i$ is the valuation of all terms in $\node$. 
+\begin{definition} Images \\
+Given a morphism from a graph $g$ to a graph $g'$, a node or edge $\node$ in $g$ has an \textit{image} $\node'$ in $g'$. $\node$ is then a \textit{pre-image} of $\node'$. For each type of node, an explanation is given:
+\begin{itemize}
+  \item A variable $\variable \in \Variables^{\sort}, \sort \in \Sorts$, has an image $i$ in a host graph if $i \in \mathbb{U}^{\sort}$. 
+  \item A node $\node \in 2^\Terms$ has an image $i$ in a host graph if $i$ is the valuation of all terms in $\node$. 
+\end{itemize}
 \end{definition}
 
 \vspace{5px}
-\begin{definition}
-A transformation rule is a tuple $\langle \mathit{LHS}, \mathit{NAC}, \mathit{RHS}, \ltsLabel \rangle$, where:
+\begin{definition} Transformation rules \\
+A transformation rule $\ggrule$\newnot{symbol:ggrule} is a tuple $\langle \mathit{LHS}, \mathit{NAC}, \mathit{RHS}, \ltsLabel \rangle$, where:
 \begin{itemize}
   \item $\mathit{LHS}$ is a rule graph representing the left-hand side of the rule
   \item $\mathit{NAC}$ is a set of rule graphs representing the negative application conditions
@@ -76,17 +80,17 @@ There exist implicit partial morphisms from the $\mathit{LHS}$ to each rule grap
 \end{definition}
 \vspace{5px}
 
-\begin{definition}
-A \textit{creator} edge is an edge in the $\mathit{RHS}$ of a rule, but not in the $\mathit{LHS}$ of the rule. An \textit{eraser} edge is an edge in the $\mathit{LHS}$ of a rule, but not in the $\mathit{RHS}$ or a rule.
+\begin{definition} Creator and eraser edges \\
+A \textit{creator} edge is an edge in the $\mathit{RHS}$ of a rule, that is not in the $\mathit{LHS}$ of the rule. An \textit{eraser} edge is an edge in the $\mathit{LHS}$ of a rule that is not in the $\mathit{RHS}$ or a rule.
 \end{definition}
-
-\begin{definition}
-A rule $\ggrule$ has a \textit{rule match} on a host graph $\hostGraph$ if its $\mathit{LHS}$ has a morphism in $\hostGraph$ and $\not\exists\,n \in \mathit{NAC}$ such that $n$ has a morphism in $\hostGraph$ and $\forall\,e \in \mathit{LHS}$, if $e$ has an image $i$ in $n$, and an image $j$ in $\hostGraph$, then $j$ should be an image of $i$. The morphism of the $\mathit{LHS}$ to a host graph is a \textit{match morphism}.
+\vspace{5px}
+\begin{definition} Rule matches \\
+A rule $\ggrule$ has a \textit{rule match} on a host graph $\hostGraph$ if its $\mathit{LHS}$ has a morphism in $\hostGraph$ and none of the graphs in $\mathit{NAC}$ have a morphism in $\hostGraph$. Formally, $\not\exists\,n \in \mathit{NAC} . n has morphism in \hostGraph$. The morphism of the $\mathit{LHS}$ to a host graph is a \textit{match morphism}.
 \end{definition}
 
 \vspace{5px}
-\begin{definition}
-After the rule match is applied to the graph, all elements in $\mathit{LHS}$ that do not have an image in $\mathit{RHS}$, are removed from $\hostGraph$ and all elements in $\mathit{RHS}$ that do not have a pre-image in $\mathit{LHS}$, are added to $\hostGraph$. This process, called a \textit{rule transition}, is denoted $\hostGraph \xrightarrow{\ggrule, \rulematch}\hostGraph'$, where $\rulematch \in \RuleMatches$\newnot{symbol:RuleMatches} is the morphism of the $\mathit{LHS}$ to $\hostGraph$.
+\begin{definition} Rule transitions \\
+After the rule match is found, all nodes and edges in $\mathit{LHS}$ that do not have an image in $\mathit{RHS}$, are removed from $\hostGraph$. All elements in $\mathit{RHS}$ that do not have a pre-image in $\mathit{LHS}$, are added to $\hostGraph$. The result of this process is called a \textit{rule transition}, denoted by: $\hostGraph \xrightarrow{\ggrule, \rulematch}\hostGraph'$, where $\rulematch \in \RuleMatches$\newnot{symbol:RuleMatches} is the morphism of the $\mathit{LHS}$ to $\hostGraph$.
 \end{definition}
 \vspace{5px}
 
@@ -101,11 +105,11 @@ Figure \ref{fig:gg_example} shows an example of the initial graph $\startGraph$,
 \end{figure}
 
 \vspace{5px}
-\begin{definition}
+\begin{definition} Graph Grammars \\
 A graph grammar is a tuple $\langle \Rules, \startGraph \rangle$, where:
 \begin{itemize}
-\item $\Rules$ is a set of graph transformation rules
-\item $\startGraph$ is the initial graph
+\item $\Rules$\newnot{symbol:Rules} is a set of graph transformation rules
+\item $\startGraph$\newnot{symbol:startGraph} is the initial graph
 \end{itemize}
 \end{definition}
 \vspace{5px}
@@ -113,25 +117,45 @@ A graph grammar is a tuple $\langle \Rules, \startGraph \rangle$, where:
 By repeatedly applying graph transformation rules to the start graph and all its consecutive graphs, a GG can be explored to reveal a \textit{Graph Transition System} (GTS). This transition system consists of graphs connected by rule transitions.
 
 \vspace{5px}
-\begin{definition}
+\begin{definition} Graph Transition Systems \\
 A graph transition system is a tuple	$\langle \Graphs, \Rules, \RuleMatches, \RuleTransitions, \startGraph\rangle$, where:
 \begin{itemize}
 \item $\Graphs$\newnot{symbol:Graphs} is a set of graphs
 \item $\Labels \in \Rules \times \RuleMatches$ is a set of labels
 \item $\RuleTransitions \in \Graphs \times \Labels \times \Graphs$\newnot{symbol:RuleTransitions} is the rule transition relation
-\item $\startGraph \in \Graphs$\newnot{symbol:startGraph} is the initial graph
+\item $\startGraph \in \Graphs$ is the initial graph
 \end{itemize}
 \end{definition}
 \vspace{5px}
 
-Let $K = \langle \Rules, \startGraph$. A GTS $O = \langle \Graphs, \Rules, \RuleMatches, \RuleTransitions\rangle$ is derived from a $K$ by the following. $\Graphs, \RuleMatches, \RuleTransitions$ are the smallest sets, such that:
+Let $K = \langle \Rules, \startGraph \rangle$. A GTS $O = \langle \Graphs, \Rules, \RuleMatches, \RuleTransitions, \startGraph\rangle$ is derived from $K$ by the following. $\Graphs, \RuleMatches, \RuleTransitions$ are the smallest sets, such that:
 \begin{itemize}
 \item $\startGraph \in \Graphs$
 \item if $\hostGraph \in \Graphs$ and $\hostGraph \xrightarrow{\ggrule, \rulematch}\hostGraph'$ then $\hostGraph' \in \Graphs, (\ggrule, \rulematch) \in \Labels, (\hostGraph \xrightarrow{\ggrule, \rulematch}\hostGraph') \in \RuleTransitions$
 \end{itemize}
 
 \vspace{5px}
-\begin{definition}
-In order to specify stimuli and responses with GGs, a definition is given for an \textit{Input-Output GG} (IOGG). Concretely, the IOGG places input and output labels on its rule transitions. Following the definition from IOLTSs, each rule label $l \in L$ has a type $\iotype \in \IOTypes$. Exploring an IOGG leads to an \textit{Input-Output Graph Transition System} (IOGTS). The rule transitions derive their type from their corresponding rule.
+\begin{definition} Input-Output Graph Grammars \\
+In order to specify stimuli and responses with GGs, a definition is given for an \textit{Input-Output GG} (IOGG). Concretely, the IOGG places input and output labels on its rule transitions. Following the definition from IOLTSs, each rule label $l \in L$ has a type $\iotype \in \IOTypes$. Exploring an IOGG leads to an \textit{Input-Output Graph Transition System} (IOGTS).
 \end{definition}
 \vspace{5px}
+
+\vspace{5px}\begin{definition} Rule priorities \\
+A graph grammar with \textit{rule priorities} $\RulePriorities$ assigns a priority $\rulePriority\in\mathbb{N}$ to a $\ggrule \in \Rules$, such that ${\ggrule \mapsto \rulePriority}\in\RulePriorities$. The definition of GTSs is extended with this definition of rule priorities and the following:\\
+\vspace{2px}
+$\ggrule_1, \ggrule_2\in \Rules, \hostGraph \in \Graphs . (\hostGraph \xrightarrow{\ggrule_1, \rulematch_1}\hostGraph') \in \RuleTransitions \land \RulePriorities(\ggrule_1) > \RulePriorities(\ggrule_2) \rightarrow (\hostGraph \xrightarrow{\ggrule_2, \rulematch_2}\hostGraph') \notin \RuleTransitions$\\
+\vspace{2px}
+Consider the graph grammar in Figure~\ref{fig:priority_gg}. The 'add' rule produces a rule transition to a graph, where the $sub$ rule produces a rule transition back to the start graph. Suppose $\RulePriorities(add) > \RulePriorities(sub)$, then the 'sub' rule does not have a outgoing rule transition from the start graph.
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:priority_start}\input{./img/priority-example/start.tex}}\\
+    \subfloat[The $LHS$ of the $add$ rule]{\label{fig:priority_add_lhs}\input{./img/priority-example/add_lhs.tex}}\hspace{20px}
+    \subfloat[The $RHS$ of the $add$ rule]{\label{fig:priority_add_rhs}\input{./img/priority-example/add_rhs.tex}}\\
+    \subfloat[The $LHS$ of the $sub$ rule]{\label{fig:priority_sub_lhs}\input{./img/priority-example/sub_lhs.tex}}\hspace{20px}
+    \subfloat[The $RHS$ of the $sub$ rule]{\label{fig:priority_sub_rhs}\input{./img/priority-example/sub_rhs.tex}}
+  \end{center}
+  \caption{Priority rules}
+  \label{fig:priority_gg}
+\end{figure} 
+\end{definition}

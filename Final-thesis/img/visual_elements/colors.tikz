@@ -1,0 +1,17 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n0)  at (1.040, -0.990) {\ml{\textbf{LHS\_and\_RHS}}};
+\node[nacnode] (n1)  at (2.380, -1.000) {\ml{NAC}};
+\node[newnode] (n2)  at (1.050, -1.660) {\ml{\textbf{RHS}}};
+\node[delnode] (n3)  at (2.380, -1.670) {\ml{\textbf{LHS}}};
+\path[nacedge](n0.east |- 2.380, -1.000) -- node[naclab]{foo} (n1) ;
+\path[deledge] (n0)  -- node[dellab]{bar} (n3) ;
+\path[newedge](n0.south -| 1.050, -1.660) -- node[newlab]{baz} (n2) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

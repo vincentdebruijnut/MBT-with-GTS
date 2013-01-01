@@ -1,0 +1,13 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n0)  at (0.900, -0.850) {\ml{node1}};
+\node[node] (n1)  at (1.790, -0.850) {\ml{node2}};
+\path[edge, -](n0.east |- 1.790, -0.850) -- node[lab]{\textit{=}} (n1) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

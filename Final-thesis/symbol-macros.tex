@@ -7,10 +7,6 @@
 \newcommand{\transition}{t}
 \newcommand{\initialState}{q_0}
 
-%IO
-\newcommand{\IOTypes}{Y}
-\newcommand{\iotype}{\iota}
-
 %Algebra
 \newcommand{\Sorts}{S}
 \newcommand{\sort}{s}
@@ -54,15 +50,18 @@
 \newcommand{\Nodes}{\mathbb{V}}
 \newcommand{\Edges}{\mathbb{E}}
 \newcommand{\GraphNodes}{\mathbb{W}}
-\newcommand{\DefinedNodes}{V_{G^h}}
-\newcommand{\DefinedEdges}{E_{G^h}}
-\newcommand{\DefinedRuleNodes}{V_{G^r}}
-\newcommand{\DefinedRuleEdges}{E_{G^r}}
+\newcommand{\hostGraph}{G}
+\newcommand{\DefinedNodes}{V_{\hostGraph}}
+\newcommand{\DefinedEdges}{E_{\hostGraph}}
+\newcommand{\ruleGraph}{H}
+\newcommand{\DefinedRuleNodes}{V_{\ruleGraph}}
+\newcommand{\DefinedRuleEdges}{E_{\ruleGraph}}
 \newcommand{\edge}{e}
 \newcommand{\node}{z}
-\newcommand{\hostGraph}{G}
-\newcommand{\ruleGraph}{H}
 \newcommand{\TermNodes}{2^\Terms}
+\newcommand{\RulePriorities}{P}
+\newcommand{\rulePriority}{p}
+
 
 % GTS
 \newcommand{\Graphs}{\mathcal{G}}
@@ -76,3 +75,9 @@
 
 % point algebra
 \newcommand{\PointAlgebra}{\mathcal{P}}
+
+%IO
+\newcommand{\IOTypes}{Y}
+\newcommand{\iotype}{\iota}
+\newcommand{\IOTransitions}{\Transitions_{\IOTypes}}
+\newcommand{\IOGates}{\Gates_{\IOTypes}}

@@ -1,0 +1,25 @@
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Testing}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Model-based Testing}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Graph Transformation}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Tools}{3}{section.1.4}
+\contentsline {section}{\numberline {1.5}Research goals}{4}{section.1.5}
+\contentsline {section}{\numberline {1.6}Roadmap}{4}{section.1.6}
+\contentsline {chapter}{\numberline {2}Background}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Model-based Testing}{6}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Previous work}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Labelled Transition Systems}{7}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Algebra}{9}{section.2.2}
+\contentsline {section}{\numberline {2.3}Symbolic Transition Systems}{10}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Previous work}{10}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Definition}{10}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Example}{11}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}STS to LTS mapping}{11}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Coverage}{12}{subsection.2.3.5}
+\contentsline {section}{\numberline {2.4}Graph Grammars}{13}{section.2.4}
+\contentsline {section}{\numberline {2.5}Tooling}{15}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}ATM}{15}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}GROOVE}{17}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}GROOVE visual elements}{17}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Example GROOVE graph grammar}{20}{subsection.2.5.4}
+\contentsline {chapter}{List of Symbols}{24}{chapter*.34}
