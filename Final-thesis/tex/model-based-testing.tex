@@ -25,11 +25,11 @@ Variations of state machines and transition systems have been widely used as the
 The stucture of the rest of this section is as follows. First, previous work on model-based testing is given. Then, Labelled Transition Systems are introduced. This is a basic formalism useful to understand the models in the rest of the paper, namely Graph Grammars and Symbolic Transition Systems. Next, an adaptation of Labelled Transition Systems, the Input-Output Transition System is described. This is a useful formalism for Model-Based Testing. Finally, the notion of \textit{coverage} is explained.
 
 \subsection{Previous work}
-Formal testing theory was introduced by De Nicola et al.~\cite{denicola:testing}. The input-output behavior of processes is investigated by series of tests. Two processes are considered equivalent if they pass exactly the same set of tests. This testing theory was first used in algorithms for automatic test generation by Brinksma~\cite{brinksma:testgeneration}. This led to the so-called \textit{canonical tester} theory. Tretmans gives a formal approach to protocol conformance testing (whether a protocol conforms to its specifications) in~\cite{Tretmans:conformancetesting} and an algorithm for deriving a sound and exhaustive test suite from a specification in~\cite{Tretmans:testgeneration}. A good overview of model-based testing theory and past research is given in "Model-Based Testing of Reactive Systems"~\cite{Broy:ModelBasedTesting}.
+Transition-based formal testing theory was introduced by De Nicola et al.~\cite{denicola:testing}. The input-output behavior of processes is investigated by series of tests. Two processes are considered equivalent if they pass exactly the same set of tests. This testing theory was first used in algorithms for automatic test generation by Brinksma~\cite{brinksma:testgeneration}. This led to the so-called \textit{canonical tester} theory. Tretmans gives a formal approach to protocol conformance testing (whether a protocol conforms to its specifications) in~\cite{Tretmans:conformancetesting} and an algorithm for deriving a sound and exhaustive test suite from a specification in~\cite{Tretmans:testgeneration}. A good overview of model-based testing theory and past research is given in "Model-Based Testing of Reactive Systems"~\cite{Broy:ModelBasedTesting}.
 
 \subsection{Labelled Transition Systems}
 A Labelled Transition System (LTS) is a structure consisting of states with labelled transitions between them.
-\vspace{5px}
+\vspace{10px}
 \begin{definition} Labelled Transition Systems \\
 An LTS is a 4-tuple	$\langle \States, \Labels, \Transitions, \initialState\rangle$, where:
 \begin{itemize}
@@ -45,20 +45,16 @@ We write $\state \xrightarrow{\mu}\state'$ if there is a transition labelled $\m
 A useful type of transition system for model-based testing is the Input-Output Transition System (IOTS) by Tretmans~\cite{Tretmans:testgeneration}. Assuming that implementations communicate with their environment via inputs and outputs, this formalism is useful for describing system behavior. The system is regarded as a black box and the IOTS specifies the allowed inputs and outputs.
 
 IOTSs have the same definition as LTSs with one addition: each label $\ltsLabel \in \Labels$ has a type $\iotype \in \IOTypes$, where $\IOTypes = \{input, output\}$\newnot{symbol:IOTypes}. Each label can therefore specify whether the action represented by the label is a possible input or an expected output of the system under test. An IOTS is formally defined as:
-\vspace{5px}
-\begin{definition} Input-Output Transition Systems
-\begin{itemize}
-\item $\States$
-\item $\Labels$
-\item \newnot{symbol:IOTransitions}$\IOTransitions \subseteq \Transitions \times \IOTypes$
-\item $\initialState$
-\end{itemize}
+\vspace{10px}
+\begin{definition} Input-Output Transition Systems \\
+An IOTS is a 4-tuple $\langle \States, \Labels, \IOTransitions, \initialState\rangle$\newnot{symbol:IOTransitions}, where $\IOTransitions \subseteq \Transitions \times \IOTypes$ are the input-output transitions.
 \end{definition}
+\vspace{10px}
 When the transition system is in the source state of an input transition, the input can be given to the SUT. When the transition system is in the source state of an output transition, the output should be observed from the SUT. In both cases, the transition system advances to the target state of the transition. The case where a state has both input and output transitions is not considered in this report.
 
-An example of such an IOTS is shown in Figure~\ref{fig:iots_example}. This system allows an input of 20 or 50 cents and then outputs tea or coffee accordingly. The inputs are preceded by a '?', the outputs are preceded by an '!'. This system is a specification of a coffee machine. A test case can also be described by an IOTS with special pass and fail states. 
+An example of such an IOTS is shown in Figure~\ref{fig:iots_example}. This system allows an input of 20 or 50 cents and then outputs tea or coffee accordingly. The inputs are preceded by a `?', the outputs are preceded by an `!'. This system is a specification of a coffee machine. A test case can also be described by an IOTS with special pass and fail states. 
 
-A test case for the coffee machine is given in Figure~\ref{fig:iots_test}. The test case shows that when an input of '50c' is given, an output of 'coffee' is expected from the tested system, as this results in a 'pass' verdict. When the system responds with 'tea', the test case results in a 'fail' verdict. The pass and fail verdicts are two special states in the test case, which are sink states, i.e., once in either of those the test case cannot leave that state. 
+A test case for the coffee machine is given in Figure~\ref{fig:iots_test}. The test case shows that when an input of `50c' is given, an output of `coffee' is expected from the tested system, as this results in a `pass' verdict. When the system responds with `tea', the test case results in a `fail' verdict. The pass and fail verdicts are two special states in the test case, which are sink states, i.e., once in either of those the test case cannot leave that state. 
 
 Test cases should always reach a pass or fail state within finite time. This requirement ensures that the testing process halts.
 \begin{figure}[ht]

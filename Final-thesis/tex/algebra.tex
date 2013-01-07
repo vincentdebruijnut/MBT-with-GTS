@@ -2,15 +2,21 @@
 
 Some basic concepts from algebra are described here. For a general introduction into logic we refer to~\cite{Huth:logic}. This section explains in order: multi-sorted signatures, algebrae, variables \& terms and term-mapping \& valuations. The algebra described here will be used in the next sections to formally define Symbolic Transition Systems and Graph Grammars.
 
-\vspace{5px}\begin{definition} Multi-sorted Signatures \\
-A \textit{multi-sorted signature} $\langle \Sorts, \FunctionSymbols \rangle$ describes the sorts and function symbols of a formal language. $\Sorts$\newnot{symbol:Sorts} is a set of sorts. $\FunctionSymbols$\newnot{symbol:FunctionSymbols} is a set of function symbols. Each $\functionSymbol \in \FunctionSymbols$ has an arity $n \in \mathbb{N}$, where a function symbol with arity $n = 0$ is called a constant symbol. $\FunctionSymbols^i$ denotes the subset of $\FunctionSymbols$ with function symbols of arity $n = i$. The sort of a function symbol $\functionSymbol \in \FunctionSymbols$ with arity $n$ is given by $\sigma(f) = \sort_1 ... \sort_{n+1}$, with $\sort_i \in \Sorts$ for $1 \leq i \leq n$. $\sort_{n+1}$ is the return sort. In this report, $\Sorts =  \{\mathit{int, real, bool, string}\}$ denoting the integer, real, boolean and string sorts respectively. $\FunctionSymbols$ features the commonly used function symbols, which include, but not restricted by, '+', '*', '=', '<', '0', '1'.
+\vspace{10px}\begin{definition} Multi-sorted Signatures \\
+A \textit{multi-sorted signature} $\langle \Sorts, \FunctionSymbols \rangle$ describes the sorts and function symbols of a formal language. $\Sorts$\newnot{symbol:Sorts} is a set of sorts. $\FunctionSymbols$\newnot{symbol:FunctionSymbols} is a set of function symbols. Each $\functionSymbol \in \FunctionSymbols$ has an arity $n \in \mathbb{N}$, where a function symbol with arity $n = 0$ is called a constant symbol. $\FunctionSymbols^i$ denotes the subset of $\FunctionSymbols$ with function symbols of arity $n = i$. The sort of a function symbol $\functionSymbol \in \FunctionSymbols$ with arity $n$ is given by $\sigma(f) = \sort_1 ... \sort_{n+1}$, with $\sort_i \in \Sorts$ for $1 \leq i \leq n$. $\sort_{n+1}$ is the return sort. In this report, $\Sorts =  \{\mathit{int, real, bool, string}\}$ denoting the integer, real, boolean and string sorts respectively. $\FunctionSymbols$ features the commonly used function symbols, which include, but not restricted by, `+', `*', `=', `<', `0', `1'.
 \end{definition}
 
-\vspace{5px}\begin{definition} Algebrae \\
-An \textit{algebra} $\Algebra = \langle \mathbb{U}, \Functions\rangle$\newnot{symbol:Algebra} has a non-empty set $\mathbb{U}$\newnot{symbol:Universe} of values called a \textit{universe}, partitioned into $\mathbb{U}^\sort$ for each $\sort \in \Sorts$, and a set $\Functions$\newnot{symbol:Functions} of functions. A function $\function_\Algebra$ is typed $\mathbb{U}_\Algebra^{\sort_1} \times ... \mathbb{U}_\Algebra^{\sort_n} \rightarrow \mathbb{U}_\Algebra^{\sort_{n+1}}$, where $\sort_1 ... \sort_{n+1}$ is the sort of the function symbol given by the signature. For example, $<_\Algebra: \mathbb{U}_\Algebra^{int} \times \mathbb{U}_\Algebra^{int} \rightarrow \mathbb{U}_\Algebra^{bool}$ represents the 'less-than' comparison of two integers.
+\vspace{10px}
+\begin{definition} Algebrae \\
+An \textit{algebra} $\Algebra = \langle \mathbb{U}, \Functions\rangle$\newnot{symbol:Algebra} has a non-empty set $\mathbb{U}$\newnot{symbol:Universe} of values called a \textit{universe}, partitioned into $\mathbb{U}^\sort$ for each $\sort \in \Sorts$, and a set $\Functions$\newnot{symbol:Functions} of functions. A function $\function_\Algebra$ is typed $\mathbb{U}_\Algebra^{\sort_1} \times ... \mathbb{U}_\Algebra^{\sort_n} \rightarrow \mathbb{U}_\Algebra^{\sort_{n+1}}$, where $\sort_1 ... \sort_{n+1}$ is the sort of the function symbol given by the signature. For example, $<_\Algebra: \mathbb{U}_\Algebra^{int} \times \mathbb{U}_\Algebra^{int} \rightarrow \mathbb{U}_\Algebra^{bool}$ represents the `less-than' comparison of two integers.
 \end{definition}
 
-\vspace{5px}
+\vspace{10px}
+\begin{definition} Point algebra \\
+We define a \textit{point algebra} $\PointAlgebra$\newnot{symbol:PointAlgebra} to be an algebra with $\forall \sort \in \Sorts . |\mathbb{U}_\PointAlgebra^\sort| = 1$.
+\end{definition}
+
+\vspace{10px}
 \begin{definition} Variables \\
 We define $\Variables = \Variables^{int} \uplus \Variables^{real} \uplus \Variables^{bool} \uplus \Variables^{string}$\newnot{symbol:Variables} to be the set of \textit{variables}. \textit{Terms} over $\DefinedVariables$, denoted $\Terms(\DefinedVariables)$\newnot{symbol:Terms}, are built from function symbols $\FunctionSymbols$ and variables $\DefinedVariables \subseteq \Variables$. The definition of a term is:
 \vspace{5px}\\
@@ -27,7 +33,7 @@ $\begin{array}{lll}\sortFunction: \term \mapsto & \sort       & \mathit{if}\: \t
 The set of terms with return type $\mathit{bool}$, is denoted as $\BooleanTerms(\Variables)$\newnot{symbol:BooleanTerms}. An example is $(x < y)$, where the result is $\mathit{true}$ or $\mathit{false}$.
 \end{definition}
 
-\vspace{5px}
+\vspace{10px}
 \begin{definition} Term-mapping \\
 A \textit{term-mapping} is a function $\termMapping:\Variables \rightarrow \Terms(\Variables)$\newnot{symbol:termMapping}. A \textit{valuation} $\valuation$\newnot{symbol:valuation} is a function $\valuation:\Variables \rightarrow \mathbb{U}$ that assigns values to variables. For example, given an algebra, $\valuation:\{(x \mapsto 1), (y \mapsto 2)\}$ assigns the values 1 and 2 to the variables $x$ and $y$ respectively.
 A valuation of a term given $\Algebra$ is defined by:

@@ -1,5 +1,5 @@
 introduction.tex
-- 4 small issues (1 hour)
+- 4 small issues (1 hour) done
 
 algebra.tex
 - 1 small issue (10 min) done
@@ -10,15 +10,15 @@ graph-grammars.tex
 tooling.tex
 - sequence diagram ATM (2 hours) done
 - sequence diagram GROOVE (2 hours) done
-- describe quantification high level groove (2 hours)
+- describe quantification high level groove (2 hours) done
 - describe exploration of GGs (2 hours) done
-- describe the visual items in Groove (1 hour)
-- 1 small issue (10 min)
+- describe the visual items in Groove (1 hour) done
+- 1 small issue (10 min) done
 
 gg-to-sts-transformation
-- Base design requirements on research questions (30 min)
+- Base design requirements on research questions (30 min) done
 - explain better what the effect of the point algebra is on graphs (1 hour)
-- Explain state variable definition in IOGGs clearly, use GROOVE examples (1 hour)
+- Explain state variable definition in IOGGs clearly, use GROOVE examples (1 hour) done
 - Adjust transformation steps to new variable definition, give summary list (3 hours)
 
 constraints.tex

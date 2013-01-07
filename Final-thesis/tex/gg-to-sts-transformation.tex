@@ -1,69 +1,89 @@
 \section{Requirements considerations}
-In order to do model-based testing with GGs, stimuli and responses have to be obtained from the GG. ATM uses an IOSTS, where the instantiated switch relations represent a stimulus to or a response from the SUT. To get an equivalent notion of stimuli/responses in GGs, the GG must be extended to an IOGG by indicating for each transformation rule whether it is of the input or output type. Then the IOGG can be explored to an IOGTS. The input/output rule transitions of the IOGTS can be used as the abstract stimuli and responses.
-
-The second requirement for the design is the possibility to measure coverage statistics. The exploration of a GG can be done in two ways: \textit{on the fly}, rule transitions are explored only when chosen by ATM, or \textit{offline}, the GG is first completely explored and then sent to ATM. On-the-fly model exploration works well on large and even infinite models. However, coverage statistics cannot be calculated with this technique. The number of states (graphs) and rule transitions the model has when completely explored are not known, so a percentage cannot be derived. As coverage statistics are an important metric, the offline model exploration is chosen for GRATiS.\marginpar{what is connection to the research questions?}
-
-The last requirement is efficiency. An IOGTS can potentially be infinitely large, due to the range of data values. A model that is more efficient with data values is an STS. The setup of GRATiS is therefore to transform the IOGG directly to an IOSTS. Note that the second requirement is met, because location and switch relation coverage can be calculated on the IOSTS.
-
-Taking these requirements into account, the method to achieve the goal of model-based testing on GGs is the following three steps:
+From the research goals we derive three high level requirements:
 \begin{enumerate}
-\item Assign I/O types to graph transformation rules
+\item The system should be able to perform model-based testing on GGs
+\item The system should be validated so it should allow coverage metrics to be measured, because as seen in the previous chapter, coverage statistics are a useful and objective metric to describe how much of the model is tested
+\item The system should be validated using case studies so it should be efficient enough to handle large models
+\end{enumerate}
+
+\paragraph*{IOGGs} In order to fulfill the first requirement, stimuli and responses have to be obtained from a GG. ATM uses an IOSTS, where the instantiated switch relations represent a stimulus to or a response from the SUT. GGs have no notion of inputs and outputs, therefore IOGGs have to be used as the model formalism. IOGGs can be explored to IOGTSs and the I/O labels of the IOGTS can be used to represent abstract stimuli/responses.
+
+\paragraph*{On-the-fly vs. Offline exploration} The exploration of a GG can be done in two ways: \textit{on the fly}, rule transitions are explored only when chosen by ATM, or \textit{offline}, the GG is first completely explored and then sent to ATM. On-the-fly model exploration works well on large and even infinite models. However, coverage statistics cannot be calculated with this technique. The number of states (graphs) and rule transitions the model has when completely explored are not known, so a percentage cannot be derived. As coverage statistics are an important metric, the offline model exploration is chosen for GRATiS.
+
+\paragraph*{Data values} An IOGTS can potentially be infinitely large, due to the range of data values. This is a potential risk for the validation of the system. A model that is more efficient with data values is an STS. The setup of GRATiS is therefore to transform the IOGG directly to an IOSTS. This transformation should be done efficiently to fulfill the third requirement. Note that the second requirement is still met, because location and switch relation coverage can be calculated on the IOSTS.
+
+\paragraph*{} Taking these requirements into account, the method to achieve the goal of model-based testing on GGs is the following three steps:
+\begin{enumerate}
+\item Create an IOGG by assigning I/O types to the graph transformation rules of a GG
 \item Create an IOSTS from the IOGG
 \item Perform the model-based testing on the IOSTS
 \end{enumerate}
-This chapter describes a declaritive definition for creating an IOSTS from an IOGG.
+The rest of this chapter describes a declaritive definition for creating an IOSTS from an IOGG.
 
-\section{Point algebra}
-We define a \textit{point algebra} $\PointAlgebra$\newnot{symbol:PointAlgebra} to be an algebra with $\forall \sort \in \Sorts . |\mathbb{U}_\PointAlgebra^\sort| = 1$.  Using the point algebra, graphs that only differ in values are collapsed into one. \marginpar{explain what the effect of the point algebra is on graphs}.
+\section{From IOGG to IOSTS}\label{sec:algorithm}
+\subsection{Variables in GGs} 
+The location variables in an STS represent an aspect of the modelled system. For instance, if a system keeps track of the number of items in containers, the STS modelling this system could have integer location variables $\mathit{items}_1..\mathit{items}_n$. GGs do not have this kind of variables. The variable nodes in rule graphs are used to match a value in a host graph, which is only available to that rule. A definition of persistent variables in GGs is needed in order to define location variables from an IOGG.
 
-\section{Variables}
-The variables in an STS represent an aspect of the modelled system. For instance, if a system keeps track of the number of items in containers, the STS modelling this system could have integer location variables $\mathit{items}_1..\mathit{items}_n$. The value nodes in a host graph are a representation of one element from the universe of elements of the same sort. Edges can exist between graph nodes and value nodes. The same example modelled in a graph grammar could be a graph node representing a container with an edge labelled 'items' to an integer node. This is shown in Figure~\ref{fig:item_example}. This is a common way of representing a variable in a GG. Here the combination of edge plus source node represents the variable. However, the source node identity is not consistent through graph transformations, as the graphs are structurally unique upto isomorphism. In order to have variables in GGs, the source node must be made structurally unique, by means of a self-edge. Figure~\ref{fig:item_example2} shows the self-edge on the container node. The variable $\mathit{var1\_items}$, the number of items in the container, is now represented by this graph.\marginpar{explain clearly what we consider to be variables in graphs.}
+\vspace{10px}
+\begin{definition} GG variables \\
+A GG variable is a 3-tuple $\langle \variableAnchor, \variableEdge, \valueEdge\rangle$, where:
+\begin{itemize}
+\item \newnot{symbol:variableAnchor}$\variableAnchor \in \DefinedNodes\backslash\mathbb{U}$ is the \textit{variable anchor}.
+\item \newnot{symbol:variableEdge}$\variableEdge \in \{\variableAnchor\} \times \Labels \times \{\variableAnchor\}$ is a self-edge of the variable anchor, called the \textit{variable edge}.
+\item \newnot{symbol:valueEdge}$\valueEdge \in \{\variableAnchor\} \times \Labels \times \mathbb{U}\rangle$ is an edge from the variable anchor to a value node, called the \textit{value edge}.
+\end{itemize}
+\end{definition}
+\vspace{10px}
+
+The item/container example modelled in a graph grammar could be a graph node representing a container with an edge labelled `items' to an integer node. This is shown in Figure~\ref{fig:gg_vars_formal}. Using the labels of the variable anchor, variable edge and value edge, the variable $\langle \mathit{container, var1, items}\rangle$ is now represented by this graph. Figure~\ref{fig:gg_vars_groove} shows the same example in GROOVE. The variable edge is represented here by the flag \textit{var1}. Variable edges are represented by flags in GROOVE in the rest of this report. 
 
 \begin{figure}[ht]
   \begin{center}
-    \subfloat[Common way]{\label{fig:item_example}\parbox[b]{4cm}{\input{./img/item_example.tex}}}
-    \subfloat[Persistent way]{\label{fig:item_example2}\parbox[b]{4cm}{\input{./img/item_example2.tex}}}
+    \subfloat[Formal]{\label{fig:gg_vars_formal}\parbox[b]{4cm}{\centering\input{./img/item_example2.tex}}}
+    \subfloat[GROOVE]{\label{fig:gg_vars_groove}\parbox[b]{4cm}{\centering\input{./img/gg_variable.tikz}}}
   \end{center}
-  \caption{Possible ways of modelling variables in GGs}
+  \caption{Example of a GG variable}
   \label{fig:vars-in-ggs}
-\end{figure}\marginpar{Make these pictures in GROOVE}
+\end{figure}
 
-On the basis of the discussion above, we introduce the following terminology. The labels on the self-edges we call \textit{variable labels}, represented by $\Labels_{var}$. The edge having a variable label we call a \textit{variable edge}. The source node of the variable edge we call the \textit{variable anchor}.\marginpar{Define variable anchors as set}
+\subsection{Graph exploration with point algebra} 
+The IOGG cannot be directly made into an IOSTS, without using the IOGTS. To avoid the problem of a potentially infinitely large IOGTS, the point algebra is used. Using the point algebra when exploring a GG has two effects:
+\begin{enumerate}
+\item The host graphs that differ only in value nodes are collapsed into one
+\item The variable nodes in rule graphs can have at most one image in the host graph
+\end{enumerate}
 
-\section{The IOGG to IOSTS definition}\label{sec:algorithm}
-Let $K$ be an IOGG. From $K$ we construct an IOSTS $J$. The first step is to explore $K$ using the point algebra $\PointAlgebra$ to an IOGTS $O_\PointAlgebra$. First the declaritive definition is given, then each step is described in more detail.\marginpar{revise this sentence}
-
+\subsection{The IOGG to IOSTS definition} 
+First the declaritive definition is given, then each part of the definition is described in more detail.
+\vspace{10px}
+\begin{definition} IOGG to IOSTS \\
+Let $K$ be an IOGG. From $K$ we define an IOSTS $J$. The first step is to explore $K$ using the point algebra $\PointAlgebra$ to an IOGTS $O_\PointAlgebra$. The elements of $J$ can be obtained as follows:
 \begin{itemize}
-\item $\Locations = \hostGraph$
+\item $\Locations = \Graphs$
 \item $\initialLocation = \startGraph$
-\item ???
+\item $\LocationVariables = \GGVariables$
 \item $\Gates = \Rules$
 \item $\InteractionVariables = \Variables$
 \item $\Switches = \RuleTransitions$
 \item guard
 \item update mapping\marginpar{finish this list}
 \end{itemize}
+\end{definition}
 
-\paragraph{Locations}
-\marginpar{Uitleggen waarom de locations precies de gevonden host graphs zijn.}
+\paragraph*{Locations} The locations abstract from data values, exactly like host graphs do under the point algebra. Therefore, the set of locations in $J$ are the set of host graphs in $O_\PointAlgebra$. The initial location in $J$ is also equal to the start graph of $O_\PointAlgebra$.
 
-\paragraph{Location variables}
-The location variables are a subset of the product of variable labels and regular labels, given by $\LocationVariables \subset \Labels_{var} \times \Labels$. The set of location variables in a host graph $\langle \DefinedNodes, \DefinedEdges\rangle$ is defined by the following. $\langle \ltsLabel_{var}, \ltsLabel \rangle \in \LocationVariables$ if:
-\begin{itemize}
-\item $\langle w \in \mathbb{W}, \ltsLabel, u \in \mathbb{U} \rangle \in \DefinedEdges$ - the label must be on an edge from a variable anchor to a value node.\marginpar{variable anchors must be defined as set}
-\end{itemize}
-The initialization $\initializationFunction$ is then given by $\langle \ltsLabel_{var}, \ltsLabel \rangle \mapsto u$.\marginpar{this poses some constraints in ...}
+\paragraph*{Location variables} GG variables were defined to have location variables in GGs. Therefore, it is no surprise that the set of location variables in $J$ is exactly the set of GG variables in $O_\PointAlgebra$. This poses some constraints on creators/erasers for the variable anchors, variable edges and value edges. This is explained in detail in section~\ref{sec:constraints}.
 
-\paragraph{Gates}
+\paragraph*{Gates}
 The gate of a switch relation represents the stimulus to or response from the SUT. In an IOGG, the rules represent the stimuli and responses. Therefore, the set of gates $\Gates$ is chosen to be equal to the set of rules $\Rules$.
 
-\paragraph{Interaction variables}
+\paragraph*{Interaction variables}
 Interaction variables are used by the gates to represent a stimulus or response variable. The variable nodes in rule graphs are this representation. The set of interaction variables $\InteractionVariables$ is chosen to be equal to the set of variable nodes $\Variables$. For a rule $\ggrule$ and all variable nodes $\Variables_\ggrule$ in $\mathit{LHS}$ of $\ggrule$, $arity(\ggrule) = |\Variables_\ggrule|$. \marginpar{need to define variable anchors in a graph, or variable labels in a graph}
 
-\paragraph{Switch relations}
+\paragraph*{Switch relations}
 A rule transition $\hostGraph \xrightarrow{\ggrule, \rulematch} \hostGraph' \in \RuleTransitions$ is mapped to a switch relation $(\hostGraph\xrightarrow{\ggrule, \guard, \updateMapping}\hostGraph') \in \Switches$. The guard and update mapping are constructed according to sections~\ref{sec:guards} and \ref{sec:updates} using $\ggrule$ and $\rulematch$. 
 
-\paragraph{Guard}\label{sec:guards}
+\paragraph*{Guard}\label{sec:guards}
 The guard of a switch relation restricts the use of the switch relation based on the values of the variables. In a GG, a rule is restricted by the terms.\marginpar{need to define the term nodes in a graph} The variables used in the terms are interaction variables. Therefore, the first part of the guard is constructed by joining the terms for each term node by $\bigwedge_{\node \in \DefinedRuleNodes \cap \TermNodes}\bigwedge_{t_1, t_2 \in \node}t_1 = t_2$. Using a rule match $\rulematch$, the second part is constructed. For a $\mathit{LHS} = \langle \DefinedRuleNodes, \DefinedRuleEdges\rangle$ let $T$ be the smallest set of terms, such that $\langle \rulematch(\node), \ltsLabel \rangle = x \in T$ when:
 \begin{itemize}
 \item $x \in \Variables \cap \DefinedRuleNodes$
@@ -72,7 +92,7 @@ The guard of a switch relation restricts the use of the switch relation based on
 \end{itemize}
 Then, the terms are joined by $\bigwedge_{t\in T}t$.
 
-\paragraph{Update mapping}\label{sec:updates}
+\paragraph*{Update mapping}\label{sec:updates}
 An edge with label $\ltsLabel$ from a variable anchor $\node$ to a value node can be erased from the graph and a new edge with label $\ltsLabel$ from $\node$ to a new value node can be created by a rule. This inidicates an update for the location variable given by $\langle \node, \ltsLabel \rangle$.\marginpar{make consistent with variable definition} In the rule graph, the $\mathit{RHS}$ of the rule has the pre-image of the $\node$ and the edge to a variable node, given by the interaction variable $x$. The update mapping for this example is: $\langle \node, \ltsLabel \rangle \mapsto x$.
 
 \section{Rule priority}\marginpar{explain this clearer.}

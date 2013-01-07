@@ -15,18 +15,16 @@ The UML sequence diagram for ATM is shown in Figure~\ref{fig:axini_tool}.
 
 The tool functions as follows: 
 \begin{enumerate}
-  \item An STS is given to an STS Engine, which keeps track of the current location and variables. The user starts the test and gives a 'depth', indicating how many stimuli should be tested. The variable $i$ stands for the current iteration of $loop$ and is initially set to $0$. The variable $verdict$ is initially set to $'pass'$.
+  \item An STS is given to an STS Engine, which keeps track of the current location and variables. The user starts the test and gives a `depth', indicating how many stimuli should be tested. The variable $i$ stands for the current iteration of $loop$ and is initially set to $0$. The variable $verdict$ is initially set to $'pass'$.
   \item The STS Engine gives the possible switch relations from the current location to the Test Manager. It chooses an enabled switch relation based on a test strategy, which can be a random strategy or a strategy designed to obtain a high location/switch relation coverage. The valuation of the variables in the guard are also chosen by a test strategy, which can be a random strategy or a strategy using boundary-value analysis. The choice is represented by an instantiated switch relation.
-  \item The instantiated switch relation is given to the Test Execution component as an \textit{abstract stimulus}. The term abstract indicates that the instantiated switch relation is an abstract representation of some computation steps taken in the SUT. For instance, a transition with label '?connect' is an abstract stimulus of the actual setup of a TCP connection between two distributed components of the SUT. 
-  \item The translation of an abstract stimulus to a concrete stimulus is done by the Adapter. This component has to be programmed by the tester such that the abstract stimulus is correctly translated to a concrete stimulus. This component provides the stimulus to the SUT. When the SUT responds, the Adapter translates this response to an abstract response. For instance, the Adapter receives an HTTP response that the TCP connect was succesful. This is a concrete response, which the Adapter translates to an abstract response, such as an instantiated switch relation with gate '!ok'. The SUT can also give multiple responses. As with the stimuli, the tester has to program the translation from concrete responses to abstract responses. The Test Manager is notified with these abstract responses.
+  \item The instantiated switch relation is given to the Test Execution component as an \textit{abstract stimulus}. The term abstract indicates that the instantiated switch relation is an abstract representation of some computation steps taken in the SUT. For instance, a transition with label `?connect' is an abstract stimulus of the actual setup of a TCP connection between two distributed components of the SUT. 
+  \item The translation of an abstract stimulus to a concrete stimulus is done by the Adapter. This component has to be programmed by the tester such that the abstract stimulus is correctly translated to a concrete stimulus. This component provides the stimulus to the SUT. When the SUT responds, the Adapter translates this response to an abstract response. For instance, the Adapter receives an HTTP response that the TCP connect was succesful. This is a concrete response, which the Adapter translates to an abstract response, such as an instantiated switch relation with gate `!ok'. The SUT can also give multiple responses. As with the stimuli, the tester has to program the translation from concrete responses to abstract responses. The Test Manager is notified with these abstract responses.
   \item The Test Manager updates the STS engine with the chosen abstract stimuli and received abstract responses. If this is possible according to the STS, a pass verdict is given, otherwise a fail verdict is given. The Test Manager updates the $verdict$ variable accordingly. The loop continues as long as all responses are according to the specification and the required number of tested stimuli has not been reached. The test is stopped at a fail verdict, because the SUT has entered an invalid state and the STS engine cannot give possible switch relations any more. For instance, an error could have occurred, which is an invalid response and makes continuing impossible.
   \item When the Test Manager finishes it gives a pass verdict for this test if all verdicts given by the STS engine were a pass verdict. Otherwise, the result is a fail verdict. Also a trace is given of all chosen and observed instantiated switch relations. This can be used to calculate coverage information for the test and to allow the SUT or the STS to be fixed in case of a fail verdict.
 \end{enumerate}
 
 \subsection{GROOVE}\label{sec:descriptiongroove}
-GROOVE is an open source, graph-based modelling tool in development at the University of Twente since 2004~\cite{Rensink:GROOVE}. It has been applied to several case studies, such as model transformations and security and leader election protocols~\cite{Ghamarian:GROOVE}.
-
-The UML sequence diagram for GROOVE is shown in Figure~\ref{fig:groove_tool}.
+GROOVE is an open source, graph-based modelling tool in development at the University of Twente since 2004~\cite{Rensink:GROOVE}. It has been applied to several case studies, such as model transformations and security and leader election protocols~\cite{Ghamarian:GROOVE}. The UML sequence diagram for GROOVE is shown in Figure~\ref{fig:groove_tool}.
 
 \begin{figure}[h]
   \begin{center}
@@ -39,7 +37,7 @@ The UML sequence diagram for GROOVE is shown in Figure~\ref{fig:groove_tool}.
 The tool functions as follows:
 \begin{enumerate}
 \item A graph grammar is given as input to a RuleApplier component, which determines the possible rule transitions.
-\item The user starts an ExplorationStrategy. This strategy explores all possible graph states and rule transitions. The possible rule transitions from the initial graph state are obtained from the RuleApplier and a rule transition is chosen, based on the exploration strategy. The target graph state of the chosen rule transition is again given to the RuleApplier until no more new graph states can be explored.
+\item The user starts an ExplorationStrategy. This strategy explores all possible host graphs and rule transitions. The possible rule transitions from the initial graph state are obtained from the RuleApplier and a rule transition is chosen, based on the exploration strategy. The target host graph of the chosen rule transition is again given to the RuleApplier until no more new host graphs can be explored.
 \item The ExplorationStrategy returns the explored GTS to the UserInterface.
 \end{enumerate}
 
@@ -56,7 +54,7 @@ Nodes in GROOVE have several kinds of labels: regular labels, type labels and fl
 \end{figure}
 
 \paragraph*{Rule node matching}
-Nodes in a rule graph in GROOVE can also match each other, by connecting them with an equals '=' labelled edge. This means that any images of both nodes have to be the same. Figure \ref{fig:node_match1} shows an example of this. Nodes in a rule graph in GROOVE can also explicitly not match each other, by connecting them with an not-equals '!=' labelled edge. This means that any images of both nodes cannot be the same. Figure \ref{fig:node_match2} shows an example of this.
+Nodes in a rule graph in GROOVE can also match each other, by connecting them with an equals `=' labelled edge. This means that any images of both nodes have to be the same. Figure \ref{fig:node_match1} shows an example of this. Nodes in a rule graph in GROOVE can also explicitly not match each other, by connecting them with an not-equals `!=' labelled edge. This means that any images of both nodes cannot be the same. Figure \ref{fig:node_match2} shows an example of this.
 
 \begin{figure}[h]
   \begin{center}
@@ -85,7 +83,7 @@ Rule graphs in GROOVE combine $\mathit{LHS}$, $\mathit{RHS}$ and $\mathit{NAC}$ 
 \end{figure}
 
 \paragraph*{Variable nodes and terms}
-Variable nodes in GROOVE are represented by their type: 'int', 'bool', 'real' and 'string' for integer, boolean, real and string variables respectively. Figure \ref{fig:terms} shows two integer variable nodes and the constant integer node '1'. The diamond shaped node is a term node. It has two \textit{argument} edges $\pi_0, \pi_1$ and a \textit{result} edge 'int:add'. The term represented here is the addition of two integers, the first one being an integer variable, the second being the number 1. When this rule matches a host graph, the target variable node of the result edge is set to the result of the term; in this case the image of the first variable node plus one.
+Variable nodes in GROOVE are represented by their type: `int', `bool', `real' and `string' for integer, boolean, real and string variables respectively. Figure \ref{fig:terms} shows two integer variable nodes and the constant integer node `1'. The diamond shaped node is a term node. It has two \textit{argument} edges $\pi_0, \pi_1$ and a \textit{result} edge `int:add'. The term represented here is the addition of two integers, the first one being an integer variable, the second being the number 1. When this rule matches a host graph, the target variable node of the result edge is set to the result of the term; in this case the image of the first variable node plus one.
 
 \begin{figure}[h]
   \begin{center}
@@ -96,7 +94,7 @@ Variable nodes in GROOVE are represented by their type: 'int', 'bool', 'real' an
 \end{figure}
 
 \paragraph*{Term shorthand notation}
-A rule node with an edge to a constant is shortened to a label on the node. Figure \ref{fig:shorthand1} shows a node with an edge labelled 'x' to the constant '1'. Figure \ref{fig:shorthand2} shows the shorthand notation of this edge as the label 'x = 1' on the source node of the edge. Terms can also be shortened. The rule graph in Figure \ref{fig:terms} can be shortened to the rule graph in Figure \ref{fig:term_shorthand}.
+A rule node with an edge to a constant is shortened to a label on the node. Figure \ref{fig:shorthand1} shows a node with an edge labelled `x' to the constant `1'. Figure \ref{fig:shorthand2} shows the shorthand notation of this edge as the label `x = 1' on the source node of the edge. Terms can also be shortened. The rule graph in Figure \ref{fig:terms} can be shortened to the rule graph in Figure \ref{fig:term_shorthand}.
 
 \begin{figure}[h]
   \begin{center}
@@ -129,7 +127,7 @@ Rule transitions can have parameters in GROOVE. Figure \ref{fig:transition_param
 \end{figure}
 
 \paragraph*{Quantification}
-GROOVE supports quantification operations over nodes in rule graphs. Figure \ref{fig:quantification} shows a simple example. The 'forall' operator here matches all nodes typed 'Node'. GROOVE also supports the 'exists' operator and nesting of operators, however this is out of scope for this report. The 'forall' operator will be used in the model examples to perform operations over sets of nodes, such as in this rule: all self-edges labelled 'x' on nodes typed 'Node' are deleted from the host graph. 
+GROOVE supports quantification operations over nodes in rule graphs. Figure \ref{fig:quantification} shows a simple example. The `forall' operator here matches all nodes typed `Node'. GROOVE also supports the `exists' operator and nesting of operators, however this is out of scope for this report. The `forall' operator will be used in the model examples to perform operations over sets of nodes, such as in this rule: all self-edges labelled `x' on nodes typed `Node' are deleted from the host graph. 
 
 \begin{figure}[h]
   \begin{center}
@@ -155,12 +153,12 @@ The running example from Figure~\ref{fig:example_sts} is displayed as a graph gr
 
 The rules can be described as follows:
 \begin{enumerate}
-  \item~\ref{fig:example_groove_throw}: 'if a player has the turn and he has not thrown the die yet, he may do so.'
-  \item~\ref{fig:example_groove_move}: 'if a player has the turn and he has thrown the die and this number is larger than zero, he may move one place and then it is as if he has thrown one less.'
-  \item~\ref{fig:example_groove_next}: 'if a player has finished moving (number thrown is zero), the next player receives the turn.'
+  \item~\ref{fig:example_groove_throw}: `if a player has the turn and he has not thrown the die yet, he may do so.'
+  \item~\ref{fig:example_groove_move}: `if a player has the turn and he has thrown the die and this number is larger than zero, he may move one place and then it is as if he has thrown one less.'
+  \item~\ref{fig:example_groove_next}: `if a player has finished moving (number thrown is zero), the next player receives the turn.'
 \end{enumerate}
 
-The graph is transformed after the rule is applied. The resulting graph after the transformation is the new state of the system and the rule is the transition from the old state (the graph as it was before the rule was applied) to the new state. Figure~\ref{fig:gts_example} shows the IOGTS of one \textit{?throws} rule application on the start graph. Note that the \textit{?throws} is an input, as indicated by the '?'. State $s_1$ is a representation of the graph in Figure~\ref{fig:example_groove_start}. Figure~\ref{fig:target_graph_state} shows the graph represented by $s_2$.
+The graph is transformed after the rule is applied. The resulting graph after the transformation is the new state of the system and the rule is the transition from the old state (the graph as it was before the rule was applied) to the new state. Figure~\ref{fig:gts_example} shows the IOGTS of one \textit{?throws} rule application on the start graph. Note that the \textit{?throws} is an input, as indicated by the `?'. State $s_1$ is a representation of the graph in Figure~\ref{fig:example_groove_start}. Figure~\ref{fig:target_graph_state} shows the graph represented by $s_2$.
 
 \begin{figure}[h]
   \begin{center}

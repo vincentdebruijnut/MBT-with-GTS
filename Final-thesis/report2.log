@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  1 JAN 2013 15:59
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  7 JAN 2013 16:16
 entering extended mode
  %&-line parsing enabled.
 **report2
@@ -876,61 +876,57 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
 []\T1/cmr/m/n/10 Zijn er
  []
 
 
-Underfull \hbox (badness 5681) in paragraph at lines 32--32
+Underfull \hbox (badness 5681) in paragraph at lines 36--36
 \T1/cmr/m/n/10 nog an-dere
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
 \T1/cmr/m/n/10 for-ma-tion
  []
 
 
-LaTeX Warning: Reference `chapter:gg_to_sts' on page 4 undefined on input line 
-53.
-
-
 LaTeX Warning: Reference `chapter:implementation' on page 4 undefined on input 
-line 53.
+line 57.
 
 
 LaTeX Warning: Reference `chapter:validation' on page 4 undefined on input line
- 53.
+ 57.
 
 
 LaTeX Warning: Reference `chapter:conclusion' on page 4 undefined on input line
- 53.
+ 57.
 
 
-Overfull \hbox (3.89442pt too wide) in paragraph at lines 53--53
+Overfull \hbox (3.89442pt too wide) in paragraph at lines 57--57
 []\T1/cmr/m/n/10 hoofdstukken
  []
 
 
-Underfull \hbox (badness 1748) in paragraph at lines 53--53
+Underfull \hbox (badness 1748) in paragraph at lines 57--57
 \T1/cmr/m/n/10 ten niet in
  []
 
 ) [4] [5]
 Chapter 2.
 (./tex/background-introduction.tex) (./tex/model-based-testing.tex
-<./img/model-based-testing.pdf, id=223, 379.58545pt x 141.73691pt>
+<./img/model-based-testing.pdf, id=269, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-<./img/mbt-on-the-fly.pdf, id=227, 357.48773pt x 141.7426pt>
+<./img/mbt-on-the-fly.pdf, id=273, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
 <use ./img/mbt-on-the-fly.pdf> [6
 
  <./img/model-based-testing.pdf>] [7 <./img/mbt-on-the-fly.pdf>] (./img/iots-ex
 ample.tex <xymatrix 2x2 182>)
-(./img/iots-test.tex <xymatrix 3x2 145>) [8]) (./tex/algebra.tex)
+(./img/iots-test.tex <xymatrix 3x2 145>)) (./tex/algebra.tex [8])
 (./tex/symbolic.tex [9] [10] (./img/sts_boardgame_1.tex <xymatrix 14x1 236>)
 [11] (./img/trafo_sts.tex <xymatrix 1x3 151>) (./img/trafo_lts.tex <xymatrix
 5x5 562>)) (./tex/graph-grammars.tex [12] (./img/hostgraph.tex <xymatrix 4x2
@@ -943,8 +939,12 @@ File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 <xymatrix 2x1 181>) (./img/gg_nac1.tex <xymatrix 2x1 181>) (./img/gg_nac2.tex
 <xymatrix 2x1 181>) (./img/gg_graph.tex <xymatrix 3x1 226>) (./img/gg_rhs.tex
 <xymatrix 2x1 181>) (./img/gg_result.tex <xymatrix 3x1 226>)) [14]
-(./img/priority-example/start.tex <xymatrix 2x1 51>)
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
+Underfull \hbox (badness 10000) in paragraph at lines 156--160
+
+ []
+
+[15] (./img/priority-example/start.tex <xymatrix 2x1 51>)
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
 []\T1/cmr/m/n/8 (a) |The ini-tial
  []
 
@@ -952,36 +952,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--152
 (./img/priority-example/add_rhs.tex <xymatrix 2x1 51>)
 (./img/priority-example/sub_lhs.tex <xymatrix 3x1 55>)
 (./img/priority-example/sub_rhs.tex <xymatrix 2x1 51>)) (./tex/tooling.tex
-[15] <./img/atm-diagram.pdf, id=392, 513.8086pt x 289.56181pt>
+<./img/atm-diagram.pdf, id=439, 513.8086pt x 289.56181pt>
 File: ./img/atm-diagram.pdf Graphic file (type pdf)
 
-<use ./img/atm-diagram.pdf> [16 <./img/atm-diagram.pdf>]
-<./img/groove-diagram.pdf, id=417, 362.04158pt x 220.67444pt>
+<use ./img/atm-diagram.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16] <./img/groove-diagram.pdf, id=459, 362.04158pt x 220.67444pt>
 File: ./img/groove-diagram.pdf Graphic file (type pdf)
 
 <use ./img/groove-diagram.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17] (./img/visual_elements/flags.tikz) (./img/visual_elements/node_match1.tikz
-)
-Underfull \hbox (badness 10000) in paragraph at lines 63--63
+[17 <./img/atm-diagram.pdf>] (./img/visual_elements/flags.tikz)
+(./img/visual_elements/node_match1.tikz)
+Underfull \hbox (badness 10000) in paragraph at lines 61--61
 []\T1/cmr/m/n/8 (a) |Match-ing rule
  []
 
 (./img/visual_elements/node_match2.tikz)
-Underfull \hbox (badness 7379) in paragraph at lines 74--74
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[18 <./img/groove-diagram.pdf>]
+Underfull \hbox (badness 7379) in paragraph at lines 72--72
 []\T1/cmr/m/n/10 dotted line
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--74
+Underfull \hbox (badness 10000) in paragraph at lines 72--72
 \T1/cmr/m/n/10 beter wo-
  []
 
-[18 <./img/groove-diagram.pdf>] (./img/visual_elements/colors.tikz)
-(./img/visual_elements/terms.tikz) (./img/visual_elements/shorthand1.tikz)
-(./img/visual_elements/shorthand2.tikz)
+(./img/visual_elements/colors.tikz) (./img/visual_elements/terms.tikz)
+(./img/visual_elements/shorthand1.tikz) (./img/visual_elements/shorthand2.tikz)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 (./img/visual_elements/term_shorthand.tikz)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -992,12 +1001,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./img/visual_elements/quantification.tikz)
+[19] (./img/visual_elements/quantification.tikz)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] (./img/start.tikz) (./img/throws.tikz) (./img/move.tikz)
-(./img/nextTurn.tikz)
+(./img/start.tikz) (./img/throws.tikz) (./img/move.tikz) (./img/nextTurn.tikz)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1009,31 +1017,282 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [20] (./report2.bbl [21] [22
+) [20] [21] [22]
+Chapter 3.
+(./tex/gg-to-sts-transformation.tex [23
 
-]) [23] (./symbols.tex
+] (./img/item_example2.tex <xymatrix
+3x1 118>)
+Overfull \hbox (11.08345pt too wide) in paragraph at lines 1--41
+ []$[]$ 
+ []
 
-LaTeX Warning: Reference `symbol:PointAlgebra' on page 24 undefined on input li
-ne 54.
+(./img/gg_variable.tikz)
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+[]\T1/cmr/m/n/10 explain
+ []
 
-[24
 
-]) [25] (./report2.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+\T1/cmr/m/n/10 what the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+\T1/cmr/m/n/10 ef-fect of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+\T1/cmr/m/n/10 the point
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+\T1/cmr/m/n/10 al-ge-bra is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+[]\T1/cmr/m/n/10 revise this
+ []
+
+
+LaTeX Warning: Marginpar on page 24 moved.
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+[]\T1/cmr/m/n/10 finish this
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+[]\T1/cmr/m/n/10 Uitleggen
+ []
+
+
+Underfull \hbox (badness 6445) in paragraph at lines 64--64
+\T1/cmr/m/n/10 waarom de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+\T1/cmr/m/n/10 lo-ca-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+\T1/cmr/m/n/10 pre-cies de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+\T1/cmr/m/n/10 gevon-den
+ []
+
+
+LaTeX Warning: Marginpar on page 25 moved.
+
+
+Underfull \hbox (badness 6944) in paragraph at lines 69--69
+\T1/cmr/m/n/10 chors must
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
+\T1/cmr/m/n/10 be de-fined
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
+[]\T1/cmr/m/n/10 this poses
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
+\T1/cmr/m/n/10 some con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
+\T1/cmr/m/n/10 straints in
+ []
+
+
+LaTeX Warning: Marginpar on page 25 moved.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
+\T1/cmr/m/n/10 an-chors in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
+\T1/cmr/m/n/10 a graph,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
+\T1/cmr/m/n/10 or vari-able
+ []
+
+
+Underfull \hbox (badness 2261) in paragraph at lines 77--77
+\T1/cmr/m/n/10 la-bels in a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--83
+[]\T1/cmr/m/n/10 need to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--83
+\T1/cmr/m/n/10 de-fine the
+ []
+
+
+Underfull \hbox (badness 3623) in paragraph at lines 83--83
+\T1/cmr/m/n/10 term nodes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]\T1/cmr/m/n/10 make con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+\T1/cmr/m/n/10 vari-able
+ []
+
+[25] (./img/priority_sts_wrong.tex <xymatrix 1x1 136>)
+(./img/priority_sts_right.tex <xymatrix 1x1 136>)) (./tex/constraints.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+[]\T1/cmr/m/n/10 make con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+\T1/cmr/m/n/10 vari-able
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+[]\T1/cmr/m/n/10 constraint:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+\T1/cmr/m/n/10 do not
+ []
+
+
+Underfull \hbox (badness 4647) in paragraph at lines 9--9
+\T1/cmr/m/n/10 erase lvars,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+\T1/cmr/m/n/10 vari-able
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+\T1/cmr/m/n/10 an-chors,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+\T1/cmr/m/n/10 one kind
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+\T1/cmr/m/n/10 of ap-prox-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+\T1/cmr/m/n/10 i-ma-tion is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+\T1/cmr/m/n/10 wrong bu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+\T1/cmr/m/n/10 tthe other
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+\T1/cmr/m/n/10 is cor-rect.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+\T1/cmr/m/n/10 Ge-bruik
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+\T1/cmr/m/n/10 plaat-jes?
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+\T1/cmr/m/n/10 Meer tekst
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+\T1/cmr/m/n/10 ge-bruiken
+ []
+
+
+Underfull \hbox (badness 2512) in paragraph at lines 12--12
+\T1/cmr/m/n/10 om dit uit
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]\T1/cmr/m/n/10 beter uit-
+ []
+
+
+LaTeX Warning: Marginpar on page 27 moved.
+
+(./img/item_example_c4_lhs.tex <xymatrix 1x3 55>)
+(./img/item_example_c4_rhs.tex <xymatrix 2x3 67>)
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]\T1/cmr/m/n/10 plaatje is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\T1/cmr/m/n/10 lelijk, use
+ []
+
+) [27] (./report2.bbl [28
+
+]) [29] (./symbols.tex [30
+
+]) [31] (./report2.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 19891 strings out of 495061
- 349796 string characters out of 1182622
- 832110 words of memory out of 3000000
- 22308 multiletter control sequences out of 15000+50000
+ 19993 strings out of 495061
+ 351517 string characters out of 1182622
+ 835797 words of memory out of 3000000
+ 22342 multiletter control sequences out of 15000+50000
  30003 words of font info for 75 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 63i,23n,79p,1526b,1572s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,24n,79p,1526b,1572s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0700.600pk> </home
 /dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0800.600pk> </home/dbruijn/
 .texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk> </home/dbruijn/.texmf-va
@@ -1050,27 +1309,30 @@ ljfour/jknappen/ec/ectt1200.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jk
 nappen/ec/ecrm1200.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec
 /ecti1200.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200
 .600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1
-/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-texlive
-/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texmf-texlive/fonts/type1/
-public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-texlive/fonts/type1/public
-/xypic/xyatip10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xybtip10
-.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xydash10.pfb>
-Output written on report2.pdf (27 pages, 629796 bytes).
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmm
+i8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy5.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/latxfont/lcircle1.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/sym
+bols/msam7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/
+share/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb></usr/share/texmf-tex
+live/fonts/type1/public/xypic/xydash10.pfb>
+Output written on report2.pdf (33 pages, 693246 bytes).
 PDF statistics:
- 1267 PDF objects out of 1440 (max. 8388607)
- 179 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1428 PDF objects out of 1440 (max. 8388607)
+ 223 named destinations out of 1000 (max. 500000)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
