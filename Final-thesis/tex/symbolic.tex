@@ -10,7 +10,8 @@ An STS has \textit{locations} and \textit{switch relations}. If the STS represen
 \begin{definition} Symbolic Transition Systems \\
 A Symbolic Transition System is a tuple $\langle \Locations,\initialLocation,\LocationVariables,\initializationFunction,\InteractionVariables,\Gates,\Switches\rangle$, where:
 \begin{itemize}
-\item $\Locations$\newnot{symbol:Locations} is a finite set of locations and $\initialLocation \in \Locations$\newnot{symbol:initialLocation} is the initial location.
+\item $\Locations$\newnot{symbol:Locations} is a finite set of locations.
+\item $\initialLocation \in \Locations$\newnot{symbol:initialLocation} is the initial location.
 \item $\LocationVariables \subseteq \Variables$\newnot{symbol:LocationVariables} is a finite set of location variables.
 \item $\initializationFunction$\newnot{symbol:initializationFunction} is a term-mapping $\LocationVariables \rightarrow \Terms(\emptyset)$, representing the initialisation of the location variables.
 \item $\InteractionVariables \subseteq \Variables$\newnot{symbol:InteractionVariables} is a set of interaction variables, disjoint from $\LocationVariables$.

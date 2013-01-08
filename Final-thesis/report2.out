@@ -24,11 +24,14 @@
 \BOOKMARK [2][-]{subsection.2.5.4}{Example GROOVE graph grammar}{section.2.5}
 \BOOKMARK [0][-]{chapter.3}{From Graph Grammar to STS}{}
 \BOOKMARK [1][-]{section.3.1}{Requirements considerations}{chapter.3}
-\BOOKMARK [1][-]{section.3.2}{The IOGG to IOSTS definition}{chapter.3}
-\BOOKMARK [1][-]{section.3.3}{Rule priority}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{From IOGG to IOSTS}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.2.1}{Variables in GGs}{section.3.2}
+\BOOKMARK [2][-]{subsection.3.2.2}{Graph exploration with point algebra}{section.3.2}
+\BOOKMARK [2][-]{subsection.3.2.3}{The IOGG to IOSTS definition}{section.3.2}
+\BOOKMARK [1][-]{section.3.3}{Rule priorities}{chapter.3}
 \BOOKMARK [1][-]{section.3.4}{Constraints}{chapter.3}
 \BOOKMARK [2][-]{subsection.3.4.1}{Constraint 1: unique variables}{section.3.4}
 \BOOKMARK [2][-]{subsection.3.4.2}{Constraint 2: variable persistency}{section.3.4}
 \BOOKMARK [2][-]{subsection.3.4.3}{Constraint 3: no variables in NACs}{section.3.4}
 \BOOKMARK [2][-]{subsection.3.4.4}{Constraint 4: structural constraints on node creating rules}{section.3.4}
-\BOOKMARK [0][-]{chapter*.43}{List of Symbols}{}
+\BOOKMARK [0][-]{chapter*.52}{List of Symbols}{}

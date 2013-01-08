@@ -10,10 +10,10 @@ A \textit{graph} is composed of nodes and edges. In this report, we assume a uni
 
 \vspace{10px}
 \begin{definition} Host graphs \\
-A host graph $\hostGraph$ is a tuple $\langle \DefinedNodes, \DefinedEdges\rangle$\newnot{symbol:hostGraph}, where:
+A host graph $\hostGraph$ is a tuple $\langle \DefinedHostNodes, \DefinedHostEdges\rangle$\newnot{symbol:hostGraph}, where:
 \begin{itemize}
-  \item $\DefinedNodes \subseteq (\mathbb{W} \uplus \mathbb{U})$ is the node set of $\hostGraph$
-  \item $\DefinedEdges \subseteq (\DefinedNodes\backslash\mathbb{U} \times \Labels \times \DefinedNodes)$ is the edge set of $\hostGraph$
+  \item $\DefinedHostNodes \subseteq (\mathbb{W} \uplus \mathbb{U})$ is the node set of $\hostGraph$
+  \item $\DefinedHostEdges \subseteq (\DefinedHostNodes\backslash\mathbb{U} \times \Labels \times \DefinedHostNodes)$ is the edge set of $\hostGraph$
 \end{itemize}
 \end{definition}
 \vspace{10px}
@@ -37,7 +37,7 @@ A rule graph $\ruleGraph$ is a tuple $\langle \DefinedRuleNodes, \DefinedRuleEdg
 \end{itemize}
 In addition, the following must hold:
 \begin{itemize}
-\item $\forall \node \in \DefinedRuleNodes \cap \node \in 2^\Terms\: .\:\mathit{var}(\node) \subseteq \DefinedRuleNodes$ - The variables used in the terms must be present as nodes in the rule graph.
+\item $\forall \node \in \DefinedRuleNodes \cap 2^\Terms\: .\:\mathit{var}(\node) \subseteq \DefinedRuleNodes$ - The variables used in the terms must be present as nodes in the rule graph.
 \item $\forall \node \in \DefinedRuleNodes \cap \node \in \Variables\: .\: \exists (\_, \_, \node) \in \DefinedRuleEdges$ - If a variable is used in a rule graph, it needs context. Therefore, there must be an edge with the variable node as target.
 \end{itemize}
 \end{definition}
@@ -159,7 +159,7 @@ A graph grammar with \textit{rule priorities} $\RulePriorities$ assigns a priori
 $\ggrule_1, \ggrule_2\in \Rules, \hostGraph \in \Graphs . (\hostGraph \xrightarrow{\ggrule_1, \rulematch_1}\hostGraph') \in \RuleTransitions \land \RulePriorities(\ggrule_1) > \RulePriorities(\ggrule_2) \rightarrow (\hostGraph \xrightarrow{\ggrule_2, \rulematch_2}\hostGraph') \notin \RuleTransitions$\\
 \end{definition}
 \vspace{10px}
-Consider the graph grammar in Figure~\ref{fig:priority_gg}. The `add' rule produces a rule transition to a graph, where the $sub$ rule produces a rule transition back to the start graph. Suppose $\RulePriorities(add) > \RulePriorities(sub)$, then the `sub' rule does not have a outgoing rule transition from the start graph.
+In the graph grammar in Figure~\ref{fig:priority_gg}, the `add' rule produces a rule transition to a graph, where the $sub$ rule produces a rule transition back to the start graph. Suppose $\RulePriorities(add) > \RulePriorities(sub)$, then the `sub' rule does not have a outgoing rule transition from the start graph.
 
 \begin{figure}[ht]
   \begin{center}

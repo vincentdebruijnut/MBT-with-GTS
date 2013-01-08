@@ -24,18 +24,14 @@
 \contentsline {subsection}{\numberline {2.5.4}Example GROOVE graph grammar}{20}{subsection.2.5.4}
 \contentsline {chapter}{\numberline {3}From Graph Grammar to STS}{23}{chapter.3}
 \contentsline {section}{\numberline {3.1}Requirements considerations}{23}{section.3.1}
-\contentsline {section}{\numberline {3.2}The IOGG to IOSTS definition}{24}{section.3.2}
-\contentsline {paragraph}{\numberline {3.2.0.0.1}Locations}{25}{paragraph.3.2.0.0.1}
-\contentsline {paragraph}{\numberline {3.2.0.0.2}Location variables}{25}{paragraph.3.2.0.0.2}
-\contentsline {paragraph}{\numberline {3.2.0.0.3}Gates}{25}{paragraph.3.2.0.0.3}
-\contentsline {paragraph}{\numberline {3.2.0.0.4}Interaction variables}{25}{paragraph.3.2.0.0.4}
-\contentsline {paragraph}{\numberline {3.2.0.0.5}Switch relations}{25}{paragraph.3.2.0.0.5}
-\contentsline {paragraph}{\numberline {3.2.0.0.6}Guard}{25}{paragraph.3.2.0.0.6}
-\contentsline {paragraph}{\numberline {3.2.0.0.7}Update mapping}{25}{paragraph.3.2.0.0.7}
-\contentsline {section}{\numberline {3.3}Rule priority}{26}{section.3.3}
-\contentsline {section}{\numberline {3.4}Constraints}{26}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Constraint 1: unique variables}{26}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Constraint 2: variable persistency}{26}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Constraint 3: no variables in NACs}{27}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Constraint 4: structural constraints on node creating rules}{27}{subsection.3.4.4}
-\contentsline {chapter}{List of Symbols}{30}{chapter*.43}
+\contentsline {section}{\numberline {3.2}From IOGG to IOSTS}{24}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Variables in GGs}{24}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Graph exploration with point algebra}{24}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}The IOGG to IOSTS definition}{25}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Rule priorities}{27}{section.3.3}
+\contentsline {section}{\numberline {3.4}Constraints}{28}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Constraint 1: unique variables}{28}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Constraint 2: variable persistency}{28}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Constraint 3: no variables in NACs}{28}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Constraint 4: structural constraints on node creating rules}{28}{subsection.3.4.4}
+\contentsline {chapter}{List of Symbols}{32}{chapter*.52}

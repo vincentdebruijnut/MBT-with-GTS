@@ -51,11 +51,13 @@
 \newcommand{\Edges}{\mathbb{E}}
 \newcommand{\GraphNodes}{\mathbb{W}}
 \newcommand{\hostGraph}{G}
-\newcommand{\DefinedNodes}{V_{\hostGraph}}
-\newcommand{\DefinedEdges}{E_{\hostGraph}}
+\newcommand{\DefinedNodes}{V}
+\newcommand{\DefinedEdges}{E}
+\newcommand{\DefinedHostNodes}{\DefinedNodes_{\hostGraph}}
+\newcommand{\DefinedHostEdges}{\DefinedEdges_{\hostGraph}}
 \newcommand{\ruleGraph}{H}
-\newcommand{\DefinedRuleNodes}{V_{\ruleGraph}}
-\newcommand{\DefinedRuleEdges}{E_{\ruleGraph}}
+\newcommand{\DefinedRuleNodes}{\DefinedNodes_{\ruleGraph}}
+\newcommand{\DefinedRuleEdges}{\DefinedEdges_{\ruleGraph}}
 \newcommand{\edge}{e}
 \newcommand{\node}{z}
 \newcommand{\TermNodes}{2^\Terms}
@@ -86,6 +88,7 @@
 \newcommand{\IORuleTransitions}{\RuleTransitions_{\IOTypes}}
 
 % GG variable
-\newcommand{\variableAnchor}{\node}
-\newcommand{\variableEdge}{\edge}
-\newcommand{\valueEdge}{\edge}
+\newcommand{\variableAnchor}{\node_a}
+\newcommand{\variableEdge}{\edge_{var}}
+\newcommand{\valueEdge}{\edge_{val}}
+\newcommand{\GGVariables}{\Variables_{GG}}
