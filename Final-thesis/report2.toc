@@ -30,8 +30,4 @@
 \contentsline {subsection}{\numberline {3.2.3}The IOGG to IOSTS definition}{25}{subsection.3.2.3}
 \contentsline {section}{\numberline {3.3}Rule priorities}{27}{section.3.3}
 \contentsline {section}{\numberline {3.4}Constraints}{28}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Constraint 1: unique variables}{28}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Constraint 2: variable persistency}{28}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Constraint 3: no variables in NACs}{28}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Constraint 4: structural constraints on node creating rules}{28}{subsection.3.4.4}
-\contentsline {chapter}{List of Symbols}{32}{chapter*.52}
+\contentsline {chapter}{List of Symbols}{32}{chapter*.57}

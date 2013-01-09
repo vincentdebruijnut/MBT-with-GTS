@@ -26,16 +26,15 @@ The location variables in an STS represent an aspect of the modelled system. For
 
 \vspace{10px}
 \begin{definition} GG variables \\
-A GG variable is a 3-tuple $\langle \variableAnchor, \variableEdge, \valueEdge\rangle$, where:
+A GG variable is a tuple $\langle \variableLabel, \valueLabel\rangle$, where:
 \begin{itemize}
-\item \newnot{symbol:variableAnchor}$\variableAnchor \in \DefinedHostNodes\backslash\mathbb{U}$ is the \textit{variable anchor}.
-\item \newnot{symbol:variableEdge}$\variableEdge \in \{\variableAnchor\} \times \Labels \times \{\variableAnchor\}$ is a self-edge of the variable anchor, called the \textit{variable edge}.
-\item \newnot{symbol:valueEdge}$\valueEdge \in \{\variableAnchor\} \times \Labels \times \mathbb{U}\rangle$ is an edge from the variable anchor to a value node, called the \textit{value edge}.
+\item \newnot{symbol:variableLabel}$\variableLabel$ is the \textit{variable label}, which is part of an edge $(\variableAnchor, \variableLabel, \variableAnchor)$, where $\variableAnchor$\newnot{symbol:variableAnchor} is called the \textit{variable anchor}
+\item \newnot{symbol:valueLabel}$\valueLabel$ is the \textit{value label}, which is part of a \textit{value edge}: $(\variableAnchor, \valueLabel, \node)$, with $\node \in \mathbb{U}$.
 \end{itemize}
 \end{definition}
 \vspace{10px}
 
-The item/container example modelled in a graph grammar could be a graph node representing a container with an edge labelled `items' to an integer node. This is shown in Figure~\ref{fig:gg_vars_formal}. Using the labels of the variable anchor, variable edge and value edge to represent their respective node and edge identities, the variable $\langle \mathit{container, var1, items}\rangle$ is now represented by this graph. Figure~\ref{fig:gg_vars_groove} shows the same example in GROOVE. The variable edge is represented here by the flag \textit{var1}. Variable edges are represented by flags in GROOVE in the rest of this report. 
+The item/container example modelled in a graph grammar could be a graph node representing a container with an edge labelled `items' to an integer node. This is shown in Figure~\ref{fig:gg_vars_formal}. The variable $(\mathit{var1, items})$ is now represented by this graph. Figure~\ref{fig:gg_vars_groove} shows the same example in GROOVE. The variable edge is omitted here and the variable label is represented by the flag \textit{var1}. This convention for GROOVE is used in the rest of this report.
 
 \begin{figure}[ht]
   \begin{center}
@@ -77,29 +76,30 @@ Let $K$ be an IOGG. From $K$ we define an IOSTS $J$. The first step is to explor
 The initial value of the location variables is defined by the start graph. The start graph contains the GG variables and their initial values. This poses a constraint on the start graph, which is explained in section~\ref{sec:constraints}. 
 \vspace{10px}\begin{definition} Initialization function
 \vspace{2px} \\
-$\langle\variableAnchor, \variableEdge, (\variableAnchor, \ltsLabel, \_)\rangle \mapsto \node\:|\:(\variableAnchor, \ltsLabel, \node) \in \DefinedEdges_{\startGraph}$
+$\function_{\initializationFunction}:\:(\variableLabel, \valueLabel)\mapsto \node\:|\:(\variableAnchor, \variableLabel, \variableAnchor) \in \DefinedEdges_{\startGraph} \land (\variableAnchor, \valueLabel, \node) \in \DefinedEdges_{\startGraph}$
 \end{definition}
-\vspace{10px}
 
 \paragraph*{Gates}
-The gate of a switch relation represents the stimulus to or response from the SUT. In an IOGG, the rules represent the stimuli and responses. Therefore, the set of gates $\Gates$ is chosen to be equal to the set of rules $\Rules$.
+The gate of a switch relation represents the stimulus to or response from the SUT. In an IOGG, the rules represent the stimuli and responses. Therefore, the set of gates $\Gates$ is equal to the set of rules $\Rules$.
 
 \paragraph*{Interaction variables}
-Interaction variables are used by the gates to represent a stimulus or response variable. The variable nodes in rule graphs are this representation. The set of interaction variables $\InteractionVariables$ is chosen to be equal to the set of variable nodes $\Variables$. For a rule $\ggrule$ and all variable nodes $\Variables_\ggrule$ in $\mathit{LHS}$ of $\ggrule$, $arity(\ggrule) = |\Variables_\ggrule|$.
+Interaction variables are used by the gates to represent a stimulus or response variable. The variable nodes in rule graphs are this representation. The set of interaction variables $\InteractionVariables$ is equal to the set of variable nodes $\Variables$. The arity of a rule is defined by the variable nodes in the $\mathit{LHS}$ of the rule:
+\vspace{5px} \\
+$arity(\ggrule) = |\Variables\cap\DefinedNodes_{LHS}|$
 
 \paragraph*{Switch relations}
-A rule transition $\hostGraph \xrightarrow{\ggrule, \rulematch} \hostGraph' \in \RuleTransitions$ is mapped to a switch relation $(\hostGraph\xrightarrow{\ggrule, \function_{\guard}, \function_{\updateMapping}}\hostGraph') \in \Switches$. Note that the set of locations is chosen to be the set of host graphs, therefore $\hostGraph$ and $\hostGraph'$ represent the source and target location of the switch relation. Also, the set of rules is chosen to be the set of gates, therefore $\ggrule$ represents the gate of the switch relation. The function $\function_{\guard}$ obtains the guard as a term and $\function_{\updateMapping}$ replaces the $\updateMapping$ function. These functions are defined in the next paragraphs.
+A rule transition $\hostGraph \xrightarrow{\ggrule, \rulematch} \hostGraph' \in \RuleTransitions$ is mapped to a switch relation $(\hostGraph\xrightarrow{\ggrule, \function_{\guard}, \function_{\updateMapping}}\hostGraph') \in \Switches$. Note that the set of locations is the set of host graphs, therefore $\hostGraph$ and $\hostGraph'$ represent the source and target location of the switch relation. Also, the set of rules is chosen to be the set of gates, therefore $\ggrule$ represents the gate of the switch relation. The function $\function_{\guard}$ obtains the guard as a term and $\function_{\updateMapping}$ replaces the $\updateMapping$ function. These functions are defined in the next paragraphs.
 
 \paragraph*{Guard}\label{sec:guards}
 The guard of a switch relation restricts the use of the switch relation based on the values of the variables. In a GG, a rule is restricted by the terms. The variables used in the terms are interaction variables. Therefore, the first part of the guard is constructed by joining the terms for each term node.
 \vspace{10px}\begin{definition} First guard function
 \vspace{2px} \\
-$\function 1_{\guard}:\: \bigwedge_{\node \in \DefinedNodes_{LHS} \cap \TermNodes,\: t_1, t_2 \in \node}t_1 = t_2$
+$\function 1_{\guard}:\: \bigwedge_{\node \in \DefinedNodes_{LHS} \cap \TermNodes,\: t_1 \in \node,\: t_2 \in \node}t_1 = t_2$
 \end{definition}
 \vspace{10px} 
 We apply this to the rule graph in Figure~\ref{fig:guard_example}. This rule graph contains one term node, which in turn contains two terms. Formally, the first part of the guard for this rule graph is:
 \vspace{5px} \\
-$x_1+1 = x_1+1 \land x_1+1 = x_2 \land x_2 = x_2 \land x_2 > 3 = x_2 > 3 \land x_2 > 3 = true \land true = true$
+$(x_1+1 = x_1+1) \land (x_1+1 = x_2) \land (x_2 = x_2) \land (x_2 > 3 = x_2 > 3) \land (x_2 > 3 = true) \land (true = true)$
 \vspace{5px} \\
 When $t_1 = t_2$, the equation for this part is not useful, therefore it is omitted from now on. 
 
@@ -114,14 +114,12 @@ When $t_1 = t_2$, the equation for this part is not useful, therefore it is omit
 This first part of the guard contains only the interaction variables. In an STS, the values for $x_1$ and $x_2$ can be chosen such that the guard holds. However, the variable nodes cannot have just any value; their value is determined by their image in the host graph. This image can be the value of a GG variable. Therefore we add a second part to the guard to link the interaction and location variables.
 \vspace{10px}\begin{definition} Second guard function
 \vspace{2px} \\
-$\function 2_{\guard}:\: \bigwedge_{\langle\variableAnchor, \variableEdge, \valueEdge\rangle \in \GGVariables,\: \node \in \Variables \cap \DefinedNodes_{LHS}\: |\: \valueEdge = \langle\variableAnchor, \ltsLabel, \rulematch(\node)\rangle \land \valueEdge \in \DefinedHostEdges} \langle\variableAnchor, \variableEdge, \valueEdge\rangle = \node$
+$\function 2_{\guard}:\: \bigwedge_{(\variableLabel, \valueLabel) \in \GGVariables,\: \node \in \Variables \cap \DefinedNodes_{LHS}\: |\: (\variableAnchor, \variableLabel, \variableAnchor) \in \DefinedHostEdges \land (\variableAnchor, \valueLabel, \rulematch(\node)) \in \DefinedHostEdges} (\variableLabel, \valueLabel) = \node$
 \end{definition}
 \vspace{10px}
 We apply this to the rule graph in Figure~\ref{fig:guard_example} and the host graph in Figure~\ref{fig:guard_example_host}. The rule has a match in the host graph. The second part of the guard for this rule is:
 \vspace{5px} \\
-$x_1 = (h_1,var1,b) \land x_2 = (h_1,var1,d)$
-\vspace{5px} \\
-Note that the labels represent the node and edge identities of the variable anchor, variable edge and value edge here.
+$(var1,b) = x_1 \land (var1,d) = x_2$
 
 \begin{figure}[h]
   \begin{center}
@@ -138,16 +136,16 @@ $\function_{\guard}:\:\function 1_{\guard} \land \function 2_{\guard}$
 \end{definition}
 
 \paragraph*{Update mapping}\label{sec:updates}
-When a value edge is erased from a graph and a new value edge is created with the same label and variable anchor, this inidicates an update for the corresponding GG variable. The update mapping for the switch relation represented by the rule transition should include the GG variable and the interaction variable represented by the new variable node.
+When a value edge is erased from a graph and a new value edge is created with the same label and variable anchor, this inidicates an update for the corresponding GG variable. The update mapping for the switch relation represented by this rule transition should map the matched GG variable to the interaction variable represented by the target of the new value edge.
 \vspace{10px}\begin{definition} Update mapping function
 \vspace{2px} \\
-$\function_{\updateMapping}:\: \langle\variableAnchor, \variableEdge, (\variableAnchor, \ltsLabel, \_)\rangle \mapsto \node'\: |\: (\node, \ltsLabel, \node') \in E_{RHS} \land \rulematch(\node) = \variableAnchor$
+$\function_{\updateMapping}:\: (\variableLabel, \valueLabel) \mapsto \node'\: |\: (\variableAnchor, \variableLabel, \variableAnchor) \in \DefinedHostEdges \land (\node, \valueLabel, \node') \in E_{RHS} \land \rulematch(\node) = \variableAnchor$
 \end{definition}
 \vspace{10px}
 This poses some constraints on the eraser/creator edges for value edges, which are explained in section~\ref{sec:constraints}. These constraints ensure that $\function_{\updateMapping}$ is bijective.
 
 \section{Rule priorities}
-Rule priorities are not taken into account in the definition above. First, we show why the definition above does not work with rule priorities. Then we show a method of including rule priorities in the (IO)STS.
+Rule priorities are not taken into account in the definition above. First, we show why the definition above does not work with rule priorities. Then we show a method of including rule priorities in the IOSTS.
 
 We apply the definition to the GG in Figure~\ref{fig:priority_gg}. We assume the rules both are stimuli, i.e. each is a I/O transformation rule $(\ggrule$, $\mathit{input})$, where $\ggrule$ is the respective rule. All host graphs explored by this GG are isomorphic under the point algebra, so they represent the same location. The IOSTS obtained from this IOGG is in Figure~\ref{fig:priority_sts_wrong}, with $\imath = \{x \mapsto 25\}$. This IOSTS is wrong, because the `?sub' switch relation can be taken from the start, whereas the `?sub' rule in the IOGG cannot be applied to the start graph, because it has a lower priority than the `?add' rule.
 
@@ -159,7 +157,7 @@ We apply the definition to the GG in Figure~\ref{fig:priority_gg}. We assume the
   \label{fig:priority_sts_wrong}
 \end{figure}
 
-The solution is shown in Figure~\ref{fig:priority_sts_right}. The negated guard of the `?add' switch relation is added to the `?sub' switch relation. The optimized guard for this switch relation is `x >= 30' of course, but this shows the main principle: for each outgoing switch relation, the negated guard of all switch relations represented by higher priority rules must be added to the guard. So, the `x < 30' guard is negated to `!(x < 30)' and added to yield the `x > 10 \&\& !(x < 30)' guard.
+The solution is shown in Figure~\ref{fig:priority_sts_right}. The negated guard of the `?add' switch relation is added to the `?sub' switch relation. The optimized guard for this switch relation is `x >= 30' of course, but this shows the main principle: for a rule transition $\ruleTransition$ and a set of rule transitions $\RuleTransitions$ with higher priority rules and the same source graph as $\ruleTransition$, the negated guard of the switch relations represented by $\RuleTransitions$ must be added to the guard of the switch relation represented by $\ruleTransition$. In the example, the `x < 30' guard is negated to `!(x < 30)' and added to yield the `x > 10 \&\& !(x < 30)' guard.
 
 \begin{figure}[ht]
   \begin{center}

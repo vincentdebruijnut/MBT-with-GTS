@@ -2,23 +2,57 @@
 
 This section describes the constraints on the definition in section~\ref{sec:algorithm}.
 
-\subsection{Constraint 1: unique variables}\label{sec:constraint-1}
-A location variable is indicated by a node and label pair $\langle \node, \ltsLabel\rangle$. This pair must be unique, i.e. no two edges $\langle \node, \ltsLabel, \node'\rangle, \langle \node, \ltsLabel, \node''\rangle$ may exist where $\node' \neq \node''$. Otherwise, it is possible that a variable has two different values.\marginpar{make consistent with variable definition}
+\paragraph*{GG variable persistency} All location variables in an STS are initialized to some value and no new variables are added. In a GG, it is possible to erase and create new variables in the transformation rules. Therefore, we pose the following constraints:
+\begin{itemize}
+%$\forall \langle \variableAnchor, \valueEdge, \valueLabel\rangle \in \GGVariables\:.\: \variableAnchor \in \DefinedNodes_{\startGraph} \land \valueEdge \in \DefinedEdges_{\startGraph} \land \valueEdge \in \DefinedEdges_{\startGraph}$ 
+\item All GG variables must be present in the start graph
+\item Variable anchors and variable edges cannot be erased or created
+\item A transformation rule may erase a value edge if and only if it creates a new edge with the same source node and label as the erased value edge. The target node of the new edge must be a value node of the same sort as the target node of the erased edge
+\end{itemize}
 
-\subsection{Constraint 2: variable persistency}
-All locations variables in an STS are initialized and no new variables are added. In a GG, it is possible to delete and create new variables in the transformation rules. \marginpar{constraint: do not erase lvars, variable anchors, etc.}
+\paragraph*{Unique GG variables}
+The GG variables to location variables mapping has to be bijective. The previous constraints ensure the GG variables are always present, however they do not ensure their uniqueness. Therefore, we pose the following constraints:
+\begin{itemize}
+\item The variable labels have to be unique; there cannot be two variable edges with the same label in the start graph
+\item The value labels for the value edges with the same source node have to be unique; there cannot be two edges with the same variable anchor with the same label in the start graph
+\end{itemize}
 
-\subsection{Constraint 3: no variables in NACs}
-Let $\langle \node, \ltsLabel, \variable \rangle\in \Variables$ be an edge in a rule graph in the NAC of a rule. Let $\{\variable, 1\}$ be a term node in the same NAC. This is a common way of expressing that the $\variable$ node may not have the value $1$ as image. However, using the point algebra this rule will never match, because there is only one possible image for the variable node and the value $1$ in the point algebra. A correct way of modelling this example, is having the term node $\{\variable = 1, false\}$ in the $\mathit{LHS}$ of the rule. In the point algebra, both terms evaluate to the same boolean value and an image for this term node can always be found.\marginpar{explain why one kind of approximation is wrong bu tthe other is correct. Gebruik plaatjes? Meer tekst gebruiken om dit uit te leggen.}
+\paragraph*{No GG variables in NACs}
+In graph transformation rules, it is common to create restrictions on data using a $\mathit{NAC}$. For example, the $\mathit{NAC}$ in Figure~\ref{fig:nac_example_wrong} expresses that the rule cannot be applied when the system is in state `done'. When using the point algebra, a problem occurs when a value edge is part of a $\mathit{NAC}$. The rule containing such a $\mathit{NAC}$ will never match any host graph, because:
+\begin{enumerate}[(a)]
+\item the value edge is present in every host graph as stated in the previous constraints
+\item the target value node of the value edge will always be an image of the target variable node of the pre-image of the value edge. This is assuming the variable node in the $\mathit{NAC}$ is of the same sort as the value node, otherwise the $\mathit{NAC}$ would never have a match, because of the constraint on the sort of the value node of a value edge. Such a $\mathit{NAC}$ would add nothing to the rule.
+\end{enumerate}
 
-\subsection{Constraint 4: structural constraints on node creating rules}
-Figure~\ref{fig:item_example_c4} shows the $\mathit{LHS}$ and $\mathit{RHS}$ of a rule in the container-items example. The rule adds an item to the container unless it is full, i.e. has five items. If an item is added, a new node is created in the host graph. Using the point algebra, this rule creates an infinite number of structurally unique graphs. Therefore, the exploration never ends. Node creating rules must have structural constraint(s), such that an infinite exploration is prohibited.\marginpar{beter uitleggen}
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[GG variable in $\mathit{NAC}$]{\label{fig:nac_example_wrong}\parbox[b]{6cm}{\centering\input{./img/nac_example_wrong.tex}}}
+    \subfloat[GG variable in $\mathit{LHS}$]{\label{fig:nac_example_right}\parbox[b]{6cm}{\centering\input{./img/nac_example_right.tex}}}
+  \end{center}
+  \caption{Node creating rule without structural constraint}
+  \label{fig:nac_example}
+\end{figure}
+
+Therefore we pose the following constraint: A $\mathit{NAC}$ may never match the value edge and value node of a GG variable. 
+
+The correct way of modelling the example when using the point algebra is shown in Figure~\ref{fig:nac_example_right}. The term node $\{x = ``done", false\}$ is in the $\mathit{LHS}$ of the rule. Under the point algebra, both terms evaluate to the same boolean value. Therefore, an image for this term node can always be found, but the guard of the switch relation will be $(x = ``done") = false$. This leads to some cases where the guard of the switch relation can never be satisfied. The following paragraph describes such a case.
+
+\paragraph*{Data constraints in node creating rules}
+A case where a guard can no longer be satisfied is shown in Figure~\ref{fig:item_example_c4}. This figure shows the $\mathit{LHS}$ and $\mathit{RHS}$ of a rule in the container-items example. The rule adds an item to the container unless it is full, i.e. has five items. If an item is added, a new node labelled `new' is created in the host graph. Under the point algebra, this rule always matches the host graph and thus this rule creates an infinite number of nodes. Therefore, the exploration never ends. This means that an IOGG with such a rule has an infinite number of graphs and the corresponding IOSTS has an infinite number of switch relations. However, the guards of the switch relations can no longer be satisfied when the location variable corresponding to the GG variable $(\mathit{var1, items})$ reaches $5$. 
+
+The rules in an IOGG which create new nodes or edges and have constraints on data should either:
+\begin{itemize}
+\item erase the same amount of nodes and edges as it creates
+\item have a constraint on the created node or edge, e.g. the node to create is part of the $\mathit{NAC}$ of the rule
+%\item eventually not be applicable on the host graph of the IOGG and that graph should have a rule transition that returns the graph to a previously explored graph
+\end{itemize}
+The first constraint guarantees the exploration halts. The second constraint is only a guarantee if the node is the only element in the $\mathit{NAC}$, otherwise it is possible that the $\mathit{NAC}$ does not match the graph even with the node in it.
 
 \begin{figure}[ht]
   \begin{center}
     \subfloat[LHS]{\label{fig:item_example_c4_lhs}\parbox[b]{6cm}{\centering\input{./img/item_example_c4_lhs.tex}}}
     \subfloat[RHS]{\label{fig:item_example_c4_rhs}\parbox[b]{6cm}{\centering\input{./img/item_example_c4_rhs.tex}}}
   \end{center}
-  \caption{Node creating rule without structural constraint}
+  \caption{Node creating rule with data constraint}
   \label{fig:item_example_c4}
-\end{figure}\marginpar{plaatje is lelijk, use rule syntax.}
+\end{figure}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  8 JAN 2013 17:07
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  9 JAN 2013 16:38
 entering extended mode
  %&-line parsing enabled.
 **report2
@@ -748,26 +748,31 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks49
 \verbatim@line=\toks50
 \verbatim@in@stream=\read4
+)
+(/usr/share/texmf-texlive/tex/latex/tools/enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks51
 ) (./symbol-macros.tex)
 \c@definition=\count150
+
 (./report2.aux)
 \openout1 = `report2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-Package hyperref Info: Link coloring OFF on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+Package hyperref Info: Link coloring OFF on input line 36.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
@@ -776,8 +781,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count151
 )
-LaTeX Info: Redefining \ref on input line 35.
-LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \ref on input line 36.
+LaTeX Info: Redefining \pageref on input line 36.
  (./report2.out)
 (./report2.out)
 \@outlinefile=\write6
@@ -791,28 +796,28 @@ LaTeX Info: Redefining \pageref on input line 35.
 \scratchbox=\box65
 \nofMPsegments=\count153
 \nofMParguments=\count154
-\everyMPshowfont=\toks51
+\everyMPshowfont=\toks52
 \MPscratchCnt=\count155
 \MPscratchDim=\dimen212
 \MPnumerator=\count156
-\everyMPtoPDFconversion=\toks52
+\everyMPtoPDFconversion=\toks53
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
-LaTeX Info: Redefining \subref on input line 35.
+LaTeX Info: Redefining \subref on input line 36.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 52.
+LaTeX Font Info:    Try loading font information for U+msa on input line 53.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 52.
+LaTeX Font Info:    Try loading font information for U+msb on input line 53.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 52.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 53.
 
 (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -856,7 +861,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.57   \newpage
+l.58   \newpage
                 [1
 
 ]
@@ -915,11 +920,11 @@ Underfull \hbox (badness 1748) in paragraph at lines 57--57
 ) [4] [5]
 Chapter 2.
 (./tex/background-introduction.tex) (./tex/model-based-testing.tex
-<./img/model-based-testing.pdf, id=284, 379.58545pt x 141.73691pt>
+<./img/model-based-testing.pdf, id=264, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-<./img/mbt-on-the-fly.pdf, id=288, 357.48773pt x 141.7426pt>
+<./img/mbt-on-the-fly.pdf, id=268, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
 <use ./img/mbt-on-the-fly.pdf> [6
@@ -952,14 +957,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--166
 (./img/priority-example/add_rhs.tex <xymatrix 2x1 51>)
 (./img/priority-example/sub_lhs.tex <xymatrix 3x1 55>)
 (./img/priority-example/sub_rhs.tex <xymatrix 2x1 51>)) (./tex/tooling.tex
-<./img/atm-diagram.pdf, id=454, 513.8086pt x 289.56181pt>
+<./img/atm-diagram.pdf, id=434, 513.8086pt x 289.56181pt>
 File: ./img/atm-diagram.pdf Graphic file (type pdf)
 
 <use ./img/atm-diagram.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16] <./img/groove-diagram.pdf, id=474, 362.04158pt x 220.67444pt>
+[16] <./img/groove-diagram.pdf, id=454, 362.04158pt x 220.67444pt>
 File: ./img/groove-diagram.pdf Graphic file (type pdf)
 
 <use ./img/groove-diagram.pdf>
@@ -1023,130 +1028,18 @@ Chapter 3.
 
 ] (./img/item_example2.tex <xymatrix
 3x1 118>)
-Overfull \hbox (13.86055pt too wide) in paragraph at lines 1--42
+Overfull \hbox (13.86055pt too wide) in paragraph at lines 1--41
  []$[]$ 
  []
 
 (./img/gg_variable.tikz) [24] [25] (./img/guard_example.tex <xymatrix 4x2 153>)
-(./img/guard_example_host.tex <xymatrix 3x2 208>)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[26] (./img/priority_sts_wrong.tex <xymatrix 1x1 136>)
-(./img/priority_sts_right.tex <xymatrix 1x1 136>)) (./tex/constraints.tex
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 6--6
-[]\T1/cmr/m/n/10 make con-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--6
-\T1/cmr/m/n/10 vari-able
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--9
-[]\T1/cmr/m/n/10 constraint:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--9
-\T1/cmr/m/n/10 do not
- []
-
-
-Underfull \hbox (badness 4647) in paragraph at lines 9--9
-\T1/cmr/m/n/10 erase lvars,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--9
-\T1/cmr/m/n/10 vari-able
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--9
-\T1/cmr/m/n/10 an-chors,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/cmr/m/n/10 one kind
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/cmr/m/n/10 of ap-prox-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/cmr/m/n/10 i-ma-tion is
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/cmr/m/n/10 wrong bu
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/cmr/m/n/10 tthe other
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/cmr/m/n/10 is cor-rect.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/cmr/m/n/10 Ge-bruik
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/cmr/m/n/10 plaat-jes?
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/cmr/m/n/10 Meer tekst
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-\T1/cmr/m/n/10 ge-bruiken
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 12--12
-\T1/cmr/m/n/10 om dit uit
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
-[]\T1/cmr/m/n/10 beter uit-
- []
-
-
-LaTeX Warning: Marginpar on page 28 moved.
-
-(./img/item_example_c4_lhs.tex <xymatrix 1x3 55>)
-(./img/item_example_c4_rhs.tex <xymatrix 2x3 67>)
-Underfull \hbox (badness 10000) in paragraph at lines 24--24
-[]\T1/cmr/m/n/10 plaatje is
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--24
-\T1/cmr/m/n/10 lelijk, use
- []
-
-
-LaTeX Warning: Marginpar on page 28 moved.
-
-) [28] (./report2.bbl [29] [30
+(./img/guard_example_host.tex <xymatrix 3x2 208>) [26]
+(./img/priority_sts_wrong.tex <xymatrix 1x1 136>) (./img/priority_sts_right.tex
+<xymatrix 1x1 136>)) (./tex/constraints.tex [27] (./img/nac_example_wrong.tex
+<xymatrix 1x2 51>) (./img/nac_example_right.tex <xymatrix 2x2 55>) [28]
+(./img/item_example_c4_lhs.tex <xymatrix 2x2 122>)
+(./img/item_example_c4_rhs.tex <xymatrix 2x2 122>)) [29] (./report2.bbl
+[30
 
 ]) [31] (./symbols.tex [32
 
@@ -1156,10 +1049,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 20027 strings out of 495061
- 352045 string characters out of 1182622
- 836126 words of memory out of 3000000
- 22355 multiletter control sequences out of 15000+50000
+ 20058 strings out of 495061
+ 352530 string characters out of 1182622
+ 836679 words of memory out of 3000000
+ 22373 multiletter control sequences out of 15000+50000
  30003 words of font info for 75 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,24n,79p,1526b,1572s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1194,15 +1087,16 @@ cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy5.pfb><
 exmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive
 /fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type
 1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/latxfont/lcircle1.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/sym
-bols/msam7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/
-share/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb></usr/share/texmf-tex
-live/fonts/type1/public/xypic/xydash10.pfb>
-Output written on report2.pdf (35 pages, 709299 bytes).
+fonts/cm/cmti8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/latxfo
+nt/lcircle1.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam7.p
+fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texmf-
+texlive/fonts/type1/public/xypic/xybtip10.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/xypic/xydash10.pfb>
+Output written on report2.pdf (35 pages, 720805 bytes).
 PDF statistics:
- 1473 PDF objects out of 1728 (max. 8388607)
- 238 named destinations out of 1000 (max. 500000)
- 329 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1472 PDF objects out of 1728 (max. 8388607)
+ 243 named destinations out of 1000 (max. 500000)
+ 297 words of extra memory for PDF output out of 10000 (max. 10000000)
 

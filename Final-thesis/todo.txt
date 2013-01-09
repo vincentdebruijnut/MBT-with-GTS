@@ -17,15 +17,15 @@ tooling.tex
 
 gg-to-sts-transformation
 - Base design requirements on research questions (30 min) done
-- explain better what the effect of the point algebra is on graphs (1 hour)
+- explain better what the effect of the point algebra is on graphs (1 hour) done
 - Explain state variable definition in IOGGs clearly, use GROOVE examples (1 hour) done
-- Adjust transformation steps to new variable definition, give summary list (3 hours)
+- Adjust transformation steps to new variable definition, give summary list (3 hours) done
 
 constraints.tex
-- Need to use new variable definition here (30 min)
-- Extend constraint to include not deleting variable labels and anchors (30 min)
-- explain constraint on variables in NACs better, use pictures (1.5 hours)
-- explain constraint on node creating rules better, use example (1.5 hours)
+- Need to use new variable definition here (30 min) done
+- Extend constraint to include not deleting variable labels and anchors (30 min) done
+- explain constraint on variables in NACs better, use pictures (1.5 hours) done
+- explain constraint on node creating rules better, use example (1.5 hours) done
 
 implementation.tex
 - Make sequence diagram (1 hour)
@@ -55,4 +55,4 @@ future-work.tex
 - Write this section (1 hour)
 
 50.7 hours
-11.1 done
+21.2 done
