@@ -1,21 +1,39 @@
 \section{Measurements}\label{sec:measurements}
 
-This sections lists possible measurements on the models and execution of GRATiS on those models.
+This section lists the possible measurements on the models and execution of GRATiS on those models.
 
 \subsection{Simulation and redundancy}
-For each of the cases, we can create STSs in two ways: manually and through GRATiS. The STS created by GRATiS and the created STS by hand can be compared. It can be observed whether the STS created by GRATiS simulates the STS created by hand and vice versa. When either is not the case, the models show a different possible behaviour for the SUT. The reasons behind this difference are then explored. 
+For each of the cases, we can create IOSTSs in two ways: manually and through GRATiS. The IOSTS created by GRATiS and the IOSTS created by hand can be compared. It can be observed whether the IOSTS created by GRATiS simulates the IOSTS created by hand and vice versa. When either is not the case, the models show a different possible behaviour for the SUT. The reasons behind this difference are then explored. 
 
-It is possible that the generated STS $s$ is larger than the STS built by hand $t$, even if both simulate each other. It is measured whether $\mathit{traces}(s) \subseteq \mathit{traces}(t) \land ((|\Switches_t| < |\Switches_s| \land |\LocationVariables_t| \leq |\LocationVariables_s|) \lor (|\Switches_t| \leq |\Switches_s| \land |\LocationVariables_t| < |\LocationVariables_s|)$. This indicates the the STS $s$ has redundancy.\marginpar{explain this in words}
+It is possible that the generated IOSTS $s$ is larger than the IOSTS built by hand $t$, even if both simulate each other. If $t$ simulates $s$, it is measured whether the set of switch relations or location variables is strictly smaller in $t$ than in $s$, while the other set is at least as small in $t$ as in $s$. Formally:
+\vspace{5px} \\
+$\mathit{traces}(s) \subseteq \mathit{traces}(t) \land ((|\Switches_t| < |\Switches_s| \land |\LocationVariables_t| \leq |\LocationVariables_s|) \lor (|\Switches_t| \leq |\Switches_s| \land |\LocationVariables_t| < |\LocationVariables_s|)$
+\vspace{5px} \\
+This indicates the the IOSTS $s$ has redundancy.
 
 \subsection{Performance}
-The performance in terms of runtime and heap-size can be measured and compared. Assuming both the STS created by GRATiS and by hand simulate each other, these metrics will be the same for the testing part. Therefore, the runtime and heap size of the STS creation is measured.
+The performance in terms of runtime and heap-size can be measured and compared. Assuming both the IOSTS created by GRATiS and by hand simulate each other, these metrics will be the same for the testing part. Therefore, the runtime and heap size of the IOSTS creation is measured.
 
 \subsection{Model complexity}\label{sec:complexity_measurement}
-The complexity of the generated STS and the GG can be measured using Halstead's software science~\cite{Halstead:software-science}. This method is used in measuring software complexity and the prediction of faults. However, it can also be used in analyzing model complexity. In Halstead's software science, the operators and operands in the program code are counted. The operators are the function symbols, the operands are the identifiers. However, in order to apply these concepts to our setting, we have to identify what we consier to be operators and operands.\marginpar{explain also cyclomatic complexity and rest? bij gebrek aan beter: sociaal experiment}
+A good way of testing the complexity of the IOSTS and the IOGG is to hold an extensive social experiment, where groups create and maintain models in either formalism. However, this is out of the scope for this report. More is written about this social experiment in the Future Work section~\ref{sec:future-work}.
 
-STSs and GGs both have identifiers and function symbols. However, they also have nodes and edges. In an STS, the locations are counted as nodes, the switch relations as edges. Nodes and edges are considered to be operands. In GROOVE, colors indicate a restriction or node/edge removal/creation. The node and edge colors are therefore considered as operators.
+Instead of a social experiment, we investigated software complexity measurements in the literature and tested their applicability for IOGGs and IOSTSs. 
 
-The distinct number of operators ($n_1$) and operands ($n_2$) are counted as well as the total number of operator occurrences ($N_1$) and operand occurrences ($N_2$). These metrics combined lead to the \textit{Volume} of the models. The volume is calculated by: $(N_1+N_2)*\mathit{log}_2(n_1+n_2)$. Comparing the volumes of the STS and GG gives an indication of the relative model complexity.
+\paragraph*{Halstead's software science} The complexity of the generated IOSTS and the IOGG can be measured using Halstead's software science~\cite{Halstead:software-science}. This method is used in measuring software complexity and the prediction of faults. However, it can also be used in analyzing model complexity. In Halstead's software science, the operators and operands in the program code are counted. The operators are the function symbols, the operands are the identifiers. However, in order to apply these concepts to our setting, we have to identify what we consider to be operators and operands.
+
+IOSTSs and IOGGs both have identifiers and function symbols. However, they also have nodes and edges. In an IOSTS, the locations are counted as nodes, the switch relations as edges. Nodes and edges are considered to be operands. In GROOVE, colors indicate a restriction or node/edge removal/creation. The node and edge colors are therefore considered as operators.
+
+The distinct number of operators ($n_1$) and operands ($n_2$) are counted as well as the total number of operator occurrences ($N_1$) and operand occurrences ($N_2$). These metrics combined lead to the \textit{Volume} (V) of the models.
+\vspace{10px}\begin{definition} Halstead's Volume (V) function \\
+$(N_1+N_2)*\mathit{log}_2(n_1+n_2)$
+\end{definition}\vspace{10px}
+In Halstead's software science, the volume of a program and a constant for the number of faults per volume unit are combined to give the expected faults in a program. Therefore, comparing the volumes of the IOSTS and IOGG gives an indication of the relative model complexity.
+
+\paragraph*{Cyclomatic Complexity} COMMENT Ik heb intensief emails gewisseld met Lodewijk Bergmans over de toepassing van cyclomatic complexity, maar dit lijkt niet geschikt hier. Ik zal het wel behandelen $/$COMMENT
+% vanwege het nodig hebben van begin en eind punten in een transitiesysteem. Voor STS is dat al lastig vanwege loops, maar in GG vrijwel onmogelijk omdat de interacties tussen 
+
+\paragraph*{System Complexity} COMMENT mooie, simpele metric voor OO. Niet toepasbaar hier, want onmogelijk om modules te definieren $/$COMMENT
+% modules -> fan-in, fan-out, nodig voor Structural Complexity & Data Complexity
 
 \subsection{Extendability}
 The models can be extended to include more functionality. In this measurement, a realistic scenario is introduced where additional functionality is required. It is then measured how much the complexity increases, using the measurment in section~\ref{sec:complexity_measurement}.

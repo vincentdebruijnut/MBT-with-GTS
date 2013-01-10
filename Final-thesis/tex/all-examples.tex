@@ -1,24 +1,27 @@
-\section{Example 1: boardgame}
-The boardgame is the running example of which the IOSTS and IOGG are given in Figures~\ref{fig:example_sts} and \ref{fig:example_groove} respectively.
+\section{Models}
+This section shows the IOGG and IOSTS for each model example and the case study. 
 
-\subsection{Extendability}
-The boardgame is extended to include more players and locations. For the IOGG, this means adding new locations and players to the initial graph. The players get a fixed order in which they play. This means that the next turn rule also has to be extended. The result is in Figure~\ref{fig:gg-bg-extended}. This extension reduces the distinct number of operators by 1 and introduces no new operands. The number of operator occurences has decreased by 1 and the number of operand occurences has grown by 10.
+\subsection{Example 1: boardgame}
+The boardgame is the running example of which the IOSTS and IOGG are given in Figures~\ref{fig:example_sts} and \ref{fig:example_groove} respectively. In order to be consistent with the GG variable definition, the two $Player$ and $Die$ nodes receive the flags $\mathit{var1, var2, var3}$ respectively, representing the variable labels.
 
-\begin{figure}[ht]
-  \begin{center}
-    \subfloat[The initial graph]{\label{fig:start-bg-extended}\input{./img/start-bg-extended.tikz}}\hspace{20px}
-    \subfloat[The next turn rule]{\label{fig:nextTurn-bg-extended}\input{./img/nextTurn-bg-extended.tikz}}
-  \end{center}
-  \caption{The extended graph grammar of the board game example in Figure~\ref{fig:example_groove}}
-  \label{fig:gg-bg-extended}
-\end{figure}
+\subsection{Example 2: farmer-wolf-goat-cabbage}
+In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one item to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The stimuli accepted by the puzzle are:
+\begin{itemize}
+\item $?n$ Move the farmer to the other river bank
+\item $?w$ Move the wolf to the other river bank
+\item $?g$ Move the goat to the other river bank
+\item $?c$ Move the cabbage to the other river bank
+\end{itemize}
+The responses given by the puzzle are:
+\begin{itemize}
+\item $!retry$ When $?w, ?g$ or $?c$ is given but the farmer is not on the same river bank as the item
+\item $!eaten$ An item eats another item on one river bank, with the farmer on the other river bank 
+\item $!done$ When all four items are on the other river bank
+\end{itemize}
 
-The IOSTS gains a variable and a switch relation for the new player. \begin{comment}The result is in Figure~\ref{fig:sts-bg-extended}.\end{comment} The distinct number of operators has not increased and the distinct number of operands has increased by 1. The number of operator occurences has increased by 9 and the number of operand occurences has increased by 17.
+The IOGG of this puzzle is in Appendix~\ref{app:fwgc}. The response rules `!retry', `!eaten' and `!done' have a higher priority. This ensures that a proper response is given after a move, before allowing more stimuli.
 
-
-\section{Example 2: farmer-wolf-goat-cabbage}
-In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one item to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The IOGG of this puzzle is in Figure~\ref{fig:gg-fwgc}. Here the 'move' and 'invalid' rules are similar, therefore only the 'move cabbage' rule is shown. The response rules '!retry', '!eaten' and '!done' have a higher priority. This ensures that a proper response is given after a move, before allowing more stimuli. The IOSTS of this puzzle is in Figure~\ref{fig:sts-fwgc}. It uses variables to keep track of the location of the items. These are checked to see if an invalid move is done, an item is being eaten or the puzzle has been completed.
-
+\begin{comment}
 \begin{figure}[ht]
   \begin{center}
     \subfloat[The initial graph]{\label{fig:start-bg}\input{./img/start-fwgc.tikz}}\hspace{20px}
@@ -28,47 +31,53 @@ In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The
     \subfloat[The !eaten rule with priority 1]{\label{fig:reinit}\input{./img/eaten-reinit-fwgc.tikz}}\\
     \subfloat[The !done rule with priority 1]{\label{fig:done}\input{./img/done-fwgc.tikz}}
   \end{center}
-  \caption{The graph grammar of the farmer-wolf-goat-cabbage puzzle}
+  \caption{The IOGG of the farmer-wolf-goat-cabbage puzzle}
   \label{fig:gg-fwgc}
-\end{figure}\marginpar{Figuren compleet weergeven in appendix}
-
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/sts_fwgc.tex}
-  \end{center}
-  \caption{The IOSTS of the farmer-wolf-goat-cabbage puzzle}
-  \label{fig:sts-fwgc}
-\end{figure}\marginpar{STSen zijn eigenlijk niet weer te geven via dit soort diagrammen. Wellicht Tikz proberen, anders de STS opschrijven in de formele defnitie.}
-
-\subsection{Extendability}
-In another variant of this puzzle, when one of the items is eaten, the puzzle does not reset but undoes the last action. Figure~\ref{fig:gg-fwgc-extended} shows this extension in two rules: the 'move cabbage' and the 'eaten undo' rule. The rules keep track of the last moved items. When an item gets eaten, the last move can be undone.\marginpar{veranderde model complexity moet nog gegeven worden}\marginpar{Ik moet quantification nog uitleggen, in GROOVE}
-
-\begin{figure}[ht]
-  \begin{center}
-    \subfloat[The move cabbage rule]{\label{fig:start-bg-extended}\input{./img/c-fwgc-extended.tikz}}\hspace{20px}
-    \subfloat[The eaten undo rule]{\label{fig:c-fwgc}\input{./img/eaten-undo-fwgc.tikz}}
-  \end{center}
-  \caption{The extended graph grammar of the farmer-wolf-goat-cabbage puzzle in Figure~\ref{fig:gg-fwgc}}
-  \label{fig:gg-fwgc-extended}
-\end{figure}\marginpar{Extended STS is ook nauwelijks weer te geven. Ik vraag me hier af ok ik niet gewoon de LTS moet geven, wellicht is die simpeler. De STS moet nu namelijk met variabelen de vorige posities van alle items bij gaan houden oid}
-
-\section{Example 3: restaurant reservations}\marginpar{explain the system first}
-Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a restaurant and two potential customers. Figure~\ref{fig:make-reservation} shows part of a rule that allows people to make reservations. The start and end times are timestamps represented by integers. This rule allows people to make multiple reservations. However, this rule violates the constraint in section~\ref{sec:constraint-1}, because the reservation objects are not unique. Allowing a dynamic amount of reservations per person means that variables need to be introduced dynamically as well or more complex variables have to be used, such as arrays. To model this system using an IOSTS, arrays are also needed.
-
-\begin{figure}[ht]
-  \begin{center}
-    \subfloat[The initial graph]{\label{fig:reservation_start}\input{./img/start-reservation.tikz}}\hspace{20px}
-    \subfloat[The make reservation rule]{\label{fig:make-reservation}\input{./img/makeReservation.tikz}}
-  \end{center}
-  \caption{The graph grammar of the restaurant reservation system}
-  \label{fig:gg-reservation}
 \end{figure}
+\end{comment}
 
+The IOSTS of this puzzle is is given in the formal definition, because it is too large for the visual representation. It uses boolean location variables to indicate whether the item is on the other side. These are checked to see if an invalid move is done, an item is being eaten or the puzzle has been completed.
+\vspace{5px} \\
+$\begin{array}{lcl}
+\Locations & = & \{l_0, l_1\} \\
+\initialLocation & = & l_0 \\
+\LocationVariables & = & \{N,W,G,C\} \\
+\initializationFunction & = & \{N \mapsto false, W \mapsto false, G \mapsto false, C \mapsto false\} \\
+\InteractionVariables & = & \{\} \\
+\Gates & = & \{?n, ?w, ?g, ?c, !eaten, !done, !retry\} \\
+\Switches & = & \{l_0\xrightarrow{?n, \neg(N \neq G \land G=C)\lor(N \neq W \land W=G), \{N \mapsto \neg N\}}l_0, \\
+& & l_0\xrightarrow{?w, N=W \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{W \mapsto \neg W, N \mapsto \neg N\}}l_0,\\
+& & l_0\xrightarrow{?g, N=G \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{G \mapsto \neg G, N \mapsto \neg N\}}l_0,\\
+& & l_0\xrightarrow{?c, N=C \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{C \mapsto \neg C, N \mapsto \neg N\}}l_0,\\
+& & l_0\xrightarrow{?w, N\neq W \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{W \mapsto \neg W, N \mapsto \neg N\}}l_1,\\
+& & l_0\xrightarrow{?g, N\neq G \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{G \mapsto \neg G, N \mapsto \neg N\}}l_1,\\
+& & l_0\xrightarrow{?c, N\neq C \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{C \mapsto \neg C, N \mapsto \neg N\}}l_1,\\
+& & l_1\xrightarrow{!retry,true,\{\}}l_0,\\
+& & l_0\xrightarrow{!eaten, (N \neq G \land G=C)\lor(N \neq W \land W=G), \{N \mapsto false, W \mapsto false, G \mapsto false, C \mapsto false\}}l_0, \\
+& & l_0\xrightarrow{!done, N \land W \land G \land C, \{N \mapsto false, W \mapsto false, G \mapsto false, C \mapsto false\}}l_0\}
+\end{array}$
 
-\section{Example 4: bar tab system}
-This example models a bar tab system, where customers can order beer, wine and soda. The price of the order adds to tab. Customers can pay their tab with money; they receive cash back if the payment exceeds the tab. The model is abstracted to include three customers. Furthermore, a customer can order only one drink. Drinks and payments are processed immediately before other drinks or payments can occur. The stimuli accepted by the system are $?o(i,d), ?p(i,p)$ for ordering a drink $d$ on bar tab $i$ and paying amount $p$ on bar tab $i$ respectively. The responses by the system are $!po(b), !pp(b,r)$ for processing an order giving the new bar tab balance $b$ and processing a payment giving the new account balance $b$ and the return funds $r$ respectively.\marginpar{use lists more}
+%\begin{figure}[ht]
+%  \begin{center}
+%    \input{./img/sts_fwgc.tex}
+%  \end{center}
+%  \caption{The IOSTS of the farmer-wolf-goat-cabbage puzzle}
+%  \label{fig:sts-fwgc}
+%\end{figure}
 
-Figure~\ref{fig:gg-bartab} shows the IOGG of the bar tab system. The '!process\_order' and '!process\_payment' rule have a higher priority than the '?order' and '?pay' rule. Figure~\ref{fig:sts-bartab} shows the IOSTS of the bar tab system. The IOSTS uses the variables $T_1, T_2, T_3$ to keep track of the bar tabs of the three people. It uses the variables $I, P$ as temporary variables for the id and payment/price respectively. The function $m$ takes the maximum value of its parameters.
+\subsection{Example 3: bar tab system}
+This example models a bar tab system, where customers can order beer, wine and soda. The price of the order adds to tab. Customers can pay their tab with money; they receive cash back if the payment exceeds the tab. The model is abstracted to include three customers. Furthermore, a customer can order only one drink. Drinks and payments are processed immediately before other drinks or payments can occur. The stimuli accepted by the system are:
+\begin{itemize}
+\item $?o(i,d)$ for ordering a drink $d$ on bar tab $i$
+\item $?p(i,p)$ for paying amount $p$ on bar tab $i$
+\end{itemize}
+The responses given by the system are:
+\begin{itemize}
+\item $!po(b)$ for processing an order giving the new bar tab balance $b$
+\item $!pp(b,r)$ for processing a payment giving the new account balance $b$ and the return funds $r$
+\end{itemize}
+
+Figure~\ref{fig:gg-bartab} shows the IOGG of the bar tab system. The `!po' and `!pp` rules have a higher priority than the `?o' and `?p' rules.
 
 \begin{figure}[ht]
   \begin{center}
@@ -82,6 +91,8 @@ Figure~\ref{fig:gg-bartab} shows the IOGG of the bar tab system. The '!process\_
   \label{fig:gg-bartab}
 \end{figure}
 
+Figure~\ref{fig:sts-bartab} shows the IOSTS of the bar tab system. The IOSTS uses the variables $T_1, T_2, T_3$ to keep track of the bar tabs of the three people. It uses the variables $I, P$ as temporary variables for the id and payment/price respectively. The function $m$ takes the maximum value of its parameters.
+
 \begin{figure}[ht]
   \begin{center}
     \input{./img/sts_tab.tex}
@@ -90,42 +101,32 @@ Figure~\ref{fig:gg-bartab} shows the IOGG of the bar tab system. The '!process\_
   \label{fig:sts-bartab}
 \end{figure}
 
-\subsection{Extendability}
-The system is extended to allow ordering multiple drinks of different types. The stimulus \\$?o(i,d_1,q_1,d_2,q_2,d_3,q_3)$ is used to order a quantity $q_n$ of drink $d_n$. The bar tab id is still given by $i$. Also, a customer can purchase the option of receiving 10\% discount on all ordered drinks for 50 euros (added to the tab). The stimulus given is $?\mathit{d}$ and the response is $!pd(b)$ where $b$ is the new balance. Figure~\ref{fig:gg-bartab-extended} shows the extended rules and initial graph. The $?p$ and $!pp$ rules have remained the same.\marginpar{Deze GG en STS zijn vrij lelijk}
+\subsection{Failed example: restaurant reservations}
+In this example, a restaurant with three tables allow customers to reserve tables for a certain time slot.
+
+Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a restaurant and two potential customers. Figure~\ref{fig:make-reservation} shows part of a rule that allows people to make reservations. The start and end times are timestamps represented by integers. This rule allows people to make multiple reservations. However, this rule violates the unique GG variables constraint in section~\ref{sec:constraints}, because the reservation objects are not unique. Allowing a dynamic amount of reservations per person means that variables need to be introduced dynamically as well or more complex variables have to be used, such as arrays. To model this system using an IOSTS, arrays are also needed.
 
 \begin{figure}[ht]
   \begin{center}
-    \subfloat[The initial graph]{\label{fig:start-tab-extended}\input{./img/start-tab-extended.tikz}}\hspace{20px}
-    \subfloat[The !pd rule with priority 1]{\label{fig:process_discount}\input{./img/process_discount-extended.tikz}}\\
-    \subfloat[The extended ?o rule]{\label{fig:order-tab-extended}\input{./img/order-extended.tikz}}\hspace{20px}
-    \subfloat[The ?d rule with priority 0]{\label{fig:discount}\input{./img/discount-extended.tikz}}\\
-    \subfloat[The extended !po rule]{\label{fig:process_order-extended}\input{./img/process_order-extended.tikz}}\\
+    \subfloat[The initial graph]{\label{fig:reservation_start}\input{./img/start-reservation.tikz}}\hspace{20px}
+    \subfloat[The make reservation rule]{\label{fig:make-reservation}\input{./img/makeReservation.tikz}}
   \end{center}
-  \caption{The extended graph grammar of the bar tab system}
-  \label{fig:gg-bartab-extended}
+  \caption{The IOGG of the restaurant reservation system}
+  \label{fig:gg-reservation}
 \end{figure}
 
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/sts_tab-extended.tex}
-  \end{center}
-  \caption{The extended IOSTS of the bar tab system}
-  \label{fig:sts-bartab-extended}
-\end{figure}
-
-\section{Scanflow Cash Register Protocol}\marginpar{More info on the case study: external spec of required functionality, rough description of functionality, type graph of GG? existing STS description}
-
-The system used for this case study is a \textit{self-scan register}, which allows customers of a supermarket to scan and pay for their products without help of an employee. Figure~\ref{fig:register} shows this self-scan register. The system contains a \textit{scanflow unit}, which scans the products, and a \textit{cash register}, which handles the payment. The communication protocol between the register and the scanflow unit is modelled as an IOGG and an IOSTS. The register is the SUT, stimuli and responses are given as http requests/responses.
+\subsection{Case study: Scanflow Cash Register Protocol}
+The system used for this case study is a \textit{self-scan register}, which allows customers of a supermarket to scan and pay for their products without help of an employee. Figure~\ref{fig:register} shows this self-scan register. The system contains a \textit{scanflow unit}, which scans the products, and a \textit{cash register}, which handles the payment. The communication protocol between the register and the scanflow unit is the system which is tested. The register is the SUT, stimuli and responses are given as http requests/responses. Appendix~\ref{app:scrp-specification} lists a detailed overview of the specification for this communication protocol.
 
 \begin{figure}[ht]
   \begin{center}
-    Hier komt een plaatje van het ding%\input{./img/register.png}
+    \includegraphics[width=0.3\textwidth]{scanflow.jpg}
   \end{center}
   \caption{A self-scan register}
   \label{fig:register}
 \end{figure}
 
-Some selected rules of the GG of this communication protocol are shown in Figure~\ref{fig:gg-fwgc}. In total the IOGG has 94 rules. Figure~\ref{fig:start-scrp} shows the initial graph. The $CR$ node is the cash register, the $SFU$ is the scanflow unit. The first node has the flag $\mathit{SS\_OFF}$ representing that the register is off. There is one account which can be in states idle, open, closed and transing. When the customer places items on the belt, a new account is opened. Figure~\ref{fig:open-account-request} shows the general request structure. As long as there is no request, a request can be sent. This rule requests the opening of an account. Figure~\ref{fig:open-account-success} shows the rule for giving a success response. The request node is deleted such that new request nodes can be created again. The rule checks if an account is not already opened and opens an idle account. Figure~\ref{fig:open-account-invalid} shows the rule for the error message received when an account is already opened. 
+Some selected rules of the IOGG of this communication protocol are shown in Figure~\ref{fig:gg-scrp}. In total the IOGG has 94 rules. They are all listed in Appendix~\ref{app:scrp-gg}. Figure~\ref{fig:start-scrp} shows the initial graph. The $CR$ node is the cash register, the $SFU$ is the scanflow unit. The first node has the flag $\mathit{SS\_OFF}$ representing that the register is off. There is one account which can be in states idle, open, closed and transing. When the customer places items on the belt, a new account is opened. Figure~\ref{fig:open-account-request} shows the general request structure. As long as there is no request, a request can be sent. This rule requests the opening of an account. Figure~\ref{fig:open-account-success} shows the rule for giving a success response. The request node is deleted such that new request nodes can be created again. The rule checks if an account is not already opened and opens an idle account. Figure~\ref{fig:open-account-invalid} shows the rule for the error message received when an account is already opened. 
 
 \begin{figure}[ht]
   \begin{center}
@@ -136,24 +137,10 @@ Some selected rules of the GG of this communication protocol are shown in Figure
     \subfloat[The not signed on error rule]{\label{fig:not-signed-on}\input{./img/general_responses.not_signed_on.tikz}}\hspace{20px}
     \subfloat[The close account success rule]{\label{fig:close-account-success}\input{./img/account.close.success.tikz}}
   \end{center}
-  \caption{The graph grammar of Scanflow Cash Register Protocol}
-  \label{fig:gg-fwgc}
+  \caption{The IOGG of the Scanflow Cash Register Protocol}
+  \label{fig:gg-scrp}
 \end{figure}
 
 For all these rules, the $CR$ node has to have the flag $\mathit{SS\_ON}$ representing the register to be signed on. Figure~\ref{fig:not-signed-on} shows the response to a request when the register is not signed on. Apart from the signon request, no other request is allowed in this state. Figure~\ref{fig:close-account-success} shows the rule closing the account.
 
-The IOSTS of the system as created by Axini is too large to show here. It has X switch relations and Y location variables. 
-
-\subsection{Extendability}
-A recent extension on the protocol allows multiple accounts. While an account is not in state open, an idle account can be opened. This allows for a customer to scan his/her products, while another customer pays. Figure~\ref{fig:gg-fwgc-extended} shows the changes to the initial graph and the open account rules. Figure~\ref{fig:close-account-success-ext} shows the success response rule for closing an account: the order of closed accounts have to be kept, because the accounts have to be paid in that order.
-
-\begin{figure}[ht]
-  \begin{center}
-    \subfloat[The initial graph]{\label{fig:start-scrp-ext}\input{./img/start-scrp-extended.tikz}}\hspace{20px}
-    \subfloat[The open account success rule]{\label{fig:open-account-success-ext}\input{./img/account.open.success-extended.tikz}}\\
-    \subfloat[The open account invalid rule]{\label{fig:open-account-invalid-ext}\input{./img/account.open.invalid_ss_on-extended.tikz}}\hspace{20px}
-    \subfloat[The close account success rule]{\label{fig:close-account-success-ext}\input{./img/account.close.success-extended.tikz}}
-  \end{center}
-  \caption{The extended graph grammar of Scanflow Cash Register Protocol}
-  \label{fig:gg-fwgc-extended}
-\end{figure}
+The IOSTS of the system as created by Axini is too large to show here. It has X switch relations and Y location variables.

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="w-invalid">
+    <graph role="rule" edgeids="false" edgemode="directed" id="w-invalid">
         <attr name="transitionLabel">
-            <string>w?</string>
+            <string>c?</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -10,74 +10,77 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n5">
+        <node id="n0">
             <attr name="layout">
-                <string>102 206 107 33</string>
-            </attr>
-        </node>
-        <node id="n3">
-            <attr name="layout">
-                <string>165 74 63 33</string>
-            </attr>
-        </node>
-        <node id="n4">
-            <attr name="layout">
-                <string>167 138 44 33</string>
+                <string>181 135 51 33</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>70 75 51 33</string>
+                <string>76 136 51 33</string>
             </attr>
         </node>
-        <node id="n0">
+        <node id="n4">
             <attr name="layout">
-                <string>70 140 51 33</string>
+                <string>171 86 75 33</string>
             </attr>
         </node>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>new:</string>
+        <node id="n3">
+            <attr name="layout">
+                <string>71 84 63 33</string>
             </attr>
-        </edge>
-        <edge to="n5" from="n5">
-            <attr name="label">
-                <string>type:InvalidMove</string>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>278 135 107 33</string>
             </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>farmer</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n3">
-            <attr name="label">
-                <string>at</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>wolf</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n4">
-            <attr name="label">
-                <string>at</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
+        </node>
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>bank</string>
             </attr>
         </edge>
-        <edge to="n0" from="n1">
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>bank</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n0">
             <attr name="label">
                 <string>!=</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n4" to="n4">
             <attr name="label">
-                <string>bank</string>
+                <string>wolf</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n0">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>farmer</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n1">
+            <attr name="label">
+                <string>at</string>
+            </attr>
+            <attr name="layout">
+                <string>509 0 102 100 101 152 11</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>new:</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>type:InvalidMove</string>
             </attr>
         </edge>
     </graph>

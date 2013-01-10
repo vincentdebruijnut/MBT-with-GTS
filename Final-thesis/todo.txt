@@ -28,17 +28,17 @@ constraints.tex
 - explain constraint on node creating rules better, use example (1.5 hours) done
 
 implementation.tex
-- Make sequence diagram (1 hour)
-- Find good (UML) model to describe static architecture (2 hours)
-- 2 small issues (20 mins)
+- Make sequence diagram (1 hour) done
+- Find good (UML) model to describe static architecture (2 hours) omitted
+- 2 small issues (20 mins) done
 
 measurements.tex
-- 2 small issues (20 mins)
+- 2 small issues (20 mins) done
 - Describe more complexity measurements (optional) (4 hours)
 
 all-examples.tex
 - show all models completely (in appendix if needed) (5 hours)
-- Make sure IOGGs uphold variable definition (30 mins)
+- Make sure IOGGs uphold variable definition (30 mins) done
 - Show the STSs in formal notation, not in state-transition diagram (too crowded) (3 hours)
 - More information on the case study (specs) (3 hours)
 - 2 small issues (20 mins)

@@ -1,0 +1,28 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n1)  at (2.575, -2.515) {\ml{bank}};
+\node[node] (n0)  at (1.345, -2.515) {\ml{bank}};
+\node[node] (n3)  at (2.595, -1.385) {\ml{farmer}};
+\node[quantnode] (n6)  at (2.525, -3.435) {\ml{$\forall$}};
+\node[node] (n4)  at (1.395, -1.735) {\ml{cabbage}};
+\node[node] (n5)  at (1.465, -3.425){};
+\path[deledge](n4.south -| 1.345, -2.515) -- node[dellab]{at} (n0) ;
+\path[deledge] (n5) .. controls (1.730, -3.140) and (1.690, -2.930) .. (1.690, -2.930).. controls (1.680, -2.880) and (1.380, -2.850) .. (1.360, -2.900).. controls (1.360, -2.900) and (1.270, -3.090) ..  (n5) ;
+\node[dellab] at (1.529, -2.915){moved};
+\path[deledge] (n3)  -- node[dellab]{at} (n0) ;
+\path[quantedge](n5.east |- 2.525, -3.435) -- node[lab]{@} (n6) ;
+\path[newedge](n3.south -| 2.575, -2.515) -- node[newlab]{at} (n1) ;
+\path[newedge] (n4)  -- node[newlab]{at} (n1) ;
+\path[edge, -](n0.east |- 2.575, -2.515) -- node[lab]{\textit{!=}} (n1) ;
+\path[newedge] (n4) .. controls (1.600, -1.420) and (1.530, -1.220) .. (1.530, -1.220).. controls (1.510, -1.160) and (1.210, -1.180) .. (1.200, -1.230).. controls (1.200, -1.230) and (1.140, -1.440) ..  (n4) ;
+\node[newlab] at (1.361, -1.225){moved};
+\path[newedge] (n3) .. controls (2.800, -1.110) and (2.750, -0.940) .. (2.750, -0.940).. controls (2.730, -0.880) and (2.450, -0.880) .. (2.440, -0.930).. controls (2.440, -0.930) and (2.370, -1.100) ..  (n3) ;
+\node[newlab] at (2.590, -0.935){moved};
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

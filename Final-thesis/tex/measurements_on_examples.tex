@@ -155,6 +155,70 @@ Table~\ref{tab:halstead-scrp} shows the measurements on the operators and operan
 \label{tab:halstead-scrp}
 \end{table}
 
+\subsection{Extendability}
+\paragraph*{Extendability 1}
+The boardgame is extended to include more players and locations. For the IOGG, this means adding new locations and players to the initial graph. The players get a fixed order in which they play. This means that the next turn rule also has to be extended. The result is in Figure~\ref{fig:gg-bg-extended}. This extension reduces the distinct number of operators by 1 and introduces no new operands. The number of operator occurences has decreased by 1 and the number of operand occurences has grown by 10.
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-bg-extended}\input{./img/start-bg-extended.tikz}}\hspace{20px}
+    \subfloat[The next turn rule]{\label{fig:nextTurn-bg-extended}\input{./img/nextTurn-bg-extended.tikz}}
+  \end{center}
+  \caption{The extended graph grammar of the board game example in Figure~\ref{fig:example_groove}}
+  \label{fig:gg-bg-extended}
+\end{figure}
+
+The IOSTS gains a variable and a switch relation for the new player. \begin{comment}The result is in Figure~\ref{fig:sts-bg-extended}.\end{comment} The distinct number of operators has not increased and the distinct number of operands has increased by 1. The number of operator occurences has increased by 9 and the number of operand occurences has increased by 17.
+
+\paragraph*{Extendability 3}
+In another variant of this puzzle, when one of the items is eaten, the puzzle does not reset but undoes the last action. Figure~\ref{fig:gg-fwgc-extended} shows this extension in two rules: the 'move cabbage' and the 'eaten undo' rule. The rules keep track of the last moved items. When an item gets eaten, the last move can be undone.\marginpar{veranderde model complexity moet nog gegeven worden}\marginpar{Ik moet quantification nog uitleggen, in GROOVE}
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The move cabbage rule]{\label{fig:start-bg-extended}\input{./img/c-fwgc-extended.tikz}}\hspace{20px}
+    \subfloat[The eaten undo rule]{\label{fig:c-fwgc}\input{./img/eaten-undo-fwgc.tikz}}
+  \end{center}
+  \caption{The extended graph grammar of the farmer-wolf-goat-cabbage puzzle in Figure~\ref{fig:gg-fwgc}}
+  \label{fig:gg-fwgc-extended}
+\end{figure}\marginpar{Extended STS is ook nauwelijks weer te geven. Ik vraag me hier af ok ik niet gewoon de LTS moet geven, wellicht is die simpeler. De STS moet nu namelijk met variabelen de vorige posities van alle items bij gaan houden oid}
+
+\paragraph*{Extendability 4}
+The system is extended to allow ordering multiple drinks of different types. The stimulus \\$?o(i,d_1,q_1,d_2,q_2,d_3,q_3)$ is used to order a quantity $q_n$ of drink $d_n$. The bar tab id is still given by $i$. Also, a customer can purchase the option of receiving 10\% discount on all ordered drinks for 50 euros (added to the tab). The stimulus given is $?\mathit{d}$ and the response is $!pd(b)$ where $b$ is the new balance. Figure~\ref{fig:gg-bartab-extended} shows the extended rules and initial graph. The $?p$ and $!pp$ rules have remained the same.\marginpar{Deze GG en STS zijn vrij lelijk}
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-tab-extended}\input{./img/start-tab-extended.tikz}}\hspace{20px}
+    \subfloat[The !pd rule with priority 1]{\label{fig:process_discount}\input{./img/process_discount-extended.tikz}}\\
+    \subfloat[The extended ?o rule]{\label{fig:order-tab-extended}\input{./img/order-extended.tikz}}\hspace{20px}
+    \subfloat[The ?d rule with priority 0]{\label{fig:discount}\input{./img/discount-extended.tikz}}\\
+    \subfloat[The extended !po rule]{\label{fig:process_order-extended}\input{./img/process_order-extended.tikz}}\\
+  \end{center}
+  \caption{The extended graph grammar of the bar tab system}
+  \label{fig:gg-bartab-extended}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{center}
+    \input{./img/sts_tab-extended.tex}
+  \end{center}
+  \caption{The extended IOSTS of the bar tab system}
+  \label{fig:sts-bartab-extended}
+\end{figure}
+
+\paragraph*{Extendability scan flow}
+A recent extension on the protocol allows multiple accounts. While an account is not in state open, an idle account can be opened. This allows for a customer to scan his/her products, while another customer pays. Figure~\ref{fig:gg-fwgc-extended} shows the changes to the initial graph and the open account rules. Figure~\ref{fig:close-account-success-ext} shows the success response rule for closing an account: the order of closed accounts have to be kept, because the accounts have to be paid in that order.
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-scrp-ext}\input{./img/start-scrp-extended.tikz}}\hspace{20px}
+    \subfloat[The open account success rule]{\label{fig:open-account-success-ext}\input{./img/account.open.success-extended.tikz}}\\
+    \subfloat[The open account invalid rule]{\label{fig:open-account-invalid-ext}\input{./img/account.open.invalid_ss_on-extended.tikz}}\hspace{20px}
+    \subfloat[The close account success rule]{\label{fig:close-account-success-ext}\input{./img/account.close.success-extended.tikz}}
+  \end{center}
+  \caption{The extended graph grammar of Scanflow Cash Register Protocol}
+  \label{fig:gg-fwgc-extended}
+\end{figure}
+
 \section{Conclusions}\marginpar{conclusions per measurement, conclusions per case? General conclusions later}
 The simulation measurement in the boardgame example shows that not having a fixed specification leads to different behavior specified by the generated IOSTS. The translation of abstract stimuli and responses to the concrete stimuli and responses gives flexibility; an expected series of responses $!move(1) !move(1) !nextTurn$ can be translated from the concrete response $!move(1,2)$. However, this does give more work in the abstract to concrete stimuli/response translation. Also, the model does not reflect the specification precisely when using such a work-around.
 

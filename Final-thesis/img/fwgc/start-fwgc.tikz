@@ -1,0 +1,22 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n3)  at (0.550, -0.785) {\ml{wolf}};
+\node[node] (n4)  at (0.565, -1.325) {\ml{goat}};
+\node[node] (n1)  at (2.355, -1.220) {\ml{\textit{right}\\bank}};
+\node[node] (n5)  at (0.555, -1.865) {\ml{cabbage}};
+\node[node] (n0)  at (1.555, -1.220) {\ml{\textit{left}\\bank}};
+\node[node] (n2)  at (0.635, -0.425) {\ml{farmer}};
+\path[edge] (n3)  -- node[lab]{at} (n0) ;
+\path[edge] (n2)  -- node[lab]{at} (n0) ;
+\path[edge](n4.east |- 1.555, -1.220) -- node[lab]{at} (n0) ;
+\path[edge](n3.south -| 0.565, -1.325) -- node[lab]{eats} (n4) ;
+\path[edge](n4.south -| 0.555, -1.865) -- node[lab]{eats} (n5) ;
+\path[edge] (n5)  -- node[lab]{at} (n0) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

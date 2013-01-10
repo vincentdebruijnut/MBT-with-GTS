@@ -78,10 +78,53 @@
   \input{./tex/constraints.tex}
   
   \newpage
+  \chapter{Implementation}\label{chapter:implementation}
+  \input{./tex/implementation.tex}
+
+  \newpage
+  \chapter{Validation}\label{chapter:validation}
+  \input{./tex/validation-introduction}
+  \input{./tex/measurements.tex}
+  \input{./tex/all-examples}
+  %\input{./tex/measurements_on_examples.tex}
+  
+  \newpage
   \bibliography{bib/bibliography}{}
   \bibliographystyle{plain}
+
   \newpage
   \chapter*{List of Symbols\hfill} \addcontentsline{toc}{chapter}{List of Symbols}
-\listofsymbols
+  \listofsymbols
 
+  \newpage
+  \appendix
+  \chapter{Farmer-Wolf-Goat-Cabbage IOGG}\label{app:fwgc}
+  \begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-fwgc}\input{./img/fwgc/start-fwgc.tikz}}\hspace{20px}
+    \subfloat[?n (priority 0)]{\label{fig:n-fwgc}\input{./img/fwgc/n-fwgc.tikz}} \\
+    \subfloat[?w valid (priority 0)]{\label{fig:w-fwgc}\input{./img/fwgc/w-fwgc.tikz}}\hspace{20px}
+    \subfloat[?w invalid (priority 0)]{\label{fig:w-invalid-fwgc}\input{./img/fwgc/w-invalid-fwgc.tikz}} \\
+    \subfloat[?g valid (priority 0)]{\label{fig:g-fwgc}\input{./img/fwgc/g-fwgc.tikz}}\hspace{20px}
+    \subfloat[?g invalid (priority 0)]{\label{fig:g-invalid-fwgc}\input{./img/fwgc/g-invalid-fwgc.tikz}} \\
+    \subfloat[?c valid (priority 0)]{\label{fig:c-fwgc}\input{./img/fwgc/c-fwgc.tikz}}\hspace{20px}
+    \subfloat[?c invalid (priority 0)]{\label{fig:c-invalid-fwgc}\input{./img/fwgc/c-invalid-fwgc.tikz}} \\
+  \end{center}
+  \end{figure}
+
+  \begin{figure}[ht]
+  \setcounter{subfigure}{8}
+  \begin{center}
+    \subfloat[!retry (priority 1)]{\label{fig:retry-fwgc}\parbox{4cm}{\centering\input{./img/fwgc/retry-fwgc.tikz}}}\\
+    \subfloat[!eaten (priority 1)]{\label{fig:reinit}\input{./img/fwgc/eaten-reinit-fwgc.tikz}}\\
+    \subfloat[!done (priority 1)]{\label{fig:done}\input{./img/fwgc/done-fwgc.tikz}}
+  \end{center}
+  \end{figure}
+
+
+  \newpage
+  \chapter{Scanflow Cash Register Specification}\label{app:scrp-specification}
+
+  \newpage
+  \chapter{Scanflow Cash Register Models}\label{app:scrp-gg}
 \end{document}

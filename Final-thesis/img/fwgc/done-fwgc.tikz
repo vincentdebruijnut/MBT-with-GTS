@@ -1,0 +1,24 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n2)  at (2.615, -2.685) {\ml{goat}};
+\node[node] (n7)  at (1.305, -2.500) {\ml{\textit{left}\\bank}};
+\node[node] (n0)  at (2.725, -1.915) {\ml{farmer}};
+\node[node] (n1)  at (2.610, -2.295) {\ml{wolf}};
+\node[node] (n4)  at (3.915, -2.475) {\ml{\textit{right}\\bank}};
+\node[node] (n3)  at (2.755, -3.125) {\ml{cabbage}};
+\path[newedge] (n1)  -- node[newlab]{at}(n7.east |- 2.610, -2.295);
+\path[deledge] (n2)  -- node[dellab]{at}(n4.west |- 2.615, -2.685);
+\path[newedge] (n3)  -- node[newlab]{at} (n7) ;
+\path[deledge] (n3)  -- node[dellab]{at} (n4) ;
+\path[deledge] (n0)  -- node[dellab]{at} (n4) ;
+\path[newedge] (n0)  -- node[newlab]{at} (n7) ;
+\path[deledge] (n1)  -- node[dellab]{at}(n4.west |- 2.610, -2.295);
+\path[newedge] (n2)  -- node[newlab]{at}(n7.east |- 2.615, -2.685);
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}
