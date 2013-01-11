@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  10 JAN 2013 17:44
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  11 JAN 2013 17:22
 entering extended mode
  %&-line parsing enabled.
 **report2
@@ -912,11 +912,11 @@ Underfull \hbox (badness 1748) in paragraph at lines 57--57
 ) [5] [6]
 Chapter 2.
 (./tex/background-introduction.tex) (./tex/model-based-testing.tex
-<./img/model-based-testing.pdf, id=375, 379.58545pt x 141.73691pt>
+<./img/model-based-testing.pdf, id=380, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-<./img/mbt-on-the-fly.pdf, id=379, 357.48773pt x 141.7426pt>
+<./img/mbt-on-the-fly.pdf, id=384, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
 <use ./img/mbt-on-the-fly.pdf> [7
@@ -949,14 +949,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--166
 (./img/priority-example/add_rhs.tex <xymatrix 2x1 51>)
 (./img/priority-example/sub_lhs.tex <xymatrix 3x1 55>)
 (./img/priority-example/sub_rhs.tex <xymatrix 2x1 51>)) (./tex/tooling.tex
-<./img/atm-diagram.pdf, id=545, 513.8086pt x 289.56181pt>
+<./img/atm-diagram.pdf, id=550, 513.8086pt x 289.56181pt>
 File: ./img/atm-diagram.pdf Graphic file (type pdf)
 
 <use ./img/atm-diagram.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17] <./img/groove-diagram.pdf, id=566, 362.04158pt x 220.67444pt>
+[17] <./img/groove-diagram.pdf, id=571, 362.04158pt x 220.67444pt>
 File: ./img/groove-diagram.pdf Graphic file (type pdf)
 
 <use ./img/groove-diagram.pdf>
@@ -1033,30 +1033,25 @@ Overfull \hbox (13.86055pt too wide) in paragraph at lines 1--41
 (./img/item_example_c4_rhs.tex <xymatrix 2x2 122>)) [30]
 Chapter 4.
 (./tex/implementation.tex
-<./img/gratis_diagram.pdf, id=791, 465.09459pt x 260.6538pt>
+<./img/gratis_diagram.pdf, id=796, 465.09459pt x 260.6538pt>
 File: ./img/gratis_diagram.pdf Graphic file (type pdf)
 
 <use ./img/gratis_diagram.pdf> [31
 
  <./img/gratis_diagram.pdf>]
-<./img/strategy.pdf, id=811, 202.07094pt x 136.22896pt>
+<./img/strategy.pdf, id=816, 202.07094pt x 136.22896pt>
 File: ./img/strategy.pdf Graphic file (type pdf)
 
-<use ./img/strategy.pdf> <./img/STS.pdf, id=814, 305.98314pt x 218.23532pt>
+<use ./img/strategy.pdf> <./img/STS.pdf, id=819, 305.98314pt x 218.23532pt>
 File: ./img/STS.pdf Graphic file (type pdf)
 
 <use ./img/STS.pdf> [32 <./img/strategy.pdf>]
-<./img/STS_objects.pdf, id=843, 485.85414pt x 309.55649pt>
+<./img/STS_objects.pdf, id=848, 485.85414pt x 309.55649pt>
 File: ./img/STS_objects.pdf Graphic file (type pdf)
 
 <use ./img/STS_objects.pdf>) [33 <./img/STS.pdf> <./img/STS_objects.pdf>]
 Chapter 5.
-(./tex/validation-introduction.tex
-
-LaTeX Warning: Reference `sec:model-examples' on page 34 undefined on input lin
-e 1.
-
-) (./tex/measurements.tex
+(./tex/validation-introduction.tex) (./tex/measurements.tex
 
 LaTeX Warning: Reference `sec:future-work' on page 34 undefined on input line 1
 8.
@@ -1069,37 +1064,148 @@ Overfull \hbox (2.66943pt too wide) in paragraph at lines 32--34
 n-sief emails gewis-seld met Lodewijk Bergmans
  []
 
-) (./tex/all-examples.tex [35] [36] (./img/start-tab.tikz)
-(./img/order-tab.tikz) (./img/process_order.tikz) (./img/pay-tab.tikz)
-(./img/process_payment.tikz) (./img/sts_tab.tex <xymatrix 11x6 617>)
-(./img/start-reservation.tikz) (./img/makeReservation.tikz)
-<./img/scanflow.jpg, id=906, 359.3425pt x 377.41pt>
+) (./tex/all-examples.tex [35] [36] [37] (./img/start-reservation.tikz)
+(./img/makeReservation.tikz)
+<./img/scanflow.jpg, id=914, 359.3425pt x 377.41pt>
 File: ./img/scanflow.jpg Graphic file (type jpg)
  <use ./img/scanflow.jpg>
-[37] (./img/start-scrp.tikz) (./img/account.open.request.tikz)
-(./img/account.open.success.tikz) (./img/account.open.invalid_ss_on.tikz)
+Underfull \hbox (badness 2735) in paragraph at lines 152--153
+[]|\T1/cmr/m/n/10 Inform the reg-is-ter that the pay-ment was made, where
+ []
+
+
+Overfull \hbox (6.92793pt too wide) in paragraph at lines 141--161
+[] 
+ []
+
+[38 <./img/scanflow.jpg>] [39] (./img/start-scrp.tikz)
+(./img/account.open.request.tikz) (./img/account.open.success.tikz)
+(./img/account.open.invalid_ss_on.tikz)
 (./img/general_responses.not_signed_on.tikz) (./img/account.close.success.tikz)
-) [38] (./report2.bbl [39 <./img/scanflow.jpg>] [40] [41
+) [40] (./report2.bbl [41] [42
 
-] [42]) [43]
-(./symbols.tex [44
+] [43]) [44] (./symbols.tex [45
 
-]) [45]
+]) [46]
 Appendix A.
 (./img/fwgc/start-fwgc.tikz) (./img/fwgc/n-fwgc.tikz) (./img/fwgc/w-fwgc.tikz)
 (./img/fwgc/w-invalid-fwgc.tikz) (./img/fwgc/g-fwgc.tikz)
 (./img/fwgc/g-invalid-fwgc.tikz) (./img/fwgc/c-fwgc.tikz)
 (./img/fwgc/c-invalid-fwgc.tikz) (./img/fwgc/retry-fwgc.tikz)
-(./img/fwgc/eaten-reinit-fwgc.tikz) (./img/fwgc/done-fwgc.tikz) [46
+(./img/fwgc/eaten-reinit-fwgc.tikz) (./img/fwgc/done-fwgc.tikz) [47
 
 
-] [47]
+] [48]
 Appendix B.
-[48
+(./img/start-tab.tikz) (./img/order-tab.tikz) (./img/process_order.tikz)
+(./img/pay-tab.tikz) (./img/process_payment.tikz) [49
 
 ]
 Appendix C.
-[49
+(./tex/scrp_commands_responses.tex
+<./img/account_lifecycle.png, id=1064, 590.205pt x 591.20876pt>
+File: ./img/account_lifecycle.png Graphic file (type png)
+
+<use ./img/account_lifecycle.png>
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 31--36
+[] 
+ []
+
+[50
+
+]
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 38--43
+[] 
+ []
+
+
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 45--52
+[] 
+ []
+
+
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 54--60
+[] 
+ []
+
+[51 <./img/account_lifecycle.png (PNG copy)>]
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 62--68
+[] 
+ []
+
+
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 70--77
+[] 
+ []
+
+
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 79--86
+[] 
+ []
+
+
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 88--93
+[] 
+ []
+
+[52]
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 95--103
+[] 
+ []
+
+
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 105--115
+[] 
+ []
+
+[53]
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 117--125
+[] 
+ []
+
+
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 127--134
+[] 
+ []
+
+
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 136--142
+[] 
+ []
+
+[54]
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 144--150
+[] 
+ []
+
+
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 152--159
+[] 
+ []
+
+
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 161--169
+[] 
+ []
+
+
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 171--177
+[] 
+ []
+
+[55])
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 179--141
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--141
+
+ []
+
+[56]
+Appendix D.
+[57
 
 ] (./report2.aux)
 
@@ -1107,10 +1213,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 20658 strings out of 495061
- 363044 string characters out of 1182622
- 1423866 words of memory out of 3000000
- 22795 multiletter control sequences out of 15000+50000
+ 20675 strings out of 495061
+ 363468 string characters out of 1182622
+ 856869 words of memory out of 3000000
+ 22777 multiletter control sequences out of 15000+50000
  30003 words of font info for 75 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,24n,79p,1526b,1572s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1152,9 +1258,9 @@ fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></u
 sr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texmf-
 texlive/fonts/type1/public/xypic/xybtip10.pfb></usr/share/texmf-texlive/fonts/t
 ype1/public/xypic/xydash10.pfb>
-Output written on report2.pdf (51 pages, 996266 bytes).
+Output written on report2.pdf (59 pages, 990230 bytes).
 PDF statistics:
- 1885 PDF objects out of 2073 (max. 8388607)
- 327 named destinations out of 1000 (max. 500000)
- 490 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1968 PDF objects out of 2073 (max. 8388607)
+ 360 named destinations out of 1000 (max. 500000)
+ 503 words of extra memory for PDF output out of 10000 (max. 10000000)
 

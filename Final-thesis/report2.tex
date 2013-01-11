@@ -121,9 +121,23 @@
   \end{center}
   \end{figure}
 
+  \newpage
+  \chapter{Bar Tab IOGG}\label{app:bar-tab}
+  \begin{figure}[ht]
+    \begin{center}
+      \subfloat[The initial graph]{\label{fig:start-tab}\input{./img/start-tab.tikz}}\\
+      \subfloat[?o (priority 0)]{\label{fig:order-tab}\input{./img/order-tab.tikz}}\hspace{20px}
+      \subfloat[!po (priority 1)]{\label{fig:process_order}\input{./img/process_order.tikz}}\\
+      \subfloat[?p (priority 0)]{\label{fig:pay-tab}\input{./img/pay-tab.tikz}}\hspace{20px}
+      \subfloat[!pp (priority 1)]{\label{fig:process_payment}\input{./img/process_payment.tikz}}
+    \end{center}
+    %\caption{The IOGG of the bar tab system}
+    %\label{fig:gg-bartab}
+  \end{figure}
 
   \newpage
-  \chapter{Scanflow Cash Register Specification}\label{app:scrp-specification}
+  \chapter{SCRP Commands \& Responses}\label{app:scrp-specification}
+  \input{./tex/scrp_commands_responses}
 
   \newpage
   \chapter{Scanflow Cash Register Models}\label{app:scrp-gg}

@@ -1,0 +1,185 @@
+\section*{Registration Accounts}
+The SCRP protocol incorporates the concept of an account, maintained in the CR on behalf of the SFU, onto which articles can be registered. Registered articles form the basis for the amount for which the customer is charged. A registration account can be in state AS\_IDLE, AS\_OPEN, AS\_CLOSED, AS\_TRANSING or AS\_ENDING, see Figure~\ref{fig:account-lifecycle}.
+
+When the CR service is started, the account is typically initialized to AS\_IDLE. An OPEN command issued by the SFU opens the account for registration. Registration is only possible in this state. After registration is finished, the CLOSE command must be invoked. In the AS\_CLOSED state, a TRANS command initiates a (payment) transaction. This command must be re-issued until the transaction succeeds. A successful transaction causes the account to enter the AS\_ENDING. In this state, the IDLE command makes the account AS\_IDLE, i.e. available to be opened for the next session.
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{account_lifecycle.png}
+  \end{center}
+  \caption{Registration Account State Machine}
+  \label{fig:account-lifecycle}
+\end{figure}
+
+\section*{General Responses}
+The following responses can, when appropriate, be generated as a response on any command. 
+\vspace{5px} \\
+\begin{tabular}{| l | p{280px} |}
+\hline
+500 Unknown command & In case the command is not recognized. \\ \hline
+501 Syntax error & In case the command contains a syntax error  (e.g. mandatory argument is missing). \\ \hline
+502 Command failed & As a last resort, when no other appropriate response can be given. \\ \hline
+503 Error state & In case the CR is in Error state and the requested command cannot be processed due to that. \\ \hline
+504 Weighing not available & This response should be used in the case a Cash register has a scale configured, but no connection between the Cash register and the scale is established, the Cash register must go to an error state and send a 504 error (weighing not available). \\ \hline
+550 Not signed on & If the CR requires to be signed on for the command involved. \\ 
+\hline
+\end{tabular}
+
+\section*{Commands}
+
+\subsubsection*{Initialize SCRP Service}
+\begin{tabular}{lp{350px}}
+Command: & None; a transport connection suffices. \\
+Description: & Initializes the SCRP service on the CR. The SFU must synchronize to the CR after the connection has been established. \\
+Responses: & 220 SCRP Service ready \\
+\end{tabular}
+
+\subsubsection*{Terminate SCRP Service}
+\begin{tabular}{lp{350px}}
+Command: & QUIT \\
+Description: & Requests the CR to smoothly terminate the SCRP service. Although the SFU should wait for all accounts to be AS\_IDLE before issuing this request, the CR must honour it in any state. Any non-IDLE account will be processed by the CR in an implementation defined manner. The CR remains ready to accept a (new) SFU connection. \\
+Responses: & 221 SCRP Service terminating
+\end{tabular}
+
+\subsubsection*{Cash Register Sign On}
+\begin{tabular}{lp{350px}}
+Command: & SIGNON <SFU\_id>[:<password>] \\
+Description: & Requests the CR to sign on, making the actual signing state SS\_ON. The CR is allowed to reject the request if the current signing state is SS\_HALT. \\
+Responses: & 251 Signed On  \\
+& 450 Signing rejected \\
+& 551 Authentication failed
+\end{tabular}
+
+\subsubsection*{Cash Register Sign Off}
+\begin{tabular}{lp{350px}}
+Command: & SIGNOFF \\
+Description: & Requests the CR to sign off, making the actual signing state SS\_OFF or SS\_HALT. The CR is allowed to reject the request if not all accounts are in AS\_IDLE state. Otherwise, any non-IDLE account will be processed by the CR in an implementation defined manner. \\
+Responses: & 250 Signed Off \\
+& 450 Signing rejected
+\end{tabular}
+
+\subsubsection*{Get CR Variable}
+\begin{tabular}{lp{350px}}
+Command: & GET <cr\_variable> \\
+Description: & Requests to get the value of a certain CR Variable. The CR must honour this request in any state of the system. Possible variables and their values are listed in Table 3. \\
+Responses: & 210 <cr\_variable>:<cr\_value> \\
+& 510 No such variable
+\end{tabular}
+
+\subsubsection*{Open Account}
+\begin{tabular}{lp{350px}}
+Command: & OPEN [<account>|<barcode>] \\
+Description: & Opens an account for subsequent article registrations. The CR is requested to perform this action before registration of articles commences. If the CR implementation is such that the account state is ``default opened" after the previous payment sequence, the command may internally have no effect but a positive response is still required. A positive response must report the identity of the account opened. If <account> or <barcode> is specified (both may be used alternatively), the command requests to recall the associated stored account. The format of <barcode> is the same as used by the CR to produce a store/recall ticket. A preferred implementation of this command returns an account number that is identical to the requested <account> (or identical to the account number from which <barcode> was constructed). Returning another account number is discouraged but allowed. The newly opened account must be put in state AS\_OPEN and must inherit all account data from the account that is recalled, including the state specific context. \\
+Responses: & 231 <account> Account opened \\
+& 530 No such account \\
+& 531 Invalid account state
+\end{tabular}
+
+\subsubsection*{Close Current Account}
+\begin{tabular}{lp{350px}}
+Command: & CLOSE \\
+Description: & Closes the current account for further registration. The CR is requested to perform this action before a transaction sequence is initiated. A positive response must include the total amount involved. The response may be preceeded by a series of `display responses', explaining the calculation from the previous subtotal to the current endtotal (e.g. mix-match calculation results). \\
+Responses: & \{ 212 <description>[:<price>[:<amount>]] \} \\
+& 230 <endtotal> Account closed \\
+& 531 Invalid account state
+\end{tabular}
+
+\subsubsection*{Request Article Identification}
+\begin{tabular}{lp{350px}}
+Command: & ARTID <barcode> \\
+Description: & Requests identification of an article, with <barcode> representing its key. This command is not a request to register the article. The CR must honor this request in any account state. A positive response must be given by means of a 211 response or a 213 response, their usage is alternative, which means that is up to the CR to use one or the other to respond to a given ARTID command. However systems using the certified weighing capability of the Cash Register must use the 213 response. Compared to the 211 response, the 213 response allows the CR to provide a full-scale specification of the attributes that characterize an article. A detailed definition of these responses including the error responses, is given hereunder. The length of the responses may never be larger then 512 characters. \\
+Responses: & 213
+\end{tabular}
+  
+\subsubsection*{Request Article Registration}
+\begin{tabular}{lp{350px}}
+Command: & ARTREG [<barcode>[:<amount>]] \\
+Description: & Requests registration of an article, with <barcode> representing its key and <amount> representing the amount of articles to register. This request is not issued before an account has been opened successfully. A positive response must consist of the following elements: <nr\_articles> Actual number of articles registered, <subtotal>  Actual subtotal of articles registered. The response must be preceded by a series of `display responses' with all data related to the registration of this article (e.g. linked articles, discounts, etc.). If <barcode> is omitted, the command requests the complete list (as a series of `display responses') of articles registered in the current account, which might be a recalled account. In case of a recalled account for which a partial payment was carried out on the originating (stored) account, the list of `display responses' must include descriptive lines explaining the results of the partial payment(s) done; all in consistence with the value and definition of subtotal. If <amount> is omitted, it will default to 1. \\
+Responses: & \{ 212 <description>[:<price>[:<amount>]] \} \\
+& 232 <nr\_articles>:<subtotal> Article registered \\
+& 511 No such article \\
+& 531 Invalid account state
+\end{tabular}
+
+\subsubsection*{Request Account Transaction}
+\begin{tabular}{lp{350px}}
+Command: & TRANS <tr\_method>>[:<amount>] \\
+Description: & Requests transaction of the `oldest' account from repository state AS\_CLOSED. The account must be closed before the request can be honoured. For details regarding transaction methods. A negative response (failure) must include an indicator that specifies the cause of the failure. Table 8 lists an overview of possible failures for each transaction method. Both transaction method and failure indication must be represented as ASCII strings and interpreted in a case-insensitive manner. If <amount> is omitted, the actual endtotal is assumed implicitly. Otherwise, <amount> indicates the requested transaction amount. The format of the <amount> argument is identical to that of <price>. The semantics of <amount> in relation to transaction methods TM\_STORE and TM\_FLUSH is undefined; in case <amount> is specified for these transaction methods, the response must report Failure Indication FI\_AMOUNT (see table below). After a successful transaction, the remaining endtotal must be updated accordingly and in correspondence with the applicable exchange calculation rules that reside in the CR; this endtotal value is also returned in the (new) ``240"-response. The resulting endtotal is by definition equal to 0 if the transaction was successful and the <amount> argument was omitted, even for TM\_STORE and TM\_FLUSH.
+Different from what is specified in the Account State Machine of Figure~\ref{fig:account-lifecycle} the account state remains AS\_CLOSED after a successful transaction while the resulting endtotal is unequal to 0. This allows for repeated/split TRANS requests. \\
+Responses: & 240 Transaction succeeded \\
+& 531 Invalid account state \\
+& 540 No such transaction method \\
+& 541 Busy transacting \\
+& 542 <failure\_ind> Transaction failed
+\end{tabular}
+
+\subsubsection*{Print to Receipt (CR-Printing only)}
+\begin{tabular}{lp{350px}}
+Command: & PRINT <account>:<html\_text> \\
+Description: & Requests the CR to print HTML-style data to the receipt of the specified account. \\
+Responses: & 260 Data printed \\
+& 530 No such account \\
+& 531 Invalid account state  \\
+& 560 CR-printing inactive
+\end{tabular}
+
+\subsubsection*{Query Receipt (SFU-Printing only)}
+\begin{tabular}{lp{350px}}
+Command: & RECEIPT  \\
+Description: & Queries the CR to generate a multiline response with the entire receipt of the account currently in AS\_ENDING state. \\
+Responses: & \{ 261 <html\_text> \} \\
+& 531 Invalid account state \\
+& 561 SFU-printing inactive
+\end{tabular}
+
+\subsubsection*{Round-up Account}
+\begin{tabular}{lp{350px}}
+Command: & IDLE \\
+Description: & Requests rounding-up of the account in AS\_ENDING state. A successful response makes the account state AS\_IDLE. In case of CR-printing, this command may cause he CR to activate the receipt cutter. With SFU-printing, this is the acknowledge to the CR that the receipt has been correctly printed. \\
+Responses: & 233 Account idled \\
+& 531 Invalid account state
+\end{tabular}
+
+\subsubsection*{Resume Operation}
+\begin{tabular}{lp{350px}}
+Command: & RESUME \\
+Description: & Requests the CR to continue operation from Error state. Once the CR is in Error state, this command is needed to resume normal operation. \\
+Responses: & 201 Resumed operation \\
+& 503 Error state
+\end{tabular}
+
+\subsubsection*{Request Account EndTotal}
+\begin{tabular}{lp{350px}}
+Command: & ENDTOT \\
+Description: & Requests to calculate the actual endtotal for the current account. The request is only valid in state AS\_OPEN. The response must be preceded by a series of `display responses', explaining the difference between the current subtotal and the calculated endtotal. As such, the responses to this command are similar to those of the ``CLOSE" command. In contrast with the ``CLOSE" command, ``ENDTOT" must not affect the account state and may be issued repeatedly. \\
+Responses: & \{ 212 <description>[:<price>[:<amount>]] \} \\
+& 230 <endtotal> Account endtotal \\
+& 531 Invalid account state
+\end{tabular}
+
+\subsubsection*{Request print of Receipt Hardcopy}
+\begin{tabular}{lp{350px}}
+Command: & RHCOPY [<account>|<barcode>] \\
+Description: & Requests the CR to print a hardcopy of a receipt. If <account> or <barcode> is omitted, requests to print a hardcopy of the last printed receipt. This function is mandatory. A preferred implementation, however, must also support the arguments <account> or <barcode> (both may be used alternatively), in which case the command requests to print a hardcopy of the receipt associated to the specified account. The format of <barcode> is syntactically the same as used by the CR to produce a store/recall ticket. It is preferred to accept this command in all/most account states recognized by the SCRP protocol. Accepting this command in account state AS\_IDLE is required, though. The receipt hardcopy must consist of all CR-generated print data for the designated account, as well as all data that was PRINT-ed for that account on behalf of the SFU. \\
+Responses: & 260 Data printed \\
+& 530 No such account \\
+& 531 Invalid account state \\
+& 560 CR-printing inactive
+\end{tabular}
+
+\subsubsection*{Cash Register Reset}
+\begin{tabular}{lp{350px}}
+Command: & RESETCR \\
+Description: & Requests the CR to execute a reset. The function will only be possible to execute manually from within the SFU. \\
+Responses: & 202 Cash Register restored \\
+& 531 Invalid account state
+\end{tabular}
+
+\subsubsection*{Certified Weighing}
+\begin{tabular}{lp{350px}}
+Command: & GET CERTDATA <barcode> \\
+Description: & This command requests certified weight data from the CR to be presented on the screen for human verification. The format of <barcode> is missing the embedded weight or price information. The Command can only be issued during the state AS\_OPEN. \\
+Responses: & 214 \\
+& 512 No stable weight \\
+& 531 Invalid account state
+\end{tabular}
