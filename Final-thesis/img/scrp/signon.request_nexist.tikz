@@ -1,0 +1,19 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[nacnode] (n1)  at (2.075, -2.095) {\ml{\textbf{Request}}};
+\node[newnode] (n0)  at (2.040, -0.360) {\ml{\textbf{Request}\\\textit{signon\_nexist}}};
+\node[node] (n2)  at (0.840, -1.165) {\ml{\textbf{CR}}};
+\node[node] (n11)  at (3.300, -1.155) {\ml{\textbf{SFU}}};
+\path[edge](n2.east |- 3.300, -1.155) -- node[lab]{connection} (n11) ;
+\path[nacedge] (n1)  -- node[naclab]{to} (n2) ;
+\path[newedge] (n0)  -- node[newlab]{to} (n2) ;
+\path[nacedge] (n11)  -- node[naclab]{from} (n1) ;
+\path[newedge] (n11)  -- node[newlab]{from} (n0) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

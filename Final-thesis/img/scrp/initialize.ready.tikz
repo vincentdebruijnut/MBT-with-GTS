@@ -1,0 +1,17 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n1)  at (3.500, -0.515) {\ml{\textbf{SFU}}};
+\node[node] (n0)  at (1.340, -0.590) {\ml{\textbf{CR}\\{\color{\green}\textit{$+$ SS\_OFF}}\\{\color{\green}$+$ stored\_account = false}}};
+\node[node, attr] (n3)  at (0.980, -1.465) {\ml{\textbf{bool}}};
+\path[newedge] (n0) .. controls (1.850, -1.030) and (2.930, -0.990) ..  (n1) ;
+\node[newlab] at (2.423, -0.988){connection};
+\path[deledge](n0.south -| 0.980, -1.465) -- node[dellab]{stored\_account} (n3) ;
+\path[nacedge](n0.east |- 3.500, -0.515) -- node[naclab]{connection} (n1) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

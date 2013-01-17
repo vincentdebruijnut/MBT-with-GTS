@@ -1,0 +1,17 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[delnode] (n3)  at (2.165, -0.950) {\ml{\textbf{Request}\\\textit{stampreg\_start}}};
+\node[node] (n0)  at (0.825, -0.950) {\ml{\textbf{CR}\\\textit{SS\_ON}}};
+\node[node] (n1)  at (2.160, -1.625) {\ml{\textbf{SFU}}};
+\node[nacnode] (n2)  at (0.810, -1.750) {\ml{\textbf{Account}\\\textit{AS\_CLOSED}}};
+\path[deledge](n1.north -| 2.165, -0.950) -- node[dellab]{from} (n3) ;
+\path[nacedge](n0.south -| 0.810, -1.750) -- node[naclab]{has} (n2) ;
+\path[deledge](n3.west |- 0.825, -0.950) -- node[dellab]{to} (n0) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

@@ -1,0 +1,15 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n2)  at (0.735, -1.155) {\ml{\textbf{CR}\\{\color{\blue}\textit{$-$ SS\_ERROR}}\\{\color{\green}\textit{$+$ SS\_ON}}}};
+\node[node] (n11)  at (3.660, -1.155) {\ml{\textbf{SFU}}};
+\node[delnode] (n0)  at (2.315, -1.150) {\ml{\textbf{Request}\\\textit{resume}}};
+\path[deledge](n0.west |- 0.735, -1.155) -- node[dellab]{to} (n2) ;
+\path[deledge](n11.west |- 2.315, -1.150) -- node[dellab]{from} (n0) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

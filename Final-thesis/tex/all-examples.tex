@@ -137,12 +137,15 @@ The system used for this case study is a \textit{self-scan register}, which allo
   \label{fig:register}
 \end{figure}
 
+Axini has provided an IOSTS and an Adapter component for this case study. These are used for the testing and measurements.
+
 \paragraph*{Stimuli and responses}
 Appendix~\ref{app:scrp-specification} gives the most relevant parts of the specification document for this communication protocol. From this document, the following stimuli were designed:
+\vspace{5px} \\
 \begin{tabular}{lp{280px}} 
-$\mathit{?SIGNON}$ & Requests the register to sign on\\
+$\mathit{?SIGNON(id, password)}$ & Requests the register to sign on with the login and password given by $\mathit{id}$ and $\mathit{password}$\\
 $\mathit{?SIGNOFF}$ & Requests the register to sign off\\
-$\mathit{?OPEN}$ & Opens a new account\\
+$\mathit{?OPEN(account)}$ & Opens the account given by $\mathit{account}$ or a new account if $\mathit{account}$ is not set\\
 $\mathit{?ARTREG(barcode, amount)}$ & Requests registration of an article, with $\mathit{barcode}$ representing its key and $\mathit{amount}$ representing the amount of articles to register\\
 $\mathit{?STAMPREG(amount)}$ & Requests registration of loyalty points, where $\mathit{amount}$ is the amount of loyalty points to register\\
 $\mathit{?ARTID(barcode)}$ & Requests identification of an article, with $\mathit{barcode}$ representing its key\\
@@ -151,10 +154,10 @@ $\mathit{?CLOSE}$ & Closes the account\\
 $\mathit{?ENDTOT}$ & Requests the end total of the registered articles\\
 $\mathit{?TRANS(trans\_id)}$ & Inform the register that the payment was made, where $\mathit{tr\_method}$ represents the payment method, e.g. cash, credit card\\
 $\mathit{?RECEIPT}$ & Requests the register return the receipt.\\
-$\mathit{?PRINT}$ & Requests the register to print additional information on the receipt\\
+$\mathit{?PRINT(account)}$ & Requests the register to print additional information on the receipt for $\mathit{account}$\\
 $\mathit{?IDLE}$ & Requests rounding-up of the account\\
 $\mathit{?RESUME}$ & Requests the register to continue operation from an error state\\
-$\mathit{?RHCOPY}$ & Requests the register to print a hardcopy of a receipt\\
+$\mathit{?RHCOPY(account)}$ & Requests the register to print a hardcopy of a receipt for $\mathit{account}$\\
 $\mathit{?RESETCR}$ & Requests the register to execute a reset \\
 $\mathit{?GET(var\_name)}$ & Requests to get the value of a certain register variable represented by $\mathit{var\_name}$
 \end{tabular}
@@ -177,7 +180,8 @@ The following function categories are encoded in the second digit:
 \item x6z Printing - Response related to receipt printing.
 \end{itemize}
 
-The third digit gives a finer gradation in each of the function categories, which leads to the complete list of responses: \\
+The third digit gives a finer gradation in each of the function categories, which leads to the complete list of responses:
+\vspace{5px} \\
 \begin{tabular}{ll}
 $!201$ & Resumed operation\\ 
 $!202$ & Cash Register restored\\ 
@@ -215,21 +219,53 @@ $!560$ & CR-printing inactive \\
 $!561$ & SFU-printing inactive
 \end{tabular}
 
-\paragraph*{IOGG} Some selected rules of the IOGG of this communication protocol are shown in Figure~\ref{fig:gg-scrp}. In total the IOGG has 94 rules. They are all listed in Appendix~\ref{app:scrp-gg}. Figure~\ref{fig:start-scrp} shows the initial graph. The $?CR$ node is the cash register, the $?SFU$ is the scanflow unit. The first node has the flag $\mathit{SS\_OFF}$ representing that the register is off. There is one account which can be in states idle, open, closed and transing. When the customer places items on the belt, a new account is opened. Figure~\ref{fig:open-account-request} shows the general request structure. As long as there is no request, a request can be sent. This rule requests the opening of an account. Figure~\ref{fig:open-account-success} shows the rule for giving a success response. The request node is deleted such that new request nodes can be created again. The rule checks if an account is not already opened and opens an idle account. Figure~\ref{fig:open-account-invalid} shows the rule for the error message received when an account is already opened. 
+\paragraph*{Database testing} The available barcodes of articles are stored in a database. There are no stimuli to manipulate this database, nor is it feasible to let the model perform SQL statements to obtain barcodes. However, the model should know if an existing or non-existing barcode is given. The Adapter component is given access to the database and the stimuli with barcode as internaction variable are replaced by:
+\vspace{5px}\\
+\begin{tabular}{ll}
+$\mathit{?ARTID\_EXIST}$ & Requests identification of an existing article \\
+$\mathit{?ARTID\_NEXIST}$ & Requests identification of a non-existing article \\
+%$ARTID\_WEIGHTED$,
+$\mathit{?ARTRET\_EXIST}$ & Returns an existing article \\
+$\mathit{?ARTRET\_NEXIST}$ & Returns a non-existing article \\
+$\mathit{?ARTREG\_EXIST}$ & Requests the registration of an existing article \\
+$\mathit{?ARTREG\_NEXIST}$ & Requests the registration of a non-existing article \\
+$\mathit{?ARTREG\_REFUND}$ & Requests registration of a special type of article, the refund \\
+$\mathit{?ARTREG\_LOYALTY}$ & Request registeration of a special type of aricle, the loyalty points \\
+\end{tabular}
+
+Note that the abstraction also includes the $\mathit{amount}$ interaction variable. This choice was made when implementing the adapter. A similar abstraction is made for the $\mathit{account}$ interaction variable: 
+\vspace{5px}\\
+\begin{tabular}{lp{310px}}
+$\mathit{?OPEN\_EXIST}$ & Opens an existing account \\
+$\mathit{?OPEN\_NEXIST}$ & Opens a non-existing account \\
+$\mathit{?PRINT\_EXIST}$ & Requests the register to print additional information on the receipt for an existing account \\
+$\mathit{?PRINT\_NEXIST}$ & Requests the register to print additional information on the receipt for a non-existing account \\
+$\mathit{?RHCOPY\_EXIST}$ & Requests the register to print the receipt for an existing account \\
+$\mathit{?RHCOPY\_NEXIST}$ & Requests the register to print additional information on the receipt for a non-existing account \\
+\end{tabular}
+\vspace{5px} \\
+And also for the login and password for the signing on: 
+\vspace{5px}\\
+\begin{tabular}{ll}
+$\mathit{?SIGNON\_EXIST}$ & Sign on with a correct login/password \\
+$\mathit{?SIGNON\_NEXIST}$ & Sign on with an incorrect login/password \\
+\end{tabular}
+
+\paragraph*{IOGG} Some selected rules of the IOGG of this communication protocol are shown in Figure~\ref{fig:gg-scrp}. In total the IOGG has 94 rules. They are all listed in Appendix~\ref{app:scrp-gg}. Figure~\ref{fig:start-scrp} shows the initial graph. The $CR$ node is the cash register, the $SFU$ is the scanflow unit. The first node has the flag $\mathit{SS\_OFF}$ representing that the register is off. There is one account which can be in states idle, open, closed and transing. When the customer places items on the belt, a new account is opened. Figure~\ref{fig:open-account-request} shows the general request structure. As long as there is no request, a request can be sent. This rule requests the opening of an account. Figure~\ref{fig:open-account-success} shows the rule for giving a success response. The request node is deleted such that new request nodes can be created again. The rule checks if an account is not already opened and opens an idle account. Figure~\ref{fig:open-account-invalid} shows the rule for the error message received when an account is already opened. 
 
 \begin{figure}[ht]
   \begin{center}
-    \subfloat[The initial graph]{\label{fig:start-scrp}\input{./img/start-scrp.tikz}}\hspace{20px}
-    \subfloat[The open account request rule]{\label{fig:open-account-request}\input{./img/account.open.request.tikz}}\\
-    \subfloat[The open account success rule]{\label{fig:open-account-success}\input{./img/account.open.success.tikz}}\hspace{20px}
-    \subfloat[The open account invalid rule]{\label{fig:open-account-invalid}\input{./img/account.open.invalid_ss_on.tikz}}\\
-    \subfloat[The not signed on error rule]{\label{fig:not-signed-on}\input{./img/general_responses.not_signed_on.tikz}}\hspace{20px}
-    \subfloat[The close account success rule]{\label{fig:close-account-success}\input{./img/account.close.success.tikz}}
+    \subfloat[The initial graph]{\label{fig:start-scrp}\input{./img/scrp/start-scrp.tikz}}\hspace{20px}
+    \subfloat[The open account request rule]{\label{fig:open-account-request}\input{./img/scrp/account.open.request.tikz}}\\
+    \subfloat[The open account success rule]{\label{fig:open-account-success}\input{./img/scrp/account.open.success.tikz}}\hspace{20px}
+    \subfloat[The open account invalid rule]{\label{fig:open-account-invalid}\input{./img/scrp/account.open.invalid_ss_on.tikz}}\\
+    \subfloat[The not signed on error rule]{\label{fig:not-signed-on}\input{./img/scrp/general_responses.not_signed_on.tikz}}\hspace{20px}
+    \subfloat[The close account success rule]{\label{fig:close-account-success}\input{./img/scrp/account.close.success.tikz}}
   \end{center}
-  \caption{The IOGG of the Scanflow Cash Register Protocol}
+  \caption{A few selected rules from the IOGG of the Scanflow Cash Register Protocol}
   \label{fig:gg-scrp}
 \end{figure}
 
-For all these rules, the $?CR$ node has to have the flag $\mathit{SS\_ON}$ representing the register to be signed on. Figure~\ref{fig:not-signed-on} shows the response to a request when the register is not signed on. Apart from the signon request, no other request is allowed in this state. Figure~\ref{fig:close-account-success} shows the rule closing the account.
+For all these rules, the $CR$ node has to have the flag $\mathit{SS\_ON}$ representing the register to be signed on. Figure~\ref{fig:not-signed-on} shows the response to a request when the register is not signed on. Apart from the signon request, no other request is allowed in this state. Figure~\ref{fig:close-account-success} shows the rule closing the account.
 
-\paragraph*{IOSTS} The IOSTS of the system as created by Axini is too large to show here. It has X switch relations and Y location variables.
+\paragraph*{IOSTS} The IOSTS of the system as created by Axini is shown in Appendix~\ref{app:scrp-sts}. It has 907 locations, 1302 switch relations and 2 location variables.

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="receipt.html_text">
+    <graph role="rule" edgeids="false" edgemode="directed" id="receipt.html_text">
         <attr name="transitionLabel">
             <string>261</string>
         </attr>
@@ -10,14 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
+        <node id="n2">
             <attr name="layout">
-                <string>47 181 96 50</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>63 75 63 50</string>
+                <string>176 76 81 50</string>
             </attr>
         </node>
         <node id="n1">
@@ -25,69 +20,64 @@
                 <string>309 84 48 33</string>
             </attr>
         </node>
-        <node id="n2">
+        <node id="n0">
             <attr name="layout">
-                <string>176 76 81 50</string>
+                <string>63 75 63 50</string>
             </attr>
         </node>
-        <node id="n4">
+        <node id="n3">
             <attr name="layout">
-                <string>27 294 356 33</string>
+                <string>47 181 96 50</string>
             </attr>
         </node>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>flag:AS_ENDING</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>type:Account</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n0">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>flag:SS_ON</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>flag:receipt</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge from="n2" to="n2">
             <attr name="label">
-                <string>rem:A number of 206 html text responses can be given</string>
+                <string>flag:receipt</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n0">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n2">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:SS_ON</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n3">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>flag:AS_ENDING</string>
             </attr>
         </edge>
     </graph>

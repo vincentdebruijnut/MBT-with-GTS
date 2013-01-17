@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.article_return.no_such_article_registered">
+    <graph role="rule" edgeids="false" edgemode="directed" id="account.article_return.no_such_article_registered">
         <attr name="transitionLabel">
             <string>511</string>
         </attr>
@@ -17,7 +17,7 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>437 75 48 33</string>
+                <string>154 161 48 33</string>
             </attr>
         </node>
         <node id="n0">
@@ -27,72 +27,62 @@
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>150 66 197 50</string>
+                <string>131 64 94 50</string>
             </attr>
         </node>
-        <node id="n6">
-            <attr name="layout">
-                <string>76 313 516 33</string>
-            </attr>
-        </node>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>flag:AS_OPEN</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge from="n3" to="n3">
             <attr name="label">
-                <string>from</string>
+                <string>flag:AS_OPEN</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n3" from="n0">
+        <edge from="n1" to="n2">
             <attr name="label">
-                <string>has</string>
+                <string>from</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>flag:SS_ON</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n0" to="n3">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>del:</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>flag:artret_exist</string>
             </attr>
         </edge>
-        <edge to="n6" from="n6">
+        <edge from="n2" to="n0">
             <attr name="label">
-                <string>rem:511 wordt ook gebruikt om aan te geven dat het artikel niet is geregistreerd</string>
+                <string>to</string>
             </attr>
         </edge>
     </graph>

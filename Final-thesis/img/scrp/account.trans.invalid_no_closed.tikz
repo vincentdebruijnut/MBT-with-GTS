@@ -1,0 +1,17 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[delnode] (n3)  at (3.020, -0.600) {\ml{\textbf{Request}\\\textit{?[trans\_tm\_store,trans\_tm\_bank,trans\_tm\_cash]}}};
+\node[nacnode] (n0)  at (0.690, -1.380) {\ml{\textbf{Account}\\\textit{AS\_CLOSED}}};
+\node[node] (n1)  at (0.685, -0.590) {\ml{\textbf{CR}\\\textit{SS\_ON}}};
+\node[node] (n2)  at (3.020, -1.255) {\ml{\textbf{SFU}}};
+\path[deledge](n2.north -| 3.020, -0.600) -- node[dellab]{from} (n3) ;
+\path[nacedge](n1.south -| 0.690, -1.380) -- node[naclab]{has} (n0) ;
+\path[deledge](n3.west |- 0.685, -0.590) -- node[dellab]{to} (n1) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

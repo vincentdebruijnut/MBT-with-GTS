@@ -1,0 +1,808 @@
+\begin{tabular}{lcp{350px}}
+$\Locations$ & = & $\{\mathit{s0...s900, as\_closed,as\_ending,as\_idle,as\_open,ss\_off,unconnected}\} $\\
+$\initialLocation$ & = & $unconnected $\\
+$\LocationVariables$ & = & $\{stored\_account,\:current\_time\} $\\
+$\initializationFunction$ & = & $\{stored\_account \mapsto false,\:current\_time \mapsto 0.0\} $\\
+$\InteractionVariables$ & = & $\{stamp\_reg,\:get\_variable\_name,\:trans\_id,\:return\_variable\_name,\:variable\_value\} $\\
+$\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !541, !450, ?PRINT\_NEXIST, !260, !250, ?TRANS, !502, !231, !503, !551, ?ARTREG, ?ARTID\_WEIGHTED, !542, ?CLOSE, ?IDLE, ?RHCOPY\_EXIST, !201, !233, !500, !501, !210, !560, ?SIGNON\_NEXIST, !561, !242, !220, !214, !511, ?RHCOPY, !540, !550, ?RHCOPY\_NEXIST, !240, !531, ?ARTREG\_LOYALTY, ?PRINT\_EXIST, ?ARTRET\_EXIST, ?OPEN\_NEXIST, ?OPEN\_EXIST, !510, ?ARTREG\_EXIST, ?ARTRET\_NEXIST, ?RESETCR, !512, !213, ?SIGNOFF, ?ENDTOT, ?ARTREG\_NEXIST, !211, ?GET, !212, !230, !251, !530, ?RECEIPT, ?RESUME, ?ARTID\_EXIST, !230, !202, !232, ?ARTREG\_REFUND\} \\
+\Switches & = & $\{\mathit{s0}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_SIGN")}, \{\}}\mathit{s1},$ \\
+& & $\mathit{s1}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s120},\mathit{s1}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s119},$ \\
+& & $\mathit{s1}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_SIGN") \land (cr\_value = ``SS\_ON")}, \{\}}\mathit{s4},$ \\
+& & $\mathit{s1}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_SIGN") \land (cr\_value = ``SS\_HALT")}, \{\}}\mathit{s3},$ \\
+& & $\mathit{s1}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_SIGN") \land (cr\_value = ``SS\_OFF")}, \{\}}\mathit{s2},$ \\
+& & $\mathit{s10}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s11},$ \\
+& & $\mathit{s100}\xrightarrow{\mathit{?SIGNOFF}, \mathit{true}, \{\}}\mathit{s101},\mathit{s101}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s104},\mathit{s101}\xrightarrow{\mathit{!250}, \mathit{true}, \{\}}\mathit{s102},$ \\
+& & $\mathit{s101}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s103},\mathit{s102}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s110},\mathit{s103}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s109},$ \\
+& & $\mathit{s104}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s105},$ \\
+& & $\mathit{s105}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s107},$ \\
+& & $\mathit{s105}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s106},$ \\
+& & $\mathit{s106}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s108},\mathit{s107}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s108},\mathit{s108}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s109},$ \\
+& & $\mathit{s109}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s110},$ \\
+& & $\mathit{s11}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s12},$ \\
+& & $\mathit{s11}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s13},$ \\
+& & $\mathit{s110}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{sssoff},\mathit{s111}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s117},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s112}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s113},$ \\
+& & $\mathit{s113}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s114},$ \\
+& & $\mathit{s113}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s115},$ \\
+& & $\mathit{s114}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s116},\mathit{s115}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s116},\mathit{s116}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s117},$ \\
+& & $\mathit{s117}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s118},\mathit{s118}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s126},\mathit{s119}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s125},$ \\
+& & $\mathit{s12}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s14},$ \\
+& & $\mathit{s120}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s121},$ \\
+& & $\mathit{s121}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s123},$ \\
+& & $\mathit{s121}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s122},$ \\
+& & $\mathit{s122}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s124},\mathit{s123}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s124},\mathit{s124}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s125},$ \\
+& & $\mathit{s125}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s126},\mathit{s126}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{sssoff},\mathit{s127}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s142},$ \\
+& & $\mathit{s127}\xrightarrow{\mathit{!450}, \mathit{true}, \{\}}\mathit{s139},\mathit{s127}\xrightarrow{\mathit{!551}, \mathit{true}, \{\}}\mathit{s140},\mathit{s127}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s141},$ \\
+& & $\mathit{s127}\xrightarrow{\mathit{!251}, \mathit{true}, \{\}}\mathit{s128},$ \\
+& & $\mathit{s128}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_ACCNT")}, \{\}}\mathit{s129},$ \\
+& & $\mathit{s129}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_ACCNT") \land (cr\_value = ``AS\_IDLE")}, \{\}}\mathit{s130},$ \\
+& & $\mathit{s129}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s131},\mathit{s129}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s132},\mathit{s13}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s14},$ \\
+& & $\mathit{s130}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{assidle},\mathit{s131}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s137},$ \\
+& & $\mathit{s132}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s133},$ \\
+& & $\mathit{s133}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s134},$ \\
+& & $\mathit{s133}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s135},$ \\
+& & $\mathit{s134}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s136},\mathit{s135}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s136},\mathit{s136}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s137},$ \\
+& & $\mathit{s137}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s138},\mathit{s138}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s148},\mathit{s139}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s148},$ \\
+& & $\mathit{s14}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s15},\mathit{s140}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s148},\mathit{s141}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s147},$ \\
+& & $\mathit{s142}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s143},$ \\
+& & $\mathit{s143}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s145},$ \\
+& & $\mathit{s143}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s144},$ \\
+& & $\mathit{s144}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s146},\mathit{s145}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s146},\mathit{s146}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s147},$ \\
+& & $\mathit{s147}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s148},\mathit{s148}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s193},$ \\
+& & $\mathit{s149}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_SIGN") \land (cr\_value = ``SS\_HALT")}, \{\}}\mathit{s151},$ \\
+& & $\mathit{s149}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_SIGN") \land (cr\_value = ``SS\_OFF")}, \{\}}\mathit{s150},$ \\
+& & $\mathit{s149}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s152},\mathit{s149}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s153},\mathit{s15}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s16},$ \\
+& & $\mathit{s150}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s159},\mathit{s151}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s159},\mathit{s152}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s158},$ \\
+& & $\mathit{s153}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s154},$ \\
+& & $\mathit{s154}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s155},$ \\
+& & $\mathit{s154}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s156},$ \\
+& & $\mathit{s155}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s157},\mathit{s156}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s157},\mathit{s157}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s158},$ \\
+& & $\mathit{s158}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s159},\mathit{s159}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s193},\mathit{s16}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{sssoff},$ \\
+& & $\mathit{s160}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s162},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s160}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s161},$ \\
+& & $\mathit{s160}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s164},$ \\
+& & $\mathit{s160}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s163},$ \\
+& & $\mathit{s161}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s165},\mathit{s162}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s165},\mathit{s163}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s165},$ \\
+& & $\mathit{s164}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s165},\mathit{s165}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s193},\mathit{s166}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s193},$ \\
+& & $\mathit{s167}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s169},\mathit{s167}\xrightarrow{\mathit{!201}, \mathit{true}, \{\}}\mathit{s168},\mathit{s167}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s171},$ \\
+& & $\mathit{s167}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s170},\mathit{s168}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s177},\mathit{s169}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s177},$ \\
+& & $\mathit{s17}\xrightarrow{\mathit{?CLOSE}, \mathit{true}, \{\}}\mathit{s18},\mathit{s170}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s176},$ \\
+& & $\mathit{s171}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s172},$ \\
+& & $\mathit{s172}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s173},$ \\
+& & $\mathit{s172}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s174},$ \\
+& & $\mathit{s173}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s175},\mathit{s174}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s175},\mathit{s175}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s176},$ \\
+& & $\mathit{s176}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s177},\mathit{s177}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s193},\mathit{s178}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s181},$ \\
+& & $\mathit{s178}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s182},\mathit{s178}\xrightarrow{\mathit{!202}, \mathit{true}, \{\}}\mathit{s179},\mathit{s178}\xrightarrow{\mathit{!531}, \mathit{true}, \{\}}\mathit{s180},$ \\
+& & $\mathit{s178}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s183},\mathit{s179}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s189},\mathit{s18}\xrightarrow{\mathit{!212}, \mathit{true}, \{\}}\mathit{s19},$ \\
+& & $\mathit{s18}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s20},\mathit{s180}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s189},\mathit{s181}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s189},$ \\
+& & $\mathit{s182}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s188},$ \\
+& & $\mathit{s183}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s184},$ \\
+& & $\mathit{s184}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s185},$ \\
+& & $\mathit{s184}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s186},$ \\
+& & $\mathit{s185}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s187},\mathit{s186}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s187},\mathit{s187}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s188},$ \\
+& & $\mathit{s188}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s189},\mathit{s189}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s193},\mathit{s19}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s18},$ \\
+& & $\mathit{s190}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s193},\mathit{s191}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s193},\mathit{s192}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s193},$ \\
+& & $\mathit{s193}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{sssoff},\mathit{s194}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s196},\mathit{s194}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s197},$ \\
+& & $\mathit{s194}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_SIGN") \land (cr\_value = ``SS\_ON")}, \{\}}\mathit{s195},$ \\
+& & $\mathit{s195}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s203},\mathit{s196}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s202},$ \\
+& & $\mathit{s197}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s198},$ \\
+& & $\mathit{s198}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s199},$ \\
+& & $\mathit{s198}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s200},$ \\
+& & $\mathit{s199}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s201},\mathit{s2}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s126},\mathit{s20}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s21},$ \\
+& & $\mathit{s200}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s201},\mathit{s201}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s202},\mathit{s202}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s203},$ \\
+& & $\mathit{s203}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s204}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s205}\xrightarrow{\mathit{!211}, \mathit{true}, \{\}}\mathit{s206},$ \\
+& & $\mathit{s205}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s208},\mathit{s205}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s207},\mathit{s206}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s214},$ \\
+& & $\mathit{s207}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s213},$ \\
+& & $\mathit{s208}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s209},$ \\
+& & $\mathit{s209}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s210},$ \\
+& & $\mathit{s209}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s211},$ \\
+& & $\mathit{s21}\xrightarrow{\mathit{!230}, \mathit{true}, \{\}}\mathit{s22},\mathit{s210}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s212},\mathit{s211}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s212},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s212}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s213},\mathit{s213}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s214},\mathit{s214}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s233},$ \\
+& & $\mathit{s215}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s218},\mathit{s215}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s217},\mathit{s215}\xrightarrow{\mathit{!211}, \mathit{true}, \{\}}\mathit{s216},$ \\
+& & $\mathit{s216}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s224},\mathit{s217}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s223},$ \\
+& & $\mathit{s218}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s219},$ \\
+& & $\mathit{s219}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s220},$ \\
+& & $\mathit{s219}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s221},$ \\
+& & $\mathit{s22}\xrightarrow{\mathit{?TRANS}, \mathit{(trans\_id = ``TM\_BANK")}, \{\}}\mathit{s23},$ \\
+& & $\mathit{s220}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s222},\mathit{s221}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s222},\mathit{s222}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s223},$ \\
+& & $\mathit{s223}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s224},$ \\
+& & $\mathit{s224}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CERTDATA")}, \{\}}\mathit{s225},$ \\
+& & $\mathit{s224}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s231},\mathit{s225}\xrightarrow{\mathit{!531}, \mathit{true}, \{\}}\mathit{s228},\mathit{s225}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s229},$ \\
+& & $\mathit{s225}\xrightarrow{\mathit{!512}, \mathit{true}, \{\}}\mathit{s227},\mathit{s225}\xrightarrow{\mathit{!214}, \mathit{true}, \{\}}\mathit{s226},\mathit{s226}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s230},$ \\
+& & $\mathit{s227}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s230},\mathit{s228}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s230},\mathit{s229}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s230},$ \\
+& & $\mathit{s23}\xrightarrow{\mathit{!240}, \mathit{true}, \{\}}\mathit{s24},\mathit{s230}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s224},\mathit{s231}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s232},$ \\
+& & $\mathit{s232}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s233},\mathit{s233}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},$ \\
+& & $\mathit{s234}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s238},$ \\
+& & $\mathit{s234}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s236},$ \\
+& & $\mathit{s234}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s235},$ \\
+& & $\mathit{s234}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s237},$ \\
+& & $\mathit{s235}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s239},\mathit{s236}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s239},\mathit{s237}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s239},$ \\
+& & $\mathit{s238}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s239},\mathit{s239}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s24}\xrightarrow{\mathit{?IDLE}, \mathit{true}, \{\}}\mathit{s25},$ \\
+& & $\mathit{s240}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s241}\xrightarrow{\mathit{!500}, \mathit{true}, \{\}}\mathit{s242},\mathit{s241}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s243},$ \\
+& & $\mathit{s241}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s244},\mathit{s241}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s245},\mathit{s242}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s251},$ \\
+& & $\mathit{s243}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s251},\mathit{s244}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s250},$ \\
+& & $\mathit{s245}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s246},$ \\
+& & $\mathit{s246}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s247},$ \\
+& & $\mathit{s246}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s248},$ \\
+& & $\mathit{s247}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s249},\mathit{s248}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s249},\mathit{s249}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s250},$ \\
+& & $\mathit{s25}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s28},\mathit{s25}\xrightarrow{\mathit{!233}, \mathit{true}, \{\}}\mathit{s26},\mathit{s25}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s27},$ \\
+& & $\mathit{s250}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s251},\mathit{s251}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s252}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s255},$ \\
+& & $\mathit{s252}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s254},\mathit{s252}\xrightarrow{\mathit{!201}, \mathit{true}, \{\}}\mathit{s253},\mathit{s252}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s256},$ \\
+& & $\mathit{s253}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s262},\mathit{s254}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s262},\mathit{s255}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s261},$ \\
+& & $\mathit{s256}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s257},$ \\
+& & $\mathit{s257}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s259},$ \\
+& & $\mathit{s257}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s258},$ \\
+& & $\mathit{s258}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s260},\mathit{s259}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s260},\mathit{s26}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s34},$ \\
+& & $\mathit{s260}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s261},\mathit{s261}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s262},\mathit{s262}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},$ \\
+& & $\mathit{s263}\xrightarrow{\mathit{!202}, \mathit{true}, \{\}}\mathit{s264},\mathit{s263}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s267},\mathit{s263}\xrightarrow{\mathit{!531}, \mathit{true}, \{\}}\mathit{s265},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s263}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s266},\mathit{s263}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s268},\mathit{s264}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s274},$ \\
+& & $\mathit{s265}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s274},\mathit{s266}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s274},\mathit{s267}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s273},$ \\
+& & $\mathit{s268}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s269},$ \\
+& & $\mathit{s269}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s270},$ \\
+& & $\mathit{s269}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s271},$ \\
+& & $\mathit{s27}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s33},\mathit{s270}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s272},\mathit{s271}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s272},$ \\
+& & $\mathit{s272}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s273},\mathit{s273}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s274},\mathit{s274}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},$ \\
+& & $\mathit{s275}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s276}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s278},\mathit{s276}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s279},$ \\
+& & $\mathit{s276}\xrightarrow{\mathit{!231}, \mathit{true}, \{\}}\mathit{s277},\mathit{s277}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{assopen},\mathit{s278}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s284},$ \\
+& & $\mathit{s279}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s280},$ \\
+& & $\mathit{s28}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s29},$ \\
+& & $\mathit{s280}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s282},$ \\
+& & $\mathit{s280}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s281},$ \\
+& & $\mathit{s281}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s283},\mathit{s282}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s283},\mathit{s283}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s284},$ \\
+& & $\mathit{s284}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s285},\mathit{s285}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s286}\xrightarrow{\mathit{?OPEN\_EXIST}, \mathit{true}, \{\}}\mathit{s287},$ \\
+& & $\mathit{s287}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s290},\mathit{s287}\xrightarrow{\mathit{!231}, \mathit{true}, \{\}}\mathit{s288},\mathit{s287}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s289},$ \\
+& & $\mathit{s288}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{assopen},\mathit{s289}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s295},$ \\
+& & $\mathit{s29}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s30},$ \\
+& & $\mathit{s29}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s31},$ \\
+& & $\mathit{s290}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s291},$ \\
+& & $\mathit{s291}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s292},$ \\
+& & $\mathit{s291}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s293},$ \\
+& & $\mathit{s292}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s294},\mathit{s293}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s294},\mathit{s294}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s295},$ \\
+& & $\mathit{s295}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s296},\mathit{s296}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s297}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s300},$ \\
+& & $\mathit{s297}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s299},\mathit{s297}\xrightarrow{\mathit{!250}, \mathit{true}, \{\}}\mathit{s298},\mathit{s298}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{sssoff},$ \\
+& & $\mathit{s299}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s305},\mathit{s3}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s126},\mathit{s30}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s32},$ \\
+& & $\mathit{s300}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s301},$ \\
+& & $\mathit{s301}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s302},$ \\
+& & $\mathit{s301}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s303},$ \\
+& & $\mathit{s302}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s304},\mathit{s303}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s304},\mathit{s304}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s305},$ \\
+& & $\mathit{s305}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s306},\mathit{s306}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s307}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s310},$ \\
+& & $\mathit{s307}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s309},$ \\
+& & $\mathit{s307}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_ACCNT") \land (cr\_value = ``AS\_IDLE")}, \{\}}\mathit{s308},$ \\
+& & $\mathit{s308}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s316},\mathit{s309}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s315},\mathit{s31}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s32},$ \\
+& & $\mathit{s310}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s311},$ \\
+& & $\mathit{s311}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s312},$ \\
+& & $\mathit{s311}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s313},$ \\
+& & $\mathit{s312}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s314},\mathit{s313}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s314},\mathit{s314}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s315},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s315}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s316},\mathit{s316}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s317}\xrightarrow{\mathit{?PRINT\_EXIST}, \mathit{true}, \{\}}\mathit{s318},$ \\
+& & $\mathit{s318}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s321},\mathit{s318}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s322},\mathit{s318}\xrightarrow{\mathit{!260}, \mathit{true}, \{\}}\mathit{s319},$ \\
+& & $\mathit{s318}\xrightarrow{\mathit{!560}, \mathit{true}, \{\}}\mathit{s320},\mathit{s319}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s328},\mathit{s32}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s33},$ \\
+& & $\mathit{s320}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s328},\mathit{s321}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s327},$ \\
+& & $\mathit{s322}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s323},$ \\
+& & $\mathit{s323}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s325},$ \\
+& & $\mathit{s323}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s324},$ \\
+& & $\mathit{s324}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s326},\mathit{s325}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s326},\mathit{s326}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s327},$ \\
+& & $\mathit{s327}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s328},\mathit{s328}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s340},\mathit{s329}\xrightarrow{\mathit{!260}, \mathit{true}, \{\}}\mathit{s330},$ \\
+& & $\mathit{s329}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s333},\mathit{s329}\xrightarrow{\mathit{!560}, \mathit{true}, \{\}}\mathit{s331},\mathit{s329}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s332},$ \\
+& & $\mathit{s33}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s34},\mathit{s330}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s339},\mathit{s331}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s339},$ \\
+& & $\mathit{s332}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s338},$ \\
+& & $\mathit{s333}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s334},$ \\
+& & $\mathit{s334}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s335},$ \\
+& & $\mathit{s334}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s336},$ \\
+& & $\mathit{s335}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s337},\mathit{s336}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s337},\mathit{s337}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s338},$ \\
+& & $\mathit{s338}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s339},\mathit{s339}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s340},\mathit{s34}\xrightarrow{\mathit{?SIGNOFF}, \mathit{true}, \{\}}\mathit{s35},$ \\
+& & $\mathit{s340}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s341}\xrightarrow{\mathit{?RHCOPY\_EXIST}, \mathit{true}, \{\}}\mathit{s342},\mathit{s342}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s345},$ \\
+& & $\mathit{s342}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s344},\mathit{s342}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s346},\mathit{s342}\xrightarrow{\mathit{!500}, \mathit{true}, \{\}}\mathit{s343},$ \\
+& & $\mathit{s343}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s352},\mathit{s344}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s352},\mathit{s345}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s351},$ \\
+& & $\mathit{s346}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s347},$ \\
+& & $\mathit{s347}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s348},$ \\
+& & $\mathit{s347}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s349},$ \\
+& & $\mathit{s348}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s350},\mathit{s349}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s350},\mathit{s35}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s38},$ \\
+& & $\mathit{s35}\xrightarrow{\mathit{!250}, \mathit{true}, \{\}}\mathit{s36},\mathit{s35}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s37},\mathit{s350}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s351},$ \\
+& & $\mathit{s351}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s352},\mathit{s352}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s353}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},$ \\
+& & $\mathit{s354}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s355}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s356}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},$ \\
+& & $\mathit{s357}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{assidle},$ \\
+& & $\mathit{s358}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_SIGN") \land (cr\_value = ``SS\_ON")}, \{\}}\mathit{s359},$ \\
+& & $\mathit{s358}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s360},\mathit{s358}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s361},\mathit{s359}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s367},$ \\
+& & $\mathit{s36}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s44},\mathit{s360}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s366},$ \\
+& & $\mathit{s361}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s362},$ \\
+& & $\mathit{s362}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s364},$ \\
+& & $\mathit{s362}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s363},$ \\
+& & $\mathit{s363}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s365},\mathit{s364}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s365},\mathit{s365}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s366},$ \\
+& & $\mathit{s366}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s367},\mathit{s367}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},\mathit{s368}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},$ \\
+& & $\mathit{s369}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s372},\mathit{s369}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s371},\mathit{s369}\xrightarrow{\mathit{!211}, \mathit{true}, \{\}}\mathit{s370},$ \\
+& & $\mathit{s37}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s43},\mathit{s370}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s378},\mathit{s371}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s377},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s372}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s373},$ \\
+& & $\mathit{s373}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s374},$ \\
+& & $\mathit{s373}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s375},$ \\
+& & $\mathit{s374}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s376},\mathit{s375}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s376},\mathit{s376}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s377},$ \\
+& & $\mathit{s377}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s378},\mathit{s378}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s397},\mathit{s379}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s382},$ \\
+& & $\mathit{s379}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s381},\mathit{s379}\xrightarrow{\mathit{!211}, \mathit{true}, \{\}}\mathit{s380},$ \\
+& & $\mathit{s38}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s39},$ \\
+& & $\mathit{s380}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s388},\mathit{s381}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s387},$ \\
+& & $\mathit{s382}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s383},$ \\
+& & $\mathit{s383}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s385},$ \\
+& & $\mathit{s383}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s384},$ \\
+& & $\mathit{s384}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s386},\mathit{s385}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s386},\mathit{s386}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s387},$ \\
+& & $\mathit{s387}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s388},\mathit{s388}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s395},$ \\
+& & $\mathit{s388}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CERTDATA")}, \{\}}\mathit{s389},$ \\
+& & $\mathit{s389}\xrightarrow{\mathit{!512}, \mathit{true}, \{\}}\mathit{s391},\mathit{s389}\xrightarrow{\mathit{!214}, \mathit{true}, \{\}}\mathit{s390},\mathit{s389}\xrightarrow{\mathit{!531}, \mathit{true}, \{\}}\mathit{s392},$ \\
+& & $\mathit{s389}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s393},$ \\
+& & $\mathit{s39}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s40},$ \\
+& & $\mathit{s39}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s41},$ \\
+& & $\mathit{s390}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s394},\mathit{s391}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s394},\mathit{s392}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s394},$ \\
+& & $\mathit{s393}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s394},\mathit{s394}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s388},\mathit{s395}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s396},$ \\
+& & $\mathit{s396}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s397},\mathit{s397}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},$ \\
+& & $\mathit{s398}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s402},$ \\
+& & $\mathit{s398}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s400},$ \\
+& & $\mathit{s398}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s399},$ \\
+& & $\mathit{s398}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s401},$ \\
+& & $\mathit{s399}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s403},$ \\
+& & $\mathit{s4}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_ACCNT")}, \{\}}\mathit{s5},$ \\
+& & $\mathit{s40}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s42},\mathit{s400}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s403},\mathit{s401}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s403},$ \\
+& & $\mathit{s402}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s403},\mathit{s403}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},\mathit{s404}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},$ \\
+& & $\mathit{s405}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s408},\mathit{s405}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s407},\mathit{s405}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s409},$ \\
+& & $\mathit{s405}\xrightarrow{\mathit{!500}, \mathit{true}, \{\}}\mathit{s406},\mathit{s406}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s415},\mathit{s407}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s415},$ \\
+& & $\mathit{s408}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s414},$ \\
+& & $\mathit{s409}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s410},$ \\
+& & $\mathit{s41}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s42},$ \\
+& & $\mathit{s410}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s411},$ \\
+& & $\mathit{s410}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s412},$ \\
+& & $\mathit{s411}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s413},\mathit{s412}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s413},\mathit{s413}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s414},$ \\
+& & $\mathit{s414}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s415},\mathit{s415}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},\mathit{s416}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s420},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s416}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s419},\mathit{s416}\xrightarrow{\mathit{!201}, \mathit{true}, \{\}}\mathit{s417},\mathit{s416}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s418},$ \\
+& & $\mathit{s417}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s426},\mathit{s418}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s426},\mathit{s419}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s425},$ \\
+& & $\mathit{s42}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s43},$ \\
+& & $\mathit{s420}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s421},$ \\
+& & $\mathit{s421}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s422},$ \\
+& & $\mathit{s421}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s423},$ \\
+& & $\mathit{s422}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s424},\mathit{s423}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s424},\mathit{s424}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s425},$ \\
+& & $\mathit{s425}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s426},\mathit{s426}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},\mathit{s427}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s430},$ \\
+& & $\mathit{s427}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s432},\mathit{s427}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s431},\mathit{s427}\xrightarrow{\mathit{!202}, \mathit{true}, \{\}}\mathit{s428},$ \\
+& & $\mathit{s427}\xrightarrow{\mathit{!531}, \mathit{true}, \{\}}\mathit{s429},\mathit{s428}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s438},\mathit{s429}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s438},$ \\
+& & $\mathit{s43}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s44},\mathit{s430}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s438},\mathit{s431}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s437},$ \\
+& & $\mathit{s432}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s433},$ \\
+& & $\mathit{s433}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s435},$ \\
+& & $\mathit{s433}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s434},$ \\
+& & $\mathit{s434}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s436},\mathit{s435}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s436},\mathit{s436}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s437},$ \\
+& & $\mathit{s437}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s438},\mathit{s438}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},\mathit{s439}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},$ \\
+& & $\mathit{s44}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{sssoff},\mathit{s440}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s445},\mathit{s440}\xrightarrow{\mathit{!212}, \mathit{true}, \{\}}\mathit{s441},$ \\
+& & $\mathit{s440}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s446},\mathit{s440}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s442},\mathit{s441}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s440},$ \\
+& & $\mathit{s442}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s443},\mathit{s443}\xrightarrow{\mathit{!232}, \mathit{true}, \{\}}\mathit{s444},\mathit{s444}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s452},$ \\
+& & $\mathit{s445}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s451},$ \\
+& & $\mathit{s446}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s447},$ \\
+& & $\mathit{s447}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s448},$ \\
+& & $\mathit{s447}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s449},$ \\
+& & $\mathit{s448}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s450},\mathit{s449}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s450},$ \\
+& & $\mathit{s45}\xrightarrow{\mathit{?TRANS}, \mathit{(trans\_id = ``TM\_BANK")}, \{\}}\mathit{s46},$ \\
+& & $\mathit{s450}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s451},\mathit{s451}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s452},\mathit{s452}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},$ \\
+& & $\mathit{s453}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s455},\mathit{s453}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s454},\mathit{s453}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s456},$ \\
+& & $\mathit{s454}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s462},\mathit{s455}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s461},$ \\
+& & $\mathit{s456}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s457},$ \\
+& & $\mathit{s457}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s458},$ \\
+& & $\mathit{s457}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s459},$ \\
+& & $\mathit{s458}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s460},\mathit{s459}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s460},\mathit{s46}\xrightarrow{\mathit{!240}, \mathit{true}, \{\}}\mathit{s47},$ \\
+& & $\mathit{s460}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s461},\mathit{s461}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s462},\mathit{s462}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},$ \\
+& & $\mathit{s463}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s466},\mathit{s463}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s465},\mathit{s463}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s467},$ \\
+& & $\mathit{s463}\xrightarrow{\mathit{!500}, \mathit{true}, \{\}}\mathit{s464},\mathit{s464}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s473},\mathit{s465}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s473},$ \\
+& & $\mathit{s466}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s472},$ \\
+& & $\mathit{s467}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s468},$ \\
+& & $\mathit{s468}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s470},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s468}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s469},$ \\
+& & $\mathit{s469}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s471},\mathit{s47}\xrightarrow{\mathit{?IDLE}, \mathit{true}, \{\}}\mathit{s48},\mathit{s470}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s471},$ \\
+& & $\mathit{s471}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s472},\mathit{s472}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s473},\mathit{s473}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},$ \\
+& & $\mathit{s474}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s480},\mathit{s474}\xrightarrow{\mathit{!212}, \mathit{true}, \{\}}\mathit{s475},\mathit{s474}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s479},$ \\
+& & $\mathit{s474}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s476},\mathit{s475}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s474},\mathit{s476}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s477},$ \\
+& & $\mathit{s477}\xrightarrow{\mathit{!230}, \mathit{true}, \{\}}\mathit{s478},\mathit{s478}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{assclosed},\mathit{s479}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s485},$ \\
+& & $\mathit{s48}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s51},\mathit{s48}\xrightarrow{\mathit{!233}, \mathit{true}, \{\}}\mathit{s49},\mathit{s48}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s50},$ \\
+& & $\mathit{s480}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s481},$ \\
+& & $\mathit{s481}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s482},$ \\
+& & $\mathit{s481}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s483},$ \\
+& & $\mathit{s482}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s484},\mathit{s483}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s484},\mathit{s484}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s485},$ \\
+& & $\mathit{s485}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s486},\mathit{s486}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},\mathit{s487}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s490},$ \\
+& & $\mathit{s487}\xrightarrow{\mathit{!500}, \mathit{true}, \{\}}\mathit{s488},\mathit{s487}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s489},\mathit{s488}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s496},$ \\
+& & $\mathit{s489}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s495},\mathit{s49}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s57},$ \\
+& & $\mathit{s490}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s491},$ \\
+& & $\mathit{s491}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s492},$ \\
+& & $\mathit{s491}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s493},$ \\
+& & $\mathit{s492}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s494},\mathit{s493}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s494},\mathit{s494}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s495},$ \\
+& & $\mathit{s495}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s496},\mathit{s496}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},\mathit{s497}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s500},$ \\
+& & $\mathit{s497}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s499},$ \\
+& & $\mathit{s497}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_ACCNT") \land (cr\_value = ``AS\_OPEN")}, \{\}}\mathit{s498},$ \\
+& & $\mathit{s498}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s506},\mathit{s499}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s505},$ \\
+& & $\mathit{s5}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_ACCNT") \land (cr\_value = ``AS\_ENDING")}, \{\}}\mathit{s90},$ \\
+& & $\mathit{s5}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s112},$ \\
+& & $\mathit{s5}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_ACCNT") \land (cr\_value = ``AS\_IDLE")}, \{\}}\mathit{s6},$ \\
+& & $\mathit{s5}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_ACCNT") \land (cr\_value = ``AS\_TRANSING")}, \{\}}\mathit{s68},$ \\
+& & $\mathit{s5}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s111},$ \\
+& & $\mathit{s5}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_ACCNT") \land (cr\_value = ``AS\_CLOSED")}, \{\}}\mathit{s45},$ \\
+& & $\mathit{s5}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_ACCNT") \land (cr\_value = ``AS\_OPEN")}, \{\}}\mathit{s17},$ \\
+& & $\mathit{s50}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s56},$ \\
+& & $\mathit{s500}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s501},$ \\
+& & $\mathit{s501}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s502},$ \\
+& & $\mathit{s501}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s503},$ \\
+& & $\mathit{s502}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s504},\mathit{s503}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s504},\mathit{s504}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s505},$ \\
+& & $\mathit{s505}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s506},\mathit{s506}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},\mathit{s507}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s511},$ \\
+& & $\mathit{s507}\xrightarrow{\mathit{!260}, \mathit{true}, \{\}}\mathit{s508},\mathit{s507}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s510},\mathit{s507}\xrightarrow{\mathit{!560}, \mathit{true}, \{\}}\mathit{s509},$ \\
+& & $\mathit{s508}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s517},\mathit{s509}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s517},$ \\
+& & $\mathit{s51}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s52},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s510}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s516},$ \\
+& & $\mathit{s511}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s512},$ \\
+& & $\mathit{s512}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s513},$ \\
+& & $\mathit{s512}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s514},$ \\
+& & $\mathit{s513}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s515},\mathit{s514}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s515},\mathit{s515}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s516},$ \\
+& & $\mathit{s516}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s517},\mathit{s517}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},\mathit{s518}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s522},$ \\
+& & $\mathit{s518}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s520},\mathit{s518}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s521},\mathit{s518}\xrightarrow{\mathit{!500}, \mathit{true}, \{\}}\mathit{s519},$ \\
+& & $\mathit{s519}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s528},$ \\
+& & $\mathit{s52}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s53},$ \\
+& & $\mathit{s52}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s54},$ \\
+& & $\mathit{s520}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s528},\mathit{s521}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s527},$ \\
+& & $\mathit{s522}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s523},$ \\
+& & $\mathit{s523}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s524},$ \\
+& & $\mathit{s523}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s525},$ \\
+& & $\mathit{s524}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s526},\mathit{s525}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s526},\mathit{s526}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s527},$ \\
+& & $\mathit{s527}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s528},\mathit{s528}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},\mathit{s529}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},$ \\
+& & $\mathit{s53}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s55},\mathit{s530}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},\mathit{s531}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},$ \\
+& & $\mathit{s532}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{assopen},\mathit{s533}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s536},\mathit{s533}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s535},$ \\
+& & $\mathit{s533}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_SIGN") \land (cr\_value = ``SS\_ON")}, \{\}}\mathit{s534},$ \\
+& & $\mathit{s534}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s542},\mathit{s535}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s541},$ \\
+& & $\mathit{s536}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s537},$ \\
+& & $\mathit{s537}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s538},$ \\
+& & $\mathit{s537}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s539},$ \\
+& & $\mathit{s538}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s540},\mathit{s539}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s540},\mathit{s54}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s55},$ \\
+& & $\mathit{s540}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s541},\mathit{s541}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s542},\mathit{s542}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},$ \\
+& & $\mathit{s543}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s544}\xrightarrow{\mathit{!211}, \mathit{true}, \{\}}\mathit{s545},\mathit{s544}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s546},$ \\
+& & $\mathit{s544}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s547},\mathit{s545}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s553},\mathit{s546}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s552},$ \\
+& & $\mathit{s547}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s548},$ \\
+& & $\mathit{s548}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s549},$ \\
+& & $\mathit{s548}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s550},$ \\
+& & $\mathit{s549}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s551},\mathit{s55}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s56},\mathit{s550}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s551},$ \\
+& & $\mathit{s551}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s552},\mathit{s552}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s553},\mathit{s553}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s572},$ \\
+& & $\mathit{s554}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s556},\mathit{s554}\xrightarrow{\mathit{!211}, \mathit{true}, \{\}}\mathit{s555},\mathit{s554}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s557},$ \\
+& & $\mathit{s555}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s563},\mathit{s556}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s562},$ \\
+& & $\mathit{s557}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s558},$ \\
+& & $\mathit{s558}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s560},$ \\
+& & $\mathit{s558}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s559},$ \\
+& & $\mathit{s559}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s561},\mathit{s56}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s57},\mathit{s560}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s561},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s561}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s562},\mathit{s562}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s563},$ \\
+& & $\mathit{s563}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CERTDATA")}, \{\}}\mathit{s564},$ \\
+& & $\mathit{s563}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s570},\mathit{s564}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s568},\mathit{s564}\xrightarrow{\mathit{!531}, \mathit{true}, \{\}}\mathit{s567},$ \\
+& & $\mathit{s564}\xrightarrow{\mathit{!512}, \mathit{true}, \{\}}\mathit{s566},\mathit{s564}\xrightarrow{\mathit{!214}, \mathit{true}, \{\}}\mathit{s565},\mathit{s565}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s569},$ \\
+& & $\mathit{s566}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s569},\mathit{s567}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s569},\mathit{s568}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s569},$ \\
+& & $\mathit{s569}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s563},\mathit{s57}\xrightarrow{\mathit{?SIGNOFF}, \mathit{true}, \{\}}\mathit{s58},\mathit{s570}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s571},$ \\
+& & $\mathit{s571}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s572},\mathit{s572}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},$ \\
+& & $\mathit{s573}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s577},$ \\
+& & $\mathit{s573}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s575},$ \\
+& & $\mathit{s573}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s576},$ \\
+& & $\mathit{s573}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s574},$ \\
+& & $\mathit{s574}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s578},\mathit{s575}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s578},\mathit{s576}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s578},$ \\
+& & $\mathit{s577}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s578},\mathit{s578}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s579}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},$ \\
+& & $\mathit{s58}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s61},\mathit{s58}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s60},\mathit{s58}\xrightarrow{\mathit{!250}, \mathit{true}, \{\}}\mathit{s59},$ \\
+& & $\mathit{s580}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s582},\mathit{s580}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s584},\mathit{s580}\xrightarrow{\mathit{!500}, \mathit{true}, \{\}}\mathit{s581},$ \\
+& & $\mathit{s580}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s583},\mathit{s581}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s590},\mathit{s582}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s590},$ \\
+& & $\mathit{s583}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s589},$ \\
+& & $\mathit{s584}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s585},$ \\
+& & $\mathit{s585}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s586},$ \\
+& & $\mathit{s585}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s587},$ \\
+& & $\mathit{s586}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s588},\mathit{s587}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s588},\mathit{s588}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s589},$ \\
+& & $\mathit{s589}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s590},\mathit{s59}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s67},\mathit{s590}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},$ \\
+& & $\mathit{s591}\xrightarrow{\mathit{!201}, \mathit{true}, \{\}}\mathit{s592},\mathit{s591}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s594},\mathit{s591}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s593},$ \\
+& & $\mathit{s591}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s595},\mathit{s592}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s601},\mathit{s593}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s601},$ \\
+& & $\mathit{s594}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s600},$ \\
+& & $\mathit{s595}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s596},$ \\
+& & $\mathit{s596}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s598},$ \\
+& & $\mathit{s596}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s597},$ \\
+& & $\mathit{s597}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s599},\mathit{s598}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s599},\mathit{s599}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s600},$ \\
+& & $\mathit{s6}\xrightarrow{\mathit{?SIGNOFF}, \mathit{true}, \{\}}\mathit{s7},\mathit{s60}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s66},\mathit{s600}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s601},$ \\
+& & $\mathit{s601}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s602}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s606},\mathit{s602}\xrightarrow{\mathit{!202}, \mathit{true}, \{\}}\mathit{s603},$ \\
+& & $\mathit{s602}\xrightarrow{\mathit{!531}, \mathit{true}, \{\}}\mathit{s604},\mathit{s602}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s607},\mathit{s602}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s605},$ \\
+& & $\mathit{s603}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s613},\mathit{s604}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s613},\mathit{s605}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s613},$ \\
+& & $\mathit{s606}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s612},$ \\
+& & $\mathit{s607}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s608},$ \\
+& & $\mathit{s608}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s609},$ \\
+& & $\mathit{s608}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s610},$ \\
+& & $\mathit{s609}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s611},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s61}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s62},$ \\
+& & $\mathit{s610}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s611},\mathit{s611}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s612},\mathit{s612}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s613},$ \\
+& & $\mathit{s613}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s614}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s615}\xrightarrow{\mathit{!540}, \mathit{true}, \{\}}\mathit{s616},$ \\
+& & $\mathit{s615}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s630},\mathit{s615}\xrightarrow{\mathit{!542}, \mathit{true}, \{\}}\mathit{s623},\mathit{s615}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s631},$ \\
+& & $\mathit{s616}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s617},$ \\
+& & $\mathit{s617}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s621},$ \\
+& & $\mathit{s617}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s619},$ \\
+& & $\mathit{s617}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s618},$ \\
+& & $\mathit{s617}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s620},$ \\
+& & $\mathit{s618}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s622},\mathit{s619}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s622},$ \\
+& & $\mathit{s62}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s63},$ \\
+& & $\mathit{s62}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s64},$ \\
+& & $\mathit{s620}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s622},\mathit{s621}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s622},\mathit{s622}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s637},$ \\
+& & $\mathit{s623}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s624},$ \\
+& & $\mathit{s624}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s625},$ \\
+& & $\mathit{s624}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s626},$ \\
+& & $\mathit{s624}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s627},$ \\
+& & $\mathit{s624}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s628},$ \\
+& & $\mathit{s625}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s629},\mathit{s626}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s629},\mathit{s627}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s629},$ \\
+& & $\mathit{s628}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s629},\mathit{s629}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s637},\mathit{s63}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s65},$ \\
+& & $\mathit{s630}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s636},$ \\
+& & $\mathit{s631}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s632},$ \\
+& & $\mathit{s632}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s633},$ \\
+& & $\mathit{s632}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s634},$ \\
+& & $\mathit{s633}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s635},\mathit{s634}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s635},\mathit{s635}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s636},$ \\
+& & $\mathit{s636}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s637},\mathit{s637}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s638}\xrightarrow{\mathit{!540}, \mathit{true}, \{\}}\mathit{s639},$ \\
+& & $\mathit{s638}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s653},\mathit{s638}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s654},\mathit{s638}\xrightarrow{\mathit{!542}, \mathit{true}, \{\}}\mathit{s646},$ \\
+& & $\mathit{s639}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s640},$ \\
+& & $\mathit{s64}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s65},$ \\
+& & $\mathit{s640}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s642},$ \\
+& & $\mathit{s640}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s643},$ \\
+& & $\mathit{s640}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s644},$ \\
+& & $\mathit{s640}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s641},$ \\
+& & $\mathit{s641}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s645},\mathit{s642}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s645},\mathit{s643}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s645},$ \\
+& & $\mathit{s644}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s645},\mathit{s645}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s660},$ \\
+& & $\mathit{s646}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s647},$ \\
+& & $\mathit{s647}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s649},$ \\
+& & $\mathit{s647}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s650},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s647}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s651},$ \\
+& & $\mathit{s647}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s648},$ \\
+& & $\mathit{s648}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s652},\mathit{s649}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s652},\mathit{s65}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s66},$ \\
+& & $\mathit{s650}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s652},\mathit{s651}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s652},\mathit{s652}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s660},$ \\
+& & $\mathit{s653}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s659},$ \\
+& & $\mathit{s654}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s655},$ \\
+& & $\mathit{s655}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s656},$ \\
+& & $\mathit{s655}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s657},$ \\
+& & $\mathit{s656}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s658},\mathit{s657}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s658},\mathit{s658}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s659},$ \\
+& & $\mathit{s659}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s660},\mathit{s66}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s67},\mathit{s660}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},$ \\
+& & $\mathit{s661}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s662}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s678},\mathit{s662}\xrightarrow{\mathit{!540}, \mathit{true}, \{\}}\mathit{s663},$ \\
+& & $\mathit{s662}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s677},\mathit{s662}\xrightarrow{\mathit{!542}, \mathit{true}, \{\}}\mathit{s670},$ \\
+& & $\mathit{s663}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s664},$ \\
+& & $\mathit{s664}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s666},$ \\
+& & $\mathit{s664}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s665},$ \\
+& & $\mathit{s664}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s668},$ \\
+& & $\mathit{s664}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s667},$ \\
+& & $\mathit{s665}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s669},\mathit{s666}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s669},\mathit{s667}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s669},$ \\
+& & $\mathit{s668}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s669},\mathit{s669}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s684},\mathit{s67}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{sssoff},$ \\
+& & $\mathit{s670}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s671},$ \\
+& & $\mathit{s671}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s675},$ \\
+& & $\mathit{s671}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s672},$ \\
+& & $\mathit{s671}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s673},$ \\
+& & $\mathit{s671}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s674},$ \\
+& & $\mathit{s672}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s676},\mathit{s673}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s676},\mathit{s674}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s676},$ \\
+& & $\mathit{s675}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s676},\mathit{s676}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s684},\mathit{s677}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s683},$ \\
+& & $\mathit{s678}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s679},$ \\
+& & $\mathit{s679}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s681},$ \\
+& & $\mathit{s679}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s680},$ \\
+& & $\mathit{s68}\xrightarrow{\mathit{!240}, \mathit{true}, \{\}}\mathit{s69},\mathit{s680}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s682},\mathit{s681}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s682},$ \\
+& & $\mathit{s682}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s683},\mathit{s683}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s684},\mathit{s684}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},$ \\
+& & $\mathit{s685}\xrightarrow{\mathit{!542}, \mathit{true}, \{\}}\mathit{s693},\mathit{s685}\xrightarrow{\mathit{!540}, \mathit{true}, \{\}}\mathit{s686},\mathit{s685}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s700},$ \\
+& & $\mathit{s685}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s701},$ \\
+& & $\mathit{s686}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s687},$ \\
+& & $\mathit{s687}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s688},$ \\
+& & $\mathit{s687}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s691},$ \\
+& & $\mathit{s687}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s690},$ \\
+& & $\mathit{s687}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s689},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s688}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s692},\mathit{s689}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s692},\mathit{s69}\xrightarrow{\mathit{?IDLE}, \mathit{true}, \{\}}\mathit{s70},$ \\
+& & $\mathit{s690}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s692},\mathit{s691}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s692},\mathit{s692}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s707},$ \\
+& & $\mathit{s693}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s694},$ \\
+& & $\mathit{s694}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s695},$ \\
+& & $\mathit{s694}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s698},$ \\
+& & $\mathit{s694}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s696},$ \\
+& & $\mathit{s694}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s697},$ \\
+& & $\mathit{s695}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s699},\mathit{s696}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s699},\mathit{s697}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s699},$ \\
+& & $\mathit{s698}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s699},\mathit{s699}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s707},\mathit{s7}\xrightarrow{\mathit{!250}, \mathit{true}, \{\}}\mathit{s8},$ \\
+& & $\mathit{s7}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s10},\mathit{s7}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s9},\mathit{s70}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s72},$ \\
+& & $\mathit{s70}\xrightarrow{\mathit{!233}, \mathit{true}, \{\}}\mathit{s71},\mathit{s70}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s73},\mathit{s700}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s706},$ \\
+& & $\mathit{s701}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s702},$ \\
+& & $\mathit{s702}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s703},$ \\
+& & $\mathit{s702}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s704},$ \\
+& & $\mathit{s703}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s705},\mathit{s704}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s705},\mathit{s705}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s706},$ \\
+& & $\mathit{s706}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s707},\mathit{s707}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s708}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},$ \\
+& & $\mathit{s709}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s71}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s79},\mathit{s710}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s717},$ \\
+& & $\mathit{s710}\xrightarrow{\mathit{!511}, \mathit{true}, \{\}}\mathit{s715},\mathit{s710}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s712},\mathit{s710}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s716},$ \\
+& & $\mathit{s710}\xrightarrow{\mathit{!212}, \mathit{true}, \{\}}\mathit{s711},\mathit{s711}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s710},\mathit{s712}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s713},$ \\
+& & $\mathit{s713}\xrightarrow{\mathit{!232}, \mathit{true}, \{\}}\mathit{s714},\mathit{s714}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s723},\mathit{s715}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s723},$ \\
+& & $\mathit{s716}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s722},$ \\
+& & $\mathit{s717}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s718},$ \\
+& & $\mathit{s718}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s720},$ \\
+& & $\mathit{s718}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s719},$ \\
+& & $\mathit{s719}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s721},\mathit{s72}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s78},\mathit{s720}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s721},$ \\
+& & $\mathit{s721}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s722},\mathit{s722}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s723},\mathit{s723}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},$ \\
+& & $\mathit{s724}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s726},\mathit{s724}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s727},$ \\
+& & $\mathit{s724}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_ACCNT") \land (cr\_value = ``AS\_CLOSED")}, \{\}}\mathit{s725},$ \\
+& & $\mathit{s725}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s733},\mathit{s726}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s732},$ \\
+& & $\mathit{s727}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s728},$ \\
+& & $\mathit{s728}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s730},$ \\
+& & $\mathit{s728}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s729},$ \\
+& & $\mathit{s729}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s731},$ \\
+& & $\mathit{s73}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s74},$ \\
+& & $\mathit{s730}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s731},\mathit{s731}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s732},\mathit{s732}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s733},$ \\
+& & $\mathit{s733}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s734}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s737},\mathit{s734}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s738},$ \\
+& & $\mathit{s734}\xrightarrow{\mathit{!560}, \mathit{true}, \{\}}\mathit{s736},\mathit{s734}\xrightarrow{\mathit{!260}, \mathit{true}, \{\}}\mathit{s735},\mathit{s735}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s744},$ \\
+& & $\mathit{s736}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s744},\mathit{s737}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s743},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s738}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s739},$ \\
+& & $\mathit{s739}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s740},$ \\
+& & $\mathit{s739}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s741},$ \\
+& & $\mathit{s74}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s76},$ \\
+& & $\mathit{s74}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s75},$ \\
+& & $\mathit{s740}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s742},\mathit{s741}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s742},\mathit{s742}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s743},$ \\
+& & $\mathit{s743}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s744},\mathit{s744}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s745}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s749},$ \\
+& & $\mathit{s745}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s747},\mathit{s745}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s748},\mathit{s745}\xrightarrow{\mathit{!500}, \mathit{true}, \{\}}\mathit{s746},$ \\
+& & $\mathit{s746}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s755},\mathit{s747}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s755},\mathit{s748}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s754},$ \\
+& & $\mathit{s749}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s750},$ \\
+& & $\mathit{s75}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s77},$ \\
+& & $\mathit{s750}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s751},$ \\
+& & $\mathit{s750}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s752},$ \\
+& & $\mathit{s751}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s753},\mathit{s752}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s753},\mathit{s753}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s754},$ \\
+& & $\mathit{s754}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s755},\mathit{s755}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s756}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},$ \\
+& & $\mathit{s757}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s758}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s759}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{assclosed},$ \\
+& & $\mathit{s76}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s77},\mathit{s760}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s763},\mathit{s760}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s762},$ \\
+& & $\mathit{s760}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_SIGN") \land (cr\_value = ``SS\_ON")}, \{\}}\mathit{s761},$ \\
+& & $\mathit{s761}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s769},\mathit{s762}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s768},$ \\
+& & $\mathit{s763}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s764},$ \\
+& & $\mathit{s764}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s765},$ \\
+& & $\mathit{s764}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s766},$ \\
+& & $\mathit{s765}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s767},\mathit{s766}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s767},\mathit{s767}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s768},$ \\
+& & $\mathit{s768}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s769},\mathit{s769}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},\mathit{s77}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s78},$ \\
+& & $\mathit{s770}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},\mathit{s771}\xrightarrow{\mathit{!211}, \mathit{true}, \{\}}\mathit{s772},\mathit{s771}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s773},$ \\
+& & $\mathit{s771}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s774},\mathit{s772}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s780},\mathit{s773}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s779},$ \\
+& & $\mathit{s774}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s775},$ \\
+& & $\mathit{s775}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s776},$ \\
+& & $\mathit{s775}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s777},$ \\
+& & $\mathit{s776}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s778},\mathit{s777}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s778},\mathit{s778}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s779},$ \\
+& & $\mathit{s779}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s780},\mathit{s78}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s79},\mathit{s780}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s799},$ \\
+& & $\mathit{s781}\xrightarrow{\mathit{!211}, \mathit{true}, \{\}}\mathit{s782},\mathit{s781}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s783},\mathit{s781}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s784},$ \\
+& & $\mathit{s782}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s790},\mathit{s783}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s789},$ \\
+& & $\mathit{s784}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s785},$ \\
+& & $\mathit{s785}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s787},$ \\
+& & $\mathit{s785}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s786},$ \\
+& & $\mathit{s786}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s788},\mathit{s787}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s788},\mathit{s788}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s789},$ \\
+& & $\mathit{s789}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s790},\mathit{s79}\xrightarrow{\mathit{?SIGNOFF}, \mathit{true}, \{\}}\mathit{s80},\mathit{s790}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s797},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s790}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CERTDATA")}, \{\}}\mathit{s791},$ \\
+& & $\mathit{s791}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s795},\mathit{s791}\xrightarrow{\mathit{!512}, \mathit{true}, \{\}}\mathit{s793},\mathit{s791}\xrightarrow{\mathit{!214}, \mathit{true}, \{\}}\mathit{s792},$ \\
+& & $\mathit{s791}\xrightarrow{\mathit{!531}, \mathit{true}, \{\}}\mathit{s794},\mathit{s792}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s796},\mathit{s793}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s796},$ \\
+& & $\mathit{s794}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s796},\mathit{s795}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s796},\mathit{s796}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s790},$ \\
+& & $\mathit{s797}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s798},\mathit{s798}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s799},\mathit{s799}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},$ \\
+& & $\mathit{s8}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s16},\mathit{s80}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s82},\mathit{s80}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s83},$ \\
+& & $\mathit{s80}\xrightarrow{\mathit{!250}, \mathit{true}, \{\}}\mathit{s81},$ \\
+& & $\mathit{s800}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s801},$ \\
+& & $\mathit{s800}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s802},$ \\
+& & $\mathit{s800}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s804},$ \\
+& & $\mathit{s800}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s803},$ \\
+& & $\mathit{s801}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s805},\mathit{s802}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s805},\mathit{s803}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s805},$ \\
+& & $\mathit{s804}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s805},\mathit{s805}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},\mathit{s806}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},$ \\
+& & $\mathit{s807}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s810},\mathit{s807}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s811},\mathit{s807}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s809},$ \\
+& & $\mathit{s807}\xrightarrow{\mathit{!500}, \mathit{true}, \{\}}\mathit{s808},\mathit{s808}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s817},\mathit{s809}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s817},$ \\
+& & $\mathit{s81}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s89},\mathit{s810}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s816},$ \\
+& & $\mathit{s811}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s812},$ \\
+& & $\mathit{s812}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s813},$ \\
+& & $\mathit{s812}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s814},$ \\
+& & $\mathit{s813}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s815},\mathit{s814}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s815},\mathit{s815}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s816},$ \\
+& & $\mathit{s816}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s817},\mathit{s817}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},\mathit{s818}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s822},$ \\
+& & $\mathit{s818}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s820},\mathit{s818}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s821},\mathit{s818}\xrightarrow{\mathit{!201}, \mathit{true}, \{\}}\mathit{s819},$ \\
+& & $\mathit{s819}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s828},\mathit{s82}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s88},\mathit{s820}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s828},$ \\
+& & $\mathit{s821}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s827},$ \\
+& & $\mathit{s822}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s823},$ \\
+& & $\mathit{s823}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s824},$ \\
+& & $\mathit{s823}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s825},$ \\
+& & $\mathit{s824}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s826},\mathit{s825}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s826},\mathit{s826}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s827},$ \\
+& & $\mathit{s827}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s828},\mathit{s828}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},\mathit{s829}\xrightarrow{\mathit{!202}, \mathit{true}, \{\}}\mathit{s830},$ \\
+& & $\mathit{s829}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s833},\mathit{s829}\xrightarrow{\mathit{!531}, \mathit{true}, \{\}}\mathit{s831},\mathit{s829}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s834},$ \\
+& & $\mathit{s829}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s832},$ \\
+& & $\mathit{s83}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s84},$ \\
+& & $\mathit{s830}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s840},\mathit{s831}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s840},\mathit{s832}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s840},$ \\
+& & $\mathit{s833}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s839},$ \\
+& & $\mathit{s834}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s835},$ \\
+& & $\mathit{s835}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s836},$ \\
+& & $\mathit{s835}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s837},$ \\
+& & $\mathit{s836}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s838},\mathit{s837}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s838},\mathit{s838}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s839},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s839}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s840},$ \\
+& & $\mathit{s84}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s85},$ \\
+& & $\mathit{s84}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s86},$ \\
+& & $\mathit{s840}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},\mathit{s841}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},\mathit{s842}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s845},$ \\
+& & $\mathit{s842}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s844},\mathit{s842}\xrightarrow{\mathit{!233}, \mathit{true}, \{\}}\mathit{s843},\mathit{s843}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{assidle},$ \\
+& & $\mathit{s844}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s850},$ \\
+& & $\mathit{s845}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s846},$ \\
+& & $\mathit{s846}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s847},$ \\
+& & $\mathit{s846}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s848},$ \\
+& & $\mathit{s847}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s849},\mathit{s848}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s849},\mathit{s849}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s850},$ \\
+& & $\mathit{s85}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s87},\mathit{s850}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s851},\mathit{s851}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},$ \\
+& & $\mathit{s852}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s857},\mathit{s852}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s858},\mathit{s852}\xrightarrow{\mathit{!261}, \mathit{true}, \{\}}\mathit{s853},$ \\
+& & $\mathit{s853}\xrightarrow{\mathit{!900}, \mathit{true}, \{\}}\mathit{s855},\mathit{s853}\xrightarrow{\mathit{!261}, \mathit{true}, \{\}}\mathit{s854},\mathit{s854}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s853},$ \\
+& & $\mathit{s855}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s856},\mathit{s856}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s864},\mathit{s857}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s863},$ \\
+& & $\mathit{s858}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s859},$ \\
+& & $\mathit{s859}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s860},$ \\
+& & $\mathit{s859}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s861},$ \\
+& & $\mathit{s86}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s87},\mathit{s860}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s862},\mathit{s861}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s862},$ \\
+& & $\mathit{s862}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s863},\mathit{s863}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s864},\mathit{s864}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},$ \\
+& & $\mathit{s865}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s868},$ \\
+& & $\mathit{s865}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_ACCNT") \land (cr\_value = ``AS\_ENDING")}, \{\}}\mathit{s866},$ \\
+& & $\mathit{s865}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s867},\mathit{s866}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s874},\mathit{s867}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s873},$ \\
+& & $\mathit{s868}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s869},$ \\
+& & $\mathit{s869}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s871},$ \\
+& & $\mathit{s869}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s870},$ \\
+& & $\mathit{s87}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s88},\mathit{s870}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s872},\mathit{s871}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s872},$ \\
+& & $\mathit{s872}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s873},\mathit{s873}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s874},\mathit{s874}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},$ \\
+& & $\mathit{s875}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s879},\mathit{s875}\xrightarrow{\mathit{!560}, \mathit{true}, \{\}}\mathit{s877},\mathit{s875}\xrightarrow{\mathit{!260}, \mathit{true}, \{\}}\mathit{s876},$ \\
+& & $\mathit{s875}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s878},\mathit{s876}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s885},\mathit{s877}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s885},$ \\
+& & $\mathit{s878}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s884},$ \\
+& & $\mathit{s879}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s880},$ \\
+& & $\mathit{s88}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s89},$ \\
+& & $\mathit{s880}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s881},$ \\
+& & $\mathit{s880}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s882},$ \\
+& & $\mathit{s881}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s883},\mathit{s882}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s883},\mathit{s883}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s884},$ \\
+& & $\mathit{s884}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s885},\mathit{s885}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},\mathit{s886}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s888},$ \\
+& & $\mathit{s886}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s889},\mathit{s886}\xrightarrow{\mathit{!500}, \mathit{true}, \{\}}\mathit{s887},\mathit{s886}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s890},$ \\
+& & $\mathit{s887}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s896},\mathit{s888}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s896},\mathit{s889}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s895},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{s89}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{sssoff},$ \\
+& & $\mathit{s890}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s891},$ \\
+& & $\mathit{s891}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s892},$ \\
+& & $\mathit{s891}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s893},$ \\
+& & $\mathit{s892}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s894},\mathit{s893}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s894},\mathit{s894}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s895},$ \\
+& & $\mathit{s895}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s896},\mathit{s896}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},\mathit{s897}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},$ \\
+& & $\mathit{s898}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},\mathit{s899}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s900},\mathit{s9}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s15},$ \\
+& & $\mathit{s90}\xrightarrow{\mathit{?IDLE}, \mathit{true}, \{\}}\mathit{s91},\mathit{s900}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{assending},\mathit{s91}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s94},$ \\
+& & $\mathit{s91}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s93},\mathit{s91}\xrightarrow{\mathit{!233}, \mathit{true}, \{\}}\mathit{s92},\mathit{s92}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s100},$ \\
+& & $\mathit{s93}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s99},$ \\
+& & $\mathit{s94}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s95},$ \\
+& & $\mathit{s95}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s96},$ \\
+& & $\mathit{s95}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s97},$ \\
+& & $\mathit{s96}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s98},\mathit{s97}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s98},\mathit{s98}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s99},$ \\
+& & $\mathit{s99}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s100},\mathit{assclosed}\xrightarrow{\mathit{?RHCOPY\_EXIST}, \mathit{true}, \{\}}\mathit{s745},\mathit{assclosed}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s661},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{?TRANS}, \mathit{(trans\_id = ``TM\_BANK")}, \{\}}\mathit{s615},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{?PRINT\_EXIST}, \mathit{true}, \{\}}\mathit{s734},\mathit{assclosed}\xrightarrow{\mathit{?RESETCR}, \mathit{true}, \{\}}\mathit{s602},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{?TRANS}, \mathit{(trans\_id = ``TM\_STORE")}, \{\}}\mathit{s662},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s573},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{?ARTID\_EXIST}, \mathit{true}, \{\}}\mathit{s544},\mathit{assclosed}\xrightarrow{\mathit{!510}, \mathit{true}, \{\}}\mathit{s543},\mathit{assclosed}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s579},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{?ARTID\_WEIGHTED}, \mathit{true}, \{\}}\mathit{s554},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{?STAMPREG}, \mathit{(amount = 0)}, \{\}}\mathit{s710},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s708},\mathit{assclosed}\xrightarrow{\mathit{?RESUME}, \mathit{true}, \{\}}\mathit{s591},\mathit{assclosed}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s709},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{?TRANS}, \mathit{(trans\_id = ``TM\_FLUSH")}, \{\}}\mathit{s685},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s614},\mathit{assclosed}\xrightarrow{\mathit{?RHCOPY}, \mathit{true}, \{\}}\mathit{s580},\mathit{assclosed}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s757},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s758},\mathit{assclosed}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s756},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_ACCNT")}, \{\}}\mathit{s724},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{?TRANS}, \mathit{(trans\_id = ``TM\_BANK2")}, \{\}}\mathit{s638},$ \\
+& & $\mathit{assclosed}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_SIGN")}, \{\}}\mathit{s533},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{?RESETCR}, \mathit{true}, \{\}}\mathit{s829},\mathit{assending}\xrightarrow{\mathit{?PRINT\_EXIST}, \mathit{true}, \{\}}\mathit{s875},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_ACCNT")}, \{\}}\mathit{s865},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{?RECEIPT}, \mathit{true}, \{\}}\mathit{s852},\mathit{assending}\xrightarrow{\mathit{?IDLE}, \mathit{true}, \{\}}\mathit{s842},\mathit{assending}\xrightarrow{\mathit{?ARTID\_EXIST}, \mathit{true}, \{\}}\mathit{s771},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{!510}, \mathit{true}, \{\}}\mathit{s770},\mathit{assending}\xrightarrow{\mathit{?RHCOPY}, \mathit{true}, \{\}}\mathit{s807},\mathit{assending}\xrightarrow{\mathit{?ARTID\_WEIGHTED}, \mathit{true}, \{\}}\mathit{s781},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s898},\mathit{assending}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s841},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s800},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s899},\mathit{assending}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s897},\mathit{assending}\xrightarrow{\mathit{?RHCOPY\_EXIST}, \mathit{true}, \{\}}\mathit{s886},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{?RESUME}, \mathit{true}, \{\}}\mathit{s818},\mathit{assending}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s806},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_SIGN")}, \{\}}\mathit{s760},$ \\
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+\end{tabular}
+
+\begin{tabular}{lcp{350px}}
+& & $\mathit{assidle}\xrightarrow{\mathit{?RESUME}, \mathit{true}, \{\}}\mathit{s252},\mathit{assidle}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s240},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_SIGN")}, \{\}}\mathit{s194},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s355},\mathit{assidle}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s353},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{\tau}, \mathit{stored\_account = true}, \{\}}\mathit{s317},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{\tau}, \mathit{stored\_account = true}, \{\}}\mathit{s286},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s356},\mathit{assidle}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s354},\mathit{assidle}\xrightarrow{\mathit{?SIGNOFF}, \mathit{true}, \{\}}\mathit{s297},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{?RESETCR}, \mathit{true}, \{\}}\mathit{s263},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s234},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{?ARTID\_EXIST}, \mathit{true}, \{\}}\mathit{s205},\mathit{assidle}\xrightarrow{\mathit{!510}, \mathit{true}, \{\}}\mathit{s204},\mathit{assidle}\xrightarrow{\mathit{?OPEN}, \mathit{true}, \{\}}\mathit{s276},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{?ARTID\_WEIGHTED}, \mathit{true}, \{\}}\mathit{s215},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{\tau}, \mathit{stored\_account = true}, \{\}}\mathit{s341},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{?PRINT\_NEXIST}, \mathit{true}, \{\}}\mathit{s329},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_ACCNT")}, \{\}}\mathit{s307},$ \\
+& & $\mathit{assidle}\xrightarrow{\mathit{?RHCOPY}, \mathit{true}, \{\}}\mathit{s241},\mathit{assidle}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s275},\mathit{assopen}\xrightarrow{\mathit{?ARTID\_WEIGHTED}, \mathit{true}, \{\}}\mathit{s379},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_ACCNT")}, \{\}}\mathit{s497},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{?RHCOPY}, \mathit{true}, \{\}}\mathit{s405},\mathit{assopen}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s439},\mathit{assopen}\xrightarrow{\mathit{?CLOSE}, \mathit{true}, \{\}}\mathit{s474},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s398},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s530},\mathit{assopen}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s529},\mathit{assopen}\xrightarrow{\mathit{?ARTRET\_EXIST}, \mathit{true}, \{\}}\mathit{s487},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{?RESUME}, \mathit{true}, \{\}}\mathit{s416},\mathit{assopen}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s404},\mathit{assopen}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s531},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{?RHCOPY\_EXIST}, \mathit{true}, \{\}}\mathit{s518},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_SIGN")}, \{\}}\mathit{s358},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{?ENDTOT}, \mathit{true}, \{\}}\mathit{s463},\mathit{assopen}\xrightarrow{\mathit{?RESETCR}, \mathit{true}, \{\}}\mathit{s427},\mathit{assopen}\xrightarrow{\mathit{?ARTREG\_EXIST}, \mathit{true}, \{\}}\mathit{s440},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{?ARTREG}, \mathit{true}, \{\}}\mathit{s453},\mathit{assopen}\xrightarrow{\mathit{?PRINT\_EXIST}, \mathit{true}, \{\}}\mathit{s507},\mathit{assopen}\xrightarrow{\mathit{?ARTID\_EXIST}, \mathit{true}, \{\}}\mathit{s369},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{!510}, \mathit{true}, \{\}}\mathit{s368},\mathit{sssoff}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s191},\mathit{sssoff}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s192},$ \\
+& & $\mathit{sssoff}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s166},\mathit{sssoff}\xrightarrow{\mathit{?SIGNON\_EXIST}, \mathit{true}, \{\}}\mathit{s127},\mathit{sssoff}\xrightarrow{\mathit{?RESUME}, \mathit{true}, \{\}}\mathit{s167},$ \\
+& & $\mathit{sssoff}\xrightarrow{\mathit{?RESETCR}, \mathit{true}, \{\}}\mathit{s178},$ \\
+& & $\mathit{sssoff}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s160},$ \\
+& & $\mathit{sssoff}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s190},$ \\
+& & $\mathit{sssoff}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_SIGN")}, \{\}}\mathit{s149},$ \\
+\}
+\end{tabular}

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="general_responses.unknown.response">
+    <graph role="rule" edgeids="false" edgemode="directed" id="general_responses.unknown.response">
         <attr name="transitionLabel">
             <string>500</string>
+        </attr>
+        <attr name="enabled">
+            <string>false</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -25,37 +28,37 @@
                 <string>183 30 81 50</string>
             </attr>
         </node>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge from="n1" to="n2">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>del:</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n0">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>flag:unknown</string>
             </attr>

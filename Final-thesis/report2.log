@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  11 JAN 2013 17:22
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  17 JAN 2013 18:19
 entering extended mode
  %&-line parsing enabled.
-**report2
+**report2.tex
 (./report2.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -912,11 +912,11 @@ Underfull \hbox (badness 1748) in paragraph at lines 57--57
 ) [5] [6]
 Chapter 2.
 (./tex/background-introduction.tex) (./tex/model-based-testing.tex
-<./img/model-based-testing.pdf, id=380, 379.58545pt x 141.73691pt>
+<./img/model-based-testing.pdf, id=385, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-<./img/mbt-on-the-fly.pdf, id=384, 357.48773pt x 141.7426pt>
+<./img/mbt-on-the-fly.pdf, id=389, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
 <use ./img/mbt-on-the-fly.pdf> [7
@@ -949,14 +949,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--166
 (./img/priority-example/add_rhs.tex <xymatrix 2x1 51>)
 (./img/priority-example/sub_lhs.tex <xymatrix 3x1 55>)
 (./img/priority-example/sub_rhs.tex <xymatrix 2x1 51>)) (./tex/tooling.tex
-<./img/atm-diagram.pdf, id=550, 513.8086pt x 289.56181pt>
+<./img/atm-diagram.pdf, id=555, 513.8086pt x 289.56181pt>
 File: ./img/atm-diagram.pdf Graphic file (type pdf)
 
 <use ./img/atm-diagram.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17] <./img/groove-diagram.pdf, id=571, 362.04158pt x 220.67444pt>
+[17] <./img/groove-diagram.pdf, id=576, 362.04158pt x 220.67444pt>
 File: ./img/groove-diagram.pdf Graphic file (type pdf)
 
 <use ./img/groove-diagram.pdf>
@@ -1033,23 +1033,28 @@ Overfull \hbox (13.86055pt too wide) in paragraph at lines 1--41
 (./img/item_example_c4_rhs.tex <xymatrix 2x2 122>)) [30]
 Chapter 4.
 (./tex/implementation.tex
-<./img/gratis_diagram.pdf, id=796, 465.09459pt x 260.6538pt>
+<./img/gratis_diagram.pdf, id=801, 465.09459pt x 260.6538pt>
 File: ./img/gratis_diagram.pdf Graphic file (type pdf)
 
 <use ./img/gratis_diagram.pdf> [31
 
  <./img/gratis_diagram.pdf>]
-<./img/strategy.pdf, id=816, 202.07094pt x 136.22896pt>
+<./img/strategy.pdf, id=821, 202.07094pt x 136.22896pt>
 File: ./img/strategy.pdf Graphic file (type pdf)
 
-<use ./img/strategy.pdf> <./img/STS.pdf, id=819, 305.98314pt x 218.23532pt>
+<use ./img/strategy.pdf> <./img/STS.pdf, id=824, 305.98314pt x 218.23532pt>
 File: ./img/STS.pdf Graphic file (type pdf)
 
 <use ./img/STS.pdf> [32 <./img/strategy.pdf>]
-<./img/STS_objects.pdf, id=848, 485.85414pt x 309.55649pt>
+<./img/STS_objects.pdf, id=853, 485.85414pt x 309.55649pt>
 File: ./img/STS_objects.pdf Graphic file (type pdf)
 
-<use ./img/STS_objects.pdf>) [33 <./img/STS.pdf> <./img/STS_objects.pdf>]
+<use ./img/STS_objects.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
+[]\T1/cmr/m/n/10 dit figuur
+ []
+
+) [33 <./img/STS.pdf> <./img/STS_objects.pdf>]
 Chapter 5.
 (./tex/validation-introduction.tex) (./tex/measurements.tex
 
@@ -1066,44 +1071,50 @@ n-sief emails gewis-seld met Lodewijk Bergmans
 
 ) (./tex/all-examples.tex [35] [36] [37] (./img/start-reservation.tikz)
 (./img/makeReservation.tikz)
-<./img/scanflow.jpg, id=914, 359.3425pt x 377.41pt>
+<./img/scanflow.jpg, id=919, 359.3425pt x 377.41pt>
 File: ./img/scanflow.jpg Graphic file (type jpg)
  <use ./img/scanflow.jpg>
-Underfull \hbox (badness 2735) in paragraph at lines 152--153
+Underfull \hbox (badness 2735) in paragraph at lines 155--156
 []|\T1/cmr/m/n/10 Inform the reg-is-ter that the pay-ment was made, where
  []
 
 
-Overfull \hbox (6.92793pt too wide) in paragraph at lines 141--161
+Overfull \hbox (6.92793pt too wide) in paragraph at lines 143--164
 [] 
  []
 
-[38 <./img/scanflow.jpg>] [39] (./img/start-scrp.tikz)
-(./img/account.open.request.tikz) (./img/account.open.success.tikz)
-(./img/account.open.invalid_ss_on.tikz)
-(./img/general_responses.not_signed_on.tikz) (./img/account.close.success.tikz)
-) [40] (./report2.bbl [41] [42
+[38 <./img/scanflow.jpg>] [39]
+Overfull \hbox (8.39388pt too wide) in paragraph at lines 236--253
+[]
+ []
 
-] [43]) [44] (./symbols.tex [45
+[40] (./img/scrp/start-scrp.tikz) (./img/scrp/account.open.request.tikz)
+(./img/scrp/account.open.success.tikz)
+(./img/scrp/account.open.invalid_ss_on.tikz)
+(./img/scrp/general_responses.not_signed_on.tikz)
+(./img/scrp/account.close.success.tikz) [41]) [42] (./report2.bbl [43
 
-]) [46]
+] [44])
+[45] (./symbols.tex [46
+
+]) [47]
 Appendix A.
 (./img/fwgc/start-fwgc.tikz) (./img/fwgc/n-fwgc.tikz) (./img/fwgc/w-fwgc.tikz)
 (./img/fwgc/w-invalid-fwgc.tikz) (./img/fwgc/g-fwgc.tikz)
 (./img/fwgc/g-invalid-fwgc.tikz) (./img/fwgc/c-fwgc.tikz)
 (./img/fwgc/c-invalid-fwgc.tikz) (./img/fwgc/retry-fwgc.tikz)
-(./img/fwgc/eaten-reinit-fwgc.tikz) (./img/fwgc/done-fwgc.tikz) [47
+(./img/fwgc/eaten-reinit-fwgc.tikz) (./img/fwgc/done-fwgc.tikz) [48
 
 
-] [48]
+] [49]
 Appendix B.
 (./img/start-tab.tikz) (./img/order-tab.tikz) (./img/process_order.tikz)
-(./img/pay-tab.tikz) (./img/process_payment.tikz) [49
+(./img/pay-tab.tikz) (./img/process_payment.tikz) [50
 
 ]
 Appendix C.
 (./tex/scrp_commands_responses.tex
-<./img/account_lifecycle.png, id=1064, 590.205pt x 591.20876pt>
+<./img/account_lifecycle.png, id=1075, 590.205pt x 591.20876pt>
 File: ./img/account_lifecycle.png Graphic file (type png)
 
 <use ./img/account_lifecycle.png>
@@ -1111,7 +1122,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 31--36
 [] 
  []
 
-[50
+[51
 
 ]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 38--43
@@ -1128,7 +1139,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 54--60
 [] 
  []
 
-[51 <./img/account_lifecycle.png (PNG copy)>]
+[52 <./img/account_lifecycle.png (PNG copy)>]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 62--68
 [] 
  []
@@ -1148,7 +1159,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 88--93
 [] 
  []
 
-[52]
+[53]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 95--103
 [] 
  []
@@ -1158,7 +1169,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 105--115
 [] 
  []
 
-[53]
+[54]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 117--125
 [] 
  []
@@ -1173,7 +1184,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 136--142
 [] 
  []
 
-[54]
+[55]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 144--150
 [] 
  []
@@ -1193,33 +1204,185 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 171--177
 [] 
  []
 
-[55])
-Overfull \hbox (3.4369pt too wide) in paragraph at lines 179--141
+[56])
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 179--147
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--141
+Underfull \hbox (badness 10000) in paragraph at lines 179--147
 
  []
 
-[56]
+[57]
 Appendix D.
-[57
+(./scrp_figures.tex (./img/scrp/account.article_registration.request_exist.tikz
+) (./img/scrp/account.article_registration.request_nexist.tikz)
+(./img/scrp/account.article_registration.displays.tikz)
+(./img/scrp/account.article_registration.invalid_ss_on.tikz)
+(./img/scrp/account.article_registration.no_such_article.tikz)
+(./img/scrp/account.article_registration.success.tikz) [58
 
-] (./report2.aux)
+]
+(./img/scrp/account.article_return.request_exist.tikz)
+(./img/scrp/account.article_return.request_nexist.tikz)
+(./img/scrp/account.article_return.displays.tikz)
+(./img/scrp/account.article_return.invalid_ss_on.tikz)
+(./img/scrp/account.article_return.no_such_article.tikz)
+(./img/scrp/account.article_return.no_such_article_registered.tikz)
+(./img/scrp/account.article_return.success.tikz) [59]
+(./img/scrp/account.close.request.tikz) (./img/scrp/account.close.displays.tikz
+) (./img/scrp/account.close.invalid_ss_on.tikz)
+(./img/scrp/account.close.success.tikz) [60]
+(./img/scrp/account.ending.request.tikz)
+(./img/scrp/account.ending.invalid_ss_on.tikz)
+(./img/scrp/account.ending.success.tikz) [61]
+(./img/scrp/account.endtotal.request.tikz)
+(./img/scrp/account.endtotal.displays.tikz)
+(./img/scrp/account.endtotal.invalid_ss_on.tikz)
+(./img/scrp/account.endtotal.success.tikz) [62]
+(./img/scrp/account.open.request.tikz)
+(./img/scrp/account.open.request_exist.tikz)
+(./img/scrp/account.open.request_nexist.tikz)
+(./img/scrp/account.open.invalid_ss_on.tikz)
+(./img/scrp/account.open.no_such_account.tikz)
+(./img/scrp/account.open.success.tikz) [63]
+(./img/scrp/account.stamp_registration.request.tikz)
+(./img/scrp/account.stamp_registration.displays.tikz)
+(./img/scrp/account.stamp_registration.invalid_ss_on.tikz)
+(./img/scrp/account.stamp_registration.no_such_article.tikz)
+(./img/scrp/account.stamp_registration.success.tikz) [64]
+(./img/scrp/account.trans.request_tm_bank.tikz)
+(./img/scrp/account.trans.request_tm_cash.tikz)
+(./img/scrp/account.trans.request_tm_store.tikz)
+(./img/scrp/account.trans.invalid_no_closed.tikz)
+(./img/scrp/account.trans.success_tm_bank_cash.tikz)
+(./img/scrp/account.trans.success_tm_store.tikz)
+(./img/scrp/artid.request_exist.tikz) (./img/scrp/artid.request_nexist.tikz)
+(./img/scrp/artid.no_such_article.tikz) (./img/scrp/artid.success_213.tikz)
+(./img/scrp/general_responses.not_signed_on.tikz)
+(./img/scrp/general_responses.syntax_error.tikz)
+(./img/scrp/general_responses.timeout.tikz)
+(./img/scrp/get_variable_request.tikz)
+(./img/scrp/get_variable.no_such_variable.tikz)
+(./img/scrp/get_variable.success.tikz) (./img/scrp/initialize.ready.tikz)
+(./img/scrp/start-scrp.tikz) (./img/scrp/print.request_exist.tikz)
+(./img/scrp/print.request_nexist.tikz) (./img/scrp/print.inactive.tikz)
+(./img/scrp/print.invalid.tikz) (./img/scrp/print.no_such_account.tikz)
+(./img/scrp/print.success.tikz) (./img/scrp/receipt.request.tikz)
+(./img/scrp/receipt.html_text.tikz) (./img/scrp/receipt.invalid.tikz)
+(./img/scrp/receipt.printing_inactive.tikz) (./img/scrp/receipt.success.tikz)
+(./img/scrp/receipt.hardcopy.request_exist.tikz)
+(./img/scrp/receipt.hardcopy.request_nexist.tikz)
+(./img/scrp/receipt.hardcopy.inactive.tikz)
+(./img/scrp/receipt.hardcopy.no_such_account.tikz)
+(./img/scrp/receipt.hardcopy.success.tikz) (./img/scrp/resetcr.request.tikz)
+(./img/scrp/resetcr.invalid.tikz) (./img/scrp/resetcr.success.tikz)
+(./img/scrp/resume.request.tikz) (./img/scrp/resume.error.tikz)
+(./img/scrp/resume.success.tikz) (./img/scrp/resume.success_no_error.tikz)
+(./img/scrp/signoff.request.tikz) (./img/scrp/signoff.invalid.tikz)
+(./img/scrp/signoff.success.tikz) (./img/scrp/signon.request_exist.tikz)
+(./img/scrp/signon.request_nexist.tikz)
+(./img/scrp/signon.signing_auth_failed.tikz)
+(./img/scrp/signon.signing_rejected.tikz) (./img/scrp/signon.success.tikz))
+[65] [66] [67] [68] [69] [70] [71]
+Appendix E.
+(./iosts_scrp.tex
+Overfull \hbox (30.78506pt too wide) in paragraph at lines 6--7
+[]|$\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 stamp[]reg;  get[]variable[]name;  trans
+[]id;  return[]variable[]name;  variable[]value\OMS/cmsy/m/n/10 g$| 
+ []
+
+
+Underfull \hbox (badness 7012) in paragraph at lines 7--8
+\T1/cmr/m/n/10 !201, !233, !500, !501, !210, !560, ?SIGNON_NEXIST, !561, !242,
+ []
+
+
+Underfull \hbox (badness 6542) in paragraph at lines 7--8
+\T1/cmr/m/n/10 !220, !214, !511, ?RHCOPY, !540, !550, ?RHCOPY_NEXIST, !240,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+\T1/cmr/m/n/10 !531, ?ARTREG_LOYALTY, ?PRINT_EXIST, ?ARTRET_EXIST,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+\T1/cmr/m/n/10 ?OPEN_NEXIST, ?OPEN_EXIST, !510, ?ARTREG_EXIST,
+ []
+
+
+Underfull \hbox (badness 6658) in paragraph at lines 7--8
+\T1/cmr/m/n/10 ?ARTRET_NEXIST, ?RE-SETCR, !512, !213, ?SIG-NOFF, ?END-TOT,
+ []
+
+[72
+
+] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86]
+[87] [88] [89]
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
+[]|$[] [] []\OML/cmm/m/it/10 ; [] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 762--763
+[]|$[] [] []\OML/cmm/m/it/10 ; [] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 763--764
+[]|$[] [] []\OML/cmm/m/it/10 ; [] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 766--767
+[]|$[] [] []\OML/cmm/m/it/10 ; [] []
+ []
+
+[90]
+Overfull \vbox (77.92526pt too high) has occurred while \output is active []
+
+
+[91]
+Underfull \hbox (badness 10000) in paragraph at lines 786--787
+[]|$[] [] []\OML/cmm/m/it/10 ; [] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 791--792
+[]|$[] [] []\OML/cmm/m/it/10 ; [] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--800
+[]|$[] [] []\OML/cmm/m/it/10 ; [] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 800--801
+[]|$[] [] []\OML/cmm/m/it/10 ; [] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 802--803
+[]|$[] [] []\OML/cmm/m/it/10 ; [] []
+ []
+
+) [92] (./report2.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 20675 strings out of 495061
- 363468 string characters out of 1182622
- 856869 words of memory out of 3000000
- 22777 multiletter control sequences out of 15000+50000
+ 21343 strings out of 495061
+ 379744 string characters out of 1182622
+ 1036894 words of memory out of 3000000
+ 23052 multiletter control sequences out of 15000+50000
  30003 words of font info for 75 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 63i,24n,79p,1526b,1572s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 63i,24n,79p,1530b,1572s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0700.600pk> </home
 /dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0800.600pk> </home/dbruijn/
 .texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk> </home/dbruijn/.texmf-va
@@ -1258,9 +1421,9 @@ fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></u
 sr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texmf-
 texlive/fonts/type1/public/xypic/xybtip10.pfb></usr/share/texmf-texlive/fonts/t
 ype1/public/xypic/xydash10.pfb>
-Output written on report2.pdf (59 pages, 990230 bytes).
+Output written on report2.pdf (94 pages, 1200853 bytes).
 PDF statistics:
- 1968 PDF objects out of 2073 (max. 8388607)
- 360 named destinations out of 1000 (max. 500000)
- 503 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2287 PDF objects out of 2487 (max. 8388607)
+ 500 named destinations out of 1000 (max. 500000)
+ 511 words of extra memory for PDF output out of 10000 (max. 10000000)
 

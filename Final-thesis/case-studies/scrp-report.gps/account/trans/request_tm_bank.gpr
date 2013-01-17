@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.trans.request_tm_bank">
+    <graph role="rule" edgeids="false" edgemode="directed" id="account.trans.request_tm_bank">
         <attr name="transitionLabel">
             <string>?TRANS</string>
         </attr>
@@ -12,17 +12,17 @@
         </attr>
         <node id="n4">
             <attr name="layout">
-                <string>321 41 109 37</string>
+                <string>228 49 109 37</string>
             </attr>
         </node>
         <node id="n3">
             <attr name="layout">
-                <string>120 202 81 33</string>
+                <string>93 160 81 33</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>98 16 118 50</string>
+                <string>75 33 116 50</string>
             </attr>
         </node>
         <node id="n0">
@@ -32,75 +32,75 @@
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>256 107 48 33</string>
+                <string>190 105 48 33</string>
             </attr>
         </node>
-        <edge to="n4" from="n4">
+        <edge from="n4" to="n4">
             <attr name="label">
                 <string>string:&quot;TM_BANK&quot;</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge from="n4" to="n4">
             <attr name="label">
                 <string>par:0</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n0" from="n3">
+        <edge from="n3" to="n0">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>new:</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>flag:trans_tm_bank</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n2" to="n0">
             <attr name="label">
-                <string>type:CR</string>
+                <string>to</string>
             </attr>
         </edge>
-        <edge to="n1" from="n0">
+        <edge from="n0" to="n1">
             <attr name="label">
                 <string>connection</string>
             </attr>
         </edge>
-        <edge to="n3" from="n1">
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n3">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge from="n1" to="n2">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>

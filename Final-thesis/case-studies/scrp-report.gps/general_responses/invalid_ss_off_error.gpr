@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="general_responses.invalid_ss_off_error">
+    <graph role="rule" edgeids="false" edgemode="directed" id="general_responses.invalid_ss_off_error">
         <attr name="transitionLabel">
             <string>531</string>
         </attr>
-        <attr name="$version">
-            <string>curly</string>
+        <attr name="enabled">
+            <string>false</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n1">
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n0">
             <attr name="layout">
-                <string>131 310 416 33</string>
-            </attr>
-        </node>
-        <node id="n2">
-            <attr name="layout">
-                <string>8 59 156 50</string>
+                <string>215 61 1064 50</string>
             </attr>
         </node>
         <node id="n11">
@@ -25,54 +23,49 @@
                 <string>722 176 48 33</string>
             </attr>
         </node>
-        <node id="n0">
+        <node id="n2">
             <attr name="layout">
-                <string>215 61 1064 50</string>
+                <string>8 59 156 50</string>
             </attr>
         </node>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>rem:The 531 error is the preferred reponse instead of 550 or 503</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>flag:?[SS_OFF,SS_ERROR]</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n11">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n11" from="n11">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>del:</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>flag:?[open,open_exist,open_nexist,artreg_exist,artret_exist,close,idle,endtot_display,trans,receipt,rhcopy_exist,rhcopy_nexist,print_nexist, artret_nexist, artreg_nexist]</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n11">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n0">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>flag:?[SS_OFF,SS_ERROR]</string>
             </attr>
         </edge>
     </graph>

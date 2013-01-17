@@ -37,11 +37,11 @@ measurements.tex
 - Describe more complexity measurements (optional) (4 hours)
 
 all-examples.tex
-- show all models completely (in appendix if needed) (5 hours)
+- show all models completely (in appendix if needed) (5 hours) done
 - Make sure IOGGs uphold variable definition (30 mins) done
-- Show the STSs in formal notation, not in state-transition diagram (too crowded) (3 hours)
-- More information on the case study (specs) (3 hours)
-- 2 small issues (20 mins)
+- Show the STSs in formal notation, not in state-transition diagram (too crowded) (3 hours) done
+- More information on the case study (specs) (3 hours) done
+- 2 small issues (20 mins) done
 
 measurements_on_examples.tex
 - Need to verify simulation/bisimulation (LTSmin, difficult) (6 hours)
@@ -56,3 +56,7 @@ future-work.tex
 
 50.7 hours
 21.2 done
+
+- add description of wild cards to groove visual desc
+- change ?GET rule in IOGG to mulitple rules with all vars sts uses
+- remove unused vars from stimuli/responses in description

@@ -1,0 +1,53 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n23)  at (3.110, -4.275) {\ml{\textbf{bool}}};
+\node[node, prod] (n22)  at (5.355, -4.285) {\ml{$\pi$1 = "AI\_STAMP"}};
+\node[node, prod] (n19)  at (0.575, -3.405) {\ml{or = true}};
+\node[node, attr] (n18)  at (1.300, -3.685) {\ml{\textbf{bool}}};
+\node[node, prod] (n17)  at (2.165, -3.945){};
+\node[node, attr] (n15)  at (3.080, -3.785) {\ml{\textbf{bool}}};
+\node[node, prod] (n16)  at (5.345, -3.785) {\ml{$\pi$1 = "CS\_ACCNT"}};
+\node[node, attr] (n13)  at (1.260, -3.105) {\ml{\textbf{bool}}};
+\node[node, prod] (n12)  at (2.115, -3.095){};
+\node[node, attr] (n10)  at (3.130, -3.285) {\ml{\textbf{bool}}};
+\node[node, prod] (n8)  at (5.335, -3.325) {\ml{$\pi$1 = "CS\_EVENT"}};
+\node[node, attr] (n7)  at (3.080, -2.815) {\ml{\textbf{bool}}};
+\node[node, prod] (n6)  at (5.315, -2.875) {\ml{$\pi$1 = "CS\_SIGN"}};
+\node[node, attr] (n5)  at (4.555, -2.005) {\ml{\textbf{string}}};
+\node[parnode] (n5p)  at (n5.north west) {0};
+\node[node] (n2)  at (0.700, -1.185) {\ml{\textbf{CR}}};
+\node[node] (n11)  at (4.565, -1.160) {\ml{\textbf{SFU}\\var\_name == "CS\_SIGN" $|$ var\_name == "CS\_EVENT"}};
+\node[newnode] (n0)  at (1.925, -0.380) {\ml{\textbf{Request}\\\textit{get}}};
+\node[nacnode] (n1)  at (1.945, -2.185) {\ml{\textbf{Request}}};
+\node[node, attr] (n4)  at (4.435, -0.355) {\ml{\textbf{string}}};
+\path[edge] (n12)  -- node[lab]{$\pi$1} (n10) ;
+\path[edge] (n12)  -- node[lab]{$\pi$0} (n7) ;
+\path[edge] (n16)  -- node[lab]{$\pi$0} (n5) ;
+\path[newedge](n11.south -| 4.555, -2.005) -- node[newlab]{var\_name} (n5) ;
+\path[edge] (n6)  -- node[lab]{eq} (n7) ;
+\path[edge] (n8)  -- node[lab]{eq} (n10) ;
+\path[edge] (n22)  -- node[lab]{eq} (n23) ;
+\path[edge] (n8)  -- node[lab]{$\pi$0} (n5) ;
+\path[nacedge] (n1)  -- node[naclab]{to} (n2) ;
+\path[edge] (n19)  -- node[lab]{$\pi$1} (n18) ;
+\path[deledge](n11.north -| 4.435, -0.355) -- node[dellab]{var\_name} (n4) ;
+\path[edge] (n17)  -- node[lab]{$\pi$1} (n23) ;
+\path[edge](n2.east |- 4.565, -1.160) -- node[lab]{connection} (n11) ;
+\path[edge] (n16)  -- node[lab]{eq} (n15) ;
+\path[edge] (n22)  -- node[lab]{$\pi$0} (n5) ;
+\path[edge] (n12)  -- node[lab]{or} (n13) ;
+\path[newedge] (n0)  -- node[newlab]{to} (n2) ;
+\path[nacedge] (n11)  -- node[naclab]{from} (n1) ;
+\path[newedge] (n11)  -- node[newlab]{from} (n0) ;
+\path[edge] (n17)  -- node[lab]{$\pi$0} (n15) ;
+\path[edge] (n17)  -- node[lab]{or} (n18) ;
+\path[edge] (n19)  -- node[lab]{$\pi$0} (n13) ;
+\path[edge] (n6)  -- node[lab]{$\pi$0} (n5) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.stamp_registration.request">
+    <graph role="rule" edgeids="false" edgemode="directed" id="account.stamp_registration.request">
         <attr name="transitionLabel">
-            <string>?ARTREG_EXIST</string>
+            <string>?STAMPREG</string>
         </attr>
-        <attr name="$version">
-            <string>curly</string>
+        <attr name="enabled">
+            <string>true</string>
+        </attr>
+        <attr name="printFormat">
+            <string></string>
+        </attr>
+        <attr name="priority">
+            <string>0</string>
+        </attr>
+        <attr name="remark">
+            <string></string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -35,72 +44,72 @@
                 <string>160 167 81 33</string>
             </attr>
         </node>
-        <edge to="n4" from="n4">
+        <edge from="n4" to="n4">
             <attr name="label">
                 <string>int:0</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge from="n4" to="n4">
             <attr name="label">
                 <string>par:0</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>new:</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n0">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>flag:stampreg_start</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n0">
+        <edge from="n0" to="n1">
             <attr name="label">
                 <string>connection</string>
             </attr>
         </edge>
-        <edge to="n3" from="n1">
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n3">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge from="n1" to="n2">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n0" from="n3">
+        <edge from="n3" to="n0">
             <attr name="label">
                 <string>to</string>
             </attr>

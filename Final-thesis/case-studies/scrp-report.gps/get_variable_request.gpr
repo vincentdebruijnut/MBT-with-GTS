@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="get_variable_request">
+    <graph role="rule" edgeids="false" edgemode="directed" id="get_variable_request">
         <attr name="transitionLabel">
             <string>?GET</string>
         </attr>
@@ -17,7 +17,7 @@
         </node>
         <node id="n22">
             <attr name="layout">
-                <string>514 407 43 43</string>
+                <string>437 407 197 43</string>
             </attr>
         </node>
         <node id="n21">
@@ -32,7 +32,7 @@
         </node>
         <node id="n19">
             <attr name="layout">
-                <string>36 319 43 43</string>
+                <string>0 319 116 43</string>
             </attr>
         </node>
         <node id="n18">
@@ -52,7 +52,7 @@
         </node>
         <node id="n16">
             <attr name="layout">
-                <string>513 357 43 43</string>
+                <string>431 357 207 43</string>
             </attr>
         </node>
         <node id="n14">
@@ -77,7 +77,7 @@
         </node>
         <node id="n8">
             <attr name="layout">
-                <string>512 311 43 43</string>
+                <string>431 311 205 43</string>
             </attr>
         </node>
         <node id="n9">
@@ -92,12 +92,12 @@
         </node>
         <node id="n6">
             <attr name="layout">
-                <string>510 266 43 43</string>
+                <string>438 266 187 43</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>277 197 81 37</string>
+                <string>415 182 81 37</string>
             </attr>
         </node>
         <node id="n2">
@@ -107,7 +107,7 @@
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>195 91 523 50</string>
+                <string>274 91 364 50</string>
             </attr>
         </node>
         <node id="n0">
@@ -127,290 +127,290 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>300 17 73 37</string>
+                <string>407 17 73 37</string>
             </attr>
         </node>
-        <edge to="n23" from="n23">
+        <edge from="n23" to="n23">
             <attr name="label">
                 <string>bool:</string>
             </attr>
         </edge>
-        <edge to="n22" from="n22">
+        <edge from="n22" to="n22">
             <attr name="label">
                 <string>prod:</string>
             </attr>
         </edge>
-        <edge to="n21" from="n22">
+        <edge from="n22" to="n21">
             <attr name="label">
                 <string>arg:1</string>
             </attr>
         </edge>
-        <edge to="n5" from="n22">
-            <attr name="label">
-                <string>arg:0</string>
-            </attr>
-        </edge>
-        <edge to="n23" from="n22">
+        <edge from="n22" to="n23">
             <attr name="label">
                 <string>string:eq</string>
             </attr>
         </edge>
-        <edge to="n21" from="n21">
+        <edge from="n22" to="n5">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge from="n21" to="n21">
             <attr name="label">
                 <string>string:&quot;AI_STAMP&quot;</string>
             </attr>
         </edge>
-        <edge to="n20" from="n20">
+        <edge from="n20" to="n20">
             <attr name="label">
                 <string>bool:true</string>
             </attr>
         </edge>
-        <edge to="n19" from="n19">
+        <edge from="n19" to="n19">
             <attr name="label">
                 <string>prod:</string>
             </attr>
         </edge>
-        <edge to="n18" from="n19">
-            <attr name="label">
-                <string>arg:1</string>
-            </attr>
-        </edge>
-        <edge to="n13" from="n19">
-            <attr name="label">
-                <string>arg:0</string>
-            </attr>
-        </edge>
-        <edge to="n20" from="n19">
+        <edge from="n19" to="n20">
             <attr name="label">
                 <string>bool:or</string>
             </attr>
         </edge>
-        <edge to="n18" from="n18">
-            <attr name="label">
-                <string>bool:</string>
-            </attr>
-        </edge>
-        <edge to="n17" from="n17">
-            <attr name="label">
-                <string>prod:</string>
-            </attr>
-        </edge>
-        <edge to="n15" from="n17">
-            <attr name="label">
-                <string>arg:0</string>
-            </attr>
-        </edge>
-        <edge to="n23" from="n17">
+        <edge from="n19" to="n18">
             <attr name="label">
                 <string>arg:1</string>
             </attr>
         </edge>
-        <edge to="n18" from="n17">
+        <edge from="n19" to="n13">
             <attr name="label">
-                <string>bool:or</string>
+                <string>arg:0</string>
             </attr>
         </edge>
-        <edge to="n15" from="n15">
+        <edge from="n18" to="n18">
             <attr name="label">
                 <string>bool:</string>
             </attr>
         </edge>
-        <edge to="n16" from="n16">
+        <edge from="n17" to="n17">
             <attr name="label">
                 <string>prod:</string>
             </attr>
         </edge>
-        <edge to="n15" from="n16">
+        <edge from="n17" to="n23">
+            <attr name="label">
+                <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge from="n17" to="n15">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge from="n17" to="n18">
+            <attr name="label">
+                <string>bool:or</string>
+            </attr>
+        </edge>
+        <edge from="n15" to="n15">
+            <attr name="label">
+                <string>bool:</string>
+            </attr>
+        </edge>
+        <edge from="n16" to="n16">
+            <attr name="label">
+                <string>prod:</string>
+            </attr>
+        </edge>
+        <edge from="n16" to="n5">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge from="n16" to="n15">
             <attr name="label">
                 <string>string:eq</string>
             </attr>
         </edge>
-        <edge to="n5" from="n16">
-            <attr name="label">
-                <string>arg:0</string>
-            </attr>
-        </edge>
-        <edge to="n14" from="n16">
+        <edge from="n16" to="n14">
             <attr name="label">
                 <string>arg:1</string>
             </attr>
         </edge>
-        <edge to="n14" from="n14">
+        <edge from="n14" to="n14">
             <attr name="label">
                 <string>string:&quot;CS_ACCNT&quot;</string>
             </attr>
         </edge>
-        <edge to="n13" from="n13">
+        <edge from="n13" to="n13">
             <attr name="label">
                 <string>bool:</string>
             </attr>
         </edge>
-        <edge to="n12" from="n12">
+        <edge from="n12" to="n12">
             <attr name="label">
                 <string>prod:</string>
             </attr>
         </edge>
-        <edge to="n13" from="n12">
+        <edge from="n12" to="n10">
+            <attr name="label">
+                <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge from="n12" to="n7">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge from="n12" to="n13">
             <attr name="label">
                 <string>bool:or</string>
             </attr>
         </edge>
-        <edge to="n10" from="n12">
-            <attr name="label">
-                <string>arg:1</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n12">
-            <attr name="label">
-                <string>arg:0</string>
-            </attr>
-        </edge>
-        <edge to="n10" from="n10">
+        <edge from="n10" to="n10">
             <attr name="label">
                 <string>bool:</string>
             </attr>
         </edge>
-        <edge to="n8" from="n8">
+        <edge from="n8" to="n8">
             <attr name="label">
                 <string>prod:</string>
             </attr>
         </edge>
-        <edge to="n10" from="n8">
-            <attr name="label">
-                <string>string:eq</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n8">
-            <attr name="label">
-                <string>arg:0</string>
-            </attr>
-        </edge>
-        <edge to="n9" from="n8">
+        <edge from="n8" to="n9">
             <attr name="label">
                 <string>arg:1</string>
             </attr>
         </edge>
-        <edge to="n9" from="n9">
+        <edge from="n8" to="n10">
+            <attr name="label">
+                <string>string:eq</string>
+            </attr>
+        </edge>
+        <edge from="n8" to="n5">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge from="n9" to="n9">
             <attr name="label">
                 <string>string:&quot;CS_EVENT&quot;</string>
             </attr>
         </edge>
-        <edge to="n7" from="n7">
+        <edge from="n7" to="n7">
             <attr name="label">
                 <string>bool:</string>
             </attr>
         </edge>
-        <edge to="n6" from="n6">
+        <edge from="n6" to="n6">
             <attr name="label">
                 <string>prod:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n6">
-            <attr name="label">
-                <string>arg:1</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n6">
-            <attr name="label">
-                <string>arg:0</string>
-            </attr>
-        </edge>
-        <edge to="n7" from="n6">
+        <edge from="n6" to="n7">
             <attr name="label">
                 <string>string:eq</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge from="n6" to="n3">
+            <attr name="label">
+                <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n5">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
             <attr name="label">
                 <string>string:</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge from="n5" to="n5">
             <attr name="label">
                 <string>parin:0</string>
             </attr>
         </edge>
-        <edge to="n11" from="n2">
-            <attr name="label">
-                <string>connection</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n4" from="n11">
+        <edge from="n2" to="n11">
             <attr name="label">
-                <string>del:var_name</string>
+                <string>connection</string>
             </attr>
         </edge>
-        <edge to="n11" from="n11">
-            <attr name="label">
-                <string>test:bool:or(string:eq(var_name,&quot;CS_SIGN&quot;),string:eq(var_name,&quot;CS_EVENT&quot;))</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n11">
-            <attr name="label">
-                <string>new:var_name</string>
-            </attr>
-        </edge>
-        <edge to="n11" from="n11">
+        <edge from="n11" to="n11">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
+        <edge from="n11" to="n11">
+            <attr name="label">
+                <string>test:bool:or(string:eq(var_name,&quot;CS_SIGN&quot;),string:eq(var_name,&quot;CS_EVENT&quot;))</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n5">
+            <attr name="label">
+                <string>new:var_name</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n4">
+            <attr name="label">
+                <string>del:var_name</string>
+            </attr>
+        </edge>
+        <edge from="n11" to="n1">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n1" from="n11">
+        <edge from="n11" to="n0">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>new:</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>flag:get</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>not:</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
+        <edge from="n0" to="n2">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n2">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>string:&quot;CS_SIGN&quot;</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge from="n4" to="n4">
             <attr name="label">
                 <string>string:</string>
             </attr>

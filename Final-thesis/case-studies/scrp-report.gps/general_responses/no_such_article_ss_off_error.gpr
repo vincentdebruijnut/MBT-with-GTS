@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="general_responses.no_such_article_ss_off_error">
+    <graph role="rule" edgeids="false" edgemode="directed" id="general_responses.no_such_article_ss_off_error">
         <attr name="transitionLabel">
             <string>511</string>
         </attr>
-        <attr name="$version">
-            <string>curly</string>
+        <attr name="enabled">
+            <string>false</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n1">
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n6">
             <attr name="layout">
-                <string>571 72 48 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>29 63 156 50</string>
+                <string>174 268 249 33</string>
             </attr>
         </node>
         <node id="n2">
@@ -25,54 +23,59 @@
                 <string>225 64 287 50</string>
             </attr>
         </node>
-        <node id="n6">
+        <node id="n0">
             <attr name="layout">
-                <string>209 313 249 33</string>
+                <string>29 63 156 50</string>
             </attr>
         </node>
-        <edge to="n2" from="n1">
+        <node id="n1">
+            <attr name="layout">
+                <string>571 72 48 33</string>
+            </attr>
+        </node>
+        <edge from="n6" to="n6">
             <attr name="label">
-                <string>from</string>
+                <string>rem:511 is preferred over 550 and 503</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>flag:?[SS_OFF,SS_ERROR]</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>del:</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>flag:?[artret_nexist,artreg_nexist, artid_nexist]</string>
             </attr>
         </edge>
-        <edge to="n6" from="n6">
+        <edge from="n2" to="n0">
             <attr name="label">
-                <string>rem:511 is preferred over 550 and 503</string>
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>flag:?[SS_OFF,SS_ERROR]</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n2">
+            <attr name="label">
+                <string>from</string>
             </attr>
         </edge>
     </graph>

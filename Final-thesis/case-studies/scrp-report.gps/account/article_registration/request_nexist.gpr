@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.article_registration.request_nexist">
+    <graph role="rule" edgeids="false" edgemode="directed" id="account.article_registration.request_nexist">
         <attr name="transitionLabel">
             <string>?ARTREG_NEXIST</string>
         </attr>
@@ -10,14 +10,9 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n2">
+        <node id="n3">
             <attr name="layout">
-                <string>145 16 105 50</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>65 99 40 33</string>
+                <string>160 167 81 33</string>
             </attr>
         </node>
         <node id="n1">
@@ -25,79 +20,74 @@
                 <string>294 98 48 33</string>
             </attr>
         </node>
-        <node id="n3">
+        <node id="n0">
             <attr name="layout">
-                <string>160 167 81 33</string>
+                <string>65 99 40 33</string>
             </attr>
         </node>
-        <node id="n4">
+        <node id="n2">
             <attr name="layout">
-                <string>45 259 281 33</string>
+                <string>145 16 105 50</string>
             </attr>
         </node>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>new:</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n2">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
-            <attr name="label">
-                <string>flag:artreg_nexist</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n0">
-            <attr name="label">
-                <string>connection</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n1">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n0" from="n3">
+        <edge from="n3" to="n0">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge from="n1" to="n1">
             <attr name="label">
-                <string>rem:Do an ARTREG on a non-existing article</string>
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n3">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n2">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>connection</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>new:</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>flag:artreg_nexist</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n0">
+            <attr name="label">
+                <string>to</string>
             </attr>
         </edge>
     </graph>

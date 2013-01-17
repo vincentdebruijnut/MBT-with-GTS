@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="signoff.invalid">
+    <graph role="rule" edgeids="false" edgemode="directed" id="signoff.invalid">
         <attr name="transitionLabel">
             <string>450</string>
         </attr>
@@ -12,7 +12,7 @@
         </attr>
         <node id="n6">
             <attr name="layout">
-                <string>75 168 82 50</string>
+                <string>73 128 82 50</string>
             </attr>
         </node>
         <node id="n0">
@@ -22,7 +22,7 @@
         </node>
         <node id="n4">
             <attr name="layout">
-                <string>337 59 48 33</string>
+                <string>214 129 48 33</string>
             </attr>
         </node>
         <node id="n5">
@@ -30,57 +30,57 @@
                 <string>199 50 81 50</string>
             </attr>
         </node>
-        <edge to="n6" from="n6">
+        <edge from="n6" to="n6">
             <attr name="label">
                 <string>type:Account</string>
             </attr>
         </edge>
-        <edge to="n6" from="n6">
+        <edge from="n6" to="n6">
             <attr name="label">
                 <string>not:flag:AS_IDLE</string>
             </attr>
         </edge>
-        <edge to="n6" from="n0">
-            <attr name="label">
-                <string>has</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>flag:SS_ON</string>
             </attr>
         </edge>
-        <edge to="n5" from="n4">
+        <edge from="n0" to="n6">
             <attr name="label">
-                <string>from</string>
+                <string>has</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge from="n4" to="n4">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge from="n4" to="n5">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
             <attr name="label">
                 <string>del:</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge from="n5" to="n5">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge from="n5" to="n5">
             <attr name="label">
                 <string>flag:signoff</string>
             </attr>
         </edge>
-        <edge to="n0" from="n5">
+        <edge from="n5" to="n0">
             <attr name="label">
                 <string>to</string>
             </attr>

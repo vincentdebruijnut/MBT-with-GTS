@@ -87,6 +87,12 @@
   \input{./tex/measurements.tex}
   \input{./tex/all-examples}
   %\input{./tex/measurements_on_examples.tex}
+
+  %\newpage
+  %\chapter{Conclusion}\label{chapter:conclusion}
+  %\input{./tex/summary.tex}
+  %\input{./tex/conclusion.tex}
+  %\input{./tex/future-work.tex}
   
   \newpage
   \bibliography{bib/bibliography}{}
@@ -131,7 +137,7 @@
       \subfloat[?p (priority 0)]{\label{fig:pay-tab}\input{./img/pay-tab.tikz}}\hspace{20px}
       \subfloat[!pp (priority 1)]{\label{fig:process_payment}\input{./img/process_payment.tikz}}
     \end{center}
-    %\caption{The IOGG of the bar tab system}
+    \caption{The IOGG of the bar tab system}
     %\label{fig:gg-bartab}
   \end{figure}
 
@@ -140,5 +146,10 @@
   \input{./tex/scrp_commands_responses}
 
   \newpage
-  \chapter{Scanflow Cash Register Models}\label{app:scrp-gg}
+  \chapter{Scanflow Cash Register IOGG}\label{app:scrp-gg}
+  \input{scrp_figures}
+
+  \newpage
+  \chapter{Scanflow Cash Register IOSTS}\label{app:scrp-sts}
+  \input{iosts_scrp}
 \end{document}

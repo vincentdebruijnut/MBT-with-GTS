@@ -1,0 +1,17 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n3)  at (0.610, -1.600) {\ml{\textbf{Account}\\\textit{AS\_OPEN}}};
+\node[node] (n1)  at (1.840, -1.605) {\ml{\textbf{SFU}}};
+\node[node] (n0)  at (0.605, -0.870) {\ml{\textbf{CR}\\\textit{SS\_ON}}};
+\node[node] (n2)  at (1.825, -0.900) {\ml{\textbf{Request}\\\textit{artreg\_exist}}};
+\path[edge](n1.north -| 1.825, -0.900) -- node[lab]{from} (n2) ;
+\path[edge](n2.west |- 0.605, -0.870) -- node[lab]{to} (n0) ;
+\path[edge](n0.south -| 0.610, -1.600) -- node[lab]{has} (n3) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="receipt.request">
+    <graph role="rule" edgeids="false" edgemode="directed" id="receipt.request">
         <attr name="transitionLabel">
             <string>?RECEIPT</string>
         </attr>
@@ -10,129 +10,84 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n3">
-            <attr name="layout">
-                <string>182 26 81 50</string>
-            </attr>
-        </node>
         <node id="n1">
             <attr name="layout">
-                <string>152 298 81 33</string>
+                <string>119 260 81 33</string>
             </attr>
         </node>
         <node id="n0">
             <attr name="layout">
-                <string>179 130 81 50</string>
+                <string>117 115 81 50</string>
             </attr>
         </node>
         <node id="n11">
             <attr name="layout">
-                <string>392 193 48 33</string>
+                <string>256 187 48 33</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>5 195 40 33</string>
+                <string>29 190 40 33</string>
             </attr>
         </node>
-        <node id="n4">
-            <attr name="layout">
-                <string>29 386 356 33</string>
-            </attr>
-        </node>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>new:</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>type:Request</string>
-            </attr>
-        </edge>
-        <edge to="n3" from="n3">
-            <attr name="label">
-                <string>flag:timeout</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n3">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n1" from="n1">
+        <edge from="n1" to="n1">
             <attr name="label">
                 <string>not:</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n2" from="n1">
+        <edge from="n1" to="n2">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>new:</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>flag:receipt</string>
             </attr>
         </edge>
-        <edge to="n3" from="n0">
+        <edge from="n0" to="n2">
             <attr name="label">
-                <string>next</string>
+                <string>to</string>
             </attr>
         </edge>
-        <edge to="n11" from="n11">
+        <edge from="n11" to="n11">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
+        <edge from="n11" to="n1">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n3" from="n11">
+        <edge from="n11" to="n0">
             <attr name="label">
                 <string>from</string>
             </attr>
         </edge>
-        <edge to="n1" from="n11">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n11" from="n2">
-            <attr name="label">
-                <string>connection</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
+        <edge from="n2" to="n11">
             <attr name="label">
-                <string>rem:The response to a RECEIPT is ended by a timeout</string>
+                <string>connection</string>
             </attr>
         </edge>
     </graph>

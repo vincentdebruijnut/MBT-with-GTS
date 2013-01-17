@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="account.trans.invalid_transing_ending">
+    <graph role="rule" edgeids="false" edgemode="directed" id="account.trans.invalid_transing_ending">
         <attr name="transitionLabel">
             <string>531</string>
+        </attr>
+        <attr name="enabled">
+            <string>false</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -35,74 +38,74 @@
                 <string>252 140 96 50</string>
             </attr>
         </node>
-        <edge to="n3" from="n2">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n4" from="n1">
+        <edge from="n2" to="n3">
             <attr name="label">
-                <string>has</string>
+                <string>from</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge from="n1" to="n1">
             <attr name="label">
                 <string>flag:SS_ON</string>
             </attr>
         </edge>
-        <edge to="n0" from="n1">
+        <edge from="n1" to="n0">
             <attr name="label">
                 <string>has</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:CR</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n1" to="n4">
             <attr name="label">
-                <string>type:Account</string>
+                <string>has</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>flag:AS_ENDING</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>del:</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n1" from="n3">
+        <edge from="n3" to="n1">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n3" from="n3">
+        <edge from="n3" to="n3">
             <attr name="label">
                 <string>flag:?[trans_tm_store, trans_tm_bank, trans_tm_bank]</string>
             </attr>
         </edge>
-        <edge to="n4" from="n4">
-            <attr name="label">
-                <string>flag:AS_CLOSED</string>
-            </attr>
-        </edge>
-        <edge to="n4" from="n4">
+        <edge from="n4" to="n4">
             <attr name="label">
                 <string>type:Account</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>flag:AS_CLOSED</string>
             </attr>
         </edge>
     </graph>
