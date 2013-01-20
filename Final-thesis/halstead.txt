@@ -1,0 +1,60 @@
+Halstead:
+1: 
+\begin{comment}
+start:
+13 distinct operands
+1 distinct operator
+33 operands
+3 operators
+
+move:
+2 new distinct operands
+5 new distinct operators
+27 operands
+6 operators
+
+nextTurn:
+0 new distinct operands
+1 new distinct operator
+13 operands
+5 operators
+
+throws:
+3 new distinct operands
+2 new distinct operators
+30 operands
+10 operators
+
+$n_1 = 9, n_2 = 18, N_1 = 24, N_2 = 103$ 
+ Volume is 127*4.75 = 603.25
+
+IOSTS:
+22 distinct operands
+5 distinct operators
+62 operands
+25 operators
+
+$n_1 = 5, n_2 = 22, N_1 = 25, N_2 = 62$
+ Volume is 87*4.75 = 413.25
+\end{comment}
+
+2:
+
+\begin{comment}
+start: 12 new operands, 26 operands
+?c: 3 new operators, 0 new operands. 5 operators, 17 operands
+?c-invalid: 0 new operators, 1 new operand. 2 operators, 14 operands
+!retry: 0-0. 1 operator, 2 operands.
+!eaten: 0-0. 9 operators, 36 operands
+!done: 8 operators, 30 operands
+\end{comment}
+
+3:
+
+\begin{comment}
+start: 1 - 25. 13 - 46
+?o: 1 - 2. 1 - 14
+!po: 2 - 3. 4 - 24
+?p: 0 - 0. 3 - 18
+!pp: 3 - 
+\end{comment}
