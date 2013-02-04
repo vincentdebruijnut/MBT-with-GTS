@@ -1,4 +1,4 @@
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 $\Locations$ & = & $\{\mathit{s0...s900, as\_closed,as\_ending,as\_idle,as\_open,ss\_off,unconnected}\} $\\
 $\initialLocation$ & = & $unconnected $\\
 $\LocationVariables$ & = & $\{stored\_account,\:current\_time\} $\\
@@ -23,7 +23,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s110}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{sssoff},\mathit{s111}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s117},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s112}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s113},$ \\
 & & $\mathit{s113}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s114},$ \\
 & & $\mathit{s113}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s115},$ \\
@@ -64,10 +64,10 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s160}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s162},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s160}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s161},$ \\
 & & $\mathit{s160}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s164},$ \\
 & & $\mathit{s160}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s163},$ \\
@@ -108,7 +108,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s21}\xrightarrow{\mathit{!230}, \mathit{true}, \{\}}\mathit{s22},\mathit{s210}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s212},\mathit{s211}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s212},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s212}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s213},\mathit{s213}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s214},\mathit{s214}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s233},$ \\
 & & $\mathit{s215}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s218},\mathit{s215}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s217},\mathit{s215}\xrightarrow{\mathit{!211}, \mathit{true}, \{\}}\mathit{s216},$ \\
 & & $\mathit{s216}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s224},\mathit{s217}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s223},$ \\
@@ -149,7 +149,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s263}\xrightarrow{\mathit{!202}, \mathit{true}, \{\}}\mathit{s264},\mathit{s263}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s267},\mathit{s263}\xrightarrow{\mathit{!531}, \mathit{true}, \{\}}\mathit{s265},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s263}\xrightarrow{\mathit{!501}, \mathit{true}, \{\}}\mathit{s266},\mathit{s263}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s268},\mathit{s264}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s274},$ \\
 & & $\mathit{s265}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s274},\mathit{s266}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s274},\mathit{s267}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s273},$ \\
 & & $\mathit{s268}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s269},$ \\
@@ -190,7 +190,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s312}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s314},\mathit{s313}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s314},\mathit{s314}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s315},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s315}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s316},\mathit{s316}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s357},\mathit{s317}\xrightarrow{\mathit{?PRINT\_EXIST}, \mathit{true}, \{\}}\mathit{s318},$ \\
 & & $\mathit{s318}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s321},\mathit{s318}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s322},\mathit{s318}\xrightarrow{\mathit{!260}, \mathit{true}, \{\}}\mathit{s319},$ \\
 & & $\mathit{s318}\xrightarrow{\mathit{!560}, \mathit{true}, \{\}}\mathit{s320},\mathit{s319}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s328},\mathit{s32}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s33},$ \\
@@ -231,7 +231,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s37}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s43},\mathit{s370}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s378},\mathit{s371}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s377},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s372}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s373},$ \\
 & & $\mathit{s373}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s374},$ \\
 & & $\mathit{s373}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s375},$ \\
@@ -272,7 +272,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s414}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s415},\mathit{s415}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},\mathit{s416}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s420},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s416}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s419},\mathit{s416}\xrightarrow{\mathit{!201}, \mathit{true}, \{\}}\mathit{s417},\mathit{s416}\xrightarrow{\mathit{!503}, \mathit{true}, \{\}}\mathit{s418},$ \\
 & & $\mathit{s417}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s426},\mathit{s418}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s426},\mathit{s419}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s425},$ \\
 & & $\mathit{s42}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s43},$ \\
@@ -313,7 +313,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s468}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s470},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s468}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s469},$ \\
 & & $\mathit{s469}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s471},\mathit{s47}\xrightarrow{\mathit{?IDLE}, \mathit{true}, \{\}}\mathit{s48},\mathit{s470}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s471},$ \\
 & & $\mathit{s471}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s472},\mathit{s472}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s473},\mathit{s473}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s532},$ \\
@@ -354,7 +354,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s51}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s52},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s510}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s516},$ \\
 & & $\mathit{s511}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s512},$ \\
 & & $\mathit{s512}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s513},$ \\
@@ -395,7 +395,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s559}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s561},\mathit{s56}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s57},\mathit{s560}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s561},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s561}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s562},\mathit{s562}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s563},$ \\
 & & $\mathit{s563}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CERTDATA")}, \{\}}\mathit{s564},$ \\
 & & $\mathit{s563}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s570},\mathit{s564}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s568},\mathit{s564}\xrightarrow{\mathit{!531}, \mathit{true}, \{\}}\mathit{s567},$ \\
@@ -436,7 +436,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s609}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s611},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s61}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s62},$ \\
 & & $\mathit{s610}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s611},\mathit{s611}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s612},\mathit{s612}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s613},$ \\
 & & $\mathit{s613}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s614}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s759},\mathit{s615}\xrightarrow{\mathit{!540}, \mathit{true}, \{\}}\mathit{s616},$ \\
@@ -477,7 +477,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s647}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_WARN")}, \{\}}\mathit{s650},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s647}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_ERROR")}, \{\}}\mathit{s651},$ \\
 & & $\mathit{s647}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s648},$ \\
 & & $\mathit{s648}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s652},\mathit{s649}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s652},\mathit{s65}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s66},$ \\
@@ -518,7 +518,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s687}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s689},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s688}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s692},\mathit{s689}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s692},\mathit{s69}\xrightarrow{\mathit{?IDLE}, \mathit{true}, \{\}}\mathit{s70},$ \\
 & & $\mathit{s690}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s692},\mathit{s691}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s692},\mathit{s692}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s707},$ \\
 & & $\mathit{s693}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s694},$ \\
@@ -559,7 +559,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s736}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s744},\mathit{s737}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s743},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s738}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s739},$ \\
 & & $\mathit{s739}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s740},$ \\
 & & $\mathit{s739}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s741},$ \\
@@ -600,7 +600,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s789}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s790},\mathit{s79}\xrightarrow{\mathit{?SIGNOFF}, \mathit{true}, \{\}}\mathit{s80},\mathit{s790}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s797},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s790}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CERTDATA")}, \{\}}\mathit{s791},$ \\
 & & $\mathit{s791}\xrightarrow{\mathit{!502}, \mathit{true}, \{\}}\mathit{s795},\mathit{s791}\xrightarrow{\mathit{!512}, \mathit{true}, \{\}}\mathit{s793},\mathit{s791}\xrightarrow{\mathit{!214}, \mathit{true}, \{\}}\mathit{s792},$ \\
 & & $\mathit{s791}\xrightarrow{\mathit{!531}, \mathit{true}, \{\}}\mathit{s794},\mathit{s792}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s796},\mathit{s793}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s796},$ \\
@@ -641,7 +641,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s836}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s838},\mathit{s837}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s838},\mathit{s838}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s839},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s839}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s840},$ \\
 & & $\mathit{s84}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s85},$ \\
 & & $\mathit{s84}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_NONE")}, \{\}}\mathit{s86},$ \\
@@ -682,7 +682,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{s887}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s896},\mathit{s888}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s896},\mathit{s889}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s895},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{s89}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{sssoff},$ \\
 & & $\mathit{s890}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s891},$ \\
 & & $\mathit{s891}\xrightarrow{\mathit{!210}, \mathit{(cr\_variable = ``CS\_EVENT") \land (cr\_value = ``EV\_INFO")}, \{\}}\mathit{s892},$ \\
@@ -714,8 +714,10 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{assclosed}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_SIGN")}, \{\}}\mathit{s533},$ \\
 & & $\mathit{assending}\xrightarrow{\mathit{?RESETCR}, \mathit{true}, \{\}}\mathit{s829},\mathit{assending}\xrightarrow{\mathit{?PRINT\_EXIST}, \mathit{true}, \{\}}\mathit{s875},$ \\
 & & $\mathit{assending}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_ACCNT")}, \{\}}\mathit{s865},$ \\
-& & $\mathit{assending}\xrightarrow{\mathit{?RECEIPT}, \mathit{true}, \{\}}\mathit{s852},\mathit{assending}\xrightarrow{\mathit{?IDLE}, \mathit{true}, \{\}}\mathit{s842},\mathit{assending}\xrightarrow{\mathit{?ARTID\_EXIST}, \mathit{true}, \{\}}\mathit{s771},$ \\
-& & $\mathit{assending}\xrightarrow{\mathit{!510}, \mathit{true}, \{\}}\mathit{s770},\mathit{assending}\xrightarrow{\mathit{?RHCOPY}, \mathit{true}, \{\}}\mathit{s807},\mathit{assending}\xrightarrow{\mathit{?ARTID\_WEIGHTED}, \mathit{true}, \{\}}\mathit{s781},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{?RECEIPT}, \mathit{true}, \{\}}\mathit{s852},\mathit{assending}\xrightarrow{\mathit{?IDLE}, \mathit{true}, \{\}}\mathit{s842},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{?ARTID\_EXIST}, \mathit{true}, \{\}}\mathit{s771},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{!510}, \mathit{true}, \{\}}\mathit{s770},\mathit{assending}\xrightarrow{\mathit{?RHCOPY}, \mathit{true}, \{\}}\mathit{s807},$ \\
+& & $\mathit{assending}\xrightarrow{\mathit{?ARTID\_WEIGHTED}, \mathit{true}, \{\}}\mathit{s781},$ \\
 & & $\mathit{assending}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s898},\mathit{assending}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s841},$ \\
 & & $\mathit{assending}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s800},$ \\
 & & $\mathit{assending}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s899},\mathit{assending}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s897},\mathit{assending}\xrightarrow{\mathit{?RHCOPY\_EXIST}, \mathit{true}, \{\}}\mathit{s886},$ \\
@@ -723,7 +725,7 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{assending}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_SIGN")}, \{\}}\mathit{s760},$ \\
 \end{tabular}
 
-\begin{tabular}{lcp{350px}}
+\begin{tabular}{lcl}
 & & $\mathit{assidle}\xrightarrow{\mathit{?RESUME}, \mathit{true}, \{\}}\mathit{s252},\mathit{assidle}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s240},$ \\
 & & $\mathit{assidle}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_SIGN")}, \{\}}\mathit{s194},$ \\
 & & $\mathit{assidle}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s355},\mathit{assidle}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s353},$ \\
@@ -745,10 +747,12 @@ $\Gates$ & = & \{?OPEN, ?SIGNON\_EXIST, !261, !900, ?STAMPREG, ?ARTID\_NEXIST, !
 & & $\mathit{assopen}\xrightarrow{\mathit{?RESUME}, \mathit{true}, \{\}}\mathit{s416},\mathit{assopen}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s404},\mathit{assopen}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s531},$ \\
 & & $\mathit{assopen}\xrightarrow{\mathit{?RHCOPY\_EXIST}, \mathit{true}, \{\}}\mathit{s518},$ \\
 & & $\mathit{assopen}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_SIGN")}, \{\}}\mathit{s358},$ \\
-& & $\mathit{assopen}\xrightarrow{\mathit{?ENDTOT}, \mathit{true}, \{\}}\mathit{s463},\mathit{assopen}\xrightarrow{\mathit{?RESETCR}, \mathit{true}, \{\}}\mathit{s427},\mathit{assopen}\xrightarrow{\mathit{?ARTREG\_EXIST}, \mathit{true}, \{\}}\mathit{s440},$ \\
-& & $\mathit{assopen}\xrightarrow{\mathit{?ARTREG}, \mathit{true}, \{\}}\mathit{s453},\mathit{assopen}\xrightarrow{\mathit{?PRINT\_EXIST}, \mathit{true}, \{\}}\mathit{s507},\mathit{assopen}\xrightarrow{\mathit{?ARTID\_EXIST}, \mathit{true}, \{\}}\mathit{s369},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{?ENDTOT}, \mathit{true}, \{\}}\mathit{s463},\mathit{assopen}\xrightarrow{\mathit{?RESETCR}, \mathit{true}, \{\}}\mathit{s427},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{?ARTREG\_EXIST}, \mathit{true}, \{\}}\mathit{s440},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{?ARTREG}, \mathit{true}, \{\}}\mathit{s453},\mathit{assopen}\xrightarrow{\mathit{?PRINT\_EXIST}, \mathit{true}, \{\}}\mathit{s507},$ \\
+& & $\mathit{assopen}\xrightarrow{\mathit{?ARTID\_EXIST}, \mathit{true}, \{\}}\mathit{s369},$ \\
 & & $\mathit{assopen}\xrightarrow{\mathit{!510}, \mathit{true}, \{\}}\mathit{s368},\mathit{sssoff}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s191},\mathit{sssoff}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s192},$ \\
-& & $\mathit{sssoff}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s166},\mathit{sssoff}\xrightarrow{\mathit{?SIGNON\_EXIST}, \mathit{true}, \{\}}\mathit{s127},\mathit{sssoff}\xrightarrow{\mathit{?RESUME}, \mathit{true}, \{\}}\mathit{s167},$ \\
+& & $\mathit{sssoff}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s166}, \mathit{sssoff}\xrightarrow{\mathit{?SIGNON\_EXIST}, \mathit{true}, \{\}}\mathit{s127},\mathit{sssoff}\xrightarrow{\mathit{?RESUME}, \mathit{true}, \{\}}\mathit{s167},$ \\
 & & $\mathit{sssoff}\xrightarrow{\mathit{?RESETCR}, \mathit{true}, \{\}}\mathit{s178},$ \\
 & & $\mathit{sssoff}\xrightarrow{\mathit{?GET}, \mathit{(var\_name = ``CS\_EVENT")}, \{\}}\mathit{s160},$ \\
 & & $\mathit{sssoff}\xrightarrow{\mathit{\tau}, \mathit{true}, \{\}}\mathit{s190},$ \\

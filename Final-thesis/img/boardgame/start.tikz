@@ -1,0 +1,23 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n12)  at (3.550, -0.615) {\ml{\textbf{Player}\\id = 2}};
+\node[node] (n7)  at (2.180, -1.465) {\ml{\textbf{Location}}};
+\node[node] (n11)  at (0.990, -0.605) {\ml{\textbf{Player}\\\textit{turn}\\id = 1}};
+\node[node] (n8)  at (2.200, -2.545) {\ml{\textbf{Location}}};
+\node[node] (n9)  at (0.930, -1.985) {\ml{\textbf{Location}}};
+\node[node] (n10)  at (3.560, -2.025) {\ml{\textbf{Location}}};
+\node[node] (n0)  at (4.960, -0.620) {\ml{\textbf{Die}\\rolls = 0}};
+\path[edge] (n7)  -- node[lab]{next} (n10) ;
+\path[edge] (n10)  -- node[lab]{next} (n8) ;
+\path[edge] (n9)  -- node[lab]{next} (n7) ;
+\path[edge](n11.south -| 0.930, -1.985) -- node[lab]{at} (n9) ;
+\path[edge] (n8)  -- node[lab]{next} (n9) ;
+\path[edge](n12.south -| 3.560, -2.025) -- node[lab]{at} (n10) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

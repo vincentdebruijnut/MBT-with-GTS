@@ -1,0 +1,21 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n7)  at (2.240, -1.015) {\ml{\textbf{real}}};
+\node[parnode] (n7p)  at (n7.north west) {0};
+\node[node, prod] (n1)  at (1.545, -0.455) {\ml{$\pi$1 = 50.0}};
+\node[node, attr] (n4)  at (0.800, -1.015) {\ml{\textbf{real}}};
+\node[node, attr] (n5)  at (0.920, -2.605) {\ml{\textbf{real}}};
+\node[node] (n2)  at (1.575, -1.880) {\ml{\textbf{Customer}\\{\color{\blue}$-$ request\_discount}\\{\color{\green}$+$ discount = 0.9}}};
+\path[edge] (n1)  -- node[lab]{add} (n7) ;
+\path[newedge] (n2)  -- node[newlab]{tab} (n7) ;
+\path[deledge] (n2)  -- node[dellab]{tab} (n4) ;
+\path[deledge] (n2)  -- node[dellab]{discount} (n5) ;
+\path[edge] (n1)  -- node[lab]{$\pi$0} (n4) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

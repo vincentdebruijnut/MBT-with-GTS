@@ -1,0 +1,50 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n9)  at (3.830, -0.975) {\ml{\textbf{real}}};
+\node[node, prod] (n8)  at (3.845, -1.565){};
+\node[node, attr] (n7)  at (3.000, -1.575) {\ml{\textbf{real}}};
+\node[node, attr] (n5)  at (2.990, -0.775) {\ml{\textbf{real}}};
+\node[parnode] (n5p)  at (n5.north west) {0};
+\node[node, prod] (n4)  at (3.835, -0.435){};
+\node[node, attr] (n3)  at (1.950, -0.425) {\ml{\textbf{real}}};
+\node[node] (n0)  at (1.895, -1.055) {\ml{\textbf{Customer}}};
+\node[node, attr] (n10)  at (2.760, -2.185) {\ml{\textbf{real}}};
+\node[node] (n6)  at (1.895, -1.635) {\ml{\textbf{Drink}}};
+\node[node, prod] (n16)  at (3.865, -3.415){};
+\node[node, attr] (n17)  at (1.940, -3.415) {\ml{\textbf{real}}};
+\node[node, attr] (n19)  at (3.870, -2.305) {\ml{\textbf{real}}};
+\node[node, prod] (n22)  at (1.935, -2.785){};
+\node[node, attr] (n24)  at (0.990, -2.175) {\ml{\textbf{real}}};
+\node[quantnode] (n1)  at (1.930, -2.200) {\ml{$\forall$}};
+\path[edge] (n8)  -- node[lab]{mul} (n9) ;
+\path[edge] (n4)  -- node[lab]{$\pi$0} (n3) ;
+\path[edge] (n22)  -- node[lab]{$\pi$1} (n24) ;
+\path[edge] (n0)  -- node[lab]{discount} (n7) ;
+\path[edge] (n22)  -- node[lab]{mul} (n17) ;
+\path[edge] (n16)  -- node[lab]{real:sum} (n19) ;
+\path[edge] (n4)  -- node[lab]{add} (n5) ;
+\path[deledge](n0.south -| 1.895, -1.635) -- node[dellab]{orders} (n6) ;
+\path[edge] (n6)  --  (n24) ;
+\node[lab] at (1.633, -1.922){quantity};
+\path[edge] (n6)  -- node[lab]{price} (n10) ;
+\path[edge] (n16)  -- node[lab]{$\pi$0} (n17) ;
+\path[edge] (n22)  -- node[lab]{$\pi$0} (n10) ;
+\path[edge] (n8)  -- node[lab]{$\pi$0} (n19) ;
+\path[deledge](n0.north -| 1.950, -0.425) -- node[dellab]{tab} (n3) ;
+\path[edge] (n8)  -- node[lab]{$\pi$1} (n7) ;
+\path[newedge] (n0)  -- node[newlab]{tab} (n5) ;
+\path[edge] (n4)  -- node[lab]{$\pi$1} (n9) ;
+\path[quantedge](n6.south -| 1.930, -2.200) -- node[lab]{@} (n1) ;
+\path[quantedge](n10.west |- 1.930, -2.200) -- node[lab]{@} (n1) ;
+\path[quantedge](n24.east |- 1.930, -2.200) -- node[lab]{@} (n1) ;
+\path[quantedge] (n22)  -- node[lab]{@} (n1) ;
+\path[quantedge] (n17) .. controls (2.270, -3.100) and (2.260, -2.490) ..  (n1) ;
+\node[lab] at (2.268, -2.804){@};
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

@@ -5,11 +5,13 @@
 \begin{tikzpicture}[
 % Special color styles
 scale=\tikzscale]
-\node[node] (n1)  at (3.850, -0.705) {\ml{\textbf{SFU}}};
-\node[node] (n0)  at (1.050, -0.705) {\ml{\textbf{CR}\\{\color{\blue}\textit{$-$ ?[SS\_OFF,SS\_HALT]}}\\{\color{\green}\textit{$+$ SS\_ON}}}};
-\node[delnode] (n2)  at (2.555, -0.740) {\ml{\textbf{Request}\\\textit{signon\_exist}}};
-\path[deledge](n2.west |- 1.050, -0.705) -- node[dellab]{to} (n0) ;
-\path[deledge](n1.west |- 2.555, -0.740) -- node[dellab]{from} (n2) ;
+\node[delnode] (n2)  at (2.595, -1.060) {\ml{\textbf{Request}\\\textit{signon\_exist}}};
+\node[node] (n0)  at (1.090, -1.025) {\ml{\textbf{CR}\\{\color{\blue}\textit{$-$ ?[SS\_OFF,SS\_HALT]}}\\{\color{\green}\textit{$+$ SS\_ON}}\\{\color{\green}$+$ state = "SS\_ON"}}};
+\node[node] (n1)  at (3.890, -1.025) {\ml{\textbf{SFU}}};
+\node[node, attr] (n4)  at (1.010, -0.310) {\ml{\textbf{string}}};
+\path[deledge](n1.west |- 2.595, -1.060) -- node[dellab]{from} (n2) ;
+\path[deledge](n2.west |- 1.090, -1.025) -- node[dellab]{to} (n0) ;
+\path[deledge](n0.north -| 1.010, -0.310) -- node[dellab]{state} (n4) ;
 \userdefinedmacro
 \end{tikzpicture}
 \renewcommand{\userdefinedmacro}{\relax}

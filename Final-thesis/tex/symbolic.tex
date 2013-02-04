@@ -36,7 +36,7 @@ $\begin{array}{lcl}
 \initializationFunction & = & \{T \mapsto 0, P1 \mapsto 0, P2 \mapsto 2, D \mapsto 0\} \\
 \InteractionVariables & = & \{d, p, l\} \\
 \Gates & = & \{?throw, !move\} \\
-\Switches & = & \{t\xrightarrow{?throw, 1 <= d <= 6, D \mapsto d}m, \\
+\Switches & = & \{t\xrightarrow{?throw, 1 \leq d \leq 6, D \mapsto d}m, \\
  & & m\xrightarrow{!move, T=1 \land l=(P1+D)\%4, P1 \mapsto l, T \mapsto 2}t, \\
  & & m\xrightarrow{!move, T=2 \land l=(P2+D)\%4, P2 \mapsto l, T \mapsto 1}t\}
 \end{array}$

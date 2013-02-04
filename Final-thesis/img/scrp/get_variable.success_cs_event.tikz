@@ -1,0 +1,31 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, prod] (n11)  at (3.050, -1.330) {\ml{or = true}};
+\node[node, attr] (n10)  at (3.950, -1.640) {\ml{\textbf{bool}}};
+\node[node, prod] (n9)  at (5.290, -1.650) {\ml{$\pi$1 = "EV\_NONE"}};
+\node[node, attr] (n8)  at (3.950, -1.080) {\ml{\textbf{bool}}};
+\node[node, prod] (n5)  at (5.280, -1.080) {\ml{$\pi$1 = "EV\_INFO"}};
+\node[node, attr] (n3)  at (0.680, -1.740) {\ml{"CS\_EVENT"}};
+\node[parnode] (n3p)  at (n3.north west) {0};
+\node[delnode] (n2)  at (2.175, -1.010) {\ml{\textbf{Request}\\\textit{get}}};
+\node[node] (n1)  at (2.180, -1.705) {\ml{\textbf{SFU}}};
+\node[node] (n0)  at (0.750, -1.005) {\ml{\textbf{CR}}};
+\node[node, attr] (n4)  at (6.770, -1.400) {\ml{\textbf{string}}};
+\node[parnode] (n4p)  at (n4.north west) {1};
+\path[deledge](n1.north -| 2.175, -1.010) -- node[dellab]{from} (n2) ;
+\path[deledge](n2.west |- 0.750, -1.005) -- node[dellab]{to} (n0) ;
+\path[edge](n1.west |- 0.680, -1.740) -- node[lab]{var\_name} (n3) ;
+\path[edge] (n5)  -- node[lab]{$\pi$0} (n4) ;
+\path[edge] (n5)  -- node[lab]{eq} (n8) ;
+\path[edge] (n9)  -- node[lab]{$\pi$0} (n4) ;
+\path[edge] (n9)  -- node[lab]{eq} (n10) ;
+\path[edge] (n11)  -- node[lab]{$\pi$0} (n8) ;
+\path[edge] (n11)  -- node[lab]{$\pi$1} (n10) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

@@ -3,7 +3,7 @@
 This section lists the possible measurements on the models and execution of GRATiS on those models.
 
 \subsection{Simulation and redundancy}
-For each of the cases, we can create IOSTSs in two ways: manually and through GRATiS. The generated IOSTS and the modelled IOSTS can be compared. It can be observed whether the generated IOSTS simulates the IOSTS and vice versa. When either is not the case, the models show a different possible behaviour for the SUT. The reasons behind this difference are then explored. The tool LTSmin~\footnote{http://fmt.cs.utwente.nl/tools/ltsmin/} is used to verify whether the models simulate each other. 
+For each of the cases, we can create IOSTSs in two ways: manually and through GRATiS. The generated IOSTS and the modelled IOSTS can be compared. It can be observed whether the generated IOSTS simulates the IOSTS and vice versa. When either is not the case, the models show a different possible behavior for the SUT. The reasons behind this difference are then explored. ATM is used to find diffrences between the two IOSTSs, by using one as the model and the other as the SUT and vice versa. The SUT tries to copy the stimuli done by the model and the model tries to copy responses done by the SUT. ATM can then find differences in behavior between both IOSTSs.
 
 It is possible that the generated IOSTS $s$ is larger than the IOSTS built by hand $t$, even if both simulate each other. If $t$ simulates $s$, it is measured whether the set of switch relations or location variables is strictly smaller in $t$ than in $s$, while the other set is at least as small in $t$ as in $s$. Formally:
 \vspace{5px} \\

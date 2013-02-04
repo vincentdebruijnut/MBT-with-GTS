@@ -1,0 +1,47 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n6)  at (2.380, -0.845) {\ml{\textbf{real}}};
+\node[parnode] (n6p)  at (n6.north west) {2};
+\node[node, attr] (n5)  at (1.130, -0.875) {\ml{\textbf{real}}};
+\node[node] (n0)  at (1.775, -1.385) {\ml{\textbf{Drink}}};
+\node[node] (n1)  at (2.935, -2.495) {\ml{\textbf{Customer}}};
+\node[node, attr] (n3)  at (2.135, -2.495) {\ml{\textbf{int}}};
+\node[parnode] (n3p)  at (n3.north west) {0};
+\node[node, attr] (n2)  at (2.785, -1.385) {\ml{\textbf{string}}};
+\node[parnode] (n2p)  at (n2.north west) {1};
+\node[node, attr] (n7)  at (2.340, -4.065) {\ml{\textbf{real}}};
+\node[parnode] (n7p)  at (n7.north west) {4};
+\node[node, attr] (n9)  at (1.110, -4.065) {\ml{\textbf{real}}};
+\node[node] (n4)  at (1.775, -3.435) {\ml{\textbf{Drink}}};
+\node[node, attr] (n8)  at (2.785, -3.435) {\ml{\textbf{string}}};
+\node[parnode] (n8p)  at (n8.north west) {3};
+\node[node, attr] (n11)  at (4.760, -3.145) {\ml{\textbf{real}}};
+\node[parnode] (n11p)  at (n11.north west) {6};
+\node[node, attr] (n13)  at (3.530, -3.145) {\ml{\textbf{real}}};
+\node[node] (n10)  at (4.195, -2.515) {\ml{\textbf{Drink}}};
+\node[node, attr] (n12)  at (4.165, -1.945) {\ml{\textbf{string}}};
+\node[parnode] (n12p)  at (n12.north west) {5};
+\path[newedge] (n4)  -- node[newlab]{quantity} (n7) ;
+\path[newedge](n1.east |- 4.195, -2.515) -- node[newlab]{orders} (n10) ;
+\path[edge, -](n4.north -| 1.775, -1.385) -- node[lab]{\textit{!=}} (n0) ;
+\path[newedge] (n0)  -- node[newlab]{quantity} (n6) ;
+\path[edge, -] (n0)  -- node[lab]{\textit{!=}} (n10) ;
+\path[newedge] (n10)  -- node[newlab]{quantity} (n11) ;
+\path[deledge] (n10)  -- node[dellab]{quantity} (n13) ;
+\path[newedge] (n1)  -- node[newlab]{orders} (n4) ;
+\path[edge](n10.north -| 4.165, -1.945) -- node[lab]{name} (n12) ;
+\path[edge](n4.east |- 2.785, -3.435) -- node[lab]{name} (n8) ;
+\path[edge, -] (n4)  -- node[lab]{\textit{!=}} (n10) ;
+\path[deledge] (n0)  -- node[dellab]{quantity} (n5) ;
+\path[deledge] (n4)  -- node[dellab]{quantity} (n9) ;
+\path[edge](n1.west |- 2.135, -2.495) -- node[lab]{id} (n3) ;
+\path[edge](n0.east |- 2.785, -1.385) -- node[lab]{name} (n2) ;
+\path[newedge] (n1)  -- node[newlab]{orders} (n0) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

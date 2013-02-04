@@ -1,0 +1,21 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n4)  at (3.190, -1.975) {\ml{\textbf{real}}};
+\node[node] (n3)  at (2.665, -1.195) {\ml{\textbf{Payment}}};
+\node[node, attr] (n2)  at (0.975, -1.995) {\ml{\textbf{int}}};
+\node[parnode] (n2p)  at (n2.north west) {0};
+\node[node] (n0)  at (1.025, -1.215) {\ml{\textbf{Customer}}};
+\node[node, attr] (n1)  at (2.040, -1.995) {\ml{\textbf{real}}};
+\node[parnode] (n1p)  at (n1.north west) {1};
+\path[deledge] (n3)  -- node[dellab]{amount} (n4) ;
+\path[edge](n0.south -| 0.975, -1.995) -- node[lab]{id} (n2) ;
+\path[newedge] (n3)  -- node[newlab]{amount} (n1) ;
+\path[newedge](n0.east |- 2.665, -1.195) -- node[newlab]{pays} (n3) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

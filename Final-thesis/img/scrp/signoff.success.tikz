@@ -5,11 +5,13 @@
 \begin{tikzpicture}[
 % Special color styles
 scale=\tikzscale]
-\node[node] (n1)  at (4.360, -1.595) {\ml{\textbf{SFU}}};
-\node[node] (n0)  at (1.160, -1.605) {\ml{\textbf{CR}\\{\color{\blue}\textit{$-$ ?[SS\_ON,SS\_OFF,SS\_HALT]}}\\{\color{\green}\textit{$+$ SS\_OFF}}}};
 \node[delnode] (n2)  at (2.955, -1.600) {\ml{\textbf{Request}\\\textit{signoff}}};
-\path[deledge](n2.west |- 1.160, -1.605) -- node[dellab]{to} (n0) ;
+\node[node] (n0)  at (1.160, -1.605) {\ml{\textbf{CR}\\{\color{\blue}\textit{$-$ ?[SS\_ON,SS\_OFF,SS\_HALT]}}\\{\color{\green}\textit{$+$ SS\_OFF}}\\{\color{\green}$+$ state = "SS\_OFF"}}};
+\node[node] (n1)  at (4.360, -1.595) {\ml{\textbf{SFU}}};
+\node[node, attr] (n4)  at (1.110, -0.840) {\ml{\textbf{string}}};
 \path[deledge](n1.west |- 2.955, -1.600) -- node[dellab]{from} (n2) ;
+\path[deledge](n2.west |- 1.160, -1.605) -- node[dellab]{to} (n0) ;
+\path[deledge](n0.north -| 1.110, -0.840) -- node[dellab]{state} (n4) ;
 \userdefinedmacro
 \end{tikzpicture}
 \renewcommand{\userdefinedmacro}{\relax}

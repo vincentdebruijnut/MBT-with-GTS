@@ -1,15 +1,179 @@
-\section{Planning}\label{app:planning}
+\chapter{Farmer-Wolf-Goat-Cabbage Models}\label{app:fwgc}
+  \begin{figure}[ht]
+  \begin{center}
+    \subfloat[The initial graph]{\label{fig:start-fwgc}\input{./img/fwgc/start-fwgc.tikz}}\hspace{20px}
+    \subfloat[?n (priority 0)]{\label{fig:n-fwgc}\input{./img/fwgc/n-fwgc.tikz}} \\
+    \subfloat[?w valid (priority 0)]{\label{fig:w-fwgc}\input{./img/fwgc/w-fwgc.tikz}}\hspace{20px}
+    \subfloat[?w invalid (priority 0)]{\label{fig:w-invalid-fwgc}\input{./img/fwgc/w-invalid-fwgc.tikz}} \\
+    \subfloat[?g valid (priority 0)]{\label{fig:g-fwgc}\input{./img/fwgc/g-fwgc.tikz}}\hspace{20px}
+    \subfloat[?g invalid (priority 0)]{\label{fig:g-invalid-fwgc}\input{./img/fwgc/g-invalid-fwgc.tikz}} \\
+    \subfloat[?c valid (priority 0)]{\label{fig:c-fwgc}\input{./img/fwgc/c-fwgc.tikz}}\hspace{20px}
+    \subfloat[?c invalid (priority 0)]{\label{fig:c-invalid-fwgc}\input{./img/fwgc/c-invalid-fwgc.tikz}} \\
+  \end{center}
+  \caption{The IOGG of the farmer-wolf-goat-cabbage puzzle}
+  \label{fig:gg-fwgc}
+  \end{figure}
 
-\renewcommand{\arraystretch}{2}
-\begin{tabular}{| m{0.2\textwidth} | m{0.4\textwidth} | m{0.4\textwidth} |}
-  \hline
-  \textbf{When} & \textbf{What} & \textbf{Deliverable} \\ \hline
-  week 1-3 \newline 2 Jan - 22 Jan & Implementing basic interfaces for both tools. Creating SUT of boardgame example. & GRATiS-Min \\ \hline
-  week 4-6 \newline 23 Jan - 12 Feb & Setting up transformation rules for GTS-to-STS. Implementing transformation on GROOVE interface. & 1) GTS-to-STS transformation rules. 2) improved GRATiS-Min. \\ \hline
-  week 7-10 \newline 13 Feb - 11 Mar & Implementing interfaces of GRATiS. & GRATiS without coverage statistics. \\ \hline
-  week 11-13 \newline 12 Mar - 1 Apr & Implementing location/switch relation coverage statistics for GRATiS. & GRATiS with location/switch relation coverage statistics. \\ \hline
-  week 14-16 \newline 2 Apr - 22 Apr & Creating graph grammars for each case study. & graph grammars of several software systems. \\ \hline
-  week 17 \newline 23 Apr - 29 Apr & Running the implemented system on the created models. & Measurements and comparison of both tools on objective criteria. \\ \hline
-  week 18-20 \newline 30 Apr - 20 May & Implementing data coverage statistics for GRATiS. & GRATiS with data coverage support. \\ \hline
-  week 21-23 \newline 21 May - 10 Jun & Finish writing thesis. & The final thesis. \\ \hline
-\end{tabular}
+  \begin{figure}[ht]
+  \setcounter{subfigure}{8}
+  \begin{center}
+    \subfloat[!retry (priority 1)]{\label{fig:retry-fwgc}\parbox{4cm}{\centering\input{./img/fwgc/retry-fwgc.tikz}}}\\
+    \subfloat[!eaten (priority 1)]{\label{fig:reinit}\input{./img/fwgc/eaten-reinit-fwgc.tikz}}\\
+    \subfloat[!done (priority 1)]{\label{fig:done}\input{./img/fwgc/done-fwgc.tikz}}
+  \end{center}
+  \caption{The IOGG of the farmer-wolf-goat-cabbage puzzle (continued)}
+  \label{fig:gg-fwgc-continued}
+  \end{figure}
+
+  \begin{figure}[ht]
+  \begin{center}
+    \subfloat[!eaten (undo)]{\label{fig:eaten-undo-fwgc}\input{./img/fwgc/eaten-undo-fwgc-extended.tikz}} \hspace{20px}
+    \subfloat[?c]{\label{fig:c-fwgc-extended}\input{./img/fwgc/c-fwgc-extended.tikz}} \\
+    \subfloat[?g]{\label{fig:g-fwgc-extended}\input{./img/fwgc/g-fwgc-extended.tikz}} \hspace{20px}
+    \subfloat[?w]{\label{fig:w-fwgc-extended}\input{./img/fwgc/w-fwgc-extended.tikz}} \\
+    \subfloat[?n]{\label{fig:n-fwgc-extended}\input{./img/fwgc/n-fwgc-extended.tikz}}
+  \end{center}
+  \caption{The extended IOGG of the farmer-wolf-goat-cabbage puzzle}
+  \label{fig:gg-fwgc-extended}
+  \end{figure}
+
+  \begin{figure}[ht]
+  \begin{center}
+  $\begin{array}{lcl}
+  \Locations & = & \{l_0, l_1\} \\
+  \initialLocation & = & l_0 \\
+  \LocationVariables & = & \{N,W,G,C\} \\
+  \initializationFunction & = & \{N \mapsto false, W \mapsto false, G \mapsto false, C \mapsto false\} \\
+  \InteractionVariables & = & \{\} \\
+  \Gates & = & \{?n, ?w, ?g, ?c, !eaten, !done, !retry\} \\
+  \Switches & = & \{l_0\xrightarrow{?n, \neg(N \neq G \land G=C)\lor(N \neq W \land W=G), \{N \mapsto \neg N\}}l_0, \\
+  & & l_0\xrightarrow{?w, N=W \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{W \mapsto \neg W, N \mapsto \neg N\}}l_0,\\
+  & & l_0\xrightarrow{?g, N=G \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{G \mapsto \neg G, N \mapsto \neg N\}}l_0,\\
+  & & l_0\xrightarrow{?c, N=C \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{C \mapsto \neg C, N \mapsto \neg N\}}l_0,\\
+  & & l_0\xrightarrow{?w, N\neq W \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{W \mapsto \neg W, N \mapsto \neg N\}}l_1,\\
+  & & l_0\xrightarrow{?g, N\neq G \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{G \mapsto \neg G, N \mapsto \neg N\}}l_1,\\
+  & & l_0\xrightarrow{?c, N\neq C \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{C \mapsto \neg C, N \mapsto \neg N\}}l_1,\\
+  & & l_1\xrightarrow{!retry,true,\{\}}l_0,\\
+  & & l_0\xrightarrow{!eaten, (N \neq G \land G=C)\lor(N \neq W \land W=G), \{N \mapsto false, W \mapsto false, G \mapsto false, C \mapsto false\}}l_0, \\
+  & & l_0\xrightarrow{!done, N \land W \land G \land C, \{N \mapsto false, W \mapsto false, G \mapsto false, C \mapsto false\}}l_0\}
+  \end{array}$
+  \end{center}
+  \caption{The IOSTS of the farmer-wolf-goat-cabbage puzzle}
+  \label{fig:sts-fwgc}
+  \end{figure}
+
+  \begin{figure}[ht]
+  \begin{center}
+  $\begin{array}{lcl}
+  \Locations & = & \{l_0, l_1\} \\
+  \initialLocation & = & l_0 \\
+  \LocationVariables & = & \{N,W,G,C,Np, Wp, Gp, Cp\} \\
+  \initializationFunction & = & \{N \mapsto false, W \mapsto false, G \mapsto false, C \mapsto false,Np \mapsto false, Wp \mapsto false, Gp \mapsto false, Cp \mapsto false\} \\
+  \InteractionVariables & = & \{\} \\
+  \Gates & = & \{?n, ?w, ?g, ?c, !eaten, !done, !retry\} \\
+  \Switches & = & \{l_0\xrightarrow{?n, \neg(N \neq G \land G=C)\lor(N \neq W \land W=G), \{N \mapsto \neg N, Np \mapsto N, Wp \mapsto W, Gp \mapsto G, Cp \mapsto C\}}l_0, \\
+  & & l_0\xrightarrow{?w, N=W \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{W \mapsto \neg W, N \mapsto \neg N, Np \mapsto N, Wp \mapsto W, Gp \mapsto G, Cp \mapsto C\}}l_0,\\
+  & & l_0\xrightarrow{?g, N=G \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{G \mapsto \neg G, N \mapsto \neg N, Np \mapsto N, Wp \mapsto W, Gp \mapsto G, Cp \mapsto C\}}l_0,\\
+  & & l_0\xrightarrow{?c, N=C \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{C \mapsto \neg C, N \mapsto \neg N, Np \mapsto N, Wp \mapsto W, Gp \mapsto G, Cp \mapsto C\}}l_0,\\
+  & & l_0\xrightarrow{?w, N\neq W \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{W \mapsto \neg W, N \mapsto \neg N, Np \mapsto N, Wp \mapsto W, Gp \mapsto G, Cp \mapsto C\}}l_1,\\
+  & & l_0\xrightarrow{?g, N\neq G \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{G \mapsto \neg G, N \mapsto \neg N, Np \mapsto N, Wp \mapsto W, Gp \mapsto G, Cp \mapsto C\}}l_1,\\
+  & & l_0\xrightarrow{?c, N\neq C \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{C \mapsto \neg C, N \mapsto \neg N, Np \mapsto N, Wp \mapsto W, Gp \mapsto G, Cp \mapsto C\}}l_1,\\
+  & & l_1\xrightarrow{!retry,true,\{\}}l_0,\\
+  & & l_0\xrightarrow{!eaten, (N \neq G \land G=C)\lor(N \neq W \land W=G), \{N \mapsto false, W \mapsto false, G \mapsto false, C \mapsto false\}}l_0, \\
+  & & l_0\xrightarrow{!eaten, (N \neq G \land G=C)\lor(N \neq W \land W=G), \{N \mapsto Np, W \mapsto Wp, G \mapsto Gp, C \mapsto Cp\}}l_0, \\
+  & & l_0\xrightarrow{!done, N \land W \land G \land C, \{N \mapsto false, W \mapsto false, G \mapsto false, C \mapsto false\}}l_0\}
+  \end{array}$
+  \end{center}
+  \caption{The extended IOSTS of the farmer-wolf-goat-cabbage puzzle}
+  \label{fig:sts-fwgc-extended}
+  \end{figure}
+
+  \newpage
+  \chapter{Bar Tab Models}\label{app:bar-tab}
+  \begin{figure}[ht]
+    \begin{center}
+      \subfloat[The initial graph]{\label{fig:start-tab}\input{./img/bartab/start-tab.tikz}}\\
+      \subfloat[?o (priority 0)]{\label{fig:order-tab}\input{./img/bartab/order-tab.tikz}}\hspace{20px}
+      \subfloat[!po (priority 1)]{\label{fig:process_order}\input{./img/bartab/process_order.tikz}}\\
+      \subfloat[?p (priority 0)]{\label{fig:pay-tab}\input{./img/bartab/pay-tab.tikz}}\hspace{20px}
+      \subfloat[!pp (priority 1)]{\label{fig:process_payment}\input{./img/bartab/process_payment.tikz}}
+    \end{center}
+    \caption{The IOGG of the bar tab system}
+    \label{fig:gg-bartab}
+  \end{figure}
+
+  \begin{figure}[ht]
+    \begin{center}
+      \subfloat[The initial graph]{\label{fig:start-tab-extended}\input{./img/bartab/start-tab-extended.tikz}}\hspace{20px}
+      \subfloat[!pd (priority 1)]{\label{fig:process_discount}\input{./img/bartab/process_discount-extended.tikz}}\\
+      \subfloat[?o (priority 1)]{\label{fig:order-tab-extended}\input{./img/bartab/order-tab-extended.tikz}}\hspace{20px}
+      \subfloat[?d (priority 0)]{\label{fig:discount}\input{./img/bartab/discount-extended.tikz}}\\
+      \subfloat[!po (priority 1)]{\label{fig:process_order-extended}\input{./img/bartab/process_order-extended.tikz}}\\
+    \end{center}
+    \caption{The extended IOGG of the bar tab system}
+    \label{fig:gg-bartab-extended}
+  \end{figure}
+
+  \begin{figure}[ht]
+    \begin{center}
+      $\begin{array}{lcl}
+      \Locations & = & \{l_0, l_1, l_2\} \\
+      \initialLocation & = & l_0 \\
+      \LocationVariables & = & \{I, P, T_1, T_2, T_3\} \\
+      \initializationFunction & = & \{T_1 \mapsto 0, T_2 \mapsto 0, T_3 \mapsto 0\} \\
+      \InteractionVariables & = & \{i, d, p, b, r\} \\
+      \Gates & = & \{?o(i,d), ?p(i,p), !po(b), !pp(b, r)\} \\
+      \Switches & = & \{l_0\xrightarrow{?o(i,d), d=`coke' \land i \geq 1 \land i \leq 3, \{I \mapsto i, P \mapsto 0.8\}}l_1, \\
+      & & l_0\xrightarrow{?o(i,d), d=`beer' \land i \geq 1 \land i \leq 3, \{I \mapsto i, P \mapsto 1.5\}}l_1,\\
+      & & l_0\xrightarrow{?o(i,d), d=`wine' \land i \geq 1 \land i \leq 3, \{I \mapsto i, P \mapsto 2.1\}}l_1,\\
+      & & l_1\xrightarrow{!po(b), I=1\land b=T_1+P, \{T_1 \mapsto b\}}l_0,\\
+      & & l_1\xrightarrow{!po(b), I=2\land b=T_2+P, \{T_2 \mapsto b\}}l_0,\\
+      & & l_1\xrightarrow{!po(b), I=3\land b=T_3+P, \{T_3 \mapsto b\}}l_0,\\
+      & & l_0\xrightarrow{?p(i,p), i \geq 1 \land i \leq 3, \{I \mapsto i, P \mapsto p\}}l_2,\\
+      & & l_2\xrightarrow{!pp(b,r),I=1\land b=max(T_1-P, 0)\land r=max(-T_1+P,0),\{T_1 \mapsto b\}}l_0,\\
+      & & l_2\xrightarrow{!pp(b,r),I=2\land b=max(T_2-P, 0)\land r=max(-T_2+P,0),\{T_2 \mapsto b\}}l_0, \\
+      & & l_2\xrightarrow{!pp(b,r),I=3\land b=max(T_3-P, 0)\land r=max(-T_3+P,0),\{T_2 \mapsto b\}}l_0\}
+      \end{array}$
+    \end{center}
+    \caption{The IOSTS of the bar tab system}
+    \label{fig:sts-bartab}
+  \end{figure}
+
+  \begin{figure}[ht]
+    \begin{center}
+      $\begin{array}{lcl}
+      \Locations & = & \{l_0, l_1, l_2, l_3\} \\
+      \initialLocation & = & l_0 \\
+      \LocationVariables & = & \{I, P, T_1, T_2, T_3, D_1, D_2, D_3\} \\
+      \initializationFunction & = & \{T_1 \mapsto 0, T_2 \mapsto 0, T_3 \mapsto 0, D_1 \mapsto 1.0, D_2 \mapsto 1.0, D_3 \mapsto 1.0\} \\
+      \InteractionVariables & = & \{i, d_1, d_2, d_3, q_1, q_2, q_3, p, b, r\} \\
+      \Gates & = & \{?o(i,d), ?p(i,p), !po(b), !pp(b, r)\} \\
+      \Switches & = & \{l_0\xrightarrow{?o(i,d), d_1=`coke' \land d_2=`beer' \land d_3=`wine' \land i \geq 1 \land i \leq 3, \{I \mapsto i, P \mapsto 0.8*q_1+1.5*q_2+2.1*q_3\}}l_1, \\
+      & & l_1\xrightarrow{!po(b), I=1\land b=T_1+P*D_1, \{T_1 \mapsto b\}}l_0,\\
+      & & l_1\xrightarrow{!po(b), I=2\land b=T_2+P*D_2, \{T_2 \mapsto b\}}l_0,\\
+      & & l_1\xrightarrow{!po(b), I=3\land b=T_3+P*D_3, \{T_3 \mapsto b\}}l_0,\\
+      & & l_0\xrightarrow{?p(i,p), i \geq 1 \land i \leq 3, \{I \mapsto i, P \mapsto p\}}l_2,\\
+      & & l_2\xrightarrow{!pp(b,r),I=1\land b=max(T_1-P, 0)\land r=max(-T_1+P,0),\{T_1 \mapsto b\}}l_0,\\
+      & & l_2\xrightarrow{!pp(b,r),I=2\land b=max(T_2-P, 0)\land r=max(-T_2+P,0),\{T_2 \mapsto b\}}l_0, \\
+      & & l_2\xrightarrow{!pp(b,r),I=3\land b=max(T_3-P, 0)\land r=max(-T_3+P,0),\{T_2 \mapsto b\}}l_0, \\
+      & & l_0\xrightarrow{?d(i), i \geq 1 \land i \leq 3,\{I \mapsto i\}}l_3, \\
+      & & l_3\xrightarrow{!pd(b), I=1\land b=T_1+50.0, \{T_1 \mapsto b, D_1 \mapsto 0.9\}}l_0, \\
+      & & l_3\xrightarrow{!pd(b), I=2\land b=T_2+50.0, \{T_2 \mapsto b, D_2 \mapsto 0.9\}}l_0, \\
+      & & l_3\xrightarrow{!pd(b), I=3\land b=T_3+50.0, \{T_3 \mapsto b, D_3 \mapsto 0.9\}}l_0 \}
+      \end{array}$
+    \end{center}
+    \caption{The extended IOSTS of the bar tab system}
+    \label{fig:sts-bartab-extended}
+  \end{figure}
+
+  \newpage
+  \chapter{SCRP Commands \& Responses}\label{app:scrp-specification}
+  \input{./tex/scrp_commands_responses}
+
+  \newpage
+  \chapter{Scanflow Cash Register IOGG}\label{app:scrp-gg}
+  \input{scrp_figures}
+
+  \newpage
+  \chapter{Scanflow Cash Register IOSTS}\label{app:scrp-sts}
+  \input{iosts_scrp}

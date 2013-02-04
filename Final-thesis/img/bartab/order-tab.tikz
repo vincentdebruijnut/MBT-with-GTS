@@ -1,0 +1,19 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n2)  at (3.175, -1.365) {\ml{\textbf{string}}};
+\node[parnode] (n2p)  at (n2.north west) {1};
+\node[node] (n0)  at (2.165, -1.365) {\ml{\textbf{Drink}}};
+\node[node] (n1)  at (0.885, -1.355) {\ml{\textbf{Customer}}};
+\node[node, attr] (n3)  at (0.860, -0.780) {\ml{\textbf{int}}};
+\node[parnode] (n3p)  at (n3.north west) {0};
+\path[edge](n0.east |- 3.175, -1.365) -- node[lab]{name} (n2) ;
+\path[newedge](n1.east |- 2.165, -1.365) -- node[newlab]{orders} (n0) ;
+\path[edge](n1.north -| 0.860, -0.780) -- node[lab]{id} (n3) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

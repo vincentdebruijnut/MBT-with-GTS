@@ -88,11 +88,10 @@
   \input{./tex/all-examples}
   \input{./tex/measurements_on_examples.tex}
 
-  %\newpage
-  %\chapter{Conclusion}\label{chapter:conclusion}
-  %\input{./tex/summary.tex}
-  %\input{./tex/conclusion.tex}
-  %\input{./tex/future-work.tex}
+  \newpage
+  \chapter{Conclusion}\label{chapter:conclusion}
+  \input{./tex/conclusion.tex}
+  \input{./tex/future-work.tex}
   
   \newpage
   \bibliography{bib/bibliography}{}
@@ -104,52 +103,5 @@
 
   \newpage
   \appendix
-  \chapter{Farmer-Wolf-Goat-Cabbage IOGG}\label{app:fwgc}
-  \begin{figure}[ht]
-  \begin{center}
-    \subfloat[The initial graph]{\label{fig:start-fwgc}\input{./img/fwgc/start-fwgc.tikz}}\hspace{20px}
-    \subfloat[?n (priority 0)]{\label{fig:n-fwgc}\input{./img/fwgc/n-fwgc.tikz}} \\
-    \subfloat[?w valid (priority 0)]{\label{fig:w-fwgc}\input{./img/fwgc/w-fwgc.tikz}}\hspace{20px}
-    \subfloat[?w invalid (priority 0)]{\label{fig:w-invalid-fwgc}\input{./img/fwgc/w-invalid-fwgc.tikz}} \\
-    \subfloat[?g valid (priority 0)]{\label{fig:g-fwgc}\input{./img/fwgc/g-fwgc.tikz}}\hspace{20px}
-    \subfloat[?g invalid (priority 0)]{\label{fig:g-invalid-fwgc}\input{./img/fwgc/g-invalid-fwgc.tikz}} \\
-    \subfloat[?c valid (priority 0)]{\label{fig:c-fwgc}\input{./img/fwgc/c-fwgc.tikz}}\hspace{20px}
-    \subfloat[?c invalid (priority 0)]{\label{fig:c-invalid-fwgc}\input{./img/fwgc/c-invalid-fwgc.tikz}} \\
-  \end{center}
-  \end{figure}
-
-  \begin{figure}[ht]
-  \setcounter{subfigure}{8}
-  \begin{center}
-    \subfloat[!retry (priority 1)]{\label{fig:retry-fwgc}\parbox{4cm}{\centering\input{./img/fwgc/retry-fwgc.tikz}}}\\
-    \subfloat[!eaten (priority 1)]{\label{fig:reinit}\input{./img/fwgc/eaten-reinit-fwgc.tikz}}\\
-    \subfloat[!done (priority 1)]{\label{fig:done}\input{./img/fwgc/done-fwgc.tikz}}
-  \end{center}
-  \end{figure}
-
-  \newpage
-  \chapter{Bar Tab IOGG}\label{app:bar-tab}
-  \begin{figure}[ht]
-    \begin{center}
-      \subfloat[The initial graph]{\label{fig:start-tab}\input{./img/start-tab.tikz}}\\
-      \subfloat[?o (priority 0)]{\label{fig:order-tab}\input{./img/order-tab.tikz}}\hspace{20px}
-      \subfloat[!po (priority 1)]{\label{fig:process_order}\input{./img/process_order.tikz}}\\
-      \subfloat[?p (priority 0)]{\label{fig:pay-tab}\input{./img/pay-tab.tikz}}\hspace{20px}
-      \subfloat[!pp (priority 1)]{\label{fig:process_payment}\input{./img/process_payment.tikz}}
-    \end{center}
-    \caption{The IOGG of the bar tab system}
-    %\label{fig:gg-bartab}
-  \end{figure}
-
-  \newpage
-  \chapter{SCRP Commands \& Responses}\label{app:scrp-specification}
-  \input{./tex/scrp_commands_responses}
-
-  \newpage
-  \chapter{Scanflow Cash Register IOGG}\label{app:scrp-gg}
-  \input{scrp_figures}
-
-  \newpage
-  \chapter{Scanflow Cash Register IOSTS}\label{app:scrp-sts}
-  \input{iosts_scrp}
+  \input{./tex/appendix}
 \end{document}

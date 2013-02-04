@@ -1,0 +1,71 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n25)  at (3.435, -2.265) {\ml{\textbf{real}}};
+\node[node, attr] (n24)  at (1.875, -2.285) {\ml{\textbf{real}}};
+\node[node, prod] (n23)  at (3.935, -2.835){};
+\node[node, prod] (n22)  at (2.395, -2.875){};
+\node[node, attr] (n21)  at (5.040, -2.285) {\ml{\textbf{real}}};
+\node[node, prod] (n20)  at (5.045, -3.445){};
+\node[node, attr] (n19)  at (5.050, -3.995) {\ml{\textbf{real}}};
+\node[node, attr] (n18)  at (3.940, -3.455) {\ml{\textbf{real}}};
+\node[node, attr] (n17)  at (2.400, -3.505) {\ml{\textbf{real}}};
+\node[node, prod] (n16)  at (1.485, -4.015){};
+\node[node, attr] (n15)  at (0.740, -3.535) {\ml{\textbf{real}}};
+\node[node, prod] (n14)  at (0.745, -2.855){};
+\node[node, attr] (n13)  at (0.335, -2.295) {\ml{\textbf{real}}};
+\node[node] (n11)  at (3.925, -1.725) {\ml{\textbf{Drink}}};
+\node[node, attr] (n12)  at (4.390, -2.255) {\ml{\textbf{real}}};
+\node[node] (n6)  at (2.355, -1.725) {\ml{\textbf{Drink}}};
+\node[node, attr] (n10)  at (2.910, -2.275) {\ml{\textbf{real}}};
+\node[node] (n0)  at (1.895, -1.055) {\ml{\textbf{Customer}}};
+\node[node] (n1)  at (0.825, -1.745) {\ml{\textbf{Drink}}};
+\node[node, attr] (n2)  at (1.280, -2.315) {\ml{\textbf{real}}};
+\node[node, attr] (n3)  at (1.950, -0.425) {\ml{\textbf{real}}};
+\node[node, prod] (n4)  at (3.835, -0.435){};
+\node[node, attr] (n5)  at (2.990, -0.775) {\ml{\textbf{real}}};
+\node[parnode] (n5p)  at (n5.north west) {0};
+\node[node, attr] (n7)  at (3.980, -1.265) {\ml{\textbf{real}}};
+\node[node, prod] (n8)  at (5.035, -1.545){};
+\node[node, attr] (n9)  at (5.040, -0.895) {\ml{\textbf{real}}};
+\path[edge] (n11)  -- node[lab]{quantity} (n25) ;
+\path[edge] (n4)  -- node[lab]{add} (n5) ;
+\path[edge] (n1)  -- node[lab]{price} (n2) ;
+\path[edge] (n23)  -- node[lab]{add} (n18) ;
+\path[edge] (n6)  --  (n24) ;
+\node[lab] at (2.096, -2.013){quantity};
+\path[edge] (n23)  -- node[lab]{$\pi$1} (n25) ;
+\path[edge] (n22)  -- node[lab]{mul} (n17) ;
+\path[edge] (n14)  -- node[lab]{$\pi$0} (n2) ;
+\path[edge] (n16)  -- node[lab]{add} (n19) ;
+\path[edge] (n8)  -- node[lab]{mul} (n9) ;
+\path[edge] (n0)  -- node[lab]{discount} (n7) ;
+\path[edge] (n14)  -- node[lab]{mul} (n15) ;
+\path[edge] (n22)  -- node[lab]{$\pi$1} (n24) ;
+\path[edge] (n16)  -- node[lab]{$\pi$1} (n17) ;
+\path[edge] (n8)  -- node[lab]{$\pi$1} (n7) ;
+\path[deledge] (n0)  -- node[dellab]{orders} (n6) ;
+\path[edge] (n23)  -- node[lab]{$\pi$0} (n12) ;
+\path[edge] (n8)  -- node[lab]{$\pi$0} (n21) ;
+\path[deledge] (n0)  -- node[dellab]{orders} (n11) ;
+\path[edge] (n20)  -- node[lab]{$\pi$0} (n19) ;
+\path[newedge] (n0)  -- node[newlab]{tab} (n5) ;
+\path[edge] (n11)  -- node[lab]{price} (n12) ;
+\path[edge] (n22)  -- node[lab]{$\pi$0} (n10) ;
+\path[deledge](n0.north -| 1.950, -0.425) -- node[dellab]{tab} (n3) ;
+\path[edge] (n1)  -- node[lab]{quantity} (n13) ;
+\path[edge] (n6)  -- node[lab]{price} (n10) ;
+\path[edge] (n20)  -- node[lab]{$\pi$1} (n18) ;
+\path[edge] (n4)  -- node[lab]{$\pi$1} (n9) ;
+\path[edge] (n4)  -- node[lab]{$\pi$0} (n3) ;
+\path[edge] (n14)  -- node[lab]{$\pi$1} (n13) ;
+\path[deledge] (n0)  -- node[dellab]{orders} (n1) ;
+\path[edge] (n16)  -- node[lab]{$\pi$0} (n15) ;
+\path[edge] (n20)  -- node[lab]{add} (n21) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

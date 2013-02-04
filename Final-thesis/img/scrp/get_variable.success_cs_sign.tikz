@@ -1,0 +1,23 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n3)  at (3.350, -1.730) {\ml{"CS\_SIGN"}};
+\node[parnode] (n3p)  at (n3.north west) {0};
+\node[delnode] (n2)  at (2.175, -1.010) {\ml{\textbf{Request}\\\textit{get}}};
+\node[node] (n1)  at (3.330, -1.005) {\ml{\textbf{SFU}}};
+\node[node] (n0)  at (0.950, -1.005) {\ml{\textbf{CR}}};
+\node[node, attr] (n5)  at (0.960, -1.740) {\ml{\textbf{string}}};
+\node[node, attr] (n4)  at (2.040, -1.740) {\ml{\textbf{string}}};
+\node[parnode] (n4p)  at (n4.north west) {1};
+\path[deledge](n1.west |- 2.175, -1.010) -- node[dellab]{from} (n2) ;
+\path[deledge](n2.west |- 0.950, -1.005) -- node[dellab]{to} (n0) ;
+\path[edge](n1.south -| 3.350, -1.730) -- node[lab]{var\_name} (n3) ;
+\path[edge](n0.south -| 0.960, -1.740) -- node[lab]{state} (n5) ;
+\path[edge, -](n5.east |- 2.040, -1.740) -- node[lab]{\textit{=}} (n4) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

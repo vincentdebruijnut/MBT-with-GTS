@@ -1,0 +1,17 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n18)  at (2.965, -2.325) {\ml{\textbf{Payment}\\amount = 0.0}};
+\node[node] (n13)  at (4.495, -0.815) {\ml{\textbf{Customer}\\\textit{customer3}\\id = 3\\tab = 0.0}};
+\node[node] (n11)  at (3.015, -0.815) {\ml{\textbf{Customer}\\\textit{customer2}\\id = 2\\tab = 0.0}};
+\node[node] (n9)  at (1.545, -0.815) {\ml{\textbf{Customer}\\\textit{customer1}\\id = 1\\tab = 0.0}};
+\node[node] (n7)  at (4.395, -1.685) {\ml{\textbf{Drink}\\\textit{drink3}\\name = "wine"\\price = 2.10}};
+\node[node] (n3)  at (2.895, -1.665) {\ml{\textbf{Drink}\\\textit{drink2}\\name = "beer"\\price = 1.50}};
+\node[node] (n0)  at (1.405, -1.665) {\ml{\textbf{Drink}\\\textit{drink1}\\name = "coke"\\price = 0.80}};
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

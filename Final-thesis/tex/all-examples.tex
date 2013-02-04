@@ -2,7 +2,7 @@
 This section shows the IOGG and IOSTS for each model example and the case study. 
 
 \subsection{Example 1: boardgame}
-The boardgame is the running example of which the IOSTS and IOGG are given in Figures~\ref{fig:example_sts} and \ref{fig:example_groove} respectively. In order to be consistent with the GG variable definition, the two $?Player$ and $?Die$ nodes receive the flags $\mathit{var1, var2, var3}$ respectively, representing the variable labels.
+The boardgame is the running example of which the IOSTS and IOGG are given in Figures~\ref{fig:example_sts} and \ref{fig:example_groove} respectively. In order to be consistent with the GG variable definition, the two $Player$ and $Die$ nodes receive the flags $\mathit{var1, var2, var3}$ respectively, representing the variable labels.
 
 \subsection{Example 2: farmer-wolf-goat-cabbage}
 In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one item to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The stimuli accepted by the puzzle are:
@@ -19,101 +19,30 @@ The responses given by the puzzle are:
 \item $!done$ When all four items are on the other river bank
 \end{itemize}
 
-The IOGG of this puzzle is in Appendix~\ref{app:fwgc}. The response rules `!retry', `!eaten' and `!done' have a higher priority. This ensures that a proper response is given after a move, before allowing more stimuli.
+The IOGG of this puzzle is in Figures~\ref{fig:gg-fwgc} and~\ref{fig:gg-fwgc-continued}. The response rules `!retry', `!eaten' and `!done' have a higher priority. This ensures that a proper response is given after a move, before allowing more stimuli.
 
-\begin{comment}
-\begin{figure}[ht]
-  \begin{center}
-    \subfloat[The initial graph]{\label{fig:start-bg}\input{./img/start-fwgc.tikz}}\hspace{20px}
-    \subfloat[The ?c (move cabbage) rule with priority 0]{\label{fig:c-fwgc}\input{./img/c-fwgc.tikz}}\\
-    \subfloat[The ?c (invalid cabbage move) rule with priority 0]{\label{fig:c-invalid-fwgc}\input{./img/c-invalid-fwgc.tikz}}\hspace{20px}
-    \subfloat[The !retry rule with priority 1]{\label{fig:retry-fwgc}\input{./img/retry-fwgc.tikz}}\\
-    \subfloat[The !eaten rule with priority 1]{\label{fig:reinit}\input{./img/eaten-reinit-fwgc.tikz}}\\
-    \subfloat[The !done rule with priority 1]{\label{fig:done}\input{./img/done-fwgc.tikz}}
-  \end{center}
-  \caption{The IOGG of the farmer-wolf-goat-cabbage puzzle}
-  \label{fig:gg-fwgc}
-\end{figure}
-\end{comment}
-
-The IOSTS of this puzzle is is given in the formal definition, because it is too large for the visual representation. It uses boolean location variables to indicate whether the item is on the other side. These are $?N,\:W,\:G,\:C$ for the farmer, wolf, goat and cabbage respectively. These are checked to see if an invalid move is done, an item is being eaten or the puzzle has been completed.
-\vspace{5px} \\
-$\begin{array}{lcl}
-\Locations & = & \{l_0, l_1\} \\
-\initialLocation & = & l_0 \\
-\LocationVariables & = & \{N,W,G,C\} \\
-\initializationFunction & = & \{N \mapsto false, W \mapsto false, G \mapsto false, C \mapsto false\} \\
-\InteractionVariables & = & \{\} \\
-\Gates & = & \{?n, ?w, ?g, ?c, !eaten, !done, !retry\} \\
-\Switches & = & \{l_0\xrightarrow{?n, \neg(N \neq G \land G=C)\lor(N \neq W \land W=G), \{N \mapsto \neg N\}}l_0, \\
-& & l_0\xrightarrow{?w, N=W \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{W \mapsto \neg W, N \mapsto \neg N\}}l_0,\\
-& & l_0\xrightarrow{?g, N=G \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{G \mapsto \neg G, N \mapsto \neg N\}}l_0,\\
-& & l_0\xrightarrow{?c, N=C \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{C \mapsto \neg C, N \mapsto \neg N\}}l_0,\\
-& & l_0\xrightarrow{?w, N\neq W \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{W \mapsto \neg W, N \mapsto \neg N\}}l_1,\\
-& & l_0\xrightarrow{?g, N\neq G \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{G \mapsto \neg G, N \mapsto \neg N\}}l_1,\\
-& & l_0\xrightarrow{?c, N\neq C \land (N = G \lor G\neq C)\land (N = W \lor W\neq G), \{C \mapsto \neg C, N \mapsto \neg N\}}l_1,\\
-& & l_1\xrightarrow{!retry,true,\{\}}l_0,\\
-& & l_0\xrightarrow{!eaten, (N \neq G \land G=C)\lor(N \neq W \land W=G), \{N \mapsto false, W \mapsto false, G \mapsto false, C \mapsto false\}}l_0, \\
-& & l_0\xrightarrow{!done, N \land W \land G \land C, \{N \mapsto false, W \mapsto false, G \mapsto false, C \mapsto false\}}l_0\}
-\end{array}$
-
-%\begin{figure}[ht]
-%  \begin{center}
-%    \input{./img/sts_fwgc.tex}
-%  \end{center}
-%  \caption{The IOSTS of the farmer-wolf-goat-cabbage puzzle}
-%  \label{fig:sts-fwgc}
-%\end{figure}
+The IOSTS of this puzzle is given in the formal definition in Figure~\ref{fig:sts-fwgc}. It uses boolean location variables to indicate whether the item is on the other side. These are $?N,\:W,\:G,\:C$ for the farmer, wolf, goat and cabbage respectively. These are checked to see if an invalid move is done, an item is being eaten or the puzzle has been completed.
 
 \subsection{Example 3: bar tab system}
 This example models a bar tab system, where customers can order beer, wine and coke, costing $\$1.50$, $\$2.10$ and $\$0.80$ respectively. The price of the order adds to the customer's tab. Customers can pay their tab with money; they receive cash back if the payment exceeds the tab. The models are abstracted to include three customers. Furthermore, a customer can order only one drink. Drinks and payments are processed immediately before other drinks or payments can occur. The stimuli accepted by the system are:
 \begin{itemize}
-\item $?o(i,d)$ for ordering a drink $?d$ on bar tab $?i$
-\item $?p(i,p)$ for paying amount $?p$ on bar tab $?i$
+\item $?o(i,d)$ for ordering a drink $d$ on bar tab $i$
+\item $?p(i,p)$ for paying amount $p$ on bar tab $i$
 \end{itemize}
 The responses given by the system are:
 \begin{itemize}
-\item $!po(b)$ for processing an order giving the new bar tab balance $?b$
-\item $!pp(b,r)$ for processing a payment giving the new account balance $?b$ and the return funds $?r$
+\item $!po(b)$ for processing an order giving the new bar tab balance $b$
+\item $!pp(b,r)$ for processing a payment giving the new account balance $b$ and the return funds $r$
 \end{itemize}
 
-The IOGG of the bar tab system is in Appendix~\ref{app:bar-tab}. The `!po' and `!pp` rules have a higher priority than the `?o' and `?p' rules, to ensure an order is processed before a new one is made.
+The IOGG of the bar tab system is in Figure~\ref{fig:gg-bartab}. The `!po' and `!pp` rules have a higher priority than the `?o' and `?p' rules, to ensure an order is processed before a new one is made.
 
-The formal definition for the IOSTS of the bar tab system is given below. The IOSTS uses the variables $?T_1, T_2, T_3$ to keep track of the bar tabs of the three people. It uses the variables $?I, P$ as temporary variables for the id and payment/price respectively. The function $?max$ takes the maximum value of its parameters.
-\vspace{5px} \\
-$\begin{array}{lcl}
-\Locations & = & \{l_0, l_1, l_2\} \\
-\initialLocation & = & l_0 \\
-\LocationVariables & = & \{T_1, T_2, T_3\} \\
-\initializationFunction & = & \{T_1 \mapsto 0, T_2 \mapsto 0, T_3 \mapsto 0\} \\
-\InteractionVariables & = & \{i, d, p, b, r\} \\
-\Gates & = & \{?o(i,d), ?p(i,p), !po(b), !pp(b, r)\} \\
-\Switches & = & \{l_0\xrightarrow{?o(i,d), d=`coke' \land i \geq 1 \land i \leq 3, \{I \mapsto i, P \mapsto 0.8\}}l_1, \\
-& & l_0\xrightarrow{?o(i,d), d=`beer' \land i \geq 1 \land i \leq 3, \{I \mapsto i, P \mapsto 1.5\}}l_1,\\
-& & l_0\xrightarrow{?o(i,d), d=`wine' \land i \geq 1 \land i \leq 3, \{I \mapsto i, P \mapsto 2.1\}}l_1,\\
-& & l_1\xrightarrow{!po(b), I=1\land b=T_1+P, \{T_1 \mapsto b\}}l_0,\\
-& & l_1\xrightarrow{!po(b), I=2\land b=T_2+P, \{T_2 \mapsto b\}}l_0,\\
-& & l_1\xrightarrow{!po(b), I=3\land b=T_3+P, \{T_3 \mapsto b\}}l_0,\\
-& & l_0\xrightarrow{?p(i,p), i \geq 1 \land i \leq 3, \{I \mapsto i, P \mapsto p\}}l_2,\\
-& & l_2\xrightarrow{!pp(b,r),I=1\land b=max(T_1-P, 0)\land r=max(-T_1+P,0),\{T_1 \mapsto b\}}l_0,\\
-& & l_2\xrightarrow{!pp(b,r),I=2\land b=max(T_2-P, 0)\land r=max(-T_2+P,0),\{T_2 \mapsto b\}}l_0, \\
-& & l_2\xrightarrow{!pp(b,r),I=3\land b=max(T_3-P, 0)\land r=max(-T_3+P,0),\{T_2 \mapsto b\}}l_0\}
-\end{array}$
-
-\begin{comment}
-\begin{figure}[ht]
-  \begin{center}
-    \input{./img/sts_tab.tex}
-  \end{center}
-  \caption{The IOSTS of the bar tab system}
-  \label{fig:sts-bartab}
-\end{figure}
-\end{comment}
+The formal definition for the IOSTS of the bar tab system is given in Figure~\ref{fig:sts-bartab}. The IOSTS uses the variables $T_1, T_2, T_3$ to keep track of the bar tabs of the three people. It uses the variables $I, P$ as temporary variables for the id and payment/price respectively. The function $max$ takes the maximum value of its parameters.
 
 \subsection{Failed example: restaurant reservations}
 In this example, a restaurant with three tables allow customers to reserve tables for a certain time slot, given by a start and end time. The reserved time should be at least an hour. The models abstract again from the number of customers, setting it to two. The time span in which reservations can be made is a week. The maximum number of reservations is therefore bounded to $7*24=168$.
 
-Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a restaurant and two potential customers. Figure~\ref{fig:make-reservation} shows part of a rule that allows people to make reservations. The start and end times are timestamps represented by integers. This rule allows people to make multiple reservations. However, The reservations cannot be GG variables or this rule violates the unique GG variables constraint in section~\ref{sec:constraints}, because it has to assign a variable label to the $?Reservation$ node.
+Figure~\ref{fig:reservation_start} shows the initial graph of three tables at a restaurant and two potential customers. Figure~\ref{fig:make-reservation} shows part of a rule that allows people to make reservations. The start and end times are timestamps represented by integers. This rule allows people to make multiple reservations. However, The reservations cannot be GG variables or this rule violates the unique GG variables constraint in section~\ref{sec:constraints}, because it has to assign a variable label to the $Reservation$ node.
 
 \begin{figure}[ht]
   \begin{center}
@@ -146,10 +75,10 @@ Appendix~\ref{app:scrp-specification} gives the most relevant parts of the speci
 $\mathit{?SIGNON(id, password)}$ & Requests the register to sign on with the login and password given by $\mathit{id}$ and $\mathit{password}$\\
 $\mathit{?SIGNOFF}$ & Requests the register to sign off\\
 $\mathit{?OPEN(account)}$ & Opens the account given by $\mathit{account}$ or a new account if $\mathit{account}$ is not set\\
-$\mathit{?ARTREG(barcode, amount)}$ & Requests registration of an article, with $\mathit{barcode}$ representing its key and $\mathit{amount}$ representing the amount of articles to register\\
-$\mathit{?STAMPREG(amount)}$ & Requests registration of loyalty points, where $\mathit{amount}$ is the amount of loyalty points to register\\
+$\mathit{?ARTREG(barcode)}$ & Requests registration of an article, with $\mathit{barcode}$ representing its key \\
+$\mathit{?STAMPREG}$ & Requests registration of loyalty points \\
 $\mathit{?ARTID(barcode)}$ & Requests identification of an article, with $\mathit{barcode}$ representing its key\\
-$\mathit{?ARTRET(barcode, amount)}$ & Returns an article where $\mathit{barcode}$ is the article being returned and $\mathit{amount}$ representing the amount of aricles to return\\
+$\mathit{?ARTRET(barcode)}$ & Returns an article where $\mathit{barcode}$ is the article being returned \\
 $\mathit{?CLOSE}$ & Closes the account\\
 $\mathit{?ENDTOT}$ & Requests the end total of the registered articles\\
 $\mathit{?TRANS(trans\_id)}$ & Inform the register that the payment was made, where $\mathit{tr\_method}$ represents the payment method, e.g. cash, credit card\\
@@ -193,7 +122,7 @@ $!220$ & SCRP Service ready\\
 $!221$ & SCRP Service terminating\\ 
 $!230(endtotal)$ & Gives the end total for all registered articles.\\ 
 $!231$ & Account opened\\ 
-$!232(nr\_articles,subtotal)$ & Article registered\\ 
+$!232$ & Article registered\\ 
 $!233$ & Account idled\\ 
 $!240$ & Transaction succeeded\\ 
 $!250$ & Signed Off\\ 
@@ -233,7 +162,7 @@ $\mathit{?ARTREG\_REFUND}$ & Requests registration of a special type of article,
 $\mathit{?ARTREG\_LOYALTY}$ & Request registeration of a special type of aricle, the loyalty points \\
 \end{tabular}
 
-Note that the abstraction also includes the $\mathit{amount}$ interaction variable. This choice was made when implementing the adapter. A similar abstraction is made for the $\mathit{account}$ interaction variable: 
+A similar abstraction is made for the $\mathit{account}$ interaction variable: 
 \vspace{5px}\\
 \begin{tabular}{lp{310px}}
 $\mathit{?OPEN\_EXIST}$ & Opens an existing account \\

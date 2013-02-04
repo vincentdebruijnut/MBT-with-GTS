@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="resume.error">
+    <graph role="rule" edgeids="false" edgemode="directed" id="resume.error">
         <attr name="transitionLabel">
             <string>503</string>
+        </attr>
+        <attr name="enabled">
+            <string>false</string>
         </attr>
         <attr name="$version">
             <string>curly</string>
@@ -25,44 +28,44 @@
                 <string>25 82 97 67</string>
             </attr>
         </node>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>del:</string>
             </attr>
         </edge>
-        <edge to="n2" from="n0">
-            <attr name="label">
-                <string>to</string>
-            </attr>
-        </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>type:Request</string>
             </attr>
         </edge>
-        <edge to="n0" from="n0">
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>to</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
             <attr name="label">
                 <string>flag:resume</string>
             </attr>
         </edge>
-        <edge to="n0" from="n11">
-            <attr name="label">
-                <string>from</string>
-            </attr>
-        </edge>
-        <edge to="n11" from="n11">
+        <edge from="n11" to="n11">
             <attr name="label">
                 <string>type:SFU</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n11" to="n0">
             <attr name="label">
-                <string>flag:SS_ERROR</string>
+                <string>from</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>flag:SS_ERROR</string>
             </attr>
         </edge>
     </graph>

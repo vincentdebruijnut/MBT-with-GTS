@@ -5,10 +5,10 @@
 \begin{tikzpicture}[
 % Special color styles
 scale=\tikzscale]
-\node[node] (n2)  at (1.025, -1.850) {\ml{\textbf{Account}\\\textit{AS\_IDLE}}};
-\node[node] (n1)  at (2.520, -1.035) {\ml{\textbf{SFU}}};
-\node[node] (n0)  at (1.020, -1.065) {\ml{\textbf{CR}\\\textit{SS\_OFF}}};
-\path[edge](n0.south -| 1.025, -1.850) -- node[lab]{has} (n2) ;
+\node[node] (n0)  at (1.020, -1.065) {\ml{\textbf{CR}\\\textit{SS\_OFF}\\\textit{var\_1}\\state = "SS\_OFF"}};
+\node[node] (n1)  at (2.420, -1.065) {\ml{\textbf{SFU}\\\textit{var\_2}\\var\_name = ""}};
+\node[node] (n2)  at (1.035, -1.960) {\ml{\textbf{Account}\\\textit{AS\_IDLE}}};
+\path[edge](n0.south -| 1.035, -1.960) -- node[lab]{has} (n2) ;
 \userdefinedmacro
 \end{tikzpicture}
 \renewcommand{\userdefinedmacro}{\relax}

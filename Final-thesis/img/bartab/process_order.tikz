@@ -1,0 +1,24 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n5)  at (2.290, -2.255) {\ml{\textbf{real}}};
+\node[parnode] (n5p)  at (n5.north west) {0};
+\node[node, prod] (n4)  at (3.305, -2.825){};
+\node[node, attr] (n3)  at (3.300, -1.555) {\ml{\textbf{real}}};
+\node[node, attr] (n2)  at (1.170, -2.815) {\ml{\textbf{real}}};
+\node[node] (n1)  at (1.185, -2.255) {\ml{\textbf{Drink}}};
+\node[node] (n0)  at (1.175, -1.545) {\ml{\textbf{Customer}}};
+\path[edge] (n4)  -- node[lab]{$\pi$0} (n3) ;
+\path[deledge](n0.south -| 1.185, -2.255) -- node[dellab]{orders} (n1) ;
+\path[newedge] (n0)  -- node[newlab]{tab} (n5) ;
+\path[edge](n1.south -| 1.170, -2.815) -- node[lab]{price} (n2) ;
+\path[edge] (n4)  -- node[lab]{add} (n5) ;
+\path[edge] (n4)  -- node[lab]{$\pi$1} (n2) ;
+\path[deledge](n0.east |- 3.300, -1.555) -- node[dellab]{tab} (n3) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

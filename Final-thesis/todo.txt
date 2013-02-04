@@ -44,21 +44,26 @@ all-examples.tex
 - 2 small issues (20 mins) done
 
 measurements_on_examples.tex
-- Need to verify simulation/bisimulation (LTSmin, difficult) (6 hours)
-- Draw conclusions per example (2 hours)
+- Draw conclusions per example (2 hours) done
 
 conclusion.tex
-- Draw conclusions using the research question and design requirements (2 hours)
+- Draw conclusions using the research question and design requirements (2 hours) done
 
 future-work.tex
-- Write this section (1 hour)
+- Write this section (1 hour) done
 
 50.7 hours
 21.2 done
 
-- add description of wild cards to groove visual desc
-- change ?GET rule in IOGG to mulitple rules with all vars sts uses
-- remove unused vars from stimuli/responses in description
-- Specify the extension of the IOSTS of SCRP
-- Move extended figures to appendices
-- write scripts to measure halstead on sts definition and tikz
+still to do:
+- Need to verify simulation/bisimulation (Testmanager!)
+- verify halstead measurements (done by script, recount a smaller model, find mistakes)
+- write something about cyclomatic complexity and system complexity
+- object diagram beter maken (Fig 4.4)
+- recount number scrp rules and vars for 
+- Write something about other GG tools
+- add description of wild cards to groove visual description
+- Add state of account as variable, check cs_accnt in get_variable#success
+- dotted line 2.5.3
+- fwgc afkorten (tot fwgc)
+- scrp iosts in appendix is raar gerendered (center?)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="signoff.success">
+    <graph role="rule" edgeids="false" edgemode="directed" id="signoff.success">
         <attr name="transitionLabel">
             <string>250</string>
         </attr>
@@ -10,64 +10,94 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n1">
-            <attr name="layout">
-                <string>412 143 48 33</string>
-            </attr>
-        </node>
-        <node id="n0">
-            <attr name="layout">
-                <string>75 127 82 67</string>
-            </attr>
-        </node>
         <node id="n2">
             <attr name="layout">
                 <string>255 135 81 50</string>
             </attr>
         </node>
-        <edge to="n2" from="n1">
-            <attr name="label">
-                <string>from</string>
+        <node id="n0">
+            <attr name="layout">
+                <string>15 127 201 67</string>
             </attr>
-        </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>type:SFU</string>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>412 143 48 33</string>
             </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>del:flag:?[SS_ON,SS_OFF,SS_HALT]</string>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>62 226 93 37</string>
             </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>new:flag:SS_OFF</string>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>74 65 73 37</string>
             </attr>
-        </edge>
-        <edge to="n0" from="n0">
-            <attr name="label">
-                <string>type:CR</string>
-            </attr>
-        </edge>
-        <edge to="n2" from="n2">
+        </node>
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>del:</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>type:Request</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
             <attr name="label">
                 <string>flag:signoff</string>
             </attr>
         </edge>
-        <edge to="n0" from="n2">
+        <edge from="n2" to="n0">
             <attr name="label">
                 <string>to</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n0" to="n0">
             <attr name="label">
-                <string>type:Request</string>
+                <string>type:CR</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>del:flag:?[SS_ON,SS_OFF,SS_HALT]</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>new:flag:SS_OFF</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n3">
+            <attr name="label">
+                <string>new:state</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n4">
+            <attr name="label">
+                <string>del:state</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>type:SFU</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n2">
+            <attr name="label">
+                <string>from</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>string:&quot;SS_OFF&quot;</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>string:</string>
             </attr>
         </edge>
     </graph>
