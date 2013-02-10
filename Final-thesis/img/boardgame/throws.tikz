@@ -5,17 +5,21 @@
 \begin{tikzpicture}[
 % Special color styles
 scale=\tikzscale]
-\node[node] (n3)  at (2.840, -0.965) {\ml{\textbf{Die}\\{\color{\green}rolls := rolls $-$ 1}\\rolls $>$ 0}};
-\node[node] (n1)  at (1.540, -1.925) {\ml{\textbf{Location}}};
-\node[node] (n0)  at (1.460, -0.970) {\ml{\textbf{Player}\\\textit{turn}}};
-\node[node] (n2)  at (2.760, -1.915) {\ml{\textbf{Location}}};
-\node[node, attr] (n4)  at (1.475, -0.395) {\ml{\textbf{int}}};
+\node[node] (n8)  at (0.760, -1.205) {\ml{\textbf{Die}}};
+\node[node, attr] (n4)  at (2.015, -1.325) {\ml{\textbf{int}}};
 \node[parnode] (n4p)  at (n4.north west) {0};
-\path[edge](n0.east |- 2.840, -0.965) -- node[lab]{throws} (n3) ;
-\path[deledge](n0.south -| 1.540, -1.925) -- node[dellab]{at} (n1) ;
-\path[newedge] (n0)  -- node[newlab]{at} (n2) ;
-\path[edge](n0.north -| 1.475, -0.395) -- node[lab]{id} (n4) ;
-\path[edge](n1.east |- 2.760, -1.915) -- node[lab]{next} (n2) ;
+\node[node, attr] (n2)  at (0.775, -0.505) {\ml{\textbf{int}}};
+\node[node] (n1)  at (0.760, -2.060) {\ml{\textbf{Player}\\\textit{turn}}};
+\node[node, prod] (n5)  at (2.035, -1.955) {\ml{$\pi$0 = 1\\le = true}};
+\node[node, prod] (n7)  at (2.025, -0.585) {\ml{$\pi$0 = 6\\ge = true}};
+\path[newedge] (n1) .. controls (1.120, -1.710) and (1.090, -1.440) ..  (n8) ;
+\node[newlab] at (1.100, -1.580){throws};
+\path[nacedge] (n1) .. controls (0.430, -1.700) and (0.440, -1.430) ..  (n8) ;
+\node[naclab] at (0.444, -1.576){throws};
+\path[newedge](n8.east |- 2.015, -1.325) -- node[newlab]{rolls} (n4) ;
+\path[deledge](n8.north -| 0.775, -0.505) -- node[dellab]{rolls} (n2) ;
+\path[edge] (n7)  -- node[lab]{$\pi$1} (n4) ;
+\path[edge] (n5)  -- node[lab]{$\pi$1} (n4) ;
 \userdefinedmacro
 \end{tikzpicture}
 \renewcommand{\userdefinedmacro}{\relax}

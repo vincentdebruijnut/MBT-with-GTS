@@ -66,9 +66,17 @@ Test cases should always reach a pass or fail state within finite time. This req
 \end{figure}
 
 \paragraph*{Coverage}\label{sec:coverage}
-The number of tests that can be generated from a model is potentially infinite. Therefore, there must be a test selection strategy to maximize the quality of the tests while minimizing the time spent testing. Coverage statistics help with test selection. Such statistics indicate how much of the model is tested. A transition in the model is considered tested when the transition system is in the source state of the transition and either the input is given to or the output is observed from the SUT, depending on the type of the transition.
+The number of tests that can be generated from a model is potentially infinite. Therefore, there must be a test selection strategy to maximize the quality of the tests while minimizing the time spent testing. Coverage statistics help with test selection. Coverage statistics are calculated to indicate how adequately the testing has been performed~\cite{Zhu:coverage}. These statisics are therefore useful metrics for communicating how much of a system is tested.
 
-When the SUT is a black box, typical coverage metrics are state and transition coverage of the model~\cite{Lee:testing, Nachmanson:testing, Hasan:testing}. State coverage can be measured by dividing the tested states by the total states in the model. The same process applies to transition coverage. As an example, the coverage metrics of the IOTS test case example in~\ref{fig:iots_test} are calculated. The test case tests one path through the specification and passes through 3 out of 4 states and 2 out of 4 transitions. The state coverage is therefore 75\% and the transition coverage is 50\%.
+One type of coverage is \textit{white-box coverage} or \textit{code coverage}: This coverage statistic measures how much of the lines of codes in the implementation is tested. A line of code is considered tested when it is executed during the test run.
 
-Coverage statistics are calculated to indicate how adequately the testing has been performed~\cite{Zhu:coverage}. These statisics are therefore useful metrics for communicating how much of a system is tested.
+When the SUT is a black box, which often is the case, typical coverage metrics for LTSs are \textit{state and transition coverage}~\cite{Lee:testing, Nachmanson:testing, Hasan:testing}. This coverage statistic measures how much of the model is tested. A state in the model is considered tested when the transition system reaches the state during testing. A transition in the model is considered tested when the transition system is in the source state of the transition and either:
+\begin{enumerate}
+\item the transition is a stimulus and the input represented by the label of the transition is given to the SUT
+\item the transition is a response and the output represented by the label of the transition is observed from the SUT
+\end{enumerate}
+
+ State coverage can be measured by dividing the tested states by the total states in the model. The same process applies to transition coverage. As an example, the coverage metrics of the IOTS test case example in~\ref{fig:iots_test} are calculated. The test case tests one path through the specification and passes through 3 out of 4 states and 2 out of 4 transitions. The state coverage is therefore 75\% and the transition coverage is 50\%.
+
+ This example shows that the total number of states and transitions in the transition systems has to be known; coverage statistics cannot be measured on an infinitely large LTS, for example.
 

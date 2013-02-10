@@ -3,7 +3,13 @@
 Some basic concepts from algebra are described here. For a general introduction into logic we refer to~\cite{Huth:logic}. This section explains in order: multi-sorted signatures, algebrae, variables \& terms and term-mapping \& valuations. The algebra described here will be used in the next sections to formally define Symbolic Transition Systems and Graph Grammars.
 
 \vspace{10px}\begin{definition} Multi-sorted Signatures \\
-A \textit{multi-sorted signature} $\langle \Sorts, \FunctionSymbols \rangle$ describes the sorts and function symbols of a formal language. $\Sorts$\newnot{symbol:Sorts} is a set of sorts. $\FunctionSymbols$\newnot{symbol:FunctionSymbols} is a set of function symbols. Each $\functionSymbol \in \FunctionSymbols$ has an arity $n \in \mathbb{N}$, where a function symbol with arity $n = 0$ is called a constant symbol. $\FunctionSymbols^i$ denotes the subset of $\FunctionSymbols$ with function symbols of arity $n = i$. The sort of a function symbol $\functionSymbol \in \FunctionSymbols$ with arity $n$ is given by $\sigma(f) = \sort_1 ... \sort_{n+1}$, with $\sort_i \in \Sorts$ for $1 \leq i \leq n$. $\sort_{n+1}$ is the return sort. In this report, $\Sorts =  \{\mathit{int, real, bool, string}\}$ denoting the integer, real, boolean and string sorts respectively. $\FunctionSymbols$ features the commonly used function symbols, which include, but not restricted by, `+', `*', `=', `<', `0', `1'.
+A \textit{multi-sorted signature} $\langle \Sorts, \FunctionSymbols \rangle$ describes the sorts and function symbols of a formal language. $\Sorts$\newnot{symbol:Sorts} is a set of sorts. $\FunctionSymbols$\newnot{symbol:FunctionSymbols} is a set of function symbols. Each $\functionSymbol \in \FunctionSymbols$ has an arity $n \in \mathbb{N}$, where a function symbol with arity $n = 0$ is called a constant symbol. $\FunctionSymbols^i$ denotes the subset of $\FunctionSymbols$ with function symbols of arity $n = i$. The sort of a function symbol $\functionSymbol \in \FunctionSymbols$ with arity $n$ is given by $\sigma(f) = \sort_1 ... \sort_{n+1}$, with $\sort_i \in \Sorts$ for $1 \leq i \leq n$. $\sort_{n+1}$ is the return sort. In this report, $\Sorts =  \{\mathit{int, real, bool, string}\}$ denoting the integer, real, boolean and string sorts respectively. $\FunctionSymbols$ features the commonly used function symbols, which include, but are not restricted to, `int:+', `string:=', `$\neg$', `1', which are the addition of integers, the equality of strings, the negation of a boolean and the integer `one' respectively. The sorts and arities of these examples are given by:
+\begin{enumerate}
+\item $\sigma(int:+) = \langle int, int, int\rangle$
+\item $\sigma(string:=) = \langle string, string, bool\rangle$
+\item $\sigma(\neg) = \langle bool, bool\rangle$
+\item $\sigma(1) = \langle int \rangle$
+\end{enumerate}
 \end{definition}
 
 \vspace{10px}

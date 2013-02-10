@@ -3,7 +3,7 @@
 \subsection{ATM}\label{sec:atm}
 ATM is a model-based testing web application, developed in the Ruby on Rails framework. It has been used to test the software of several big companies in the Netherlands since 2006. It is under continuous development by Axini.
 
-The UML sequence diagram for ATM is shown in Figure~\ref{fig:axini_tool}.
+A UML sequence diagram for ATM is shown in Figure~\ref{fig:axini_tool}, depicting a test run from start to end.
 
 \begin{figure}[h]
   \begin{center}
@@ -24,7 +24,7 @@ The tool functions as follows:
 \end{enumerate}
 
 \subsection{GROOVE}\label{sec:descriptiongroove}
-GROOVE is an open source, graph-based modelling tool in development at the University of Twente since 2004~\cite{Rensink:GROOVE}. It has been applied to several case studies, such as model transformations and security and leader election protocols~\cite{Ghamarian:GROOVE}. The UML sequence diagram for GROOVE is shown in Figure~\ref{fig:groove_tool}.
+GROOVE is an open source, graph-based modelling tool in development at the University of Twente since 2004~\cite{Rensink:GROOVE}. It has been applied to several case studies, such as model transformations and security and leader election protocols~\cite{Ghamarian:GROOVE}. A UML sequence diagram for GROOVE is shown in Figure~\ref{fig:groove_tool}, depicting a GG exploration to a GTS.
 
 \begin{figure}[h]
   \begin{center}
@@ -54,7 +54,7 @@ Nodes in GROOVE have several kinds of labels: regular labels, type labels and fl
 \end{figure}
 
 \paragraph*{Rule node matching}
-Nodes in a rule graph in GROOVE can also match each other, by connecting them with an equals `=' labelled edge. This means that any images of both nodes have to be the same. Figure \ref{fig:node_match1} shows an example of this. Nodes in a rule graph in GROOVE can also explicitly not match each other, by connecting them with an not-equals `!=' labelled edge. This means that any images of both nodes cannot be the same. Figure \ref{fig:node_match2} shows an example of this.
+Nodes in a rule graph in GROOVE can also match the same host graph node, by connecting them with an equals `=' labelled edge. This means that any images of both nodes have to be the same. Figure \ref{fig:node_match1} shows an example of this. Nodes in a rule graph in GROOVE can also explicitly not match each other, by connecting them with an not-equals `!=' labelled edge. This means that any images of both nodes cannot be the same. Figure \ref{fig:node_match2} shows an example of this.
 
 \begin{figure}[h]
   \begin{center}
@@ -69,7 +69,7 @@ Nodes in a rule graph in GROOVE can also match each other, by connecting them wi
 Rule graphs in GROOVE combine $\mathit{LHS}$, $\mathit{RHS}$ and $\mathit{NAC}$ into one rule graph. The colors on the nodes and edges in GROOVE rules represent whether they belong to the $\mathit{LHS}$, $\mathit{RHS}$ or $\mathit{NAC}$ of the rule. See Figure \ref{fig:colors} for an example.
 \begin{enumerate}
   \item normal line (black): This node or edge is part of both the $\mathit{LHS}$ and $\mathit{RHS}$.
-  \item dotted line (red): This node or edge is part of the $\mathit{NAC}$ only.\marginpar{dotted line is niet helemaal correct beter woord?}
+  \item dotted line (red): This node or edge is part of the $\mathit{NAC}$ only.
   \item thick line (green): This node or edge is part of the $\mathit{RHS}$ only.
   \item dashed line (blue): This node or edge is part of the $\mathit{LHS}$ only.
 \end{enumerate}
@@ -113,6 +113,8 @@ A rule node with an edge to a constant is shortened to a label on the node. Figu
   \label{fig:term_shorthand}
 \end{figure}
 
+\paragraph*{Wildcards}
+
 \paragraph*{Rule transition parameters}
 Rule transitions can have parameters in GROOVE. Figure \ref{fig:transition_parameters_rule} shows a rule where the node variables have a number in the top right of the node. These numbers indicate that the value of the variables are placed as parameters on the rule transition, in the order indicated by the numbers. This rule matches the host graph in Figure \ref{fig:transition_parameters_host}. The result of applying the rule twice is the GTS in Figure \ref{fig:transition_parameters_gts}.
 
@@ -138,7 +140,7 @@ GROOVE supports quantification operations over nodes in rule graphs. Figure \ref
 \end{figure}
 
 \subsection{Example GROOVE graph grammar}\label{sec:example_groove} 
-The running example from Figure~\ref{fig:example_sts} is displayed as a graph grammar, as visualized in GROOVE, in Figure~\ref{fig:example_groove}. The $\mathit{LHS}$, $\mathit{RHS}$ and $\mathit{NAC}$ of a rule in GROOVE are visualized together in one graph. Figures~\ref{fig:example_groove_throw}, \ref{fig:example_groove_move} and \ref{fig:example_groove_next} show three rules. Figure~\ref{fig:example_groove_start} shows the start graph of the system.
+The running example from Figure~\ref{fig:example_sts} is displayed as a graph grammar, as visualized in GROOVE, in Figure~\ref{fig:example_groove}. Figures~\ref{fig:example_groove_throw}, \ref{fig:example_groove_move} and \ref{fig:example_groove_next} show three rules. Figure~\ref{fig:example_groove_start} shows the start graph of the system.
 
 \begin{figure}[h]
   \begin{center}
