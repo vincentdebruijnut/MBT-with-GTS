@@ -1,23 +1,36 @@
 \section{Measurements}\label{sec:measurements}
-
-This section lists the possible measurements on the models and execution of GRATiS on those models.
+This section describes possible measurements on the execution of GRATiS and comparisons between IOSTSs and IOGGs. This is done to compare the effectiveness of both formalisms in MBT.The comparisons between the models are set out in the next sections, which are:
+\begin{enumerate}
+\item Simulation and redundancy
+\item Model complexity
+\item Extendability
+\end{enumerate}
+The measurements on the performance of GRATiS follow.
 
 \subsection{Simulation and redundancy}
-For each of the cases, we can create IOSTSs in two ways: manually and through GRATiS. The generated IOSTS and the modelled IOSTS can be compared. It can be observed whether the generated IOSTS simulates the IOSTS and vice versa. When either is not the case, the models show a different possible behavior for the SUT. The reasons behind this difference are then explored. ATM is used to find diffrences between the two IOSTSs, by using one as the model and the other as the SUT and vice versa. The SUT tries to copy the stimuli done by the model and the model tries to copy responses done by the SUT. ATM can then find differences in behavior between both IOSTSs.
+The generated IOSTS and the modelled IOSTS can be compared. It can be observed whether the generated IOSTS simulates the modelled IOSTS and vice versa. When either is not the case, the models show a different possible behavior for the SUT.
 
-It is possible that the generated IOSTS $s$ is larger than the IOSTS built by hand $t$, even if both simulate each other. If $t$ simulates $s$, it is measured whether the set of switch relations or location variables is strictly smaller in $t$ than in $s$, while the other set is at least as small in $t$ as in $s$. Formally:
+Simulation between two STSs can be done by creating the LTSs from the STSs first. LTSMin~\footnote{http://fmt.cs.utwente.nl/tools/ltsmin/} is a tool which can check the (bi)simulation on LTSs. However, creating the LTSs from STSs becomes difficult on large models. Therefore, another solution is chosen.
+
+ATM can be used to find diffrences between two IOSTSs, by using one as the model and the other as the SUT. The SUT tries to copy the stimuli done by the model and the model tries to copy responses done by the SUT. ATM can then find differences in behavior between both IOSTSs. This technique is used to find non-conformance between the generated and modelled IOSTSs. This is done by letting the test run reach 100\% switch relation coverage on both models. For purposes of the next measurement, we assume then that a bisimulation exists between both models.
+
+\begin{definition}\label{def:redundancy} Model redundancy\\
+It is possible that a generated IOSTS $s$ is larger than a modelled IOSTS $t$, even if both simulate each other. If $t$ simulates $s$, it is measured whether the set of switch relations or location variables is strictly smaller in $t$ than in $s$, while the other set is at least as small in $t$ as in $s$. Formally:
 \vspace{5px} \\
 $\mathit{traces}(s) \subseteq \mathit{traces}(t) \land ((|\Switches_t| < |\Switches_s| \land |\LocationVariables_t| \leq |\LocationVariables_s|) \lor (|\Switches_t| \leq |\Switches_s| \land |\LocationVariables_t| < |\LocationVariables_s|)$
 \vspace{5px} \\
 This indicates the the IOSTS $s$ has redundancy.
-
-\subsection{Performance}
-The performance in terms of runtime and heap-size can be measured and compared. Assuming both the IOSTS created by GRATiS and by hand simulate each other, these metrics will be the same for the testing part. Therefore, the runtime and heap size of the IOSTS creation is measured.
+\end{definition}
 
 \subsection{Model complexity}\label{sec:complexity_measurement}
 A good way of testing the complexity of the IOSTS and the IOGG is to hold an extensive social experiment, where groups create and maintain models in either formalism. However, this is out of the scope for this report. More is written about this social experiment in the Future Work section~\ref{sec:future-work}.
 
-Instead of a social experiment, we investigated software complexity measurements in the literature and tested their applicability for IOGGs and IOSTSs. 
+Instead of a social experiment, we investigated software complexity measurements in the literature and tested their applicability for IOGGs and IOSTSs. The investigated complexity measurements are:
+\begin{enumerate}
+\item Halstead's software science
+\item Cyclomatic complexity
+\item System complexity
+\end{enumerate}
 
 \paragraph*{Halstead's software science} The complexity of the generated IOSTS and the IOGG can be measured using Halstead's software science~\cite{Halstead:software-science}. This method is used in measuring software complexity and the prediction of faults. However, it can also be used in analyzing model complexity. In Halstead's software science, the operators and operands in the program code are counted. The operators are the function symbols, the operands are the identifiers. However, in order to apply these concepts to our setting, we have to identify what we consider to be operators and operands.
 
@@ -37,3 +50,6 @@ In Halstead's software science, the volume of a program and a constant for the n
 
 \subsection{Extendability}
 The models can be extended to include more functionality. In this measurement, a realistic scenario is introduced where additional functionality is required. It is then measured how much the complexity increases, using the measurment in section~\ref{sec:complexity_measurement}.
+
+\subsection{Performance}
+The performance on runtime and heap-size on the IOSTS generated by GRATiS is measured. After the IOSTS is generated we assume the run-time and heap-size for the testing part are the same for both the generated IOSTS and the modelled IOSTS. Therefore, only the runtime and heap size of the IOSTS generation are measured. When dividing the results for each model by the corresponding volume of the model, a relative measurement is obtained which can be compared, to see how the algorithm scales.

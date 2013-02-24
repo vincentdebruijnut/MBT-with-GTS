@@ -1,4 +1,4 @@
-\section{Conclusions}
+\section{Research goals}
 This report shows the usability of Graph Grammars in model-based testing. The motivation to use GGs is supported by literature, emphasizing the understandibility of graphs and the usefulness of graphs to express system states. Symbolic Transition Systems are a useful formalism which are easily used by computers. This supports using a GG for testers to model a software system and generating the IOSTS from the IOGG for the computer to use during testing. 
 The point algebra was shown to be useful for achieving the generation of an IOSTS. The design requirements for GRATiS are all met, because:
 \begin{itemize} 
@@ -7,6 +7,7 @@ The point algebra was shown to be useful for achieving the generation of an IOST
 \item the performance measurements show that the IOSTS can be generated from large models in a negligible time and that the technique scales well
 \end{itemize}
 
+\section{Contributions}
 Generating the location variables in an STS meant creating an extra definition for GGs, which allowed persistent variables. The definition lets edges to data values to be considered as variables; this was a choice needed to generate the IOSTS. GGs can dynamically add these variables or delete them; something which was frequently desired to obtain the smallest and most intuitive models, but which complicates the generation of the IOSTS. Hence, constraints on GG transformation rules were defined mostly to accomdate the GG variable definition.
 
 One of the example cases, the reservation system, suffered from the constraints the most. This example could not be modelled, because dynamically deleting and creating GG variables was required. The puzzle example on the other hand shows the strength of GGs the most, through simple, intuitive rules opposed to a complicated transition system. This shows that some systems are more suitable to be modelled in GGs than others.

@@ -1,47 +1,35 @@
 NOG TE VRAGEN AAN AREND:
 - p 11 STSs: Notation quite ad hoc when compared to LTSs.
 - p 15 'and none of the graphs in NAC have a morphism to G', morphism extending in?
-- p 17 can you make these conform to figure 2.5? = They have nothing to do with each other.
+- p 17 can you make these conform to figure 2.5? = They have nothing to do with each other. Doosjes om rules heen: lastig, gebruik fbox in figuren, kan geen border maken. space tussen plaatjes vergroot.
+- p25 Example GG variable: 'How are these fixed? They're not part of the GG' ???
 
-- implementatie: verwijs terug naar groove en atm sequence diagrams.
-- implementatie: zeg expliciet wat ik gemaakt heb. (voor sequence diagram.) leg uit: symbolicexstrat ipv bfs, 
-- Atm interface in sequence diagram: daar uitleggen wat het doet.
-- implementatie: zeggen wat waar uitgelegd wordt.
-
-
-- 5 -> zeg wat de metingen gaan zijn. Zeg waarom we metingen doen.
-- 5.1.1: LTSmin uitleggen: lastig om STS naar LTS vertalen, vooral bij grote modellen
-ATM non-conformance testen.
-
-- 5.2.4 zeg dat variabele specifieke sorts hebben, verwijs naar algebra sectie.
-
-EERST opsomming, dan per punt behandelen.
-
-- 5.1.2 -> 5.1.1 compared weg, zeg dat het een measurement op zich is, benchmark
+to do:
+- Write something about other GG tools
+- MB/V en ms/V uitrekenen
+- modelleer failed example af, halstead complexity uitrekenen.
 - 5.1.3 -> voorbeeldje wat in groove de volume is. tweede grotere voorbeeldje, laten zien dat volume dus groter is.
-1. Ik wil mate van model complexiteit
-2. Deze 3 kunnen.
-3. leg dan alle 3 uit. leg duidelijk uit welke we kiezen en waarom.
+- Voeg boardgame en failed example aan alle metingen
+- verify halstead measurements (done by script, recount a smaller model, find mistakes)
+- implementation: symbolic strategy vervangen door remote in uml
+- write something about cyclomatic complexity and system complexity
+- Add state of account as variable, check cs_accnt in get_variable#success
+- recount number scrp rules and vars for all-examples.tex : IOGG
+- add description of wild cards to groove visual description
+- fwgc afkorten (tot fwgc)
+- implementation: strategy classes uitbreiden met de concrete methoden (denk ik)
+- singleton ruleinspector weghalen uit object diagram
+- object diagram beter maken (Fig 4.4)
+- Need to verify simulation/bisimulation (Testmanager!)
 
-5.2 Zeg dat er 4 voorbeelden zijn, maar 1 niet kan. Failed Example -> Example 4
 
-5.3.1 combineer tabellen in 1. Leg kopjes uit van tabel. Verwijs naar 5.1.1
-
--> Voeg boardgame en failed example aan alle metingen
-
-- modelleer failed example af, halstead complexity.
-- performance: 'performance on runtime and heapsize of...'
-
-- extended scrp: not available, because out of scope, not reliable, because no SUT.
 
 future work: extend scrp
 
 conclusions: In 1.5 research goals weer noemen. + design requirements
 Overal waar ik naar toe wijs, even sectie noemen waar het uitgelegd wordt.
 
-6.1 conclusions -> 6.1 research goals 6.2 bijdragen (GG -> STS, GROOVE+ATM, voorbeelden)
+- 6.2 bijdragen (GG -> STS, GROOVE+ATM, voorbeelden)
 
 - reflectie in conclusions, wat kon beter, wat had ik nog willen doen.
 - Groove uitbreidingen, ATM uitbreidingen. max in Groove, STSs prominenter in Groove.
-
-- In appendix terugverwijzen naar secties. App D: beschrijf structuur van de regels. Verwijs naar ITAB Scanflow. Verwijder App E, maak apart document met IOSTS erin, verwijs er naar.

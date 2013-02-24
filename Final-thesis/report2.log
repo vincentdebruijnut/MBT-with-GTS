@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  10 FEB 2013 16:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  24 FEB 2013 18:46
 entering extended mode
  %&-line parsing enabled.
 **report2
@@ -845,10 +845,6 @@ Chapter 1.
 (./tex/introduction.tex [3
 
 ]
-
-LaTeX Warning: Citation `Pratt1971' on page 4 undefined on input line 20.
-
-
 Overfull \hbox (1.65527pt too wide) in paragraph at lines 20--20
 \T1/cmr/m/n/10 tem states, com-plex ob-jects, di-a-grams, and net-works, like f
 lowcharts, entity-relationship
@@ -863,11 +859,11 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
  [4]) [5] [6]
 Chapter 2.
 (./tex/background-introduction.tex) (./tex/model-based-testing.tex
-<./img/model-based-testing.pdf, id=426, 379.58545pt x 141.73691pt>
+<./img/model-based-testing.pdf, id=428, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-<./img/mbt-on-the-fly.pdf, id=430, 357.48773pt x 141.7426pt>
+<./img/mbt-on-the-fly.pdf, id=432, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
 <use ./img/mbt-on-the-fly.pdf> [7
@@ -900,11 +896,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--168
 (./img/priority-example/add_rhs.tex <xymatrix 2x1 51>)
 (./img/priority-example/sub_lhs.tex <xymatrix 3x1 55>)
 (./img/priority-example/sub_rhs.tex <xymatrix 2x1 51>)) (./tex/tooling.tex
-[17] <./img/atm-diagram.pdf, id=609, 513.8086pt x 289.56181pt>
+[17] <./img/atm-diagram.pdf, id=611, 513.8086pt x 289.56181pt>
 File: ./img/atm-diagram.pdf Graphic file (type pdf)
 
 <use ./img/atm-diagram.pdf> [18 <./img/atm-diagram.pdf>]
-<./img/groove-diagram.pdf, id=634, 362.04158pt x 220.67444pt>
+<./img/groove-diagram.pdf, id=636, 362.04158pt x 220.67444pt>
 File: ./img/groove-diagram.pdf Graphic file (type pdf)
 
 <use ./img/groove-diagram.pdf>
@@ -954,12 +950,16 @@ Overfull \hbox (13.86055pt too wide) in paragraph at lines 1--41
 (./img/guard_example_host.tex <xymatrix 3x2 208>) [28]
 (./img/priority_sts_wrong.tex <xymatrix 1x1 136>) (./img/priority_sts_right.tex
 <xymatrix 1x1 136>)) (./tex/constraints.tex [29] (./img/nac_example_wrong.tex
-<xymatrix 1x2 51>) (./img/nac_example_right.tex <xymatrix 2x2 55>) [30]
+<xymatrix 1x2 116>) (./img/nac_example_right.tex <xymatrix 2x2 120>) [30]
 (./img/item_example_c4_lhs.tex <xymatrix 2x2 122>)
 (./img/item_example_c4_rhs.tex <xymatrix 2x2 122>)) [31]
 Chapter 4.
 (./tex/implementation.tex
-<./img/gratis_diagram.pdf, id=858, 465.09459pt x 260.6538pt>
+
+LaTeX Warning: Reference `sec:added_func' on page 32 undefined on input line 1.
+
+
+<./img/gratis_diagram.pdf, id=860, 465.09459pt x 260.6538pt>
 File: ./img/gratis_diagram.pdf Graphic file (type pdf)
 
 <use ./img/gratis_diagram.pdf> [32
@@ -968,99 +968,103 @@ File: ./img/gratis_diagram.pdf Graphic file (type pdf)
 <./img/strategy.pdf, id=878, 202.07094pt x 136.22896pt>
 File: ./img/strategy.pdf Graphic file (type pdf)
 
-<use ./img/strategy.pdf> <./img/STS.pdf, id=881, 305.98314pt x 218.23532pt>
+<use ./img/strategy.pdf>
+
+LaTeX Warning: Reference `def:guard' on page 33 undefined on input line 41.
+
+
+LaTeX Warning: Reference `def:um' on page 33 undefined on input line 41.
+
+[33 <./img/strategy.pdf>] <./img/STS.pdf, id=911, 305.98314pt x 218.23532pt>
 File: ./img/STS.pdf Graphic file (type pdf)
 
-<use ./img/STS.pdf> [33 <./img/strategy.pdf>]
-<./img/STS_objects.pdf, id=909, 485.85414pt x 309.55649pt>
+<use ./img/STS.pdf> <./img/STS_objects.pdf, id=916, 485.85414pt x 309.55649pt>
 File: ./img/STS_objects.pdf Graphic file (type pdf)
 
-<use ./img/STS_objects.pdf>
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
-[]\T1/cmr/m/n/10 dit figuur
- []
-
-) [34 <./img/STS.pdf> <./img/STS_objects.pdf>]
+<use ./img/STS_objects.pdf>) [34 <./img/STS.pdf> <./img/STS_objects.pdf>]
+[35]
 Chapter 5.
-(./tex/validation-introduction.tex) (./tex/measurements.tex [35
+(./tex/validation-introduction.tex) (./tex/measurements.tex [36
 
 ]
-Overfull \hbox (2.66943pt too wide) in paragraph at lines 32--34
+Overfull \hbox (2.66943pt too wide) in paragraph at lines 45--47
  \T1/cmr/bx/n/10 Cy-clo-matic Com-plex-ity \T1/cmr/m/n/10 COM-MENT Ik heb in-te
 n-sief emails gewis-seld met Lodewijk Bergmans
  []
 
-) (./tex/all-examples.tex [36] [37] (./img/start-reservation.tikz)
-(./img/makeReservation.tikz)
-<./img/scanflow.jpg, id=980, 359.3425pt x 377.41pt>
+[37]) (./tex/all-examples.tex [38] (./img/start-reservation.tikz)
+(./img/makeReservation.tikz) [39]
+<./img/scanflow.jpg, id=1012, 359.3425pt x 377.41pt>
 File: ./img/scanflow.jpg Graphic file (type jpg)
  <use ./img/scanflow.jpg>
 Underfull \hbox (badness 2735) in paragraph at lines 84--85
 []|\T1/cmr/m/n/10 Inform the reg-is-ter that the pay-ment was made, where
  []
 
-[38] [39 <./img/scanflow.jpg>] [40]
+[40 <./img/scanflow.jpg>] [41]
 Overfull \hbox (8.39388pt too wide) in paragraph at lines 165--182
 []
  []
 
-(./img/scrp/start-scrp.tikz) (./img/scrp/account.open.request.tikz)
+[42] (./img/scrp/start-scrp.tikz) (./img/scrp/account.open.request.tikz)
 (./img/scrp/account.open.success.tikz)
 (./img/scrp/account.open.invalid_ss_on.tikz)
 (./img/scrp/general_responses.not_signed_on.tikz)
-(./img/scrp/account.close.success.tikz)) (./tex/measurements_on_examples.tex
-[41]
-Overfull \hbox (2.3886pt too wide) in paragraph at lines 13--19
+(./img/scrp/account.close.success.tikz) [43])
+(./tex/measurements_on_examples.tex
+
+LaTeX Warning: Reference `tab:simulation' on page 44 undefined on input line 4.
+
+
+
+LaTeX Warning: Reference `def:redundancy' on page 44 undefined on input line 4.
+
+
+
+Overfull \hbox (65.8317pt too wide) in paragraph at lines 8--22
  [] 
  []
 
-
-Overfull \hbox (2.3886pt too wide) in paragraph at lines 30--36
-[][] 
- []
-
-[42]
-Overfull \hbox (2.3886pt too wide) in paragraph at lines 49--55
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 61--61
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
 []\T1/cmr/m/n/10 conclusies
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--61
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
 \T1/cmr/m/n/10 over scrp
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--61
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
 \T1/cmr/m/n/10 re-dun-
  []
 
 
-Overfull \hbox (21.94557pt too wide) in paragraph at lines 61--61
+Overfull \hbox (21.94557pt too wide) in paragraph at lines 40--40
 \T1/cmr/m/n/10 dancy/simulation
  []
 
-[43] (./img/boardgame/start-bg-extended.tikz)
-(./img/boardgame/nextTurn-bg-extended.tikz) [44]
-Overfull \hbox (2.06178pt too wide) in paragraph at lines 162--173
+(./img/boardgame/start-bg-extended.tikz)
+(./img/boardgame/nextTurn-bg-extended.tikz) [45] [46]
+Overfull \hbox (2.06178pt too wide) in paragraph at lines 122--134
  [] 
  []
 
-) [45]
+) [47]
 Chapter 6.
-(./tex/conclusion.tex [46
+(./tex/conclusion.tex [48
 
-]) (./tex/future-work.tex) [47] (./report2.bbl
-[48
+]) (./tex/future-work.tex) [49] (./report2.bbl
+[50
 
-] [49]) [50] (./symbols.tex [51
+] [51]) [52] (./symbols.tex [53
 
-]) [52] (./tex/appendix.tex
+]) [54] (./tex/appendix.tex
 Appendix A.
+
+LaTeX Warning: Reference `sec:fwgc' on page 55 undefined on input line 2.
+
 (./img/fwgc/start-fwgc.tikz) (./img/fwgc/n-fwgc.tikz) (./img/fwgc/w-fwgc.tikz)
 (./img/fwgc/w-invalid-fwgc.tikz) (./img/fwgc/g-fwgc.tikz)
 (./img/fwgc/g-invalid-fwgc.tikz) (./img/fwgc/c-fwgc.tikz)
@@ -1069,15 +1073,18 @@ Appendix A.
 (./img/fwgc/eaten-undo-fwgc-extended.tikz) (./img/fwgc/c-fwgc-extended.tikz)
 (./img/fwgc/g-fwgc-extended.tikz) (./img/fwgc/w-fwgc-extended.tikz)
 (./img/fwgc/n-fwgc-extended.tikz)
-Overfull \hbox (72.14275pt too wide) in paragraph at lines 67--86
+Overfull \hbox (72.14275pt too wide) in paragraph at lines 69--88
  []$ 
  []
 
-[53
+[55
 
 
-] [54] [55] [56]
+] [56] [57] [58] [59]
 Appendix B.
+
+LaTeX Warning: Reference `sec:bar-tab' on page 60 undefined on input line 95.
+
 (./img/bartab/start-tab.tikz) (./img/bartab/order-tab.tikz)
 (./img/bartab/process_order.tikz) (./img/bartab/pay-tab.tikz)
 (./img/bartab/process_payment.tikz) (./img/bartab/start-tab-extended.tikz)
@@ -1085,14 +1092,14 @@ Appendix B.
 (./img/bartab/order-tab-extended.tikz) (./img/bartab/discount-extended.tikz)
 (./img/bartab/process_order-extended.tikz)
 
-LaTeX Warning: Float too large for page by 9.90907pt on input line 115.
+LaTeX Warning: Float too large for page by 9.90907pt on input line 119.
 
-[57
+[60
 
-] [58] [59]
+] [61] [62] [63]
 Appendix C.
 (./tex/scrp_commands_responses.tex
-<./img/account_lifecycle.png, id=1226, 590.205pt x 591.20876pt>
+<./img/account_lifecycle.png, id=1262, 590.205pt x 591.20876pt>
 File: ./img/account_lifecycle.png Graphic file (type png)
 
 <use ./img/account_lifecycle.png>
@@ -1100,7 +1107,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 31--36
 [] 
  []
 
-[60
+[64
 
 ]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 38--43
@@ -1117,7 +1124,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 54--60
 [] 
  []
 
-[61 <./img/account_lifecycle.png (PNG copy)>]
+[65 <./img/account_lifecycle.png (PNG copy)>]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 62--68
 [] 
  []
@@ -1137,7 +1144,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 88--93
 [] 
  []
 
-[62]
+[66]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 95--103
 [] 
  []
@@ -1147,7 +1154,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 105--115
 [] 
  []
 
-[63]
+[67]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 117--125
 [] 
  []
@@ -1162,7 +1169,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 136--142
 [] 
  []
 
-[64]
+[68]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 144--150
 [] 
  []
@@ -1182,24 +1189,27 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 171--177
 [] 
  []
 
-[65])
-Overfull \hbox (3.4369pt too wide) in paragraph at lines 179--172
+[69])
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 179--177
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--172
+Underfull \hbox (badness 10000) in paragraph at lines 179--177
 
  []
 
-[66]
+[70]
 Appendix D.
+
+LaTeX Warning: Reference `sec:scrp' on page 71 undefined on input line 180.
+
 (./scrp_figures.tex (./img/scrp/account.article_registration.request_exist.tikz
 ) (./img/scrp/account.article_registration.request_nexist.tikz)
 (./img/scrp/account.article_registration.displays.tikz)
 (./img/scrp/account.article_registration.invalid_ss_on.tikz)
 (./img/scrp/account.article_registration.no_such_article.tikz)
-(./img/scrp/account.article_registration.success.tikz) [67
+(./img/scrp/account.article_registration.success.tikz) [71
 
 ]
 (./img/scrp/account.article_return.request_exist.tikz)
@@ -1208,28 +1218,28 @@ Appendix D.
 (./img/scrp/account.article_return.invalid_ss_on.tikz)
 (./img/scrp/account.article_return.no_such_article.tikz)
 (./img/scrp/account.article_return.no_such_article_registered.tikz)
-(./img/scrp/account.article_return.success.tikz) [68]
+(./img/scrp/account.article_return.success.tikz) [72]
 (./img/scrp/account.close.request.tikz) (./img/scrp/account.close.displays.tikz
 ) (./img/scrp/account.close.invalid_ss_on.tikz)
-(./img/scrp/account.close.success.tikz) [69]
+(./img/scrp/account.close.success.tikz) [73]
 (./img/scrp/account.ending.request.tikz)
 (./img/scrp/account.ending.invalid_ss_on.tikz)
-(./img/scrp/account.ending.success.tikz) [70]
+(./img/scrp/account.ending.success.tikz) [74]
 (./img/scrp/account.endtotal.request.tikz)
 (./img/scrp/account.endtotal.displays.tikz)
 (./img/scrp/account.endtotal.invalid_ss_on.tikz)
-(./img/scrp/account.endtotal.success.tikz) [71]
+(./img/scrp/account.endtotal.success.tikz) [75]
 (./img/scrp/account.open.request.tikz)
 (./img/scrp/account.open.request_exist.tikz)
 (./img/scrp/account.open.request_nexist.tikz)
 (./img/scrp/account.open.invalid_ss_on.tikz)
 (./img/scrp/account.open.no_such_account.tikz)
-(./img/scrp/account.open.success.tikz) [72]
+(./img/scrp/account.open.success.tikz) [76]
 (./img/scrp/account.stamp_registration.request.tikz)
 (./img/scrp/account.stamp_registration.displays.tikz)
 (./img/scrp/account.stamp_registration.invalid_ss_on.tikz)
 (./img/scrp/account.stamp_registration.no_such_article.tikz)
-(./img/scrp/account.stamp_registration.success.tikz) [73]
+(./img/scrp/account.stamp_registration.success.tikz) [77]
 (./img/scrp/account.trans.request_tm_bank.tikz)
 (./img/scrp/account.trans.request_tm_cash.tikz)
 (./img/scrp/account.trans.request_tm_store.tikz)
@@ -1264,37 +1274,8 @@ Appendix D.
 (./img/scrp/signoff.success.tikz) (./img/scrp/signon.request_exist.tikz)
 (./img/scrp/signon.request_nexist.tikz)
 (./img/scrp/signon.signing_auth_failed.tikz)
-(./img/scrp/signon.signing_rejected.tikz) (./img/scrp/signon.success.tikz))
-[74] [75] [76] [77] [78] [79]
-Appendix E.
-(./iosts_scrp.tex
-Overfull \hbox (2768.47153pt too wide) in paragraph at lines 1--25
-[] 
- []
-
-[80
-
-] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94]
-[95]
-Overfull \hbox (14.91733pt too wide) in paragraph at lines 685--727
-[][] 
- []
-
-[96]
-Overfull \vbox (11.78784pt too high) has occurred while \output is active []
-
-
-[97]))
-Overfull \hbox (33.52808pt too wide) in paragraph at lines 728--107
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 728--107
-
- []
-
-[98] (./report2.aux)
+(./img/scrp/signon.signing_rejected.tikz) (./img/scrp/signon.success.tikz)))
+[78] [79] [80] [81] [82] [83] (./report2.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1303,51 +1284,45 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 21725 strings out of 495061
- 387302 string characters out of 1182622
- 1093927 words of memory out of 3000000
- 23321 multiletter control sequences out of 15000+50000
+ 21721 strings out of 495061
+ 387286 string characters out of 1182622
+ 1094931 words of memory out of 3000000
+ 23330 multiletter control sequences out of 15000+50000
  30003 words of font info for 75 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,24n,79p,1545b,1571s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{figure.caption.99} has been referenced but does n
-ot exist, replaced by a fixed one
+pdfTeX warning (dest): name{figure.caption.100} has been referenced but does 
+not exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{table.caption.86} has been referenced but does not 
+pdfTeX warning (dest): name{table.caption.79} has been referenced but does not 
 exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{figure.caption.81} has been referenced but does not
+pdfTeX warning (dest): name{figure.caption.69} has been referenced but does not
  exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{table.caption.78} has been referenced but does not 
+pdfTeX warning (dest): name{figure.caption.65} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.90} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.60} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.58} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{appendix.E} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.2.3} has been referenced but does not 
 exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{table.caption.76} has been referenced but does not 
+pdfTeX warning (dest): name{subsection.4.2.2} has been referenced but does not 
 exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{table.caption.74} has been referenced but does not 
+pdfTeX warning (dest): name{subsection.4.2.1} has been referenced but does not 
 exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.72} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.68} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.89} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.55} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.48} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.45} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.29} has been referenced but does not
- exist, replaced by a fixed one
 
  </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0700.600pk> </home/d
 bruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0800.600pk> </home/dbruijn/.t
@@ -1387,9 +1362,9 @@ m10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam7.pfb
 /share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texmf-te
 xlive/fonts/type1/public/xypic/xybtip10.pfb></usr/share/texmf-texlive/fonts/typ
 e1/public/xypic/xydash10.pfb>
-Output written on report2.pdf (100 pages, 1277111 bytes).
+Output written on report2.pdf (85 pages, 1226326 bytes).
 PDF statistics:
- 2445 PDF objects out of 2487 (max. 8388607)
- 567 named destinations out of 1000 (max. 500000)
+ 2399 PDF objects out of 2487 (max. 8388607)
+ 557 named destinations out of 1000 (max. 500000)
  575 words of extra memory for PDF output out of 10000 (max. 10000000)
 

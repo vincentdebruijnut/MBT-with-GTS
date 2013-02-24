@@ -120,6 +120,11 @@ Martin Pol.
 \newblock {\em Testen volgens Tmap (in dutch, Testing according to Tmap)}.
 \newblock Uitgeverij Tutein Nolthenius, 1995.
 
+\bibitem{Pratt1971}
+Terrence~W. Pratt.
+\newblock Pair grammars, graph languages and string-to-graph translations.
+\newblock {\em Journal of Computer and System Sciences}, 5(6):560 -- 595, 1971.
+
 \bibitem{Prowell:JUMBL}
 S.J. Prowell.
 \newblock {JUMBL}: a tool for model-based statistical testing.

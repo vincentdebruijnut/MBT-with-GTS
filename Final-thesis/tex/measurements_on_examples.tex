@@ -1,84 +1,43 @@
 \section{Measurements on examples}
 
 \subsection{Simulation and redundancy}
+Table~\ref{tab:simulation} shows the results for this measurement. It contains all examples in the `Example' column and `Model' contains `Generated' and `Modelled' to indicate which IOSTS counterpart of the example the measurements are for. The `Simulates?' column contains `Yes' if the model simulates its counterpart in the same example or `No' otherwise. `Switch relations' and `Location variables' give the number of these for each model. Using this information for both counterparts, the model is declared redundant or not in `Redundant', as described in definition~\ref{def:redundancy}. The results are discussed in the next paragraphs, followed by the conclusions for this measurement
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|l|l|c|c|c|c|}
+\hline
+\textbf{Example} & \textbf{Model} & \textbf{Simulates?} & \textbf{Switch relations} & \textbf{Location variables} & \textbf{Redundant?} \\ \hline
+Boardgame & Generated & No & ?? & ?? & - \\ \cline{2-6}
+ & Modelled & No & ?? & ?? & - \\ \hline
+FWGC & Generated & Yes & 50 & 0 & No \\ \cline{2-6}
+ & Modelled & Yes & 11 & 4 & No \\ \hline
+Bar tab & Generated IOSTS & true & 24 & 13 & true \\ \cline{2-6}
+ & Modelled IOSTS & true & 10 & 5 & false \\ \hline
+Reservation & Generated IOSTS & - & - & - & - \\ \cline{2-6}
+ & Modelled IOSTS & - & - & - & - \\ \hline
+SCRP & Generated IOSTS & ?? & 540 & 2 & ?? \\ \cline{2-6}
+ & Modelled IOSTS & ?? & 1302 & 2 & ?? \\ \hline
+\end{tabular}
+\end{center}
+\caption{Simulation and redundancy results}
+\label{tab:fwgc-simulate}
+\end{table}
 
 \paragraph*{Boardgame}
 The responses used by the IOSTS and by the IOGG are different. Both models, used as examples to clarify the IOSTS and IOGG formalisms, were built with a different behavior in mind. Both allow a die to be thrown, after which the IOSTS directly moves the player to the correct location and passes the turn and the IOGG moves the player by a series of responses ended with a $!nextTurn$. Therefore, both IOSTSs do not simulate each other.
 
 \paragraph*{Farmer-wolf-goat-cabbage puzzle}
-Table~\ref{tab:fwgc-simulate} shows the results for this measurement for the puzzle. 
-
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-\textbf{Model} & \textbf{Simulates?} & \textbf{Switch relations} & \textbf{Location variables} & \textbf{Redundant?} \\ \hline
-Generated IOSTS & true & 50 & 0 & false \\ \hline
-Modelled IOSTS & true & 11 & 4 & false \\ \hline
-\end{tabular}
-\end{center}
-\caption{Simulation and redundancy results for the farmer-wolf-goat-cabbage puzzle}
-\label{tab:fwgc-simulate}
-\end{table}
-
 The IOGG does not use variables to track the location of each item. Therefore, the generated IOSTS has a location per state of the puzzle. Since on neither side both the number of switch relations and location variables are higher, both models are not redundant.
 
 \paragraph*{Bar-tab system}
-Table~\ref{tab:bar-tab-simulate} shows the results for this measurement for the bar-tab system. 
-
-\begin{table}[ht]
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-\textbf{Model} & \textbf{Simulates?} & \textbf{Switch relations} & \textbf{Location variables} & \textbf{Redundant?} \\ \hline
-Generated IOSTS & true & 24 & 13 & true \\ \hline
-Modelled IOSTS & true & 10 & 5 & false \\ \hline
-\end{tabular}
-\caption{Simulation and redundancy results for the bar-tab system}
-\label{tab:bar-tab-simulate}
-\end{table}
-
 The modelled IOSTS keeps the name and price of drinks as location variables, whereas the generated IOSTS hard-codes these into the guards and updates. The generated IOSTS builds a switch relation with gate $?o$ for each combination of customer and drink. It also builds a switch relation with gate $?p$ for each customer. The target locations of all these switch relations have one switch relation back to the initial location. Therefore, the number of switch relations is $3*3*2+3*1*2\: =\: 24$. This could have been avoided by modelling GG variables for the price and drinks. However, this would make the IOGG more complex. 
 
 \paragraph*{SCRP}
-Table~\ref{tab:scrp-simulate} shows the results for this measurement for the case study.
-
 %The generated IOSTS allows every stimulus in every location. The IOSTS by hand is modelled to test a subset of the more interesting behavior.
-
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-\textbf{Model} & \textbf{Simulates?} & \textbf{Switch relations} & \textbf{Location variables} & \textbf{Redundant?} \\ \hline
-Generated IOSTS & ? & 540 & 2 & ? \\ \hline
-Modelled IOSTS & ? & 1302 & 2 & ? \\ \hline
-\end{tabular}
-\end{center}
-\caption{Simulation and redundancy results for the SCRP}
-\label{tab:scrp-simulate}
-\end{table}
 
 \paragraph*{Conclusions}
 The farmer-wolf-goat-cabbage puzzle shows that IOGGs can often be better expressed using no variables. The bar-tab system shows that the generated IOSTS can be redundant compared to the IOSTS created by hand.\marginpar{conclusies over scrp redundancy/simulation komen nog}
-
-\subsection{Performance}
-The performance of GRATiS on all models is in Table~\ref{tab:performance}.
-
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{|l|c|c|}
-\hline
-\textbf{Example} & \textbf{runtime (ms)} & \textbf{heap-size (MB)} \\ \hline
-boardgame & 300 & 1.9 \\ \hline
-farmer-wolf-goat-cabbage puzzle & 770 & 5.2 \\ \hline
-bar-tab system & 250 & 2.1 \\ \hline
-SCRP & 9530 & 6.6 \\ \hline
-\end{tabular}
-\end{center}
-\caption{Performance measurements}
-\label{tab:performance}
-\end{table}
-
-Comparing to the examples the case-study shows little increase in heap-size and approximately 20 times higher runtime. The algorithm scales reasonably well, considering the generated IOSTS is approximately 10 times larger in size than those of the examples.
 
 \subsection{Model complexity}
 Table~\ref{tab:halstead} shows the measurements on the operators and operands of all models.  The differences in complexity differ between the models. However, the $n_2$ and $N_1$ column jump out: the distinct number of operands is much higher for the IOGG models, but the total number of operators $N_1$ is much higher in the IOSTS models. This is based on the last three models, which express the same behavior.
@@ -88,15 +47,16 @@ Table~\ref{tab:halstead} shows the measurements on the operators and operands of
 \begin{tabular}{| l | l | c | c | c | c | c |}
   \hline
   \textbf{Example} & \textbf{Model} & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume \\ \hline
-  boardgame & IOGG & 7 & 12 & 20 & 90 & 467.27 \\
+  Boardgame & IOGG & 7 & 12 & 20 & 90 & 467.27 \\ \cline{2-7}
   & IOSTS & 6 & 9 & 14 & 27 & 160.18 \\ \hline
-  farmer-wolf-goat-cabbage puzzle & IOGG & 3 & 12 & 31 & 190 & 863.42 \\ 
+  FWGC & IOGG & 3 & 12 & 31 & 190 & 863.42 \\ \cline{2-7}
   & IOSTS & 6 & 8 & 103 & 130 & 887.11 \\ \hline
-  bar-tab system & IOGG & 9 & 31 & 40 & 188 & 1213.40 \\
+  Bar tab & IOGG & 9 & 31 & 40 & 188 & 1213.40 \\ \cline{2-7}
   & IOSTS & 8 & 15 & 66 & 134 & 904.7 \\ \hline
-  SCRP & IOGG & 3 & 69 & 207 & 1506 & 10569.10 \\ 
-  & IOSTS & 3 & 6 & 730 & 2594 & 10536.83 \\
-  \hline
+  Reservations & IOGG & ?? & ?? & ?? & ?? & ?? \\ \cline{2-7}
+  & IOSTS & - & - & - & - & - \\ \hline
+  SCRP & IOGG & 3 & 69 & 207 & 1506 & 10569.10 \\ \cline{2-7}
+  & IOSTS & 3 & 6 & 730 & 2594 & 10536.83 \\ \hline
 \end{tabular}
 \end{center}
 \caption{The Halstead measurements on the models}
@@ -104,7 +64,7 @@ Table~\ref{tab:halstead} shows the measurements on the operators and operands of
 \end{table}
 
 \subsection{Extendability}
-The next paragraphs contain a hypothetical extension to each example. New models are given which feature the extension. In the last paragraph, the increase in model complexity for each example is given in a table.
+The next paragraphs contain a hypothetical extension to each example. New models are given which feature the extension. In the last paragraph, the increase in model complexity for each example is given in a table. The restaurant reservation system is omitted from this measurement, as is SCRP.
 
 \paragraph*{Boardgame}
 The boardgame is extended to include one more player and one more location. For the IOGG, this means adding new locations and players to the initial graph. The players get a fixed order in which they play. This means that the next turn rule also has to be extended. The rest of the rules stay as they are. The extended rules are in Figure~\ref{fig:gg-bg-extended}.
@@ -133,12 +93,12 @@ $\begin{array}{lcl}
  & & m\xrightarrow{!move, T=3 \land l=(P3+D)\%5, P3 \mapsto l, T \mapsto 1}t\}
 \end{array}$
 
-\paragraph*{Farmer-wolf-goat-cabbage puzzle}
+\paragraph*{FWGC}
 In another variant of this puzzle, when one of the items is eaten, the puzzle can reset, but it can also undo the last action. The $\mathit{!eaten}$ rule can have either effect. In Figure~\ref{fig:gg-fwgc-extended} shows this extension for the IOGG in five rules. The rules keep track of the last moved items. When an item gets eaten, the last move can be undone.
 
 The IOSTS in Figure~\ref{fig:sts-fwgc-extended} keeps extra variables for the previous positions of the items and adds one switch relation that restores the items to their previous positions when an item gets eaten.
 
-\paragraph*{Bar-tab system}
+\paragraph*{Bar tab system}
 The system is extended to allow ordering multiple drinks of different types. Also, a customer can purchase the option of receiving 10\% discount on all ordered drinks for 50 euros, which is added to the tab of the customer.
 \vspace{5px}
 \begin{itemize}
@@ -152,7 +112,7 @@ Figure~\ref{fig:gg-bartab-extended} shows the extended rules and initial graph. 
 The IOSTS in Figure~\ref{fig:sts-bartab-extended} gains three location variables to track the discount for each tab. An order discount and process discount switch relations are added. Like with the IOGG, the discount is applied to the total price of the ordered drinks.
 
 \paragraph*{SCRP}
-An extended version for the IOSTS for the case study is not available, therefore the extension measurement is not done on the models for the scan-flow protocol.
+An extended version for the IOSTS of SCRP by Axini is not available as there is no extended version of the SUT. Creating an extended IOSTS for SCRP and a corresponding SUT is out of scope for this report. Therefore the extension measurement is not done on the models for SCRP.
 
 \paragraph*{Model complexity increase}
 Table~\ref{tab:halstead-extended} shows the measurements on the operators and operands of all extended models and the increase in model complexity. The differences in complexity differ between the models. The volume increase does not show one trend; it is much higher for the IOSTS in the farmer-wolf-goat-cabbage puzzle and much higher for the IOGG in the bar tab system.
@@ -162,13 +122,14 @@ Table~\ref{tab:halstead-extended} shows the measurements on the operators and op
 \begin{tabular}{| l | l | c | c | c | c | c | c |}
   \hline
   \textbf{Example} & \textbf{Model} & $n_1$ & $n_2$ & $N_1$ & $N_2$ & Volume & Volume increase \\ \hline
-  boardgame & IOGG & 6 & 12 & 20 & 105 & 521.24 & 53.97 \\
+  boardgame & IOGG & 6 & 12 & 20 & 105 & 521.24 & 53.97 \\ \cline{2-7}
   & IOSTS & 6 & 10 & 24 & 39 & 252.0 & 91.82\\ \hline
-  farmer-wolf-goat-cabbage puzzle & IOGG & 4 & 12 & 38 & 217 & 1020.00 & 156.58\\ 
+  farmer-wolf-goat-cabbage puzzle & IOGG & 4 & 12 & 38 & 217 & 1020.00 & 156.58 \\ \cline{2-7}
   & IOSTS & 6 & 12 & 146 & 247 & 1638.78 & 751.67\\ \hline
-  bar-tab system & IOGG & 9 & 36 & 65 & 290 & 1949.61 & 736.21\\
-  & IOSTS & 8 & 23 & 88 & 156 & 1208.82 & 304.12\\
-  \hline
+  bar-tab system & IOGG & 9 & 36 & 65 & 290 & 1949.61 & 736.21 \\ \cline{2-7}
+  & IOSTS & 8 & 23 & 88 & 156 & 1208.82 & 304.12 \\ \hline
+  Reservations & IOGG & ?? & ?? & ?? & ?? & ?? \\ \cline{2-7}
+  & IOSTS & - & - & - & - & - \\ \hline
 \end{tabular}
 \end{center}
 \caption{The Halstead measurements on the extended models}
@@ -189,3 +150,23 @@ A recent extension on the protocol allows multiple accounts. While an account is
   \label{fig:gg-fwgc-extended}
 \end{figure}
 \end{comment}
+
+\subsection{Performance}
+The performance of GRATiS on all models is in Table~\ref{tab:performance}.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Example} & \textbf{runtime (ms)} & \textbf{heap-size (MB)} & \textbf{ms/V} & \textbf{MB/V} \\ \hline
+boardgame & 300 & 1.9 & ?? & ?? \\ \hline
+farmer-wolf-goat-cabbage puzzle & 770 & 5.2 & ?? & ?? \\ \hline
+bar-tab system & 250 & 2.1 & ?? & ??\\ \hline
+SCRP & 9530 & 6.6 & ?? & ?? \\ \hline
+\end{tabular}
+\end{center}
+\caption{Performance measurements}
+\label{tab:performance}
+\end{table}
+
+Comparing to the examples the case-study shows little increase in heap-size and approximately 20 times higher runtime. The algorithm scales reasonably well, considering the generated IOSTS is approximately 10 times larger in size than those of the examples.

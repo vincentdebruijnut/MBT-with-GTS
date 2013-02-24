@@ -24,7 +24,7 @@ The tool functions as follows:
 \end{enumerate}
 
 \subsection{GROOVE}\label{sec:descriptiongroove}
-GROOVE is an open source, graph-based modelling tool in development at the University of Twente since 2004~\cite{Rensink:GROOVE}. It has been applied to several case studies, such as model transformations and security and leader election protocols~\cite{Ghamarian:GROOVE}. A UML sequence diagram for GROOVE is shown in Figure~\ref{fig:groove_tool}, depicting a GG exploration to a GTS.
+GROOVE is an open source, graph-based modelling tool, written in Java and in development at the University of Twente since 2004~\cite{Rensink:GROOVE}. It has been applied to several case studies, such as model transformations and security and leader election protocols~\cite{Ghamarian:GROOVE}. A UML sequence diagram for GROOVE is shown in Figure~\ref{fig:groove_tool}, depicting a GG exploration to a GTS.
 
 \begin{figure}[h]
   \begin{center}
@@ -37,7 +37,7 @@ GROOVE is an open source, graph-based modelling tool in development at the Unive
 The tool functions as follows:
 \begin{enumerate}
 \item A graph grammar is given as input to a RuleApplier component, which determines the possible rule transitions.
-\item The user starts an ExplorationStrategy. This strategy explores all possible host graphs and rule transitions. The possible rule transitions from the initial graph state are obtained from the RuleApplier and a rule transition is chosen, based on the exploration strategy. The target host graph of the chosen rule transition is again given to the RuleApplier until no more new host graphs can be explored.
+\item The user selects an ExplorationStrategy from a list of possible strategies. This strategy explores all possible host graphs and rule transitions. The possible rule transitions from the initial graph state are obtained from the RuleApplier and a rule transition is chosen, based on the exploration strategy. The target host graph of the chosen rule transition is again given to the RuleApplier until no more new host graphs can be explored.
 \item The ExplorationStrategy returns the explored GTS to the UserInterface.
 \end{enumerate}
 
