@@ -14,8 +14,8 @@ Figure~\ref{fig:tooling} shows a UML sequence diagram of GRATiS, depicting a gen
 \begin{enumerate}
 \item The user enters an IOGG in the RuleApplier of the GROOVE tool. The input/output rules are defined by prefixing the given rule names with '?' and '!'. 
 \item In the settings menu of GROOVE, the user sets the algebra family of the IOGG to to the point algebra, which is used by the RuleApplier.
-\item The user selects the SymbolicExplorationStrategy from the available strategies in GROOVE. This strategy gives input options to a host name and port number. The strategy is then started by the user. The communication between the RuleApplier and the strategy is omitted here, this is the same as in the GROOVE diagram. The result of the exploration is an IOGTS under the point algebra.
-\item The RemoteExplorationStrategy creates an IOSTS in Java objects from this IOGTS with the method described in chapter~\ref{chapter:gg_to_sts}. It then creates a message with the IOSTS and sends this message to the ATMInterface
+\item The user selects the RemoteStrategy from the available strategies in GROOVE. This strategy gives input options to a host name and port number. The strategy is then started by the user. The communication between the RuleApplier and the strategy is omitted here, this is the same as in the GROOVE diagram. The result of the exploration is an IOGTS under the point algebra.
+\item The RemoteStrategy creates an IOSTS in Java objects from this IOGTS with the method described in chapter~\ref{chapter:gg_to_sts}. It then creates a message with the IOSTS and sends this message to the ATMInterface
 \item The ATMInterface receives the message and gives the IOSTS to the STSEngine.
 \item The ATMInterface starts the testing with the default `depth' parameter; making this configurable is not implemented yet. The communication between the TestManager, STSEngine and Adapter is omitted here.
 \item The TestManager returns the test results to the ATMInterface. The test results are stored in a database and are viewable by starting the user interface of ATM (ommitted here).
@@ -25,9 +25,9 @@ Figure~\ref{fig:tooling} shows a UML sequence diagram of GRATiS, depicting a gen
 This section covers in detail the added functionality to GROOVE and ATM. 
 
 \paragraph*{GROOVE exploration strategy}
-Figure~\ref{fig:esi-diagram} shows the class diagram of the added exploration strategy interface. The RemoteExplorationStrategy extends a \textit{SymbolicStrategy}. The SymbolicExplorationStrategy has a \textit{closing} exploration strategy, which is a strategy that explores all graph states and rule transitions, such as the BreadthFirstStrategy.
+Figure~\ref{fig:esi-diagram} shows the class diagram of the added exploration strategy interface. The RemoteStrategy extends a \textit{SymbolicStrategy}. The SymbolicStrategy has a \textit{closing} exploration strategy, which is a strategy that explores all graph states and rule transitions, such as the BreadthFirstStrategy.
 
-The user starts the RemoteExplorationStrategy with a host and port, as described above. This strategy starts a ClosingStrategy. This strategy explores the IOGG and notifies the remote strategy when there are no more rule transitions to explore. The SymbolicStrategy implements  the method described in chapter~\ref{chapter:gg_to_sts} to build the IOSTS in Java objects using the explored IOGTS from the ClosingStrategy. The class diagram of this IOSTS is given in next.
+The user starts the RemoteStrategy with a host and port, as described above. This strategy starts a ClosingStrategy. This strategy explores the IOGG and notifies the remote strategy when there are no more rule transitions to explore. The SymbolicStrategy implements the method described in chapter~\ref{chapter:gg_to_sts} to build the IOSTS in Java objects using the explored IOGTS from the ClosingStrategy.
  
 \begin{figure}[ht]
   \begin{center}
@@ -48,7 +48,7 @@ Figure~\ref{fig:sts-diagram} shows the class diagram of the IOSTS in GRATiS. The
   \label{fig:sts-diagram}
 \end{figure}
 
-Figure~\ref{fig:sts-objects} shows the object relations in accordance with the class diagram for the IOSTS in Figure~\ref{fig:example_sts}. Note that the links between the $\mathit{BoardGame}$ object and the Location, SwitchRelation, IOGate and InteractionVariable classes are not drawn for the sake of clarity. Note that the created objects, inter-object relations and object parameters are in accordance with the method described in chapter~\ref{chapter:gg_to_sts}. The IOSTS itself is the composite object, which also holds the initialization function. The RuleInspector is not part of the IOSTS, therefore the Boardgame object does not show the relation with this object.
+Figure~\ref{fig:sts-objects} shows the object relations in accordance with the class diagram for the IOSTS in Figure~\ref{fig:example_sts}. Note that the links between the $\mathit{BoardGame}$ object and the the other objects are not drawn for the sake of clarity. Note that the created objects, inter-object relations and object parameters are in accordance with the method described in chapter~\ref{chapter:gg_to_sts}. The IOSTS itself is the composite object, which also holds the initialization function. The RuleInspector is not part of the IOSTS, therefore the Boardgame object does not show the relation with this object.
 
 \begin{figure}[ht]
   \begin{center}

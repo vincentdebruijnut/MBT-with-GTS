@@ -3,33 +3,14 @@ NOG TE VRAGEN AAN AREND:
 - p 15 'and none of the graphs in NAC have a morphism to G', morphism extending in?
 - p 17 can you make these conform to figure 2.5? = They have nothing to do with each other. Doosjes om rules heen: lastig, gebruik fbox in figuren, kan geen border maken. space tussen plaatjes vergroot.
 - p25 Example GG variable: 'How are these fixed? They're not part of the GG' ???
+- graph transformation tools: ok als ik tabel overneem? Alleen verwijzing naar de tool contest paper?
 
 to do:
-- Write something about other GG tools
-- MB/V en ms/V uitrekenen
-- modelleer failed example af, halstead complexity uitrekenen.
-- 5.1.3 -> voorbeeldje wat in groove de volume is. tweede grotere voorbeeldje, laten zien dat volume dus groter is.
-- Voeg boardgame en failed example aan alle metingen
-- verify halstead measurements (done by script, recount a smaller model, find mistakes)
-- implementation: symbolic strategy vervangen door remote in uml
 - write something about cyclomatic complexity and system complexity
-- Add state of account as variable, check cs_accnt in get_variable#success
-- recount number scrp rules and vars for all-examples.tex : IOGG
-- add description of wild cards to groove visual description
-- fwgc afkorten (tot fwgc)
-- implementation: strategy classes uitbreiden met de concrete methoden (denk ik)
-- singleton ruleinspector weghalen uit object diagram
-- object diagram beter maken (Fig 4.4)
+- 5.1.3 -> voorbeeldje wat in groove de volume is. tweede grotere voorbeeldje, laten zien dat volume dus groter is.
+
 - Need to verify simulation/bisimulation (Testmanager!)
-
-
-
-future work: extend scrp
-
-conclusions: In 1.5 research goals weer noemen. + design requirements
-Overal waar ik naar toe wijs, even sectie noemen waar het uitgelegd wordt.
-
-- 6.2 bijdragen (GG -> STS, GROOVE+ATM, voorbeelden)
-
+- implementation: strategy classes uitbreiden met de concrete methoden (denk ik)
+- modelleer failed example af, halstead complexity uitrekenen.  
+- check cs_accnt in get_variable#success
 - reflectie in conclusions, wat kon beter, wat had ik nog willen doen.
-- Groove uitbreidingen, ATM uitbreidingen. max in Groove, STSs prominenter in Groove.

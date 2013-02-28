@@ -114,6 +114,15 @@ A rule node with an edge to a constant is shortened to a label on the node. Figu
 \end{figure}
 
 \paragraph*{Wildcards}
+GROOVE features wildcards that can match any label, or a label from a set of labels. Figure~\ref{fig:wildcards} shows an example of this. The edge on the left `Node' matches any edge on a node typed `Node'. The right `Node' matches any node typed `Node' with the flag `a' or `b'.
+
+\begin{figure}[h]
+  \begin{center}
+    \input{./img/visual_elements/wildcards.tikz}
+  \end{center}
+  \caption{Wildcards in GROOVE rule graphs}
+  \label{fig:wildcards}
+\end{figure}
 
 \paragraph*{Rule transition parameters}
 Rule transitions can have parameters in GROOVE. Figure \ref{fig:transition_parameters_rule} shows a rule where the node variables have a number in the top right of the node. These numbers indicate that the value of the variables are placed as parameters on the rule transition, in the order indicated by the numbers. This rule matches the host graph in Figure \ref{fig:transition_parameters_host}. The result of applying the rule twice is the GTS in Figure \ref{fig:transition_parameters_gts}.

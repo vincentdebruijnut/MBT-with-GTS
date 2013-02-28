@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph edgemode="directed" edgeids="false" role="rule" id="makeReservation">
+    <graph role="rule" edgeids="false" edgemode="directed" id="makeReservation">
         <attr name="transitionLabel">
             <string>?make</string>
         </attr>
@@ -10,92 +10,122 @@
         <attr name="$version">
             <string>curly</string>
         </attr>
-        <node id="n6">
+        <node id="n9">
             <attr name="layout">
-                <string>179 201 43 37</string>
+                <string>439 228 43 37</string>
             </attr>
         </node>
         <node id="n5">
             <attr name="layout">
-                <string>242 18 75 37</string>
+                <string>242 30 75 37</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>430 35 45 37</string>
             </attr>
         </node>
         <node id="n2">
             <attr name="layout">
-                <string>344 199 45 37</string>
+                <string>263 224 43 37</string>
             </attr>
         </node>
         <node id="n1">
             <attr name="layout">
-                <string>245 91 71 33</string>
+                <string>244 90 71 33</string>
             </attr>
         </node>
         <node id="n7">
             <attr name="layout">
-                <string>231 146 107 33</string>
+                <string>319 157 107 50</string>
             </attr>
         </node>
-        <edge to="n6" from="n6">
+        <node id="n0">
+            <attr name="layout">
+                <string>423 91 60 33</string>
+            </attr>
+        </node>
+        <edge from="n9" to="n9">
             <attr name="label">
                 <string>int:</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge from="n5" to="n5">
             <attr name="label">
                 <string>string:</string>
             </attr>
         </edge>
-        <edge to="n5" from="n5">
+        <edge from="n5" to="n5">
             <attr name="label">
                 <string>par:0</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n4" to="n4">
             <attr name="label">
                 <string>int:</string>
             </attr>
         </edge>
-        <edge to="n2" from="n2">
+        <edge from="n4" to="n4">
             <attr name="label">
                 <string>par:1</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>int:</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
             <attr name="label">
                 <string>type:Person</string>
             </attr>
         </edge>
-        <edge to="n1" from="n1">
-            <attr name="label">
-                <string>new:flag:reserve</string>
-            </attr>
-        </edge>
-        <edge to="n5" from="n1">
+        <edge from="n1" to="n5">
             <attr name="label">
                 <string>name</string>
             </attr>
         </edge>
-        <edge to="n7" from="n1">
+        <edge from="n1" to="n7">
             <attr name="label">
-                <string>has</string>
+                <string>makes</string>
             </attr>
         </edge>
-        <edge to="n7" from="n7">
+        <edge from="n7" to="n7">
+            <attr name="label">
+                <string>new:</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n7">
             <attr name="label">
                 <string>type:Reservation</string>
             </attr>
         </edge>
-        <edge to="n2" from="n7">
+        <edge from="n7" to="n2">
             <attr name="label">
-                <string>new:start_time</string>
+                <string>start_time</string>
             </attr>
             <attr name="layout">
-                <string>655 -2 280 154 366 217 11</string>
+                <string>514 -1 301 174 284 223 11</string>
             </attr>
         </edge>
-        <edge to="n6" from="n7">
+        <edge from="n7" to="n0">
             <attr name="label">
-                <string>del:start_time</string>
+                <string>new:for</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n9">
+            <attr name="label">
+                <string>end_time</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>type:Table</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n4">
+            <attr name="label">
+                <string>number</string>
             </attr>
         </edge>
     </graph>

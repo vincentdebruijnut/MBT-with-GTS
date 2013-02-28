@@ -43,6 +43,11 @@ A.~H. {Ghamarian}, M.~J. {de Mol}, A.~{Rensink}, E.~{Zambon}, and M.~V.
 \newblock {\em International journal on software tools for technology
   transfer}, 14(1):15--40, February 2012.
 
+\bibitem{DBLP:gg_tools}
+Pieter~Van Gorp, Steffen Mazanek, and Louis Rose, editors.
+\newblock {\em Proceedings Fifth Transformation Tool Contest}, volume~74 of
+  {\em EPTCS}, 2011.
+
 \bibitem{Halstead:software-science}
 M.H. Halstead.
 \newblock {\em Elements of Software Science}.

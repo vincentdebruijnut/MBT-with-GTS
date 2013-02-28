@@ -4,8 +4,8 @@ This section shows the IOGG and IOSTS for each model example and the case study.
 \subsection{Example 1: boardgame}
 The boardgame is the running example of which the IOSTS and IOGG are given in Figures~\ref{fig:example_sts} and \ref{fig:example_groove} respectively. In order to be consistent with the GG variable definition, the two $Player$ and $Die$ nodes receive the flags $\mathit{var1, var2, var3}$ respectively, representing the variable labels.
 
-\subsection{Example 2: farmer-wolf-goat-cabbage}\label{sec:fwgc}
-In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one item to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The stimuli accepted by the puzzle are:
+\subsection{Example 2: farmer-wolf-goat-cabbage puzzle}\label{sec:fwgc}
+In this puzzle, a farmer, wolf, goat and cabbage are on one side of a river. The farmer can take upto one item to the other side. If the wolf and goat are on one side of the river without the farmer, the wolf eats the goat and the puzzle is reset. This also holds for the goat and the cabbage. The goal is to move all four to the other side of the river. The puzzle is often referred to later by its acronym `FWGC'. The stimuli accepted by the puzzle are:
 \begin{itemize}
 \item $?n$ Move the farmer to the other river bank
 \item $?w$ Move the wolf to the other river bank
@@ -180,7 +180,7 @@ $\mathit{?SIGNON\_EXIST}$ & Sign on with a correct login/password \\
 $\mathit{?SIGNON\_NEXIST}$ & Sign on with an incorrect login/password \\
 \end{tabular}
 
-\paragraph*{IOGG} Some selected rules of the IOGG of this communication protocol are shown in Figure~\ref{fig:gg-scrp}. In total the IOGG has 94 rules. They are all listed in Appendix~\ref{app:scrp-gg}. Figure~\ref{fig:start-scrp} shows the initial graph. The $CR$ node is the cash register, the $SFU$ is the scanflow unit. The first node has the flag $\mathit{SS\_OFF}$ representing that the register is off. There is one account which can be in states idle, open, closed and transing. When the customer places items on the belt, a new account is opened. Figure~\ref{fig:open-account-request} shows the general request structure. As long as there is no request, a request can be sent. This rule requests the opening of an account. Figure~\ref{fig:open-account-success} shows the rule for giving a success response. The request node is deleted such that new request nodes can be created again. The rule checks if an account is not already opened and opens an idle account. Figure~\ref{fig:open-account-invalid} shows the rule for the error message received when an account is already opened. 
+\paragraph*{IOGG} Some selected rules of the IOGG of this communication protocol are shown in Figure~\ref{fig:gg-scrp}. In total the IOGG has 93 rules. They are all listed in Appendix~\ref{app:scrp-gg}. Figure~\ref{fig:start-scrp} shows the initial graph. The $CR$ node is the cash register, the $SFU$ is the scanflow unit. The first node has the flag $\mathit{SS\_OFF}$ representing that the register is off. There is one account which can be in states idle, open, closed and transing. When the customer places items on the belt, a new account is opened. Figure~\ref{fig:open-account-request} shows the general request structure. As long as there is no request, a request can be sent. This rule requests the opening of an account. Figure~\ref{fig:open-account-success} shows the rule for giving a success response. The request node is deleted such that new request nodes can be created again. The rule checks if an account is not already opened and opens an idle account. Figure~\ref{fig:open-account-invalid} shows the rule for the error message received when an account is already opened. 
 
 \begin{figure}[ht]
   \begin{center}

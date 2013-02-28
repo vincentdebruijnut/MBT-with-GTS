@@ -1,0 +1,14 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n1)  at (1.440, -1.740) {\ml{\textbf{Node}}};
+\node[node] (n0)  at (2.820, -1.750) {\ml{\textbf{Node}\\\textit{?[a,b]}}};
+\path[edge] (n1) .. controls (1.250, -2.020) and (1.320, -2.240) .. (1.320, -2.240).. controls (1.330, -2.270) and (1.580, -2.260) .. (1.590, -2.230).. controls (1.590, -2.230) and (1.640, -2.010) ..  (n1) ;
+\node[lab] at (1.454, -2.235){\textit{?}};
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

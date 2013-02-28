@@ -41,7 +41,7 @@
 \contentsline {subsection}{\numberline {5.1.4}Performance}{38}{subsection.5.1.4}
 \contentsline {section}{\numberline {5.2}Models}{38}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Example 1: boardgame}{38}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Example 2: farmer-wolf-goat-cabbage}{38}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Example 2: farmer-wolf-goat-cabbage puzzle}{38}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}Example 3: bar tab system}{39}{subsection.5.2.3}
 \contentsline {subsection}{\numberline {5.2.4}Example 4: restaurant reservations}{39}{subsection.5.2.4}
 \contentsline {subsection}{\numberline {5.2.5}Case study: Scanflow Cash Register Protocol}{39}{subsection.5.2.5}
@@ -54,7 +54,7 @@
 \contentsline {section}{\numberline {6.1}Research goals}{48}{section.6.1}
 \contentsline {section}{\numberline {6.2}Contributions}{48}{section.6.2}
 \contentsline {section}{\numberline {6.3}Future work}{49}{section.6.3}
-\contentsline {chapter}{List of Symbols}{53}{chapter*.90}
+\contentsline {chapter}{List of Symbols}{53}{chapter*.91}
 \contentsline {chapter}{\numberline {A}Farmer-Wolf-Goat-Cabbage Models}{55}{appendix.A}
 \contentsline {chapter}{\numberline {B}Bar Tab Models}{60}{appendix.B}
 \contentsline {chapter}{\numberline {C}SCRP Commands \& Responses}{64}{appendix.C}

@@ -1,17 +1,47 @@
 \section{Research goals}
-This report shows the usability of Graph Grammars in model-based testing. The motivation to use GGs is supported by literature, emphasizing the understandibility of graphs and the usefulness of graphs to express system states. Symbolic Transition Systems are a useful formalism which are easily used by computers. This supports using a GG for testers to model a software system and generating the IOSTS from the IOGG for the computer to use during testing. 
-The point algebra was shown to be useful for achieving the generation of an IOSTS. The design requirements for GRATiS are all met, because:
+This report shows the usability of Graph Grammars (GG) in model-based testing. The motivation to use GGs is supported by literature, as described in section~\ref{sec:gg_intro}, emphasizing the understandibility of graphs and the usefulness of graphs to express system states. Symbolic Transition Systems (STS), described in section~\ref{sec:symbolic}, are a useful formalism for computers. 
+
+The overall goal of this research was to create a tool that can perform Model-Based Testing on GGs, using an existing graph transformation tool and a Model-Based Testing tool. The tools GROOVE and ATM, described in section~\ref{sec:tooling}, were used for this.
+
+The research goals were:
+\begin{enumerate}
+  \item \textbf{Design}: Design and implement a system using ATM and GROOVE which performs Model-Based Testing on GGs.
+  \item \textbf{Validation}: Validate the design and implementation using case studies and performance measurements.
+\end{enumerate}
+
+The design requirements for GRATiS were: 
+\begin{enumerate}
+\item An Input/Output GG (IOGG) must be used as the model; it must derive from the specification and be used for the testing.
+\item It must be possible to measure the test progress/completion, by means of \textit{coverage} statistics (explained in detail in section~\ref{sec:coverage}).
+\item The solution must be efficient: it should be usable in practice, therefore the technique should be scalable and the imposed constraints reasonable from a practical view point.
+\end{enumerate}
+
+GRATiS is built by creating an Input/Output STS (IOSTS) from the IOGG in GROOVE and performing the testing on the symbolic model in ATM, described in chapter~\ref{chapter:implementation}. The tool was also validated using four example models and a larger case study, as described in chapter~\ref{chapter:validation}. The design requirements are all met, because:
 \begin{itemize} 
-\item the technique proved effective for model-based testing in several example cases and a larger case study
+\item the technique used in GRATiS proved effective for Model-Based Testing in the example cases and the case study
 \item coverage can be measured on the generated IOSTS
-\item the performance measurements show that the IOSTS can be generated from large models in a negligible time and that the technique scales well
+\item the performance measurements show that the symbolic model can be generated from large IOGGs in a negligible time and that the technique scales well
 \end{itemize}
 
 \section{Contributions}
-Generating the location variables in an STS meant creating an extra definition for GGs, which allowed persistent variables. The definition lets edges to data values to be considered as variables; this was a choice needed to generate the IOSTS. GGs can dynamically add these variables or delete them; something which was frequently desired to obtain the smallest and most intuitive models, but which complicates the generation of the IOSTS. Hence, constraints on GG transformation rules were defined mostly to accomdate the GG variable definition.
+The contributions are:
+\begin{enumerate}
+\item A definition for variables in IOGGs~\ref{def:gg_vars}
+\item A technique to generate an IOSTS from an IOGG~\ref{chapter:algorithm}
+\item the tool GRATiS which implements the above-mentioned technique~\ref{chapter:implementation}
+\item Model complexity measurements based on Halstead's Software Science for IOGGs and IOSTSs~\ref{sec:complexity_measurements}
+\end{enumerate}
 
-One of the example cases, the reservation system, suffered from the constraints the most. This example could not be modelled, because dynamically deleting and creating GG variables was required. The puzzle example on the other hand shows the strength of GGs the most, through simple, intuitive rules opposed to a complicated transition system. This shows that some systems are more suitable to be modelled in GGs than others.
+\paragraph*{GG variables}
+Generating the variables in an IOSTS meant creating an extra definition for IOGGs, which allows persistent variables for GGs. These did not exist, because IOGGS can delete any node or edge, so also any variable definition in the graph. This gave problems to the technique, as described next.
 
-The case study done in this report on the self-scan register shows a real life example of a software system, succefully modelled as an IOGG. Here, the strength of behavioral rules is apparent: instead of state-transition thinking, the graph transformation rules allow each behavioral aspect of a software system to be modelled by one rule. For example, the `not signed on' error, given when the register is in the `not signed on' state. This error can be given in numerous states in the IOSTS, but simply described in the IOGG by matching the state of the register. Additional restrictions of where this rule applies can be easily added to the rule. In state-transition based models, high many states and transitions are often needed to model the same behavior described by one GG rule. This shows that IOGGs are very useful when it comes to changing requirements: only few rules need to be adjusted to accomodate these changes.
+\paragraph*{IOGG to IOSTS technique}
+In order to generate an IOSTS from the IOGG such that it describes the same behavior, four constraints, described in section~\ref{sec:constraints}, had to be defined. IOGGs can dynamically add or delete these variables; something which was frequently desired to obtain the smallest and most intuitive models, but which complicates the generation of the IOSTS. Hence, constraints, on GG transformation rules were defined.
 
+One of the example cases, a restaurant reservation system, suffered from the constraints the most. This example could not be modelled, because dynamically deleting and creating GG variables is not allowed by the constraints. The puzzle example on the other hand shows the strength of GGs the most: simple, intuitive rules opposed to a complicated transition system. This shows that some systems are more suitable to be modelled in IOGGs than others.
+
+\paragraph*{GRATiS: the case study}
+The case study done in this report on a self-scan register shows a real life example of a software system, successfully modelled as an IOGG. Here, the strength of behavioral rules is apparent: instead of state-transition thinking, the graph transformation rules allow each behavioral aspect of a software system to be modelled by one rule. For example, a `cash register not signed on' error can be given from any state the cash register is not signed on. In an IOGG, this is expressed by one rule, but generates many switch relations in the STS. Restrictions of where this rule does not apply can be easily added to the rule. In state-transition based models, many states and transitions are often needed to model the same behavior described by one GG rule. This shows that IOGGs are very useful when it comes to changing requirements: only few rules need to be adjusted to accomodate these changes.
+
+\paragraph*{Model complexity}
 Model complexity measurements were done on the IOGGs and IOSTSs of the example cases and case study. This did not reveal a clear difference in overall model complexity. However, it did show that IOGGs generally have more distinct operands, but less overall operators. The first part is due to the labels on nodes and edges, which describe the nature of the nodes and the relation between the nodes; these operands are not present in the IOSTSs. The second part can be explained by the repetition needed in IOSTSs to describe the same behavior as one IOGG rule.

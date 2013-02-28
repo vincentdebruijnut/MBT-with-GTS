@@ -25,7 +25,7 @@ The rest of this chapter describes a declaritive definition for creating an IOST
 The location variables in an STS represent an aspect of the modelled system. For instance, if a system keeps track of the number of items in containers, the STS modelling this system could have integer location variables $\mathit{items}_1..\mathit{items}_n$. GGs do not have this kind of variables. The variable nodes in rule graphs are used to match a value in a host graph, which is only available to that rule. A definition of persistent variables in GGs is needed in order to define location variables from an IOGG.
 
 \vspace{10px}
-\begin{definition} GG variables \\
+\begin{definition}\label{def:gg_vars} GG variables \\
 A GG variable is a tuple $\langle \variableLabel, \valueLabel\rangle$, where:
 \begin{itemize}
 \item \newnot{symbol:variableLabel}$\variableLabel$ is the \textit{variable label}, which is part of an edge $(\variableAnchor, \variableLabel, \variableAnchor)$, where $\variableAnchor$\newnot{symbol:variableAnchor} is called the \textit{variable anchor}
