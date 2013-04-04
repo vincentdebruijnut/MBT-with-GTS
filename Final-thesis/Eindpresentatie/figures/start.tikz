@@ -1,0 +1,19 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale, every node/.style={scale=\tikzscale/2}]
+\node[node] (n4)  at (1.910, -1.145) {\ml{\textbf{Crossing}}};
+\node[node] (n3)  at (2.560, -1.820) {\ml{\textbf{Light}\\\textit{green}}};
+\node[node] (n2)  at (2.590, -0.655) {\ml{\textbf{Side}}};
+\node[node] (n1)  at (1.220, -1.735) {\ml{\textbf{Side}}};
+\node[node] (n0)  at (1.235, -0.645) {\ml{\textbf{P}}};
+\path[edge](n0.south -| 1.220, -1.735) -- node[lab]{on} (n1) ;
+\path[edge] (n4)  -- node[lab]{has} (n1) ;
+\path[edge] (n4)  -- node[lab]{has} (n3) ;
+\path[edge] (n4)  -- node[lab]{has} (n2) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

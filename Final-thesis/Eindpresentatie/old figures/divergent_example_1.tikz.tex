@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt]
+
+	\node[initial, state] (s0) {\footnotesize $s_0$};
+
+	\path (s0) edge [loop below] node {$\tau$}  (s0);
+\end{tikzpicture}

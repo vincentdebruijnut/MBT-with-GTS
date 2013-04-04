@@ -1,0 +1,25 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[nacnode] (n5)  at (3.710, -0.710) {\ml{\textit{pushed}\\Button}};
+\node[node] (n13)  at (0.900, -0.705) {\ml{Coin}};
+\node[node, attr] (n0)  at (1.560, -1.465) {\ml{\textbf{real}}};
+\node[node] (n1)  at (2.140, -0.705) {\ml{CoffeeMachine}};
+\node[node, attr] (n2)  at (2.800, -1.455) {\ml{\textbf{real}}};
+\node[node, prod] (n3)  at (2.145, -2.035){};
+\node[node, attr] (n4)  at (0.920, -2.045) {\ml{\textbf{real}}};
+\node[parnode] (n4p)  at (n4.north west) {0};
+\path[edge] (n3)  -- node[lab]{$\pi$1} (n4) ;
+\path[deledge] (n1)  -- node[dellab]{balance} (n0) ;
+\path[edge] (n3)  -- node[lab]{$\pi$0} (n0) ;
+\path[newedge] (n1)  -- node[newlab]{balance} (n2) ;
+\path[edge](n13.south -| 0.920, -2.045) -- node[lab]{value} (n4) ;
+\path[edge] (n3)  -- node[lab]{add} (n2) ;
+\path[nacedge](n1.east |- 3.710, -0.710) -- node[naclab]{has} (n5) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

@@ -1,0 +1,17 @@
+\begin{tikzpicture}[auto,scale=0.85,transform shape]
+	\tikzstyle{every state}=[line width=0.5pt,minimum size=5pt]
+	\node[initial, state, fill=blue] (s0) {};
+	\node[state,fill=red] (s1) [left of=s0] {};
+	\node[state,fill=orange] (s2) [right of=s0] {};
+	\node[state,fill=green] (s3) [below of=s1] {};
+	\node[state,fill=yellow] (s4) [below of=s2] {};
+
+	\path	(s0) edge node [swap]  {$a?$}  (s1)
+			(s0) edge [loop below] node {$\delta$} (s0)
+			(s0) edge node {$a?$}  (s2)
+			(s1) edge node [swap] {$b!$}  (s3)
+			(s2) edge node {$a?$} (s4)
+			(s2) edge [loop right] node {$\delta$} (s2)
+			(s3) edge [loop below] node {$\delta$} (s3)
+			(s4) edge [loop below] node {$\delta$} (s4);
+\end{tikzpicture}

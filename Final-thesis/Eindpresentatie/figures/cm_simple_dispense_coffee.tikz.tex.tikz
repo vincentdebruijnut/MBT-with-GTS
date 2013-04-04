@@ -1,0 +1,19 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[delnode] (n1)  at (0.500, -0.615) {\ml{Coin}};
+\node[node] (n0)  at (1.940, -0.615) {\ml{CoffeeMachine}};
+\node[node] (n7)  at (3.610, -0.610) {\ml{{\color{\blue}\textit{$-$ pushed}}\\Button}};
+\node[newnode] (n2)  at (1.885, -1.455) {\ml{Coffee}};
+\node[node] (n3)  at (3.610, -1.440) {\ml{Coffee}};
+\path[deledge](n1.east |- 1.940, -0.615) -- node[dellab]{in} (n0) ;
+\path[newedge](n0.south -| 1.885, -1.455) -- node[newlab]{dispenses} (n2) ;
+\path[edge](n0.east |- 3.610, -0.610) -- node[lab]{has} (n7) ;
+\path[edge](n7.south -| 3.610, -1.440) -- node[lab]{for} (n3) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

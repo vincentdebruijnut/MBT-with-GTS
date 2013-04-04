@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
+    <graph role="rule" edgeids="false" edgemode="directed" id="refund">
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n7">
+            <attr name="layout">
+                <string>247 42 76 50</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>213 124 44 37</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>95 124 56 37</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>79 52 114 33</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>367 51 64 33</string>
+            </attr>
+        </node>
+        <edge from="n7" to="n7">
+            <attr name="label">
+                <string>del:flag:pushed</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n7">
+            <attr name="label">
+                <string>Button</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n4">
+            <attr name="label">
+                <string>for</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>real:0.0</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>par:0</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>CoffeeMachine</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>new:balance</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n1">
+            <attr name="label">
+                <string>del:balance</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n7">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>Refund</string>
+            </attr>
+        </edge>
+    </graph>
+</gxl>

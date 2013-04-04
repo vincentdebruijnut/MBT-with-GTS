@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
+    <graph role="rule" edgeids="false" edgemode="directed" id="dispense_coffee">
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n1">
+            <attr name="layout">
+                <string>26 45 48 33</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>137 45 114 33</string>
+            </attr>
+        </node>
+        <node id="n7">
+            <attr name="layout">
+                <string>323 36 76 50</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>158 129 61 33</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>330 127 61 33</string>
+            </attr>
+        </node>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>del:</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>Coin</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n0">
+            <attr name="label">
+                <string>in</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>CoffeeMachine</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n2">
+            <attr name="label">
+                <string>dispenses</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n7">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n7">
+            <attr name="label">
+                <string>del:flag:pushed</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n7">
+            <attr name="label">
+                <string>Button</string>
+            </attr>
+        </edge>
+        <edge from="n7" to="n3">
+            <attr name="label">
+                <string>for</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>new:</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>Coffee</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>Coffee</string>
+            </attr>
+        </edge>
+    </graph>
+</gxl>

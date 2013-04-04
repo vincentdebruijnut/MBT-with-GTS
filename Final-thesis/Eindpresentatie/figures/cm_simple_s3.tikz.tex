@@ -1,0 +1,17 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n0)  at (1.160, -0.695) {\ml{CoffeeMachine}};
+\node[node] (n2)  at (2.445, -1.305) {\ml{Coffee}};
+\node[node] (n1)  at (2.425, -0.705) {\ml{Button}};
+\node[node] (n4)  at (1.115, -1.275) {\ml{Coffee}};
+\path[edge](n1.south -| 2.445, -1.305) -- node[lab]{for} (n2) ;
+\path[edge](n0.east |- 2.425, -0.705) -- node[lab]{has} (n1) ;
+\path[edge](n0.south -| 1.115, -1.275) -- node[lab]{dispenses} (n4) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

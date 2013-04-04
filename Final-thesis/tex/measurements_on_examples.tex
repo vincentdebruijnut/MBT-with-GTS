@@ -128,28 +128,13 @@ Table~\ref{tab:halstead-extended} shows the measurements on the operators and op
   & IOSTS & 6 & 12 & 146 & 247 & 1638.78 & 751.67\\ \hline
   bar-tab system & IOGG & 9 & 36 & 65 & 290 & 1949.61 & 736.21 \\ \cline{2-7}
   & IOSTS & 8 & 23 & 88 & 156 & 1208.82 & 304.12 \\ \hline
-  Reservations & IOGG & ?? & ?? & ?? & ?? & ?? \\ \cline{2-7}
+  Reservations & IOGG & - & - & - & - & - \\ \cline{2-7}
   & IOSTS & - & - & - & - & - \\ \hline
 \end{tabular}
 \end{center}
 \caption{The Halstead measurements on the extended models}
 \label{tab:halstead-extended}
 \end{table}
-
-\begin{comment}
-A recent extension on the protocol allows multiple accounts. While an account is not in state open, an idle account can be opened. This allows for a customer to scan his/her products, while another customer pays. Figure~\ref{fig:gg-fwgc-extended} shows the changes to the initial graph and the open account rules. Figure~\ref{fig:close-account-success-ext} shows the success response rule for closing an account: the order of closed accounts have to be kept, because the accounts have to be paid in that order.
-
-\begin{figure}[ht]
-  \begin{center}
-    \subfloat[The initial graph]{\label{fig:start-scrp-ext}\input{./img/start-scrp-extended.tikz}}\hspace{20px}
-    \subfloat[The open account success rule]{\label{fig:open-account-success-ext}\input{./img/scrp/account.open.success-extended.tikz}}\\
-    \subfloat[The open account invalid rule]{\label{fig:open-account-invalid-ext}\input{./img/scrp/account.open.invalid_ss_on-extended.tikz}}\hspace{20px}
-    \subfloat[The close account success rule]{\label{fig:close-account-success-ext}\input{./img/scrp/account.close.success-extended.tikz}}
-  \end{center}
-  \caption{Parts of the extended IOGG of Scanflow Cash Register Protocol}
-  \label{fig:gg-fwgc-extended}
-\end{figure}
-\end{comment}
 
 \subsection{Performance}
 The performance of GRATiS on all models is in Table~\ref{tab:performance}.
@@ -171,3 +156,21 @@ SCRP & 9530 & 6.6 \\ \hline
 \end{table}
 
 The algorithm scales reasonably well; the IOGG of SCRP is on average 13 times more complex than the examples and the runtime is on average 23 times longer. The space usage also shows very little increase.
+
+\subsection{Measurement conclusions}
+Table~\ref{tab:measurement_conclusions} shows the results of the measurements. The generated IOSTS in the bar tab example is redundant compared to the modelled IOSTS, but the modelled IOSTS in the SCRP case study is redundant compared to the generated IOSTS. The other examples do not show any redundancy. Therefore it is inconclusive whether the generated IOSTS is often redundant. More case studies have to be done to draw this conclusion.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| l | c | c | c |}
+  \hline
+  \textbf{Model} & \textbf{Simulation and Redundancy} & \textbf{Model complexity} & \textbf{Extendability} \\ \hline
+  IOGG & +/- & +/- & +/-\\ \hline
+  IOSTS & +/- & +/- & +/-\\ \hline
+\end{tabular}
+\end{center}
+\caption{Measurement conclusions}
+\label{tab:measurement_conclusions}
+\end{table}
+
+Both the model complexity and extendability measurements are inconclusive. However, it is revealed that IOGGs use more operators and IOSTSs use more operands to express the same behavior. More larger case studies have to done to draw a conclusion. However, judging from the effort and time put into modelling and extending the models from both formalisms, the IOGGs were easier to model, because less operands were needed. The IOGG formalism in itself is more complex than the IOSTS, because it has more operators. This makes IOGGs harder to understand initially, but takes less effort to work with when a tester is adept with graph transformations. The Halstead measurement assumes more faults are generated when the code-base becomes larger and more complex. A problem indicated in the introduction is that stakeholders should validate the models for correctness. A large IOSTS is difficult to check and a person not adept in graph transformation will have an equally hard time checking an IOGG. However, when the stakeholder becomes more adept at graph transformations, the IOGGs will require less effort to check than the IOSTSs. In conclusion, the Halstead measurement is possibly not the right measurement to indicate whether a certain formalism is more usable than the other.

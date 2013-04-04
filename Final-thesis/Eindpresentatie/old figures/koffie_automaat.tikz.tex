@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt, node distance=1.5cm, scale=0.8]
+
+	\node[state, initial above] (s0) {\footnotesize $s_0$};
+	\node[state] (s1) [below of=s0] {\footnotesize $s_1$};
+	\node[state] (s2) [below left of=s1] {\footnotesize $s_2$};
+   	\node[state] (s3) [below right of=s1] {\footnotesize $s_3$};
+	
+	\path        (s0) edge node [swap] {\footnotesize geld?} (s1)
+					(s1) edge node [swap] {\footnotesize koffie!} (s2)
+					(s1) edge node {\footnotesize thee!} (s3);
+\end{tikzpicture}

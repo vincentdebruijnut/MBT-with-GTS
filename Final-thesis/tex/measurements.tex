@@ -5,7 +5,7 @@ This section describes possible measurements on the execution of GRATiS and comp
 \item Model complexity
 \item Extendability
 \end{enumerate}
-The measurements on the performance of GRATiS follow.
+The measurements on the performance of GRATiS follow these measurements, concluded by the expectations for each measurement.
 
 \subsection{Simulation and redundancy}
 The generated IOSTS and the modelled IOSTS can be compared. It can be observed whether the generated IOSTS simulates the modelled IOSTS and vice versa. When either is not the case, the models show a different possible behavior for the SUT.
@@ -25,14 +25,16 @@ This indicates the the IOSTS $s$ has redundancy.
 \subsection{Model complexity}\label{sec:complexity_measurement}
 A good way of testing the complexity of the IOSTS and the IOGG is to hold an extensive social experiment, where groups create and maintain models in either formalism. However, this is out of the scope for this report. More is written about this social experiment in the Future Work section~\ref{sec:future-work}.
 
-Instead of a social experiment, we investigated software complexity measurements in the literature and tested their applicability for IOGGs and IOSTSs. The investigated complexity measurements are:
+Instead of a social experiment, software complexity measurements were investigated in the literature and tested for their applicability for IOGGs and IOSTSs. The investigated complexity measurement is Halstead's Software science~\cite{Halstead:software-science}.
+\begin{comment}
 \begin{enumerate}
 \item Halstead's software science
 \item Cyclomatic complexity
 \item System complexity
 \end{enumerate}
+\end{comment}
 
-\paragraph*{Halstead's software science} The complexity of the generated IOSTS and the IOGG can be measured using Halstead's software science~\cite{Halstead:software-science}. This method is used in measuring software complexity and the prediction of faults. However, it can also be used in analyzing model complexity. In Halstead's software science, the operators and operands in the program code are counted. The operators are the function symbols, the operands are the identifiers. However, in order to apply these concepts to our setting, we have to identify what we consider to be operators and operands.
+\paragraph*{Halstead's software science} The complexity of the generated IOSTS and the IOGG can be measured using Halstead's software science. This method is used in measuring software complexity and the prediction of faults. However, it can also be used in analyzing model complexity. In Halstead's software science, the operators and operands in the program code are counted. The operators are the function symbols, the operands are the identifiers. However, in order to apply these concepts to our setting, we have to identify what we consider to be operators and operands.
 
 IOSTSs and IOGGs both have identifiers and function symbols. However, they also have nodes and edges. In an IOSTS, the locations are counted as nodes, the switch relations as edges. Nodes and edges are considered to be operands. In GROOVE, colors indicate a restriction or node/edge removal/creation. The node and edge colors are therefore considered as operators.
 
@@ -42,14 +44,33 @@ $(N_1+N_2)*\mathit{log}_2(n_1+n_2)$
 \end{definition}\vspace{10px}
 In Halstead's software science, the volume of a program and a constant for the number of faults per volume unit are combined to give the expected faults in a program. Therefore, comparing the volumes of the IOSTS and IOGG gives an indication of the relative model complexity.
 
+\begin{comment}
 \paragraph*{Cyclomatic Complexity} COMMENT Ik heb intensief emails gewisseld met Lodewijk Bergmans over de toepassing van cyclomatic complexity, maar dit lijkt niet geschikt hier. Ik zal het wel behandelen $/$COMMENT
 % vanwege het nodig hebben van begin en eind punten in een transitiesysteem. Voor STS is dat al lastig vanwege loops, maar in GG vrijwel onmogelijk omdat de interacties tussen 
 
 \paragraph*{System Complexity} COMMENT mooie, simpele metric voor OO. Niet toepasbaar hier, want onmogelijk om modules te definieren $/$COMMENT
 % modules -> fan-in, fan-out, nodig voor Structural Complexity & Data Complexity
+\end{comment}
 
 \subsection{Extendability}
-The models can be extended to include more functionality. In this measurement, a realistic scenario is introduced where additional functionality is required. It is then measured how much the complexity increases, using the measurment in section~\ref{sec:complexity_measurement}.
+The models can be extended to include more functionality. In this measurement, a realistic scenario is introduced where additional functionality is required. It is then measured how much the complexity increases, using the measurement in section~\ref{sec:complexity_measurement}. This should give a relative estimation of the effort of modelling the extension.
 
 \subsection{Performance}
 The performance on runtime and heap-size on the IOSTS generated by GRATiS is measured. After the IOSTS is generated we assume the run-time and heap-size for the testing part are the same for both the generated IOSTS and the modelled IOSTS. Therefore, only the runtime and heap size of the IOSTS generation are measured. The results are compared to the model complexity for each model, showing how the performance measurements scale relative to the increased model complexity.
+
+\subsection{Expectations}
+The runtime of the IOSTS generation is expected to be negligible compared to the testing time; the latter often takes an hour for large models, because of timeouts and message delays. The generation of the IOSTS is expected to take less than a minute for most models.
+
+Table~\ref{tab:expected} shows the expectations for the other measurements. It's expected that the generated IOSTS will not be the smallest possible IOSTS, because the best/most intuitive IOGG does not necessarily have to generate the smallest IOSTS. The assumption is that IOGGs are a more simple more intuitive formalism, therefore we expect that the model complexity for IOGGs will be lower, as well as the complexity increase in the extendability measurement.
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{| l | c | c | c |}
+  \hline
+  \textbf{Model} & \textbf{Simulation and Redundancy} & \textbf{Model complexity} & \textbf{Extendability} \\ \hline
+  IOGG & - & + & +\\ \hline
+  IOSTS & + & - & -\\ \hline
+\end{tabular}
+\end{center}
+\caption{Measurement expectations}
+\label{tab:expected}
+\end{table}

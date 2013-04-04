@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt]
+
+	\node[state, initial left] (s0) {\footnotesize $s_0$};
+	\node[state] (s1) [right=7cm of s0] {\footnotesize $s_1$};
+   	\node[state] (s2) [below=2cm of s1] {\footnotesize $s_2$};
+	
+	\path        (s0) edge node [auto] {$?add\:|\:C:=C+1$ } (s0);
+\end{tikzpicture}

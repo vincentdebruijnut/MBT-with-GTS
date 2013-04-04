@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\node[scale=1.5] (start) {
+  \input{./figures/cm_simple_s1.tikz}
+};
+\node[scale=1.5] (rule) [below=1cm of start] {
+  \input{./figures/cm_simple_push_button.tikz}
+};
+\node[scale=1.5] (s1) [below=1cm of rule] {
+  \input{./figures/cm_simple_s2.tikz}
+};
+
+\path (start) edge[-triangle 60] (rule) ;
+\path (rule) edge[-triangle 60] (s1) ;
+\end{tikzpicture}

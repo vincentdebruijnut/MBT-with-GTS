@@ -1,0 +1,366 @@
+\documentclass{FMTslides}
+\usepackage[labelformat=simple]{subfig}
+\usepackage{tikz}     % For graphics
+\usepackage{amsmath, amssymb}  % For various math stuff
+\usepackage{subfig}
+\usepackage{centernot} % For the centernot macro
+%\usepackage{bbding}
+\usepackage{groove2tikz}
+\usepackage[T1]{fontenc}
+
+% Colours
+\newcommand{\red}{red}
+\newcommand{\redfill}{\red!10}
+\newcommand{\green}{green!75!black}
+\newcommand{\greenfill}{\green!10}
+\newcommand{\blue}{blue!75!white}
+\newcommand{\bluefill}{blue!10}
+\newcommand{\grey}{black!8}
+\newcommand{\thin}{black!10}
+\newcommand{\orange}{orange}
+\newcommand{\yellow}{yellow!40}
+
+% Ugly hack to allow nodes with multiple lines
+\newcommand{\ml}[1]{
+\begin{tabular}{@{}l@{}}#1\vspace{-2pt}\end{tabular}
+}
+
+% User specified macro that is run at the end of an exported figure. By
+% redefining this macro the user can add more stuff to the figure.
+\newcommand{\userdefinedmacro}{\relax}
+
+\usetikzlibrary{arrows, automata, shapes.geometric, positioning, backgrounds}
+\DeclareMathAlphabet{\mathitbf}{OML}{cmm}{b}{it}
+\input{./commands_style.tex}
+% Includes for Tikz
+\usetikzlibrary{arrows,automata,positioning,er}
+
+% Dimension styles
+\newcommand{\tikzfontsize}{\footnotesize}
+\newcommand{\tikzscale}{1.2}
+\newcommand{\nodeinsep}{2.5pt}
+\newcommand{\labinsep}{2pt}
+\renewcommand{\thesubfigure}{\relax} 
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+
+\title[Model-based Testing with \\Graph Grammars]{Model-based Testing with Graph Grammars}
+\conference{\!\!\!M.Sc. Colloquium}
+\author{Vincent de Bruijn}
+\institute{Formal Methods and Tools, Faculty of EECMS \\ University of Twente, The Netherlands}
+\date{April 5th, 2013}
+
+\begin{document}
+
+\maketitleslide
+
+\part{Introduction}
+
+\begin{frame}
+   \frametitle{Contents}
+   \tableofcontents
+\end{frame}
+
+\section{Testing}
+
+\begin{frame}{Testing (1/3)}
+\begin{itemize}
+  \item Why do we test?
+  \begin{itemize}
+    \item Products have requirements
+    \item Software implementation should uphold requirements
+  \end{itemize}
+  \begin{center}
+    \includegraphics[scale=0.20]{./figures/coffee_machine.jpg}
+  \end{center}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Testing (2/3)}
+\begin{itemize}
+  \item Creating tests manually:
+  \begin{itemize}
+    \item Error-prone
+    \item Time intensive
+  \end{itemize}
+  \begin{center}
+    \includegraphics[scale=0.25]{./figures/guy_at_coffee_machine.jpg}
+  \end{center}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Testing (3/3)}
+\begin{itemize}
+  \item Solution
+  \begin{itemize}
+    \item Create `model` from the requirements
+    \item Generate tests automatically using model
+  \end{itemize}
+  \begin{center}
+    \includegraphics[scale=0.20]{./figures/abstract_coffee_machine.png}
+  \end{center}
+\end{itemize}
+\end{frame}
+
+\section{Models}
+
+\begin{frame}{Models (1/2)}
+\begin{block}{Model}
+\begin{itemize}
+  \item An abstract representation of the behavior of a system
+\end{itemize}
+\end{block}
+\begin{figure}
+\input{./figures/coffee.tikz}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Models (2/2)}
+\begin{block}{Symbolic Transition System (STS)}
+\begin{itemize}
+  \item Transition system with \textit{variables}, \textit{constraints} and \textit{updates}
+\end{itemize}
+\end{block}
+\begin{figure}
+\input{./figures/coffee-sts.tikz}
+\end{figure}
+\end{frame}
+
+\section{Model-based Testing}
+
+\begin{frame}{Model-based Testing (1/1)}
+\begin{figure}
+\input{./figures/mbt.tikz}
+\end{figure}
+\begin{enumerate}
+\item Take possible stimulus from model
+\item Apply stimulus to SUT
+\item Observe response(s)
+\item Check if according to model
+\item Notify tester whether test passed or failed
+\end{enumerate}
+\end{frame}
+
+\section{Graph Grammars}
+
+\begin{frame}{Graph Grammars (1/3)}
+\begin{figure}
+\centering
+\input{./figures/cm_simple_start.tikz}
+\end{figure}
+
+\begin{itemize}
+  \item Graphs represent system states
+  \item Graph rules express possible changes to graph
+  \item All possible changes make a \textit{Graph Transition System}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Graph Grammars (2/3)}
+\begin{figure}
+\centering
+  \subfloat[?coin]{\input{./figures/cm_simple_coin.tikz}}\hspace{10px}
+  \subfloat[?button]{\input{./figures/cm_simple_push_button.tikz}}\\
+  \subfloat[!coffee]{\input{./figures/cm_simple_dispense_coffee.tikz}}
+\end{figure}
+\begin{itemize}
+  \item Black and blue parts have to be present in graph
+  \item Red parts may not be present in graph
+  \item Blue is erased from graph
+  \item Green is added to graph
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Graph Grammars (3/3)}
+\begin{figure}
+\centering
+  \subfloat[start]{\input{./figures/cm_simple_start.tikz}}\hspace{10px}
+  \subfloat[after ?coin]{\input{./figures/cm_simple_s1.tikz}}\\
+  \subfloat[after ?button]{\input{./figures/cm_simple_s2.tikz}}\hspace{10px}
+  \subfloat[after !coffee]{\input{./figures/cm_simple_s3.tikz}}
+\end{figure}
+\end{frame}
+
+\section{Research Goals}
+
+\begin{frame}{Tools or how I got to do this research}
+\begin{itemize}
+\item Axini Test Manager (ATM) (uses STSs)
+\item GRaphs for Object-Oriented VErification (GROOVE) (uses Graph Grammars)
+\end{itemize}
+\begin{figure}
+\centering
+  \subfloat[ATM]{\includegraphics[scale=0.085]{./figures/atm.png}}\hspace{10px}
+  \subfloat[GROOVE]{\includegraphics[scale=0.085]{./figures/groove.png}}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Research Goals}
+\begin{itemize}
+  \item Goals
+  \begin{itemize}
+    \item Use GROOVE and ATM to create model-based testing tool with Graph Grammars
+    \item Validate this tool using case studies
+  \end{itemize}
+  \item Motivation
+  \begin{itemize}
+    \item Graphs are well-known and often used to represent system states
+    \item Rules are useful for describing computations
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\part{Main part}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\makecontentsslide
+
+\section[Setup]{Setup}
+
+\begin{frame}{Setup}
+\begin{itemize}
+  \item Make a tool GRATiS (GRoove-Axini Testing System)
+  \begin{enumerate}
+    \item Make a model of system with Graph Grammars
+    \item Generate STS from Graph Grammar
+    \item Model-based test system with STS
+  \end{enumerate}
+\end{itemize}
+\end{frame}
+
+\section[GG2STS]{From Graph Grammar to STS}
+
+\begin{frame}{Case study: Coffee machine (1/9)}
+Requirements:
+\begin{itemize}
+\item Dispense coffee and tea
+\item Coffee costs 0.70 cts, tea costs 0.40 cts
+\item 0.20 and 0.50 cent coins can be entered
+\item Entered coins can be refunded
+\item Machine gives error when drink requested but not enough coins entered.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Case study: Coffee machine (2/9)}
+\begin{figure}
+\centering
+\input{./figures/cm_start.tikz}
+\caption*{Coffee Machine start graph}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Case study: Coffee machine (3/9)}
+\begin{figure}
+\centering
+\input{./figures/cm_coin.tikz}
+\caption*{?coin(c)}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Case study: Coffee machine (4/9)}
+\begin{figure}
+\centering
+\input{./figures/cm_push_button.tikz}
+\caption*{?button(b)}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Case study: Coffee machine (5/9)}
+\begin{figure}
+\centering
+\input{./figures/cm_dispense_coffee.tikz}
+\caption*{!drink(d)}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Case study: Coffee machine (6/9)}
+\begin{figure}
+\centering
+\input{./figures/cm_error.tikz}
+\caption*{!error}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Case study: Coffee machine (7/9)}
+\begin{figure}
+\centering
+\input{./figures/cm_refund.tikz}
+\caption*{!refund(b)}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Case study: Coffee machine (8/9)}
+\begin{figure}
+\input{./figures/gts.tikz}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Case study: Coffee machine (9/9)}
+\begin{figure}
+\input{./figures/cm_sts.tikz}
+\end{figure}
+\end{frame}
+
+\section[Implementation]{Implementation}
+
+\begin{frame}{Implementation}
+\begin{figure}
+\input{./figures/cloud.tikz}
+\end{figure}
+\end{frame}
+
+\section[Validation]{Validation}
+
+\begin{frame}{Model Examples}
+\begin{itemize}
+  \item 5 example cases used:
+  \begin{enumerate}
+    \item a boardgame
+    \item a puzzle
+    \item a reservation system
+    \item a bar tab system
+    \item a self-checkout register
+  \end{enumerate}
+  \item Model examples with Graph Grammar and STS
+  \item Compare models
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Measurements}
+  \begin{itemize}
+  \item Performance (How fast does GRATiS make STS?)
+  \item Simulation (Does the STS built by GRATiS express the same behavior as the modelled STS?)
+  \item Redundancy (Is the STS built by GRATiS larger than the modelled STS?)
+  \item Model complexity (Is there a difference in complexity between the STS and the Graph Grammar?)
+  \item Extendability (How easy is it to adapt both models to a hypothetical extension?)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Measurement conclusions}
+  \begin{itemize}
+  \item Performance: less than 10 seconds for large case study
+  \item Simulation: No problems found
+  \item Redundancy: Technique can create redundant STSs
+  \item Model complexity: Both are equally complex
+  \item Extendability: Varying results
+  \end{itemize}
+\end{frame}
+
+\section[Conclusion]{Conclusion}
+
+\begin{frame}{Conclusion}
+  \begin{itemize}
+    \item Created method of generating STSs from Graph Grammars
+    \item Implemented a tool for model-based testing with Graph Grammars
+    \item Validated the tool using case studies
+    \item Showed modelling behavior with Graph Grammars is effective
+  \end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,22 @@
+
+\input{./style.tex}
+
+\begin{tikzpicture}[scale=1.5]
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt]
+
+	\node[state, initial left] (s0) {\footnotesize $s_0$};
+  \node[state] (s2) [right=6cm of s0] {\footnotesize $s_2$};
+	\node[state] (s1) [above=2cm of s2] {\footnotesize $s_1$};
+  \node[state] (s3) [below=2cm of s2] {\footnotesize $s_3$};
+	
+	\path (s0) edge[min distance=20mm,loop above] node [above] {$?coin(c)$ } (s0) ;
+  \path (s0) edge[min distance=20mm,loop below] node [below] {$?coin(c)$ } (s0) ;
+	\path (s0) edge node [sloped,midway,above] {$?button(b)$} (s1) ;
+  \path (s0) edge[bend right=5] node [sloped,midway,above] {$?button(b)$} (s2) ;
+  \path (s0) edge node [sloped,midway,above] {$?button(b)$} (s3) ;
+	\path (s1) edge[bend right=20] node [sloped,midway,above] {$!coffee$} (s0) ;
+  \path (s1) edge[bend right=10] node [sloped,midway,above] {$!error$} (s0) ;
+  \path (s2) edge[bend right=5] node [sloped,midway,above] {$!refund(c)$} (s0) ;
+  \path (s3) edge[bend left=20] node [sloped,midway,below] {$!tea$} (s0) ;
+  \path (s3) edge[bend left=10] node [sloped,midway,above] {$!error$} (s0) ;
+\end{tikzpicture}

@@ -70,6 +70,14 @@ M.R.A. Huth and M.~Ryan.
   systems}.
 \newblock Cambridge University Press, 2000.
 
+\bibitem{TTC:contest}
+E.~Jakumeit, S.~Buchwald, D.~Wagelaar, L.~Dan, A.~Heged{\"u}s,
+  M.~Herrmannsd{\"o}rfer, T.~Horn, E.~Kalnina, C.~Krause, K.~Lano, M.~Lepper,
+  A.~Rensink, L.~Rose, S.~W{\"a}tzoldt, and S.~Mazanek.
+\newblock A comparison of transformation tools based on the transformation tool
+  contest.
+\newblock {\em under submission}, 2013.
+
 \bibitem{Laird:SoftwareMeasurement}
 C.~Laird, L. \&~Brennan.
 \newblock {\em Software measurement and estimation: A practical approach.}

@@ -1,0 +1,30 @@
+\documentclass[a4paper]{report}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{a4wide}
+\usepackage{wrapfig}
+\usepackage{subfig}
+\usepackage{groove2tikz}
+\usepackage[all]{xy}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{fancybox}
+\usepackage{verbatim}
+\usepackage{enumerate}
+
+\graphicspath{{./img/}}
+%\renewcommand*\familydefault{\sfdefault}
+
+\hypersetup{pdfborder = {0 0 0 0}}
+\input{symbol-macros}
+
+\begin{document}
+  \newpage
+  \chapter*{Scanflow Cash Register IOGG}\label{app:scrp-gg}
+  This appendix gives the IOGG for the Scanflow Cash Register Protocol. The protocol is described in the main report. Each figure groups together the rules for one aspect of the protocol. The captions under each rule give the stimulus or response it represents.
+  \input{scrp_figures}
+\end{document}

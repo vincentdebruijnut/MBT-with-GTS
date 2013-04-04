@@ -1,9 +1,10 @@
 NOG TE VRAGEN AAN AREND:
-- p 11 STSs: Notation quite ad hoc when compared to LTSs.
-- p 15 'and none of the graphs in NAC have a morphism to G', morphism extending in?
+- p 11 STSs: Notation quite ad hoc when compared to LTSs. -> keuze van letters
+- p 15 'and none of the graphs in NAC have a morphism to G', morphism extending in? -> extending the match of the LHS to G.
 - p 17 can you make these conform to figure 2.5? = They have nothing to do with each other. Doosjes om rules heen: lastig, gebruik fbox in figuren, kan geen border maken. space tussen plaatjes vergroot.
-- p25 Example GG variable: 'How are these fixed? They're not part of the GG' ???
-- graph transformation tools: ok als ik tabel overneem? Alleen verwijzing naar de tool contest paper?
+- p25 Example GG variable: 'How are these fixed? They're not part of the GG' ??? -> extending IOGG definition with these variables. even nadenken of ik symbool wil gebruiken G_Var.
+- graph transformation tools: ok als ik tabel overneem? Alleen verwijzing naar de tool contest paper? -> verwijs naar paper, journal = under submission.
+- IOSTS scrp? verwijzing document? -> zip met resources en verslag. formele definitie, plaatje SCRP. SCRP GG. ITAB scanflow. 
 
 to do:
 - write something about cyclomatic complexity and system complexity

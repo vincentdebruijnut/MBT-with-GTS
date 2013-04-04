@@ -1,0 +1,14 @@
+
+\input{./style.tex}
+
+\begin{tikzpicture}[scale=1.5]
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt]
+
+	\node[state, initial left] (s0) {\footnotesize $s_0$};
+	\node[state] (s1) [right=5cm of s0] {\footnotesize $s_1$};
+	
+	\path (s0) edge[min distance=20mm,loop above] node [auto] {$?coin(c)\:|\:c=0.20 \lor c=0.50\:|\:B:=B+c$ } (s0) ;
+	\path (s0) edge node [auto] {?button} (s1) ;
+	\path (s1) edge[out=210,in=-30] node [auto] {$!coffee\:|\:B\geq 0.70\:|\:B:=B-0.70$} (s0) ;
+  \path (s1) edge[out=150,in=30] node [above] {$!error\:|\:B<0.70$} (s0) ;
+\end{tikzpicture}

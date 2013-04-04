@@ -1,0 +1,41 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node] (n6)  at (4.075, -0.720) {\ml{\textit{coffee}\\Drink}};
+\node[node] (n11)  at (4.100, -2.745) {\ml{Refund}};
+\node[node] (n10)  at (2.905, -2.735) {\ml{Button}};
+\node[node, attr] (n9)  at (5.410, -2.115) {\ml{0.4}};
+\node[node, attr] (n8)  at (5.430, -1.155) {\ml{0.7}};
+\node[node] (n7)  at (4.085, -1.640) {\ml{\textit{tea}\\Drink}};
+\node[node] (n2)  at (2.905, -0.705) {\ml{Button}};
+\node[node] (n0)  at (1.160, -0.695) {\ml{CoffeeMachine}};
+\node[node, attr] (n1)  at (0.960, -1.595) {\ml{0.0}};
+\node[node, attr] (n3)  at (5.435, -0.685) {\ml{"coffee"}};
+\node[node] (n4)  at (2.895, -1.645) {\ml{Button}};
+\node[node, attr] (n5)  at (5.405, -1.645) {\ml{"tea"}};
+\node[node, attr] (n12)  at (5.355, -2.755) {\ml{"refund"}};
+\node[node] (n13)  at (0.655, -2.470) {\ml{\textit{twenty\_cents}\\Coin}};
+\node[node, attr] (n14)  at (0.670, -3.055) {\ml{0.2}};
+\node[node] (n16)  at (1.850, -2.460) {\ml{\textit{fifty\_cents}\\Coin}};
+\node[node, attr] (n15)  at (1.860, -3.045) {\ml{0.5}};
+\path[edge](n4.east |- 4.085, -1.640) -- node[lab]{for} (n7) ;
+\path[edge](n0.south -| 0.960, -1.595) -- node[lab]{balance} (n1) ;
+\path[edge](n2.east |- 4.075, -0.720) -- node[lab]{for} (n6) ;
+\path[edge](n16.south -| 1.860, -3.045) -- node[lab]{value} (n15) ;
+\path[edge](n6.east |- 5.435, -0.685) -- node[lab]{name} (n3) ;
+\path[edge](n7.east |- 5.405, -1.645) -- node[lab]{name} (n5) ;
+\path[edge](n13.south -| 0.670, -3.055) -- node[lab]{value} (n14) ;
+\path[edge] (n6)  -- node[lab]{price} (n8) ;
+\path[edge](n10.east |- 4.100, -2.745) -- node[lab]{for} (n11) ;
+\path[edge](n11.east |- 5.355, -2.755) -- node[lab]{name} (n12) ;
+\path[edge] (n7)  -- node[lab]{price} (n9) ;
+\path[edge](n0.east |- 2.905, -0.705) -- node[lab]{has} (n2) ;
+\path[edge] (n0)  -- node[lab]{has} (n10) ;
+\path[edge] (n0)  -- node[lab]{has} (n4) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

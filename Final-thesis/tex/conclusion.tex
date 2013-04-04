@@ -1,22 +1,33 @@
-\section{Research goals}
 This report shows the usability of Graph Grammars (GG) in model-based testing. The motivation to use GGs is supported by literature, as described in section~\ref{sec:gg_intro}, emphasizing the understandibility of graphs and the usefulness of graphs to express system states. Symbolic Transition Systems (STS), described in section~\ref{sec:symbolic}, are a useful formalism for computers. 
 
 The overall goal of this research was to create a tool that can perform Model-Based Testing on GGs, using an existing graph transformation tool and a Model-Based Testing tool. The tools GROOVE and ATM, described in section~\ref{sec:tooling}, were used for this.
 
+Model-based testing is a useful technique to test large software systems. The resulting tool, GRATiS, is an asset to the model-based testing paradigm. GROOVE is useful for modelling systems with Graph Grammars; ATM is used by several Dutch companies to test their software systems. The combination of the two tools allows Graph Grammars to be used as a model formalism for Model-Based Testing. The setup of GRATiS also allows other tools, such as JTorX, to replace ATM and work with the STSs produced by GRATiS.
+
+\section{Research goals}
 The research goals were:
 \begin{enumerate}
   \item \textbf{Design}: Design and implement a system using ATM and GROOVE which performs Model-Based Testing on GGs.
   \item \textbf{Validation}: Validate the design and implementation using case studies and performance measurements.
 \end{enumerate}
 
+ATM and GROOVE were used to implement GRATiS. It generates an Input/Output STS (IOSTS) from the Input/Output GG (IOGG) in GROOVE and performs the testing on the IOSTS in ATM, described in chapter~\ref{chapter:implementation}. The tool was also validated using four example models and a larger case study, as described in chapter~\ref{chapter:validation}. Each case study featured an IOGG and a modelled IOSTS, each describing the same system behavior. The measurements done were: 
+\begin{enumerate}
+\item \textbf{Performance}: runtime and space requirements of the tool itself
+\item \textbf{Simulation and redundancy}: comparing the generated IOSTS to the modelled IOSTS
+\item \textbf{Model complexity}: comparing the IOGG to the modelled IOSTS
+\item \textbf{Extendability}: extending the behavior of the system and comparing the new IOGG to the new IOSTS
+\end{enumerate}
+The performance measurement shows the technique implemented in GRATiS scales well; GRATiS can be used on large models without problem. The measurements on the generated IOSTS show that it is not always the smallest IOSTS possible, modelling an IOSTS by hand can often create smaller models. As these generated IOSTSs are hidden from the tester and only used by GRATiS to perform the Model-Based Testing, this is not a problem. The model complexity measurements, also on the extended models, were inconclusive. The measurement for model complexity, based on Halstead's software science, is a new concept for GGs and STSs. This measurement is further discussed below in `Contributions'.
+
 The design requirements for GRATiS were: 
 \begin{enumerate}
-\item An Input/Output GG (IOGG) must be used as the model; it must derive from the specification and be used for the testing.
+\item An IOGG must be used as the model; it must derive from the specification and be used for the testing.
 \item It must be possible to measure the test progress/completion, by means of \textit{coverage} statistics (explained in detail in section~\ref{sec:coverage}).
 \item The solution must be efficient: it should be usable in practice, therefore the technique should be scalable and the imposed constraints reasonable from a practical view point.
 \end{enumerate}
 
-GRATiS is built by creating an Input/Output STS (IOSTS) from the IOGG in GROOVE and performing the testing on the symbolic model in ATM, described in chapter~\ref{chapter:implementation}. The tool was also validated using four example models and a larger case study, as described in chapter~\ref{chapter:validation}. The design requirements are all met, because:
+The design requirements are all met, because:
 \begin{itemize} 
 \item the technique used in GRATiS proved effective for Model-Based Testing in the example cases and the case study
 \item coverage can be measured on the generated IOSTS
@@ -26,11 +37,13 @@ GRATiS is built by creating an Input/Output STS (IOSTS) from the IOGG in GROOVE 
 \section{Contributions}
 The contributions are:
 \begin{enumerate}
-\item A definition for variables in IOGGs~\ref{def:gg_vars}
-\item A technique to generate an IOSTS from an IOGG~\ref{chapter:algorithm}
-\item the tool GRATiS which implements the above-mentioned technique~\ref{chapter:implementation}
-\item Model complexity measurements based on Halstead's Software Science for IOGGs and IOSTSs~\ref{sec:complexity_measurements}
+\item A definition for variables in IOGGs in~\ref{def:gg_vars}
+\item A technique to generate an IOSTS from an IOGG in section~\ref{sec:algorithm}
+\item the tool GRATiS which implements the above-mentioned technique in chapter~\ref{chapter:implementation}
+\item Model complexity measurements based on Halstead's Software Science for IOGGs and IOSTSs in section~\ref{sec:complexity_measurement}
 \end{enumerate}
+
+The next paragraphs describe each contribution listed above.
 
 \paragraph*{GG variables}
 Generating the variables in an IOSTS meant creating an extra definition for IOGGs, which allows persistent variables for GGs. These did not exist, because IOGGS can delete any node or edge, so also any variable definition in the graph. This gave problems to the technique, as described next.

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
+    <graph role="rule" edgeids="false" edgemode="directed" id="coin">
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n5">
+            <attr name="layout">
+                <string>337 46 67 50</string>
+            </attr>
+        </node>
+        <node id="n13">
+            <attr name="layout">
+                <string>66 54 48 33</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>129 128 54 37</string>
+            </attr>
+        </node>
+        <node id="n1">
+            <attr name="layout">
+                <string>157 54 114 33</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>253 127 54 37</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>193 182 43 43</string>
+            </attr>
+        </node>
+        <node id="n4">
+            <attr name="layout">
+                <string>64 186 56 37</string>
+            </attr>
+        </node>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>not:</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>flag:pushed</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>Button</string>
+            </attr>
+        </edge>
+        <edge from="n13" to="n13">
+            <attr name="label">
+                <string>Coin</string>
+            </attr>
+        </edge>
+        <edge from="n13" to="n4">
+            <attr name="label">
+                <string>value</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>CoffeeMachine</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n0">
+            <attr name="label">
+                <string>del:balance</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n2">
+            <attr name="label">
+                <string>new:balance</string>
+            </attr>
+        </edge>
+        <edge from="n1" to="n5">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>prod:</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n4">
+            <attr name="label">
+                <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n0">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n2">
+            <attr name="label">
+                <string>real:add</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>par:0</string>
+            </attr>
+        </edge>
+    </graph>
+</gxl>

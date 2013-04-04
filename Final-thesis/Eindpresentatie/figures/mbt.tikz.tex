@@ -1,0 +1,13 @@
+\input{./groove2tikz.sty}
+
+\begin{tikzpicture}
+\node (Model) {
+  \includegraphics[scale=0.20]{./figures/coffee_pic.png}
+};
+\node (SUT) [right=5cm of Model] {
+  \includegraphics[scale=0.10]{./figures/coffee_machine.jpg}
+};
+
+\path ([yshift=2ex]Model.east) edge[-triangle 60] node [above] {input} ([yshift=2ex]SUT.west) ;
+\path ([yshift=-2ex]SUT.west) edge[-triangle 60] node [below] {output}  ([yshift=-2ex]Model.east) ;
+\end{tikzpicture}

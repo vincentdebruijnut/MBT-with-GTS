@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  28 FEB 2013 13:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.9)  31 MAR 2013 20:26
 entering extended mode
  %&-line parsing enabled.
 **report2
@@ -829,20 +829,21 @@ ready used, duplicate ignored
 <to be read again> 
                    \relax 
 l.5 \end{abstract}
-                   [1]) (./report2.tocpdfTeX warning (ext4): destination with t
-he same identifier (name{page.1}) has been already used, duplicate ignored
+                   [1]) (./tex/acknowledgements.tex)pdfTeX warning (ext4): dest
+ination with the same identifier (name{page.1}) has been already used, duplicat
+e ignored
 <to be read again> 
                    \relax 
-l.40 ...5.1.3}Extendability}{38}{subsection.5.1.3}
-                                                   [1
+l.58   \newpage
+                [1] (./report2.toc [2
 
 ])
 \tf@toc=\write7
 \openout7 = `report2.toc'.
 
- [2]
+ [3]
 Chapter 1.
-(./tex/introduction.tex [3
+(./tex/introduction.tex [4
 
 ]
 Overfull \hbox (1.65527pt too wide) in paragraph at lines 20--20
@@ -856,25 +857,25 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 29.
- [4] [5]) [6]
+ [5] [6]) [7] [8]
 Chapter 2.
 (./tex/background-introduction.tex) (./tex/model-based-testing.tex
-<./img/model-based-testing.pdf, id=417, 379.58545pt x 141.73691pt>
+<./img/model-based-testing.pdf, id=435, 379.58545pt x 141.73691pt>
 File: ./img/model-based-testing.pdf Graphic file (type pdf)
 
 <use ./img/model-based-testing.pdf>
-<./img/mbt-on-the-fly.pdf, id=421, 357.48773pt x 141.7426pt>
+<./img/mbt-on-the-fly.pdf, id=439, 357.48773pt x 141.7426pt>
 File: ./img/mbt-on-the-fly.pdf Graphic file (type pdf)
 
-<use ./img/mbt-on-the-fly.pdf> [7
+<use ./img/mbt-on-the-fly.pdf> [9
 
- <./img/model-based-testing.pdf>] [8 <./img/mbt-on-the-fly.pdf>] (./img/iots-ex
-ample.tex <xymatrix 2x2 182>)
-(./img/iots-test.tex <xymatrix 3x2 145>) [9]) (./tex/algebra.tex [10])
-(./tex/symbolic.tex [11] [12] (./img/sts_boardgame_1.tex <xymatrix 14x1 236>)
+ <./img/model-based-testing.pdf>] [10 <./img/mbt-on-the-fly.pdf>] (./img/iots-e
+xample.tex <xymatrix 2x2 182>)
+(./img/iots-test.tex <xymatrix 3x2 145>) [11]) (./tex/algebra.tex [12])
+(./tex/symbolic.tex [13] [14] (./img/sts_boardgame_1.tex <xymatrix 14x1 236>)
 (./img/trafo_sts.tex <xymatrix 1x3 151>) (./img/trafo_lts.tex <xymatrix 5x5
-562>)) (./tex/graph-grammars.tex [13] (./img/hostgraph.tex <xymatrix 4x2 235>)
-[14] (./img/rulegraph.tex <xymatrix 4x2 149>) [15] (./img/gg_example.tikz
+562>)) (./tex/graph-grammars.tex [15] (./img/hostgraph.tex <xymatrix 4x2 235>)
+[16] (./img/rulegraph.tex <xymatrix 4x2 149>) [17] (./img/gg_example.tikz
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 8.
 
 (/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
@@ -882,7 +883,7 @@ File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ) (./img/gg_lhs.tex
 <xymatrix 2x1 181>) (./img/gg_nac1.tex <xymatrix 2x1 181>) (./img/gg_nac2.tex
 <xymatrix 2x1 181>) (./img/gg_graph.tex <xymatrix 3x1 226>) (./img/gg_rhs.tex
-<xymatrix 2x1 181>) (./img/gg_result.tex <xymatrix 3x1 226>)) [16]
+<xymatrix 2x1 181>) (./img/gg_result.tex <xymatrix 3x1 226>)) [18]
 Underfull \hbox (badness 10000) in paragraph at lines 158--162
 
  []
@@ -896,27 +897,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--168
 (./img/priority-example/add_rhs.tex <xymatrix 2x1 51>)
 (./img/priority-example/sub_lhs.tex <xymatrix 3x1 55>)
 (./img/priority-example/sub_rhs.tex <xymatrix 2x1 51>)) (./tex/tooling.tex
-[17] <./img/atm-diagram.pdf, id=600, 513.8086pt x 289.56181pt>
+[19] <./img/atm-diagram.pdf, id=618, 513.8086pt x 289.56181pt>
 File: ./img/atm-diagram.pdf Graphic file (type pdf)
 
-<use ./img/atm-diagram.pdf> [18 <./img/atm-diagram.pdf>]
-<./img/groove-diagram.pdf, id=625, 362.04158pt x 220.67444pt>
+<use ./img/atm-diagram.pdf> [20 <./img/atm-diagram.pdf>]
+<./img/groove-diagram.pdf, id=643, 362.04158pt x 220.67444pt>
 File: ./img/groove-diagram.pdf Graphic file (type pdf)
 
 <use ./img/groove-diagram.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] (./img/visual_elements/flags.tikz) (./img/visual_elements/node_match1.tikz
+[21] (./img/visual_elements/flags.tikz) (./img/visual_elements/node_match1.tikz
 )
 Underfull \hbox (badness 10000) in paragraph at lines 61--61
 []\T1/cmr/m/n/8 (a) |Match-ing rule
  []
 
-(./img/visual_elements/node_match2.tikz) [20 <./img/groove-diagram.pdf>]
+(./img/visual_elements/node_match2.tikz) [22 <./img/groove-diagram.pdf>]
 (./img/visual_elements/colors.tikz) (./img/visual_elements/terms.tikz)
 (./img/visual_elements/shorthand1.tikz) (./img/visual_elements/shorthand2.tikz)
 (./img/visual_elements/term_shorthand.tikz)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./img/visual_elements/wildcards.tikz)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -926,19 +931,26 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21] (./img/visual_elements/quantification.tikz) (./img/boardgame/start.tikz)
-(./img/boardgame/throws.tikz) (./img/boardgame/move.tikz)
-(./img/boardgame/nextTurn.tikz)
+[23] (./img/visual_elements/quantification.tikz)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22] (./img/gts-transition-example.tikz) (./img/target-graph-state.tikz)
+(./img/boardgame/start.tikz) (./img/boardgame/throws.tikz)
+(./img/boardgame/move.tikz) (./img/boardgame/nextTurn.tikz)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [23] [24]
+(./img/gts-transition-example.tikz)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./img/target-graph-state.tikz)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [24] [25] [26]
 Chapter 3.
-(./tex/gg-to-sts-transformation.tex [25
+(./tex/gg-to-sts-transformation.tex [27
 
 ] (./img/item_example2.tex <xymatrix
 3x1 118>)
@@ -946,92 +958,73 @@ Overfull \hbox (13.86055pt too wide) in paragraph at lines 1--41
  []$[]$ 
  []
 
-(./img/gg_variable.tikz) [26] [27] (./img/guard_example.tex <xymatrix 4x2 153>)
-(./img/guard_example_host.tex <xymatrix 3x2 208>) [28]
+(./img/gg_variable.tikz) [28] [29] (./img/guard_example.tex <xymatrix 4x2 153>)
+(./img/guard_example_host.tex <xymatrix 3x2 208>) [30]
 (./img/priority_sts_wrong.tex <xymatrix 1x1 136>) (./img/priority_sts_right.tex
-<xymatrix 1x1 136>)) (./tex/constraints.tex [29] (./img/nac_example_wrong.tex
-<xymatrix 1x2 116>) (./img/nac_example_right.tex <xymatrix 2x2 120>) [30]
+<xymatrix 1x1 136>)) (./tex/constraints.tex [31] (./img/nac_example_wrong.tex
+<xymatrix 1x2 116>) (./img/nac_example_right.tex <xymatrix 2x2 120>) [32]
 (./img/item_example_c4_lhs.tex <xymatrix 2x2 122>)
-(./img/item_example_c4_rhs.tex <xymatrix 2x2 122>)) [31]
+(./img/item_example_c4_rhs.tex <xymatrix 2x2 122>)) [33]
 Chapter 4.
 (./tex/implementation.tex
-<./img/gratis_diagram.pdf, id=850, 465.09459pt x 260.6538pt>
+<./img/gratis_diagram.pdf, id=870, 465.09459pt x 260.6538pt>
 File: ./img/gratis_diagram.pdf Graphic file (type pdf)
 
-<use ./img/gratis_diagram.pdf> [32
+<use ./img/gratis_diagram.pdf> [34
 
  <./img/gratis_diagram.pdf>]
-<./img/strategy.pdf, id=868, 202.07094pt x 136.22896pt>
+<./img/strategy.pdf, id=888, 202.07094pt x 136.22896pt>
 File: ./img/strategy.pdf Graphic file (type pdf)
 
-<use ./img/strategy.pdf> [33 <./img/strategy.pdf>]
-<./img/STS.pdf, id=903, 305.98314pt x 218.23532pt>
+<use ./img/strategy.pdf> [35 <./img/strategy.pdf>]
+<./img/STS.pdf, id=924, 305.98314pt x 218.23532pt>
 File: ./img/STS.pdf Graphic file (type pdf)
  <use ./img/STS.pdf>
-<./img/STS_objects.pdf, id=908, 484.22205pt x 309.55649pt>
+<./img/STS_objects.pdf, id=929, 484.22205pt x 309.55649pt>
 File: ./img/STS_objects.pdf Graphic file (type pdf)
 
-<use ./img/STS_objects.pdf>) [34 <./img/STS.pdf> <./img/STS_objects.pdf>]
-[35]
+<use ./img/STS_objects.pdf>) [36 <./img/STS.pdf> <./img/STS_objects.pdf>]
+[37]
 Chapter 5.
-(./tex/validation-introduction.tex) (./tex/measurements.tex [36
+(./tex/validation-introduction.tex) (./tex/measurements.tex [38
 
-]
-Overfull \hbox (2.66943pt too wide) in paragraph at lines 45--47
- \T1/cmr/bx/n/10 Cy-clo-matic Com-plex-ity \T1/cmr/m/n/10 COM-MENT Ik heb in-te
-n-sief emails gewis-seld met Lodewijk Bergmans
- []
-
-[37]) (./tex/all-examples.tex [38] (./img/start-reservation.tikz)
-(./img/makeReservation.tikz) [39]
-<./img/scanflow.jpg, id=1002, 359.3425pt x 377.41pt>
+] [39])
+(./tex/all-examples.tex [40] [41] (./img/start-reservation.tikz)
+(./img/makeReservation.tikz)
+<./img/scanflow.jpg, id=1019, 359.3425pt x 377.41pt>
 File: ./img/scanflow.jpg Graphic file (type jpg)
  <use ./img/scanflow.jpg>
 Underfull \hbox (badness 2735) in paragraph at lines 84--85
 []|\T1/cmr/m/n/10 Inform the reg-is-ter that the pay-ment was made, where
  []
 
-[40 <./img/scanflow.jpg>] [41]
+[42 <./img/scanflow.jpg>] [43]
 Overfull \hbox (8.39388pt too wide) in paragraph at lines 165--182
 []
  []
 
-[42] (./img/scrp/start-scrp.tikz) (./img/scrp/account.open.request.tikz)
+[44] (./img/scrp/start-scrp.tikz) (./img/scrp/account.open.request.tikz)
 (./img/scrp/account.open.success.tikz)
 (./img/scrp/account.open.invalid_ss_on.tikz)
 (./img/scrp/general_responses.not_signed_on.tikz)
-(./img/scrp/account.close.success.tikz) [43])
-(./tex/measurements_on_examples.tex [44]
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
-[]\T1/cmr/m/n/10 conclusies
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
-\T1/cmr/m/n/10 over scrp
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
-\T1/cmr/m/n/10 re-dun-
- []
-
-
-Overfull \hbox (21.94557pt too wide) in paragraph at lines 40--40
-\T1/cmr/m/n/10 dancy/simulation
- []
-
-(./img/boardgame/start-bg-extended.tikz)
-(./img/boardgame/nextTurn-bg-extended.tikz) [45] [46]) [47]
+(./img/scrp/account.close.success.tikz)) (./tex/measurements_on_examples.tex
+[45] [46] [47] (./img/boardgame/start-bg-extended.tikz)
+(./img/boardgame/nextTurn-bg-extended.tikz) [48] [49]) [50]
 Chapter 6.
-(./tex/conclusion.tex [48
+(./tex/conclusion.tex [51
 
-]) (./tex/future-work.tex) [49] (./report2.bbl
-[50
+]
+Overfull \hbox (2.87106pt too wide) in paragraph at lines 43--44
+[]\T1/cmr/m/n/10 Model com-plex-ity mea-sure-ments based on Hal-stead's Soft-wa
+re Sci-ence for IOGGs and IOSTSs
+ []
 
-] [51]) [52] (./symbols.tex [53
+[52]) (./tex/future-work.tex) [53] (./report2.bbl [54
 
-]) [54] (./tex/appendix.tex
+] [55]) [56]
+(./symbols.tex [57
+
+]) [58] (./tex/appendix.tex
 Appendix A.
 (./img/fwgc/start-fwgc.tikz) (./img/fwgc/n-fwgc.tikz) (./img/fwgc/w-fwgc.tikz)
 (./img/fwgc/w-invalid-fwgc.tikz) (./img/fwgc/g-fwgc.tikz)
@@ -1045,10 +1038,10 @@ Overfull \hbox (72.14275pt too wide) in paragraph at lines 69--88
  []$ 
  []
 
-[55
+[59
 
 
-] [56] [57] [58] [59]
+] [60] [61] [62] [63]
 Appendix B.
 (./img/bartab/start-tab.tikz) (./img/bartab/order-tab.tikz)
 (./img/bartab/process_order.tikz) (./img/bartab/pay-tab.tikz)
@@ -1059,12 +1052,12 @@ Appendix B.
 
 LaTeX Warning: Float too large for page by 9.90907pt on input line 119.
 
-[60
+[64
 
-] [61] [62] [63]
+] [65] [66] [67]
 Appendix C.
 (./tex/scrp_commands_responses.tex
-<./img/account_lifecycle.png, id=1251, 590.205pt x 591.20876pt>
+<./img/account_lifecycle.png, id=1310, 590.205pt x 591.20876pt>
 File: ./img/account_lifecycle.png Graphic file (type png)
 
 <use ./img/account_lifecycle.png>
@@ -1072,7 +1065,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 31--36
 [] 
  []
 
-[64
+[68
 
 ]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 38--43
@@ -1089,7 +1082,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 54--60
 [] 
  []
 
-[65 <./img/account_lifecycle.png (PNG copy)>]
+[69 <./img/account_lifecycle.png (PNG copy)>]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 62--68
 [] 
  []
@@ -1109,7 +1102,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 88--93
 [] 
  []
 
-[66]
+[70]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 95--103
 [] 
  []
@@ -1119,7 +1112,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 105--115
 [] 
  []
 
-[67]
+[71]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 117--125
 [] 
  []
@@ -1134,7 +1127,7 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 136--142
 [] 
  []
 
-[68]
+[72]
 Overfull \hbox (3.4369pt too wide) in paragraph at lines 144--150
 [] 
  []
@@ -1154,140 +1147,66 @@ Overfull \hbox (3.4369pt too wide) in paragraph at lines 171--177
 [] 
  []
 
-[69])
-Overfull \hbox (3.4369pt too wide) in paragraph at lines 179--177
+[73]))
+Overfull \hbox (3.4369pt too wide) in paragraph at lines 179--109
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--177
+Underfull \hbox (badness 10000) in paragraph at lines 179--109
 
  []
 
-[70]
-Appendix D.
-(./scrp_figures.tex (./img/scrp/initialize.ready.tikz)
-(./img/scrp/start-scrp.tikz) [71
-
-]
-(./img/scrp/account.article_registration.request_exist.tikz)
-(./img/scrp/account.article_registration.request_nexist.tikz)
-(./img/scrp/account.article_registration.displays.tikz)
-(./img/scrp/account.article_registration.invalid_ss_on.tikz)
-(./img/scrp/account.article_registration.no_such_article.tikz)
-(./img/scrp/account.article_registration.success.tikz) [72]
-(./img/scrp/account.article_return.request_exist.tikz)
-(./img/scrp/account.article_return.request_nexist.tikz)
-(./img/scrp/account.article_return.displays.tikz)
-(./img/scrp/account.article_return.invalid_ss_on.tikz)
-(./img/scrp/account.article_return.no_such_article.tikz)
-(./img/scrp/account.article_return.no_such_article_registered.tikz)
-(./img/scrp/account.article_return.success.tikz) [73]
-(./img/scrp/account.close.request.tikz) (./img/scrp/account.close.displays.tikz
-) (./img/scrp/account.close.invalid_ss_on.tikz)
-(./img/scrp/account.close.success.tikz) [74]
-(./img/scrp/account.ending.request.tikz)
-(./img/scrp/account.ending.invalid_ss_on.tikz)
-(./img/scrp/account.ending.success.tikz) [75]
-(./img/scrp/account.endtotal.request.tikz)
-(./img/scrp/account.endtotal.displays.tikz)
-(./img/scrp/account.endtotal.invalid_ss_on.tikz)
-(./img/scrp/account.endtotal.success.tikz) [76]
-(./img/scrp/account.open.request.tikz)
-(./img/scrp/account.open.request_exist.tikz)
-(./img/scrp/account.open.request_nexist.tikz)
-(./img/scrp/account.open.invalid_ss_on.tikz)
-(./img/scrp/account.open.no_such_account.tikz)
-(./img/scrp/account.open.success.tikz) [77]
-(./img/scrp/account.stamp_registration.request.tikz)
-(./img/scrp/account.stamp_registration.displays.tikz)
-(./img/scrp/account.stamp_registration.invalid_ss_on.tikz)
-(./img/scrp/account.stamp_registration.no_such_article.tikz)
-(./img/scrp/account.stamp_registration.success.tikz) [78]
-(./img/scrp/account.trans.request_tm_bank.tikz)
-(./img/scrp/account.trans.request_tm_cash.tikz)
-(./img/scrp/account.trans.request_tm_store.tikz)
-(./img/scrp/account.trans.invalid_no_closed.tikz)
-(./img/scrp/account.trans.success_tm_bank_cash.tikz)
-(./img/scrp/account.trans.success_tm_store.tikz)
-(./img/scrp/artid.request_exist.tikz) (./img/scrp/artid.request_nexist.tikz)
-(./img/scrp/artid.no_such_article.tikz) (./img/scrp/artid.success_213.tikz)
-(./img/scrp/general_responses.not_signed_on.tikz)
-(./img/scrp/general_responses.syntax_error.tikz)
-(./img/scrp/general_responses.timeout.tikz)
-(./img/scrp/get_variable.request_cs_sign.tikz)
-(./img/scrp/get_variable.request_cs_event.tikz)
-(./img/scrp/get_variable.request_unknown.tikz)
-(./img/scrp/get_variable.success_cs_sign.tikz)
-(./img/scrp/get_variable.success_cs_event.tikz)
-(./img/scrp/get_variable.no_such_variable.tikz)
-(./img/scrp/print.request_exist.tikz) (./img/scrp/print.request_nexist.tikz)
-(./img/scrp/print.inactive.tikz) (./img/scrp/print.invalid.tikz)
-(./img/scrp/print.no_such_account.tikz) (./img/scrp/print.success.tikz)
-(./img/scrp/receipt.request.tikz) (./img/scrp/receipt.html_text.tikz)
-(./img/scrp/receipt.invalid.tikz) (./img/scrp/receipt.printing_inactive.tikz)
-(./img/scrp/receipt.success.tikz)
-(./img/scrp/receipt.hardcopy.request_exist.tikz)
-(./img/scrp/receipt.hardcopy.request_nexist.tikz)
-(./img/scrp/receipt.hardcopy.inactive.tikz)
-(./img/scrp/receipt.hardcopy.no_such_account.tikz)
-(./img/scrp/receipt.hardcopy.success.tikz) (./img/scrp/resetcr.request.tikz)
-(./img/scrp/resetcr.invalid.tikz) (./img/scrp/resetcr.success.tikz)
-(./img/scrp/signoff.request.tikz) (./img/scrp/signoff.invalid.tikz)
-(./img/scrp/signoff.success.tikz) (./img/scrp/signon.request_exist.tikz)
-(./img/scrp/signon.request_nexist.tikz)
-(./img/scrp/signon.signing_auth_failed.tikz)
-(./img/scrp/signon.signing_rejected.tikz) (./img/scrp/signon.success.tikz)))
-[79] [80] [81] [82] [83] [84] (./report2.aux) ) 
+[74] (./report2.aux) ) 
 Here is how much of TeX's memory you used:
- 21707 strings out of 495061
- 387040 string characters out of 1182622
- 1088620 words of memory out of 3000000
- 23324 multiletter control sequences out of 15000+50000
+ 21220 strings out of 495061
+ 373553 string characters out of 1182622
+ 963871 words of memory out of 3000000
+ 23168 multiletter control sequences out of 15000+50000
  30003 words of font info for 75 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  63i,24n,79p,1545b,1571s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/dbruijn/.texmf-var/fonts
-/pk/ljfour/jknappen/ec/ecss0700.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfou
-r/jknappen/ec/ecsi0800.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecss0800.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx
-0800.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600p
-k> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home
-/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/dbruijn/
-.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/dbruijn/.texmf-va
-r/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/dbruijn/.texmf-var/fonts/p
-k/ljfour/jknappen/ec/ecbx2488.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/
-jknappen/ec/ecrm1000.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecti1000.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx10
-00.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk>
- </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/d
-bruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/dbruijn/.t
-exmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/dbruijn/.texmf-var/
-fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-mmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-ti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti7.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-texliv
-e/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-texlive/fonts/type1
-/public/xypic/xyatip10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/x
-ybtip10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xydash10.pfb>
-Output written on report2.pdf (86 pages, 1229737 bytes).
+ </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ec
+ss0700.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi0800.60
+0pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0800.600pk> </ho
+me/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx0800.600pk> </home/dbruij
+n/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/dbruijn/.texmf-
+var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/dbruijn/.texmf-var/fonts
+/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfou
+r/jknappen/ec/ecbx2074.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecbx2488.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
+1440.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600p
+k> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home
+/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/dbruijn/
+.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/dbruijn/.texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/dbruijn/.texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecti1200.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/
+jknappen/ec/ecbx1200.600pk> </home/dbruijn/.texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecbx1728.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex
+10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmsy5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cms
+y7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/latxfont/lcircle1.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
+onts/symbols/msam7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb></usr/share/texmf-texlive/fonts/type1/public/xypic/xyatip10.pf
+b></usr/share/texmf-texlive/fonts/type1/public/xypic/xybtip10.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/xypic/xydash10.pfb>
+Output written on report2.pdf (76 pages, 1109126 bytes).
 PDF statistics:
- 2393 PDF objects out of 2487 (max. 8388607)
- 549 named destinations out of 1000 (max. 500000)
- 551 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2254 PDF objects out of 2487 (max. 8388607)
+ 458 named destinations out of 1000 (max. 500000)
+ 559 words of extra memory for PDF output out of 10000 (max. 10000000)
 

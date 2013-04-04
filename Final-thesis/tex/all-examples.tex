@@ -69,7 +69,7 @@ The system used for this case study is a \textit{self-scan register}, which allo
 Axini has provided an IOSTS and an Adapter component for this case study. These are used for the testing and measurements.
 
 \paragraph*{Stimuli and responses}
-Appendix~\ref{app:scrp-specification} gives the most relevant parts of the specification document for this communication protocol. From this document, the following stimuli were designed:
+Appendix~\ref{app:scrp-specification} gives the most relevant parts of the specification document for this communication protocol. The entire specification is downloadable from the Twente University website\footnote{http://fmt.cs.utwente.nl/education/master/117/}. From this document, the following stimuli were designed:
 \vspace{5px} \\
 \begin{tabular}{lp{280px}} 
 $\mathit{?SIGNON(id, password)}$ & Requests the register to sign on with the login and password given by $\mathit{id}$ and $\mathit{password}$\\
@@ -180,7 +180,7 @@ $\mathit{?SIGNON\_EXIST}$ & Sign on with a correct login/password \\
 $\mathit{?SIGNON\_NEXIST}$ & Sign on with an incorrect login/password \\
 \end{tabular}
 
-\paragraph*{IOGG} Some selected rules of the IOGG of this communication protocol are shown in Figure~\ref{fig:gg-scrp}. In total the IOGG has 93 rules. They are all listed in Appendix~\ref{app:scrp-gg}. Figure~\ref{fig:start-scrp} shows the initial graph. The $CR$ node is the cash register, the $SFU$ is the scanflow unit. The first node has the flag $\mathit{SS\_OFF}$ representing that the register is off. There is one account which can be in states idle, open, closed and transing. When the customer places items on the belt, a new account is opened. Figure~\ref{fig:open-account-request} shows the general request structure. As long as there is no request, a request can be sent. This rule requests the opening of an account. Figure~\ref{fig:open-account-success} shows the rule for giving a success response. The request node is deleted such that new request nodes can be created again. The rule checks if an account is not already opened and opens an idle account. Figure~\ref{fig:open-account-invalid} shows the rule for the error message received when an account is already opened. 
+\paragraph*{IOGG} Some selected rules of the IOGG of this communication protocol are shown in Figure~\ref{fig:gg-scrp}. In total the IOGG has 93 rules. They are downloadable from the Twente University website\footnote{http://fmt.cs.utwente.nl/education/master/117/}. Figure~\ref{fig:start-scrp} shows the initial graph. The $CR$ node is the cash register, the $SFU$ is the scanflow unit. The first node has the flag $\mathit{SS\_OFF}$ representing that the register is off. There is one account which can be in states idle, open, closed and transing. When the customer places items on the belt, a new account is opened. Figure~\ref{fig:open-account-request} shows the general request structure. As long as there is no request, a request can be sent. This rule requests the opening of an account. Figure~\ref{fig:open-account-success} shows the rule for giving a success response. The request node is deleted such that new request nodes can be created again. The rule checks if an account is not already opened and opens an idle account. Figure~\ref{fig:open-account-invalid} shows the rule for the error message received when an account is already opened. 
 
 \begin{figure}[ht]
   \begin{center}
@@ -197,4 +197,4 @@ $\mathit{?SIGNON\_NEXIST}$ & Sign on with an incorrect login/password \\
 
 For all these rules, the $CR$ node has to have the flag $\mathit{SS\_ON}$ representing the register to be signed on. Figure~\ref{fig:not-signed-on} shows the response to a request when the register is not signed on. Apart from the signon request, no other request is allowed in this state. Figure~\ref{fig:close-account-success} shows the rule closing the account.
 
-\paragraph*{IOSTS} The IOSTS of the system as created by Axini is shown in a seperate document. It has 907 locations, 1302 switch relations and 2 location variables.
+\paragraph*{IOSTS} The IOSTS of the system as created by Axini is shown in a seperate document, also downloadable from the Twente University website\footnotemark[\value{footnote}]. It has 907 locations, 1302 switch relations and 2 location variables.

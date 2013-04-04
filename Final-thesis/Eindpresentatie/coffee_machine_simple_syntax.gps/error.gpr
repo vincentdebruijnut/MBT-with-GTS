@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
+    <graph role="rule" edgeids="false" edgemode="directed" id="error">
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <attr name="$version">
+            <string>curly</string>
+        </attr>
+        <node id="n4">
+            <attr name="layout">
+                <string>220 199 52 37</string>
+            </attr>
+        </node>
+        <node id="n0">
+            <attr name="layout">
+                <string>58 53 114 33</string>
+            </attr>
+        </node>
+        <node id="n3">
+            <attr name="layout">
+                <string>78 137 54 37</string>
+            </attr>
+        </node>
+        <node id="n2">
+            <attr name="layout">
+                <string>226 134 43 43</string>
+            </attr>
+        </node>
+        <node id="n5">
+            <attr name="layout">
+                <string>227 47 76 50</string>
+            </attr>
+        </node>
+        <node id="n6">
+            <attr name="layout">
+                <string>374 54 53 33</string>
+            </attr>
+        </node>
+        <node id="n8">
+            <attr name="layout">
+                <string>374 137 54 37</string>
+            </attr>
+        </node>
+        <edge from="n4" to="n4">
+            <attr name="label">
+                <string>bool:true</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>CoffeeMachine</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n3">
+            <attr name="label">
+                <string>balance</string>
+            </attr>
+        </edge>
+        <edge from="n0" to="n5">
+            <attr name="label">
+                <string>has</string>
+            </attr>
+        </edge>
+        <edge from="n3" to="n3">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n2">
+            <attr name="label">
+                <string>prod:</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n8">
+            <attr name="label">
+                <string>arg:1</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n4">
+            <attr name="label">
+                <string>real:lt</string>
+            </attr>
+        </edge>
+        <edge from="n2" to="n3">
+            <attr name="label">
+                <string>arg:0</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>del:flag:pushed</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n5">
+            <attr name="label">
+                <string>Button</string>
+            </attr>
+        </edge>
+        <edge from="n5" to="n6">
+            <attr name="label">
+                <string>for</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n6">
+            <attr name="label">
+                <string>Drink</string>
+            </attr>
+        </edge>
+        <edge from="n6" to="n8">
+            <attr name="label">
+                <string>price</string>
+            </attr>
+        </edge>
+        <edge from="n8" to="n8">
+            <attr name="label">
+                <string>real:</string>
+            </attr>
+        </edge>
+    </graph>
+</gxl>

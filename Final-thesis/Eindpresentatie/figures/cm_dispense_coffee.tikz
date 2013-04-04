@@ -1,0 +1,31 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[node, attr] (n9)  at (3.960, -2.045) {\ml{\textbf{real}}};
+\node[node, attr] (n8)  at (5.185, -0.685) {\ml{\textbf{string}}};
+\node[parnode] (n8p)  at (n8.north west) {0};
+\node[node] (n7)  at (2.850, -0.670) {\ml{{\color{\blue}\textit{$-$ pushed}}\\Button}};
+\node[node, prod] (n3)  at (1.785, -2.045){};
+\node[node, attr] (n2)  at (2.270, -1.365) {\ml{\textbf{real}}};
+\node[node, attr] (n1)  at (1.150, -1.365) {\ml{\textbf{real}}};
+\node[node] (n0)  at (1.360, -0.685) {\ml{CoffeeMachine}};
+\node[node, prod] (n5)  at (1.345, -2.525) {\ml{ge = true}};
+\node[node] (n4)  at (3.995, -0.675) {\ml{Drink}};
+\path[edge](n4.east |- 5.185, -0.685) -- node[lab]{name} (n8) ;
+\path[edge](n7.east |- 3.995, -0.675) -- node[lab]{for} (n4) ;
+\path[edge](n4.south -| 3.960, -2.045) -- node[lab]{price} (n9) ;
+\path[edge] (n5)  -- node[lab]{$\pi$0} (n1) ;
+\path[edge] (n5)  -- node[lab]{$\pi$1} (n9) ;
+\path[edge] (n3)  -- node[lab]{$\pi$1} (n9) ;
+\path[edge](n0.east |- 2.850, -0.670) -- node[lab]{has} (n7) ;
+\path[edge] (n3)  -- node[lab]{$\pi$0} (n1) ;
+\path[edge] (n3)  -- node[lab]{sub} (n2) ;
+\path[newedge] (n0)  -- node[newlab]{balance} (n2) ;
+\path[deledge](n0.south -| 1.150, -1.365) -- node[dellab]{balance} (n1) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

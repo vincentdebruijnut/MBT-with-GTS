@@ -1,0 +1,19 @@
+\begin{tikzpicture}[node distance=1.5cm]
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt]
+
+	\visible<5, 6, 7>{
+	\node[initial, state] (s0) {\footnotesize $s_0$};
+	\node[state] (s1) [below left of=s0] {\footnotesize $s_1$};
+	\node[state] (s2) [below right of=s0] {\footnotesize $s_2$};
+
+	\path 	(s0) edge node [swap]  {$a?$}  (s1)
+		  		(s0) edge node {$a?$}  (s2);
+	}
+	
+	\visible<8>{
+	\node[initial, state] (s0) {\footnotesize $s_0$};
+	\node[state] (s12) [below of=s0] {\footnotesize $s_{12}$};
+
+	\path 	(s0) edge node [swap]  {$a!$}  (s12);
+	}
+\end{tikzpicture}

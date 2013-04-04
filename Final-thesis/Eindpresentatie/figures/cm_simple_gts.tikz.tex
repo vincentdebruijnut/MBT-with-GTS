@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+\node[scale=1.5] (start) {
+  \input{./figures/cm_simple_start.tikz}
+};
+\node[scale=1.5] (s1) [right=2cm of start] {
+  \input{./figures/cm_simple_s1.tikz}
+};
+\node[scale=1.5] (s2) [below=2cm of s1] {
+  \input{./figures/cm_simple_s2.tikz}
+};
+\node[scale=1.5] (s3) [left=2cm of s2] {
+  \input{./figures/cm_simple_s3.tikz}
+};
+
+\path (start) edge[-triangle 60] node [auto] {?coin} (s1) ;
+\path (s1) edge[-triangle 60] node [auto] {?button} (s2) ;
+\path (s2) edge[-triangle 60] node [auto] {!coffee} (s3) ;
+
+\end{tikzpicture}

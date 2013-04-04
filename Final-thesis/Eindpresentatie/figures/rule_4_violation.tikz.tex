@@ -1,0 +1,27 @@
+\begin{tikzpicture}[auto]
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt]
+
+	\node[initial, state] (s0) {\footnotesize $s_0$};
+	\node[state] (s1)  [right of=s0] {\footnotesize $s_1$};x
+	\node[state] (s3)  [left of=s0] {\footnotesize $s_3$};
+	\node[state] (s4)  [below of=s1] {\footnotesize $s_2$};
+
+	\path 	(s0) edge node {$\delta$} (s1)
+				(s0) edge node [swap] {$a?$} (s3)
+				(s0) edge [bend right] node [swap] {$a?$} (s4)
+				(s1) edge node {$a?$} (s4)
+				(s3) edge [loop left] node {$b!$} (s3)
+				(s4) edge [loop below] node {$c!$} (s4);
+	\visible<12>{
+	\node[state] (s2)  [right of=s1] {\footnotesize $s_4$};
+	\node[state] (s5)  [below of=s2] {\footnotesize $s_5$};
+	
+	\path 	(s1) edge node {$\delta$} (s2)
+				(s2) edge [loop right] node {$\delta$} (s2)
+				(s2) edge node {$a?$} (s5)
+				(s5) edge [loop below] node {$\delta$} (s5);
+	}
+	\only<13>{
+	\path[red] (s1) edge [loop right] node {$\delta$} (s1);
+	}
+\end{tikzpicture}

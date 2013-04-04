@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+	\tikzstyle{every state}=[draw=black,line width=1pt,fill=white,minimum size=5pt]
+
+	\node[initial, state] (s0) {\footnotesize $s_0$};
+	\node[state] (s1) [below of=s0] {\footnotesize $s_1$};
+    \visible<5>{
+	\path (s0) edge [bend left] node {doeIets!}  (s1)
+			 (s1) edge [bend left] node {$\tau$}  (s0);
+	} 
+	
+	\visible<6>{
+	\path (s0) edge [bend left] node {$\tau$}  (s1)
+			 (s1) edge [bend left] node {$\tau$}  (s0);
+	}
+\end{tikzpicture}

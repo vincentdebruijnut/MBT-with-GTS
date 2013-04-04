@@ -1,0 +1,16 @@
+% To use this figure in your LaTeX document
+% import the package groove/resources/groove2tikz.sty
+%
+% Special colors
+%\input{./groove2tikz.sty}
+\begin{tikzpicture}[
+% Special color styles
+scale=\tikzscale]
+\node[newnode] (n0)  at (0.990, -0.685) {\ml{Coin}};
+\node[node] (n1)  at (2.310, -0.685) {\ml{CoffeeMachine}};
+\node[nacnode] (n2)  at (0.980, -1.295) {\ml{Coin}};
+\path[newedge](n0.east |- 2.310, -0.685) -- node[newlab]{in} (n1) ;
+\path[nacedge] (n2)  -- node[naclab]{in} (n1) ;
+\userdefinedmacro
+\end{tikzpicture}
+\renewcommand{\userdefinedmacro}{\relax}

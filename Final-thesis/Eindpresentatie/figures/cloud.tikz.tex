@@ -1,0 +1,27 @@
+
+\input{./style.tex}
+
+\begin{tikzpicture}
+\node (GROOVE) {
+  \includegraphics[scale=0.08]{./figures/groove.png}
+};
+\node (GROOVE TAG) [below=1pt of GROOVE]{\textbf{GROOVE}};
+\node (GG2STS) [shape = rectangle, fill = black!30!white, below right=-5pt and -5pt of GROOVE]{\textbf{GG -> STS}};
+\node (Cloud) [above right=3cm and 1cm of GROOVE] {
+  \includegraphics[]{./figures/cloud.png}
+};
+\node (ATM) [right=5cm of GROOVE] {
+  \includegraphics[scale=0.08]{./figures/atm.png}
+};
+\node (ATM TAG) [below=1pt of ATM]{\textbf{ATM}};
+
+\node (SUT) [above=1.5cm of ATM] {
+  \includegraphics[scale=0.10]{./figures/coffee_machine.jpg}
+};
+
+\path ([xshift=2ex]ATM.north) edge node [sloped,midway,above] {input} ([xshift=2ex]SUT.south) ;
+\path ([xshift=-2ex]SUT.south) edge node [sloped,midway,above] {output}  ([xshift=-2ex]ATM.north) ;
+
+\path (GROOVE) edge node [sloped,midway,above] {STS}(Cloud) ;
+\path (Cloud) edge node [sloped,midway,above] {STS} (ATM) ;
+\end{tikzpicture}
